@@ -51,7 +51,7 @@ $(document).ready(function(){
             
             this.articles_info.forEach(article => {
                 console.log(article);
-                enriched_article = article_template.replace('{{post.id}}', article.id);
+                enriched_article = article_template.replace('{{post_id}}', article.id);
                 enriched_article = article_template.replace('{{post.title}}', article.title);
                 enriched_article = article_template.replace('{{post.author}}', article.author);
                 enriched_article = article_template.replace('{{post.date}}', article.date);
