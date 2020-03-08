@@ -14,6 +14,7 @@ $(document).ready(function(){
             $.ajax({
                 url: model.articles_info.src,
                 done: function(response){
+                    console.log("Reponse:");
                     console.log(response);
                     this.payload = response;
                 }
