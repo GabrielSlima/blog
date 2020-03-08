@@ -44,7 +44,7 @@ $(document).ready(function(){
             var html = "";
             var enriched_article = "";
             this.articles_info = controller.getArticlesPayload();
-            
+            console.log(this.articles_info);
             this.articles_info.forEach(article => {
                 enriched_article = article_template.replace('{{post.id}}', article.id);
                 enriched_article = enriched_article.replace('{{post.title}}', article.title);
