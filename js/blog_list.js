@@ -16,7 +16,7 @@ $(document).ready(function(){
                 success: function(response){
                     console.log("Reponse:");
                     console.log(response);
-                    this.payload = response;
+                    this.setArticlesPayload(response);
                 },
                 error: function(){
                     console.log("Ai deu ruim");
@@ -28,6 +28,10 @@ $(document).ready(function(){
         
         getArticlesPayload: function(){
             return model.articles_info.payload;
+        },
+
+        setArticlesPayload: function(payload){
+            model.articles_info.payload = payload;
         }
     };
 
