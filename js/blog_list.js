@@ -15,6 +15,7 @@ $(document).ready(function(){
                 url: model.articles_info.src,
                 async: false,
                 success: function(response){
+                    debugger;
                     controller.setArticlesPayload(response);
                 },
                 error: function(){
