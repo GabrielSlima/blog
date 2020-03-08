@@ -15,8 +15,6 @@ $(document).ready(function(){
                 url: model.articles_info.src,
                 async: false,
                 success: function(response){
-                    console.log("Reponse:");
-                    console.log(response);
                     controller.setArticlesPayload(response);
                 },
                 error: function(){
@@ -37,7 +35,10 @@ $(document).ready(function(){
 
     var view = {
         init: function(){
-            console.log(controller.getArticlesPayload());
+            this.articles_info = controller.getArticlesPayload();
+            this.articles_info.articles.forEach(article => {
+                console.log(article);
+            });
         }
     };
 

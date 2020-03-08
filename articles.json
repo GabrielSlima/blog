@@ -1,7 +1,8 @@
 {
-    "article": {
+    "articles": {
         "software-enginner": {
             "id": 1,
+            "title": "What it looks like to be a Software Engineer in Brazil",
             "author": "Gabriel Lima",
             "date": "2020-03-08",
             "article-file-name": "softwareengineer.txt"
