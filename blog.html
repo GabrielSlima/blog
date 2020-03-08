@@ -48,8 +48,8 @@
           <h2 class="mt-2"><span class="section-marker">#</span>Articles</h2>
         </div>
 
-        <div class="col-6" id="articles-list">
-            <ul class="list-group" >
+        <div class="col-6">
+            <ul class="list-group" id="article-list">
                 <li class="list-group-item">
                     <h4><a href="#">Jenkins</a></h4>
                     <span id="article-date" style="opacity: 1;">Gabriel Lima</span>
@@ -109,9 +109,20 @@
         </div>
     </section>
   <!-- Bootstrap core JavaScript -->
+  <script type="text/template" data-template="article">
+
+    <li class="list-group-item">
+        <h4><a href="post.html?id={{post.id}}">{{post.title}}</a></h4>
+        <span id="article-date" style="opacity: 1;">{{post.author}}</span>
+        <br>
+        <span id="article-date" style="opacity: 0.7;">{{post.date}}</span>
+        <br>
+        <p id="article-date" style="opacity: 1;">{{post.desciption}}</p>
+    </li>
+  </script>
+
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script type="text/template" scr="article.html" data-template="article"></script>
   <script type="text/javascript" src="js/blog_list.js"></script>
 </body>
 

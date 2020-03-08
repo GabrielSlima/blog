@@ -21,6 +21,8 @@ $(document).ready(function(){
                     console.log("Ai deu ruim");
                 }
             });
+            this.article_template = $('script[data-template="article"]').html();
+            this.articles_ul = $('#article-list');
             view.init();
         },
         
@@ -35,12 +37,24 @@ $(document).ready(function(){
 
     var view = {
         init: function(){
+            var article_template = this.article_template;
+            var articles_ul = this.articles_ul;
+            
+            var html = "";
+            var enriched_article = "";
             this.articles_info = controller.getArticlesPayload();
             console.log(this.articles_info);
-            this.articles_info.forEach(element => {
-                console.log(element);
+            
+            this.articles_info.forEach(article => {
+                enriched_article = article_template.replace('{{post.id}}', article.id);
+                enriched_article += article_template.replace('{{post.title}}', article.title);
+                enriched_article += article_template.replace('{{post.author}}', article.author);
+                enriched_article += article_template.replace('{{post.date}}', article.date);
+                html += enriched_article;
+                enriched_article = "";
+                console.log(article);
             });
-
+            articles_ul.html(html);
         }
     };
 
