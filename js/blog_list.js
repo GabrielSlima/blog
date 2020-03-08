@@ -7,11 +7,14 @@ $(document).ready(function(){
         }
     };
 
-    var controller = {
+    var controller = { 
+        
         init: function() {
+            debugger;
             $.ajax({
                 url: model.articles_info.src,
                 done: function(response){
+                    console.log(response);
                     this.payload = response;
                 }
             });
