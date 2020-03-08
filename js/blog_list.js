@@ -16,13 +16,12 @@ $(document).ready(function(){
                 success: function(response){
                     console.log("Reponse:");
                     console.log(response);
-                    this.setArticlesPayload(response);
+                    controller.setArticlesPayload(response);
                 },
                 error: function(){
                     console.log("Ai deu ruim");
                 }
             });
-
             view.init();
         },
         
