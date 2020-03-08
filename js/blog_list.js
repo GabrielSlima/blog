@@ -52,11 +52,11 @@ $(document).ready(function(){
             this.articles_info.forEach(article => {
                 debugger;
                 console.log(article);
-                enriched_article = article_template.replace('{{post_id}}', article.id);
+                enriched_article = article_template.replace('{{post.id}}', article.id);
                 console.log(enriched_article);
-                enriched_article = article_template.replace('{{post.title}}', article.title);
-                enriched_article = article_template.replace('{{post.author}}', article.author);
-                enriched_article = article_template.replace('{{post.date}}', article.date);
+                enriched_article = enriched_article.replace('{{post.title}}', article.title);
+                enriched_article = enriched_article.replace('{{post.author}}', article.author);
+                enriched_article = enriched_article.replace('{{post.date}}', article.date);
                 console.log(enriched_article);
                 html += enriched_article;
                 console.log(html);
