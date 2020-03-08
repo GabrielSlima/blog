@@ -39,27 +39,19 @@ $(document).ready(function(){
     var view = {
         init: function(){
             var article_template = $('script[data-template="article"]').html();;
-            console.log("Article template");
-            console.log(article_template);
             var articles_ul = $('#article-list');;
-            console.log(articles_ul);
 
             var html = "";
             var enriched_article = "";
             this.articles_info = controller.getArticlesPayload();
-            console.log(this.articles_info);
             
             this.articles_info.forEach(article => {
-                debugger;
-                console.log(article);
                 enriched_article = article_template.replace('{{post.id}}', article.id);
-                console.log(enriched_article);
                 enriched_article = enriched_article.replace('{{post.title}}', article.title);
                 enriched_article = enriched_article.replace('{{post.author}}', article.author);
                 enriched_article = enriched_article.replace('{{post.date}}', article.date);
-                console.log(enriched_article);
+                enriched_article = enriched_article.replace('{{post.description}}', article.date);
                 html += enriched_article;
-                console.log(html);
                 enriched_article = "";
             });
             articles_ul.html(html);
