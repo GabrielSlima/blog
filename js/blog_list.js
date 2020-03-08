@@ -37,6 +37,10 @@ $(document).ready(function(){
         init: function(){
             this.articles_info = controller.getArticlesPayload();
             console.log(this.articles_info);
+            this.articles_info.forEach(element => {
+                console.log(element);
+            });
+
         }
     };
 
