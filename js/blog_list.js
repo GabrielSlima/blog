@@ -55,7 +55,9 @@ $(document).ready(function(){
                 enriched_article = article_template.replace('{{post.title}}', article.title);
                 enriched_article = article_template.replace('{{post.author}}', article.author);
                 enriched_article = article_template.replace('{{post.date}}', article.date);
+                console.log(enriched_article);
                 html += enriched_article;
+                console.log(html);
                 enriched_article = "";
             });
             articles_ul.html(html);
