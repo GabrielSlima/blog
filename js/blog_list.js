@@ -10,7 +10,7 @@ $(document).ready(function(){
     var controller = { 
         
         init: function() {
-            debugger;
+            
             $.ajax({
                 url: model.articles_info.src,
                 async: false,
@@ -36,9 +36,7 @@ $(document).ready(function(){
     var view = {
         init: function(){
             this.articles_info = controller.getArticlesPayload();
-            this.articles_info.articles.forEach(article => {
-                console.log(article);
-            });
+            console.log(this.articles_info);
         }
     };
 
