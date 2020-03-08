@@ -39,10 +39,9 @@ $(document).ready(function(){
     var view = {
         init: function(){
             var article_template = $('script[data-template="article"]').html();;
-            console.log(this.article_template);
             console.log("Article template");
             console.log(article_template);
-            var articles_ul = this.articles_ul;
+            var articles_ul = $('#article-list');;
             console.log(articles_ul);
 
             var html = "";
