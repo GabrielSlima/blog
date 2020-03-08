@@ -13,6 +13,7 @@ $(document).ready(function(){
             debugger;
             $.ajax({
                 url: model.articles_info.src,
+                async: false,
                 success: function(response){
                     console.log("Reponse:");
                     console.log(response);
