@@ -50,6 +50,7 @@ $(document).ready(function(){
             console.log(this.articles_info);
             
             this.articles_info.forEach(article => {
+                debugger;
                 console.log(article);
                 enriched_article = article_template.replace('{{post_id}}', article.id);
                 console.log(enriched_article);
