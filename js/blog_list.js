@@ -22,6 +22,7 @@ $(document).ready(function(){
                 }
             });
             this.article_template = $('script[data-template="article"]').html();
+            console.log(this.article_template);
             this.articles_ul = $('#article-list');
             view.init();
         },
