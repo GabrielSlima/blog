@@ -39,6 +39,7 @@ $(document).ready(function(){
     var view = {
         init: function(){
             var article_template = this.article_template;
+            console.log(this.article_template);
             console.log("Article template");
             console.log(article_template);
             var articles_ul = this.articles_ul;
