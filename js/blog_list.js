@@ -13,10 +13,13 @@ $(document).ready(function(){
             debugger;
             $.ajax({
                 url: model.articles_info.src,
-                done: function(response){
+                success: function(response){
                     console.log("Reponse:");
                     console.log(response);
                     this.payload = response;
+                },
+                error: function(){
+                    console.log("Ai deu ruim");
                 }
             });
 
