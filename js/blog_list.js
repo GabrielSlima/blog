@@ -40,7 +40,7 @@ $(document).ready(function(){
         init: function(){
             var article_template = $('script[data-template="article"]').html();;
             var articles_ul = $('#article-list');;
-
+            debugger;
             var html = "";
             var enriched_article = "";
             this.articles_info = controller.getArticlesPayload();
