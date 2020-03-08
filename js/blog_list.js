@@ -38,7 +38,7 @@ $(document).ready(function(){
 
     var view = {
         init: function(){
-            var article_template = this.article_template;
+            var article_template = $('script[data-template="article"]').html();;
             console.log(this.article_template);
             console.log("Article template");
             console.log(article_template);
