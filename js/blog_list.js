@@ -48,7 +48,7 @@ $(document).ready(function(){
                 enriched_article = enriched_article.replace('{{post.title}}', article.title);
                 enriched_article = enriched_article.replace('{{post.author}}', article.author);
                 enriched_article = enriched_article.replace('{{post.date}}', article.date);
-                enriched_article = enriched_article.replace('{{post.description}}', article.date);
+                enriched_article = enriched_article.replace('{{post.description}}', article.description);
                 html += enriched_article;
                 enriched_article = "";
             });
