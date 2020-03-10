@@ -39,7 +39,7 @@ $(window).ready(function () {
                 return view.initErrorFragment();
             }
 
-            articlesPayload.forEach(article => {
+            articlesInfosModel.articles_info.payload.forEach(article => {
                 if(article.id === postId) {
                     postModel.id = article.id;
                     postModel.title = article.title;
@@ -60,10 +60,10 @@ $(window).ready(function () {
 
         getArticlesInfos: function(){
             $.ajax({
-                url: articlesInfosModel.article_file_name.src,
+                url: articlesInfosModel.articles_info.src,
                 async: false,
                 success: function(response){
-                    controller.setArticlesPayload(response);
+                    controller.setArticlesInfoPayload(response);
                 },
                 error: function(){
                     console.log("Ai deu ruim");
@@ -84,8 +84,8 @@ $(window).ready(function () {
             });
         },
 
-        setArticlesPayload: function(payload){
-            articlesPayload = payload;
+        setArticlesInfoPayload: function(payload){
+            articlesInfosModel.articles_info.payload = payload;
         },
 
         setArticleContent: function(payload){
