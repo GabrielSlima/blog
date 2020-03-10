@@ -28,7 +28,7 @@ $(window).ready(function () {
             var postId = params.get('id');
 
             errorTemplate = $('script[data-template="error"]').html();
-
+            debugger;
             if(!postId) {
                 return view.initErrorFragment();
             }
