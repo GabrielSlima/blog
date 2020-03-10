@@ -60,7 +60,7 @@ $(window).ready(function () {
 
         getArticlesInfos: function(){
             $.ajax({
-                url: postModel.article_file_name,
+                url: articlesInfosModel.article_file_name.src,
                 async: false,
                 success: function(response){
                     controller.setArticlesPayload(response);
@@ -73,7 +73,7 @@ $(window).ready(function () {
 
         getPostContent: function(){
             $.ajax({
-                url: articlesInfosModel.article_file_name.src,
+                url: postModel.article_file_name,
                 async: false,
                 success: function(response){
                     controller.setArticleContent(response);
