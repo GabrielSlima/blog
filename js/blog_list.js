@@ -10,7 +10,6 @@ $(document).ready(function(){
     var controller = { 
         
         init: function() {
-            
             $.ajax({
                 url: model.articles_info.src,
                 async: false,

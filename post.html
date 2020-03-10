@@ -18,17 +18,43 @@
 
 <body style="background-color: #4826c4; display: flex; align-items: center; justify-content: center; height: 100%;" id="particles-js">
 
-  <section class="container" style="position: absolute; color: rgba(0,0,0, .7);">
-      <div class="row justify-content-center align-self-center">
-        <div class="col-6 jumbotron vertical-center text-center">
-          <div>
-            <h2 class="mt-2"></span>Hi!</h2>
-            <h5>We are working on this right now...keep your curiosity!</h5>
-            <a href="index.html">See all posts</a>
-          </div>
-        </div>
+  <section class="container" style="position: absolute; color: rgba(0,0,0, .7); max-height: 50%;">
+      <div class="row justify-content-center align-self-center" id="post-content-container-row">
+        {{PAGE_CONTENT}}
       </div>
   </section>
+
+  <script type="text/template" data-template="error">
+    <div class="col-6 jumbotron vertical-center text-center">
+      <div>
+        <h2 class="mt-2"></span>{{TITTLE}}</h2>
+        <h5>{{ERROR_MESSAGE}}}</h5>
+        <a href="index.html">See all posts</a>
+      </div>
+    </div>
+  </script>
+  
+  <script type="text/template" data-template="post-not-found">
+    <div class="col-6 jumbotron vertical-center text-center">
+      <div>
+        <h2 class="mt-2"></span>{{TITTLE}}</h2>
+        <h5>{{ERROR_MESSAGE}}}</h5>
+        <a href="index.html">See all posts</a>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/template" data-template="post">
+    <div class="col-12 col-md-8 jumbotron vertical-center text-center">
+      <div>
+        <h2 class="mt-2"></span>{{ARTICLE_TITLE}}</h2>
+        <h6 style="opacity: 0.7;">{{ARTICLE_AUTHOR}}}</h6>
+        <h6 style="opacity: 0.7;">{{ARTICLE_DATE}}</h6>
+        <hr>
+        <p>{{ARTICLE_CONTENT}}</p>
+      </div>
+    </div>
+  </script>
 
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
