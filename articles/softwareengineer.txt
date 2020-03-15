@@ -18,7 +18,7 @@ To be a Junior Developer you have to be an intern, to be a Mid-Level Developer y
 <br>
 What I did was to create 2 (two) plans: 
 <ol>
-    <li> Do an internship in some company</li>
+    <li> Do an internship in some companies</li>
     <li> Do my own internship, my own Bootcamp</li>
 </ol>
 When I was looking for an internship I really wanted to learn, I was willing to do 2-3 internships just to learn, do my own Bootcamp, build things, work on Side Projects
