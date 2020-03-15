@@ -4,21 +4,21 @@ about my experience applying to and working as Software Developer in the past 3 
 <br>
 <br>
 Being a Software Engineer/Software Developer in Brazil, specifically in São Paulo where I live, isn't that different from working
-in any other country (based on other Software Engineer - digital influencers that I follow on YT and Instagram).
+in any other country (based on other Software EngineerS - digital influencers that I follow on YT and Instagram).
 I work 40 hours a week, salary range from 30k - 150k (BRL) a year and many technologies like C#, Java, Python, JavaScript, Groovy,
 Katalon, Jenkins and so on.
 <br>
 What I really see as a difference between countries like Canada, US and Brazil is the culture.
 <br>
 <br>
-Here (when I started as a Software Developer) I felt that an intership is mandatory to be a Software Engineer, job titles has a... I don't really know the real meaning here.
+Here I feel that an intership is mandatory to be a Software Engineer. Job titles has a... I don't really know the real meaning here.
 <br>
 To be a Junior Developer you have to be an intern, to be a Mid-Level Developer you have to work 4-5 years as a Junior Developer and to be a Senior Developer you have to work more 3-8 years as a Mid-Level Developer.
 <br>
 <br>
 What I did was to create 2 (two) plans: 
 <ol>
-    <li> Do a intership in some company</li>
+    <li> Do an intership in some company</li>
     <li> Do my own intership, my own bootcamp</li>
 </ol>
 When I was looking for an intership I really wanted to learn, I was willing to do 2-3 interships just to learn, do my own Bootcamp, build things, work on Side Projects
