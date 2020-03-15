@@ -1,5 +1,7 @@
 $(window).ready(function () {
 
+    var postWasLoadded = false;
+    
     var articlesInfosModel = {
         articles_info: {
             src: "./articles.json",
@@ -52,10 +54,10 @@ $(window).ready(function () {
                 }
             });
 
-            postNotFoundTemplate = $('script[data-template="post-not-found"]').html();
-
-            return view.initPostNotFoundFragment();
-
+            if(!postWasLoadded) {
+               postNotFoundTemplate = $('script[data-template="post-not-found"]').html();
+              return view.initPostNotFoundFragment();
+            }
         },
 
         getArticlesInfos: function(){
@@ -150,25 +152,9 @@ $(window).ready(function () {
             html = enrichedTemplate;
 
             contentDiv.html(html);
+            postWasLoadded = true;
             return;
         }
     };
-
-    // console.log("Load JSON objects");
-    // console.log("Find match object");
-
-    // var jsonObject;
-
-    // if(!jsonObject) {
-    //     console.log("Load not found fragment")
-    //     return;
-    // }
-
-    // console.log("Load post div")
-    // console.log("Load Title")
-    // console.log("Load date")
-    // console.log("Load author")
-    // console.log("Load related txt file content into div")
-    
     controller.init();
 });
