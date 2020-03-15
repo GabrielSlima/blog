@@ -1,0 +1,50 @@
+I can't tell you i'm a Software Developer with a 50 company history and so on. But I can tell you
+about my experience applying to and working as Software Developer in the past 3 years of my life...
+<br>
+Being a Software Engineer/Software Developer in Brazil, specifically in São Paulo where I live, isn't that different from working
+in any other country (based on other Software Engineer - digital influencers that I follow on YT and Instagram).
+I work 40 hours a week, salary range from 30k - 150k (BRL) a year and many technologies like C#, Java, Python, JavaScript, Groovy,
+Katalon, Jenkins and so on.
+<br>
+What I really see as a difference between countries like Canada, US and Brazil is the culture.
+<br>
+Here (when I started as a Software Developer) I felt that an intership is mandatory to be a Software Engineer, job titles has a... I don't really know the real meaning here &#1F605.
+<br>
+To be a Junior Developer you have to be an intern, to be a Mid-Level Developer you have to work 4-5 years as a Junior Developer and to be a Senior Developer you have to work more 3-8 years as a Mid-Level Developer.
+<br>
+<br>
+What I did was to create 2 (two) plans: 
+<ol>
+    <li> Do a intership in some company</li>
+    <li> Do my own intership, my own bootcamp</li>
+</ol>
+When I was looking for an intership I really wanted to learn, I was willing to do 2-3 interships just to learn, do my own Bootcamp, build things, work on Side Projects
+(<a href="https://github.com/GabrielSlima/Static-Project" target="_blank">Static Project</a> was a really cool project to build).
+<br>
+Even today I still do that, I still work to learn, I still work on Side Projects and isn't wrong, I just was thinking different. Build things, test different things, that's my core.
+<br>
+<br>
+But the reallity wasn't like that, companies was looking to hire interns to a different porpouse: To do the job of a experienced developer.
+<br>
+The "logical" thinking was: 3-4 Software Developer interns to use the place of a Mid-Level Developer, 1-2 to use the place of a Junior-Developer and so on.
+<b>I'm not saying that this is a rule and all companies do that</b>. And it kind makes sense from a management point of view.
+But that was the reallity, and that is the reallity in some companies from what my own friends that are also Software Developers tell me.
+<br>
+I'm not lying to you, when I realized that I was expected to do the job of a more experienced developer I didn't feel that confident, but I accepted the challenge and did the job,
+I needed the job and I wanted to learn, that was an opportunity.
+<br>
+Looking for advices on "how to deal with the scary situation" I found a Youtube Channel of another developer talking about interships alerts.
+One of them was <b>"You have to make sure that what you are doing is not a Lab project - You know, projects that aren't real per say"</b>.
+Powerfull advice, since then I started to feel more confident, I started to ask for new things, to improve the existing things and so on. In that proccess I learned a lot!
+<br>
+<br>
+The point is, the Job Title started to loose the original meaning to me (my original meaning) which was based on many years of experience and started to be more...down to earth.
+I started to worry more about the "value" of my work and started to look for ways to improve those points.
+<br>
+<br>
+Of course you have to worry about "Low paying jobs", <b>You should never intern in a company that you see as a trouble</b>, not a place to learn.
+But you have to be critical about the opportunities, maybe you will learn more in company X than Y, you will have to able to see the big picture.
+And you have the right to choose where to learn, you're not an ignorant creature, you're a human being.
+<br>
+<br>
+Today (2020) that was the major difference, 5 years from now I'll write another article and compare what I'm thinking now with what I'll be thinking &#1F604.
