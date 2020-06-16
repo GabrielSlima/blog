@@ -1,11 +1,5 @@
-Some days ago I was feeling stagnated so I decided to review my goals and actually se what I've accomplhised in the past years.
 I've been studying Software Engineering for almost 5 years now since I got into a <a href="https://pt.wikipedia.org/wiki/Ensino_t%C3%A9cnico" target="_blank" technical school</a> in SP.
 And many things I wouldn't do or would do in a different way.
-<br>
-5 years studying and 2 years working, and the remaining 3 years?
-<br>
-<br>
-Seeing the big picture and taking notes of everything I've accomplhised resulted in this post...
 <br>
 What I would do and what I wouldn't do if I could travel to the past and talk to myself?!!
 <br>
@@ -13,15 +7,27 @@ What I would do and what I wouldn't do if I could travel to the past and talk to
 <h3>Make your own path</h3>
 I spent 2,5 years thinking that to have "good job" I would need a college degree and <b>that was a big mistake</b>.
 Thinking that the only way to have a "good job" is going to a college and getting good grades is very simple and not so smart.
-If you have 40k and a lot of time to spend in a college degree, great, go for it but not everyone have the money/time to do so.
+If you have 40k and a lot of time to spend in a college degree, great, go for it. But not everyone have the money/time to do so.
 <br>
 <br>
 Thinking in that way I was limiting and lying to myself. Almost anything can be learned for free on the internet, so why wait till college?
 Start today and see what happens!
 <br>
 <br>
+<h3>Try learning with free tools first</h3>
+You don't need to spend money on bootcamps, today you have online courses, programming language documentation, books,
+Youtube, Instagram and so many other ways to learn to pogrammimg. Choose one (or all of them) and go for it.
+<br>
+You never asked how professors learned the things they know, the things they're teaching on schools and how they remember everything?
+<br>
+Try <b>Feynman Technique</b>
+<br>
+<br>
 <h3>Be project oriented</h3>
-I got into college (yes, I got into college) I learned to go into all topics of a 600 pages book to learn something
+I always start a project <a href="https://en.wikipedia.org/wiki/Proof_of_concept" target="_blank">Proof of concept</a> are the best way
+to go. It don't need to have the best desing made by human hands, you learn by practicing a lot and brute force.
+<br>
+I got into college (yes, I got into college) I learned to go into all the topics of a 600 pages book to learn something
 and at the end of the day didn't learned anything.
 <br>
 Let's bring some reallity here. You need previous knowledge to do a job? Yes, a little bit, but you need to know the entire Java 8 reference guide?
@@ -32,39 +38,27 @@ The language used in the job was Java :).
 <br>
 And even though the language was Java, they didn't ask me if I've read Java reference guide, the ask me if I could do the job!
 <br>
-The rule is, get the project, break into little pieces, learn the topics individually and finally apply to the project. Can take some time to learn, and implement and
-you can think that your're doing the job twice, but the second, third implementation of a topic will makes sense at the end.
+The key is, get the project, break into little pieces, learn the topics individually (litte proof of concept projects) 
+and finally apply to the project (another proof of concept project, but bigger). Can take some time to learn, and implement and
+you can think that your're doing the job twice, but the second or even third implementation of a topic will makes more sense at
+the end of the day than trying to build the whole thing from start.
 <br>
-You will realize that you actually learned something and can focus on the week points of your knowledge.
+Thik of a car, there's some many parts to work on, so many little things to build and you still have to learn all of them, so start small and
+continue bring on the pieces.
 <br>
 <br>
 <h3>Plans are nothing, replanning is everything</h3>
-I spent 1,5 years in a technical school, the main language was C#, I had a <a href="images/latitude.jpg">horible laptop</a> and no money, so I to improvise...
-I tried some Linux distros:
+I'm a very very methodical and perfectionist person, every sigle thing had to be planned on details.
+And every single thing I planned changed and I got frustrated. So sad...
+<br>
+Be flexible and do the necessary, get frustrade, accept that you didn't accomplished what you've planned, replan, and do the work. 
+<br>
+<br>
 <ul>
-    <li><a href="https://linuxmint.com/">Linux Mint</a></li>
-    <li><a href="https://lubuntu.net/">Lubuntu</a></li>
-    <li><a href="https://www.archlinux.org/">Arch Linux</a></li>
-    <li><a href="https://www.kali.org/">Kali Linux</a></li>
-    <li><a href="https://ubuntu.com/">Ubuntu</a></li>
-</ul>
-And started to study .NET Core...
-<br>
-If you have a goal to learn to code I wouldn't recommend that.
-<br>
-I lost so many time looking and trying different Linux distribution for nothing, I had to do my final project in C# and of course I 
-acquired some Linux knowledge that helped me but what I think I could change was my approach to make money:
-I would:<ul>
-    <li>Look for necessary knowledge to do the job on job posts, duh</li>
-    <li>I would focus in one language</li>
-    <li>I wouldn't spend my energy in something so hard in the beginning. C# had so many things to install and check on</li>
-</ul>
+    <li>Time blocking: instead of study/work 2 hours long, plan just 20-15 min. I started with 10 min and moved on<li>
+    <li>Scrum: Study what adds value to your proof of concept project, prioritize the knowledge to be acquired<li>
+    <li>Prevent burning out: Don't put so many things to do in a day just because you're starting with a time block of 10-15 minutes, apply the Pareto principle<li>
+<ul>
 <br>
 <br>
-<b>My recommendation</b>, start with JavaScript doing some front-end stuff and build a portfolio then move on to the back-end
-to add some business logic to your projects, the language could be Java or Python.
-<br>
-<br>
-- Focus
-- Don't compare yourself to others
-- Learn to communicate
+<h3>Start now, even if don't think you're ready</h3>
