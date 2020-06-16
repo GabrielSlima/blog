@@ -7,5 +7,13 @@
         "author": "Gabriel Lima",
         "date": "2020-03-08",
         "article_file_name": "./articles/softwareengineer.txt"
+    },
+    {
+        "id": 2,
+        "title": "Things I wish I'd known when I started programming",
+        "description": "Just do it.",
+        "author": "Gabriel Lima",
+        "date": "2020-06-15",
+        "article-file-name": "./articles/whatilearned.txt"
     }
 ]
