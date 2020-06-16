@@ -1,3 +1,4 @@
+<div style="text-align: left;">
 When I was starting at programming I did many mistakes and that's ok. But if I'd knew how to prevent them I could saved 
 a lot of time, the time I could invest doing something else.
 
@@ -90,3 +91,4 @@ What do you have to lose? Not getting the job you don't already have???
 <br>
 <br>
 Good luck XD
+</div>
