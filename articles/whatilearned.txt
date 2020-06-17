@@ -13,11 +13,13 @@ But don't worry, you don't have to go through all of this like, and if you do so
 can make you to think that you can't do it, but you can. Just put in the time and don't give up.
 <br>
 <br>
+<br>
 <h3>Make your own path</h3>
 I spent a lot of time thinking that to have "good job" I would need a college degree and <b>that was a big mistake</b>.
 <br>
 Thinking that the only way to have a "good job" is going to a college and getting good grades is very simple and not so smart.
 If you have 40k and a lot of time to spend in a college degree, great, go for it. But not everyone have the money/time to do so.
+<br>
 <br>
 <br>
 Thinking in that way I was limiting and lying to myself. Almost anything can be learned for free on the internet, so why wait till college?
@@ -26,6 +28,7 @@ Thinking in that way I was limiting and lying to myself. Almost anything can be 
 There is no "right" or "perfect" path, of course that the tools (programming language, databases, architecture etc.) can be the same,
 but how do you learn them and how to you and become a "highly qualified expert" (just kidding) on it is on you.
 
+<br>
 <br>
 <br>
 
@@ -41,11 +44,13 @@ Try <b>Feynman Technique</b>
 
 <br>
 <br>
+<br>
 
 <h3>Be project oriented</h3>
 <a href="https://en.wikipedia.org/wiki/Proof_of_concept" target="_blank">Proof of concept</a> projects are the best way
 to go. It don't need to have the best desing made by human hands or the best architecture that the human has ever seen,
 you learn by practicing a lot, testing things, doing mistakes and debbuging, literally by brute force.
+<br>
 <br>
 <br>
 I got into college (yes, I got into college) I learned to go into all the topics of a 600 pages book to learn something
@@ -69,6 +74,7 @@ so start small and bring all the pieces together. Check <a href="https://en.wiki
 
 <br>
 <br>
+<br>
 
 <h3>Plans are nothing, replanning is everything</h3>
 I'm a very very methodical and perfectionist person, every single thing had to be planned in details.
@@ -77,17 +83,20 @@ And every single thing I planned changed and I got frustrated. So sad :(
 Be flexible and do the necessary, get frustrade, accept that you didn't accomplished what you've planned, replan, and do the work. 
 <br>
 <br>
+<br>
 <ul>
-    <li>Time blocking: instead of study/work 2 straight hours long, plan just 15 min - 20 min. I started with 10 min and moved on<li>
-    <li>Scrum: Study what adds value to your proof of concept project, prioritize the knowledge to be acquired<li>
-    <li>Prevent burning out: Don't put so many things to do in a day just because you're starting with a time block of 10-15 minutes, apply the Pareto principle<li>
-<ul>
+    <li>Time blocking: instead of study/work 2 straight hours long, plan just 15 min - 20 min. I started with 10 min and moved on</li>
+    <li>Scrum: Study what adds value to your proof of concept project, prioritize the knowledge to be acquired</li>
+    <li>Prevent burning out: Don't put so many things to do in a day just because you're starting with a time block of 10-15 minutes, apply the Pareto principle</li>
+</ul>
+<br>
 <br>
 <br>
 <h3>Start now, even if don't think you're ready</h3>
 You will never feel ready or feel that you know enough, but you built those projects, youd did so many proof of concept projects, right?
 <br>
 What do you have to lose? Not getting the job you don't already have???
+<br>
 <br>
 <br>
 Good luck XD
