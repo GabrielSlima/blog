@@ -85,7 +85,7 @@ Be flexible and do the necessary, get frustrade, accept that you didn't accompli
 <br>
 <ol>
     <li><b>Time blocking:</b> instead of study/work 2 straight hours long, plan just 15 min - 20 min. I started with 10 min and moved on</li>
-    <li><b>Scrum:<b> Study what adds value to your proof of concept project, prioritize the knowledge to be acquired</li>
+    <li><b>Scrum:</b> Study what adds value to your proof of concept project, prioritize the knowledge to be acquired</li>
     <li><b>Prevent burning out:</b> Don't put so many things to do in a day just because you're starting with a time block of 10-15 minutes, apply the Pareto principle</li>
 </ol>
 <br>
