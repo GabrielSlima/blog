@@ -33,7 +33,7 @@ $(window).ready(function () {
             if(!postId) {
                 return view.initErrorFragment();
             }
-
+            debugger;
             controller.getArticlesInfos();
 
             if(articlesInfosModel.articles_info.payload.length === 0) {
