@@ -1,19 +1,19 @@
 
 [
     {
-        "id": "1",
-        "title": "What it looks like to be a Software Engineer in Brazil",
-        "description": "Software Engineer in Brazil, how companies see development professionals... ",
-        "author": "Gabriel Lima",
-        "date": "2020-03-08",
-        "article_file_name": "./articles/softwareengineer.txt"
-    },
-    {
         "id": "2",
         "title": "Things I wish I'd known when I started programming",
         "description": "Just do it.",
         "author": "Gabriel Lima",
         "date": "2020-06-15",
         "article_file_name": "./articles/whatilearned.txt"
+    },
+    {
+        "id": "1",
+        "title": "What it looks like to be a Software Engineer in Brazil",
+        "description": "Software Engineer in Brazil, how companies see development professionals... ",
+        "author": "Gabriel Lima",
+        "date": "2020-03-08",
+        "article_file_name": "./articles/softwareengineer.txt"
     }
 ]
