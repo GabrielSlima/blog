@@ -3,17 +3,22 @@ When I was starting at programming I did many mistakes and that's ok. But if I'd
 a lot of time, the time I could invest doing something else.
 
 <br>
+<br>
 
 Things like "I'm going in the right path?", "I'm doing it right?", "Should I do X, Y or Z?",
 "What to learn and spend my time?", "How to choose my first programming language?", "Should I surrender and pay to learn to code?",
 "What is the best way to learn programming?" and so many other questions where comming into my head that I ended up overwhelmed :/
 
 <br>
-But don't worry, you don't have to go through all of this like, and if you do so, that's ok, just continue and be aware that this
+<br>
+
+But don't worry, you don't have to go through all of this like me, and if you do so, that's ok, just continue and be aware that this
 can make you to think that you can't do it, but you can. Just put in the time and don't give up.
+
 <br>
 <br>
 <br>
+
 <h3>Make your own path</h3>
 I spent a lot of time thinking that to have "good job" I would need a college degree and <b>that was a big mistake</b>.
 <br>
@@ -37,9 +42,10 @@ the documentation of the language (I use them a lot), books (great for examples)
 Youtube (great for visual things like desing), Instagram (great for ideas) and so many other ways to learn to pogrammimg.
 Choose one (or all of them) and go for it.
 <br>
+<br>
 You never asked how professors learned the things they know, the things they're teaching on schools and how they remember everything?
 <br>
-Try <b>Feynman Technique</b>
+Try the <b>Feynman Technique</b>.
 
 <br>
 <br>
@@ -90,7 +96,7 @@ Be flexible and do the necessary, get frustrade, accept that you didn't accompli
 <br>
 <br>
 
-<h3>Start now, even if don't think you're ready</h3>
+<h3>Start now, even if don't feel ready</h3>
 You will never feel ready or feel that you know enough, but you built those projects, youd did so many proof of concept projects, right?
 <br>
 What do you have to lose? Not getting the job you don't already have???
