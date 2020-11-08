@@ -1,5 +1,13 @@
 
 [
+	{
+        "id": "3",
+        "title": "Self Doubt",
+        "description": "A different way of thinking when you feel insecure in life",
+        "author": "Gabriel Lima",
+        "date": "2020-11-08",
+        "article_file_name": "./articles/selfdoubt.txt"
+    },
     {
         "id": "2",
         "title": "Things I wish I'd known when I started programming",
