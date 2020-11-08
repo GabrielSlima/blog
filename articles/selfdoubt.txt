@@ -3,10 +3,12 @@ Recently I helped a family member with some tasks from college and  with  some  
 We sat down with some coffe and started to go throught some  stuff at the computer.
 It was  cool, most of the  tools are "free"  and he can learn to build some cool projects if he continues with it.
 <br>
-But he said something very interesting to me when we where  talking about the market and what we do in a daily bases.
-He works with Network monitoring and plans to switch his careers to Software Engineering.
 <br>
-He told me that he has self doubt and doesn't know if is capable of doing the job in Software Engineering. That's interesting because  that's exactly the kind of thought I've had  in the  beginning 
+But he said something very interesting to me when we where  talking about the market and what we do in a daily bases.
+He works with Network Monitoring and plans to switch his career to Software Engineering.
+<br>
+<br>
+He told me that he has self doubt and doesn't know if he is capable of doing the job in Software Engineering. That's interesting because  that's exactly the kind of thought I've had  in the  beginning 
 and is the kind of thought I have in every new project. I'll tell you what another very experienced developers told me and eventually I told  him.
 <br>
 <br>
