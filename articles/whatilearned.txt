@@ -1,6 +1,6 @@
 <div style="text-align: left;">
-When I was starting at programming I did many mistakes and that's ok. But if I'd knew how to prevent them I could saved 
-a lot of time, the time I could invest doing something else.
+When I was starting at programming I did many mistakes and that's ok. But if I'd knew how to prevent them I could've  saved 
+a lot of time to invest doing something else.
 
 <br>
 <br>
