@@ -12,7 +12,7 @@ Api Gateways have a very important role in projects specially when it comes to b
 
 Gateways can be present at any of the seven layers of the <a href="https://en.wikipedia.org/wiki/OSI_model" target="blank">OSI Model</a>.
 <br>
-Api Gateways operates on the Application Layer (Layer 7) where the Http/Https communication happens right in the middle of the client and server communication.
+Api Gateways operates on the Application Layer (Layer 7) where the Http/Https communication happens right in the middle of the client and server communication:
 <img class="post-img" src="images/api-gateway/1.PNG">
 
 <br>
