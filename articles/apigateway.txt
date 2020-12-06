@@ -1,6 +1,6 @@
 <div style="text-align: left;">
 
-Imagine a complex project with a complex architecture. Imagine having to rebuild one of this projects's features because it has multiples integrations that your project doesn't need or because you see a potential security flaw being developed with this new integration.
+Imagine a complex project with a complex architecture. Imagine having to rebuild one of this project's features because it has multiples integrations that your project doesn't need or because you see a potential security flaw being developed with this new integration.
 <br>
 Imagine having to deal with the complexity of another integrations because there's no Api Governance and standards to be followed.
 
