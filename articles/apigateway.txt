@@ -32,7 +32,7 @@ Example of different projects with different databases:
 
 <h3>Conclusion</h3>
 
-An Api Gateway is an application that intermediates Client/Servers communication. It acts as an bridge between networks or applications inside the same network.
+An Api Gateway is an application that intermediates Client/Server communication. It acts as an bridge between networks or applications inside the same network.
 <br>
 The Api Gateway sees every request, that makes easier for monitoring, promote best practices and prevent code duplication because all APIs can be found in one place, the Api Gateway.
 </div>
