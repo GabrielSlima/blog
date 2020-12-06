@@ -7,8 +7,7 @@ Imagine having to deal with the complexity of another integrations because there
 <br>
 <br>
 
-Api Gateways have a very important role in projects specially when it comes to big companies. Big companies have lots of internal automation and partnership with another
-companies. It's important to keep track of what's available to use between the teams inside and outside the company and build architectures for security and performance monitoring. 
+Api Gateways have a very important role in projects specially when it comes to big companies. Big companies have lots of internal automations and partnerships with other companies. It's important to keep track of what's available to use between the teams inside and outside the company and build architectures for security and performance monitoring. 
 <br>
 
 Gateways can be present at any of the seven layers of the <a href="https://en.wikipedia.org/wiki/OSI_model" target="blank">OSI Model</a>.
