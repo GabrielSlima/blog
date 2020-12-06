@@ -14,19 +14,19 @@ companies. It's important to keep track of what's available to use between the t
 Gateways can be present at any of the seven layers of the <a href="https://en.wikipedia.org/wiki/OSI_model" target="blank">OSI Model</a>.
 <br>
 Api Gateways operates on the Application Layer (Layer 7) where the Http/Https communication happens right in the middle of the client and server communication.
-<img src="../images/api-gateway/1.png">
+<img src="images/api-gateway/1.png">
 
 <br>
 <br>
 
 With an Api Gateway every request to the servers can be controlled. That's an exemple of a backend with an distributed architecture:
-<img src="../images/api-gateway/2.png">
+<img src="images/api-gateway/2.png">
 
 <br>
 <br>
 
 Example of different projects with different databases:
-<img src="../images/api-gateway/3.png">
+<img src="images/api-gateway/3.png">
 
 <br>
 <br>
