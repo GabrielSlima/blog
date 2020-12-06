@@ -1,5 +1,13 @@
 
 [
+    {
+        "id": "4",
+        "title": "What's an API Gateway?",
+        "description": "Promoting API Best practices and monitoring projects",
+        "author": "Gabriel Lima",
+        "date": "2020-12-06",
+        "article_file_name": "./articles/apigateway.txt"
+    },
 	{
         "id": "3",
         "title": "Self Doubt",
