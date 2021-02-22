@@ -81,13 +81,11 @@
     <img class="post-img" src="images/getting-started-with-programming/desired-skills.png"/>
 
     <b>2 - Choose the most appearing skiils and stablish an easy and fast routine to acquire them</h4></b>
-    I'm gonna teel you what you want, you want an easy and fast routine that brings results. So here is one suggestion of what I would do:
+    I'm gonna teel you what you want, you want an easy and fast routine that brings results. So here is one suggestion of what I would do: Set a goal <b>to build 3 projects using the new skills.</b>
     <br>
-    <b>Set a goal of building 3 projects using the new skills.</b>
     <br>
-    I would break this goal in some sub goals:
-    <br>
-    <b>Set a goal to study/practice/work on side projects programming 1 hour/day, 5 days a week</b>
+    I would break this goal in some sub goals: 
+    Set a goal <b>to study/practice/work on side projects programming 1 hour/day, 5 days a week:</b>
     <ul>
         <li><b>First month:</b> At least once a week, work on build those skiils for 1 hour</li>
         <li><b>Second month:</b> At least twice a week, work to build those skiils for 1 hour</li>
