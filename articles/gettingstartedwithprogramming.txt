@@ -83,8 +83,10 @@
     <b>2 - Choose the most appearing skiils and stablish an easy and fast routine to acquire them</h4></b>
     I'm gonna teel you what you want, you want an easy and fast routine that brings results. So here is one suggestion of what I would do:
     <br>
-    <ul><b>Set a goal of building 3 projects using the new skills</b>
-        I would break this goal in some sub goals:
+    <b>Set a goal of building 3 projects using the new skills</b>
+    <br>
+    I would break this goal in some sub goals:
+    <ul>
         <li><b>Set a goal of study/practice/work on side projects programming 1 hour/day, 5 days a week</b>
             <ul>
                 <li><b>First month:</b> At least once a week, work on build those skiils for 1 hour</li>
