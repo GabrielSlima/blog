@@ -1,7 +1,7 @@
 <div style="text-align: left;">
-    So as the days goes some friends or friends of my friends get in touch to know where to learn how to code or how to find a mentor and so on...
+    So as the days goes by some friends or friends of my friends get in touch to know how or where to learn how to code or how to find a mentor and so on...
     <br>
-    Today i'm gonna tell how I learned to code (a summary), my mistakes and what I would do to accomplish this goal if I was looking to learn everything from the beginning again...
+    Today i'm gonna tell how I learned to code (a summary), some of my mistakes and what I would do to accomplish this goal if I was looking to learn everything from the beginning again...
 
     <br>
     <br>
@@ -20,7 +20,7 @@
     What I'm trying to say is that I was always in contact with programming but it was all about the fun. That's it.
     <br>
     <br>
-    In 2015 I decided to enroll in technical school (in Brazil it's normal to enroll in some kind of course while in high school,
+    In 2015 I decided to enroll in a technical school (in Brazil it's normal to enroll in some kind of course while in high school,
     generally, people choose technical schools because most of them are "free") and the only thing I was sure about was that I was going to work
     with computers.
     <br>
@@ -31,13 +31,13 @@
     <br>
 
     <h3>My first internship</h3>
-    The technical course ended up in december, 2016 (one and a half year of Software Development course) and a lot o things was going on (another blog post).
+    The technical course ended up in december, 2016 (one and a half year of Software Development course) and a lot o things was going on (maybe will tell you in another blog post).
     The thing is, I was more than never sure that I was going to be a Software Developer but at this point I was in the wrong place in terms of knowledge.
     <br>
-    During the course you take classes from Analisys of Software requirements to mobile development and I decided to learn back-end development <b>but</b> I chose C# windows forms as specialization :).
+    During the course you take classes from Analisys of Software Requirements to Mobile Development and I decided to learn Backend Development <b>but</b> I chose C# Windows Forms as specialization :).
     <br>
-    During the course I took the right decision of specialization, so what I did was to focus on classes that was related to Backend development 
-    (C# and SQL) but what I wasn't aware that time was <b>what was on demand in the market was Web Development, not Windows forms Development</b>.
+    During the course I also took the right decision of specializing in one groupo of Technologies, so what I did was to focus on classes that was related to Backend development 
+    (C# and SQL) but what I wasn't aware that time was that <b>what was on demand in the market was Web Development, not Windows forms Development</b>.
     And that was <b>my first mistake: not being aware of the skiils that companies needed to accomplish their goals</b>.
     <br>
     When I realized this I created a new system to enroll in College and a new one to study Web Development and that was the schedule:
@@ -59,10 +59,10 @@
 
     <br>
     <br>
-    As you can see, it took me one and a half a year to get my first internship and it came from a Junior Software Engineer position, not an internship position.
+    As you can see, it took me one and a half a year to get my first internship since the end of my technical course and it came from a Junior Software Engineer position, not an internship position.
     <br>
-    When I realized that I could be paid as a beginner in Software Engineering I started to apply for Junior postions and it worked, at some degree.
-    They offered me a intern postion because i didn't have a degree...Anyway, I accepted it and started working.
+    When I realized that I could be paid as a beginner in Software Engineering I started to apply for Junior positions and it worked, at some degree.
+    They offered me a intern position because I didn't have a degree...Anyway, I accepted it and started working.
     <br>
     <br>
 
@@ -72,10 +72,10 @@
     <br>
     <br>
 
-    That being said here is <h3>what I would do to learn how to code</h3>:
+    That being said here is <h3>what would  I  do to learn how to code today:</h3>
     <b>1 - First of all, start with the skills that companies needs</b>
     <br>
-    Go through job posts and start listing all skills needed, don't be afraid, there's lots of things in job posts and they know that's it's super super hard (maybe impossible) to find someone that knows every single thing described there.
+    Go through job posts and start listing all desired skills, don't be afraid, there's lots of things in job posts and they know that's it's super super hard (maybe impossible) to find someone that knows every single thing described there.
     <br> Most companies don't need a unicorn, they need someone with some knowledge (Java, C#, JS, Node and so on) that is open to learn new things and do the job. 
     So start listing, I used an excel table and created something like that:
     <img class="post-img" src="images/getting-started-with-programming/desired-skills.png"/>
@@ -85,13 +85,13 @@
     <br>
     <ul><b>Set a goal of building 3 projects using the new skills</b>
         I would break this goal in some sub goals:
-        <li>
-            <ul><b>Set a goal of study/practice/work on side projects programming 1 hour/day, 5 days a week</b>
-                <li>First month: <b>At least once a week, work on build those skiils for 1 hour</b></li>
-                <li>Second month: <b>At least twice a week, work on build those skiils for 1 hour</b></li>
-                <li>Third month: <b>At least tree times a week, work on build those skiils for 1 hour</b></li>
-                <li>Foutrh month: <b>At least four times a week, work on build those skiils for 1 hour</b></li>
-                <li>Fifth month: <b>At least five times a week, work on build those skiils for 1 hour</b></li>
+        <li><b>Set a goal of study/practice/work on side projects programming 1 hour/day, 5 days a week</b>
+            <ul>
+                <li><b>First month:</b> At least once a week, work on build those skiils for 1 hour</li>
+                <li><b>Second month:</b> At least twice a week, work to build those skiils for 1 hour</li>
+                <li><b>Third month:</b> At least tree times a week, work to build those skiils for 1 hour</li>
+                <li><b>Foutrh month:</b> At least four times a week, work to build those skiils for 1 hour</li>
+                <li><b>Fifth month:</b> At least five times a week, work to build those skiils for 1 hour</li>
             </ul>
         </li>
     </ul>
@@ -103,7 +103,7 @@
     <br>
     You can use a template if you prefer. If in your list of "companies desired skills" doesn't have HTML and CSS you can maybe hire someone
     on fiver or set a new goal to learn how to build a website and build your own.
-
+    <br>
     <br>
     <b>4 - Resume and start applying</b>
     <br>
@@ -112,12 +112,11 @@
         <li>Habit of studying everyday, five times a week</li>
         <li>Knows how to search on Google</li>
         <li>Have 3 projects and your own website</li>
-        <li>Habit of studying everyday, five times a week</li>
     </ul>
     So prepare your resume and start applying, don't be afraid of being rejected and don't worry too much with job descriptions. Just apply and that's it.
     <br>
-    Search on Youtube how to build a resume as a Software Engineer/Software Developer and start to build one. To test if my resume is working
-    I start applying for job during the week and if I don't have at least 1 reply in 2 weeks I go back and start to look for examples and ways to improve it.
+    Search on Youtube how to build a resume as a Software Engineer/Software Developer and build one. To test if my resume is working
+    I start applying for jobs during the week and if I don't have at least 1 reply in 2 weeks I go back and start to look for examples and ways to improve it.
 
     <br>
     <br>
@@ -125,33 +124,33 @@
     <ul>
         <li><a href="https://www.hackerrank.com/" target="blank">Hackerrank</a>  - 30 days of code</li>
         <li><a href="https://www.freecodecamp.org/learn" target="blank">Freecodecamp</a> - Would choose based on my skills list. Strongly recomend following this one first </li>
-        <li><a href="https://www.youtube.com/" target="blank">Youtube</a> - You can start with "<SKILL> course", example: "mongodb course"</li>
+        <li><a href="https://www.youtube.com/" target="blank">Youtube</a> - You can start with "SKILL course", example: "mongodb course"</li>
     </ul>
     <br>
     <br>
 
-    <h3>Question that you may have right now and maybe I can answer some of them</h3>
+    <h3>Questions that you may have right now and maybe I can answer some of them</h3>
     <ul>
         <li><b>Does age matters?</b> Short answer: No. Long answer: No</li>
         <li><b>What projects should I build?</b> Any project you want. The most common thing is to clone existing platforms or automate something for yourself
             <br>I did the simplest project one can imagine for a portfolio: <a href="https://gabrielslima.github.io/CatClicker/" target="blank">Cat Clicker</a>
-             - Just a web page with a cat photo. When you click it counts 1 and show the total value on the circle in the middle of the page.
+             - Just a web page with a cat photo. When you clicks on the photo it counts 1 and shows the total value the the circle on the middle of the page.
         </li>
-        <li><b>Udemy courses are worth it? Yes if it has projects to build or you have a project in mind and wanna use the course as a way of getting the necessary knowledge</b></li>
+        <li><b>Udemy courses are worth it?</b> Yes if it has projects to build or you have a project in mind and wanna use the course as a way of getting the necessary knowledge</b></li>
         <li><b>Should I focus on project building?</b> Yeeess, always</li>
-        <li><b>How to manage my projects?</b>Git and Github</li>
-        <li><b>Am I smart enough to be a developer?</b>Can you spell "Pizza"? Then you are. Honestly, since you are able to sit for long hours you are able to be a developer. It just requires practice, like any other things</li>
-        <li><b>Which programming language would I choose?</b>Doesn't matter, just get one and stick with it till you've accomplished 3 projects. But if you want to know so badly, I would choose Javascript/NodeJS in 2021</li>
-        <li><b>It's going to be easy to find a job?</b>No, that's why you are working with projects and a Web portfolio. To show your potential employee that you have the necessary skills to do the job</li>
-        <li><b>What if it doesn't work?</b>If you can't wait anymore and you've tried <b>almost everything</b> to get a job or maybe it's taking too long, you can try a online code bootcamp, prefer those with projects to build.
+        <li><b>How to manage my projects?</b> Git and Github + Kanban</li>
+        <li><b>Am I smart enough to be a developer?</b> Can you spell "Pizza"? Then you are. Honestly, since you are able to sit for long hours you are able to be a developer. It just requires practice, like any other things</li>
+        <li><b>Which programming language would I choose?</b> Doesn't matter, just get one and stick with it till you've accomplished 3 projects. But if you want to know so badly, I would choose Javascript/NodeJS in 2021</li>
+        <li><b>It's going to be easy to find a job?</b> No, that's why you are working with projects and a Web portfolio, to show your to a potential employee that you have the necessary skills to do the job</li>
+        <li><b>What if it doesn't work?</b> If you can't wait anymore and you've tried <b>almost everything</b> to get a job or maybe it's taking too long, you can try a online code bootcamp, prefer those with projects to build.
             <br>
-            Otherwise, reset the goals, work on improve the existing projects, resume, start looking into 1 or 2 more projects to build and start applying again.
+            Otherwise, reset the goals, work to improve the existing projects, resume, start looking into 1 or 2 more projects to build and start applying again.
         </li>
         <li><b>I chose Web development but don't know how to build "pretty" websites or I don't have much creativity yet, what do you recommend?</b>
             Build your websites based on another websites. Example: Lets say you want to build a project of your favorite movies and Tv shows. You can look for "gallery website design" on Google and just see what you want on your project.
         </li>
-        <li><b>Would I enroll in a College or University?</b>Only if I "failed" trying to learn for free, with a code bootcamp and resetting my goals to improve my portfolio and resume </li>
-        <li><b>Do you have another recommendation?</b>Don't be lazy</li>
+        <li><b>Would I enroll in a College or University?</b> Only if I "failed" trying to learn for free, with a code bootcamp and resetting my goals to improve my portfolio and resume </li>
+        <li><b>Do you have another recommendation?</b> Don't be lazy</li>
 
     </ul>
     <br>
