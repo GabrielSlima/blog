@@ -72,7 +72,7 @@
     <br>
     <br>
 
-    That being said here is <h3>what would  I  do to learn how to code today:</h3>
+    That being said here is <h3>what I would do to learn how to code today:</h3>
     <b>1 - First of all, start with the skills that companies needs</b>
     <br>
     Go through job posts and start listing all desired skills, don't be afraid, there's lots of things in job posts and they know that's it's super super hard (maybe impossible) to find someone that knows every single thing described there.
