@@ -83,21 +83,18 @@
     <b>2 - Choose the most appearing skiils and stablish an easy and fast routine to acquire them</h4></b>
     I'm gonna teel you what you want, you want an easy and fast routine that brings results. So here is one suggestion of what I would do:
     <br>
-    <b>Set a goal of building 3 projects using the new skills</b>
+    <br>
+    <b>Set a goal of building 3 projects using the new skills.</b>
     <br>
     I would break this goal in some sub goals:
+    <b>Set a goal to study/practice/work on side projects programming 1 hour/day, 5 days a week</b>
     <ul>
-        <li><b>Set a goal of study/practice/work on side projects programming 1 hour/day, 5 days a week</b>
-            <ul>
-                <li><b>First month:</b> At least once a week, work on build those skiils for 1 hour</li>
-                <li><b>Second month:</b> At least twice a week, work to build those skiils for 1 hour</li>
-                <li><b>Third month:</b> At least tree times a week, work to build those skiils for 1 hour</li>
-                <li><b>Foutrh month:</b> At least four times a week, work to build those skiils for 1 hour</li>
-                <li><b>Fifth month:</b> At least five times a week, work to build those skiils for 1 hour</li>
-            </ul>
-        </li>
+        <li><b>First month:</b> At least once a week, work on build those skiils for 1 hour</li>
+        <li><b>Second month:</b> At least twice a week, work to build those skiils for 1 hour</li>
+        <li><b>Third month:</b> At least tree times a week, work to build those skiils for 1 hour</li>
+        <li><b>Foutrh month:</b> At least four times a week, work to build those skiils for 1 hour</li>
+        <li><b>Fifth month:</b> At least five times a week, work to build those skiils for 1 hour</li>
     </ul>
-
     <b>3 - The "last" project</b>
     <br>
     The last project can be your own Website showing the projects built with the new skills you acquired. You can use anything to build your Website,
