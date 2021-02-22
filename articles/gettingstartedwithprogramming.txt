@@ -41,7 +41,7 @@
     And that was <b>my first mistake: not being aware of the skiils that companies needed to accomplish their goals</b>.
     <br>
     When I realized this I created a new system to enroll in College and a new one to study Web Development and that was the schedule:
-    <img src="images/getting-started-with-programming/schedule.png"/>
+    <img class="post-img" src="images/getting-started-with-programming/schedule.png"/>
 
     <br>
     <br>
@@ -66,7 +66,7 @@
     <br>
     <br>
 
-    I just want to make it clear that all I'm saying here is <b>based on my experience<b> learning how to code and getting my first interviews. 
+    I just want to make it clear that all I'm saying here is <b>based on my experience</b> learning how to code and getting my first interviews. 
     That's just a summary of what happened till I got my first internship. So as I said on this blog post, <a href="https://gabrielslima.github.io/blog/post.html?id=2" target="blank">make your own path</a> 
     and take advantage of my experience to build yours.
     <br>
@@ -78,7 +78,7 @@
     Go through job posts and start listing all skills needed, don't be afraid, there's lots of things in job posts and they know that's it's super super hard (maybe impossible) to find someone that knows every single thing described there.
     <br> Most companies don't need a unicorn, they need someone with some knowledge (Java, C#, JS, Node and so on) that is open to learn new things and do the job. 
     So start listing, I used an excel table and created something like that:
-    <img src="images/getting-started-with-programming/desired-skills.png"/>
+    <img class="post-img" src="images/getting-started-with-programming/desired-skills.png"/>
 
     <b>2 - Choose the most appearing skiils and stablish an easy and fast routine to acquire them</h4></b>
     I'm gonna teel you what you want, you want an easy and fast routine that brings results. So here is one suggestion of what I would do:
