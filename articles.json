@@ -1,6 +1,14 @@
 
 [
     {
+        "id": "5",
+        "title": "What would I do if I was trying to learn how to code again?",
+        "description": "Would be easier if I wasn't in College?",
+        "author": "Gabriel Lima",
+        "date": "2020-02-21",
+        "article_file_name": "./articles/gettingstartedwithprogramming.txt"
+    },
+    {
         "id": "4",
         "title": "What's an API Gateway?",
         "description": "Promoting API Best practices and monitoring projects",
