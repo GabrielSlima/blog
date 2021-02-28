@@ -8,10 +8,10 @@
 
     <h3>My first contact with programming</h3>
     My first contact with programming was in 2015, I've never heard about programming till that year, well, at least I thought so.
-    The funny thing about it is that I was into gamming and I was always involed with tools to cheat in games,
-    I started a <a href="http://clanzonekill.blogspot.com/" target="blank">blog</a> in Google Blogger to promote my team that I started with some friends. The idea
-    was to start my own Clan and the "home" was a server that I created using my dual core, no-ip and tools like Hamachi. Even thought during all of these things that I was work on 
-    I was using tools like HTML, CSS a little bit of JS, Hexadecimal system servers, TCP/IP connections I never realized that what I was doing was about Computer Science...
+    The funny thing about this is that I was into gamming and I was always involved with tools to cheat. I started a <a href="http://clanzonekill.blogspot.com/" target="blank">blog</a> in Google Blogger to promote my team that I started with some friends. The idea
+    was to start my own Clan and the "home" was a server that I created using my dual core, no-ip and tools like Hamachi.
+    <br>
+    Even thought while working on those things I was using tools like HTML, CSS a little bit of JS, Hexadecimal system servers and TCP/IP connections I never realized that what I was doing was about Computer Science...
 
     <br>
     To me all I was doing was about my goals of building something or to configure something to use inside the games.
@@ -31,12 +31,13 @@
     <br>
 
     <h3>My first internship</h3>
-    The technical course ended up in december, 2016 (one and a half year of Software Development course) and a lot o things was going on (maybe will tell you in another blog post).
+    The technical course ended up in december, 2016 (one and a half year of Software Development course) and a lot o things was going on (maybe I'll tell you in another blog post).
     The thing is, I was more than never sure that I was going to be a Software Developer but at this point I was in the wrong place in terms of knowledge.
     <br>
-    During the course you take classes from Analisys of Software Requirements to Mobile Development and I decided to learn Backend Development <b>but</b> I chose C# Windows Forms as specialization :).
     <br>
-    During the course I also took the right decision of specializing in one groupo of Technologies, so what I did was to focus on classes that was related to Backend development 
+    During the course you take classes from Analisys of Software Requirements to Mobile Development so I decided to learn Backend Development <b>but</b> I chose C# Windows Forms as specialization :).
+    <br>
+    During the course I also took the right decision of specializing in one group of Technologies, so what I did was to focus on classes that was related to Backend development 
     (C# and SQL) but what I wasn't aware that time was that <b>what was on demand in the market was Web Development, not Windows forms Development</b>.
     And that was <b>my first mistake: not being aware of the skiils that companies needed to accomplish their goals</b>.
     <br>
@@ -77,17 +78,19 @@
     <br>
     Go through job posts and start listing all desired skills, don't be afraid, there's lots of things in job posts and they know that's it's super super hard (maybe impossible) to find someone that knows every single thing described there.
     <br> Most companies don't need a unicorn, they need someone with some knowledge (Java, C#, JS, Node and so on) that is open to learn new things and do the job. 
-    So start listing, I used an excel table and created something like that:
+    So start listing...
+    <br>
+    I used an excel table and created something like that:
     <img class="post-img" src="images/getting-started-with-programming/desired-skills.png"/>
 
     <b>2 - Choose the most appearing skiils and stablish an easy and fast routine to acquire them</h4></b>
-    I'm gonna teel you what you want, you want an easy and fast routine that brings results. So here is one suggestion of what I would do: Set a goal <b>to build 3 projects using the new skills.</b>
+    I'm gonna teel you what you want, you want an <b>easy and fast routine that brings results</b>. So here is one suggestion of what I would do: Set a goal <b>to build 3 projects using the new skills.</b>
     <br>
     <br>
     I would break this goal in some sub goals: 
     Set a goal <b>to study/practice/work on side projects programming 1 hour/day, 5 days a week:</b>
     <ul>
-        <li><b>First month:</b> At least once a week, work on build those skiils for 1 hour</li>
+        <li><b>First month:</b> At least once a week, work to build those skiils for 1 hour</li>
         <li><b>Second month:</b> At least twice a week, work to build those skiils for 1 hour</li>
         <li><b>Third month:</b> At least tree times a week, work to build those skiils for 1 hour</li>
         <li><b>Foutrh month:</b> At least four times a week, work to build those skiils for 1 hour</li>
@@ -121,7 +124,7 @@
     <ul>
         <li><a href="https://www.hackerrank.com/" target="blank">Hackerrank</a>  - 30 days of code</li>
         <li><a href="https://www.freecodecamp.org/learn" target="blank">Freecodecamp</a> - Would choose based on my skills list. Strongly recomend following this one first </li>
-        <li><a href="https://www.youtube.com/" target="blank">Youtube</a> - You can start with "SKILL course", example: "mongodb course"</li>
+        <li><a href="https://www.youtube.com/" target="blank">Youtube</a> - You can start looking for "SKILL course", example: "mongodb course"</li>
     </ul>
     <br>
     <br>
@@ -129,22 +132,24 @@
     <h3>Questions that you may have right now and maybe I can answer some of them</h3>
     <ul>
         <li><b>Does age matters?</b> Short answer: No. Long answer: No</li>
-        <li><b>What projects should I build?</b> Any project you want. The most common thing is to clone existing platforms or automate something for yourself
+        <li><b>What projects should I build?</b> Any project you want. The most common thing is to clone existing platforms or automate something for yourself.
             <br>I did the simplest project one can imagine for a portfolio: <a href="https://gabrielslima.github.io/CatClicker/" target="blank">Cat Clicker</a>
-             - Just a web page with a cat photo. When you clicks on the photo it counts 1 and shows the total value the the circle on the middle of the page.
+             - Just a web page with a cat photo. When you clicks on the photo it counts 1 and shows the total value in the circle on the middle of the page
         </li>
         <li><b>Udemy courses are worth it?</b> Yes if it has projects to build or you have a project in mind and wanna use the course as a way of getting the necessary knowledge</b></li>
-        <li><b>Should I focus on project building?</b> Yeeess, always</li>
-        <li><b>How to manage my projects?</b> Git and Github + Kanban</li>
-        <li><b>Am I smart enough to be a developer?</b> Can you spell "Pizza"? Then you are. Honestly, since you are able to sit for long hours you are able to be a developer. It just requires practice, like any other things</li>
+        <li><b>Should I focus on building projects?</b> Yeeess, always</li>
+        <li><b>How to manage my projects?</b> Git and Github + Kanban. I've writen a blog post that talks a little bit about <a href="https://gabrielslima.github.io/blog/post.html?id=2">time management here</a></li>
+        <li><b>Am I smart enough to be a developer?</b> Can you spell "Pizza"? Then you are. Honestly, since you are able to sit for long hours playing Super Smash Bros for example you are able to be a developer. It just requires practice, like any other things</li>
         <li><b>Which programming language would I choose?</b> Doesn't matter, just get one and stick with it till you've accomplished 3 projects. But if you want to know so badly, I would choose Javascript/NodeJS in 2021</li>
-        <li><b>It's going to be easy to find a job?</b> No, that's why you are working with projects and a Web portfolio, to show your to a potential employee that you have the necessary skills to do the job</li>
+        <li><b>It's going to be easy to find a job?</b> No, that's why you are working on projects and a Web portfolio, to show to a potential employee that you have the necessary skills to do the job</li>
         <li><b>What if it doesn't work?</b> If you can't wait anymore and you've tried <b>almost everything</b> to get a job or maybe it's taking too long, you can try a online code bootcamp, prefer those with projects to build.
             <br>
             Otherwise, reset the goals, work to improve the existing projects, resume, start looking into 1 or 2 more projects to build and start applying again.
         </li>
-        <li><b>I chose Web development but don't know how to build "pretty" websites or I don't have much creativity yet, what do you recommend?</b>
-            Build your websites based on another websites. Example: Lets say you want to build a project of your favorite movies and Tv shows. You can look for "gallery website design" on Google and just see what you want on your project.
+        <li><b>I chose Web development but I don't know how to build "pretty" websites or I don't have much creativity yet, what do you recommend?</b>
+            Build your websites based on another websites.
+            <br>
+            Example: Lets say you want to build a project of your <a href="https://gabrielslima.github.io/Movie-trailer-WEBSITE/">favorite movies and Tv shows</a>. You can look for "gallery website design" on Google and just see what you want on your project.
         </li>
         <li><b>Would I enroll in a College or University?</b> Only if I "failed" trying to learn for free, with a code bootcamp and resetting my goals to improve my portfolio and resume </li>
         <li><b>Do you have another recommendation?</b> Don't be lazy</li>
