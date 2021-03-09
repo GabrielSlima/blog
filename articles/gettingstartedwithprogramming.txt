@@ -152,8 +152,6 @@
         <li><a href="https://www.freecodecamp.org/learn" target="blank">Freecodecamp</a> - Would choose based on my skills list. Strongly recomend following this one first </li>
         <li><a href="https://www.youtube.com/" target="blank">Youtube</a> - You can start looking for "SKILL course", example: "mongodb course"</li>
     </ul>
-    <br>
-    <br>
 
     <h3>Questions that you may have right now and maybe I can answer some of them</h3>
     <ul>
