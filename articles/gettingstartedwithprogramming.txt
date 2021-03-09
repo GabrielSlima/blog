@@ -79,8 +79,8 @@
     <br>
 
     I just want to make it clear that all I'm saying here is <b>based on my experience</b> learning how to code and getting my first interviews.
-    <br>
-    I want you to realize that even with a crazy schedule you can create systems and processes to achieve this goal or any goal. I wasted so many time overthinking about 
+    I want you to realize that even with a crazy schedule you can <b>create systems and processes</b> to achieve this goal or any goal.
+    <br>I wasted so many time overthinking about 
     what to do, if the path I was taking was the right or If I was doing the right thing and the thing is, there is no right path.
     <br>
     The most important thing is to have a process and make progress. The best way I found to see if I was making progress was through projects and actually
@@ -102,6 +102,7 @@
     I used an excel table and created something like that:
     <img class="post-img" src="images/getting-started-with-programming/desired-skills.png"/>
 
+    <br>
     <b>2 - Choose the most appearing skiils and stablish an easy and fast routine to acquire them</h4></b>
     I'm gonna teel you what you want, you want an <b>easy and fast routine that brings results</b>. So here is one suggestion of what I would do: Set a goal <b>to build 3 projects using the new skills.</b>
     <br>
@@ -115,10 +116,10 @@
         <li><b>Foutrh month:</b> At least four times a week, work to build those skiils for 1 hour</li>
         <li><b>Fifth month:</b> At least five times a week, work to build those skiils for 1 hour</li>
     </ul>
-    <br>
+
     You can change the time to 25 minutes, maybe 15 minutes and increase the time every week...just make sure to work on the habit and be honest with yourself.
     <br>
-    If your not feeling practicing some day, at least 5 minutes, juts to make a little bit of progress and create the habit.
+    If you are not feeling practicing some day, try at least 5 minutes and that's it, just make a little bit of progress and create the habit.
     <br>
     <br>
     <b>3 - The "last" project</b>
