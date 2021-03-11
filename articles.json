@@ -1,6 +1,14 @@
 
 [
     {
+        "id": "6",
+        "title": "How to name variables and functions in a better way",
+        "description": "Making your mom proud of your code...",
+        "author": "Gabriel Lima",
+        "date": "2021-03-11",
+        "article_file_name": "./articles/clean-code-meaningful-names.txt"
+    },
+    {
         "id": "5",
         "title": "What would I do if I was trying to learn how to code today?",
         "description": "Would be easier if I wasn't in College?",

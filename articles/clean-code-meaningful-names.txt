@@ -1,0 +1,10 @@
+<div style="text-align: left;">
+One of the most important things you can learn in programming is Clean Code.
+<br>
+Writing bad code can make things more complicated than they really are and forces you spend so much time
+trying to figure out what one piece of code does before actually doing any work.
+<br>
+This situation can be solved by executing the piece of code giving them the proper data to process but 
+what if you don't even know what is the data input and the piece of code has like 100 of lines with on for loop
+behind the other? That makes things a little bit harder, isn't? 
+</div>
