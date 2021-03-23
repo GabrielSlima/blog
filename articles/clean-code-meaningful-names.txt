@@ -153,44 +153,67 @@ else:
 Right at the beginning of the code we can see that the first import uses 2 different languages. This probably isn't gonna
 happens if your native language is English. But make sure that if you're using a language, stick with it to make things easier.
 <br>
-There is also a <b>if</b> statement to check if there's the minimum amount of arguments for to the script, if not, it shows the documentation.
+That being said, we can see that the first import is about the class that actually process the commands sent by the user, the following
+imports are <b>sys</b> a module to interact with the Python interpreter, <b>json</b> module to represent and manipulate data in Json Objects
+and <b>datetime</b> to manipulate date and time.
 <br>
-So answaring the big questions:
+There is also a <b>if</b> statement to check if there's the minimum amount of arguments for to the script has been provided, 
+if not, it shows the documentation.
+<br>
+So answaring the big questions for the imports:
+<ul>
+ <li>generate.gerador: imports the class that is going to process the commands provided by the user</li>
+ <li>sys: used to interact with the users through command line</li>
+ <li>json: used to manipulate the configuration files</li>
+ <li>datetime: used to dinamycally flag creation date of a post</li>
+</ul>
+
+And as for the if statement:
 <ul>
  <li>it garantees that the user only gives the script at the minimum 3 arguments</li>
  <li>it shows a summary of how to use the script using the function <b>print</b></li>
 </ul>
 Refacting the code for the first time:
+
 <div class="code-snipppet">
 import processor
-import sys, json, datetime
+import sys
+import json
+import datetime
 import logging
 
 MINIMUM_COMMAND_LINE_ARGS = 3
 MAX_COMMAND_LINE_ARGS = 5
+
 USAGE_SUMMARY = """
-How to use -> \n
-python3 main.py <COMMAND> <COMMAND_ARGUMENTS> \n
-Create a new project: \t\t python3 main.py new <PROJECT_NAME> \n
-Create a new blog post: \t\t python3 main.py post <POST_NAME> <PROJECT_NAME> <POST_CATEGORY>
+How to use ->
+python3 main.py <COMMAND> <COMMAND_ARGUMENTS>
+Create a new project: python3 main.py new <PROJECT_NAME>
+Create a new blog post: python3 main.py post <POST_NAME> <PROJECT_NAME> <POST_CATEGORY>
 """
+
 if len(sys.argv) < MINIMUM_COMMAND_LINE_ARGS or len(sys.argv) > MAX_COMMAND_LINE_ARGS:
-    user_guide_summary = """
+    invalid_arguments_message = """
     Invalid amount of arguments, please try again with: \n {usage_summary}
     """
-    user_guide_summary = user_guide_summary.format(
+    
+    invalid_arguments_message = invalid_arguments_message.format(
         usage_summary=USAGE_SUMMARY
     )
-    logging.info(user_guide_summary)
+    
+    logging.info(invalid_arguments_message)
 </div>
-Now we can see that if there's not the minimum or there's more than 5 arguments to deal with, the summary of the usage
-guide will be show and let user know how to properly use the scrpit.
+
+Now we can see that if there's not the minimum or there's more than 5 arguments to deal with, a default error message 
+wiill be shown along with the summary of the basic user guide and let user know how to properly use the scrpit.
 <br>
 But we still have some issues, what if it's passe 4 arguments? The verification doesn't cover that. Let'ts refact again
 
 <div class="code-snipppet">
 import processor
-import sys, json, datetime
+import sys
+import json
+import datetime
 import logging
 
 AVAILABLE_FLOWS = {
@@ -203,25 +226,27 @@ AVAILABLE_FLOWS = {
         "post_category"
     ]
 }
-MINIMUM_COMMAND_LINE_ARGS = 1
-FLOW = 1
+MINIMUM_COMMAND_LINE_ARGS = 2
+FLOW_POSITION = 1
+
 USAGE_SUMMARY = """
-How to use -> \n
-python3 main.py <COMMAND> <COMMAND_ARGUMENTS> \n
-Create a new project: \t\t python3 main.py new <PROJECT_NAME> \n
-Create a new blog post: \t\t python3 main.py post <POST_NAME> <PROJECT_NAME> <POST_CATEGORY>
+How to use ->
+python3 main.py <COMMAND> <COMMAND_ARGUMENTS>
+Create a new project: python3 main.py new <PROJECT_NAME>
+Create a new blog post: python3 main.py post <POST_NAME> <PROJECT_NAME> <POST_CATEGORY>
 """
 
-if len(sys.argv) <= MINIMUM_COMMAND_LINE_ARGS or \
-    len(sys.argv) != len(AVAILABLE_FLOWS.get(sys.argv[FLOW])):
+user_input = sys.argv
+if len(user_input) < MINIMUM_COMMAND_LINE_ARGS or \
+    len(user_input) != len(AVAILABLE_FLOWS.get(user_input[FLOW_POSITION])):
     
-    user_guide_summary = """
+    invalid_arguments_message = """
     Invalid amount of arguments, please try again with: \n {usage_summary}
     """
-    user_guide_summary = user_guide_summary.format(
+    invalid_arguments_message = invalid_arguments_message.format(
         usage_summary=USAGE_SUMMARY
     )
-    logging.info(user_guide_summary)
+    logging.info(invalid_arguments_message)
 </div>
 
 thing I usually do to make sure that I'm choosing the right name for my variable, at least for the moment, 
