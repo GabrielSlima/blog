@@ -68,7 +68,7 @@ Let's try to create a new blog post to see what happens:
 <br>
 # Long line break
 
-It seems to be working the way it was suposed to...now let's analyse the core code an start working:
+It seems to be working the way it was supposed to...now let's analyse the core code an start working:
 <img class="post-img" src="images/clean-code-meaningful-names/writer-typing.gif">
 
 #Long line break
@@ -77,17 +77,154 @@ It seems to be working the way it was suposed to...now let's analyse the core co
 # Long line break
 
 
-<h3>The 3 big questions</h3>
-The Clean Code book recommends that when choosing the name of a class, function or variable we should have in mind the following for big questions:
+<h3>The big questions</h3>
+The Clean Code book recommends that when choosing the name of a class, 
+function or variable we should have in mind at least the following for big questions:
 <u>
 <li>Why it exists?</li>
 <li>What it does?</li>
 <li>How it is used?</li>
 </ul>
-So following this Idea
+So following this Idea, let's get the file <a href="#main_first_code_snippet">main.py</a> and explore the content:
+<div class="code-snipppet">
+from generate import gerador
+import sys, json, datetime
+if len(sys.argv) < 3:
+    print('Insira argumentos validos por favor...\n\n')
+    print('''Modo de usar:\nCRIAR UM NOVO PROJETO \t\t novo NOME_PROJETO\nCRIAR UM NOVO POST\t\tpost NOME_DO_POST PASTA_DO_PROJETO''')
+
+else:
+    
+    #A OPCAO SERA O PRIMEIRO ARGUMENTO
+    argumento = sys.argv[1]
+
+    #SERA O SEGUNDO A PASTA OU NOME DO POST
+    pasta_nome_post = sys.argv[2]
 
 
-One thing I usually do to make sure that I'm choosing the right name for my variable, at least for the moment, 
+    if argumento.lower() == 'novo' and pasta_nome_post != " ":
+        print("Tentando gerar arquivos...")
+
+        #INSTANCIAMOS A CLASSE PASSANDO OS ARGUMENTOS
+        projeto = gerador(argumento, pasta_nome_post + '/')
+
+        #SE A RESPOSTA FOR TRUE
+        if projeto:
+            print('Feito')  
+    if argumento.lower() == 'ajuda':
+        print('''Modo de usar:\n\n CRIAR UM NOVO PROJETO \t\t novo NOME_PROJETO\nCRIAR UM NOVO POST\t\tpost NOME_DO_POST PASTA_DO_PROJETO''')
+    #SE O ARGUMENTO FOR POST, O NOME DO POST DEVE SER PASSADO JUNTO A PASTA DO PROJETO  
+
+        
+    if argumento.lower() == 'post' and pasta_nome_post != " " and sys.argv[3] != " " and sys.argv[4] != " ":
+        print("Gerando arquivos...")
+        #PRIMEIRO SERA INSERIDO, O POST, NO JSON
+        #ABERTURA DO ARQUIVO EM MODO ESCRITA/LEITURA
+        pasta_destino = sys.argv[3]
+        categoria = sys.argv[4]  
+        try:
+            files = open(str(pasta_destino) + '/data.json', 'r+')
+             #LEITURA DO ARQUIVO
+            leitura = files.read()
+            #PASSANDO DE JSON PARA PARA ALGO QUE O PYTHON ENTENDA, GERALMENTE, LISTA, DICIONARIOS ETC.
+            dados = json.loads(leitura)
+                
+            #INSTANCIA DA CLASS DATETIME
+            agora = datetime.datetime.now()
+
+            #ATRIBUIÇÃO DE UM NOVO POST COM DADOS GENERICOS
+            dados[1]['posts'][pasta_nome_post] = {"title": "titulo do post", "categoria": str(categoria),"Data": str(agora.day) + '/' + str(agora.month) + '/' + str(agora.year), "conteudo": "SEU CONTEUDO DEVE SER INSERIDO AQUI"}
+                
+            files.seek(0)
+
+            #"OFICIALIZANDO" AS ALTERAÇOES DO JSON DANDO UM DUMP, NADA MAIS É DO QUE GERAR O NOVO BINARIO JSON
+            json.dump(dados, files, indent = 4)
+
+            files.truncate()
+            #ISNTANCIA DA CLASSE GENERATE, TAIS ARGUMENTOS DEVEM SER PASSADOS
+            postagem = gerador(" "," ")
+            post = postagem.newPost(pasta_nome_post, str(pasta_destino),categoria)
+            if post:
+                print('Feito') 
+    
+        except FileNotFoundError:
+            print('Talvez o diretorio informado não exista.') 
+</div>
+Right at the beginning of the code we can see that the first import uses 2 different languages. This probably isn't gonna
+happens if your native language is English. But make sure that if you're using a language, stick with it to make things easier.
+<br>
+There is also a <b>if</b> statement to check if there's the minimum amount of arguments for to the script, if not, it shows the documentation.
+<br>
+So answaring the big questions:
+<ul>
+ <li>it garantees that the user only gives the script at the minimum 3 arguments</li>
+ <li>it shows a summary of how to use the script using the function <b>print</b></li>
+</ul>
+Refacting the code for the first time:
+<div class="code-snipppet">
+import processor
+import sys, json, datetime
+import logging
+
+MINIMUM_COMMAND_LINE_ARGS = 3
+MAX_COMMAND_LINE_ARGS = 5
+USAGE_SUMMARY = """
+How to use -> \n
+python3 main.py <COMMAND> <COMMAND_ARGUMENTS> \n
+Create a new project: \t\t python3 main.py new <PROJECT_NAME> \n
+Create a new blog post: \t\t python3 main.py post <POST_NAME> <PROJECT_NAME> <POST_CATEGORY>
+"""
+if len(sys.argv) < MINIMUM_COMMAND_LINE_ARGS or len(sys.argv) > MAX_COMMAND_LINE_ARGS:
+    user_guide_summary = """
+    Invalid amount of arguments, please try again with: \n {usage_summary}
+    """
+    user_guide_summary = user_guide_summary.format(
+        usage_summary=USAGE_SUMMARY
+    )
+    logging.info(user_guide_summary)
+</div>
+Now we can see that if there's not the minimum or there's more than 5 arguments to deal with, the summary of the usage
+guide will be show and let user know how to properly use the scrpit.
+<br>
+But we still have some issues, what if it's passe 4 arguments? The verification doesn't cover that. Let'ts refact again
+
+<div class="code-snipppet">
+import processor
+import sys, json, datetime
+import logging
+
+AVAILABLE_FLOWS = {
+    "new":[
+        "project_name"
+    ],
+    "post": [
+        "post_name",
+        "project_name",
+        "post_category"
+    ]
+}
+MINIMUM_COMMAND_LINE_ARGS = 1
+FLOW = 1
+USAGE_SUMMARY = """
+How to use -> \n
+python3 main.py <COMMAND> <COMMAND_ARGUMENTS> \n
+Create a new project: \t\t python3 main.py new <PROJECT_NAME> \n
+Create a new blog post: \t\t python3 main.py post <POST_NAME> <PROJECT_NAME> <POST_CATEGORY>
+"""
+
+if len(sys.argv) <= MINIMUM_COMMAND_LINE_ARGS or \
+    len(sys.argv) != len(AVAILABLE_FLOWS.get(sys.argv[FLOW])):
+    
+    user_guide_summary = """
+    Invalid amount of arguments, please try again with: \n {usage_summary}
+    """
+    user_guide_summary = user_guide_summary.format(
+        usage_summary=USAGE_SUMMARY
+    )
+    logging.info(user_guide_summary)
+</div>
+
+thing I usually do to make sure that I'm choosing the right name for my variable, at least for the moment, 
 of course, is to review my own code after some hours, maybe even days or weeks. If I don't really know what the variable or even
 the function is doing I just change the name to something that makes more sense on the moment and repeat the process
 till eventually I come up with a more clear name. 
