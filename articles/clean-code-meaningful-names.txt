@@ -160,12 +160,12 @@ and <b>datetime</b> to manipulate date and time.
 There is also a <b>if</b> statement to check if there's the minimum amount of arguments for to the script has been provided, 
 if not, it shows the documentation.
 <br>
-So answaring the big questions for the imports:
+So answering the big questions for the imports:
 <ul>
  <li>generate.gerador: imports the class that is going to process the commands provided by the user</li>
  <li>sys: used to interact with the users through command line</li>
  <li>json: used to manipulate the configuration files</li>
- <li>datetime: used to dinamycally flag creation date of a post</li>
+ <li>datetime: used to dinamycally flag the creation date of a post</li>
 </ul>
 
 And as for the if statement:
@@ -226,8 +226,9 @@ AVAILABLE_FLOWS = {
         "post_category"
     ]
 }
-MINIMUM_COMMAND_LINE_ARGS = 2
+MINIMUM_COMMAND_LINE_ARGS = 1
 FLOW_POSITION = 1
+SCRIPT_NAME = 1
 
 USAGE_SUMMARY = """
 How to use ->
@@ -236,10 +237,7 @@ Create a new project: python3 main.py new <PROJECT_NAME>
 Create a new blog post: python3 main.py post <POST_NAME> <PROJECT_NAME> <POST_CATEGORY>
 """
 
-user_input = sys.argv
-if len(user_input) < MINIMUM_COMMAND_LINE_ARGS or \
-    len(user_input) != len(AVAILABLE_FLOWS.get(user_input[FLOW_POSITION])):
-    
+def exit_program():
     invalid_arguments_message = """
     Invalid amount of arguments, please try again with: \n {usage_summary}
     """
@@ -247,9 +245,28 @@ if len(user_input) < MINIMUM_COMMAND_LINE_ARGS or \
         usage_summary=USAGE_SUMMARY
     )
     logging.info(invalid_arguments_message)
+    sys.exit(1)
+
+user_input = sys.argv
+
+if (len(user_input) -SCRIPT_NAME < MINIMUM_COMMAND_LINE_ARGS or 
+        not AVAILABLE_FLOWS.get(user_input[FLOW_POSITION])):
+    exit_program()
+
+if len(user_input) -SCRIPT_NAME < len(AVAILABLE_FLOWS.get(user_input[FLOW_POSITION])):
+    exit_program()
 </div>
 
-thing I usually do to make sure that I'm choosing the right name for my variable, at least for the moment, 
+Have in mind that the first argument will be the script itself <b>main.py</b>, the second one will be the flow.
+<br>
+Now we garantee that the default message will be displayed:
+<ul>
+  <li>When the user gives the script less than 2 arguments</li>
+  <li>when the user gives the script a flow that does not exists</li>
+  <li>When the user gives the script the minimum amount of arguments but not enough arguments to complete the flow</li>
+</ul>
+
+One thing I usually do to make sure that I'm choosing the right name for my variable, at least for the moment, 
 of course, is to review my own code after some hours, maybe even days or weeks. If I don't really know what the variable or even
 the function is doing I just change the name to something that makes more sense on the moment and repeat the process
 till eventually I come up with a more clear name. 
