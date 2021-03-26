@@ -87,35 +87,285 @@ function or variable we should have in mind at least the following for big quest
 </ul>
 So following this Idea, let's get the file <a href="#main_first_code_snippet">main.py</a> and explore the content:
 <div class="code-snipppet">
-from generate import gerador
-import sys, json, datetime
-if len(sys.argv) < 3:
-    print('Insira argumentos validos por favor...\n\n')
-    print('''Modo de usar:\nCRIAR UM NOVO PROJETO \t\t novo NOME_PROJETO\nCRIAR UM NOVO POST\t\tpost NOME_DO_POST PASTA_DO_PROJETO''')
+    from generate import gerador
+    import sys, json, datetime
+    if len(sys.argv) < 3:
+        print('Insira argumentos validos por favor...\n\n')
+        print('''Modo de usar:\nCRIAR UM NOVO PROJETO \t\t novo NOME_PROJETO\nCRIAR UM NOVO POST\t\tpost NOME_DO_POST PASTA_DO_PROJETO''')
 
-else:
-    
-    #A OPCAO SERA O PRIMEIRO ARGUMENTO
-    argumento = sys.argv[1]
-
-    #SERA O SEGUNDO A PASTA OU NOME DO POST
-    pasta_nome_post = sys.argv[2]
-
-
-    if argumento.lower() == 'novo' and pasta_nome_post != " ":
-        print("Tentando gerar arquivos...")
-
-        #INSTANCIAMOS A CLASSE PASSANDO OS ARGUMENTOS
-        projeto = gerador(argumento, pasta_nome_post + '/')
-
-        #SE A RESPOSTA FOR TRUE
-        if projeto:
-            print('Feito')  
-    if argumento.lower() == 'ajuda':
-        print('''Modo de usar:\n\n CRIAR UM NOVO PROJETO \t\t novo NOME_PROJETO\nCRIAR UM NOVO POST\t\tpost NOME_DO_POST PASTA_DO_PROJETO''')
-    #SE O ARGUMENTO FOR POST, O NOME DO POST DEVE SER PASSADO JUNTO A PASTA DO PROJETO  
-
+    else:
         
+        #A OPCAO SERA O PRIMEIRO ARGUMENTO
+        argumento = sys.argv[1]
+
+        #SERA O SEGUNDO A PASTA OU NOME DO POST
+        pasta_nome_post = sys.argv[2]
+
+
+        if argumento.lower() == 'novo' and pasta_nome_post != " ":
+            print("Tentando gerar arquivos...")
+
+            #INSTANCIAMOS A CLASSE PASSANDO OS ARGUMENTOS
+            projeto = gerador(argumento, pasta_nome_post + '/')
+
+            #SE A RESPOSTA FOR TRUE
+            if projeto:
+                print('Feito')  
+        if argumento.lower() == 'ajuda':
+            print('''Modo de usar:\n\n CRIAR UM NOVO PROJETO \t\t novo NOME_PROJETO\nCRIAR UM NOVO POST\t\tpost NOME_DO_POST PASTA_DO_PROJETO''')
+        #SE O ARGUMENTO FOR POST, O NOME DO POST DEVE SER PASSADO JUNTO A PASTA DO PROJETO  
+
+            
+        if argumento.lower() == 'post' and pasta_nome_post != " " and sys.argv[3] != " " and sys.argv[4] != " ":
+            print("Gerando arquivos...")
+            #PRIMEIRO SERA INSERIDO, O POST, NO JSON
+            #ABERTURA DO ARQUIVO EM MODO ESCRITA/LEITURA
+            pasta_destino = sys.argv[3]
+            categoria = sys.argv[4]  
+            try:
+                files = open(str(pasta_destino) + '/data.json', 'r+')
+                #LEITURA DO ARQUIVO
+                leitura = files.read()
+                #PASSANDO DE JSON PARA PARA ALGO QUE O PYTHON ENTENDA, GERALMENTE, LISTA, DICIONARIOS ETC.
+                dados = json.loads(leitura)
+                    
+                #INSTANCIA DA CLASS DATETIME
+                agora = datetime.datetime.now()
+
+                #ATRIBUIÇÃO DE UM NOVO POST COM DADOS GENERICOS
+                dados[1]['posts'][pasta_nome_post] = {"title": "titulo do post", "categoria": str(categoria),"Data": str(agora.day) + '/' + str(agora.month) + '/' + str(agora.year), "conteudo": "SEU CONTEUDO DEVE SER INSERIDO AQUI"}
+                    
+                files.seek(0)
+
+                #"OFICIALIZANDO" AS ALTERAÇOES DO JSON DANDO UM DUMP, NADA MAIS É DO QUE GERAR O NOVO BINARIO JSON
+                json.dump(dados, files, indent = 4)
+
+                files.truncate()
+                #ISNTANCIA DA CLASSE GENERATE, TAIS ARGUMENTOS DEVEM SER PASSADOS
+                postagem = gerador(" "," ")
+                post = postagem.newPost(pasta_nome_post, str(pasta_destino),categoria)
+                if post:
+                    print('Feito') 
+        
+            except FileNotFoundError:
+                print('Talvez o diretorio informado não exista.') 
+</div>
+Right at the beginning of the code we can see that the first import uses 2 different languages. This probably isn't gonna
+happens if your native language is English. But make sure that if you're using a language, stick with it to make things easier.
+<br>
+That being said, we can see that the first import is about the class that actually process the commands sent by the user, the following
+imports are <b>sys</b> a module to interact with the Python interpreter, <b>json</b> module to represent and manipulate data in Json Objects
+and <b>datetime</b> to manipulate date and time.
+<br>
+There is also a <b>if</b> statement to check if there's the minimum amount of arguments for to the script has been provided, 
+if not, it shows the documentation.
+<br>
+So answering the big questions for the imports:
+<ul>
+ <li>generate.gerador: imports the class that is going to process the commands provided by the user</li>
+ <li>sys: used to interact with the users through command line</li>
+ <li>json: used to manipulate the configuration files</li>
+ <li>datetime: used to dinamycally flag the creation date of a post</li>
+</ul>
+
+And as for the if statement:
+<ul>
+ <li>it garantees that the user only gives the script at the minimum 3 arguments</li>
+ <li>it shows a summary of how to use the script using the function <b>print</b></li>
+</ul>
+Refacting the code for the first time:
+
+<div class="code-snipppet">
+    import core
+    import sys
+    import json
+    import datetime
+    import logging
+
+    MINIMUM_COMMAND_LINE_ARGS = 3
+    MAX_COMMAND_LINE_ARGS = 5
+
+    USAGE_SUMMARY = """
+    How to use ->
+    python3 main.py <COMMAND> <COMMAND_ARGUMENTS>
+    Create a new project: python3 main.py new <PROJECT_NAME>
+    Create a new blog post: python3 main.py post <POST_NAME> <PROJECT_NAME> <POST_CATEGORY>
+    """
+
+    if len(sys.argv) < MINIMUM_COMMAND_LINE_ARGS or len(sys.argv) > MAX_COMMAND_LINE_ARGS:
+        invalid_arguments_message = """
+        Invalid amount of arguments, please try again with: \n {usage_summary}
+        """
+        
+        invalid_arguments_message = invalid_arguments_message.format(
+            usage_summary=USAGE_SUMMARY
+        )
+        
+        logging.info(invalid_arguments_message)
+</div>
+
+Now we can see that if there's not the minimum or there's more than 5 arguments to deal with, a default error message 
+wiill be shown along with the summary of the basic user guide and let user know how to properly use the scrpit.
+<br>
+But we still have some issues, what if it's passe 4 arguments? The verification doesn't cover that. Let'ts refact again
+
+<div class="code-snipppet">
+    import core
+    import sys
+    import json
+    import datetime
+    import logging
+
+    AVAILABLE_FLOWS = {
+        "new": {
+            "arguments": [
+                "project_name"
+            ],
+            "processor": core.create_new_project
+        },
+        "post": {
+            "arguments": [
+                "post_name",
+                "project_name",
+                "post_category"
+            ],
+            "processor": core.create_new_post
+        }
+    }
+    MINIMUM_COMMAND_LINE_ARGS = 1
+    FLOW_POSITION = 1
+    SCRIPT_NAME = 1
+
+    USAGE_SUMMARY = """
+    How to use ->
+    python3 main.py <COMMAND> <COMMAND_ARGUMENTS>
+    Create a new project: python3 main.py new <PROJECT_NAME>
+    Create a new blog post: python3 main.py post <POST_NAME> <PROJECT_NAME> <POST_CATEGORY>
+    """
+
+    def exit_program():
+        invalid_arguments_message = """
+        Invalid amount of arguments, please try again with: \n {usage_summary}
+        """
+        invalid_arguments_message = invalid_arguments_message.format(
+            usage_summary=USAGE_SUMMARY
+        )
+        logging.info(invalid_arguments_message)
+        sys.exit(1)
+
+    user_input = sys.argv
+
+    if (len(user_input) -SCRIPT_NAME < MINIMUM_COMMAND_LINE_ARGS or 
+            not AVAILABLE_FLOWS.get(user_input[FLOW_POSITION])):
+        exit_program()
+
+    if len(user_input) -SCRIPT_NAME != len(AVAILABLE_FLOWS.get(user_input[FLOW_POSITION])):
+        exit_program()
+</div>
+
+Have in mind that the first argument will be the script itself <b>main.py</b>, the second one will be the flow.
+<br>
+Now we garantee that the default message will be displayed:
+<ul>
+  <li>When the user gives the script less than 2 arguments</li>
+  <li>when the user gives the script a flow that does not exists</li>
+  <li>When the user gives the script the minimum amount of arguments but not enough arguments to complete the flow or
+      gives more arguments than expected
+  </li>
+</ul>
+
+Lets take a look into the <b>else</b> block. I'm going to break this one in two parts:
+<div class="code-snippet">
+    else:
+        
+        #A OPCAO SERA O PRIMEIRO ARGUMENTO
+        argumento = sys.argv[1]
+
+        #SERA O SEGUNDO A PASTA OU NOME DO POST
+        pasta_nome_post = sys.argv[2] 
+
+
+        if argumento.lower() == 'novo' and pasta_nome_post != " ":
+            print("Tentando gerar arquivos...")
+
+            #INSTANCIAMOS A CLASSE PASSANDO OS ARGUMENTOS
+            projeto = gerador(argumento, pasta_nome_post + '/')
+
+            #SE A RESPOSTA FOR TRUE
+            if projeto:
+                print('Feito')  
+        if argumento.lower() == 'ajuda': # Create an output to the user with the documentation
+            print('''Modo de usar:\n\n CRIAR UM NOVO PROJETO \t\t novo NOME_PROJETO\nCRIAR UM NOVO POST\t\tpost NOME_DO_POST PASTA_DO_PROJETO''')
+        #SE O ARGUMENTO FOR POST, O NOME DO POST DEVE SER PASSADO JUNTO A PASTA DO PROJETO  
+</div>
+Right at the beginning we have two variables, one to store the <b>flow</b> chosen by the user and the second one it's assuming that
+the chosen flow is <b>new project</b>.
+<br>
+The first <b>if</b> statement deals with the <b>new project</b> flow and garantees that the argument its not empty.
+The second one verifys if the user typed <b>help</b> and shows the documentation if so.
+<br>
+
+So making some changes:
+<div class="code-snippet">
+    import core
+    import sys
+    import json
+    import datetime
+    import logging
+
+    AVAILABLE_FLOWS = {
+        "new": {
+            "arguments": [
+                "project_name"
+            ],
+            "processor": core.create_new_project
+        },
+        "post": {
+            "arguments": [
+                "post_name",
+                "project_name",
+                "post_category"
+            ],
+            "processor": core.create_new_post
+        }
+    }
+    MINIMUM_COMMAND_LINE_ARGS = 1
+    FLOW_POSITION = 1
+    SCRIPT_NAME = 1
+
+    USAGE_SUMMARY = """
+    How to use ->
+    python3 main.py <COMMAND> <COMMAND_ARGUMENTS>
+    Create a new project: python3 main.py new <PROJECT_NAME>
+    Create a new blog post: python3 main.py post <POST_NAME> <PROJECT_NAME> <POST_CATEGORY>
+    """
+
+    def exit_program():
+        invalid_arguments_message = """
+        Invalid amount of arguments, please try again with: \n {usage_summary}
+        """
+        invalid_arguments_message = invalid_arguments_message.format(
+            usage_summary=USAGE_SUMMARY
+        )
+        logging.info(invalid_arguments_message)
+        sys.exit(1)
+
+    user_input = sys.argv
+
+    if (len(user_input) -SCRIPT_NAME < MINIMUM_COMMAND_LINE_ARGS or 
+            not AVAILABLE_FLOWS.get(user_input[FLOW_POSITION])):
+        exit_program()
+
+    if len(user_input) -SCRIPT_NAME != len(AVAILABLE_FLOWS.get(user_input[FLOW_POSITION])):
+        exit_program()
+
+    processor = AVAILABLE_FLOWS[user_input[FLOW_POSITION]]['processor']
+    processor(user_input[FLOW_POSITION + 1: ])
+</div>
+
+That's it, lets analyse the last <b>if</b> statement and see what's happening:
+<div class="code-snippet">
+else:
     if argumento.lower() == 'post' and pasta_nome_post != " " and sys.argv[3] != " " and sys.argv[4] != " ":
         print("Gerando arquivos...")
         #PRIMEIRO SERA INSERIDO, O POST, NO JSON
@@ -148,179 +398,12 @@ else:
                 print('Feito') 
     
         except FileNotFoundError:
-            print('Talvez o diretorio informado não exista.') 
+            print('Talvez o diretorio informado não exista.')
 </div>
-Right at the beginning of the code we can see that the first import uses 2 different languages. This probably isn't gonna
-happens if your native language is English. But make sure that if you're using a language, stick with it to make things easier.
-<br>
-That being said, we can see that the first import is about the class that actually process the commands sent by the user, the following
-imports are <b>sys</b> a module to interact with the Python interpreter, <b>json</b> module to represent and manipulate data in Json Objects
-and <b>datetime</b> to manipulate date and time.
-<br>
-There is also a <b>if</b> statement to check if there's the minimum amount of arguments for to the script has been provided, 
-if not, it shows the documentation.
-<br>
-So answering the big questions for the imports:
-<ul>
- <li>generate.gerador: imports the class that is going to process the commands provided by the user</li>
- <li>sys: used to interact with the users through command line</li>
- <li>json: used to manipulate the configuration files</li>
- <li>datetime: used to dinamycally flag the creation date of a post</li>
-</ul>
+As we can see, it has a validation if all the required parameters are present and not empty. Right in the sequence it opens
+the file <b>data.json</b> inside the existing project, reads it, parses the text to json, add a new json object to the loaded
+json. the <b>seek()</b> calls is related to the stream position
 
-And as for the if statement:
-<ul>
- <li>it garantees that the user only gives the script at the minimum 3 arguments</li>
- <li>it shows a summary of how to use the script using the function <b>print</b></li>
-</ul>
-Refacting the code for the first time:
-
-<div class="code-snipppet">
-import core
-import sys
-import json
-import datetime
-import logging
-
-MINIMUM_COMMAND_LINE_ARGS = 3
-MAX_COMMAND_LINE_ARGS = 5
-
-USAGE_SUMMARY = """
-How to use ->
-python3 main.py <COMMAND> <COMMAND_ARGUMENTS>
-Create a new project: python3 main.py new <PROJECT_NAME>
-Create a new blog post: python3 main.py post <POST_NAME> <PROJECT_NAME> <POST_CATEGORY>
-"""
-
-if len(sys.argv) < MINIMUM_COMMAND_LINE_ARGS or len(sys.argv) > MAX_COMMAND_LINE_ARGS:
-    invalid_arguments_message = """
-    Invalid amount of arguments, please try again with: \n {usage_summary}
-    """
-    
-    invalid_arguments_message = invalid_arguments_message.format(
-        usage_summary=USAGE_SUMMARY
-    )
-    
-    logging.info(invalid_arguments_message)
-</div>
-
-Now we can see that if there's not the minimum or there's more than 5 arguments to deal with, a default error message 
-wiill be shown along with the summary of the basic user guide and let user know how to properly use the scrpit.
-<br>
-But we still have some issues, what if it's passe 4 arguments? The verification doesn't cover that. Let'ts refact again
-
-<div class="code-snipppet">
-import core
-import sys
-import json
-import datetime
-import logging
-
-AVAILABLE_FLOWS = {
-    "new": {
-        "arguments": [
-            "project_name"
-        ],
-        "processor": core.create_new_project
-    },
-    "post": {
-        "arguments": [
-            "post_name",
-            "project_name",
-            "post_category"
-        ],
-        "processor": core.create_new_post
-    }
-}
-MINIMUM_COMMAND_LINE_ARGS = 1
-FLOW_POSITION = 1
-SCRIPT_NAME = 1
-
-USAGE_SUMMARY = """
-How to use ->
-python3 main.py <COMMAND> <COMMAND_ARGUMENTS>
-Create a new project: python3 main.py new <PROJECT_NAME>
-Create a new blog post: python3 main.py post <POST_NAME> <PROJECT_NAME> <POST_CATEGORY>
-"""
-
-def exit_program():
-    invalid_arguments_message = """
-    Invalid amount of arguments, please try again with: \n {usage_summary}
-    """
-    invalid_arguments_message = invalid_arguments_message.format(
-        usage_summary=USAGE_SUMMARY
-    )
-    logging.info(invalid_arguments_message)
-    sys.exit(1)
-
-user_input = sys.argv
-
-if (len(user_input) -SCRIPT_NAME < MINIMUM_COMMAND_LINE_ARGS or 
-        not AVAILABLE_FLOWS.get(user_input[FLOW_POSITION])):
-    exit_program()
-
-if len(user_input) -SCRIPT_NAME != len(AVAILABLE_FLOWS.get(user_input[FLOW_POSITION])):
-    exit_program()
-</div>
-
-Have in mind that the first argument will be the script itself <b>main.py</b>, the second one will be the flow.
-<br>
-Now we garantee that the default message will be displayed:
-<ul>
-  <li>When the user gives the script less than 2 arguments</li>
-  <li>when the user gives the script a flow that does not exists</li>
-  <li>When the user gives the script the minimum amount of arguments but not enough arguments to complete the flow or
-      gives more arguments than expected
-  </li>
-</ul>
-
-Lets take a look into the <b>else</b> block. I'm going to break this one in two parts:
-<div class="code-snippet">
-else:
-    
-    #A OPCAO SERA O PRIMEIRO ARGUMENTO
-    argumento = sys.argv[1]
-
-    #SERA O SEGUNDO A PASTA OU NOME DO POST
-    pasta_nome_post = sys.argv[2] 
-
-
-    if argumento.lower() == 'novo' and pasta_nome_post != " ":
-        print("Tentando gerar arquivos...")
-
-        #INSTANCIAMOS A CLASSE PASSANDO OS ARGUMENTOS
-        projeto = gerador(argumento, pasta_nome_post + '/')
-
-        #SE A RESPOSTA FOR TRUE
-        if projeto:
-            print('Feito')  
-    if argumento.lower() == 'ajuda': # Create an output to the user with the documentation
-        print('''Modo de usar:\n\n CRIAR UM NOVO PROJETO \t\t novo NOME_PROJETO\nCRIAR UM NOVO POST\t\tpost NOME_DO_POST PASTA_DO_PROJETO''')
-    #SE O ARGUMENTO FOR POST, O NOME DO POST DEVE SER PASSADO JUNTO A PASTA DO PROJETO  
-</div>
-Right at the beginning we have two variables, one to store the <b>flow</b> chosen by the user and the second one it's assuming that
-the chosen flow is <b>new project</b>.
-<br>
-The first <b>if</b> statement deals with the <b>new project</b> flow and garantees that the argument its not empty.
-The second one verifys if the user typed <b>help</b> and shows the documentation if so.
-<br>
-
-So making some changes:
-<div class="code-snippet">
-    user_input
-    if argumento.lower() == 'novo' and pasta_nome_post != " ":
-        print("Tentando gerar arquivos...")
-
-        #INSTANCIAMOS A CLASSE PASSANDO OS ARGUMENTOS
-        projeto = gerador(argumento, pasta_nome_post + '/')
-
-        #SE A RESPOSTA FOR TRUE
-        if projeto:
-            print('Feito')  
-    if argumento.lower() == 'ajuda': # Create an output to the user with the documentation
-        print('''Modo de usar:\n\n CRIAR UM NOVO PROJETO \t\t novo NOME_PROJETO\nCRIAR UM NOVO POST\t\tpost NOME_DO_POST PASTA_DO_PROJETO''')
-    #SE O ARGUMENTO FOR POST, O NOME DO POST DEVE SER PASSADO JUNTO A PASTA DO PROJETO  
-</div>
 One thing I usually do to make sure that I'm choosing the right name for my variable, at least for the moment, 
 of course, is to review my own code after some hours, maybe even days or weeks. If I don't really know what the variable or even
 the function is doing I just change the name to something that makes more sense on the moment and repeat the process
