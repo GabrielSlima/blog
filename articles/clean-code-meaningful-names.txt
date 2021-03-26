@@ -402,7 +402,28 @@ else:
 </div>
 As we can see, it has a validation if all the required parameters are present and not empty. Right in the sequence it opens
 the file <b>data.json</b> inside the existing project, reads it, parses the text to json, add a new json object to the loaded
-json. the <b>seek()</b> calls is related to the stream position
+json. The <b>seek()</b> call is related to the stream position.I'm not getting too much into this today, 
+but a simple explaination would be: Python offers a way to work with <b>stream postions</b> similary to 
+<b>File Position pointers</b> in C. That would be a way to identify your position inside a file object.
+<br>
+The module being used in this case is the I/O through the built-in function <b>open()</b>. When the Json file is oppend a text stream
+is stored. The <b>seek()</b> allow us to define where the operations (Input/output or Read/Write) will be started using the 
+offset (beginning) informed as a reference.
+<br>
+Let's say that you have a file <b>cool_file.txt</b> with the text <b>Just a cool content for a cool file</b> and you wants to
+print just the "cool file" part. Seek allow us to set the starting point, so our starting point would be the byte 26, translating
+this, the function call would be <b>file.seek(26)</b>.
+<br>
+
+To make it more clear, let's take from the point where the file <b>cool_file.txt</b> was oppend and the content was stored.
+The output would be something like this:
+<img class="post-img" src="images/clean-code-meaningful-names/seek_example.png">
+Let's translate this to a <a href="https://docs.python.org/3/library/functions.html#func-bytearray" target="blank">byte array</a>,
+get the byte in the 26 position, get the hexadecimal represenation from the given decimal number and load the text again and see what happens:
+<img class="post-img" src="images/clean-code-meaningful-names/seek_example_hex_to_text.png">
+There it is, the "c" char. The char that will be used as a starting point to produce the <b>Read</b> operation and give us the expected output 
+<b>cool file</b>.
+
 
 One thing I usually do to make sure that I'm choosing the right name for my variable, at least for the moment, 
 of course, is to review my own code after some hours, maybe even days or weeks. If I don't really know what the variable or even
