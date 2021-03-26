@@ -422,7 +422,20 @@ Let's translate this to a <a href="https://docs.python.org/3/library/functions.h
 get the byte in the 26 position, get the hexadecimal represenation from the given decimal number and load the text again and see what happens:
 <img class="post-img" src="images/clean-code-meaningful-names/seek_example_hex_to_text.png">
 There it is, the "c" char. The char that will be used as a starting point to produce the <b>Read</b> operation and give us the expected output 
-<b>cool file</b>.
+<b>cool file</b> part.
+
+<br>
+Getting back to the "why" of things, right after setting the starting point of the operation Write the oppened file receives the
+updated valid json text with the <b>json.dupm()</b>.
+<br>
+The <a href="https://docs.python.org/3/library/io.html#io.IOBase.truncate" targe="blank">truncate()</a> is going to resize the stream 
+to the current offset position since any value is passed to it followed by the <b>gerador()</b> instance and the actually
+page post page generator function call...
+
+#Long line break
+<br>
+<br>
+# Long line break
 
 
 One thing I usually do to make sure that I'm choosing the right name for my variable, at least for the moment, 
