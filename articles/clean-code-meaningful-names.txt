@@ -425,11 +425,11 @@ There it is, the "c" char. The char that will be used as a starting point to pro
 <b>cool file</b> part.
 
 <br>
-Getting back to the "why" of things, right after setting the starting point of the operation Write the oppened file receives the
+Getting back to the "why" of things, right after setting the starting point for the Write operation the oppened file receives the
 updated valid json text with the <b>json.dupm()</b>.
 <br>
 The <a href="https://docs.python.org/3/library/io.html#io.IOBase.truncate" targe="blank">truncate()</a> is going to resize the stream 
-to the current offset position since any value is passed to it followed by the <b>gerador()</b> instance and the actually
+to the current offset position which will be the last writed byte since any value is passed to it followed by the <b>gerador()</b> instance and the actually
 page post page generator function call...
 
 #Long line break
@@ -437,7 +437,92 @@ page post page generator function call...
 <br>
 # Long line break
 
+Now that we know what everything is doing, let's work on thies pice of code:
+To remove this validation we can just verify if any of the required flow arguments are empty like this:
+<div class="code-snippet">
+    flow = AVAILABLE_FLOWS[user_input[FLOW_POSITION]]
+    for index, required_argument in enumerate(flow['arguments']):
+    if not user_input[index + (FLOW_POSITION + SCRIPT_NAME)].strip():
+        exit_program()
+</div>
 
+The remaining code does not seems to follow the idea of the <b>main.py</b> file which would be to intermediate the 
+core and the user's input so it makes more sense to remove it from there and put it inside the <b>core</b> module.
+<br>
+Finally we have the actual processor call where it's going to be easier since the processor reference is inside the 
+<b>AVAILABLE_FLOWS</b> structure. All we have to do is to get the corresponding processor based on the flow name 
+and provide the arguments.
+<div class="code-snippet">
+    processor = flow['processor']
+    processor(user_input[(FLOW_POSITION + SCRIPT_NAME): ])
+</div>
+
+And the complete file would be something like:
+<div class="code-snippet">
+    import core
+    import sys
+    import json
+    import datetime
+    import logging
+
+    AVAILABLE_FLOWS = {
+        "new": {
+            "arguments": [
+                "project_name"
+            ],
+            "processor": core.Project
+        },
+        "post": {
+            "arguments": [
+                "post_name",
+                "post_category",
+                "project_name"
+            ],
+            "processor": core.Post
+        }
+    }
+    MINIMUM_COMMAND_LINE_ARGS = 1
+    FLOW_POSITION = 1
+    SCRIPT_NAME = 1
+
+    USAGE_SUMMARY = """
+    How to use ->
+    python3 main.py <COMMAND> <COMMAND_ARGUMENTS>
+    Create a new project: python3 main.py new <PROJECT_NAME>
+    Create a new blog post: python3 main.py post <POST_NAME> <PROJECT_NAME> <POST_CATEGORY>
+    """
+
+    def exit_program():
+        invalid_arguments_message = """
+        Invalid amount of arguments, please try again with: \n {usage_summary}
+        """
+        invalid_arguments_message = invalid_arguments_message.format(
+            usage_summary=USAGE_SUMMARY
+        )
+        logging.info(invalid_arguments_message)
+        sys.exit(1)
+
+    user_input = sys.argv
+
+    if (len(user_input) -SCRIPT_NAME < MINIMUM_COMMAND_LINE_ARGS or 
+            not AVAILABLE_FLOWS.get(user_input[FLOW_POSITION])):
+        exit_program()
+
+    if len(user_input) -SCRIPT_NAME != len(AVAILABLE_FLOWS.get(user_input[FLOW_POSITION])):
+        exit_program()
+
+    flow = AVAILABLE_FLOWS[user_input[FLOW_POSITION]]
+    for index, required_argument in enumerate(flow['arguments']):
+        if not user_input[index + (FLOW_POSITION + SCRIPT_NAME)].strip():
+            exit_program()
+
+    processor = flow['processor']
+    processor(user_input[(FLOW_POSITION + SCRIPT_NAME): ])
+</div>
+
+We can go even further and organize this module:
+
+<div class="code-snippet"></div>
 One thing I usually do to make sure that I'm choosing the right name for my variable, at least for the moment, 
 of course, is to review my own code after some hours, maybe even days or weeks. If I don't really know what the variable or even
 the function is doing I just change the name to something that makes more sense on the moment and repeat the process
