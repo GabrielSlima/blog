@@ -739,6 +739,24 @@ This file has only 2 imports:
     <li>import os: used to manipulate the files inside project. Read and Write the the project's folder and so on</li>
     <li>import json: used to manipulate the Json template for the <b>data.json</b> file</li>
 </ul>
+<h4>Understanding the global scope variables</h4>
+I don't really think that there is much to talk about this, they are just the loaded template from the <b>template.py</b>
+module...I dont think it's the best case scenario to use the templates like this but we are going to focus on just the names
+for now...
+<ul>
+    <li>HTML = Temp.html: Main page HTML template</li>
+    <li>JAVAS = Temp.javaS: Main page's JavaScript code template</li>
+    <li>estiloCSS = Temp.estilo: Main page's CSS code template</li>
+    <li>Json = Temp.json: The WebSite's data file template. It's used by both, main page and posts</li>
+    <li>conteudoH = Temp.post_html: Blog post page's HTML template</li>
+    <li>conteudoJ = Temp.javaS_post: Blog post page's JavaScript template</li>
+</ul>
+
+Before I continue with the variables declaration's meaning, I want to explore my own solution for the categories's system.
+<ul>
+    <li>List_dir_html = Temp.diretorio_list_html: Blog post page's HTML template</li>
+    <li>ListDirJs = Temp.diretorio_list_js:</li>
+</ul>
 One thing I usually do to make sure that I'm choosing the right name for my variable, at least for the moment, 
 of course, is to review my own code after some hours, maybe even days or weeks. If I don't really know what the variable or even
 the function is doing I just change the name to something that makes more sense on the moment and repeat the process
