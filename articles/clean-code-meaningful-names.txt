@@ -5,8 +5,8 @@ Writing bad code can make things more complicated than they really are and force
 trying to figure out what one piece of code does before actually doing any work.
 <br>
 <br>
-This situation can be solved by executing one piece of code and giving it the proper data to process. But 
-what if you don't even know what is the data input and the piece of code has like 100 of lines with one for loop
+This situation can be solved by executing one piece of code and giving it the proper data to process but 
+what if you don't even know what is the data input and the piece of code has like 100 lines with one for loop
 behind the other and some times one for loop inside the other with lots of if else statements?
 That makes things a little bit harder, isn't? 
 
@@ -16,7 +16,7 @@ That makes things a little bit harder, isn't?
 # Long line break
 
 Today i'm going to show you how I go through this refact process almost everyday actually using my own code as an example
-using recommendations from the book <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship-ebook/dp/B001GSTOAM" targe="blank">
+and using recommendations from the book <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship-ebook/dp/B001GSTOAM" targe="blank">
 Clean Code></a>
 
 #Long line break
@@ -30,8 +30,8 @@ It was intented to create blogs main pages and blog posts for me. Something like
 <img class="post-img" src="images/clean-code-meaningful-names/static_proect_demo.png">
 <img class="post-img" src="images/clean-code-meaningful-names/static_proect_demo_post.png">
 
-A very simple idea with a very simple implementation which made
-this project a perfect way for applying concepts of OOP and learn the basics of a new programming language.
+A very simple idea with a very simple implementation which made this project a perfect way 
+for applying concepts like OOP and learn the basics of a new programming language.
 <br>
 This project being one of the first projects of mine is perfect to show you how I could make things better and clear.
 #Long line break
@@ -79,13 +79,14 @@ It seems to be working the way it was supposed to...now let's analyse the core c
 
 <h3>The big questions</h3>
 The Clean Code book recommends that when choosing the name of a class, 
-function or variable we should have in mind at least the following for big questions:
+function or variable we should have in mind at least the following big questions:
 <u>
 <li>Why it exists?</li>
 <li>What it does?</li>
 <li>How it is used?</li>
 </ul>
-So following this Idea, let's get the file <a href="#main_first_code_snippet">main.py</a> and explore the content:
+So following this Idea, let's get the file <a href="#main_first_code_snippet">main.py</a> and explore the content
+trying to answer those questions and understand the meaning beahind each coded line:
 <div class="code-snipppet">
     from generate import gerador
     import sys, json, datetime
@@ -150,6 +151,8 @@ So following this Idea, let's get the file <a href="#main_first_code_snippet">ma
             except FileNotFoundError:
                 print('Talvez o diretorio informado não exista.') 
 </div>
+
+<h4>Understanding the imports</h4>
 Right at the beginning of the code we can see that the first import uses 2 different languages. This probably isn't gonna
 happens if your native language is English. But make sure that if you're using a language, stick with it to make things easier.
 <br>
@@ -168,7 +171,7 @@ So answering the big questions for the imports:
  <li>datetime: used to dinamycally flag the creation date of a post</li>
 </ul>
 
-And as for the if statement:
+<h4>Understanding the first <b>if statement</b></h4>
 <ul>
  <li>it garantees that the user only gives the script at the minimum 3 arguments</li>
  <li>it shows a summary of how to use the script using the function <b>print</b></li>
@@ -206,8 +209,13 @@ Refacting the code for the first time:
 
 Now we can see that if there's not the minimum or there's more than 5 arguments to deal with, a default error message 
 wiill be shown along with the summary of the basic user guide and let user know how to properly use the scrpit.
+
+#Long line break
 <br>
-But we still have some issues, what if it's passe 4 arguments? The verification doesn't cover that. Let'ts refact again
+<br>
+# Long line break
+
+But we still have some issues, what if it's passe 4 arguments? The verification doesn't cover that. Let's refact again
 
 <div class="code-snipppet">
     import core
@@ -263,6 +271,10 @@ But we still have some issues, what if it's passe 4 arguments? The verification 
         exit_program()
 </div>
 
+I think it's a good idea to see the possible behaviours as <b>flows</b>. We can have the <b>new project</b> flow,
+<b>new post</b> flow and the <b>help</b> flow. New flows could be added eventually like a <b>list created posts</b> flow
+with the possibility of seing the amount of posts created for a specific category and so on.
+<br>
 Have in mind that the first argument will be the script itself <b>main.py</b>, the second one will be the flow.
 <br>
 Now we garantee that the default message will be displayed:
@@ -274,6 +286,7 @@ Now we garantee that the default message will be displayed:
   </li>
 </ul>
 
+<h4>Understanding the <b>else statement</b></h4>
 Lets take a look into the <b>else</b> block. I'm going to break this one in two parts:
 <div class="code-snippet">
     else:
@@ -298,10 +311,10 @@ Lets take a look into the <b>else</b> block. I'm going to break this one in two 
             print('''Modo de usar:\n\n CRIAR UM NOVO PROJETO \t\t novo NOME_PROJETO\nCRIAR UM NOVO POST\t\tpost NOME_DO_POST PASTA_DO_PROJETO''')
         #SE O ARGUMENTO FOR POST, O NOME DO POST DEVE SER PASSADO JUNTO A PASTA DO PROJETO  
 </div>
-Right at the beginning we have two variables, one to store the <b>flow</b> chosen by the user and the second one it's assuming that
-the chosen flow is <b>new project</b>.
+Right at the beginning we have two variables, one to store the <b>flow</b> chosen by the user and the second one to store
+the flow name. It's assuming that it's going to be the project name or the post name.
 <br>
-The first <b>if</b> statement deals with the <b>new project</b> flow and garantees that the argument its not empty.
+The first <b>if</b> statement deals with the <b>new project</b> flow and garantees that the project name is not empty.
 The second one verifys if the user typed <b>help</b> and shows the documentation if so.
 <br>
 
