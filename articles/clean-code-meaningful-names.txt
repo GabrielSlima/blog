@@ -208,14 +208,14 @@ Refacting the code for the first time:
 </div>
 
 Now we can see that if there's not the minimum or there's more than 5 arguments to deal with, a default error message 
-wiill be shown along with the summary of the basic user guide and let user know how to properly use the scrpit.
+will be shown along with the summary of the basic usage guide and let the user know how to properly use the scrpit.
 
 #Long line break
 <br>
 <br>
 # Long line break
 
-But we still have some issues, what if it's passe 4 arguments? The verification doesn't cover that. Let's refact again
+But we still have some issues, what if it's passed 4 arguments? The verification doesn't cover that. Let's refact again
 
 <div class="code-snipppet">
     import core
@@ -271,7 +271,7 @@ But we still have some issues, what if it's passe 4 arguments? The verification 
         exit_program()
 </div>
 
-I think it's a good idea to see the possible behaviours as <b>flows</b>. We can have the <b>new project</b> flow,
+I think it's a good idea to see the possible behaviors as <b>flows</b>. We can have the <b>new project</b> flow,
 <b>new post</b> flow and the <b>help</b> flow. New flows could be added eventually like a <b>list created posts</b> flow
 with the possibility of seing the amount of posts created for a specific category and so on.
 <br>
@@ -312,7 +312,7 @@ Lets take a look into the <b>else</b> block. I'm going to break this one in two 
         #SE O ARGUMENTO FOR POST, O NOME DO POST DEVE SER PASSADO JUNTO A PASTA DO PROJETO  
 </div>
 Right at the beginning we have two variables, one to store the <b>flow</b> chosen by the user and the second one to store
-the flow name. It's assuming that it's going to be the project name or the post name.
+the project/post name.
 <br>
 The first <b>if</b> statement deals with the <b>new project</b> flow and garantees that the project name is not empty.
 The second one verifys if the user typed <b>help</b> and shows the documentation if so.
@@ -376,7 +376,10 @@ So making some changes:
     processor(user_input[FLOW_POSITION + 1: ])
 </div>
 
-That's it, lets analyse the last <b>if</b> statement and see what's happening:
+I basically removed the if statement since once the flow and the right amount of arguments is provided
+by the user the processor will be called and the arguments will be passed to the core module.
+
+That's it, lets analyse the last <b>if</b> statement inside the <b>else block</b> and see what's happening:
 <div class="code-snippet">
 else:
     if argumento.lower() == 'post' and pasta_nome_post != " " and sys.argv[3] != " " and sys.argv[4] != " ":
@@ -413,16 +416,23 @@ else:
         except FileNotFoundError:
             print('Talvez o diretorio informado não exista.')
 </div>
-As we can see, it has a validation if all the required parameters are present and not empty. Right in the sequence it opens
-the file <b>data.json</b> inside the existing project, reads it, parses the text to json, add a new json object to the loaded
-json. The <b>seek()</b> call is related to the stream position.I'm not getting too much into this today, 
+As we can see, it's about the <b>new post</b> flow and it validates if all the required parameters are present and not empty.
+Right in the sequence it opens the file <b>data.json</b> inside the existing project, reads it, loads the Json text and 
+add a new dict object to it.
+<br>
+The <b>seek()</b> call is related to the stream position. I'm not getting too much into this today, 
 but a simple explaination would be: Python offers a way to work with <b>stream postions</b> similary to 
 <b>File Position pointers</b> in C. That would be a way to identify your position inside a file object.
 <br>
 The module being used in this case is the I/O through the built-in function <b>open()</b>. When the Json file is oppend a text stream
 is stored. The <b>seek()</b> allow us to define where the operations (Input/output or Read/Write) will be started using the 
 offset (beginning) informed as a reference.
+
+#Long line break
 <br>
+<br>
+# Long line break
+
 Let's say that you have a file <b>cool_file.txt</b> with the text <b>Just a cool content for a cool file</b> and you wants to
 print just the "cool file" part. Seek allow us to set the starting point, so our starting point would be the byte 26, translating
 this, the function call would be <b>file.seek(26)</b>.
@@ -431,13 +441,18 @@ this, the function call would be <b>file.seek(26)</b>.
 To make it more clear, let's take from the point where the file <b>cool_file.txt</b> was oppend and the content was stored.
 The output would be something like this:
 <img class="post-img" src="images/clean-code-meaningful-names/seek_example.png">
+
 Let's translate this to a <a href="https://docs.python.org/3/library/functions.html#func-bytearray" target="blank">byte array</a>,
 get the byte in the 26 position, get the hexadecimal represenation from the given decimal number and load the text again and see what happens:
 <img class="post-img" src="images/clean-code-meaningful-names/seek_example_hex_to_text.png">
 There it is, the "c" char. The char that will be used as a starting point to produce the <b>Read</b> operation and give us the expected output 
 <b>cool file</b> part.
 
+#Long line break
 <br>
+<br>
+# Long line break
+
 Getting back to the "why" of things, right after setting the starting point for the Write operation the oppened file receives the
 updated valid json text with the <b>json.dupm()</b>.
 <br>
@@ -450,8 +465,8 @@ page post page generator function call...
 <br>
 # Long line break
 
-Now that we know what everything is doing, let's work on thies pice of code:
-To remove this validation we can just verify if any of the required flow arguments are empty like this:
+Now that we know what everything is doing, let's work on this pice of code:
+To remove this validation we can just verify if any of the required arguments of the current flow are empty like this:
 <div class="code-snippet">
     flow = AVAILABLE_FLOWS[user_input[FLOW_POSITION]]
     for index, required_argument in enumerate(flow['arguments']):
@@ -461,7 +476,11 @@ To remove this validation we can just verify if any of the required flow argumen
 
 The remaining code does not seems to follow the idea of the <b>main.py</b> file which would be to intermediate the 
 core and the user's input so it makes more sense to remove it from there and put it inside the <b>core</b> module.
+#Long line break
 <br>
+<br>
+# Long line break
+
 Finally we have the actual processor call where it's going to be easier since the processor reference is inside the 
 <b>AVAILABLE_FLOWS</b> structure. All we have to do is to get the corresponding processor based on the flow name 
 and provide the arguments.
@@ -470,7 +489,7 @@ and provide the arguments.
     processor(user_input[(FLOW_POSITION + SCRIPT_NAME): ])
 </div>
 
-And the complete file would be something like:
+And the complete file would be:
 <div class="code-snippet">
     import core
     import sys
@@ -532,6 +551,11 @@ And the complete file would be something like:
     processor = flow['processor']
     processor(user_input[(FLOW_POSITION + SCRIPT_NAME): ])
 </div>
+
+#Long line break
+<br>
+<br>
+# Long line break
 
 We can go even further and organize this module like this:
 <div class="code-snippet">
@@ -605,8 +629,116 @@ We can go even further and organize this module like this:
         handler(sys.argv)
 </div>
 
+<h3>The core module</h3>
 Now that the <b>main.py</b> has a better look, let's dive into the the <b>core.py</b> previously <b>generate.py</b>.
+<div class="code-snippet">
+    from template import hCSS
+    import os, json
+    Temp = hCSS()
+    HTML = Temp.html
+    JAVAS = Temp.javaS
+    estiloCSS = Temp.estilo
+    Json = Temp.json
+    conteudoH = Temp.post_html
+    conteudoJ = Temp.javaS_post
+    List_dir_html = Temp.diretorio_list_html
+    ListDirJs = Temp.diretorio_list_js
+    class gerador():
+        def __init__(self,arg,pasta):
+            self.arg = arg
+            self.pasta = pasta
 
+            
+            if self.arg.lower() == 'novo':
+                self.gerar_projeto(self.pasta)
+
+        def gerar_projeto (self, pasta):
+            self.dir = os.path.dirname(pasta)
+            self.bootstrap = os.path.dirname(self.dir+ '/bootstrap/')
+            self.estilo = os.path.dirname(self.bootstrap +'/css/')
+            self.content = os.path.dirname(self.dir + '/conteudo/')
+            self.principal_content = os.path.dirname(self.dir + '/conteudo/principal/')
+
+            #VERIFICAMOS SE A PASTA EXISTE
+            if not os.path.exists(self.dir):
+
+                #SE NÃO EXISTIR, VAMOS CRIA-LA
+                os.makedirs(self.dir)
+                #ABRIREMOS UM ARQUIVO DENTRO DO DIRETORIO, SE ELE NAO EXISTIR, CRIAMOS UM ARQUIVO INDEX DENTRO DO DIRETORIO E O ABRIREMOS
+                self.index = open(self.dir + '/index.html', 'w+')
+
+                #ESCREVEREMOS DENTRO DESSE ARQUIVO O TEXTO ESCRITO NO ARQUIVO TEMPLATE html
+                self.index.write(HTML)
+
+                #ABRIREMOS UM ARQUIVO DENTRO DO DIRETORIO. SE NAO EXISTIR, VAMOS CRIA-LO
+                self.javascript = open(self.dir +'/java.js', 'w+' )
+                
+
+                #VAMOS ESCREVER O JAVASCRIPT VINDO DA PAGINA TEMPLATE
+                self.javascript.write(JAVAS)
+
+                # O MESMO ACONTECE COM O JSON
+                self.j = open(self.dir +'/data.json','w+')
+                self.j.write(Json)
+
+                os.makedirs(self.principal_content)
+                
+                
+                # #SE O DIRETORIO NAO EXISTIR
+                if not os.path.exists(self.bootstrap):
+                    os.makedirs(self.bootstrap)
+
+                    #ENTRAR NA PASTA self.bootstrap/ BAIXAR O BOOTSTRAP/DESCOMPACTAR O BOOTSTRAP BAIXADO
+                    os.system('cd ' + self.bootstrap + ' && wget https://github.com/twbs/bootstrap/releases/download/v4.1.2/bootstrap-4.1.2-dist.zip && unzip bootstrap-4.1.2-dist.zip')
+                    self.arq = open(self.estilo + '/estilo.css', 'w+')
+                    self.arq.write(estiloCSS)
+
+                #CRIAR A PASTA CONTENT E INSERIR O JS DOS POSTS E DA LISTAGEM DE DIRETORIOS LÁ CASO O DIRETORIO CONTEUDO NAO EXISTA 
+                if not os.path.exists(self.content):
+                    os.makedirs(self.content)
+                    self.js_post = open(self.content + '/js_post.js', 'w+')
+                    self.js_post.write(conteudoJ)
+                    self.js_dir_list = open(self.content + '/dir_list.js', 'w+')
+                    self.js.dir_list.write(List_dir_js)
+
+                #CASO ELE EXISTA VAMOS APENAS CRIAR/ ESCREVER OS CONTEUDOS NOS ARQUIVOS
+                else: 
+                    self.js_post = open(self.content + '/js_post.js', 'w+')
+                    self.js_post.write(conteudoJ)
+                    self.js_dir_list = open(self.content + '/dir_list.js', 'w+')
+                    
+                    self.js_dir_list.write(ListDirJs)
+                    
+            return True            
+
+
+        #CRIAR POSTS
+        def newPost(self, nome_post, pasta_proj, categoria):
+            self.nome_post = nome_post
+            self.pasta_proj = pasta_proj
+            self.categoria = categoria
+            self.caminho = self.pasta_proj + '/conteudo/' + self.categoria + '/'
+            
+            if not os.path.exists(self.caminho):
+                os.makedirs(self.caminho)
+                self.dir_list = open(self.caminho + categoria + '.html', 'w+')
+                self.dir_list.write(List_dir_html)
+                self.post = open(self.caminho + self.nome_post + '.html', 'w+')
+                self.post.write(conteudoH)
+            else:
+                
+                self.post = open(self.caminho + self.nome_post + '.html', 'w+')
+                self.post.write(conteudoH)
+            return True
+
+</div>
+<h4>Understanding the imports</h4>
+This file has only 2 imports:
+<ul>
+    <li>from template import hCSS: imports the Html, Css and Js templates</li>
+    <li>import os: used to manipulate the files inside project. Read and Write the the project's folder and so on</li>
+    <li>import json: used to manipulate the Json template for the <b>data.json</b> file</li>
+</ul>
 One thing I usually do to make sure that I'm choosing the right name for my variable, at least for the moment, 
 of course, is to review my own code after some hours, maybe even days or weeks. If I don't really know what the variable or even
 the function is doing I just change the name to something that makes more sense on the moment and repeat the process
