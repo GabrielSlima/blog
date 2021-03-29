@@ -41,8 +41,8 @@ This project being one of the first projects of mine is perfect to show you how 
 
 Following the documentation it seems that main.py controls the user input and give us the possibility to create a new project or a new 
 blog post:
-<div class="code-snipppet">
-python3 main.py <COMMAND> <COMMAND_ARGUMENTS>
+<div class="code-snippet type-bash">
+    <span class="bash-keyword">python3</span> <span>main.py &lt;command&gt; &lt;command_arguments&gt;</span>
 </div>
 
 Lets try this:
@@ -80,14 +80,14 @@ It seems to be working the way it was supposed to...now let's analyse the core c
 <h3>The big questions</h3>
 The Clean Code book recommends that when choosing the name of a class, 
 function or variable we should have in mind at least the following big questions:
-<u>
-<li>Why it exists?</li>
-<li>What it does?</li>
-<li>How it is used?</li>
+<ul>
+    <li>Why it exists?</li>
+    <li>What it does?</li>
+    <li>How it is used?</li>
 </ul>
 So following this Idea, let's get the file <a href="#main_first_code_snippet">main.py</a> and explore the content
 trying to answer those questions and understand the meaning beahind each coded line:
-<div class="code-snipppet">
+<div class="code-snippet">
     from generate import gerador
     import sys, json, datetime
     if len(sys.argv) < 3:
@@ -178,7 +178,7 @@ So answering the big questions for the imports:
 </ul>
 Refacting the code for the first time:
 
-<div class="code-snipppet">
+<div class="code-snippet">
     import core
     import sys
     import json
@@ -217,7 +217,7 @@ will be shown along with the summary of the basic usage guide and let the user k
 
 But we still have some issues, what if it's passed 4 arguments? The verification doesn't cover that. Let's refact again
 
-<div class="code-snipppet">
+<div class="code-snippet">
     import core
     import sys
     import json

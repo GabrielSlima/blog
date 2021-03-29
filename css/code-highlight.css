@@ -1,0 +1,26 @@
+:root {
+    --keyword: #95353a;
+    --bash: #5555FF;
+    --bash-keyword: #55FF55;
+}
+.code-snippet {
+    background: rgba(0,0,0,.8);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+    letter-spacing: 1px;
+}
+
+.keyword {
+    color: var(--keyword);
+}
+
+.type-bash::before {
+    content: "~$ ";
+    color: var(--bash);
+}
+
+.bash-keyword {
+    color: var(--bash-keyword);
+}
