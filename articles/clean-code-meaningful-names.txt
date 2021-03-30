@@ -15,7 +15,7 @@ That makes things a little bit harder, isn't?
 <br>
 <!-- #Long line break -->
 
-Today i'm going to show you how I go through this refact process, pritty much almost everyday actually, using my own code as an example
+Today i'm going to show you how I go through this refact process, pretty much almost everyday actually, using my own code as an example
 and using recommendations from the book <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship-ebook/dp/B001GSTOAM" targe="blank">
 Clean Code></a>.
 
@@ -94,7 +94,7 @@ This project being one of the first projects of mine is perfect to show you how 
 <br>
 <!-- #Long line break -->
 
-<h4 id="understanding-the-solution-technically">Understanding the soltion technically</h4>
+<h4 id="understanding-the-solution-technically">Understanding the solution technically</h4>
 
 Following the <a href="https://github.com/GabrielSlima/Static-Project/blob/master/README.md" target="blank">documentation</a> it seems that <b>main.py</b> controls the user input and give us the possibility to create a new project or a new 
 blog post:
@@ -153,8 +153,6 @@ And that's what we have inside the project's folder:
 
 5 directories, 27 files
 </pre>
-And there it is, the main page:
-<img class="post-img" src="images/clean-code-meaningful-names/project_main_page.gif">
 
 Let's try to create a new blog post to see what happens:
 <img class="post-img" src="images/clean-code-meaningful-names/new_blog_post.gif">
@@ -204,7 +202,7 @@ The current project strucutre:
 <br>
 <!-- #Long line break -->
 
-It seems to be working the way it was supposed to...now let's analyse the core code and start working:
+It seems to be working the way it was supposed to...now let's analyze the core code and start working:
 <img class="post-img" src="images/clean-code-meaningful-names/writer-typing.gif">
 
 <!-- #Long line break -->
@@ -213,7 +211,33 @@ It seems to be working the way it was supposed to...now let's analyse the core c
 <!-- #Long line break -->
 
 
-<h3>The big questions</h3>
+<h3 id="the-big-questions">The big questions</h3>
+Dealing with a not well written or structured code is hard to know what everything is doing from the ground up. What I like to do is to try
+identify things that I can "understand" what is doing like function calls, maybe some hard coded strings and figure out what is happening.
+<br>
+To execute pieces of the code from the unit test function is a good idea. Set some break points on the places where you can't comprehend
+so you can have more visibility and control of what's happening. You can use the some sort of <b>Evaluate Expression</b> to execute
+some code fragments or expressions and see the results without executing the entire test if your IDE offers this kind of function.
+<br>
+If your code doesn't have a unit test class, it's a good idea to create one. This
+is going to help others when they try to read and understand your code and sometimes, even yourself.
+
+<!-- #Long line break -->
+<br>
+<br>
+<!-- #Long line break -->
+
+It's also a good idea to have in mind kind of what the class was supposed to do. 
+<br>
+There is cases where you simple can't know that so start from the beginning. Start this analysis process from the main class.
+<br>
+Here the main class is the <b>main.py</b> of course.
+
+<!-- #Long line break -->
+<br>
+<br>
+<!-- #Long line break -->
+
 The Clean Code book recommends that when choosing the name of a class, 
 function or variable we should have in mind at least the following big questions:
 <ul>
@@ -221,8 +245,8 @@ function or variable we should have in mind at least the following big questions
     <li>What it does?</li>
     <li>How it is used?</li>
 </ul>
-So following this Idea, let's get the file <a href="#main_first_code_snippet">main.py</a> and explore the content
-trying to answer those questions and understand the meaning beahind each coded line:
+Let's get this recommendations as starting point and explore the <b>main.py</b>'s content trying to apply and
+ answer those questions and understand the meaning beahind each line of code:
 <pre class="brush: python">
     <code>
 from generate import gerador
@@ -309,7 +333,7 @@ So answering the big questions for the imports:
 
 <h4>Understanding the first <b>if statement</b></h4>
 <ul>
- <li>it garantees that the user only gives the script at the minimum 3 arguments</li>
+ <li>it guarantees that the user only gives the script at the minimum 3 arguments</li>
  <li>it shows a summary of how to use the script using the function <b>print</b></li>
 </ul>
 Refacting the code for the first time:
@@ -346,7 +370,7 @@ if len(sys.argv) < MINIMUM_COMMAND_LINE_ARGS or len(sys.argv) > MAX_COMMAND_LINE
 </pre>
 
 Now we can see that if there's not the minimum or there's more than 5 arguments to deal with, a default error message 
-will be shown along with the summary of the basic usage guide and let the user know how to properly use the scrpit.
+will be shown along with the summary of the basic usage guide and let the user know how to properly use the script.
 
 <!-- #Long line break -->
 <br>
@@ -417,7 +441,7 @@ with the possibility of seing the amount of posts created for a specific categor
 <br>
 Have in mind that the first argument will be the script itself <b>main.py</b>, the second one will be the flow.
 <br>
-Now we garantee that the default message will be displayed:
+Now we guarantee that the default message will be displayed:
 <ul>
   <li>When the user gives the script less than 2 arguments</li>
   <li>when the user gives the script a flow that does not exists</li>
@@ -453,8 +477,8 @@ else:
 Right at the beginning we have two variables, one to store the <b>flow</b> chosen by the user and the second one to store
 the project/post name.
 <br>
-The first <b>if</b> statement deals with the <b>new project</b> flow and garantees that the project name is not empty.
-The second one verifys if the user typed <b>help</b> and shows the documentation if so.
+The first <b>if</b> statement deals with the <b>new project</b> flow and guarantees that the project name is not empty.
+The second one checks if the user typed <b>help</b> and shows the documentation if so.
 <br>
 
 So making some changes:
@@ -522,7 +546,7 @@ processor(user_input[FLOW_POSITION + 1:])
 I basically removed the if statement since once the flow and the right amount of arguments is provided
 by the user the processor will be called and the arguments will be passed to the core module.
 
-That's it, lets analyse the last <b>if</b> statement inside the <b>else block</b> and see what's happening:
+That's it, lets analyze the last <b>if</b> statement inside the <b>else block</b> and see what's happening:
 <pre class="brush: python">
     <code>
 else:
@@ -566,10 +590,10 @@ Right in the sequence it opens the file <b>data.json</b> inside the existing pro
 add a new dict object to it.
 <br>
 The <b>seek()</b> call is related to the stream position. I'm not getting too much into this today, 
-but a simple explaination would be: Python offers a way to work with <b>stream postions</b> similary to 
+but a simple explanation would be: Python offers a way to work with <b>stream positions</b> similarly to 
 <b>File Position pointers</b> in C. That would be a way to identify your position inside a file object.
 <br>
-The module being used in this case is the I/O through the built-in function <b>open()</b>. When the Json file is oppend a text stream
+The module being used in this case is the I/O through the built-in function <b>open()</b>. When the Json file is opened a text stream
 is stored. The <b>seek()</b> allow us to define where the operations (Input/output or Read/Write) will be started using the 
 offset (beginning) informed as a reference.
 
@@ -583,7 +607,7 @@ print just the "cool file" part. Seek allow us to set the starting point, so our
 this, the function call would be <b>file.seek(26)</b>.
 <br>
 
-To make it more clear, let's take from the point where the file <b>cool_file.txt</b> was oppend and the content was stored.
+To make it more clear, let's take from the point where the file <b>cool_file.txt</b> was opened and the content was stored.
 The output would be something like this:
 <img class="post-img" src="images/clean-code-meaningful-names/seek_example.png">
 
@@ -610,7 +634,7 @@ page post page generator function call...
 <br>
 <!-- #Long line break -->
 
-Now that we know what everything is doing, let's work on this pice of code:
+Now that we know what everything is doing, let's work on this piece of code:
 To remove this validation we can just verify if any of the required arguments of the current flow are empty like this:
 <pre class="brush: python">
     <code>
