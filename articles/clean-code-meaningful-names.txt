@@ -1,11 +1,11 @@
 <div style="text-align: left;">
 One of the most important things you can learn in programming is Clean Code.
 <br>
-Writing bad code can make things more complicated than they really are and forces you to spend so much time
-trying to figure out what one piece of code does before actually doing any work.
+Writing bad code can make things more complicated than they really are and forces you to spend more time
+trying to figure out what one piece of is doing does before actually doing any work.
 <br>
 <br>
-This situation can be solved by executing one piece of code and giving it the proper data to process but 
+This situation can be solved by executing one piece of code and giving it the proper data to process. But 
 what if you don't even know what is the data input and the piece of code has like 100 lines with one for loop
 behind the other and some times one for loop inside the other with lots of if else statements?
 That makes things a little bit harder, isn't? 
@@ -15,23 +15,78 @@ That makes things a little bit harder, isn't?
 <br>
 <!-- #Long line break -->
 
-Today i'm going to show you how I go through this refact process almost everyday actually using my own code as an example
+Today i'm going to show you how I go through this refact process, pritty much almost everyday actually, using my own code as an example
 and using recommendations from the book <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship-ebook/dp/B001GSTOAM" targe="blank">
-Clean Code></a>
+Clean Code></a>.
+
+<!-- #Long line break -->
+<br>
+<br>
+<!-- #Long line break -->
+Some years ago I was looking for content about how to get started in the Programming industry, what to learn, how to learn, when to learn
+and where to learn.
+<br>
+I found this video in a Cyber Security channel that encourages people to start a blog, to share ideas and basically externalize their 
+thoughts and create. I found this idea amazing, why not?
+<!-- #Long line break -->
+<br>
+<br>
+<!-- #Long line break -->
+I contacted the owner of the channel to have a talk you know? Know his thoughts about my ideas and maybe he could give me some tips
+on this journey... 
+<br>
+One of his recommendations was to use this CLI tool to genarate static web pages and blog posts. All I
+had to do was to change the content files and deploy it.
 
 <!-- #Long line break -->
 <br>
 <br>
 <!-- #Long line break -->
 
-<h3>Static Project: understanding the idea</h3>
-<a href="https://github.com/GabrielSlima/Static-Project" target="blank">Static Project</a> was one of my first public projects and
-It was intented to create blogs main pages and blog posts for me. Something like this:
+<q>What a great idea!!</q> I thought...
+<br>
+You can check this first blog I had <a href="https://codigocuriosidade.github.io/" target="blank">here</a>. There is some funny content in there.
+
+<!-- #Long line break -->
+<br>
+<br>
+<!-- #Long line break -->
+But the thing is, the way this first blog was created did not seemed enough for me...I wanted to understand and actually learn the necessary 
+tools and concepts and then work to create my own tools.
+<br>
+
+After some days I came up with this idea of building a similar tool but with my own code, my own solutions and so on. It's by far not the
+easier path to take but that helped me with a <b>purpose</b> and it was another reason to keep me <b>motivated</b> and <b>excited</b> about what I
+was doing...
+<br>
+I talk a little bit about building things for your own benefits <a href="http://localhost:8080/post.html?id=5#questions" target="blank">here</a>.
+
+<!-- #Long line break -->
+<br>
+<br>
+<!-- #Long line break -->
+
+So without further ado let's dive in to the code.
+
+<!-- #Long line break -->
+<br>
+<br>
+<!-- #Long line break -->
+
+<h3><a href="https://github.com/GabrielSlima/Static-Project" target="blank">Static Project</a>: understanding the idea</h3>
+The idea was simple: generate projects and pages for them so I didn't had to create a new Web page everytime I wanted
+to write a blog post. Pretty much similar to the CLI tool I was using at the time.
+
+Here is some prints of the second blog I started to talk about specifically about Cyber Security called 
+<a href="https://darkarmybrasil.github.io/" target="blank">Darkarmy Brasil</a> 
+(I'm not proud of the names I chose for almost all of my projects back then).
+
 <img class="post-img" src="images/clean-code-meaningful-names/static_project_demo.png">
 <img class="post-img" src="images/clean-code-meaningful-names/static_project_demo_post.png">
 
 A very simple idea with a very simple implementation which made this project perfect
 for applying concepts like OOP and learn the basics of a new programming language.
+<br>
 <br>
 This project being one of the first projects of mine is perfect to show you how I could make things better and clear.
 <!-- #Long line break -->
@@ -39,29 +94,110 @@ This project being one of the first projects of mine is perfect to show you how 
 <br>
 <!-- #Long line break -->
 
-Following the documentation it seems that main.py controls the user input and give us the possibility to create a new project or a new 
+<h4 id="understanding-the-solution-technically">Understanding the soltion technically</h4>
+
+Following the <a href="https://github.com/GabrielSlima/Static-Project/blob/master/README.md" target="blank">documentation</a> it seems that <b>main.py</b> controls the user input and give us the possibility to create a new project or a new 
 blog post:
 <div class="code-snippet type-bash">
     <span class="bash-keyword">python3</span> <span>main.py &lt;command&gt; &lt;command_arguments&gt;</span>
 </div>
 
-Lets try this:
-<br>
-On my computer I'll open my terminal and clone the project:
+Lets try this. On my computer I'll open my terminal and clone the project:
 <img class="post-img" src="images/clean-code-meaningful-names/project-download.gif">
+The structure is pretty simple:
+<pre class="code-snippet"><font color="#5555FF"><b>Static-Project/</b></font>
+├── generate.py
+├── main.py
+├── README.md
+└── template.py
 
+0 directories, 4 files
+</pre>
 Let's execute the command to create a new project as said in the doc:
 <img class="post-img" src="images/clean-code-meaningful-names/new_project.gif">
 
 And that's what we have inside the project's folder:
-<img class="post-img" src="images/clean-code-meaningful-names/project_structure.gif">
+<pre class="code-snippet"><font color="#5555FF"><b>demo</b></font>
+├── <font color="#5555FF"><b>bootstrap</b></font>
+│   ├── <font color="#FF5555"><b>bootstrap-4.1.2-dist.zip</b></font>
+│   ├── <font color="#5555FF"><b>css</b></font>
+│   │   ├── bootstrap.css
+│   │   ├── bootstrap.css.map
+│   │   ├── bootstrap-grid.css
+│   │   ├── bootstrap-grid.css.map
+│   │   ├── bootstrap-grid.min.css
+│   │   ├── bootstrap-grid.min.css.map
+│   │   ├── bootstrap.min.css
+│   │   ├── bootstrap.min.css.map
+│   │   ├── bootstrap-reboot.css
+│   │   ├── bootstrap-reboot.css.map
+│   │   ├── bootstrap-reboot.min.css
+│   │   ├── bootstrap-reboot.min.css.map
+│   │   └── estilo.css
+│   └── <font color="#5555FF"><b>js</b></font>
+│       ├── bootstrap.bundle.js
+│       ├── bootstrap.bundle.js.map
+│       ├── bootstrap.bundle.min.js
+│       ├── bootstrap.bundle.min.js.map
+│       ├── bootstrap.js
+│       ├── bootstrap.js.map
+│       ├── bootstrap.min.js
+│       └── bootstrap.min.js.map
+├── <font color="#5555FF"><b>conteudo</b></font>
+│   ├── dir_list.js
+│   ├── js_post.js
+│   └── <font color="#5555FF"><b>principal</b></font>
+├── data.json
+├── index.html
+└── java.js
 
+5 directories, 27 files
+</pre>
 And there it is, the main page:
 <img class="post-img" src="images/clean-code-meaningful-names/project_main_page.gif">
 
 Let's try to create a new blog post to see what happens:
 <img class="post-img" src="images/clean-code-meaningful-names/new_blog_post.gif">
-<img class="post-img" src="images/clean-code-meaningful-names/blog_post_visualization.gif">
+
+The current project strucutre:
+<pre class="code-snippet"><font color="#5555FF"><b>demo/</b></font>
+├── <font color="#5555FF"><b>bootstrap</b></font>
+│   ├── <font color="#FF5555"><b>bootstrap-4.1.2-dist.zip</b></font>
+│   ├── <font color="#5555FF"><b>css</b></font>
+│   │   ├── bootstrap.css
+│   │   ├── bootstrap.css.map
+│   │   ├── bootstrap-grid.css
+│   │   ├── bootstrap-grid.css.map
+│   │   ├── bootstrap-grid.min.css
+│   │   ├── bootstrap-grid.min.css.map
+│   │   ├── bootstrap.min.css
+│   │   ├── bootstrap.min.css.map
+│   │   ├── bootstrap-reboot.css
+│   │   ├── bootstrap-reboot.css.map
+│   │   ├── bootstrap-reboot.min.css
+│   │   ├── bootstrap-reboot.min.css.map
+│   │   └── estilo.css
+│   └── <font color="#5555FF"><b>js</b></font>
+│       ├── bootstrap.bundle.js
+│       ├── bootstrap.bundle.js.map
+│       ├── bootstrap.bundle.min.js
+│       ├── bootstrap.bundle.min.js.map
+│       ├── bootstrap.js
+│       ├── bootstrap.js.map
+│       ├── bootstrap.min.js
+│       └── bootstrap.min.js.map
+├── <font color="#5555FF"><b>conteudo</b></font>
+│   ├── <font color="#5555FF"><b>category</b></font>
+│   │   ├── category.html
+│   │   └── demo_post.html
+│   ├── dir_list.js
+│   ├── js_post.js
+│   └── <font color="#5555FF"><b>principal</b></font>
+├── data.json
+├── index.html
+└── java.js
+
+6 directories, 29 files</pre>
 
 <!-- #Long line break -->
 <br>

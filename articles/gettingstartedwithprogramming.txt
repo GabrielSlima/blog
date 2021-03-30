@@ -153,7 +153,7 @@
         <li><a href="https://www.youtube.com/" target="blank">Youtube</a> - You can start looking for "SKILL course", example: "mongodb course"</li>
     </ul>
 
-    <h3>Questions that you may have right now and maybe I can answer some of them</h3>
+    <h3 id="questions">Questions that you may have right now and maybe I can answer some of them</h3>
     <ul>
         <li><b>Does age matters?</b> Short answer: No. Long answer: No</li>
         <li><b>What projects should I build?</b> Any project you want. The most common thing is to clone existing platforms or automate something for yourself.

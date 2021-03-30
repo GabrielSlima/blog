@@ -12,3 +12,9 @@
 @media screen and (max-width: 768px) {
     .right-text {text-align: left;}
 }
+
+.post-img{
+    max-width: 100%;
+    margin: 15px 0;
+    display: block;
+  }
