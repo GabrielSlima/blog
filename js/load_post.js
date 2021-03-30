@@ -152,7 +152,21 @@ $(window).ready(function () {
 
             contentDiv.html(html);
             postWasLoadded = true;
+            hljs.highlightAll();
+            this.clearCodeSnippetsEmptyLine();
             return;
+        },
+
+        clearCodeSnippetsEmptyLine: function(){
+            var codeSnippetBlocks = $("code.hljs");
+            if (codeSnippetBlocks != undefined && codeSnippetBlocks.length !=0) {
+                for (index in codeSnippetBlocks){
+                    let codeSnippetBlock = codeSnippetBlocks[index];
+                    if(codeSnippetBlock.firstChild != undefined && codeSnippetBlock.firstChild.data === "\n"){
+                        codeSnippetBlock.removeChild(codeSnippetBlock.firstChild);
+                    }
+                }
+            }
         }
     };
     controller.init();

@@ -1,21 +1,73 @@
 :root {
-    --keyword: #95353a;
     --bash: #5555FF;
     --bash-keyword: #55FF55;
+
+    --python-keyword: #d23853;
+    --python-module: #2ea4a8;
+    --python-class: #55FF55;
+    --python-function: #55FF55;
+    --python-built-in: #5555FF;
+    --python-string: pink;
+    --python-comment: #00AA00;
+    --python-variable: cyan;
 }
-.code-snippet {
+
+.hljs, .code-snippet {
     background: rgba(0,0,0,.8);
     color: white;
-    padding: 15px;
     border-radius: 5px;
-    margin: 20px 0;
     letter-spacing: 1px;
+    padding: 15px;
 }
 
-.keyword {
-    color: var(--keyword);
+.code-snippet {
+    margin: 20px 0;
+}
+.hljs-keyword {
+    color: var(--python-keyword);
 }
 
+.python-class{
+    color: var(--python-class);
+}
+
+.python-function, .hljs-title{
+    color: var(--python-function);
+}
+
+.python-module{
+    color: var(--python-module);
+}
+
+.hljs-built_in{
+    color: var(--python-built-in);
+}
+
+.hljs-string{
+    color: var(--python-string);
+}
+
+.if-else-block-content{
+    margin-left: 25px;
+}
+
+.python-comment{
+    color: var(--python-comment);
+    display: block;
+}
+
+.python-variable, .hljs-number{
+    color: var(--python-variable);
+}
+
+.nested-if-else-block-content.one-level {
+    margin-left: 25px;
+    display: block;
+}
+
+.if-else-statement{
+    display: block;
+}
 .type-bash::before {
     content: "~$ ";
     color: var(--bash);
@@ -24,3 +76,8 @@
 .bash-keyword {
     color: var(--bash-keyword);
 }
+
+.code-snippet-line {
+    display: block;
+}
+

@@ -37,7 +37,7 @@ $(document).ready(function(){
 
     var view = {
         init: function(){
-            var article_template = $('script[data-template="article"]').html();;
+            var article_template = $('script[data-template="article"]').html();
             var articles_ul = $('#article-list');
             var html = "";
             var enriched_article = "";
