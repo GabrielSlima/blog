@@ -68,16 +68,15 @@
 .if-else-statement{
     display: block;
 }
+
+.python-console-line::before {content: ">>> ";}
+.brush\:.python, .code-snippet {line-height: 30px;}
+
 .type-bash::before {
     content: "~$ ";
     color: var(--bash);
 }
 
-.bash-keyword {
-    color: var(--bash-keyword);
-}
+.bash-keyword {color: var(--bash-keyword);}
 
-.code-snippet-line {
-    display: block;
-}
-
+.code-snippet-line {display: block;}

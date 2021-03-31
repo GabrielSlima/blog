@@ -162,9 +162,15 @@ $(window).ready(function () {
             if (codeSnippetBlocks != undefined && codeSnippetBlocks.length !=0) {
                 for (index in codeSnippetBlocks){
                     let codeSnippetBlock = codeSnippetBlocks[index];
+                    
                     if(codeSnippetBlock.firstChild != undefined && codeSnippetBlock.firstChild.data === "\n"){
                         codeSnippetBlock.removeChild(codeSnippetBlock.firstChild);
+                        console.log("First child removed from " + index);
                     }
+                    // if(codeSnippetBlock.lastChild != undefined && codeSnippetBlock.lastChild.data.trim() === "\n"){
+                    //     codeSnippetBlock.removeChild(codeSnippetBlock.lastChild);
+                    //     console.log("Last child removed from " + index);
+                    // }
                 }
             }
         }
