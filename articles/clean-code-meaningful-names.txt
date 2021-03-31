@@ -212,10 +212,10 @@ It seems to be working the way it was supposed to...now let's analyze the core c
 
 
 <h3 id="the-big-questions">The big questions</h3>
-Dealing with a not well written or structured code is hard to know what everything is doing from the ground up. What I like to do is to try
-identify things that I can "understand" what is doing like function calls, maybe some hard coded strings and figure out what is happening.
+It is hard to know what everything is doing when dealing with a not well written or structured code at the first moment. What I like to do is to try
+identify things that I can easily "understand" like function calls, maybe some hard coded strings and try to figure out what is happening.
 <br>
-To execute pieces of the code from the unit test function is a good idea. Set some break points on the places where you can't comprehend
+Execute pieces of the code from the unit test is a good idea. Set some break points on the places where you can't comprehend
 so you can have more visibility and control of what's happening. You can use the some sort of <b>Evaluate Expression</b> to execute
 some code fragments or expressions and see the results without executing the entire test if your IDE offers this kind of function.
 <br>
@@ -239,7 +239,7 @@ Here the main class is the <b>main.py</b> of course.
 <!-- #Long line break -->
 
 The Clean Code book recommends that when choosing the name of a class, 
-function or variable we should have in mind at least the following big questions:
+function or variable we should have in mind at least the following 3 big questions:
 <ul>
     <li>Why it exists?</li>
     <li>What it does?</li>
@@ -312,30 +312,74 @@ else:
     </code>
 </pre>
 
-<h4>Understanding the imports</h4>
-Right at the beginning of the code we can see that the first import uses 2 different languages. This probably isn't gonna
-happens if your native language is English. But make sure that if you're using a language, stick with it to make things easier.
+<h4 id="understanding-the-imports">Understanding the imports</h4>
+Rright at the beginning of the code we can see that the first import uses 2 different languages. This probably isn't gonna
+happen if your native language is English. But make sure that if you're using a language, stick with it to make things easier.
 <br>
-That being said, we can see that the first import is about the class that actually process the commands sent by the user, the following
+That being said, we can see that the first import is about the class that actually process the "commands" sent by the user, the following
 imports are <b>sys</b> a module to interact with the Python interpreter, <b>json</b> module to represent and manipulate data in Json Objects
 and <b>datetime</b> to manipulate date and time.
 <br>
-There is also a <b>if</b> statement to check if there's the minimum amount of arguments for to the script has been provided, 
+There is also a <b>if</b> statement to check if the the minimum amount of arguments for to the script has been provided, 
 if not, it shows the documentation.
+<!-- #Long line break -->
 <br>
+<br>
+<!-- #Long line break -->
+What I'm going to do here is to get those imports and try to have a clue of what is happening looking where there are being used.
+<br>
+If was dealing with long lines of code I would just go right into the unit testing class and execute the code, maybe function by function instead of spending
+so much time trying to understand it.
+
+<!-- #Long line break -->
+<br>
+<br>
+<!-- #Long line break -->
 So answering the big questions for the imports:
 <ul>
- <li>generate.gerador: imports the class that is going to process the commands provided by the user</li>
- <li>sys: used to interact with the users through command line</li>
- <li>json: used to manipulate the configuration files</li>
- <li>datetime: used to dinamycally flag the creation date of a post</li>
+ <li><b>generate.gerador</b>: imports the class that is going to process the commands provided by the user</li>
+ <li><b>sys</b>: used to interact with the users through command line</li>
+ <li><b>json</b>: used to manipulate the configuration files</li>
+ <li><b>datetime</b>: used to dinamycally flag the creation date of a post</li>
 </ul>
 
-<h4>Understanding the first <b>if statement</b></h4>
+<h4 id="understanding-the-first-conditional-statement">Understanding the first <b>if statement</b></h4>
+There isn't much to talk about:
 <ul>
  <li>it guarantees that the user only gives the script at the minimum 3 arguments</li>
  <li>it shows a summary of how to use the script using the function <b>print</b></li>
 </ul>
+
+<!-- #Long line break -->
+<br>
+<br>
+<!-- #Long line break -->
+
+When I'm going through the refact process I like to go piece by piece, maybe function by function or following the conditional statements
+in sequence to make things more simple. Deal with a smal piece of code is easier. 
+
+<!-- #Long line break -->
+<br>
+<br>
+<!-- #Long line break -->
+
+I would like to remember that the possible inputs that the user can give are:
+<div class="code-snippet type-bash">
+    <span class="bash-keyword">python3</span> <span>main.py new &lt;project_name&gt;</span>
+</div>
+<div class="code-snippet type-bash">
+    <span class="bash-keyword">python3</span> <span>main.py post &lt;post_name&gt; &lt;project_name&gt; &lt;post_category&gt;</span>
+</div>
+
+That means that the user's input can be <b>3</b> arguments at the minimum and <b>5</b> at the max since the name of the script is the first
+argument, the script needs to know which flow the user wants to follow (the second argument) and it's considering that there's room for plus
+3 more arguments to complete the chosen flow.
+
+<!-- #Long line break -->
+<br>
+<br>
+<!-- #Long line break -->
+
 Refacting the code for the first time:
 
 <pre class="brush: python">
@@ -371,6 +415,13 @@ if len(sys.argv) < MINIMUM_COMMAND_LINE_ARGS or len(sys.argv) > MAX_COMMAND_LINE
 
 Now we can see that if there's not the minimum or there's more than 5 arguments to deal with, a default error message 
 will be shown along with the summary of the basic usage guide and let the user know how to properly use the script.
+
+<!-- #Long line break -->
+<br>
+<br>
+<!-- #Long line break -->
+I've hidden the <b>magic numbers</b> giving them a meaning, a name as you can see for the <b>MINIMUM_COMMAND_LINE_ARGS</b>
+and <b>MAX_COMMAND_LINE_ARGS</b> variables.
 
 <!-- #Long line break -->
 <br>
