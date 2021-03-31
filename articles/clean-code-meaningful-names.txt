@@ -210,33 +210,49 @@ It seems to be working the way it was supposed to...now let's analyze the core c
 <br>
 <!-- #Long line break -->
 
-
-<h3 id="the-big-questions">The big questions</h3>
-It is hard to know what everything is doing when dealing with a not well written or structured code at the first moment. What I like to do is to try
-identify things that I can easily "understand" like function calls, maybe some hard coded strings and try to figure out what is happening.
+<h3 id="getting-used-with-the-code">Getting used with the code</h3>
+If you're working with somenone else's code it's important to get used with the code and the way that the other person
+thinks and deals with problems. There is not much to talk about this, the best way to understand someone else's toughts 
+is by executing the code and seeing some kind of diagram or documentation if the code has one. 
 <br>
-Execute pieces of the code from the unit test is a good idea. Set some break points on the places where you can't comprehend
+My personal recommendation is that you 
+just do your best to understand and start by the business problem that it was intended to solve. This is going to help you
+to comprehend the applyed solution and why some things where done in a certain way and it's goingo also to help you to kind of 
+consolidate the solution.
+
+<!-- #Long line break -->
+<br>
+<br>
+<!-- #Long line break -->
+It is hard to know what everything is doing when dealing with a not well written or structured code at the first moment. 
+What I like to do is to try to identify things that I can easily "understand" like function calls, maybe some hard coded 
+strings and try to figure out what is happening at first.
+
+<!-- #Long line break -->
+<br>
+<br>
+<!-- #Long line break -->
+
+To execute pieces of the code from the unit testing class is a good idea. Set some break points on the places where you can't comprehend
 so you can have more visibility and control of what's happening. You can use the some sort of <b>Evaluate Expression</b> to execute
 some code fragments or expressions and see the results without executing the entire test if your IDE offers this kind of function.
 <br>
 If your code doesn't have a unit test class, it's a good idea to create one. This
-is going to help others when they try to read and understand your code and sometimes, even yourself.
+is going to help others when they try to read and understand your code and sometimes can help even yourself understand your own code.
+<br>
+Of course unit tests are not 100% focused to help to understand the solution but there is where the mocked code and test scenarios are
+and they are perfect to understand functions and conditional statements because they are supposed to test a giving function's behavior.
 
 <!-- #Long line break -->
 <br>
 <br>
 <!-- #Long line break -->
 
-It's also a good idea to have in mind kind of what the class was supposed to do. 
-<br>
-There is cases where you simple can't know that so start from the beginning. Start this analysis process from the main class.
-<br>
-Here the main class is the <b>main.py</b> of course.
 
-<!-- #Long line break -->
+
+<h3 id="the-big-questions">The big questions</h3>
+Let's start from the beginning, the main class <b>main.py</b> of course.
 <br>
-<br>
-<!-- #Long line break -->
 
 The Clean Code book recommends that when choosing the name of a class, 
 function or variable we should have in mind at least the following 3 big questions:
@@ -245,7 +261,7 @@ function or variable we should have in mind at least the following 3 big questio
     <li>What it does?</li>
     <li>How it is used?</li>
 </ul>
-Let's get this recommendations as starting point and explore the <b>main.py</b>'s content trying to apply and
+Let's get these recommendations as starting point and explore the <b>main.py</b>'s content trying to apply and
  answer those questions and understand the meaning beahind each line of code:
 <pre class="brush: python">
     <code>
@@ -313,9 +329,13 @@ else:
 </pre>
 
 <h4 id="understanding-the-imports">Understanding the imports</h4>
-Rright at the beginning of the code we can see that the first import uses 2 different languages. This probably isn't gonna
+Right at the beginning of the code we can see that the first import uses 2 different languages. This probably isn't gonna
 happen if your native language is English. But make sure that if you're using a language, stick with it to make things easier.
+
+<!-- #Long line break -->
 <br>
+<br>
+<!-- #Long line break -->
 That being said, we can see that the first import is about the class that actually process the "commands" sent by the user, the following
 imports are <b>sys</b> a module to interact with the Python interpreter, <b>json</b> module to represent and manipulate data in Json Objects
 and <b>datetime</b> to manipulate date and time.
@@ -328,7 +348,7 @@ if not, it shows the documentation.
 <!-- #Long line break -->
 What I'm going to do here is to get those imports and try to have a clue of what is happening looking where there are being used.
 <br>
-If was dealing with long lines of code I would just go right into the unit testing class and execute the code, maybe function by function instead of spending
+If I was dealing with long lines of code I would just go right into the unit testing class and execute the code, maybe function by function instead of spending
 so much time trying to understand it.
 
 <!-- #Long line break -->
@@ -343,6 +363,7 @@ So answering the big questions for the imports:
  <li><b>datetime</b>: used to dinamycally flag the creation date of a post</li>
 </ul>
 
+<br>
 <h4 id="understanding-the-first-conditional-statement">Understanding the first <b>if statement</b></h4>
 There isn't much to talk about:
 <ul>
@@ -350,13 +371,8 @@ There isn't much to talk about:
  <li>it shows a summary of how to use the script using the function <b>print</b></li>
 </ul>
 
-<!-- #Long line break -->
-<br>
-<br>
-<!-- #Long line break -->
-
 When I'm going through the refact process I like to go piece by piece, maybe function by function or following the conditional statements
-in sequence to make things more simple. Deal with a smal piece of code is easier. 
+in sequence to make things more simple. Deal with a small piece of code is easier than trying to understand the entire code at once
 
 <!-- #Long line break -->
 <br>
