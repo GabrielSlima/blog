@@ -285,7 +285,7 @@ If you don't have much experience maybe I can help you listing some topics:
 
 <br>
 
-<h3 id="the-big-questions">The big questions</h3>
+<h3 id="the-big-questions">The 3 big questions</h3>
 Let's start from the beginning, the main class <b>main.py</b> of course.
 <br>
 
@@ -862,7 +862,6 @@ USAGE_SUMMARY = """
     Create a new blog post: python3 main.py post <POST_NAME> <PROJECT_NAME> <POST_CATEGORY>
 """
 
-
 def exit_program():
     invalid_arguments_message = """
         Invalid amount of arguments, please try again with: \n {usage_summary}
@@ -872,7 +871,6 @@ def exit_program():
     )
     logging.info(invalid_arguments_message)
     sys.exit(1)
-
 
 user_input = sys.argv
 
@@ -972,7 +970,7 @@ if __name__ == "__main__":
     </code>
 </pre>
 
-That's so much better...now we can see where it starts, it has a <b>handler function</b> that will deal with the user's input. It has
+That's so much better...now we can see where it starts, it has a <b>handler function</b> that will deals with the user's input. It has
 a <b>help function</b> that is resposible for providing the user with the basic usage guide and it has a <b>exit_program function</b>
 that will be called when the script is provided with some kind of invalid input.
 <br>
@@ -1087,37 +1085,48 @@ class gerador():
         return True
     </code>
 </pre>
-<h4>Understanding the imports</h4>
+<h4 id="core-module-imports">Understanding the imports</h4>
 This file has only 2 imports:
 <ul>
-    <li>from template import hCSS: imports the Html, Css and Js templates</li>
-    <li>import os: used to manipulate the files inside project. Read and Write the the project's folder and so on</li>
-    <li>import json: used to manipulate the Json template for the <b>data.json</b> file</li>
+    <li><b>from template import hCSS</b>: imports the Html, Css and Js templates</li>
+    <li><b>import os</b>: used to manipulate the files inside project. Read and Write the the project's folder and so on</li>
+    <li><b>import json</b>: used to manipulate the Json template for the <b>data.json</b> file</li>
 </ul>
-<h4>Understanding the global scope variables</h4>
+<h4 id="core-global-scope-variables">Understanding the global scope variables</h4>
 I don't really think that there is much to talk about this, they are just the loaded template from the <b>template.py</b>
 module...I dont think it's the best case scenario to use the templates like this but we are going to focus on just the names
 for now...
 <ul>
-    <li>HTML = Temp.html: Main page HTML template</li>
-    <li>JAVAS = Temp.javaS: Main page's JavaScript code template</li>
-    <li>estiloCSS = Temp.estilo: Main page's CSS code template</li>
-    <li>Json = Temp.json: The WebSite's data file template. It's used by both, main page and posts</li>
-    <li>conteudoH = Temp.post_html: Blog post page's HTML template</li>
-    <li>conteudoJ = Temp.javaS_post: Blog post page's JavaScript template</li>
+    <li><b>HTML = Temp.html</b>: Main page HTML template</li>
+    <li><b>JAVAS = Temp.javaS</b>: Main page's JavaScript code template</li>
+    <li><b>estiloCSS = Temp.estilo</b>: Main page's CSS code template</li>
+    <li><b>Json = Temp.json</b>: The WebSite's data file template. It's used by both, main page and posts</li>
+    <li><b>conteudoH = Temp.post_html</b>: Blog post page's HTML template</li>
+    <li><b>conteudoJ = Temp.javaS_post</b>: Blog post page's JavaScript template</li>
+    <li><b>List_dir_html = Temp.diretorio_list_html</b>: Blog post page's HTML template</li>
+    <li><b>ListDirJs = Temp.diretorio_list_js</b>:</li>
 </ul>
-
-Before I continue with the variables declaration's meaning, I want to explore my own solution for the categories's system.
-<ul>
-    <li>List_dir_html = Temp.diretorio_list_html: Blog post page's HTML template</li>
-    <li>ListDirJs = Temp.diretorio_list_js:</li>
-</ul>
-One thing I usually do to make sure that I'm choosing the right name for my variable, at least for the moment, 
-of course, is to review my own code after some hours, maybe even days or weeks. If I don't really know what the variable or even
-the function is doing I just change the name to something that makes more sense on the moment and repeat the process
-till eventually I come up with a more clear name. 
 <br>
-That's something that I usually do when I have some work to do with this piece of code specifically 
+
+<h4 id="core-gerador-class">The "gerador" class</h4>
+This Class is supposed to hold all things related to the creation of the files, folders and blog posts.
+This is where the templates can be manipulated and created, the necessary packages are installed and so on.
+<br>
+<br>
+<h4 id="core-functions">The functions</h4>
+<ul>
+    <li><b>__init__</b>: It sets the user's input and the project folder that will be the "working space". 
+        It also calls the "new project" function</li>
+    <li><b>gerar_projeto</b>: Translating -> generate_project or build_project. This one is going to deal with the "new project" flow</li>
+    <li><b>newPost</b>: The last function will deal with the "new post" flow</li>
+</ul>
+<br>
+One thing I usually do to make sure that I'm choosing the right name for my variable, at least for the moment, 
+of course, is to review my own code after some hours, maybe even days or weeks. 
+If I don't really know what the variable/function/class is doing I just change the name to something
+that makes more sense at the moment and repeat this process till eventually I come up with a more clear name. 
+<br>
+That's something that I usually do when I have some work to do with some piece of code specifically 
 and I see the opportunity to make things better and more clear.  
 <br>
 <br>
