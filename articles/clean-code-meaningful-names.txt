@@ -211,12 +211,12 @@ It seems to be working the way it was supposed to...now let's analyze the core c
 
 <h3 id="getting-used-with-the-code">Getting used with the code</h3>
 If you're working with somenone else's code it's important to get used with the code and the way that the other person
-thinks and deals with problems. There is not much to talk about this, the best way to understand someone else's toughts 
+thinks and deals with problems. There is not much to talk about this, the best way to understand someone else's thoughts 
 is by executing the code and seeing some kind of diagram or documentation if the code has one. 
 <br>
 My personal recommendation is that you 
 just do your best to understand and start by the business problem that it was intended to solve. This is going to help you
-to comprehend the applyed solution and why some things where done in a certain way and it's goingo also to help you to kind of 
+to comprehend the applyed solution and why some things where done in a certain way and it's also going to help you to kind of 
 consolidate the solution.
 
 <!-- #Long line break -->
@@ -247,7 +247,43 @@ and they are perfect to understand functions and conditional statements because 
 <br>
 <!-- #Long line break -->
 
+<h3>It's important to know</h3>
+There is some things that it's interesting to have in mind when writing or refacting code that
+I would like to bring here.
+<br>
+Choosing names should be a simple thing to do but to have an entire chapter in a book to talk about this 
+and so many blog posts and videos out there means that it's not that simple.
 
+<!-- #Long line break -->
+<br>
+<br>
+<!-- #Long line break -->
+
+A bad choice for a name can delay the development process like for an entire day, can conflict with other
+names during the execution not making clear it's usage and make it harder to mantain the code.
+<br>
+So think twice before giving a name like "variable" for your variable or giving the same name of a module 
+to a function. Your team will be thankful...
+
+<br>
+But how should you do it?
+<br>
+If you don't have much experience maybe I can help you listing some topics:
+<ul>
+    <li>Make sure that the name is clear, simple and reveals the class/function/variable's intent</li>
+    <li>Avoid using abreviations that it's not commom like "stn" for "street name". This onlys makes sense in your own head</li>
+    <li>Try to use unique names. The Clean Code refers to those as "Searchble Names"</li>
+    <li>Use the context of the Class/Function or even loops and conditional blocks in your favor</li>
+    <li>Avoid using Magic Numbers. You know those number that are just in the middle of the code and you don't have a clue of what it was supposed to mean?</li>
+    <li>When naming Classes and objects use noun or noun phrases</li>
+    <li>When naming Methods use verbs or verb phrases</li>
+    <li>Avoid redundant names like "streetNameOFtheCurrentUser".
+        If there's a object created from a User Class and there's a attribute called address 
+        gabriel.address.streetName or simply gabriel.streetName will be enough to understand</li>
+    <li>Don't use extreme and useless long names. Things like "dateOfTheFirstCreatedUserInsideThePlatformWithTimezoneAndMilliSeconds". Someone will pretty want to punch you in the face</li>
+</ul>
+
+<br>
 
 <h3 id="the-big-questions">The big questions</h3>
 Let's start from the beginning, the main class <b>main.py</b> of course.
