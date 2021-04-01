@@ -2,13 +2,13 @@
 One of the most important things you can learn in programming is Clean Code.
 <br>
 Writing bad code can make things more complicated than they really are and forces you to spend more time
-trying to figure out what one piece of is doing does before actually doing any work.
+trying to figure out what one piece of code does before actually doing any work.
 <br>
 <br>
-This situation can be solved by executing one piece of code and giving it the proper data to process. But 
+This situation can be solved by executing the piece of code and giving it the proper data to process. But 
 what if you don't even know what is the data input and the piece of code has like 100 lines with one for loop
 behind the other and some times one for loop inside the other with lots of if else statements?
-That makes things a little bit harder, isn't? 
+That makes things a little bit harder, don't they? 
 
 <!-- #Long line break -->
 <br>
@@ -17,16 +17,18 @@ That makes things a little bit harder, isn't?
 
 Today i'm going to show you how I go through this refact process, pretty much almost everyday actually, using my own code as an example
 and using recommendations from the book <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship-ebook/dp/B001GSTOAM" targe="blank">
-Clean Code></a>.
+Clean Code</a>.
 
 <!-- #Long line break -->
 <br>
 <br>
 <!-- #Long line break -->
+
+<h3>A quick introduction</h3>
 Some years ago I was looking for content about how to get started in the Programming industry, what to learn, how to learn, when to learn
 and where to learn.
 <br>
-I found this video in a Cyber Security channel that encourages people to start a blog, to share ideas and basically externalize their 
+I found this video in a Cyber Security channel that encourages people to start a blog, to share their ideas and basically externalize their 
 thoughts and create. I found this idea amazing, why not?
 <!-- #Long line break -->
 <br>
@@ -45,18 +47,18 @@ had to do was to change the content files and deploy it.
 
 <q>What a great idea!!</q> I thought...
 <br>
-You can check this first blog I had <a href="https://codigocuriosidade.github.io/" target="blank">here</a>. There is some funny content in there.
+You can check this first blog I had <a href="https://codigocuriosidade.github.io/" target="blank">here</a>. There is some funny stuff in there.
 
 <!-- #Long line break -->
 <br>
 <br>
 <!-- #Long line break -->
-But the thing is, the way this first blog was created did not seemed enough for me...I wanted to understand and actually learn the necessary 
+But the thing is, the way this first blog was created wasn't enough for me...I wanted to understand and actually learn the necessary 
 tools and concepts and then work to create my own tools.
 <br>
 
 After some days I came up with this idea of building a similar tool but with my own code, my own solutions and so on. It's by far not the
-easier path to take but that helped me with a <b>purpose</b> and it was another reason to keep me <b>motivated</b> and <b>excited</b> about what I
+easiest path to take but that helped me with a <b>purpose</b> and it was another reason to keep me <b>motivated</b> and <b>excited</b> about what I
 was doing...
 <br>
 I talk a little bit about building things for your own benefits <a href="http://localhost:8080/post.html?id=5#questions" target="blank">here</a>.
@@ -74,10 +76,10 @@ So without further ado let's dive in to the code.
 <!-- #Long line break -->
 
 <h3><a href="https://github.com/GabrielSlima/Static-Project" target="blank">Static Project</a>: understanding the idea</h3>
-The idea was simple: generate projects and pages for them so I didn't had to create a new Web page everytime I wanted
+The idea was simple: generate projects and blog post pages so I didn't had to create a new Web page everytime I wanted
 to write a blog post. Pretty much similar to the CLI tool I was using at the time.
 
-Here is some prints of the second blog I started to talk about specifically about Cyber Security called 
+Here is some prints of the second blog I started to talk about Cyber Security specifically called 
 <a href="https://darkarmybrasil.github.io/" target="blank">Darkarmy Brasil</a> 
 (I'm not proud of the names I chose for almost all of my projects back then).
 
@@ -197,11 +199,7 @@ The current project strucutre:
 
 6 directories, 29 files</pre>
 
-<!-- #Long line break -->
 <br>
-<br>
-<!-- #Long line break -->
-
 It seems to be working the way it was supposed to...now let's analyze the core code and start working:
 <img class="post-img" src="images/clean-code-meaningful-names/writer-typing.gif">
 
