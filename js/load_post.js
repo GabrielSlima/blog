@@ -33,7 +33,6 @@ $(window).ready(function () {
             if(!postId) {
                 return view.initErrorFragment();
             }
-            //debugger;
             controller.getArticlesInfos();
 
             if(articlesInfosModel.articles_info.payload.length === 0) {
@@ -66,8 +65,8 @@ $(window).ready(function () {
                 success: function(response){
                     controller.setArticlesInfoPayload(response);
                 },
-                error: function(){
-                    console.log("Ai deu ruim");
+                error: function(e){
+                    console.log(e);
                 }
             });
         },
@@ -79,8 +78,8 @@ $(window).ready(function () {
                 success: function(response){
                     controller.setArticleContent(response);
                 },
-                error: function(){
-                    console.log("Ai deu ruim");
+                error: function(e){
+                    console.log(e);
                 }
             });
         },
@@ -165,12 +164,7 @@ $(window).ready(function () {
                     
                     if(codeSnippetBlock.firstChild != undefined && codeSnippetBlock.firstChild.data === "\n"){
                         codeSnippetBlock.removeChild(codeSnippetBlock.firstChild);
-                        console.log("First child removed from " + index);
                     }
-                    // if(codeSnippetBlock.lastChild != undefined && codeSnippetBlock.lastChild.data.trim() === "\n"){
-                    //     codeSnippetBlock.removeChild(codeSnippetBlock.lastChild);
-                    //     console.log("Last child removed from " + index);
-                    // }
                 }
             }
         }
