@@ -446,9 +446,9 @@ MAX_COMMAND_LINE_ARGS = 5
 
 USAGE_SUMMARY = """
 How to use ->
-python3 main.py <COMMAND> <COMMAND_ARGUMENTS>
-Create a new project: python3 main.py new <PROJECT_NAME>
-Create a new blog post: python3 main.py post <POST_NAME> <PROJECT_NAME> <POST_CATEGORY>
+python3 main.py &lt;COMMAND&gt; &lt;COMMAND_ARGUMENTS&gt;
+Create a new project: python3 main.py project &lt;PROJECT_NAME&gt;
+Create a new blog post: python3 main.py post &lt;POST_NAME&gt; &lt;PROJECT_NAME&gt; &lt;POST_CATEGORY&gt;
 """
 
 if len(sys.argv) < MINIMUM_COMMAND_LINE_ARGS or len(sys.argv) > MAX_COMMAND_LINE_ARGS:
@@ -494,7 +494,7 @@ AVAILABLE_FLOWS = {
         "arguments": [
             "project_name"
         ],
-        "processor": core.create_new_project
+        "processor": core.Project
     },
     "post": {
         "arguments": [
@@ -502,7 +502,7 @@ AVAILABLE_FLOWS = {
             "project_name",
             "post_category"
         ],
-        "processor": core.create_new_post
+        "processor": core.Post
     }
 }
 MINIMUM_COMMAND_LINE_ARGS = 1
@@ -511,9 +511,9 @@ SCRIPT_NAME = 1
 
 USAGE_SUMMARY = """
     How to use ->
-    python3 main.py <COMMAND> <COMMAND_ARGUMENTS>
-    Create a new project: python3 main.py new <PROJECT_NAME>
-    Create a new blog post: python3 main.py post <POST_NAME> <PROJECT_NAME> <POST_CATEGORY>
+    python3 main.py &lt;COMMAND&gt; &lt;COMMAND_ARGUMENTS&gt;
+    Create a new project: python3 main.py project &lt;PROJECT_NAME&gt;
+    Create a new blog post: python3 main.py post &lt;POST_NAME&gt; &lt;PROJECT_NAME&gt; &lt;POST_CATEGORY&gt;
 """
 
 def exit_program():
@@ -619,7 +619,7 @@ AVAILABLE_FLOWS = {
         "arguments": [
             "project_name"
         ],
-        "processor": core.create_new_project
+        "processor": core.Project
     },
     "post": {
         "arguments": [
@@ -627,7 +627,7 @@ AVAILABLE_FLOWS = {
             "project_name",
             "post_category"
         ],
-        "processor": core.create_new_post
+        "processor": core.Post
     }
 }
 MINIMUM_COMMAND_LINE_ARGS = 1
@@ -636,9 +636,9 @@ SCRIPT_NAME = 1
 
 USAGE_SUMMARY = """
     How to use ->
-    python3 main.py <COMMAND> <COMMAND_ARGUMENTS>
-    Create a new project: python3 main.py new <PROJECT_NAME>
-    Create a new blog post: python3 main.py post <POST_NAME> <PROJECT_NAME> <POST_CATEGORY>
+    python3 main.py &lt;COMMAND&gt; &lt;COMMAND_ARGUMENTS&gt;
+    Create a new project: python3 main.py project &lt;PROJECT_NAME&gt;
+    Create a new blog post: python3 main.py post &lt;POST_NAME&gt; &lt;PROJECT_NAME&gt; &lt;POST_CATEGORY&gt;
 """
 
 def exit_program():
@@ -660,8 +660,6 @@ if (len(user_input) - SCRIPT_NAME < MINIMUM_COMMAND_LINE_ARGS or
 flow = AVAILABLE_FLOWS.get(user_input[FLOW_POSITION])
 if len(user_input) - (SCRIPT_NAME + FLOW_POSITION) != len(flow.get('arguments')):
     exit_program()
-
-
 else:
     if argumento.lower() == 'post' and pasta_nome_post != " " and sys.argv[3] != " " and sys.argv[4] != " ":
         print("Gerando arquivos...")
@@ -857,9 +855,9 @@ SCRIPT_NAME = 1
 
 USAGE_SUMMARY = """
     How to use ->
-    python3 main.py <COMMAND> <COMMAND_ARGUMENTS>
-    Create a new project: python3 main.py new <PROJECT_NAME>
-    Create a new blog post: python3 main.py post <POST_NAME> <PROJECT_NAME> <POST_CATEGORY>
+    python3 main.py &lt;COMMAND&gt; &lt;COMMAND_ARGUMENTS&gt;
+    Create a new project: python3 main.py project &lt;PROJECT_NAME&gt;
+    Create a new blog post: python3 main.py post &lt;POST_NAME&gt; &lt;PROJECT_NAME&gt; &lt;POST_CATEGORY&gt;
 """
 
 def exit_program():
@@ -901,14 +899,16 @@ import json
 import datetime
 import logging
 
+
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 handler = logging.StreamHandler()
 handler.setLevel(logging.INFO)
 logger.addHandler(handler)
 
+
 AVAILABLE_FLOWS = {
-    "new": {
+    "project": {
         "arguments": [
             "project_name"
         ],
@@ -921,60 +921,57 @@ AVAILABLE_FLOWS = {
             "project_name"
         ],
         "processor": core.Post
-    },
-    "help": {
-        "arguments": [],
-        "processor": help
     }
 }
 MINIMUM_COMMAND_LINE_ARGS = 1
-FLOW_POSITION = 1
-SCRIPT_NAME = 1
+FLOW_NAME = 0
+FIRST_FLOW_PARAM = 1
+SCRIPT_NAME = 0
 
 
-def exit_program():
-    invalid_arguments_message = "Invalid arguments..."
-    logging.error(invalid_arguments_message)
-    help()
+def exit_program(message=None):
+    if message:
+        logging.error(message)
+    logging.info(execute_flow.__doc__)
     sys.exit(1)
 
 
-def handler(user_input):
-    if (len(user_input) - SCRIPT_NAME < MINIMUM_COMMAND_LINE_ARGS or
-            not AVAILABLE_FLOWS.get(user_input[FLOW_POSITION])):
-        exit_program()
-
-    flow = AVAILABLE_FLOWS.get(user_input[FLOW_POSITION])
-    if len(user_input) - (SCRIPT_NAME + FLOW_POSITION) != len(flow.get('arguments')):
-        exit_program()
-        
-    for index, required_argument in enumerate(flow['arguments']):
-        if not user_input[index + (FLOW_POSITION + SCRIPT_NAME)].strip():
-            exit_program()
-        
-    processor = flow['processor']
-    processor(user_input[(FLOW_POSITION + SCRIPT_NAME):])
-
-
-def help():
+def execute_flow(user_input):
     """Usage: 
-        Basic structure: python3 main.py <FLOW> <FLOW_ARGUMENTS>
-        Create a new project: python3 main.py new <PROJECT_NAME>
-        Create a new blog post: python3 main.py post <POST_NAME> <POST_CATEGORY> <PROJECT_NAME>
+    Basic structure: python3 main.py &lt;FLOW&gt; &lt;FLOW_ARGUMENTS&gt;
+    Create a new project: python3 main.py project &lt;PROJECT_NAME&gt;
+    Create a new blog post: python3 main.py post &lt;POST_NAME&gt; &lt;POST_CATEGORY&gt; &lt;PROJECT_NAME&gt;
     """
-    logging.info(help.__doc__)
+
+    if (len(user_input) < MINIMUM_COMMAND_LINE_ARGS or not 
+        AVAILABLE_FLOWS.get(user_input[FLOW_NAME])):
+        exit_program("The flow does not exist or there is not enough params to process")
+    
+    if user_input[FLOW_NAME] == 'help':
+        exit_program()
+    
+    flow = AVAILABLE_FLOWS.get(user_input[FLOW_NAME])
+    flow_arguments = user_input[FIRST_FLOW_PARAM: ]
+    
+    if len(flow_arguments) != len(flow.get('arguments')):
+        exit_program("Too much arguments")
+    
+    for index, required_argument in enumerate(flow['arguments']):
+        if not user_input[index + FLOW_NAME].strip():
+            exit_program("There's an invalid argument")    
+    processor = flow['processor'](flow_arguments)
+    processor.process()
 
 
 if __name__ == "__main__":
-    handler(sys.argv)
+    flow_name = 1
+    execute_flow(sys.argv[flow_name: ])
     </code>
 </pre>
 
-That's so much better...now we can see where it starts, it has a <b>handler function</b> that will deals with the user's input. It has
-a <b>help function</b> that is resposible for providing the user with the basic usage guide and it has a <b>exit_program function</b>
-that will be called when the script is provided with some kind of invalid input.
-<br>
-I've also added a new flow called <b>help</b> to call the <b>help function</b>...
+That's so much better...now we can see where it starts, it has a function to deal with the user's input (execute_flow). It has
+a <b>help flow</b> that is responsible for providing the user with the basic usage guide that takes advantage
+of the <b>exit_program function</b> that will also be called when the script is provided with some kind of invalid input.
 
 <!-- #Long line break -->
 <br>
@@ -1121,6 +1118,164 @@ This is where the templates can be manipulated and created, the necessary packag
     <li><b>newPost</b>: The last function will deal with the "new post" flow</li>
 </ul>
 <br>
+
+<h3 id="core-refact">A better core for all of us</h3>
+<pre class="brush: python">
+    <code>
+from template import hCSS as frontend_tamplate
+import os
+import json
+import logging
+from datetime import datetime
+
+
+class Project:
+    template = frontend_tamplate()
+    BOOTSTRAP_PACKAGE_NAME = "bootstrap-4.1.2-dist.zip"
+    BOOTSTRAP_ADDRESS = "https://github.com/twbs/bootstrap/releases/download/v4.1.2/{package_name}"
+
+    def __init__(self, workspace_name):
+        self.WORKSPACE =  os.path.dirname(workspace_name[0] + "/") 
+        
+        self.BOOTSTRAP_FOLDER = os.path.dirname(
+            "{workspace}/bootstrap/".format(workspace=self.WORKSPACE)
+        )
+        
+        self.CSS_FOLDER = os.path.dirname(
+            "{workspace}/bootstrap/css/".format(workspace=self.WORKSPACE)
+        )
+        
+        self.POSTS_FOLDER = os.path.dirname(
+            "{workspace}/conteudo/".format(workspace=self.WORKSPACE)
+        )
+        
+        self.BOOTSTRAP_ADDRESS = self.BOOTSTRAP_ADDRESS.format(
+            package_name=self.BOOTSTRAP_PACKAGE_NAME
+        )
+
+        self.CORE_ELEMENTS = {
+            "main_page": {
+                "main_page": {
+                    "name": "index.html",
+                    "template": self.template.html,
+                    "base_path": self.WORKSPACE
+                },
+                "main_page_javascript": {
+                    "name": "java.js",
+                    "template": self.template.javaS,
+                    "base_path": self.WORKSPACE
+                }
+            },
+            "posts": {
+                "posts_javascript": {
+                    "name": "js_post.js",
+                    "template": self.template.javaS_post,
+                    "base_path": self.POSTS_FOLDER
+                },
+                "categories_main_page_javascript": {
+                    "name": "dir_list.js",
+                    "template": self.template.diretorio_list_js,
+                    "base_path": self.POSTS_FOLDER
+                }
+            },
+            "global_usage": {
+                "metadata": {
+                    "name": "data.json",
+                    "template": self.template.json,
+                    "base_path": self.WORKSPACE
+                },
+                "css": {
+                    "name": "estilo.css",
+                    "template": self.template.estilo,
+                    "base_path": self.CSS_FOLDER
+                }
+            }
+        }
+
+    def fetch_bootstrap(self):
+        os.system(
+            'cd {bootstrap_folder} && wget {bootstrap_address} && unzip {package_name}'.format(
+                bootstrap_folder=self.BOOTSTRAP_FOLDER,
+                bootstrap_address=self.BOOTSTRAP_ADDRESS,
+                package_name=self.BOOTSTRAP_PACKAGE_NAME
+            )
+        )
+
+    def process(self):
+        if os.path.exists(self.WORKSPACE):
+           logging.info("The project already exists, please try again with another name.")
+           return
+
+        os.makedirs(self.WORKSPACE)
+        os.makedirs(self.POSTS_FOLDER)
+        os.makedirs(self.BOOTSTRAP_FOLDER)
+        os.makedirs(self.CSS_FOLDER)
+        self.fetch_bootstrap()
+            
+        for core_elements_group in self.CORE_ELEMENTS.values():
+            logging.info("Creating core elements...")
+            for core_element in core_elements_group.values(): 
+                element_path = "{base_path}/{name}".format(
+                    base_path=core_element.get('base_path'),
+                    name=core_element.get('name')
+                )
+                element = open(element_path, 'w+')
+                element.write(core_element.get('template'))
+                element.close()
+        logging.info("The project was created at {}".format(os.path.realpath(self.WORKSPACE)))
+
+class Post:
+    POSTS_CREATION_DATE_MASK = "%d/%m/%Y"
+
+    def __init__(self, post_basic_information):
+        self.name = post_basic_information[0]
+        self.category = post_basic_information[1]
+        self.workspace = post_basic_information[2]
+        self.METADATA_TEMPLATE = {
+            "title": "Title",
+            "categoria": self.category,
+            "Data": datetime.now().strftime(self.POSTS_CREATION_DATE_MASK),
+            "conteudo": "Content"
+        }
+
+    def update_posts_metadata(self):
+        metadata_file = open(self.workspace + '/data.json', 'r+')
+        metadata = metadata_file.read()
+        metadata_file.seek(0)
+        
+        json_matadata = json.loads(metadata)
+        json_matadata[1]['posts'][self.name] = self.METADATA_TEMPLATE
+        json.dump(json_matadata, metadata_file, indent=4)
+        
+        metadata_file.truncate()
+        metadata_file.close()
+
+    def process(self):
+        self.update_posts_metadata()
+        template = frontend_tamplate()
+        category_path = self.workspace + '/conteudo/' + self.category + '/'
+
+        if not os.path.exists(category_path):
+            os.makedirs(category_path)
+
+            category_main_page = self.category + '.html'
+            post_template = self.name + '.html'
+
+            category_main_page = open(category_path + category_main_page, 'w+')
+            category_main_page.write(template.diretorio_list_html)
+            category_main_page.close()
+        post = open(category_path + self.name + '.html', 'w+')
+        post.write(template.post_html)
+        post.close()
+        logging.info("A new template was created for {}".format(self.name))
+
+</code>
+</pre>
+I did some changes that aren't related to the names at all but it will help us to understand this
+strucutre better beucause it has way less code repetition.
+<br>
+<br>
+
 One thing I usually do to make sure that I'm choosing the right name for my variable, at least for the moment, 
 of course, is to review my own code after some hours, maybe even days or weeks. 
 If I don't really know what the variable/function/class is doing I just change the name to something
