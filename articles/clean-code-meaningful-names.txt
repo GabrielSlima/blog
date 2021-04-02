@@ -286,7 +286,7 @@ If you don't have much experience maybe I can help you listing some topics:
     <li>Avoid redundant names like "streetNameOFtheCurrentUser".
         If there's a object created from a User Class and there's a attribute called address 
         gabriel.address.streetName or simply gabriel.streetName will be enough to understand</li>
-    <li>Don't use extreme and useless long names. Things like "dateOfTheFirstCreatedUserInsideThePlatformWithTimezoneAndMilliSeconds". Someone will pretty want to punch you in the face</li>
+    <li>Don't use extreme and useless long names. Things like "dateOfTheFirstCreatedUserInsideThePlatformWithTimezoneAndMilliSeconds". Someone will pretty much want to punch you in the face</li>
 </ul>
 
 <br>
