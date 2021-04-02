@@ -100,7 +100,7 @@ This project being one of the first projects of mine is perfect to show you how 
 <h3 id="understanding-the-solution-technically">Understanding the solution technically</h3>
 
 Following the <a href="https://github.com/GabrielSlima/Static-Project/blob/master/README.md" target="blank">documentation</a> it seems that <b>main.py</b> controls the user input and give us the possibility to create a new project or a new 
-blog post:
+blog post with:
 <div class="code-snippet type-bash">
     <span class="bash-keyword">python3</span> <span>main.py &lt;command&gt; &lt;command_arguments&gt;</span>
 </div>
@@ -209,14 +209,20 @@ It seems to be working the way it was supposed to...now let's analyze the core c
 <br>
 <!-- #Long line break -->
 
-<h3 id="getting-used-with-the-code">Getting used with the code</h3>
+<h3 id="understand-the-solution">Understand the solution</h3>
 If you're working with somenone else's code it's important to get used with the code and the way that the other person
-thinks and deals with problems. There is not much to talk about this, the best way to understand someone else's thoughts 
+thinks and deals with problems and actually understand the implemented solution as best as you can. 
+I know this seems pretty obivous but it's commom to see people trying to refact 
+code that they don't know how it was supposed to work, specially when they have a date to delivery something.
+Sometimes I caught myself doing this and I don't recommend you to do the same.
+<br>
+<br>
+Anyway, there is not much to talk about this, the best way to understand someone else's thoughts 
 is by executing the code and seeing some kind of diagram or documentation if the code has one. 
 <br>
-My personal recommendation is that you 
-just do your best to understand and start by the business problem that it was intended to solve. This is going to help you
-to comprehend the applyed solution and why some things where done in a certain way and it's also going to help you to kind of 
+My personal recommendation is that you just do your best to understand and start by the business
+problem that it was intended to solve. This is going to help you to comprehend the applyed solution 
+and why some things where done in a certain way and it's also going to help you to kind of 
 consolidate the solution.
 
 <!-- #Long line break -->
@@ -225,7 +231,7 @@ consolidate the solution.
 <!-- #Long line break -->
 It is hard to know what everything is doing when dealing with a not well written or structured code at the first moment. 
 What I like to do is to try to identify things that I can easily "understand" like function calls, maybe some hard coded 
-strings and try to figure out what is happening at first.
+strings and try to figure out what is happening while reading the code for the first times.
 
 <!-- #Long line break -->
 <br>
@@ -240,7 +246,7 @@ If your code doesn't have a unit test class, it's a good idea to create one. Thi
 is going to help others when they try to read and understand your code and sometimes can help even yourself understand your own code.
 <br>
 Of course unit tests are not 100% focused to help to understand the solution but there is where the mocked code and test scenarios are
-and they are perfect to understand functions and conditional statements because they are supposed to test a giving function's behavior.
+and they are perfect to understand functions and conditional statements because they are supposed to test a given function's behavior.
 
 <!-- #Long line break -->
 <br>
@@ -251,8 +257,8 @@ and they are perfect to understand functions and conditional statements because 
 There is some things that it's interesting to have in mind when writing or refacting code that
 I would like to bring here.
 <br>
-Choosing names should be a simple thing to do but to have an entire chapter in a book to talk about this 
-and so many blog posts and videos out there means that it's not that simple.
+Choosing names should be a simple thing to do but to have an entire chapter in a book 
+and so many blog posts and videos out there to talk about this means that it's not that simple.
 
 <!-- #Long line break -->
 <br>
@@ -271,8 +277,8 @@ But how should you do it?
 If you don't have much experience maybe I can help you listing some topics:
 <ul>
     <li>Make sure that the name is clear, simple and reveals the class/function/variable's intent</li>
-    <li>Avoid using abreviations that it's not commom like "stn" for "street name". This onlys makes sense in your own head</li>
-    <li>Try to use unique names. The Clean Code refers to those as "Searchble Names"</li>
+    <li>Avoid using abbreviations that it's not commom like "stn" for "street name". This onlys makes sense in your own head</li>
+    <li>Try to use unique names. The Clean Code refers to those as "Searchable Names"</li>
     <li>Use the context of the Class/Function or even loops and conditional blocks in your favor</li>
     <li>Avoid using Magic Numbers. You know those number that are just in the middle of the code and you don't have a clue of what it was supposed to mean?</li>
     <li>When naming Classes and objects use noun or noun phrases</li>
@@ -297,7 +303,7 @@ function or variable we should have in mind at least the following 3 big questio
     <li>How it is used?</li>
 </ul>
 Let's get these recommendations as starting point and explore the <b>main.py</b>'s content trying to apply and
- answer those questions and understand the meaning beahind each line of code:
+ answer those questions and understand the meaning behind each line of code:
 <pre class="brush: python">
     <code>
 from generate import gerador
@@ -363,7 +369,7 @@ else:
     </code>
 </pre>
 
-<h4 id="understanding-the-imports">Understanding the imports</h4>
+<h3 id="understanding-the-imports">Understanding the imports</h3>
 Right at the beginning of the code we can see that the first import uses 2 different languages. This probably isn't gonna
 happen if your native language is English. But make sure that if you're using a language, stick with it to make things easier.
 
@@ -381,7 +387,7 @@ if not, it shows the documentation.
 <br>
 <br>
 <!-- #Long line break -->
-What I'm going to do here is to get those imports and try to have a clue of what is happening looking where there are being used.
+What I'm going to do here is to get those imports and try to have a clue of what is happening looking where they are being used.
 <br>
 If I was dealing with long lines of code I would just go right into the unit testing class and execute the code, maybe function by function instead of spending
 so much time trying to understand it.
@@ -399,7 +405,7 @@ So answering the big questions for the imports:
 </ul>
 
 <br>
-<h4 id="understanding-the-first-conditional-statement">Understanding the first <b>if statement</b></h4>
+<h3 id="understanding-the-first-conditional-statement">Understanding the first <b>if statement</b></h3>
 There isn't much to talk about:
 <ul>
  <li>it guarantees that the user only gives the script at the minimum 3 arguments</li>
@@ -471,7 +477,7 @@ will be shown along with the summary of the basic usage guide and let the user k
 <br>
 <br>
 <!-- #Long line break -->
-I've hidden the <b>magic numbers</b> giving them a meaning, a name as you can see for the <b>MINIMUM_COMMAND_LINE_ARGS</b>
+I've hidden the <b>magic numbers</b> giving them a meaning, a name, as you can see for the <b>MINIMUM_COMMAND_LINE_ARGS</b>
 and <b>MAX_COMMAND_LINE_ARGS</b> variables.
 
 <!-- #Long line break -->
@@ -550,8 +556,8 @@ elements or variables to process each flow and the processor resposible for each
 <br>
 In this way we can simply access the arguments or call the processor for each flow dinamycally using the name as a reference.
 <br>
-To give you an example let's say that we want to access the needed arguments to processt the <b>new project</b> flow, so all we would have
-to do would be:
+To give you an example let's say that we want to access the needed arguments to process the <b>new project</b> flow, so all we would have
+to do is:
 <pre class="brush: python">
     <code>
 <span class="python-console-line">AVAILABLE_FLOWS.get('new').get('arguments')</span>
@@ -572,7 +578,7 @@ Now we guarantee that the default message will be displayed:
 
 <br>
 
-<h4 id="uderstanding-the-else-statement">Understanding the <b>else statement</b></h4>
+<h3 id="uderstanding-the-else-statement">Understanding the <b>else statement</b></h3>
 Lets take a look into the <b>else</b> block. I'm going to break this one in two parts:
 <pre class="brush: python">
     <code>
@@ -597,7 +603,7 @@ else:
     </code>
 </pre>
 Right at the beginning we have two variables, one to store the <b>flow</b> chosen by the user and the second one to store
-the project/post name.
+the name of the project/post.
 <br>
 The first <b>if</b> statement deals with the <b>new project</b> flow and guarantees that the project name is not empty.
 The second one checks if the user typed <b>help</b> and shows the documentation if so.
@@ -699,7 +705,7 @@ else:
 
 I basically removed those validations from the code because once the flow and the 
 right amount of arguments is provided by the user the processor will be called and the arguments will be passed to the core module
-dinamycally.
+dinamycally. If not, the basic usage guide will be shown.
 <br>
 I kept the <b>else block</b> to make it easier to keep a track of what is happening inside the code.
 
@@ -790,7 +796,7 @@ Getting back to the "why" of things, right after setting the starting point for 
 updated valid json text with the <b>json.dupm()</b>.
 <br>
 The <a href="https://docs.python.org/3/library/io.html#io.IOBase.truncate" targe="blank">truncate()</a> is going to resize the stream 
-to the current offset position which will be the last writed byte since any value is passed to it followed by the <b>gerador()</b> instance and the actually
+to the current offset position which will be the last written byte since any value is passed to it followed by the <b>gerador()</b> instance and the actually
 page post page generator function call...
 
 <!-- #Long line break -->
@@ -1082,14 +1088,15 @@ class gerador():
         return True
     </code>
 </pre>
-<h4 id="core-module-imports">Understanding the imports</h4>
-This file has only 2 imports:
+<h3 id="core-module-imports">Understanding the imports</h3>
+This file has 3 imports:
 <ul>
     <li><b>from template import hCSS</b>: imports the Html, Css and Js templates</li>
     <li><b>import os</b>: used to manipulate the files inside project. Read and Write the the project's folder and so on</li>
     <li><b>import json</b>: used to manipulate the Json template for the <b>data.json</b> file</li>
 </ul>
-<h4 id="core-global-scope-variables">Understanding the global scope variables</h4>
+<br>
+<h3 id="core-global-scope-variables">Understanding the global scope variables</h3>
 I don't really think that there is much to talk about this, they are just the loaded template from the <b>template.py</b>
 module...I dont think it's the best case scenario to use the templates like this but we are going to focus on just the names
 for now...
@@ -1100,19 +1107,20 @@ for now...
     <li><b>Json = Temp.json</b>: The WebSite's data file template. It's used by both, main page and posts</li>
     <li><b>conteudoH = Temp.post_html</b>: Blog post page's HTML template</li>
     <li><b>conteudoJ = Temp.javaS_post</b>: Blog post page's JavaScript template</li>
-    <li><b>List_dir_html = Temp.diretorio_list_html</b>: Blog post page's HTML template</li>
-    <li><b>ListDirJs = Temp.diretorio_list_js</b>:</li>
+    <li><b>List_dir_html = Temp.diretorio_list_html</b>: Categories's main pages HTML template</li>
+    <li><b>ListDirJs = Temp.diretorio_list_js</b>: Categories's main pages JavaScript template</li>
 </ul>
-<br>
 
-<h4 id="core-gerador-class">The "gerador" class</h4>
-This Class is supposed to hold all things related to the creation of the files, folders and blog posts.
-This is where the templates can be manipulated and created, the necessary packages are installed and so on.
+<br>
+<h3 id="core-gerador-class">The "gerador" class</h3>
+This Class is supposed to hold all things related to the creation of the files and folders for the projects and 
+blog posts. This is where the templates can be manipulated and created, the necessary packages are 
+installed and so on.
 <br>
 <br>
-<h4 id="core-functions">The functions</h4>
+<h3 id="core-functions">The functions</h3>
 <ul>
-    <li><b>__init__</b>: It sets the user's input and the project folder that will be the "working space". 
+    <li><b>constructor (__init__)</b>: It sets the user's input and the project folder that will be the "working space". 
         It also calls the "new project" function</li>
     <li><b>gerar_projeto</b>: Translating -> generate_project or build_project. This one is going to deal with the "new project" flow</li>
     <li><b>newPost</b>: The last function will deal with the "new post" flow</li>
@@ -1271,7 +1279,7 @@ class Post:
 
 </code>
 </pre>
-I followed the same idea as the <b>main.py</b>, trying to keep everything simple and clear using
+I followed the same idea as the <b>main.py</b> trying to keep everything simple and clear using
 simple and clear names. 
 <br>
 Starting from the beginning, the imports of course. I've added an alias for the <b>hCSS</b> class 
@@ -1297,7 +1305,7 @@ only the <b>data.json</b> file and keeping the <b>process</b> function responsib
 <h3 id="problems-observations">Problems and final observations</h3>
 There is so many problems with this code. One of them was the basic feedback for instance. I didn't know
 what was happening, if the project/posts was created or not and so on.
-The code doesn't validate if a given blog post exists so there's the risk of reseting an existing blog post.
+The code doesn't validate if a given blog post exists so there's a risk of reseting an existing blog post.
 <br>
 <br>
 If something goes wrong during the <b>new project flow</b> we'll endup with an incomplete projet folder missing
