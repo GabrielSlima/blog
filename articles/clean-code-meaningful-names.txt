@@ -1271,18 +1271,47 @@ class Post:
 
 </code>
 </pre>
-I did some changes that aren't related to the names at all but it will help us to understand this
-strucutre better beucause it has way less code repetition.
+I followed the same idea as the <b>main.py</b>, trying to keep everything simple and clear using
+simple and clear names. 
+<br>
+Starting from the beginning, the imports of course. I've added an alias for the <b>hCSS</b> class 
+and imported two more modules, <b>logging</b> to help us with some feedback and the <b>datetime</b>
+which was already in use but I wanted to remove the <b>datetime.datetime</b> and keep just the <b>datetime</b>
+calls.
+<br>
+<br>
+The construcutor will initialize the necessary variables for both cases, Projects and Posts creation.
+<br>
+On the <b>Project</b> Class I've added a dictinoary called <b>CORE_ELEMENTS</b> which represents the 
+core elements of each project. This is going to help us to reduce the amount of if statements 
+and code repetition when creating the files.
 <br>
 <br>
 
-One thing I usually do to make sure that I'm choosing the right name for my variable, at least for the moment, 
-of course, is to review my own code after some hours, maybe even days or weeks. 
-If I don't really know what the variable/function/class is doing I just change the name to something
-that makes more sense at the moment and repeat this process till eventually I come up with a more clear name. 
+I applyed the same idea into the <b>Post</b> Class. I've created a <b>METADATA_TEMPLATE</b> structure
+to hold the template for every new blog post. Created a <b>update_posts_metadata</b> function to update 
+only the <b>data.json</b> file and keeping the <b>process</b> function responsible for calling it.
 <br>
-That's something that I usually do when I have some work to do with some piece of code specifically 
-and I see the opportunity to make things better and more clear.  
+<br>
+
+<h3 id="problems-observations">Problems and final observations</h3>
+There is so many problems with this code. One of them was the basic feedback for instance. I didn't know
+what was happening, if the project/posts was created or not and so on.
+The code doesn't validate if a given blog post exists so there's the risk of reseting an existing blog post.
+<br>
+<br>
+If something goes wrong during the <b>new project flow</b> we'll endup with an incomplete projet folder missing
+some files and the current structure only understands the <b>new project/post</b> flow so if there was a need 
+for adding a new flow probably there will be a new if statement wich is pretty normal but be careful,
+<b>normal</b> doesn't mean that it's ok to create 50 new if statements.
+<br>
+<br>
+Eventually the <b>data.json</b> will be huge because it is where every blog post's content is stored so the performance
+of the pages will be affected since everytime you load them the data.json is loaded too. So it would be better
+if the content was stored somewhere else, maybe in files apart from it or in a database.
+<br>
+There is just a basic user input validation and there is no unit testing.
+
 <br>
 <br>
 <h3>Conclusion</h3>
@@ -1292,5 +1321,17 @@ reveals not to be as clear as you thought. It may take more than one refact proc
 Even in when I was writing this blog post I changed the names that at first was making sense so many times. So don't be frustrated,
 the more code you refact more senior you become.
 
+<br>
+<br>
+One thing I usually do to make sure that I'm choosing the right name for my variable, at least for the moment, 
+of course, is to review my own code after some hours, maybe even days or weeks. 
+If I don't really know what the variable/function/class is doing I just change the name to something
+that makes more sense at the moment and repeat this process till eventually I come up with a more clear name. 
+<br>
+That's something that I usually do when I have some work to do with some piece of code specifically 
+and I see the opportunity to make things better and more clear.  
+
+<br>
+<br>
 Good Luck XD
 </div>
