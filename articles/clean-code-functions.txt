@@ -1,0 +1,12 @@
+<div style="text-align: left;">
+I already said that Clean Code is one of the most important things you can learn in Software Engineering?
+<br>
+And that bad code can complicate your life by making simple things harder that they really are?
+<br>
+Welcome to the PewdiePie's favorite blog and today I'm going to show you how to create meaningful and useful functions
+that can make your code with <a href="https://gabrielslima.github.io/blog/post.html?id=6" target="blank">amazing names</a> way more simple, well structured and
+simple.
+
+<br>
+<br>
+</div>
