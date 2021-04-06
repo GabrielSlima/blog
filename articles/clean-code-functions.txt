@@ -9,4 +9,46 @@ simple.
 
 <br>
 <br>
+<h3>It's not just about the complexity</h3>
+It's not from today that documentation is becoming a thing in teams that apply scrum...
+<br> 
+Don't get me wrong please. Let me explain...
+
+<br>
+<br>
+I was working on this project, a not super complex project but not that simple either. I was just starting
+on the team and of course that the first action of the members was to pass on the knowledge about the 
+entire solution.
+<br>
+The projects had about 8 microservices, all of them interacting with each other, the project had his own way
+to deal with logs meaning that all the output was centered in one place but there was no pattern for the output.
+Well, if it had at the beginning, it was lost during the development of the project.
+<br>
+The project was pretty cool and everything seemed to work well while the developers that was in the project
+since the beginning. Some of my fellow coworks always said that if your code needs to be explained, it's not 
+well written. I didn't get this at that time, code is code isn't?
+
+<br>
+<br>
+After some months the company had some changes related to...physical access, let's say...and some of my fellow
+colleagues decided what was best for them, of course. So some of them just changed companies.
+After a few more months, this project had new people working on it and along with it, lots of places where
+almost no one knew what was happening.
+<br>
+<br>
+The project had a documentation, of course. But the diagrams of the architecture it's not always enough.
+There was so many things happening inside the code. One message started the processing and our in memory 
+database was called, then our MongoDB was called throught a massive for loop than methods from abstract classes and 
+log output everywhere...the job was done. The problem was no one knew how.
+<br>
+<br>
+Speaking for myself, I had a limitation realted to my knowledge, of course. But as I started to grow my technical
+knowledge I could see what was happening with more clarity. Didn't take much to get the rithm and get used with
+the previous programmer's way of thinking.
+<br>
+<br>
+But I also started to identify that others new programmers where facing some issues trying to figure out and
+connect the dots of the solution. I found myself explaning where a given piece of code was located inside the
+project's architecture a pretty god amount of times and struggling a lot to understand other parts as well.
+<br>
 </div>
