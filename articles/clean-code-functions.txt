@@ -10,29 +10,24 @@ simple.
 <br>
 <br>
 <h3>It's not just about the complexity</h3>
-It's not from today that documentation is becoming a thing in teams that apply scrum...
-<br> 
-Don't get me wrong please. Let me explain...
-
+It's not from today that documentation is becoming a thing in sofware projects...
+<br>
+I would like to share with you a experience of mine so you can have my point of view. 
 <br>
 <br>
-I was working on this project, a not super complex project but not that simple either. I was just starting
-on the team and of course that the first action of the members was to pass on the knowledge about the 
-entire solution.
+I was working on this project, not a super complex project but not that simple either. I was just starting
+on the team and of course that the first action of the members was to pass on the knowledge about the solution.
 <br>
-The projects had about 8 microservices, all of them interacting with each other, the project had his own way
-to deal with logs meaning that all the output was centered in one place but there was no pattern for the output.
-Well, if it had at the beginning, it was lost during the development of the project.
 <br>
-The project was pretty cool and everything seemed to work well while the developers that was in the project
-since the beginning. Some of my fellow coworks always said that if your code needs to be explained, it's not 
-well written. I didn't get this at that time, code is code isn't?
+The project had about 8 microservices, all of them interacting with each other throught APIs and message broker.
+The project had his own way to deal with logs meaning that all the output was managed by custom code 
+and there was no pattern for the output. Well, if it had at the beginning, it was lost during the development of the project.
 
 <br>
 <br>
 After some months the company had some changes related to...physical access, let's say...and some of my fellow
-colleagues decided what was best for them, of course. So some of them just changed companies.
-After a few more months, this project had new people working on it and along with it, lots of places where
+colleagues decided what was best for them, of course and switched companies.
+After a few more months, this project had new people working on it and lots of places where
 almost no one knew what was happening.
 <br>
 <br>
@@ -42,13 +37,26 @@ database was called, then our MongoDB was called throught a massive for loop tha
 log output everywhere...the job was done. The problem was no one knew how.
 <br>
 <br>
-Speaking for myself, I had a limitation realted to my knowledge, of course. But as I started to grow my technical
-knowledge I could see what was happening with more clarity. Didn't take much to get the rithm and get used with
-the previous programmer's way of thinking.
+Speaking for myself, I had a limitation related to my knowledge, of course. But as I started to grow my technical
+knowledge I could see what was happening with more clarity. Didn't take much time to get the rithm and get used with
+the previous programmers's way of thinking.
 <br>
 <br>
-But I also started to identify that others new programmers where facing some issues trying to figure out and
+I also started to identify that others new programmers where facing some issues trying to figure out and
 connect the dots of the solution. I found myself explaning where a given piece of code was located inside the
 project's architecture a pretty god amount of times and struggling a lot to understand other parts as well.
 <br>
+<br>
+What happened was that with the desire (let's call it that way) of delivering things in a short amount of time the real documentation,
+the code, started to get more and more information and the developer that was trying to keep it organized
+didn't had much time to do so for a obvious reason.
+<br>
+<br>
+What I could learn with that situation is that building the <b>right functions</b> can help not only with the complexity
+of the code, but with the documentation.
+<br>
+Write code is easier than keeping it. When writing code the solution is fresh in your mind, you know what you need
+and even though most people think about the code's maintenance and other things we can't cover all the possibilitties
+and build an abstract code that will handle everything. So it's important that the code's structure can be 
+understood as easier as possible.
 </div>

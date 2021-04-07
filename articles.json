@@ -1,6 +1,14 @@
 
 [
     {
+        "id": "7",
+        "title": "How to build better functions and methods",
+        "description": "Making your mom proud of your code...",
+        "author": "Gabriel Lima",
+        "date": "2021-04-06",
+        "article_file_name": "./articles/clean-code-functions.txt"
+    },
+    {
         "id": "6",
         "title": "How to give meaningful names for your functions and variables ",
         "description": "Making your mom proud of your code...",
