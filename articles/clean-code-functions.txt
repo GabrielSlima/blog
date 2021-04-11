@@ -12,7 +12,7 @@ I don't have 200+ years of experience in this field but I can tell you that one 
 Every complex code has more than a complex solution behind it. It has hidden bugs, cognitive efforts to understand things and more and more time 
 to figure out what the code is doing.
 <br>
-For what I've been seeing on the last projects I've participated is that complex code can make things very complicated for everyone. Speaking
+For what I've been seeing in past projects is that complex code can make things very complicated for everyone. Speaking
 specifically about the developers's point of view, we have to deal with delivery time and other problems like performance, reusability, readibilitty, 
 scalabilitty, availability and so on.
 <br>
@@ -21,7 +21,7 @@ lead to serious real health problems and of course that it's not just because yo
 like the pressure to delivery something can make your anxiety levels go astronomical and so on.
 <br>
 <br>
-I'm not saying that you have to sacrifice your own mental health to delivery things. That's another discussion and I prefer to maybe write 
+I'm not saying if you should or not to sacrifice your own mental health to delivery things (you shouldn't). That's another discussion and I prefer to maybe write 
 a specific blog post to talk about it.
 <br>
 I'm saying is that if we follow the best practices those problems can be avoided and can make things easier for yourself.
@@ -33,6 +33,21 @@ read it if you want to save the world from your bad name choices and prevent our
 <h3></h3>
 <br>
 <br>
+
+<h3>Levels of Abstraction</h3>
+To better understand how long functions/methods should be it's important to understand levels of abstraction in programming.
+<br>
+Abstraction is the process of hiding information that isn't relevant for a giving context. Like when you turn on the lights 
+or when you turn on the car or move your mouse or even when you are texting. You don't need to know how those things are working internally
+to actually use them.
+
+<br>
+<br>
+When you have abstractions inside abstractions you have <b>levels of abstraction</b>. I don't know if that is the correct way to say this. But what
+I'm trying to say is that when you have a super deatailed context it's necessary to creat more than one layer of abstraction creating 
+subcontexts that compose a bigger context.
+<br>
+
 <h3>It's not just about the complexity</h3>
 It's not from today that documentation is becoming a thing in sofware projects...
 <br>
