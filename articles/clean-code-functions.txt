@@ -3,10 +3,34 @@ I already said that Clean Code is one of the most important things you can learn
 <br>
 And that bad code can complicate your life by making simple things harder that they really are?
 <br>
-Welcome to the PewdiePie's favorite blog and today I'm going to show you how to create meaningful and useful functions
+Welcome to the PewdiePie's favorite blog about Software Engineering and today I'm going to show you how to create meaningful and useful functions
 that can make your code with <a href="https://gabrielslima.github.io/blog/post.html?id=6" target="blank">amazing names</a> way more simple, well structured and
 simple.
-
+<br>
+<br>
+I don't have 200+ years of experience in this field but I can tell you that one of the enemies in Software Engineering is the complexity.
+Every complex code has more than a complex solution behind it. It has hidden bugs, cognitive efforts to understand things and more and more time 
+to figure out what the code is doing.
+<br>
+For what I've been seeing on the last projects I've participated is that complex code can make things very complicated for everyone. Speaking
+specifically about the developers's point of view, we have to deal with delivery time and other problems like performance, reusability, readibilitty, 
+scalabilitty, availability and so on.
+<br>
+Dealing with all of those things and still having to understand what everything is doing inside a 100 lines function can be overwhelming and 
+lead to serious real health problems and of course that it's not just because you have a bad code to work with but because others problems
+like the pressure to delivery something can make your anxiety levels go astronomical and so on.
+<br>
+<br>
+I'm not saying that you have to sacrifice your own mental health to delivery things. That's another discussion and I prefer to maybe write 
+a specific blog post to talk about it.
+<br>
+I'm saying is that if we follow the best practices those problems can be avoided and can make things easier for yourself.
+<br>
+<br>
+I'm going to use principles from the book Clean Code (I"m not being paid for this) to refact my own code as I did on 
+<a href="https://gabrielslima.github.io/blog/post.html?id=6" target="blank">this blog post</a> that I talk about <b>meaningful names</b> (you should
+read it if you want to save the world from your bad name choices and prevent our world from being exploded when aliens read your code).
+<h3></h3>
 <br>
 <br>
 <h3>It's not just about the complexity</h3>
