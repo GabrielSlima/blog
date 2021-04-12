@@ -44,10 +44,23 @@ to actually use them.
 <br>
 <br>
 When you have abstractions inside abstractions you have <b>levels of abstraction</b>. I don't know if that is the correct way to say this. But what
-I'm trying to say is that when you have a super deatailed context it's necessary to creat more than one layer of abstraction creating 
+I'm trying to say is that when you have a super deatailed context it's necessary to create more than one layer of abstraction creating 
 subcontexts that compose a bigger context.
 <br>
+A good example would be when we turn on the lights:
+<img class="post-img" src="images/clean-code-functions/lights.png" alt="">
+We don't really need to know what happens behind the switch. We just need the lights on (hopefully this makes sense).
+<br>
+<br>
+So if we have a function that brings only the odd numbers in one range of numbers that's all we need to worry about when using it.
+If I call this function this is going to give me a list of odd numbers between a range of numbers and that's it.
 
+<br>
+<br>
+<h3>Small functions</h3>
+So now that you know what an abstraction means in programming we can start listing the necessary principles to write functions.
+<h5>Blocks and Indenting</h5>
+Make sure that the function indenting level is one or two at the max. This will garantee that the function doesn't hold nested strcutures.
 <h3>It's not just about the complexity</h3>
 It's not from today that documentation is becoming a thing in sofware projects...
 <br>
