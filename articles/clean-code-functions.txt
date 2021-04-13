@@ -58,9 +58,54 @@ If I call this function this is going to give me a list of odd numbers between a
 <br>
 <br>
 <h3>Small functions</h3>
-So now that you know what an abstraction means in programming we can start listing the necessary principles to write functions.
+So now that you know what an abstraction means in programming we can start listing the necessary principles to write good functions.
 <h5>Blocks and Indenting</h5>
-Make sure that the function indenting level is one or two at the max. This will garantee that the function doesn't hold nested strcutures.
+Make sure that the function indenting level is one or two at the max. This will garantee that the function doesn't hold so many (or none) nested strcutures.
+For example instead of doing this:
+<pre class="brush: python">
+<code>
+import logging
+import re
+import random
+
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+handler.setLevel(logging.INFO)
+logger.addHandler(handler)
+
+
+emails = [
+    "gabriel@supercooldomain.com",
+    "gabrielsuperpersonal@supercooldomain.com",
+    "gabrielbusiness@supercooldomain.com"
+]
+
+def send_to_email_list(customized_message):
+    domain_pattern = re.compile("\w+@supercooldomain.com$")
+    for email in emails:
+        match = domain_pattern.match(email)
+        if match:
+            status = send_throught_super_cool_domain(email, customized_message)
+            if status == True:
+                logging.info("Email sent to {}".format(email))
+            else:
+                logging.info("An error occured while trying to contact: {}".format(email))
+
+
+def send_throught_super_cool_domain(email, message):
+    status = [True, False]
+    return random.choices(status)[0]
+
+
+if __name__ == "__main__":
+    send_to_email_list("Super customized email")
+</code>
+</pre>
+
+do this:
+
 <h3>It's not just about the complexity</h3>
 It's not from today that documentation is becoming a thing in sofware projects...
 <br>
