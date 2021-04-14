@@ -16,20 +16,22 @@ For what I've been seeing in past projects is that complex code can make things 
 specifically about the developers's point of view, we have to deal with delivery time and other problems like performance, reusability, readibilitty, 
 scalabilitty, availability and so on.
 <br>
-Dealing with all of those things and still having to understand what everything is doing inside a 100 lines function can be overwhelming and 
-lead to serious real health problems and of course that it's not just because you have a bad code to work with but because others problems
+<br>
+Dealing with all of those things and still having to understand what everything is doing inside a 100 lines function can be stressful and 
+stress can lead to serious real health problems and of course that it's not just because you have a bad code to work with but because others problems
 like the pressure to delivery something can make your anxiety levels go astronomical and so on.
 <br>
 <br>
 I'm not saying if you should or not to sacrifice your own mental health to delivery things (you shouldn't). That's another discussion and I prefer to maybe write 
 a specific blog post to talk about it.
 <br>
-I'm saying is that if we follow the best practices those problems can be avoided and can make things easier for yourself.
+What I'm saying is that if we follow the best practices those problems can be avoided and can make things easier for yourself.
 <br>
 <br>
-I'm going to use principles from the book Clean Code (I"m not being paid for this) to refact my own code as I did on 
-<a href="https://gabrielslima.github.io/blog/post.html?id=6" target="blank">this blog post</a> that I talk about <b>meaningful names</b> (you should
-read it if you want to save the world from your bad name choices and prevent our world from being exploded when aliens read your code).
+I'm going to use principles from the book Clean Code to refact my own code as I did on 
+<a href="https://gabrielslima.github.io/blog/post.html?id=6" target="blank">this blog post</a> that I talk about <b>meaningful names</b>.
+You should read it if you want to save the world from your bad name choices and prevent 
+our world from being exploded when aliens read your code.
 
 
 <h3>Small functions</h3>
@@ -38,10 +40,17 @@ does related to a given context the better. In this way all things that are rela
 right there.
 <br>
 I don't know about you, but I find long functions harder to understand because they have so many things to consider
-and understand. I just want get to the end of it and see the output most of the time.
+before you actually understand what it's doing. I just want get to the end of it and see the output most of the time.
 <br>
 <br>
-Small functions are esier to understand because they have less things to worry about.
+So small functions are esier to understand because they have less things to worry about, of course.
+But I also think that how long your functions should be depends on the language you are using and the style guide.
+<br>
+<br>
+I'm trying to organize the topics with a top-down visualization and trying to connect each of them in each stage.
+Hopefully it makes sense at the end.
+
+
 <h5 id="block-indenting">Blocks and Indenting</h5>
 Make sure that the function indenting level is one or two at the max. This will garantee that the function doesn't hold so many (or none) nested strcutures.
 Also pay attention on if/else/while/switch/case blocks. It's recommended that they are one line long and that this line be a function call.
@@ -152,7 +161,7 @@ to actually use them.
 
 <br>
 <br>
-When you have abstractions inside abstractions you have <b>levels of abstraction</b>. I don't know if that is the correct way to say this. But what
+When you have abstractions within abstractions you have <b>levels of abstraction</b>. I don't know if that is the correct way to say this. But what
 I'm trying to say is that when you have a super detailed context it's necessary to create more than one layer of abstraction creating 
 subcontexts that compose a bigger context.
 <br>
@@ -170,17 +179,24 @@ is doing only one thing all the steps inside of it should be related to the func
 Take the last block of code for instance. We have 3 levels of abstractions:
 <img class="post-img" src="images/clean-code-functions/premium_members.png" alt="">
 
-Following this idea of <b>one level of abstraction per function</b> we will follow the stepdown rule. This means that 
+Following this idea of <b>one level of abstraction per function</b> we will follow <b>stepdown rule</b>. This means that 
 we will read/wirite the functions stage by stage worring only with the relevant information for each context.
+<br>
+So now that you know how to organize the function in layers of abstraction, what about the arguments/paramters?
+
 
 <h3>Function Arguments</h3>
-The Clean Code book has a very funny way of say that we shouldn't have more that 3 arguments per function and I understand why.
+The Clean Code book has a very funny way of say that we shouldn't have more that 2 arguments per function and I understand why.
 The more arguments the more contexts to worry about and the less we will worry about the function's context and useless information
 will take the place of important information. They are also more complicated to cover with unit testing. 
-<br>
-<br>
+
+<h5>One arguments functions</h5>
 Functions should ask a question about a specific argument, transform it into something else or activates an event
 that changes the state of the system.
+<h5>Two arguments functions</h5>
+It's recommended to use them when the arguments have a natural ordering. 
+<h5>Three arguments functions</h5>
+
 Although I don't think these principles applies for every context I do think that they are great in most of the cases.
 <br>
 Try to keep the function with less arguments but also consider the language that you are using. Python for example has the
