@@ -193,14 +193,56 @@ will take the place of important information. They are also more complicated to 
 <h5>One arguments functions</h5>
 Functions should ask a question about a specific argument, transform it into something else or activates an event
 that changes the state of the system.
-<h5>Two arguments functions</h5>
-It's recommended to use them when the arguments have a natural ordering. 
-<h5>Three arguments functions</h5>
 
+<h5>Two arguments functions</h5>
+It's recommended to use them when the arguments have a natural ordering. Or there is a specific reason to have 
+two arguments.
+
+<h5>Three arguments functions</h5>
+Just avoid them.
+
+<h5>More than 3 arguments</h5>
+In these cases consider to encapsulate some of the arguments inside a class.
+
+<h5>Flag arguments</h5>
+Avoid flag arguments. They indicates that the function does more than one thing.
+
+<h5>What about the argument lists?</h5>
+For functions that receives rest parameters and/or keyword parameters. Those arguments count as one. This means
+that this is a <b>one argument function</b>:
+<pre class="brush: python">
+<code>
+import logging
+
+
+def one_argument(*args):
+  logging.info(args)
+</code>
+</pre>
+
+And this is a <b>two arguments function</b>:
+<pre class="brush: python">
+<code>
+import logging
+
+
+def two_arguments(some_incredible_demo_variable, *args):
+  logging.info(some_incredible_demo_variable)
+  logging.info(args)
+</code>
+</pre>
+
+As you can guess the main reasons to avoid having functions with lots of arguments are the current layer of abstraction
+and how many things the function is doing. The more things the function does the harder it is to understand, cover
+with unit testing and keep the code clean and simple.
+<br>
+<br>
 Although I don't think these principles applies for every context I do think that they are great in most of the cases.
 <br>
 Try to keep the function with less arguments but also consider the language that you are using. Python for example has the
-<a href="https://docs.python.org/3/glossary.html#term-argument" target="blank">keywords</a> that allow us to identify the arguments.
+<a href="https://docs.python.org/3/glossary.html#term-argument" target="blank">keywords</a> and
+<a href="https://docs.python.org/3/glossary.html#term-parameter" target="blank">rest/keyword parameters</a> that allow us to identify the arguments
+or have an immutable sequence of data.
 
 <h3>Hidden things and readibilitty: Side effects and output arguments</h3>
 Avoid hidden actions in your function. Take this piece of code for instance:
@@ -248,7 +290,7 @@ if __name__ == "__main__":
     send_to_email_list("Super customized email")
 </code>
 </pre>
-The function <b>send_to_email_list</b> is not sending the email for all members. It's sending for <b>premiu members</b>
+The function <b>send_to_email_list</b> is not sending the email for all members. It's sending for <b>premium members</b>
 only. So the premium members verification is a hidden action.
 This is also another way of doing more than one thing in the same function.
 
