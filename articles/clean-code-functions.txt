@@ -292,13 +292,125 @@ if __name__ == "__main__":
 </pre>
 The function <b>send_to_email_list</b> is not sending the email for all members. It's sending for <b>premium members</b>
 only. So the premium members verification is a hidden action.
-This is also another way of doing more than one thing in the same function.
+This is also another way of doing more than one thing in the same function. In these cases the most recommended
+thing to do is to create another layer of abstraction keeping the function doing only one thing
+<br>
+<br>
+And talking about readibilitty. Make sure that not only the functions are well strucutred with clear names and
+following the step down rule but that when calling them that it's intention it's clear preventing the reader from
+having to check the function's signature. Take the last example:
+<pre class="brush: python">
+<code>
+import logging
+import random
+import time
 
 
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+handler.setLevel(logging.INFO)
+logger.addHandler(handler)
+
+
+obj = "Super customized email"
+
+members = [
+    ("gabriel@supercooldomain.com", True),
+    ("gabrielsuperpersonal@supercooldomain.com", False),
+    ("gabrielbusiness@supercooldomain.com", True)
+]
+
+
+def send_to_premium_members(customized_message):
+    for member in members:
+        send_to_premium_member(member, customized_message)
+
+
+def send_to_premium_member(member, message):
+    _PREMIUM_MEMBERSHIP = True
+    _MEMBERSHIP_TYPE = 1
+    _EMAIL = 0
+    if member[_MEMBERSHIP_TYPE] == _PREMIUM_MEMBERSHIP:
+        send_email(member[_EMAIL], message)
+
+
+def send_email(email, message):
+    statuses = [True, False]
+    time.sleep(.2)
+    connection_status = random.choices(statuses)[0]
+    logging.info("Message sent to {email}: {connection_status}".format(
+        email=email,
+        connection_status=connection_status
+    ))
+
+
+if __name__ == "__main__":
+    send_to_premium_members(obj)
+</code>
+</pre>
+What does the <b>obj</b> variable even mean here? It could be a structure with the email list or with connection details and so on.
+To figure it out I would have to check the obj's value and the see how the function works. Got it?
 
 <h3>Exceptions vs Error Codes</h3>
+When dealing with error handling it's common to create error codes to categorize error scenarios. I don't think that it's wrong. It makes
+sense if you're managing the log output and using the codes to create data visualization and so on.
+But here we go with a few recommendations. Using error codes forces the caller to deal with the error not giving it an easier path than create nested
+strucutres.
+<pre class="bruh: python">
+<code>
+import logging
+import random
+import time
 
 
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+handler.setLevel(logging.INFO)
+logger.addHandler(handler)
+
+
+members = [
+    ("gabriel@supercooldomain.com", True),
+    ("gabrielsuperpersonal@supercooldomain.com", False),
+    ("gabrielbusiness@supercooldomain.com", True)
+]
+
+
+def send_to_premium_members(customized_message):
+    for member in members:
+        send_to_premium_member(member, customized_message)
+
+
+def send_to_premium_member(member, message):
+    _PREMIUM_MEMBERSHIP = True
+    _MEMBERSHIP_TYPE = 1
+    _EMAIL = 0
+    if member[_MEMBERSHIP_TYPE] == _PREMIUM_MEMBERSHIP:
+        send_email(member[_EMAIL], message)
+
+
+def send_email(email, message):
+    statuses = [True, False]
+    time.sleep(.2)
+    connection_status = random.choices(statuses)[0]
+    
+    if not connection_status:
+        raise ConnectionError("Connection Error: Could not sent Email to {}".format(email))
+    
+    logging.info("Message sent to {email}: {connection_status}".format(
+        email=email,
+        connection_status=connection_status
+    ))
+
+
+if __name__ == "__main__":
+    send_to_premium_members("Super customized email")
+</code>
+</pre>
+Take this code and imagine that we want it to continue try to send emails for the rest of the list and retry those that could no be sent
+later.
 <h3>It's not just about the complexity</h3>
 It's not from today that documentation is becoming a thing in sofware projects...
 <br>
