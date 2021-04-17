@@ -409,8 +409,144 @@ if __name__ == "__main__":
     send_to_premium_members("Super customized email")
 </code>
 </pre>
-Take this code and imagine that we want it to continue try to send emails for the rest of the list and retry those that could no be sent
-later.
+Take this code and imagine that we want it to continue to try to send emails for the rest of the list and 
+store those premium members that couldn't be contacted to deal with later. If it had a web interface maybe could
+have a contant members screen that shows the emails sent. They could be processed manually later on.
+The first thing that came into my mind was to doing this:
+<pre class="brush: python">
+<code>
+import logging
+import random
+import time
+
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+handler.setLevel(logging.INFO)
+logger.addHandler(handler)
+
+
+members = [
+    ("gabriel@supercooldomain.com", True),
+    ("gabrielsuperpersonal@supercooldomain.com", False),
+    ("gabrielbusiness@supercooldomain.com", True)
+]
+
+
+def send_to_premium_members(customized_message):
+    to_reprocess = []
+    _EMAIL = 0
+    for member in members:
+        status = send_to_premium_member(member, customized_message)
+        if status == "FAILED":
+            to_reprocess.append(member[_EMAIL])
+    logging.info("Members to be contacted: {}".format(to_reprocess))
+    return to_reprocess
+
+def send_to_premium_member(member, message):
+    _PREMIUM_MEMBERSHIP = True
+    _MEMBERSHIP_TYPE = 1
+    _EMAIL = 0
+    status = "NON_PREMIUM_MEMBER"
+    if member[_MEMBERSHIP_TYPE] == _PREMIUM_MEMBERSHIP:
+        sent = send_email(member[_EMAIL], message)
+        if not sent:
+            status = "FAILED"
+        else:
+            status = "SUCCESS"
+    return status
+
+
+def send_email(email, message):
+    statuses = [True, False]
+    time.sleep(.2)
+    connection_status = random.choices(statuses)[0]
+    
+    logging.info("Message sent to {email}: {connection_status}".format(
+        email=email,
+        connection_status=connection_status
+    ))
+
+
+if __name__ == "__main__":
+    send_to_premium_members("Super customized email")
+</code>
+</pre>
+It's easy to break the two levels of indentation principle because the try/catch/except block creates another level of
+identation. The <b>send_to_premium_member</b> function had to deal with the
+<br>
+<br>
+Now using try/catch/except blocks:
+<pre>
+<code>
+import logging
+import random
+import time
+
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+handler.setLevel(logging.INFO)
+logger.addHandler(handler)
+
+to_reprocess = []
+
+members = [
+    ("gabriel@supercooldomain.com", True),
+    ("gabrielsuperpersonal@supercooldomain.com", False),
+    ("gabrielbusiness@supercooldomain.com", True),
+    ("gabriellima@supercooldomain.com", True),
+    ("gabriel_lima@supercooldomain.com", False)
+]
+
+def send_to_premium_members(customized_message):
+    for member in members:
+        send_to_premium_member(member, customized_message)
+
+
+def send_to_premium_member(member, message):
+    _PREMIUM_MEMBERSHIP = True
+    _MEMBERSHIP_TYPE = 1
+    _EMAIL = 0
+    if member[_MEMBERSHIP_TYPE] == _PREMIUM_MEMBERSHIP:
+        send(member[_EMAIL], message)
+
+
+def send(email, message):
+    try:
+        send_email(email, message)
+    except ConnectionError as e:
+        logging.error(e)
+        to_reprocess.append(email)
+
+
+def send_email(email, message):
+    statuses = [True, False]
+    time.sleep(.2)
+    connection_status = random.choices(statuses)[0]
+    
+    if not connection_status:
+        raise ConnectionError("Connection Error: Could not sent Email to {}".format(email))
+    
+    logging.info("Message sent to {email}: {connection_status}".format(
+        email=email,
+        connection_status=connection_status
+    ))
+
+
+def show_not_contacted_members():
+    logging.info("The following members couldn't be contacted: {}".format(to_reprocess))
+
+if __name__ == "__main__":
+    send_to_premium_members("Super customized email")
+    show_not_contacted_members()
+</code>
+</pre>
+The error handling is another thing that the function does. So it's worth it putting it into a level above of the
+actual action that demands error handling.
+
 <h3>It's not just about the complexity</h3>
 It's not from today that documentation is becoming a thing in sofware projects...
 <br>
