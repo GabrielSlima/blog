@@ -1,20 +1,22 @@
 <div style="text-align: left;">
-I already said that Clean Code is one of the most important things you can learn in Software Engineering?
+I already said that Clean Code is one of the most important things that you can learn in Software Engineering?
 <br>
 And that bad code can complicate your life by making simple things harder that they really are?
 <br>
-Welcome to the PewdiePie's favorite blog about Software Engineering and today I'm going to show you how to create meaningful and useful functions
-that can make your code with <a href="https://gabrielslima.github.io/blog/post.html?id=6" target="blank">amazing names</a> way more simple, well structured and
-simple.
+<br>
+Welcome to the PewdiePie's favourite blog about Software Engineering and today I'm going to show you how to create meaningful and useful functions
+that can make your code with <a href="https://gabrielslima.github.io/blog/post.html?id=6" target="blank">amazing names</a> way more simple, 
+well structured and...simple.
 <br>
 <br>
 I don't have 200+ years of experience in this field but I can tell you that one of the enemies in Software Engineering is the complexity.
 Every complex code has more than a complex solution behind it. It has hidden bugs, cognitive efforts to understand things and more and more time 
 to figure out what the code is doing.
 <br>
-For what I've been seeing in past projects is that complex code can make things very complicated for everyone. Speaking
-specifically about the developers's point of view, we have to deal with delivery time and other problems like performance, reusability, readibilitty, 
-scalabilitty, availability and so on.
+<br>
+For what I've been seeing in past projects, complex code can make things very complicated for everyone. Speaking
+specifically about the developers's point of view, we have to deal with delivery time and other problems like performance, 
+reusability, readability, scalability, availability and so on.
 <br>
 <br>
 Dealing with all of those things and still having to understand what everything is doing inside a 100 lines function can be stressful and 
@@ -36,14 +38,14 @@ our world from being exploded when aliens read your code.
 
 <h3>Small functions</h3>
 Maybe this one seems obvious but it's easy to write long functions thinking that the more things one function 
-does related to a given context the better. In this way all things that are related to a specific function can be handled 
+does related to a given context the better. In that way all things that are related to a specific function can be handled 
 right there.
 <br>
 I don't know about you, but I find long functions harder to understand because they have so many things to consider
 before you actually understand what it's doing. I just want get to the end of it and see the output most of the time.
 <br>
 <br>
-So small functions are esier to understand because they have less things to worry about, of course.
+Small functions are easier to understand because they have less things to worry about, of course.
 But I also think that how long your functions should be depends on the language you are using and the style guide.
 <br>
 <br>
@@ -163,7 +165,7 @@ to actually use them.
 <br>
 When you have abstractions within abstractions you have <b>levels of abstraction</b>. I don't know if that is the correct way to say this. But what
 I'm trying to say is that when you have a super detailed context it's necessary to create more than one layer of abstraction creating 
-subcontexts that compose a bigger context.
+subcontexts that compose a bigger one.
 <br>
 A good example would be when we turn on the lights:
 <img class="post-img" src="images/clean-code-functions/lights.png" alt="">
@@ -182,7 +184,7 @@ Take the last block of code for instance. We have 3 levels of abstractions:
 Following this idea of <b>one level of abstraction per function</b> we will follow <b>stepdown rule</b>. This means that 
 we will read/wirite the functions stage by stage worring only with the relevant information for each context.
 <br>
-So now that you know how to organize the function in layers of abstraction, what about the arguments/paramters?
+So now that you know how to organize the function in layers of abstraction, what about the arguments/parameters?
 
 
 <h3>Function Arguments</h3>
@@ -191,11 +193,11 @@ The more arguments the more contexts to worry about and the less we will worry a
 will take the place of important information. They are also more complicated to cover with unit testing. 
 
 <h5>One arguments functions</h5>
-Functions should ask a question about a specific argument, transform it into something else or activates an event
+Functions that asks a question about a specific argument, transform it into something else or activates an event
 that changes the state of the system.
 
 <h5>Two arguments functions</h5>
-It's recommended to use them when the arguments have a natural ordering. Or there is a specific reason to have 
+It's recommended to use them when the arguments have a natural ordering or when there is a specific reason to have 
 two arguments.
 
 <h5>Three arguments functions</h5>
@@ -214,7 +216,6 @@ that this is a <b>one argument function</b>:
 <code>
 import logging
 
-
 def one_argument(*args):
   logging.info(args)
 </code>
@@ -225,25 +226,25 @@ And this is a <b>two arguments function</b>:
 <code>
 import logging
 
-
 def two_arguments(some_incredible_demo_variable, *args):
   logging.info(some_incredible_demo_variable)
   logging.info(args)
 </code>
 </pre>
 
-As you can guess the main reasons to avoid having functions with lots of arguments are the current layer of abstraction
+I'm pretty sure you already knows this by now but it's worth it to
+reinforce that the main reasons to avoid having functions with lots of arguments are the current layer of abstraction
 and how many things the function is doing. The more things the function does the harder it is to understand, cover
 with unit testing and keep the code clean and simple.
 <br>
 <br>
-Although I don't think these principles applies for every context I do think that they are great in most of the cases.
+Although I don't think those principles applies for every context I do think that they are great in most of the cases.
 <br>
 Try to keep the function with less arguments but also consider the language that you are using. Python for example has the
 <a href="https://docs.python.org/3/glossary.html#term-argument" target="blank">keywords</a> and
 <a href="https://docs.python.org/3/glossary.html#term-parameter" target="blank">rest/keyword parameters</a> that allow us to identify the arguments
-or have an immutable sequence of data.
-
+or have an immutable sequence of data so having more than 2 arguments in a function is not a big deal if you use those tools
+properly.
 <h3>Hidden things and readibilitty: Side effects and output arguments</h3>
 Avoid hidden actions in your function. Take this piece of code for instance:
 <pre>
@@ -297,7 +298,7 @@ thing to do is to create another layer of abstraction keeping the function doing
 <br>
 <br>
 And talking about readibilitty. Make sure that not only the functions are well strucutred with clear names and
-following the step down rule but that when calling them that it's intention it's clear preventing the reader from
+following the step down rule but that when calling them that it's intention is clear preventing the reader from
 having to check the function's signature. Take the last example:
 <pre class="brush: python">
 <code>
@@ -350,28 +351,25 @@ if __name__ == "__main__":
 </code>
 </pre>
 What does the <b>obj</b> variable even mean here? It could be a structure with the email list or with connection details and so on.
-To figure it out I would have to check the obj's value and the see how the function works. Got it?
+To figure it out I would have to check the obj's value and see how the function works. Got it?
 
 <h3>Exceptions vs Error Codes</h3>
 When dealing with errors it's common to create <b>error codes</b> to categorize those errors scenarios. Maybe the 
 error codes will be used to change the behavior of the application or maybe you have a workflow that is affected
 acording to error codes and so on. I don't think that it's wrong. Maybe you're managing the log output and using 
-the codes to create data visualization and things like that.
-<br>
-But I think it's worth it to give you some examples about this and a few recommendations so that you use error codes
-thinking on the long run. 
+the codes to create data visualization and things like that. But I think that it's worth it to use them thinking on the long run. 
 <br>
 <br>
 One of the most common thing when using error codes is that it forces the caller to deal with the error immediatelly 
 not giving it an easier path than creating nested strucutres. Talking specifically of scenarios that the error codes
-are used inside the code only and it's used for internal controll. They are used inside the solution but it's invisible
-for the user and used for decisions inside the solution.
+are used inside the code only and they are used for internal control and things like that. They are invisible
+for the user.
 
 <br>
 <br>
-It maybe simpler to use error codes because they can have a descriptive name of what is happening. Like when
+It maybe easier to use error codes because they can have a descriptive name of what is happening. Like when
 you try to open a connection with some server but it doesn't happen for any reason. It's easier to "flag" the 
-function response with a code that represents these cases.
+function response with a code that represents each error scenario.
 But it also makes room for the caller to deal with the error code the way it wants. Nothing wrong with that too but
 I'm going to give you an example that can illsutrate what I'm talking about:
 <pre class="bruh: python">
@@ -429,8 +427,11 @@ if __name__ == "__main__":
 Take this code and imagine that we want it to continue trying to send emails for the rest of the list and 
 store those premium members that couldn't be contacted so that we can deal with them later. 
 <br>
-If the solution had a web  interface maybe we could have a contant members screen that shows the emails that 
-we can contact with some configuarion possibilitties like choosing a group to send emails to, like the <b>premium members list</b>. 
+<br>
+If the solution had a web  interface maybe we could have a contact members screen that shows the emails that 
+we can use to reach the members with some custom configuarion possibilitties, like choosing a group to send emails to, 
+like the <b>premium members list</b>. 
+<br>
 It could have a graph that shows how many people could be reached right after we've sent the list to process.
 Those who couldn't be contacted for any reason  could be processed manually or throught a schedule later on.
 The first thing that came into my mind was doing this:
