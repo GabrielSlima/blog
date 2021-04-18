@@ -353,10 +353,26 @@ What does the <b>obj</b> variable even mean here? It could be a structure with t
 To figure it out I would have to check the obj's value and the see how the function works. Got it?
 
 <h3>Exceptions vs Error Codes</h3>
-When dealing with error handling it's common to create error codes to categorize error scenarios. I don't think that it's wrong. It makes
-sense if you're managing the log output and using the codes to create data visualization and so on.
-But here we go with a few recommendations. Using error codes forces the caller to deal with the error not giving it an easier path than create nested
-strucutres.
+When dealing with errors it's common to create <b>error codes</b> to categorize those errors scenarios. Maybe the 
+error codes will be used to change the behavior of the application or maybe you have a workflow that is affected
+acording to error codes and so on. I don't think that it's wrong. Maybe you're managing the log output and using 
+the codes to create data visualization and things like that.
+<br>
+But I think it's worth it to give you some examples about this and a few recommendations so that you use error codes
+thinking on the long run. 
+<br>
+<br>
+One of the most common results when using error codes is that it forces the caller to deal with the error immediatelly 
+not giving it an easier path than create nested strucutres. Talking specifically of scenarios that the error code
+is just usde inside the code only and it's used for internal controll. You know? To take decisions but it's hard coded.
+
+<br>
+<br>
+It maybe simpler to use error codes because they can have a descriptive name of what is happening. Like when
+you try to open a connection with some server but it doesn't happen for any reason. It's easier to "flag" the 
+function response with a code that represents these cases.
+But it also makes room for the caller to deal with the error code the way it wants. Nothing wrong with that too but
+I'm going to give you an example that can illsutrate what I'm talking about:
 <pre class="bruh: python">
 <code>
 import logging
@@ -409,9 +425,12 @@ if __name__ == "__main__":
     send_to_premium_members("Super customized email")
 </code>
 </pre>
-Take this code and imagine that we want it to continue to try to send emails for the rest of the list and 
-store those premium members that couldn't be contacted to deal with later. If it had a web interface maybe could
-have a contant members screen that shows the emails sent. They could be processed manually later on.
+Take this code and imagine that we want it to continue trying to send emails for the rest of the list and 
+store those premium members that couldn't be contacted so that we can deal with later. If the solution had a web 
+interface maybe we could have a contant members screen that shows the emails that we can contact with some
+configuarion possibilitties like choosing a group to contact, like the <b>premium members list</b>. It could
+have a graph that shows how many people could be contact right after we've sent the list to process.
+Those who couldn't be contacted for any reaso could be processed manually or throught a schedule later on.
 The first thing that came into my mind was to doing this:
 <pre class="brush: python">
 <code>
@@ -473,6 +492,10 @@ if __name__ == "__main__":
     send_to_premium_members("Super customized email")
 </code>
 </pre>
+There are other ways of doing this but if pay attention you'll see that the two levels of identation is not applied
+in 2 functions and they are not doing one thing only. The <b>send_to_premium_members</b> is the first layer of abstraction
+and has to call the function <b>send_to_premium_member</b>, and return the not processed list.
+
 It's easy to break the two levels of indentation principle because the try/catch/except block creates another level of
 identation. The <b>send_to_premium_member</b> function had to deal with the
 <br>
