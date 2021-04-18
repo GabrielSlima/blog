@@ -613,23 +613,24 @@ the previous programmers's way of thinking.
 <br>
 I also started to identify that others new programmers where facing some issues trying to figure out and
 connect the dots of the solution. I found myself explaning where a given piece of code was located inside the
-project's architecture a pretty god amount of times and struggling a lot to understand other parts as well.
+project's architecture a pretty good amount of times and struggling a lot to understand other parts as well.
 <br>
 <br>
 What happened was that with the desire (let's call it that way) of delivering things in a short amount of time the real documentation,
 the code, started to get more and more information and the developer that was trying to keep it organized
-didn't had much time to do so for a obvious reason.
+didn't had much time to do so, for a obvious reason.
 <br>
 <br>
 What I could learn with that situation is that building the <b>right functions</b> can help not only with the complexity
 of the code, but with the documentation.
 <br>
-Write code is easier than keeping it. When writing code the solution is fresh in your mind, you know what you need
+Writing code is easier than keeping it. When writing code the solution is fresh in your mind, you know what you are 
+supposed to do
 and even though most people think about the code's maintenance and other things we can't cover all the possibilitties
 and build an abstract code that will handle everything. So it's important that the code's structure can be 
 understood as easier as possible.
 
-
-<h3>Conclusion</h3>
-
+<br>
+<br>
+Good Luck XD 
 </div>
