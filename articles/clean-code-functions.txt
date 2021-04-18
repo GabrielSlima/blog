@@ -362,9 +362,10 @@ But I think it's worth it to give you some examples about this and a few recomme
 thinking on the long run. 
 <br>
 <br>
-One of the most common results when using error codes is that it forces the caller to deal with the error immediatelly 
-not giving it an easier path than create nested strucutres. Talking specifically of scenarios that the error code
-is just usde inside the code only and it's used for internal controll. You know? To take decisions but it's hard coded.
+One of the most common thing when using error codes is that it forces the caller to deal with the error immediatelly 
+not giving it an easier path than creating nested strucutres. Talking specifically of scenarios that the error codes
+are used inside the code only and it's used for internal controll. They are used inside the solution but it's invisible
+for the user and used for decisions inside the solution.
 
 <br>
 <br>
@@ -426,12 +427,13 @@ if __name__ == "__main__":
 </code>
 </pre>
 Take this code and imagine that we want it to continue trying to send emails for the rest of the list and 
-store those premium members that couldn't be contacted so that we can deal with later. If the solution had a web 
-interface maybe we could have a contant members screen that shows the emails that we can contact with some
-configuarion possibilitties like choosing a group to contact, like the <b>premium members list</b>. It could
-have a graph that shows how many people could be contact right after we've sent the list to process.
-Those who couldn't be contacted for any reaso could be processed manually or throught a schedule later on.
-The first thing that came into my mind was to doing this:
+store those premium members that couldn't be contacted so that we can deal with them later. 
+<br>
+If the solution had a web  interface maybe we could have a contant members screen that shows the emails that 
+we can contact with some configuarion possibilitties like choosing a group to send emails to, like the <b>premium members list</b>. 
+It could have a graph that shows how many people could be reached right after we've sent the list to process.
+Those who couldn't be contacted for any reason  could be processed manually or throught a schedule later on.
+The first thing that came into my mind was doing this:
 <pre class="brush: python">
 <code>
 import logging
@@ -492,15 +494,18 @@ if __name__ == "__main__":
     send_to_premium_members("Super customized email")
 </code>
 </pre>
-There are other ways of doing this but if pay attention you'll see that the two levels of identation is not applied
+There are other ways of doing this but if you pay attention you'll see that the two levels of identation is not applied
 in 2 functions and they are not doing one thing only. The <b>send_to_premium_members</b> is the first layer of abstraction
-and has to call the function <b>send_to_premium_member</b>, and return the not processed list.
+and has to call the function <b>send_to_premium_member</b>, check the status to see if the member was contacted successfuy 
+and then returns the <b>not processed emails</b>.
+<br>
+<br>
+This is a simple example and it doesn't have so many nested strcutures because the soluitons is simpler. But imagine
+if it was a layer that fetches data from different databases because the complete representation of what the solution needs
+is distributed. This code would have nested strcutures for sure. 
+<br>
 
-It's easy to break the two levels of indentation principle because the try/catch/except block creates another level of
-identation. The <b>send_to_premium_member</b> function had to deal with the
-<br>
-<br>
-Now using try/catch/except blocks:
+Now let's try using try/catch/except blocks:
 <pre>
 <code>
 import logging
@@ -567,6 +572,8 @@ if __name__ == "__main__":
     show_not_contacted_members()
 </code>
 </pre>
+The same idea could be applied using error code but now it's clear that we only have 2 paths. The "happy one" and the "not so happy one"·
+<br>
 The error handling is another thing that the function does. So it's worth it putting it into a level above of the
 actual action that demands error handling.
 
@@ -586,9 +593,9 @@ and there was no pattern for the output. Well, if it had at the beginning, it wa
 
 <br>
 <br>
-After some months the company had some changes related to...physical access, let's say...and some of my fellow
-colleagues decided what was best for them, of course and switched companies.
-After a few more months, this project had new people working on it and lots of places where
+After some months the company had some changes related to...physical access let's say...and some of my fellow
+colleagues decided what was best for them, of course, and switched companies.
+After a few months, this project had new people working on it and lots of places where
 almost no one knew what was happening.
 <br>
 <br>
@@ -620,4 +627,8 @@ Write code is easier than keeping it. When writing code the solution is fresh in
 and even though most people think about the code's maintenance and other things we can't cover all the possibilitties
 and build an abstract code that will handle everything. So it's important that the code's structure can be 
 understood as easier as possible.
+
+
+<h3>Conclusion</h3>
+
 </div>
