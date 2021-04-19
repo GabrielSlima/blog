@@ -1,4 +1,4 @@
-<div style="text-align: left;" class="post">
+<div style="text-align: left;">
 I already said that Clean Code is one of the most important things that you can learn in Software Engineering?
 <br>
 And that bad code can complicate your life by making simple things harder that they really are?
