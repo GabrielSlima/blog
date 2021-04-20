@@ -19,7 +19,27 @@
         It's natural that when we enjoy doing something we want to do it well. Even if it's simple...well, at least I think in this
         way and I'm not better than anyone, of course.
         <br>
-        But the thing is, when you have the opportunitty to come up with a solution you are expressing your way of thinking about the given context.
-    
+        But the thing is, when you have to come up with a solution you are expressing your way of thinking about something.
+    </p>
+    <p>
+        Now imagine a painting with post-it notes on it explaining things about the painting itself. The notes can help beginners to
+        comprehend the artist but they are useless for those more experienced.
+        <br>
+        Another point is that the thing with programming is that the same painting is changed constantly. 
+        It's like when start a painting, make some things and pass it on to another artist. 
+        Naturally the other artist has a different way of thinking and he is going to do things the best way
+        he can using his knowledge. If both you doesn't have the discipline to keep the notes updated guess what, they are going to
+        pass on the <b>wrong information</b>.
+    </p>
+    <p>
+        It's hard to keep comments updated for many reasons so the best way to garantee that the reader comprehend yout thoughts, your solution,
+        is investing the time you would spend updating comments (that would be outdated soon) on writing a clean code.
+        <br>
+        The best documentation a programmer can have is the code. A good example of this would be this project I was working. 
+        I was with the PO, Scrum Master and Architects to discuss a new feature. This feature was dependend aonther feature that was developed
+        on past sprint and they were assuming that it was 100% completed because, again, there was no documentation about it and they were
+        confident that the developer had finished it.
+        <br>
+        When I started to read the code I found some parts of it that wasn't working the way it should if the past feature was developed 100%.
     </p>
 </div>
