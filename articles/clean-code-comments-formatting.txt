@@ -1,2 +1,25 @@
 <div style="text-align: left;">
+    <p>
+        Welcome to the PewdiePie's favourite blog about Software Engineering and today
+        we are with one more article about clean code talking about why comments can be bad for your code
+        and how to set formatting rules so that your team can work with clean code principles in mind...
+    </p>
+    <p>
+        So as I did on my last blog posts talking about <a href="https://gabrielslima.github.io/blog/post.html?id=6" target="blank"> 
+        how I gave meaningful names to  my code </a> and how I use clean code
+        principles to <a href="https://gabrielslima.github.io/blog/post.html?id=7" target="blank">create better functions</a>,
+        I'm going to apply principles from the book Clean Code and try to illustrate them using my own code.
+    </p>
+    So without further ado let's get into it!
+    <h3>Why comments are bad?</h3>
+    <p>
+        Lately I've been seeing code as a form of art. Wait...what?.Yeah, I know.
+        <br>
+        The last few months I've been looking at my code as a way of express my thoughts about something, about a solution.
+        It's natural that when we enjoy doing something we want to do it well. Even if it's simple...well, at least I think in this
+        way and I'm not better than anyone, of course.
+        <br>
+        But the thing is, when you have the opportunitty to come up with a solution you are expressing your way of thinking about the given context.
+    
+    </p>
 </div>
