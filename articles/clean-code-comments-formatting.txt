@@ -61,11 +61,34 @@
         <br>
         I agree with him. As I said in the past subhead, the code is the only documentation that will always be updated and will never lie 
         to you. If your code needs comments that's because you didn't expressed your thoughts well. So the best that you can do is just refact it.
+        <br>
         It's like when you write an entire text message but no one can understand what you are saing. It's best that you just reformulate
         what you are trying to say.
     </p>
     <p>
         But there are cases where comments are not that hurtful...I'm going to list here those cases but don't use them as an excuse to add comments
         on your code. These are cases where there is no better way (at the moment) to write what you need with code only.
+        <h5>Legal comments</h5>
+        Are those comments that arey copyright notes, licenses and legal disclaimers. If you have to put them in your code just write the bare
+        minimum and choose to put links to external documents if it requires more than one to three lines.
+        <h5>Informative comments</h5>
+        Are those that really carries a relevant information about a specific line of code. Like the match of a regex or date/time patterns.
+        <h5>Explaination of intent</h5>
+        Are comments that, as name says, explain the <b>why</b> behind a decision.
+        <h5>Clarification comments</h5>
+        Are those who translate the meaning behind something that it's obscure. They are used specially when the code can't be changed because
+        it's part of some standard lib or because there is an integration with another system and the representation of somethings 
+        are different for some reason.
+        <h5>Warning of consequences</h5>
+        Are those who not only inform other developers about a piece of code or explain the intent behind a decision but they also inform <b>why</b> 
+        the given piece of code is working the way it is. A good example would be a unit test that is deactivated because it takes forever to
+        run.
+        <h5>TODO comments</h5>
+        This one are very common if the MVP idea is been used for features too. Are those that act like notes inside the code maybe to
+        remind the developer to change something later or to let other developers know what was going to be done originally in a given contex.
+        <br>
+        Remember the last example I gave you about the "unfinished" feature? Well this kind of comments could be very useful in that case...
+        <h5>Amplification comments</h5>
+        Are those who reinforce the importance of something. Things that seems harmless but, if removed, could bring the chaos on earth.
     </p>
 </div>
