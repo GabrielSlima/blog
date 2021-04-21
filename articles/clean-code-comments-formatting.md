@@ -91,4 +91,7 @@
         <h5>Amplification comments</h5>
         Are those who reinforce the importance of something. Things that seems harmless but, if removed, could bring the chaos on earth.
     </p>
+    <h3>Bad comments</h3>
+    <p>
+    </p>
 </div>
