@@ -34,12 +34,38 @@
     <p>
         It's hard to keep comments updated for many reasons so the best way to garantee that the reader comprehend yout thoughts, your solution,
         is investing the time you would spend updating comments (that would be outdated soon) on writing a clean code.
+    </p>
+    <p>
+        The best documentation a programmer can have is the code. A good example of this would be this project I was working on. 
+        I was with the PO, Scrum Master and Architect to discuss a new feature. This feature was dependent on another feature that was developed
+        on past sprints and they were assuming that it was 100% completed because, again, there was no documentation about it. The team didn't had
+        the discipline to keep the documentation updated. So there was no one worring about it and they were
+        confident that the developer had finished it because the QA had approved.
         <br>
-        The best documentation a programmer can have is the code. A good example of this would be this project I was working. 
-        I was with the PO, Scrum Master and Architects to discuss a new feature. This feature was dependend aonther feature that was developed
-        on past sprint and they were assuming that it was 100% completed because, again, there was no documentation about it and they were
-        confident that the developer had finished it.
+        When I started to read the code I found some parts of it that wasn't working the way it should be. I mean, the tests applied by the
+        QA team where passing and so on but there was hard coded configurations that was supposed to be fetched from the database and most of
+        the code wasn't prepared for custom configurations.
+    </p>
+    <p>
+        So what does it mean? That the developer lied? Of course not. I've been working with a team where the MVP idea is strong. That means
+        that we work delivering the bare minimun every sprint but what we deliver has the minimum value for the user. This way of 
+        thinking is great for new projects because there is so much to do. Setting up environments for the first time, CI/CD pipelines that need to be created, basic security implementations, testing environments
+        and so on...building the meminum features is great in this cases.
         <br>
-        When I started to read the code I found some parts of it that wasn't working the way it should if the past feature was developed 100%.
+        Most probably this happend in the past and the developer was working with them with this MVP mindset for each feature too. The 
+        project was new.
+    </p>
+    <h3>So comments are bad...so I shouldn't use them?</h3>
+    <p>
+        I worked with a cool guy that always said out loud that <b>if your code needs comments, refact it</b>.
+        <br>
+        I agree with him. As I said in the past subhead, the code is the only documentation that will always be updated and will never lie 
+        to you. If your code needs comments that's because you didn't expressed your thoughts well. So the best that you can do is just refact it.
+        It's like when you write an entire text message but no one can understand what you are saing. It's best that you just reformulate
+        what you are trying to say.
+    </p>
+    <p>
+        But there are cases where comments are not that hurtful...I'm going to list here those cases but don't use them as an excuse to add comments
+        on your code. These are cases where there is no better way (at the moment) to write what you need with code only.
     </p>
 </div>
