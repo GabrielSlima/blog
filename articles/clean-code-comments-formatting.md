@@ -95,7 +95,6 @@
         many times. I constantly go throught the code of external libs when using them because I'm curious about what is happenning
         but it's not always like that. There is days where I don't have time to figure things out. A good documentation
         helps a lot in cases like that.
-
     </p>
     <h3>Bad comments</h3>
     <p>
@@ -104,22 +103,18 @@
         As the author of Clean Code says in the book, most of the comments fall in category. Not that comments are 
         actually "good" but if you have to write a comment, <b>becasue you don't have a option</b>, consider the following
         ways of writing a super bad comments so that your comments doesn't fall on this one too.
-
         <h4>Mumbling</h4>
         Comments that are unclear. They don't transmit any message. They are ussually unfinished comments or they are 
         placed in unfinished code.
         <br>
         A good way to know if a comment fall in this case pay attention if you had to check other parts of the code to understand it.
         If so, clearly the comment is useless and it's not transmitting anything.
-
         <h4>Redundant Comments</h4>
         They literally say the same thing the code near them says. There is no relevant information or reveal of intent.
         They are literally what the code is saying and, sometimes, even longer and more confuse.
-
         <h4>Misleading Comments</h4>
         Comments that says something about a piece of code making the programmer believe that it's used for a purpouse X
         whit a specific behavior but it does something else.
-
         <h4>Madated Comments</h4>
         Are, as the name says, comments that were put in the code because they are required. Setting this kind
         of rules is not helpful because comments can be redundant and misleading. Having a rule to have documentation
