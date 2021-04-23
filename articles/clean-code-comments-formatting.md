@@ -119,5 +119,38 @@
         Are, as the name says, comments that were put in the code because they are required. Setting this kind
         of rules is not helpful because comments can be redundant and misleading. Having a rule to have documentation
         for every function, variable and so on makes room for these kind of useless comments.
+        <h4>Journal Comments</h4>
+        Comments added to the start of a module. The idea back in the days was to keep track of every change
+        made and who made each change. Today they are useless because we have source code control.
+        <h4>Noisy Comments</h4>
+        Are redundant/misleading comments. The differece is that they are massivelly inside the code. You know
+        when you see a class where all the 50 attributes are has a comment? Yeah, those are noise comments.
+        <h4>Position Markers</h4>
+        Comments that marks a position inside the code to help the programmer to locate himself inside the code.
+        <h4>Closing Brace Comments</h4>
+        Commetns that marks the end of a block. They are present ussually in function with lots of nested blocks.
+        Consider the shorten your function.
+        <h4>Attributions and Bylines</h4>
+        Comments that says who added what. Just remove them, we can see who added what throught the source code control systems.
+        <h4>Commented-out Code</h4>
+        Are, as the name says, a piece of code that is commented. They pollute the code and will there <b>for
+        a long time</b> becasue every developer will think it's important and shouldn't delete it.
+        There is no reason to do this today, we have <b>source code control systems</b>.
+        <h4>HTML comments</h4>
+        Comments with HTML tags. If you find docstrings hard to read, imagine it with HTML tags...
+        <h4>Nonlocal Information</h4>
+        Comments that has information about other contexts. If you have to write a comment make it all about the 
+        near code. Don't include systemwide information.
+        <h4>Too much information</h4>
+        Make sure taht the comment doesn't hold a historical discussion and irrelevant details making them 
+        10 lines long like an entire chapter of a book.
+        <h4>Inobvious connetion</h4>
+        Comments that doesn't connects with the code it was suposed to describe.
+        <h4>Function Headers</h4>
+        If your functions are <a href="https://gabrielslima.github.io/blog/post.html?id=7" target="blank">small</a>
+        and have a <a href="https://gabrielslima.github.io/blog/post.html?id=6" target="blank">good name</a> the function header
+        is useless.
+        <h4>Public APIs or packages documentation in nonpublic APIs or packages</h4>
+        Don't include documentation for public APIs or packages if your API our package is not public.
     </p>
 </div>
