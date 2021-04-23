@@ -68,30 +68,61 @@
     <p>
         But there are cases where comments are not that hurtful...I'm going to list here those cases but don't use them as an excuse to add comments
         on your code. These are cases where there is no better way (at the moment) to write what you need with code only.
-        <h5>Legal comments</h5>
+        <h4>Legal comments</h4>
         Are those comments that arey copyright notes, licenses and legal disclaimers. If you have to put them in your code just write the bare
         minimum and choose to put links to external documents if it requires more than one to three lines.
-        <h5>Informative comments</h5>
+        <h4>Informative comments</h4>
         Are those that really carries a relevant information about a specific line of code. Like the match of a regex or date/time patterns.
-        <h5>Explaination of intent</h5>
+        <h4>Explaination of intent</h4>
         Are comments that, as name says, explain the <b>why</b> behind a decision.
-        <h5>Clarification comments</h5>
+        <h4>Clarification comments</h4>
         Are those who translate the meaning behind something that it's obscure. They are used specially when the code can't be changed because
         it's part of some standard lib or because there is an integration with another system and the representation of somethings 
         are different for some reason.
-        <h5>Warning of consequences</h5>
+        <h4>Warning of consequences</h4>
         Are those who not only inform other developers about a piece of code or explain the intent behind a decision but they also inform <b>why</b> 
         the given piece of code is working the way it is. A good example would be a unit test that is deactivated because it takes forever to
         run.
-        <h5>TODO comments</h5>
+        <h4>TODO comments</h4>
         This one are very common if the MVP idea is been used for features too. Are those that act like notes inside the code maybe to
         remind the developer to change something later or to let other developers know what was going to be done originally in a given contex.
         <br>
         Remember the last example I gave you about the "unfinished" feature? Well this kind of comments could be very useful in that case...
-        <h5>Amplification comments</h5>
+        <h4>Amplification comments</h4>
         Are those who reinforce the importance of something. Things that seems harmless but, if removed, could bring the chaos on earth.
+        <h4>Comments for public APIs/packages</h4>
+        Those kind of documentation are super helpful for public APIs or packages. We don't have much time to figure out what a function call is doing
+        many times. I constantly go throught the code of external libs when using them because I'm curious about what is happenning
+        but it's not always like that. There is days where I don't have time to figure things out. A good documentation
+        helps a lot in cases like that.
+
     </p>
     <h3>Bad comments</h3>
     <p>
+        So there are "good" comments...what about the "bad comments"?
+        <br>
+        As the author of Clean Code says in the book, most of the comments fall in category. Not that comments are 
+        actually "good" but if you have to write a comment, <b>becasue you don't have a option</b>, consider the following
+        ways of writing a super bad comments so that your comments doesn't fall on this one too.
+
+        <h4>Mumbling</h4>
+        Comments that are unclear. They don't transmit any message. They are ussually unfinished comments or they are 
+        placed in unfinished code.
+        <br>
+        A good way to know if a comment fall in this case pay attention if you had to check other parts of the code to understand it.
+        If so, clearly the comment is useless and it's not transmitting anything.
+
+        <h4>Redundant Comments</h4>
+        They literally say the same thing the code near them says. There is no relevant information or reveal of intent.
+        They are literally what the code is saying and, sometimes, even longer and more confuse.
+
+        <h4>Misleading Comments</h4>
+        Comments that says something about a piece of code making the programmer believe that it's used for a purpouse X
+        whit a specific behavior but it does something else.
+
+        <h4>Madated Comments</h4>
+        Are, as the name says, comments that were put in the code because they are required. Setting this kind
+        of rules is not helpful because comments can be redundant and misleading. Having a rule to have documentation
+        for every function, variable and so on makes room for these kind of useless comments.
     </p>
 </div>
