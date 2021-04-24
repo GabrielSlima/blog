@@ -38,10 +38,11 @@
     </p>
     <p>
         The best documentation a programmer can have is the code. A good example of this would be this project I was working on. 
-        I was with the PO, Scrum Master and Architect to discuss a new feature. This feature was dependent on another feature that was developed
+        I was with the PO, Scrum Master and Architect to discuss a new feature. This feature was dependent on another feature that was developed by other developers
         on past sprints and they were assuming that it was 100% completed because, again, there was no documentation about it. The team didn't had
         the discipline to keep the documentation updated. So there was no one worring about it and they were
-        confident that the developer had finished it because the QA had approved.
+        confident that the developer had finished it because the QA approved the feature.
+        <br>
         <br>
         When I started to read the code I found some parts of it that wasn't working the way it should be. I mean, the tests applied by the
         QA team where passing and so on but there was hard coded configurations that was supposed to be fetched from the database and most of
@@ -49,21 +50,21 @@
     </p>
     <p>
         So what does it mean? That the developer lied? Of course not. I've been working with a team where the MVP idea is strong. That means
-        that we work delivering the bare minimun every sprint but what we deliver has the minimum value for the user. This way of 
+        that we work delivering the bare minimun every sprint but what we deliver has a value for the user. This way of 
         thinking is great for new projects because there is so much to do. Setting up environments for the first time, CI/CD pipelines that need to be created, basic security implementations, testing environments
-        and so on...building the meminum features is great in this cases.
+        and so on...building the minimum, only the features that has enough to provide value for the user is great in those cases.
         <br>
-        Most probably this happend in the past and the developer was working with them with this MVP mindset for each feature too. The 
+        Probably this happend in the past and the developer was working with them with this MVP mindset for each feature too. The 
         project was new.
     </p>
-    <h3>So comments are bad...so I shouldn't use them?</h3>
+    <h3>So comments are bad and I'm supposed not to use them?</h3>
     <p>
         I worked with a cool guy that always said out loud that <b>if your code needs comments, refact it</b>.
         <br>
         I agree with him. As I said in the past subhead, the code is the only documentation that will always be updated and will never lie 
-        to you. If your code needs comments that's because you didn't expressed your thoughts well. So the best that you can do is just refact it.
+        to you. If your code needs comments that's because you didn't expressed your thoughts well. So the best you can do is just to refact it.
         <br>
-        It's like when you write an entire text message but no one can understand what you are saing. It's best that you just reformulate
+        It's like when you write an entire text message but no one understands it. It's best that you just reformulate
         what you are trying to say.
     </p>
     <p>
@@ -75,7 +76,8 @@
         <h4>Informative comments</h4>
         Are those that really carries a relevant information about a specific line of code. Like the match of a regex or date/time patterns.
         <h4>Explaination of intent</h4>
-        Are comments that, as name says, explain the <b>why</b> behind a decision.
+        Are comments that, as name says, explain the <b>why</b> behind a decision. Maybe the application is not scalable enough to complete the execution in time to respond so the developer decided to
+        create something that covers that.
         <h4>Clarification comments</h4>
         Are those who translate the meaning behind something that it's obscure. They are used specially when the code can't be changed because
         it's part of some standard lib or because there is an integration with another system and the representation of somethings 
@@ -92,8 +94,7 @@
         <h4>Amplification comments</h4>
         Are those who reinforce the importance of something. Things that seems harmless but, if removed, could bring the chaos on earth.
         <h4>Comments for public APIs/packages</h4>
-        Those kind of documentation are super helpful for public APIs or packages. We don't have much time to figure out what a function call is doing
-        many times. I constantly go throught the code of external libs when using them because I'm curious about what is happenning
+        Those kind of documentation are super helpful for public APIs or packages. Many times we don't have much time to figure out what a function call is doing. I constantly go throught the code of external libs when using them because I'm curious about what is happenning
         but it's not always like that. There is days where I don't have time to figure things out. A good documentation
         helps a lot in cases like that.
     </p>
@@ -103,12 +104,13 @@
         <br>
         As the author of Clean Code says in the book, most of the comments fall in category. Not that comments are 
         actually "good" but if you have to write a comment, <b>becasue you don't have a option</b>, consider the following
-        ways of writing a super bad comments so that your comments doesn't fall on this one too.
+        ways of writing super bad comments so that your comments doesn't fall on this category too.
         <h4>Mumbling</h4>
         Comments that are unclear. They don't transmit any message. They are ussually unfinished comments or they are 
         placed in unfinished code.
         <br>
-        A good way to know if a comment fall in this case pay attention if you had to check other parts of the code to understand it.
+        <br>
+        A good way to know if a comment fall in this case is to pay attention if you had to check other parts of the code to understand it.
         If so, clearly the comment is useless and it's not transmitting anything.
         <h4>Redundant Comments</h4>
         They literally say the same thing the code near them says. There is no relevant information or reveal of intent.
