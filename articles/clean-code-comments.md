@@ -1,32 +1,33 @@
 <div style="text-align: left;">
     <p>
         Welcome to the PewdiePie's favourite blog about Software Engineering and today
-        we are with one more article about clean code talking about why comments can be bad for your code
-        and how to set formatting rules so that your team can work with clean code principles in mind...
+        we are with one more article about Clean Code talking about <b>why comments can be bad for your code</b>...
     </p>
     <p>
         So as I did on my last blog posts talking about <a href="https://gabrielslima.github.io/blog/post.html?id=6" target="blank"> 
         how I gave meaningful names to  my code </a> and how I use clean code
         principles to <a href="https://gabrielslima.github.io/blog/post.html?id=7" target="blank">create better functions</a>,
-        I'm going to apply principles from the book Clean Code and try to illustrate them using my own code.
+        I'm going to apply principles from the book Clean Code.
     </p>
     So without further ado let's get into it!
     <h3>Why comments are bad?</h3>
     <p>
         Lately I've been seeing code as a form of art. Wait...what?.Yeah, I know.
         <br>
-        The last few months I've been looking at my code as a way of express my thoughts about something, about a solution.
+        The last few months I've been looking at my code as a way of expressing my thoughts about something, about a solution, of course.
         It's natural that when we enjoy doing something we want to do it well. Even if it's simple...well, at least I think in this
-        way and I'm not better than anyone, of course.
+        way and I'm not better than anyone because of that, of course.
         <br>
         But the thing is, when you have to come up with a solution you are expressing your way of thinking about something.
     </p>
     <p>
-        Now imagine a painting with post-it notes on it explaining things about the painting itself. The notes can help beginners to
+        Now imagine a painting with post-it notes on it explaining things about it. The notes can help beginners to
         comprehend the artist but they are useless for those more experienced.
         <br>
-        Another point is that the thing with programming is that the same painting is changed constantly. 
-        It's like when start a painting, make some things and pass it on to another artist. 
+        <br>
+        Another thing to consider when it comes to 
+        programming is that the same painting (the code) is changed constantly. 
+        You or someone else starts a painting, make some things and pass it on to another artist. 
         Naturally the other artist has a different way of thinking and he is going to do things the best way
         he can using his knowledge. If both you doesn't have the discipline to keep the notes updated guess what, they are going to
         pass on the <b>wrong information</b>.
@@ -113,7 +114,7 @@
         They literally say the same thing the code near them says. There is no relevant information or reveal of intent.
         They are literally what the code is saying and, sometimes, even longer and more confuse.
         <h4>Misleading Comments</h4>
-        Comments that says something about a piece of code making the programmer believe that it's used for a purpouse X
+        Comments that says something about a piece of code making the programmer believe that it's used for a purpose X
         whit a specific behavior but it does something else.
         <h4>Madated Comments</h4>
         Are, as the name says, comments that were put in the code because they are required. Setting this kind
