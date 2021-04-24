@@ -176,7 +176,7 @@
             Example: Lets say you want to build a project of your <a href="https://gabrielslima.github.io/Movie-trailer-WEBSITE/" target="blank">favorite movies and Tv shows</a>. You can look for "gallery website design" on Google and just see what you want on your project.
         </li>
         <li><b>Would I enroll in a College or University?</b> Only if I "failed" trying to learn for free, with a code bootcamp and resetting my goals to improve my portfolio and resume </li>
-        <li><b>Do you have another recommendation?</b> Don't be lazy and don't compare yourself to others</li>
+        <li><b>Do you have another recommendation?</b> Yes, don't be lazy and don't compare yourself to others</li>
 
     </ul>
     <br>

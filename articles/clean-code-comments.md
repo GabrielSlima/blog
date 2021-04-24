@@ -156,4 +156,22 @@
         <h4>Public APIs or packages documentation in nonpublic APIs or packages</h4>
         Don't include documentation for public APIs or packages if your API our package is not public.
     </p>
+    <h3>Final thoughts</h3>
+    <p>
+        Although comments are bad and can pollute your code there are contexts where we have to write them.
+        <br>
+        Till a while a go I thought I was doing the right thing writing comments to document my functions and modules giving examples and so on. Specially in cases when I thought that my module could be
+        used for other teams inside the company but that is not always the case.
+        <br>
+        If you have to write
+        a "public" package even if it's going to be used for other parts of the current company you are working right now there must be a process and a governace team working to stablish a set of rules
+        so that your package follows a pattern.
+    </p>
+    <p>
+        Focus your efforts on writing a clean code and worry about 
+        comments when you don't have another option and avoid writing comments for the sake of documenting. The best documentation you can keep is the code.
+        So try to follow the best practices as best as you can so that your code hava a good strucutre and 
+        also a documentation value.
+    </p>
+    Good Luck XD
 </div>
