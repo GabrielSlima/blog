@@ -12,7 +12,7 @@
     So without further ado let's get into it!
     <h3>Why comments are bad?</h3>
     <p>
-        Lately I've been seeing code as a form of art. Wait...what?.Yeah, I know.
+        Lately I've been seeing code as a form of art. Wait...what? Yeah, I know.
         <br>
         The last few months I've been looking at my code as a way of expressing my thoughts about something, about a solution, of course.
         It's natural that when we enjoy doing something we want to do it well. Even if it's simple...well, at least I think in this
