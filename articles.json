@@ -1,6 +1,14 @@
 
 [
     {
+        "id": "9",
+        "title": "Why setting formatting rules and stablishing a basic governance process your project is important?",
+        "description": "Making your mom proud of your code...",
+        "author": "Gabriel Lima",
+        "date": "2021-04-25",
+        "article_file_name": "./articles/clean-code-formatting-rules.md"
+    },
+    {
         "id": "8",
         "title": "Why comments are bad for your code?",
         "description": "Making your mom proud of your code...",
