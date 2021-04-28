@@ -67,7 +67,151 @@
     <h4>Vertical openness between concepts</h4>
     <p>
         Code is read left to right, top to bottom. Every line is a expression or clause and every group of lines is a concept.
-        Every thought should be separated by blank lines
+        Every thought should be separated by blank lines. So instead of:
+    </p>
+    <pre class="brush: python">
+    <code>
+import logging
+import random
+import time
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+handler.setLevel(logging.INFO)
+logger.addHandler(handler)
+to_reprocess = []
+members = [
+    ("gabriel@supercooldomain.com", True),
+    ("gabrielsuperpersonal@supercooldomain.com", False),
+    ("gabrielbusiness@supercooldomain.com", True),
+    ("gabriellima@supercooldomain.com", True),
+    ("gabriel_lima@supercooldomain.com", False)
+]
+def send_to_premium_members(customized_message):
+    for member in members:
+        send_to_premium_member(member, customized_message)
+def send_to_premium_member(member, message):
+    _PREMIUM_MEMBERSHIP = True
+    _MEMBERSHIP_TYPE = 1
+    _EMAIL = 0
+    if member[_MEMBERSHIP_TYPE] == _PREMIUM_MEMBERSHIP:
+        send(member[_EMAIL], message)
+def send(email, message):
+    try:
+        send_email(email, message)
+    except ConnectionError as e:
+        print("ERROR - APENAS O DEV PODE VER: {}".format(e))
+        to_reprocess.append(email)
+def send_email(email, message):
+    statuses = [True, False]
+    time.sleep(.2)
+    connection_status = random.choices(statuses)[0]
+    
+    if not connection_status:
+        raise ConnectionError("Connection Error: Could not sent Email to {}".format(email))
+    
+    logging.info("Message sent to {email}: {connection_status}".format(
+        email=email,
+        connection_status=connection_status
+    ))
+def show_not_contacted_members():
+    logging.info("The following members couldn't be contacted: {}".format(to_reprocess))
+if __name__ == "__main__":
+    send_to_premium_members("Super customized email")
+    show_not_contacted_members()
+    </code>
+    </pre>
+    Try something linke this:
+    <pre class="brush: python">
+    <code>
+import logging
+import random
+import time
+
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+handler.setLevel(logging.INFO)
+logger.addHandler(handler)
+
+to_reprocess = []
+
+members = [
+    ("gabriel@supercooldomain.com", True),
+    ("gabrielsuperpersonal@supercooldomain.com", False),
+    ("gabrielbusiness@supercooldomain.com", True),
+    ("gabriellima@supercooldomain.com", True),
+    ("gabriel_lima@supercooldomain.com", False)
+]
+
+def send_to_premium_members(customized_message):
+    for member in members:
+        send_to_premium_member(member, customized_message)
+
+
+def send_to_premium_member(member, message):
+    _PREMIUM_MEMBERSHIP = True
+    _MEMBERSHIP_TYPE = 1
+    _EMAIL = 0
+    if member[_MEMBERSHIP_TYPE] == _PREMIUM_MEMBERSHIP:
+        send(member[_EMAIL], message)
+
+
+def send(email, message):
+    try:
+        send_email(email, message)
+    except ConnectionError as e:
+        print("ERROR - APENAS O DEV PODE VER: {}".format(e))
+        to_reprocess.append(email)
+
+
+def send_email(email, message):
+    statuses = [True, False]
+    time.sleep(.2)
+    connection_status = random.choices(statuses)[0]
+    
+    if not connection_status:
+        raise ConnectionError("Connection Error: Could not sent Email to {}".format(email))
+    
+    logging.info("Message sent to {email}: {connection_status}".format(
+        email=email,
+        connection_status=connection_status
+    ))
+
+
+def show_not_contacted_members():
+    logging.info("The following members couldn't be contacted: {}".format(to_reprocess))
+
+if __name__ == "__main__":
+    send_to_premium_members("Super customized email")
+    show_not_contacted_members()
+    </code>
+    </pre>
+    <p>
+        Keep concepts (thoughts) vertically separated by blank lines. Consider using the style guide of the current language you are usins.
+        Python for istance has <a href="https://www.python.org/dev/peps/pep-0008/#blank-lines" target="blank">Pep8</a>...
+        <br>
+        This is not only going to help you to have a good style on your code but it will make easier to read by removing all the "stress" you would have or
+        any other reader would have without any blank lines.
+    </p>
+
+    <h4>Keeping related things close to each other</h4>
+    <p>
+        As for the lines of code (expressions or clauses) that doesn't belong to a full concept or lines of code that are part of a concept but they are
+        details. Keep them close to lines that they are closely related without blank lines.
+        <br>
+        Instance variables is the classic example of expressions that belongs to a full conpcet a function for instance.
+    </p>
+    <pre>
+    <code>
+    
+    </code>
+    </pre>
+    <p>
+        But I think this can be applied to functions too. Of course functions should do <a href="">one thing only</a>. But even when they are doing 
+        only one thing there are some expressions that conpose the entire concept (functio) that are details. This ussually happens more in low-level
+        functions.
     </p>
     <!-- TODO include examples -->
 </div>
