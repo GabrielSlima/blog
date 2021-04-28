@@ -189,7 +189,7 @@ if __name__ == "__main__":
     </code>
     </pre>
     <p>
-        Keep concepts (thoughts) vertically separated by blank lines. Consider using the style guide of the current language you are usins.
+        Keep concepts (thoughts) vertically separated by blank lines. Consider using the style guide of the current language you are using.
         Python for istance has <a href="https://www.python.org/dev/peps/pep-0008/#blank-lines" target="blank">Pep8</a>...
         <br>
         This is not only going to help you to have a good style on your code but it will make easier to read by removing all the "stress" you would have or
@@ -199,13 +199,28 @@ if __name__ == "__main__":
     <h4>Keeping related things close to each other</h4>
     <p>
         As for the lines of code (expressions or clauses) that doesn't belong to a full concept or lines of code that are part of a concept but they are
-        details. Keep them close to lines that they are closely related without blank lines.
+        details. Keep them close to lines that they are closely related. Without blank lines.
         <br>
-        Instance variables is the classic example of expressions that belongs to a full conpcet a function for instance.
+        Instance variables is the classic example of expressions that doesn't belongs to a full conpcet, like a function for instance.
     </p>
-    <pre>
+    <pre class="brush: python">
     <code>
-    
+class Car():
+  def __init__(self, model, color):
+    # Model of the car
+    self.model = model
+
+    # Color of the car
+    self.color = color
+    </code>
+    </pre>
+    Just remove the spaces and comments and keep them close to each other...
+    <pre class="brush: python">
+    <code>
+class Car():
+  def __init__(self, model, color):
+    self.model = model
+    self.color = color
     </code>
     </pre>
     <p>
