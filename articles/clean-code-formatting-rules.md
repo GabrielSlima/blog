@@ -199,9 +199,7 @@ if __name__ == "__main__":
     <h4>Keeping related things close to each other</h4>
     <p>
         As for the lines of code (expressions or clauses) that doesn't belong to a full concept or lines of code that are part of a concept but they are
-        details. Keep them close to lines that they are closely related. Without blank lines.
-        <br>
-        Instance variables is the classic example of expressions that doesn't belongs to a full conpcet, like a function for instance.
+        more like details. I mean, variables that are used for controls inside loops or constant variables. Keep them close to lines that they are closely related. Without blank lines.
     </p>
     <pre class="brush: python">
     <code>
@@ -214,6 +212,28 @@ class Car():
     self.color = color
     </code>
     </pre>
+    <p>
+        Instance variables is the classic example of expressions that doesn't belongs to a full conpcet (functions) but I think this 
+        can be applied to functions too. Of course functions should do <a href="">one thing only</a>. But even when they are doing 
+        only one thing there are some expressions that are more like details. This usually happens more in low-level functions.
+    </p>
+<pre class="brush: python">
+<code>
+def send_to_premium_member(member, message):
+
+    # Position of the membership type
+    _MEMBERSHIP_TYPE = 1
+
+    # Position of the member's email
+    _EMAIL = 0
+
+    # Says if the current member is premium or not
+    is_premium_member = member[_MEMBERSHIP_TYPE]
+
+    if is_premium_member:
+        send(member[_EMAIL], message)
+</code>
+</pre>
     Just remove the spaces and comments and keep them close to each other...
     <pre class="brush: python">
     <code>
@@ -223,10 +243,15 @@ class Car():
     self.color = color
     </code>
     </pre>
-    <p>
-        But I think this can be applied to functions too. Of course functions should do <a href="">one thing only</a>. But even when they are doing 
-        only one thing there are some expressions that conpose the entire concept (functio) that are details. This ussually happens more in low-level
-        functions.
-    </p>
-    <!-- TODO include examples -->
+<pre class="brush: python">
+<code>
+def send_to_premium_member(member, message):
+    _MEMBERSHIP_TYPE = 1
+    _EMAIL = 0
+    is_premium_member = member[_MEMBERSHIP_TYPE]
+
+    if is_premium_member:
+        send(member[_EMAIL], message)
+</code>
+</pre>
 </div>
