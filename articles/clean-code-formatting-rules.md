@@ -91,16 +91,17 @@ def send_to_premium_members(customized_message):
     for member in members:
         send_to_premium_member(member, customized_message)
 def send_to_premium_member(member, message):
-    _PREMIUM_MEMBERSHIP = True
     _MEMBERSHIP_TYPE = 1
     _EMAIL = 0
-    if member[_MEMBERSHIP_TYPE] == _PREMIUM_MEMBERSHIP:
+    is_premium_member = member[_MEMBERSHIP_TYPE]
+
+    if is_premium_member:
         send(member[_EMAIL], message)
 def send(email, message):
     try:
         send_email(email, message)
     except ConnectionError as e:
-        print("ERROR - APENAS O DEV PODE VER: {}".format(e))
+        logging.error(e)
         to_reprocess.append(email)
 def send_email(email, message):
     statuses = [True, False]
@@ -151,10 +152,11 @@ def send_to_premium_members(customized_message):
 
 
 def send_to_premium_member(member, message):
-    _PREMIUM_MEMBERSHIP = True
     _MEMBERSHIP_TYPE = 1
     _EMAIL = 0
-    if member[_MEMBERSHIP_TYPE] == _PREMIUM_MEMBERSHIP:
+    is_premium_member = member[_MEMBERSHIP_TYPE]
+
+    if is_premium_member:
         send(member[_EMAIL], message)
 
 
@@ -162,7 +164,7 @@ def send(email, message):
     try:
         send_email(email, message)
     except ConnectionError as e:
-        print("ERROR - APENAS O DEV PODE VER: {}".format(e))
+        logging.error(e)
         to_reprocess.append(email)
 
 
@@ -196,7 +198,8 @@ if __name__ == "__main__":
         any other reader would have without any blank lines.
     </p>
 
-    <h4>Keeping related things close to each other</h4>
+    <h3>Keeping related things close to each other</h3>
+    <h4>Vertical Density</h4>
     <p>
         As for the lines of code (expressions or clauses) that doesn't belong to a full concept or lines of code that are part of a concept but they are
         more like details. I mean, variables that are used for controls inside loops or constant variables. Keep them close to lines that they are closely related. Without blank lines.
@@ -214,7 +217,7 @@ class Car():
     </pre>
     <p>
         Instance variables is the classic example of expressions that doesn't belongs to a full conpcet (functions) but I think this 
-        can be applied to functions too. Of course functions should do <a href="">one thing only</a>. But even when they are doing 
+        can be applied to functions too. Of course functions should do <a href="http://localhost:8080/post.html?id=7" target="blank">one thing only</a>. But even when they are doing 
         only one thing there are some expressions that are more like details. This usually happens more in low-level functions.
     </p>
 <pre class="brush: python">
@@ -241,8 +244,8 @@ class Car():
   def __init__(self, model, color):
     self.model = model
     self.color = color
-    </code>
-    </pre>
+</code>
+</pre>
 <pre class="brush: python">
 <code>
 def send_to_premium_member(member, message):
@@ -254,4 +257,16 @@ def send_to_premium_member(member, message):
         send(member[_EMAIL], message)
 </code>
 </pre>
+    <h4>Vertical Distance</h4>
+    <p>
+        Concepts that are close, you know, concepts that have some kind of connection because they have related lines of expression or because
+        they call each other. Those conpcets should be kept vertically close to each other. 
+        <br>
+        This is going to prevent the reader of
+        going throught the entire file to read the function that is called inside other or having to figure out 
+        if there are related concepts all over the file to decide if he has to write a new one.
+    </p>
+    <p>
+        Also make sure that related concepts are kept in the same source file
+    </p>
 </div>
