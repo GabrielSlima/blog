@@ -264,7 +264,7 @@ def send_to_premium_member(member, message):
     <h4>Vertical Distance</h4>
     <p>
         Concepts that are close, you know, concepts that have some kind of connection because they have related lines of expression or because
-        they call each other. Those conpcets should be kept vertically close. 
+        they call each other. Those concepts should be kept vertically close. 
         <br>
         This is going to prevent the reader of going throught the entire file to read functions that calls each other and also 
         prevent the reader to keep track of every concept read while trying to figure out what the system does.
@@ -275,7 +275,10 @@ def send_to_premium_member(member, message):
         when they are kept in different source files...
     </p>
     <p>
-        Once the related conpcets are close to each other, their vertical distance/separation should be based on their importance to the
+        Once the related concepts are close to each other, their vertical distance/separation should be based on their importance to the
         understandability of each other.
+    </p>
+    <p>
+        This is going to prevent the reader of hopping through the source file or even classes to understand the concepts.
     </p>
 </div>
