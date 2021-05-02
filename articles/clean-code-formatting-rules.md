@@ -290,9 +290,9 @@ def send_to_premium_member(member, message):
     <h4>Instance Variables</h4>
     <p>
         For instance variables, keep them declared only in one place. These varibles can be accessed by all functions in the Class. It's
-        bets that they are kept in one place only.
+        best that they are kept in one place only.
         <br>
-        Avoid doing thing like this: 
+        Avoid doing things like this: 
     </p>
 <pre class="brush: python">
 <code>
@@ -329,14 +329,14 @@ class Project:
 </code>
 </pre>
     <p>
-        Imagine how much time would it take to figure out where the the variable <b>BOOTSTRAP_PACKAGE_NAME</b> was every time you moved your eyes
-        if this was a 300 lines source file...
+        Imagine how much time would it take to figure out where the the variable <b>BOOTSTRAP_PACKAGE_NAME</b> is every time you move your eyes.
+        Things would be worse if this was a 300 lines source file...
     </p>
     <h4>Dependent Functions</h4>
     <p>
-        Functions that calls each other. They should be vertically close and the caller should be kep above the calle.
+        Functions that calls each other. They should be vertically close and the caller should be kept above the calle.
         <br>
-        So instead of declaring dependent functions like this:
+        Take the code below as an example:
     </p>
 <pre class="brush: python">
 <code>
@@ -368,7 +368,6 @@ class Grid:
   def build(self):
     self.append_columns()
     self.append_rows()
-    return self.grid
 
   def to_pandas_data_frame(self):
     return pd.DataFrame(self.grid)
@@ -384,7 +383,14 @@ if __name__ == "__main__":
 </code>
 </pre>
     <p>
-        Try doing something like this:
+        The <b>build</b> function is calling 2 functions above itself. Of course here it's easy to find where the functions are located.
+        But in a more complex source file the functions could be located 10 functions or more above/bellow the caller.
+    </p>
+    <p>
+        I've been through this situation on the last couple of days. I was in a hurry to write the code and suddenly my source file
+        had lots of functions and the last function was clalling the first function after the constructor. After a couple of times
+        trying to find the function to make some changes, I finally decided to put it right after the other function I was using to call it.
+        So much better...
     </p>
 <pre class="brush: python">
 <code>
@@ -409,7 +415,6 @@ class Grid:
   def build(self):
     self.append_columns()
     self.append_rows()
-    return self.grid
 
   def append_columns(self):
     self.grid.append(self.columns)
@@ -431,4 +436,17 @@ if __name__ == "__main__":
   logging.info(employees.to_pandas_data_frame())
 </code>
 </pre>
+  <h4>Conceptual Affinity</h4>
+  <p>
+      Conceptual affinity implies that functions that have a certain affinity should be kept vertically close. The affinity can be a direct dependece,
+      like a function calling another. But there are functions that perform similar operations, share a commom name scheme or perform
+      a variation of the same task. Those functions should be kept together.
+  </p>
+  <h4>The vertical ordering</h4>
+  <p>
+      Following the concepts we've been through on the last subheads we will come up with source files organized in layers. The high level conpcets
+      will come first, hiding the details and as we go downwards the details are explored.
+  </p>
+
+  <h3>How long should lines be: Horizontal Formatting</h3>
 </div>
