@@ -49,11 +49,11 @@
     </p>
     <h4>The newspaper metaphor</h4>
     <p>
-        Ok, the source files should be between 200-500 lines longs at the most and the functions should have a specific order to make
+        Ok, the source files should be between 200-500 lines long at the most and the functions should have a specific order to make
         the file readable, but how?
     </p>
     <p>
-        Image the file as a newspaper article. Every article has a headline to let the reader know what the article is about. The first paragraph
+        Imagine the source file as a newspaper article. Every article has a headline to let the reader know what the article is about. The first paragraph
         is a synopisis covering the main concepts of the arcticle and the next paragraphs explores those concepts and expose the
         details hidden in the first paragraph.
     </p>
@@ -66,7 +66,8 @@
     </p>
     <h4>Vertical openness between concepts</h4>
     <p>
-        Code is read left to right, top to bottom. Every line is a expression or clause and every group of lines is a concept.
+        Assuming that your code is read left to right, top to bottom. Every line is a expression or clause and every group of lines is a concept or
+        complete thought.
         Every thought should be separated by blank lines. So instead of:
     </p>
     <pre class="brush: python">
@@ -122,7 +123,7 @@ if __name__ == "__main__":
     show_not_contacted_members()
     </code>
     </pre>
-    Try something linke this:
+    Try doing something like this:
     <pre class="brush: python">
     <code>
 import logging
@@ -191,8 +192,8 @@ if __name__ == "__main__":
     </code>
     </pre>
     <p>
-        Keep concepts (thoughts) vertically separated by blank lines. Consider using the style guide of the current language you are using.
-        Python for istance has <a href="https://www.python.org/dev/peps/pep-0008/#blank-lines" target="blank">Pep8</a>...
+        Keep concepts (thoughts) vertically separated by blank lines. Consider using the style guide of the current language you are working with right now.
+        Python for instance has <a href="https://www.python.org/dev/peps/pep-0008/#blank-lines" target="blank">Pep8</a>...
         <br>
         This is not only going to help you to have a good style on your code but it will make easier to read by removing all the "stress" you would have or
         any other reader would have without any blank lines.
@@ -201,8 +202,8 @@ if __name__ == "__main__":
     <h3>Keeping related things close to each other</h3>
     <h4>Vertical Density</h4>
     <p>
-        As for the lines of code (expressions or clauses) that doesn't belong to a full concept or lines of code that are part of a concept but they are
-        more like details. I mean, variables that are used for controls inside loops or constant variables. Keep them close to lines that they are closely related. Without blank lines.
+        Keep expressions that have a close association together, without blank lines. In this way it's so much easier to identify all
+         expressions a Class or function has.
     </p>
     <pre class="brush: python">
     <code>
@@ -213,12 +214,15 @@ class Car():
 
     # Color of the car
     self.color = color
-    </code>
-    </pre>
+</code>
+</pre>
     <p>
-        Instance variables is the classic example of expressions that doesn't belongs to a full conpcet (functions) but I think this 
-        can be applied to functions too. Of course functions should do <a href="http://localhost:8080/post.html?id=7" target="blank">one thing only</a>. But even when they are doing 
-        only one thing there are some expressions that are more like details. This usually happens more in low-level functions.
+        Instance variables is the classic example of expressions that should be together, wtihout blank lines. But I think this should be
+        applied to functions too. Functions by being organized in 
+        <a href="https://gabrielslima.github.io/blog/post.html?id=7#levels-of-abstraction" target="blank">layers/levels of abstractions</a>
+        can have expressions that are only important in a specific layer. So it's a good a idea to keep related expressions together and choose
+        <a href="https://gabrielslima.github.io/blog/post.html?id=6" target="blank">meaningful names</a> for them instead of 
+        keeping them separated and with comments.
     </p>
 <pre class="brush: python">
 <code>
@@ -260,13 +264,18 @@ def send_to_premium_member(member, message):
     <h4>Vertical Distance</h4>
     <p>
         Concepts that are close, you know, concepts that have some kind of connection because they have related lines of expression or because
-        they call each other. Those conpcets should be kept vertically close to each other. 
+        they call each other. Those conpcets should be kept vertically close. 
         <br>
-        This is going to prevent the reader of
-        going throught the entire file to read the function that is called inside other or having to figure out 
-        if there are related concepts all over the file to decide if he has to write a new one.
+        This is going to prevent the reader of going throught the entire file to read functions that calls each other and also 
+        prevent the reader to keep track of every concept read while trying to figure out what the system does.
     </p>
     <p>
-        Also make sure that related concepts are kept in the same source file
+        Also make sure that related concepts are kept in the same source file. Separated concepts in the same source are hard to read and make
+        it harder when you have to deal with a bug and figure out where the value of a variable comes from and so on. Imagine
+        when they are kept in different source files...
+    </p>
+    <p>
+        Once the related conpcets are close to each other, their vertical distance/separation should be based on their importance to the
+        understandability of each other.
     </p>
 </div>
