@@ -205,8 +205,8 @@ if __name__ == "__main__":
         Keep expressions that have a close association together, without blank lines. In this way it's so much easier to identify all
          expressions a Class or function has.
     </p>
-    <pre class="brush: python">
-    <code>
+<pre class="brush: python">
+<code>
 class Car():
   def __init__(self, model, color):
     # Model of the car
@@ -266,7 +266,7 @@ def send_to_premium_member(member, message):
         Concepts that are close, you know, concepts that have some kind of connection because they have related lines of expression or because
         they call each other. Those concepts should be kept vertically close. 
         <br>
-        This is going to prevent the reader of going throught the entire file to read functions that calls each other and also 
+        This is going to prevent the reader from going throught the entire file to read functions that calls each other and also 
         prevent the reader to keep track of every concept read while trying to figure out what the system does.
     </p>
     <p>
@@ -281,4 +281,154 @@ def send_to_premium_member(member, message):
     <p>
         This is going to prevent the reader of hopping through the source file or even classes to understand the concepts.
     </p>
+    <h4>Variable Declarations</h4>
+    <p>
+        The varialbes should be declared as close as possible to their usage. In functions, keep local variables at the top.
+        <br>
+        As for the control varibles for loops, try to declare them within the loop statement.
+    </p>
+    <h4>Instance Variables</h4>
+    <p>
+        For instance variables, keep them declared only in one place. These varibles can be accessed by all functions in the Class. It's
+        bets that they are kept in one place only.
+        <br>
+        Avoid doing thing like this: 
+    </p>
+<pre class="brush: python">
+<code>
+class Project:
+    def __init__(self, workspace_name):
+        self.WORKSPACE =  os.path.dirname(workspace_name[0] + "/") 
+        
+        self.BOOTSTRAP_FOLDER = os.path.dirname(
+            "{workspace}/bootstrap/".format(workspace=self.WORKSPACE)
+        )
+        
+        self.CSS_FOLDER = os.path.dirname(
+            "{workspace}/bootstrap/css/".format(workspace=self.WORKSPACE)
+        )
+        
+        self.POSTS_FOLDER = os.path.dirname(
+            "{workspace}/conteudo/".format(workspace=self.WORKSPACE)
+        )
+        
+        self.BOOTSTRAP_ADDRESS = self.BOOTSTRAP_ADDRESS.format(
+            package_name=self.BOOTSTRAP_PACKAGE_NAME
+        )
+    
+    BOOTSTRAP_PACKAGE_NAME = "bootstrap-4.1.2-dist.zip"
+    BOOTSTRAP_ADDRESS = "https://github.com/twbs/bootstrap/releases/download/v4.1.2/{package_name}"
+    def fetch_bootstrap(self):
+        os.system(
+            'cd {bootstrap_folder} && wget {bootstrap_address} && unzip {package_name}'.format(
+                bootstrap_folder=self.BOOTSTRAP_FOLDER,
+                bootstrap_address=self.BOOTSTRAP_ADDRESS,
+                package_name=self.BOOTSTRAP_PACKAGE_NAME
+            )
+        )
+</code>
+</pre>
+    <p>
+        Imagine how much time would it take to figure out where the the variable <b>BOOTSTRAP_PACKAGE_NAME</b> was every time you moved your eyes
+        if this was a 300 lines source file...
+    </p>
+    <h4>Dependent Functions</h4>
+    <p>
+        Functions that calls each other. They should be vertically close and the caller should be kep above the calle.
+        <br>
+        So instead of declaring dependent functions like this:
+    </p>
+<pre class="brush: python">
+<code>
+import pandas as pd
+import logging
+
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+handler.setLevel(logging.INFO)
+logger.addHandler(handler)
+
+
+class Grid:
+  grid = []
+
+  def __init__(self, columns, rows):
+    self.rows = rows
+    self.columns = columns
+
+  def append_columns(self):
+    self.grid.append(self.columns)
+    
+  def append_rows(self):
+    for row in self.rows:
+      self.grid.append(row)
+
+  def build(self):
+    self.append_columns()
+    self.append_rows()
+    return self.grid
+
+  def to_pandas_data_frame(self):
+    return pd.DataFrame(self.grid)
+
+
+if __name__ == "__main__":
+  employees_grid_columns = ["Name", "Role", "Salary"]
+  employees = [["Gabriel", "Software Engineer", "84k Year"],
+               ["David", "Software Engineer", "80k Year"]]
+  employees = Grid(employees_grid_columns, employees)
+  employees.build()
+  logging.info(employees.to_pandas_data_frame())
+</code>
+</pre>
+    <p>
+        Try doing something like this:
+    </p>
+<pre class="brush: python">
+<code>
+import pandas as pd
+import logging
+
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+handler.setLevel(logging.INFO)
+logger.addHandler(handler)
+
+
+class Grid:
+  grid = []
+
+  def __init__(self, columns, rows):
+    self.rows = rows
+    self.columns = columns
+  
+  def build(self):
+    self.append_columns()
+    self.append_rows()
+    return self.grid
+
+  def append_columns(self):
+    self.grid.append(self.columns)
+    
+  def append_rows(self):
+    for row in self.rows:
+      self.grid.append(row)
+
+  def to_pandas_data_frame(self):
+    return pd.DataFrame(self.grid)
+
+
+if __name__ == "__main__":
+  employees_grid_columns = ["Name", "Role", "Salary"]
+  employees = [["Gabriel", "Software Engineer", "84k Year"],
+               ["David", "Software Engineer", "80k Year"]]
+  employees = Grid(employees_grid_columns, employees)
+  employees.build()
+  logging.info(employees.to_pandas_data_frame())
+</code>
+</pre>
 </div>
