@@ -449,4 +449,62 @@ if __name__ == "__main__":
   </p>
 
   <h3>How long should lines be: Horizontal Formatting</h3>
+  <p>
+      Now that you know how long should your source files be, it's time to know how long the lines should be...
+      <br>
+      I'm going to give you an example of a code with long lines and you will know why they should be short. There it goes:
+  </p>
+<pre>
+<code>import pandas as pd
+import logging
+
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+handler.setLevel(logging.INFO)
+logger.addHandler(handler)
+
+
+class Grid:
+  grid = []
+
+  def __init__(self, columns, rows):
+    self.rows = rows
+    self.columns = columns
+
+  def append_columns(self):
+    self.grid.append(self.columns)
+    
+  def append_rows(self):
+    for row in self.rows:
+      self.grid.append(row)
+
+  def build(self):
+    self.append_columns()
+    self.append_rows()
+
+  def to_pandas_data_frame(self):
+    return pd.DataFrame(self.grid)
+
+
+if __name__ == "__main__":
+  employees_grid_columns = ["Name", "Middle Name", "Last Name", "Job Title", "Position", "Department", "Manager", "Cost Center", "Employee number", "Office Number", "Mobile Phone", "Home Phone", "Email", "Start Date", "Termination Date", "Salary"]
+  employees = [["Gabriel", "-", "Lima", "Information technology", "Software Engineer", "Digital Services", "Samuel", "1224", "99533", "3", "+1 732-624-0600", "-" , "gabriel@email.com", "2021-05-03", "-", "84k Year"],
+               ["David", "-", "Lima", "Information technology", "Web Developer", "Digital Services", "Samuel", "1224", "99533", "3", "+1 212-420-0228", "-" , "david@email.com", "2021-05-03", "-", "80k Year"]]
+  employees = Grid(employees_grid_columns, employees)
+  employees.build()
+  logging.info(employees.to_pandas_data_frame())
+</code>
+</pre>
+    <p>
+        Now that I've convinced you why they should be short, let's see how long should they be...
+        <br>
+        Keep the lines between 80-120 chars at the most. Of course consider the style guide of the current language you are working with right now.
+    </p>
+    <h4>Horizontal Openness and Density</h4>
+    <h4>Horizontal Alignment</h4>
+    <h4>Indentation</h4>
+    <h4>Dummy Scopes</h4>
+    <h3>Team Rules</h3>
 </div>
