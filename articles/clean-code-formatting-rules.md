@@ -242,8 +242,8 @@ def send_to_premium_member(member, message):
 </code>
 </pre>
     Just remove the spaces and comments and keep them close to each other...
-    <pre class="brush: python">
-    <code>
+<pre class="brush: python">
+<code>
 class Car():
   def __init__(self, model, color):
     self.model = model
@@ -503,7 +503,77 @@ if __name__ == "__main__":
         Keep the lines between 80-120 chars at the most. Of course consider the style guide of the current language you are working with right now.
     </p>
     <h4>Horizontal Openness and Density</h4>
+    <p>
+        To associate strongly related things and to disassociate weakly realeated things we use white spaces.
+        <br>
+        So in cases where there is an assignment we have two different elements to work with, they naturally should be kept separated by white
+        spaces to make the operation obvious: 
+    </p>
+<pre class="brush: python">
+<code>
+class Car():
+  def __init__(self, model, color):
+    self.model=model # Wrong
+    self.color = color # Correct
+</code>
+</pre>
+    <p>
+        On the other hand function calls and their opening parenthesis is a good example of things that should be kept whithout whitespaces.
+        Functions are strongly related to it's arguments. The arguments within the function call parenthesis should have a whitespace after
+        every comma showing that the arguments are separated, like the example bellow:
+    </p>
+<pre>
+<code>
+def send_to_premium_members(customized_message):
+    for member in members:
+        send_to_premium_member(member, customized_message)
+
+
+def send_to_premium_member(member, message):
+    _MEMBERSHIP_TYPE = 1
+    _EMAIL = 0
+    is_premium_member = member[_MEMBERSHIP_TYPE]
+
+    if is_premium_member:
+        send(member[_EMAIL], message)
+</code>
+</pre>
     <h4>Horizontal Alignment</h4>
+    <p>
+        It's a common practice to align strucutres horizontally when using languages like Assembly or C/C++, I think...
+        <br>
+        I particularly saw horizontal alignment for the first time in a specific project where I was working along with a COBOL programmer.
+        <br>
+        I was kind of helping him with the frameworks we where using and giving him an overview about the project and supporting him on following
+        the best practices in Java.
+    </p>
+    <p>
+        His first commits had assignments like this:
+    </p>
+
+<pre>
+<code>
+def send_to_premium_member(member, message):
+    _MEMBERSHIP_TYPE  =  1
+    _EMAIL            =  0
+    is_premium_member = member[_MEMBERSHIP_TYPE]
+
+    if is_premium_member:
+        send(member[_EMAIL], message)
+</code>
+</pre>
+    <p>
+        I was like...ok man, let's forget about this, ok? hahaha
+    </p>
+    <p>
+        Avoid doing things like this, I don't know about Assembly, COBOL or even C/C++, but in languages like Java, Typescript, Python and so on
+        we don't use this kind of assignment.
+    </p>
+    <p>
+        They can emphisize the wrong things. Take Java for instance. We have to specify the type for every variable, we can confuses their types
+        easily by not paying attention to the left side of the assingment.
+        In cases where we have long lists of assingments it's best to split up the Class...
+    </p>
     <h4>Indentation</h4>
     <h4>Dummy Scopes</h4>
     <h3>Team Rules</h3>
