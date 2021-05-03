@@ -573,8 +573,51 @@ def send_to_premium_member(member, message):
         They can emphisize the wrong things. Take Java for instance. We have to specify the type for every variable, we can confuses their types
         easily by not paying attention to the left side of the assingment.
         In cases where we have long lists of assingments it's best to split up the Class...
+        <br>
+        And again, consider using the style guide of the current language you are working with!
     </p>
     <h4>Indentation</h4>
+    <p>
+        The source file is a hierarcchy. Each level is a scope and we make those scopes visible by indenting the lines of code in proportion
+        to their position in ther hierarchy.
+    </p>
+    <p>
+        The levels are always one level to the right of their previous level. So we have statements or expressions at 
+        the level of the file such as classes declarations and imports that are not indented at all. I usually say that they are in the
+        root of the source file. It makes sense in my head.
+    </p>
+    <p>
+        We also have functions/methods whithin the classes. They are indented one level to the right of the Class.
+        The implementation of those functions/methods are one level to right of their declaration.
+        <br>
+        Block implementations are implemented one level to the right of their containing block 
+    </p>
+    <p>
+        This hierarchy help us to identify classes, functions and variable declarations easily by making the source file cleaner and organized.
+    </p>
+    <h4>Collapsing scopes</h4>
+    <p>
+        It's natural that as our confidence and proeficiency with programming grows we do things that seems a good idea but in realitty, they are not.
+    </p>
+    <p>
+        In python we can do things like:
+    </p>
+<pre>
+<code>
+print("OK") if 2 < 3 else print("NOK")
+</code>
+</pre>
+
+    <p>But I bet you've seen things like the following</p>
+<pre>
+<code>if(2 < 3) console.log("OK")</code>
+</pre>
+    <p>
+        I've done this with functions too... ;--;
+        <br>
+        Of course this is a silly example. But the thing is, choose to break the blocks and expand them. This is going to make them visible
+        in the source file.
+    </p>
     <h4>Dummy Scopes</h4>
     <h3>Team Rules</h3>
 </div>
