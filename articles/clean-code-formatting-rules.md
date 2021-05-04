@@ -5,10 +5,10 @@
         to Clean Code.
     </p>
     <p>
-        Professional developers knows that the first thing to be dealth with it before anything else is the
-        <b>communication</b>. In the last blog posts I've been emphasizing that choosing good names,
-        creating small functions instead of creating monsters and removing comments makes your code readable
-        because by doing those thing you're removing the pollution and making things simple and easy to understand.
+        Professional developers knows that the first thing to be dealth with before anything else is the
+        <b>communication</b>. In the last blog posts I've been emphasizing that choosing <a href="https://gabrielslima.github.io/blog/post.html?id=6" target="blank">good names</a>,
+        creating <a href="https://gabrielslima.github.io/blog/post.html?id=7" target="blank">small functions</a> instead of creating monsters and removing <a href="https://gabrielslima.github.io/blog/post.html?id=8" target="_blank">comments</a> makes your code readable.
+        By doing those things you're removing the pollution and making things simple and easy to understand.
     </p>
     <p>
         All of those things are about the <b>communication</b> between you and other developers.
@@ -22,27 +22,31 @@
         <br>
         Today we have tools like Sonarqube that allow us to set custom Quality Gates. Some of the formatting
         rules can be automated with it.
-        <br>
-        So without further ado, let's see what can helps on setting formatting rules.
+    </p>
+    <p>
+        So without further ado, let's see what to consider when setting formatting rules for your project.
     </p>
     <h3>Vertical Formatting</h3>
     <p>
-        Vertical formatting are about how long should the source files be. Of course, the smaller
+        Vertical formatting are about how long the source files should be. Of course, the smaller
         the easier to read...
-        <br>
-        The Clean Code book recommends that the file should be 200-500 lines long. I think it's possible to
-        keep the files this log and course that there is the fact that depending on the language there maybe
-        things that need more deatails than others. But other than that with a max of 500 lines it covers those cases.
-        <br>
-        And what about the structure of the file? It's ok to just put functions in any order?
     </p>
     <p>
-        I confess. This wasn't a thing for me till recently. I'm not going lie. I find classes that has functions
+        The author of Clean Code, Robert C. Martin, recommends the source files to be 200-500 lines long at the max. I think it's possible to
+        keep the files this long and of course that there is the fact that, depending on the language,
+        some things may require more deatails than others. But other than that with a max of 500 lines it covers those cases.
+        <br>
+        And what about the structure of the file? It's ok to just <b>put functions in any order</b>?
+    </p>
+    <p>
+        I confess. This wasn't a thing for me till recently, I'm not lying to you. I find classes that have functions
         in any order harder to read but I thought it was just me being paranoid about this...
     </p>
     <p>
         But now I see that I wasn't been paranoid at all. I got used going throught the functions and just debugging
-        them till I figure out and map everything that is happening. But that is not how it should be.
+        them till I figure out and map everything that was happening. But that is not how it should be.
+    </p>
+    <p>
         Of course there are cases where debugging is the way to go. But if you think that the code should be simple
         and readable the debugging processing should be used with specific purpouses not as the main tool to figure out
         what the code is doing.
@@ -58,11 +62,11 @@
         details hidden in the first paragraph.
     </p>
     <p>
-        So in the code the headline would be the file's name. The top of the file should include only the high-level concepts and the details
+        So when it comes to the code, the headline would be the file's name. The top of the file should include only the high-level concepts and the details
         should be increased as we move downward.
         <br>
         Following the idea of <a href="https://gabrielslima.github.io/blog/post.html?id=7" target="blank">abstractions</a>, the first layers would
-        be at the top of the file as the low-level layers are kept at the bottom.
+        be at the top of the file as the lower-level layers are kept at the bottom.
     </p>
     <h4>Vertical openness between concepts</h4>
     <p>
@@ -203,7 +207,7 @@ if __name__ == "__main__":
     <h4>Vertical Density</h4>
     <p>
         Keep expressions that have a close association together, without blank lines. In this way it's so much easier to identify all
-         expressions a Class or function has.
+         expressions a class or function has.
     </p>
 <pre class="brush: python">
 <code>
@@ -218,9 +222,11 @@ class Car():
 </pre>
     <p>
         Instance variables is the classic example of expressions that should be together, wtihout blank lines. But I think this should be
-        applied to functions too. Functions by being organized in 
+        applied to functions too. 
+        <br>
+        Functions by being organized in 
         <a href="https://gabrielslima.github.io/blog/post.html?id=7#levels-of-abstraction" target="blank">layers/levels of abstractions</a>
-        can have expressions that are only important in a specific layer. So it's a good a idea to keep related expressions together and choose
+        can have expressions that are only important in a specific layer and have some constants and some blocks. So it's a good a idea to keep related expressions together and choose
         <a href="https://gabrielslima.github.io/blog/post.html?id=6" target="blank">meaningful names</a> for them instead of 
         keeping them separated and with comments.
     </p>
@@ -289,7 +295,7 @@ def send_to_premium_member(member, message):
     </p>
     <h4>Instance Variables</h4>
     <p>
-        For instance variables, keep them declared only in one place. These varibles can be accessed by all functions in the Class. It's
+        For instance variables, keep them declared in one place only. These varibles can be accessed by all functions in the class. It's
         best that they are kept in one place only.
         <br>
         Avoid doing things like this: 
@@ -444,13 +450,13 @@ if __name__ == "__main__":
   </p>
   <h4>The vertical ordering</h4>
   <p>
-      Following the concepts we've been through on the last subheads we will come up with source files organized in layers. The high level conpcets
+      Following the concepts we've been through on the last subheads we will come up with source files organized in layers. The high level concepts
       will come first, hiding the details and as we go downwards the details are explored.
   </p>
 
-  <h3>How long should lines be: Horizontal Formatting</h3>
+  <h3>How wide should lines be: Horizontal Formatting</h3>
   <p>
-      Now that you know how long should your source files be, it's time to know how long the lines should be...
+      Now that you know how long should your source files be, it's time to know how wide the lines should be...
       <br>
       I'm going to give you an example of a code with long lines and you will know why they should be short. There it goes:
   </p>
@@ -498,7 +504,7 @@ if __name__ == "__main__":
 </code>
 </pre>
     <p>
-        Now that I've convinced you why they should be short, let's see how long should they be...
+        Now that I've convinced you why they should be short, let's see how wide should they be...
         <br>
         Keep the lines between 80-120 chars at the most. Of course consider the style guide of the current language you are working with right now.
     </p>
@@ -523,8 +529,7 @@ class Car():
         every comma showing that the arguments are separated, like the example bellow:
     </p>
 <pre>
-<code>
-def send_to_premium_members(customized_message):
+<code>def send_to_premium_members(customized_message):
     for member in members:
         send_to_premium_member(member, customized_message)
 
@@ -572,7 +577,7 @@ def send_to_premium_member(member, message):
     <p>
         They can emphisize the wrong things. Take Java for instance. We have to specify the type for every variable, we can confuses their types
         easily by not paying attention to the left side of the assingment.
-        In cases where we have long lists of assingments it's best to split up the Class...
+        In cases where we have long lists of assingments it's best to split up the class...
         <br>
         And again, consider using the style guide of the current language you are working with!
     </p>
@@ -584,20 +589,20 @@ def send_to_premium_member(member, message):
     <p>
         The levels are always one level to the right of their previous level. So we have statements or expressions at 
         the level of the file such as classes declarations and imports that are not indented at all. I usually say that they are in the
-        root of the source file. It makes sense in my head.
+        root of the source file. This makes sense in my head.
     </p>
     <p>
-        We also have functions/methods whithin the classes. They are indented one level to the right of the Class.
+        We also have functions/methods whithin the classes. They are indented one level to the right of the class.
         The implementation of those functions/methods are one level to right of their declaration.
         <br>
-        Block implementations are implemented one level to the right of their containing block 
+        Block implementations are implemented one level to the right of their containing block and so on.
     </p>
     <p>
         This hierarchy help us to identify classes, functions and variable declarations easily by making the source file cleaner and organized.
     </p>
     <h4>Collapsing scopes</h4>
     <p>
-        It's natural that as our confidence and proeficiency with programming grows we do things that seems a good idea but in realitty, they are not.
+        It's natural that as our confidence and proeficiency with programming grows we do things that seems a good idea but in reality, they are not.
     </p>
     <p>
         In python we can do things like:
@@ -618,6 +623,40 @@ print("OK") if 2 < 3 else print("NOK")
         Of course this is a silly example. But the thing is, choose to break the blocks and expand them. This is going to make them visible
         in the source file.
     </p>
-    <h4>Dummy Scopes</h4>
+    
     <h3>Team Rules</h3>
+    
+    <p>
+        The idea behind the formatting rules is to stablish a set of guidelines to write code so that our documents (source files) have
+        the same style and are read nicely. This is what composes a good Software System. 
+    </p>
+    
+    <p>
+        If you are working in a team, use the team rules. The idea is to have a single style for the entire project and that's why the
+        rules should be decided by the entire team, not only by a single person...
+    </p>
+    <p>
+        So take some time to discuss some rules with yout team. Consider using tools to check if the formatting rules are being used and apply the
+        verification in CI pipelines an so on...
+    </p>
+
+    <h3>Final Thoughts</h3>
+    <p>
+        Formatting rules are not just about creating a governance process for your project. It's about the communication...
+        <br>
+        It may seems a good idea to have developers worring only about delivering things and not caring about the code style at all or caring the minimum
+        about how they write code. But on the long run, this is going to cost more time to figure out how things works and more time to fix things.
+    </p>
+    <p>
+        Stablishing a good communication process (set of rules) is the best option for those teams that care about the maintainability of the Software
+        and are serious about the project on the long run.
+    </p>
+    <p>
+        Take some time to explore your IDE and set some rules for your side projects, or maybe if you are using a predefined style guide like pep8,
+        take sometime to explore and think about how you've been writing code.
+        <br>
+        Maybe you can help your team to stablish a set of formatting rules if they don't have one. 
+    </p>
+
+    Good Luck XD
 </div>
