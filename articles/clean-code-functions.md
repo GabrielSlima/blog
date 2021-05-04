@@ -127,10 +127,11 @@ def send_to_premium_members(customized_message):
 
 
 def send_to_premium_member(member, message):
-    _PREMIUM_MEMBERSHIP = True
     _MEMBERSHIP_TYPE = 1
     _EMAIL = 0
-    if member[_MEMBERSHIP_TYPE] == _PREMIUM_MEMBERSHIP:
+    is_premium_member = member[_MEMBERSHIP_TYPE]
+    
+    if is_premium_member:
         send_email(member[_EMAIL], message)
 
 
@@ -269,13 +270,15 @@ members = [
 
 
 def send_to_email_list(customized_message):
-    _PREMIUM_MEMBERSHIP = True
     _MEMBERSHIP_TYPE = 1
     _EMAIL = 0
+    is_premium_member = member[_MEMBERSHIP_TYPE]
+    
     for member in members:
-        if member[_MEMBERSHIP_TYPE] != _PREMIUM_MEMBERSHIP:
+        if is_premium_member:
             continue
         send_email(member[_EMAIL], customized_message)
+
 
 def send_email(email, message):
     statuses = [True, False]
@@ -329,10 +332,10 @@ def send_to_premium_members(customized_message):
 
 
 def send_to_premium_member(member, message):
-    _PREMIUM_MEMBERSHIP = True
     _MEMBERSHIP_TYPE = 1
     _EMAIL = 0
-    if member[_MEMBERSHIP_TYPE] == _PREMIUM_MEMBERSHIP:
+    is_premium_member = member[_MEMBERSHIP_TYPE]
+    if is_premium_member:
         send_email(member[_EMAIL], message)
 
 
@@ -399,10 +402,11 @@ def send_to_premium_members(customized_message):
 
 
 def send_to_premium_member(member, message):
-    _PREMIUM_MEMBERSHIP = True
     _MEMBERSHIP_TYPE = 1
     _EMAIL = 0
-    if member[_MEMBERSHIP_TYPE] == _PREMIUM_MEMBERSHIP:
+    is_premium_member = member[_MEMBERSHIP_TYPE]
+    
+    if is_premium_member:
         send_email(member[_EMAIL], message)
 
 
@@ -466,12 +470,13 @@ def send_to_premium_members(customized_message):
     logging.info("Members to be contacted: {}".format(to_reprocess))
     return to_reprocess
 
+
 def send_to_premium_member(member, message):
-    _PREMIUM_MEMBERSHIP = True
     _MEMBERSHIP_TYPE = 1
     _EMAIL = 0
+    is_premium_member = member[_MEMBERSHIP_TYPE]
     status = "NON_PREMIUM_MEMBER"
-    if member[_MEMBERSHIP_TYPE] == _PREMIUM_MEMBERSHIP:
+    if is_premium_member:
         sent = send_email(member[_EMAIL], message)
         if not sent:
             status = "FAILED"
@@ -536,10 +541,11 @@ def send_to_premium_members(customized_message):
 
 
 def send_to_premium_member(member, message):
-    _PREMIUM_MEMBERSHIP = True
     _MEMBERSHIP_TYPE = 1
     _EMAIL = 0
-    if member[_MEMBERSHIP_TYPE] == _PREMIUM_MEMBERSHIP:
+    is_premium_member = member[_MEMBERSHIP_TYPE]
+
+    if is_premium_member:
         send(member[_EMAIL], message)
 
 

@@ -612,7 +612,6 @@ def send_to_premium_member(member, message):
 print("OK") if 2 < 3 else print("NOK")
 </code>
 </pre>
-
     <p>But I bet you've seen things like the following</p>
 <pre>
 <code>if(2 < 3) console.log("OK")</code>
@@ -623,14 +622,11 @@ print("OK") if 2 < 3 else print("NOK")
         Of course this is a silly example. But the thing is, choose to break the blocks and expand them. This is going to make them visible
         in the source file.
     </p>
-    
     <h3>Team Rules</h3>
-    
     <p>
         The idea behind the formatting rules is to stablish a set of guidelines to write code so that our documents (source files) have
         the same style and are read nicely. This is what composes a good Software System. 
-    </p>
-    
+    </p>   
     <p>
         If you are working in a team, use the team rules. The idea is to have a single style for the entire project and that's why the
         rules should be decided by the entire team, not only by a single person...
@@ -639,7 +635,6 @@ print("OK") if 2 < 3 else print("NOK")
         So take some time to discuss some rules with yout team. Consider using tools to check if the formatting rules are being used and apply the
         verification in CI pipelines an so on...
     </p>
-
     <h3>Final Thoughts</h3>
     <p>
         Formatting rules are not just about creating a governance process for your project. It's about the communication...
