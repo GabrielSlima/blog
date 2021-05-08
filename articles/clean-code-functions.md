@@ -494,6 +494,7 @@ def send_email(email, message):
         email=email,
         connection_status=connection_status
     ))
+    return connection_status
 
 
 if __name__ == "__main__":

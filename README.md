@@ -4,5 +4,6 @@ This project is intended to share my thoughts and experiences with the Software 
 
 All posts can be found [here](https://gabrielslima.github.io/blog/)
 
-## Concepts
-### [OOP](https://www-numi.fnal.gov/offline_software/srt_public_context/WebDocs/Companion/cxx_crib/index.html)
+## References
+#### [BEST OOP CONCEPTS ILLUSTRATION](https://www-numi.fnal.gov/offline_software/srt_public_context/WebDocs/Companion/cxx_crib/index.html)
+#### [BEST INTRODUCTION TO OOP WITH C++](https://www.learncpp.com/)
