@@ -10,4 +10,4 @@ All posts can be found [here](https://gabrielslima.github.io/blog/)
 #### [OOP With Java](https://docs.oracle.com/javase/tutorial/java/index.html)
 #### [Best Procedural Programming concepts explaination](https://www.learncomputerscienceonline.com/procedural-programming/)
 #### [Best Playlist to study/work](https://www.youtube.com/playlist?list=PLesWpNGB8x01Js5CvQxUINIOiPkHFXRuV)
-
+#### [Subroutines](https://aaronbloomfield.github.io/pdr/book/x86-64bit-ccc-chapter.pdf)
