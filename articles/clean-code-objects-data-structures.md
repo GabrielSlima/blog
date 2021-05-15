@@ -90,7 +90,7 @@
 <code>notify(cellphone, message)</code>
 </pre>
     <p>
-        Using OOP this could be achived by doing something like this:
+        Using OOP this could be achieved by doing something like this:
     </p>
     <pre class="brush: python">
 <code>cellphone.notify(message)</code>
