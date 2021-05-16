@@ -82,6 +82,8 @@
         This means that objects have it's own data members or variables and it's own set
         of behaviors to change it's state.
     </p>
+    <img class="post-img" src="../images/clean-code-objects-data-structures/object" alt="">
+    <img class="post-img" src="../images/clean-code-objects-data-structures/oop-app" alt="">
     <!-- IMAGE -->
     <p>
         In procedural programming, the author of the code have to organize the functions the best way he can to represent a behavior that can be related to a representation of a object. For instance:
@@ -97,15 +99,35 @@
 </pre>
     <p>
         There are some other factors like the fact that global variables can be changed at any time by any function in procedural programs, which is not very good.
-        This also makes the code cleaner, and with another level of organization.
-        Of course, in procedural programming functions can be in external files and organized by similar behavior and things like that.
-        <br>
-        But it's different when you have a function attached to a object. We can see exactly where the function is operating and what we can expect.
     </p>
     <p>
-        And of course, because programming languages where made by humans to humans, the OOP have some principles like, inheritance, encapsulation, abstraction and polymorphism to help us to manipulate or create objects in different contexts...
+        Of course, as you coud see on the last image, objects can also access global variables but the idea of using objects is not only to represent real world objects or components inside of the program, but also that 
+        they only work (mostly) with their own data structures (data members), isolating them from changes on the program's state and to encapsulate
+        data and behavior members data contains details useful only for the object itself by making them private.
+    </p>
+    <p>
+        Encapsulation of objects is also a way of preventing the object's state to change during the code execution by other users of the same object and reduce
+        complexity. This also helps with debbuging because we would have only one place
+        to look up, which is the template of the object (the class).
+    </p>
+    <p>
+        Object Oriented Programming makes the code cleaner, and with another level of organization if they are used correctly.
+        Of course, in procedural programming functions can be in external files and organized by similar behaviors and things like that.
+        <br>
+        But it's different when you have a function attached to a object. We can see exactly on what the function is operating and what we can expect.
+    </p>
+    <p>
+        And of course, because programming languages where made by humans to humans, the OOP have some principles like, inheritance, encapsulation, abstraction and polymorphism to help us to manipulate or create objects in different contexts with different variations of representation...
     </p>
     <h3>Objects</h3>
+    <p>
+        Now that we've revised some super important concepts, tell the difference between this:
+    </p>
+    <!-- IMAGE OF A DATA STRUCUTRE REPRESENTED BY A CLASS-->
+    <p>
+        And this:
+    </p>
+    <!-- IMAGE OF A OBJECT REPRESENTED BY A CLASS-->
     <h3>Data Strctures</h3> 
     Good Luck XD
 </div>
