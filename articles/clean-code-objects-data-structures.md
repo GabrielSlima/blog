@@ -119,11 +119,18 @@
     <p>
         And of course, because programming languages where made by humans to humans, the OOP have some principles like, inheritance, encapsulation, abstraction and polymorphism to help us to manipulate or create objects in different contexts with different variations of representation...
     </p>
+    <h3>The freedom of our objects</h3>
+    <p>
+        Now that we've revised some super important concepts we can get to some observations.
+    </p>
+    <h4>Data abstraction</h4>
+    <p>
+        Abstraction is the process of hidding details, but why use public interfaces to access private data members of a object?
+    </p>
     <h3>Objects</h3>
     <p>
-        Now that we've revised some super important concepts, tell the difference between this:
+        Now that we've revised some super important concepts, can you tell the difference between this:
     </p>
-    <!-- IMAGE OF A DATA STRUCUTRE REPRESENTED BY A CLASS-->
     <p>
         And this:
     </p>
