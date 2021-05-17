@@ -125,7 +125,39 @@
     </p>
     <h4>Data abstraction</h4>
     <p>
-        Abstraction is the process of hidding details, but why use public interfaces to access private data members of a object?
+        Abstraction is the process of hidding details, so <b>data abstraction</b> would be
+        the process of hidding data members of a object or class.
+        <br>
+        This not only helps to prevent
+        their state from changes made by users, but also to make the code readable and maintainable by making the code
+        less polluted and limiting the places where those states can be changed other than the class/object itself.
+        <br>
+        In other words, data abstraction heltps to manage complexity and makes the process of debugging less...you know, easier.
+    </p>
+    <p>
+        Members are encapsulated by changing their accessibility to private. But even though
+        those members can only be accessed inside of the class/object, the author can expose
+        public interfaces to manipulate them.
+        <br>
+        With data members it's common to have what is called <b>property accessors</b> or <b>getters/setters</b>
+        that allows users of a object to manipulate those data members.
+    </p>
+    <p>
+        Even though this can be useful in some cases, they actually should be avoided if there isn't 
+        a good reason to use them.
+        <br>
+        Creating getters and setters just for the saking of getting or setting values of variables
+        is more like a false encapsulation. Any user of the object can change it's state
+        as if the data members where actually public.
+    </p>
+    <p>
+        Of course property accesors can help with some cases like, for instance, setters could have
+        some validation making the user of the object to provide the right value or maybe some datatype conversion
+        to a type that is useful internally. But other than that, they don't have much of a meaning.
+    </p>
+    <p>
+        When it comes to getters, they are more useful than setters in most of the cases actually.
+        Sometimes the user of the object only need to check it's state.
     </p>
     <h3>Objects</h3>
     <p>
