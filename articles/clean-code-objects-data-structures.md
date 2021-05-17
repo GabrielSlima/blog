@@ -158,6 +158,8 @@
     <p>
         When it comes to getters, they are more useful than setters in most of the cases actually.
         Sometimes the user of the object only need to check it's state.
+        A good example would be a cart on a e-commerce website. The cart could have some behaviors like:
+        amountOfItems(), isFull(), items() and maybe one interface to actually update the cart, update(List items).
     </p>
     <h3>Objects</h3>
     <p>
