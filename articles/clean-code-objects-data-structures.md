@@ -125,8 +125,8 @@
     </p>
     <h4>Data abstraction</h4>
     <p>
-        Abstraction is the process of hidding details, so <b>data abstraction</b> would be
-        the process of hidding data members of a object or class.
+        Abstraction is the process of hiding details, so <b>data abstraction</b> would be
+        the process of hiding data members of a object or class.
         <br>
         This not only helps to prevent
         their state from changes made by users, but also makes the code readable and maintainable by making it
@@ -176,14 +176,27 @@
         attributes directly, isntead, expose interfaces that will actually be a meaningful layer between the object user
         and the internal implementation with a descriptive name like <b>cart.update(List items)</b>, <b>car.add(Lugagge lugagge)</b> and so on.
     </p>
-    <h3>Objects</h3>
+    <h3>Data/Object Anti-Symmetry</h3>
     <p>
-        Now that we've revised some super important concepts, can you tell the difference between this:
+        There is two ways in wich classses can be used: Objects and Datastructures.
     </p>
     <p>
-        And this:
+        Although some people think that OOP can achieved only by adding classes to the project
+        this is not quite true.
+        <br>
+        There is a slightly differecen between creating objects from a class and creating data structures from a class.
     </p>
-    <!-- IMAGE OF A OBJECT REPRESENTED BY A CLASS-->
-    <h3>Data Strctures</h3> 
+    <h4>Objects</h4>
+    <p>
+        Object are compose by data mebmers wich can be (and should at the most part) encapsulated and behaviors and the data members
+        that operates on that data.
+    </p>
+    <h4>Data Strctures</h4> 
+    <p>
+        Data strucutres only exposes data and doesn't have any meaningful behavior members.
+    </p>
+    <h4>Wich is more appropriate to use?</h4>
+    <h3>The law of demeter</h3>
+    <h3>Data Transfer Objects</h3>
     Good Luck XD
 </div>
