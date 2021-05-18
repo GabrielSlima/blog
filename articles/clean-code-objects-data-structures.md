@@ -129,10 +129,10 @@
         the process of hidding data members of a object or class.
         <br>
         This not only helps to prevent
-        their state from changes made by users, but also to make the code readable and maintainable by making the code
+        their state from changes made by users, but also makes the code readable and maintainable by making it
         less polluted and limiting the places where those states can be changed other than the class/object itself.
         <br>
-        In other words, data abstraction heltps to manage complexity and makes the process of debugging less...you know, easier.
+        In other words, data abstraction heltps to manage complexity and makes the process of debugging easier.
     </p>
     <p>
         Members are encapsulated by changing their accessibility to private. But even though
@@ -140,7 +140,7 @@
         public interfaces to manipulate them.
         <br>
         With data members it's common to have what is called <b>property accessors</b> or <b>getters/setters</b>
-        that allows users of a object to manipulate those data members.
+        that allow users of a object to manipulate those data members.
     </p>
     <p>
         Even though this can be useful in some cases, they actually should be avoided if there isn't 
@@ -151,8 +151,8 @@
         as if the data members where actually public.
     </p>
     <p>
-        Of course property accesors can help with some cases like, for instance, setters could have
-        some validation making the user of the object to provide the right value or maybe some datatype conversion
+        Of course property accesors can help in some cases. Setters could have
+        some validation making the user of the object to provide the right value. Or maybe some datatype conversion
         to a type that is useful internally. But other than that, they don't have much of a meaning.
     </p>
     <p>
@@ -160,6 +160,21 @@
         Sometimes the user of the object only need to check it's state.
         A good example would be a cart on a e-commerce website. The cart could have some behaviors like:
         amountOfItems(), isFull(), items() and maybe one interface to actually update the cart, update(List items).
+    </p>
+    <p>
+        Make sure that you have a good reason to add them into your code. Also make sure that they
+        are not breanking the method's or funtiction's contract, I mean, that they are saying that do one thing but,
+        in reality, they are doing something else.
+    </p>
+    <p>
+        <b>getItems()</b> and <b>setItems(List items)</b> makes users to expected to manipulate those attributes
+        whenever they want. But they actually can have, as I said before, validations, data conversions and so on.
+        <br>
+        It's best that objects have public interfaces that actually hides the implementation of their attributes by exposing
+        only the necessary interfaces and returning a abstract value for getters, like the <b>amountOfItems()</b>
+        or <b>isFull()</b> and avoid returning the attribute itsel. Not allowing users of the object to set
+        attributes directly, isntead, expose interfaces that will actually be a meaningful layer between the object user
+        and the internal implementation with a descriptive name like <b>cart.update(List items)</b>, <b>car.add(Lugagge lugagge)</b> and so on.
     </p>
     <h3>Objects</h3>
     <p>
