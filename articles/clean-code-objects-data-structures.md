@@ -119,7 +119,7 @@
     <p>
         And of course, because programming languages where made by humans to humans, the OOP have some principles like, inheritance, encapsulation, abstraction and polymorphism to help us to manipulate or create objects in different contexts with different variations of representation...
     </p>
-    <h3>The freedom of our objects</h3>
+    <h3>The freedom of our objects's members</h3>
     <p>
         Now that we've revised some super important concepts we can get to some observations.
     </p>
@@ -130,10 +130,11 @@
         <br>
         This not only helps to prevent
         their state from changes made by users, but also makes the code readable and maintainable by making it
-        less polluted and limiting the places where those states can be changed other than the class/object itself.
+        less polluted and limiting the places where those states can be changed other than inside of the class/object itself.
         <br>
         In other words, data abstraction heltps to manage complexity and makes the process of debugging easier.
     </p>
+    <h4>Property accessors</h4>
     <p>
         Members are encapsulated by changing their accessibility to private. But even though
         those members can only be accessed inside of the class/object, the author can expose
@@ -145,8 +146,9 @@
     <p>
         Even though this can be useful in some cases, they actually should be avoided if there isn't 
         a good reason to use them.
-        <br>
-        Creating getters and setters just for the saking of getting or setting values of variables
+    </p>
+    <p>
+        Create getters and setters just for the saking of getting or setting values of variables
         is more like a false encapsulation. Any user of the object can change it's state
         as if the data members where actually public.
     </p>
@@ -163,22 +165,26 @@
     </p>
     <p>
         Make sure that you have a good reason to add them into your code. Also make sure that they
-        are not breanking the method's or funtiction's contract, I mean, that they are saying that do one thing but,
-        in reality, they are doing something else.
+        are not breanking the method's or funtiction's contract, I mean, that they actually have a name 
+        that convey the real beahavior.
+        <br>
+        Adding a validation for a <b>setter</b> is not actually
+        setting the value directly, <b>first there is a validation</b> and then, maybe, the user can set the value.
     </p>
     <p>
-        <b>getItems()</b> and <b>setItems(List items)</b> makes users to expected to manipulate those attributes
-        whenever they want. But they actually can have, as I said before, validations, data conversions and so on.
-        <br>
+        <b>getItems()</b> and <b>setItems(List items)</b> makes users to expect that they can manipulate those attributes
+        whenever they want. But those behavior members actually can have, as I said before, validations, data conversions and so on.
+    </p>
+    <p>
         It's best that objects have public interfaces that actually hides the implementation of their attributes by exposing
         only the necessary interfaces and returning a abstract value for getters, like the <b>amountOfItems()</b>
-        or <b>isFull()</b> and avoid returning the attribute itsel. Not allowing users of the object to set
+        or <b>isFull()</b> and avoid returning the attribute itself. Not allowing users of the object to set
         attributes directly, isntead, expose interfaces that will actually be a meaningful layer between the object user
         and the internal implementation with a descriptive name like <b>cart.update(List items)</b>, <b>car.add(Lugagge lugagge)</b> and so on.
     </p>
     <h3>Data/Object Anti-Symmetry</h3>
     <p>
-        There is two ways in wich classses can be used: Objects and Datastructures.
+        Classes are factories for producing objects and there is two main purpouses in which those objects can be used: Objects and Data Structures.
     </p>
     <p>
         Although some people think that OOP can achieved only by adding classes to the project
@@ -186,14 +192,25 @@
         <br>
         There is a slightly differecen between creating objects from a class and creating data structures from a class.
     </p>
-    <h4>Objects</h4>
     <p>
-        Object are compose by data mebmers wich can be (and should at the most part) encapsulated and behaviors and the data members
-        that operates on that data.
+        Even though the code may contain classes, they can actually be a representation of a <b>data placeholder</b>. I mean, they can hold 
+        only a set of attributes (some of them can be arrays, lists, linked lists, queues and so on.) that represents a "data structure".
+        I mean, they may not contain business logic.
     </p>
-    <h4>Data Strctures</h4> 
+    <h4>Objects created from a class</h4>
     <p>
-        Data strucutres only exposes data and doesn't have any meaningful behavior members.
+        Object are composed by data members which can be (and should to prevent sudden changes during the program execution)
+        encapsulated and behaviors operates on that data.
+        <br>
+        These include business logic on it's behaviors. Not all behaviors are business logic, of course. But you got it, right?
+        They are not just data placeholders.
+    </p>
+    <h4>Data Strctures created from a class</h4> 
+    <p>
+        Data strucutres are also composed by data and behavior members but they can expose it's data members and doesn't
+        have any business logic behavior members.
+        <br>
+        Of course, this is more specific
     </p>
     <h4>Wich is more appropriate to use?</h4>
     <h3>The law of demeter</h3>
