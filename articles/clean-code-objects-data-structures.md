@@ -194,13 +194,20 @@
     </p>
     <p>
         Even though the code may contain classes, they can actually be a representation of a <b>data placeholder</b>. I mean, they can hold 
-        only a set of attributes (some of them can be arrays, lists, linked lists, queues and so on.) that represents a "data structure".
-        I mean, they may not contain business logic.
+        only a set of attributes (some of them can be arrays, lists, linked lists, queues and so on.) that represents a "data structure" 
+        and doesn't have business logic at all.
+    </p>
+    <p>
+        I've add complementary information on the following paragraphs about this subject. Although I agree with the author of the book
+        (Clean Code) that creating data strucutres is different from creating objects based on a class, I really disagree with him about the concept of
+        procedural code and thoughts about the behaviors from data strcutures.
+        <br>
+        So I decided to add some additional observations.
     </p>
     <h4>Objects created from a class</h4>
     <p>
         Object are composed by data members which can be (and should to prevent sudden changes during the program execution)
-        encapsulated and behaviors operates on that data.
+        encapsulated and behaviors that operates on that data.
         <br>
         These include business logic on it's behaviors. Not all behaviors are business logic, of course. But you got it, right?
         They are not just data placeholders.
@@ -209,10 +216,12 @@
     <p>
         Data strucutres are also composed by data and behavior members but they can expose it's data members and doesn't
         have any business logic behavior members.
-        <br>
-        Of course, this is more specific
     </p>
     <h4>Wich is more appropriate to use?</h4>
+    <p>
+        Well, it depends. Procedural code are a good choice to build small applications and to learn or deal with isolated topics and logic.
+        OOP programming is great for a higher level of code reusability and for more complex applications.
+    </p>
     <h3>The law of demeter</h3>
     <h3>Data Transfer Objects</h3>
     Good Luck XD
