@@ -238,7 +238,69 @@
             <li>An object created within the method/function</li>
             <li>Global variable objects or static members of the template of the object (the Class)</li>
         </ul>
+        Some examples of this Law being broken would be:
     </p>
+    <pre class="brush: python">
+<code>from datetime import datetime
+from dateutil.relativedelta import relativedelta
+import logging
+
+
+class App:
+    def __init__(self, name):
+        self.name = name
+
+    def notify(self, message):
+        logging.info("Message sent to: {} from {}".format(message, self.name))
+
+
+class AppCollection:
+    def __init__(self, apps):
+        self.apps = apps
+    
+    def filter_by(self, name):
+        found = None
+        for app in list(self.apps):
+            if app.name == name:
+                found = app
+        
+        if not found:
+            raise Exception("{} not found".format(name))
+        
+        return found
+    
+    def install(self, name):
+        self.apps.add(name)
+    
+    def uninstall(self, name):
+        try:
+            self.apps.remove(name)
+        except Exception:
+            logging.info("App does not exists.")
+
+
+class SmartPhone:
+    def __init__(self, name, apps):
+        self.name = name
+        self.apps = apps
+
+    def notify_through(self, app_name, message):
+        self.apps.filter_by(app_name).notify(message)
+
+
+if __name__ == "__main__":
+    defaul_apps = AppCollection({
+        App('calculator'),
+        App('calendar'),
+        App('dialer'),
+        App('sms'),
+        App('clock')
+    })
+    smartPhone = SmartPhone("My Smarphone", defaul_apps)
+    alarm = (datetime.now() + relativedelta(minutes=+10)).strftime("%Y-%m-%dT%H:%m:%S")
+    smartPhone.notify_through('clock', 'Upcoming alarm: {}'.format(alarm))
+    </code>
+</pre>
     <img class="post-img" src="../images/clean-code-objects-data-structures/LOD" alt="">
     <h3>Avoiding chain calls</h3>
     <h3>Data Transfer Objects</h3>
