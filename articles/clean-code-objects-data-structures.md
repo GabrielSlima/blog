@@ -58,8 +58,8 @@
     </p>
     <p>
         Programs written using this paradigm have global data members and behavior members that
-        can acesses all global members. Which means that the behavior members, the subroutines, can operate
-        directly on the main program's data:
+        can acesses those global data members. Which means that the behavior members, the subroutines, can operate
+        directly on the main program's state:
     </p>
     <img class="post-img" src="../images/clean-code-objects-data-structures/procedural-app" alt="">
     <p>
@@ -79,14 +79,15 @@
         In Oriented Programming the program is composed mainly by Objects.
         This is a higher level of code reusability where the functions are tied up in objects along with the necessary data members or properties that represents the object's state or model.
         <br>
-        This means that objects have it's own data members or variables and it's own set
-        of behaviors to change it's state.
+        This means that objects have it's own data members or variables that represents it's state and it's own set
+        of behaviors.
     </p>
     <img class="post-img" src="../images/clean-code-objects-data-structures/object" alt="">
     <img class="post-img" src="../images/clean-code-objects-data-structures/oop-app" alt="">
     <!-- IMAGE -->
     <p>
-        In procedural programming, the author of the code have to organize the functions the best way he can to represent a behavior that can be related to a representation of a object. For instance:
+        In procedural programming, the author of the code have to organize the functions the best way he can to represent a behavior that is related to a representation of a object (throught a data structure for instance).
+        Something like the following:
     </p>
     <pre class="brush: python">
 <code>notify(cellphone, message)</code>
@@ -101,23 +102,25 @@
         There are some other factors like the fact that global variables can be changed at any time by any function in procedural programs, which is not very good.
     </p>
     <p>
-        Of course, as you coud see on the last image, objects can also access global variables but the idea of using objects is not only to represent real world objects or components inside of the program, but also that 
+        Of course, as you could see on the last image, objects can also access global variables but the idea of using objects is not only to represent real world objects or components inside of the program, but also that 
         they only work (mostly) with their own data structures (data members), isolating them from changes on the program's state and to encapsulate
         data and behavior members data contains details useful only for the object itself by making them private.
     </p>
     <p>
         Encapsulation of objects is also a way of preventing the object's state to change during the code execution by other users of the same object and reduce
         complexity. This also helps with debbuging because we would have only one place
-        to look up, which is the template of the object (the class).
+        to look up in theory, which is the template of the object (the class).
     </p>
     <p>
-        Object Oriented Programming makes the code cleaner, and with another level of organization if they are used correctly.
-        Of course, in procedural programming functions can be in external files and organized by similar behaviors and things like that.
-        <br>
-        But it's different when you have a function attached to a object. We can see exactly on what the function is operating and what we can expect.
+        Object Oriented Programming makes the code cleaner, and with another level of organization if the priciples that comes with it
+        are used correctly.
+        Of course, in procedural programming functions can be in external files (modules) and organized by similar behaviors and therefore, growing the cohesion of
+        each module and complex systems can be built with this paradigm.
     </p>
     <p>
-        And of course, because programming languages where made by humans to humans, the OOP have some principles like, inheritance, encapsulation, abstraction and polymorphism to help us to manipulate or create objects in different contexts with different variations of representation...
+        But when it comes to complex programs, OOP is a good choice (if not the best) for having
+        principles like, inheritance, encapsulation, cohesion, coupling, abstraction and polymorphism on it's core 
+        to help us to create robust desings and manipulate or create objects in different contexts...
     </p>
     <h3>The freedom of our objects's members</h3>
     <p>
@@ -220,9 +223,24 @@
     <h4>Wich is more appropriate to use?</h4>
     <p>
         Well, it depends. Procedural code are a good choice to build small applications and to learn or deal with isolated topics and logic.
-        OOP programming is great for a higher level of code reusability and for more complex applications.
+        OOP programming is great for robust and complex applications with a higher level of code reusability.
     </p>
     <h3>The law of demeter</h3>
+    <p>
+        The law of demeter is a style rule for designing Systems. Talking about specifically Object Oriented systems, these rules
+        guarantee that the proper encapsulation, cohesion and loose coupling on the objects of our system.
+        The rules states that the method/function of an object can only talk to friends, not strangers.
+        This means that the behavior of a object can only send messages or call another object's method/function if the object is:
+        <ul>
+            <li>A argument of the function that is a object</li>
+            <li>The object in which the function is attached on (self or this)</li>
+            <li>Instance variable objects of the object itself</li>
+            <li>An object created within the method/function</li>
+            <li>Global variable objects or static members of the template of the object (the Class)</li>
+        </ul>
+    </p>
+    <img class="post-img" src="../images/clean-code-objects-data-structures/LOD" alt="">
+    <h3>Avoiding chain calls</h3>
     <h3>Data Transfer Objects</h3>
     Good Luck XD
 </div>
