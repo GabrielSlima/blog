@@ -318,13 +318,30 @@ if __name__ == "__main__":
         The object of type <b>Owner</b> has a <b>open</b> behavior that access a object of type <b>app</b> from 
         the type <b>SmartPhone</b>.
         <br>
-        The object of type app is a instance variable of SmartPhone...
+        The object of type app is an instance variable of SmartPhone and our desing would be something like this:
     </p>
-    <img class="post-img" src="../images/clean-code-objects-data-structures/LOD" alt="">
+    <img class="post-img" src="../images/clean-code-objects-data-structures/LOD-dont" alt="">
     <p>
-        The are quite a few amount of ways in which this interaction could happen without breaking the rules like building
-        "wrapper functions" or passing the app as a argument to the owner to access it's behaviors directly as you saw on the last image...But this is what makes senses on my head right now:    
+        Now not only the Owner knows about the SmartPhone's internal structure by having access into one one of it's relationships,
+        but also have to deals with all the possible problems that the SmartPhone would be responsible to deal with...
     </p>
+    <p>
+        The are quite a few amount of ways in which this interaction could happen without breaking the "Law of Demeter" like building
+        "wrapper functions" to return only what we need or having the app as a argument/instance variable or creating a new instance inside
+        the function so that the owner cant access the app's behaviors directly: 
+    </p>
+    <img class="post-img" src="../images/clean-code-objects-data-structures/LOD-alternative" alt="">
+    <p>
+        The solution for the desing is up to you. But it's worth it to ask yourself why would the owner have direct access to the Apps?
+        <br>
+        The solution works but the list of apps would probably be present on the Owner's model too, which is not what I would call a desing that
+        makes much sense...
+    </p>
+    <p>
+        A good idea probably would be the owner giving the owner the behavior of opening a app's smartphone by invoking only the SmartPhoone's interface
+        and the SmartPhone only deals how it would open the App:
+    </p>
+    <img class="post-img" src="../images/clean-code-objects-data-structures/LOD-do" alt="">
 <pre>
 <code>import logging
 
@@ -402,7 +419,10 @@ if __name__ == "__main__":
     gabriel.open('calculator', smart_phone)
 </code>
 </pre>
-    <h3>Avoiding chain calls</h3>
+    <p>
+        Now the Owner don't even know how the "Open" behavior of SmartPhone works internally, it only has to deals with the required arguments to
+        open the app...
+    </p>
     <h3>Data Transfer Objects</h3>
     Good Luck XD
 </div>
