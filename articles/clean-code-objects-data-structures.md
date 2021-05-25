@@ -233,75 +233,175 @@
         This means that the behavior of a object can only send messages or call another object's method/function if the object is:
         <ul>
             <li>A argument of the function that is a object</li>
-            <li>The object in which the function is attached on (self or this)</li>
-            <li>Instance variable objects of the object itself</li>
+            <li>The object in which the function is attached to (self or this)</li>
+            <li>Instance variable objects of the object in which the function is attached to (self or this)</li>
             <li>An object created within the method/function</li>
             <li>Global variable objects or static members of the template of the object (the Class)</li>
         </ul>
-        Some examples of this Law being broken would be:
+        So we are not supposed to do this:
     </p>
     <pre class="brush: python">
-<code>from datetime import datetime
-from dateutil.relativedelta import relativedelta
-import logging
+<code>import logging
+
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+handler.setLevel(logging.INFO)
+logger.addHandler(handler)
+
+
+class Onwer:
+    def __init__(self, name, email):
+        self.email = email
+        self.name = name
+    
+    def review(self, smart_phone):
+        logging.info("Review scheduled for {}".format(smart_phone.name))
+    
+    def open(self, app_name, smart_phone):
+        smart_phone.filter_by(app_name).start() # Invoke a behavior from a Object of type App
+
+    
+class SmartPhone:
+    def __init__(self, name, owner, apps):
+        self.apps = apps
+        self.name = name
+        self.owner = owner
+    
+    def notify(self, message):
+        logging.info("Message {} sent to {}".format(message, self.owner.name))
+
+    def filter_by(self, name):
+        found = None
+        for app in list(self.apps):
+            if app.name != name:
+                continue
+            found = app
+        
+        if not found:
+            raise Exception("{} not found".format(name))
+        
+        return found
 
 
 class App:
     def __init__(self, name):
         self.name = name
-
-    def notify(self, message):
-        logging.info("Message sent to: {} from {}".format(message, self.name))
-
-
-class AppCollection:
-    def __init__(self, apps):
-        self.apps = apps
     
+    def start(self):
+        logging.info("{} started!".format(self.name.capitalize()))
+    
+    def stop(self):
+        logging.info("{} stoped!".format(self.name).capitalize())
+
+
+if __name__ == "__main__":
+    defaul_apps = {
+        App('calculator'),
+        App('calendar'),
+        App('dialer'),
+        App('sms'),
+        App('clock')
+    }
+    gabriel = Onwer('Gabriel', "gabriel@email.com")
+    smart_phone = SmartPhone("SomeCoolSmartPhone", gabriel, defaul_apps)
+    
+    smart_phone.notify("Upcoming alarm in 10 minutes!")
+    
+    gabriel.review(smart_phone)
+    
+    gabriel.open('calculator', smart_phone)
+</code>
+</pre class="brush: python">
+    <p>
+        The object of type <b>Owner</b> has a <b>open</b> behavior that access a object of type <b>app</b> from 
+        the type <b>SmartPhone</b>.
+        <br>
+        The object of type app is a instance variable of SmartPhone...
+    </p>
+    <img class="post-img" src="../images/clean-code-objects-data-structures/LOD" alt="">
+    <p>
+        The are quite a few amount of ways in which this interaction could happen without breaking the rules like building
+        "wrapper functions" or passing the app as a argument to the owner to access it's behaviors directly as you saw on the last image...But this is what makes senses on my head right now:    
+    </p>
+<pre>
+<code>import logging
+
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+handler.setLevel(logging.INFO)
+logger.addHandler(handler)
+
+
+class Onwer:
+    def __init__(self, name, email):
+        self.email = email
+        self.name = name
+    
+    def review(self, smart_phone):
+        logging.info("Review scheduled for {}".format(smart_phone.name))
+    
+    def open(self, app_name, smart_phone):
+        smart_phone.start(app_name)
+
+    
+class SmartPhone:
+    def __init__(self, name, owner, apps):
+        self.apps = apps
+        self.name = name
+        self.owner = owner
+    
+    def notify(self, message):
+        logging.info("Message {} sent to {}".format(message, self.owner.name))
+
     def filter_by(self, name):
         found = None
         for app in list(self.apps):
-            if app.name == name:
-                found = app
+            if app.name != name:
+                continue
+            found = app
         
         if not found:
             raise Exception("{} not found".format(name))
         
         return found
     
-    def install(self, name):
-        self.apps.add(name)
-    
-    def uninstall(self, name):
-        try:
-            self.apps.remove(name)
-        except Exception:
-            logging.info("App does not exists.")
+    def start(self, app_name):
+        self.filter_by(app_name).start() # Invoke a behavior from a Object of type App
 
 
-class SmartPhone:
-    def __init__(self, name, apps):
+class App:
+    def __init__(self, name):
         self.name = name
-        self.apps = apps
-
-    def notify_through(self, app_name, message):
-        self.apps.filter_by(app_name).notify(message)
+    
+    def start(self):
+        logging.info("{} started!".format(self.name.capitalize()))
+    
+    def stop(self):
+        logging.info("{} stoped!".format(self.name).capitalize())
 
 
 if __name__ == "__main__":
-    defaul_apps = AppCollection({
+    defaul_apps = {
         App('calculator'),
         App('calendar'),
         App('dialer'),
         App('sms'),
         App('clock')
-    })
-    smartPhone = SmartPhone("My Smarphone", defaul_apps)
-    alarm = (datetime.now() + relativedelta(minutes=+10)).strftime("%Y-%m-%dT%H:%m:%S")
-    smartPhone.notify_through('clock', 'Upcoming alarm: {}'.format(alarm))
-    </code>
+    }
+    gabriel = Onwer('Gabriel', "gabriel@email.com")
+    smart_phone = SmartPhone("SomeCoolSmartPhone", gabriel, defaul_apps)
+    
+    smart_phone.notify("Upcoming alarm in 10 minutes!")
+    
+    gabriel.review(smart_phone)
+    
+    gabriel.open('calculator', smart_phone)
+</code>
 </pre>
-    <img class="post-img" src="../images/clean-code-objects-data-structures/LOD" alt="">
     <h3>Avoiding chain calls</h3>
     <h3>Data Transfer Objects</h3>
     Good Luck XD
