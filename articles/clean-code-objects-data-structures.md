@@ -36,7 +36,7 @@
         resources and services on linux operating system. A good example would be the GNU C Library. 
     </p>
     <p>
-        I'm not getting much into this so I'm gonna put some good references at the end of the post
+        I'm not getting much into this so you can find some good references <a href="https://github.com/GabrielSlima/blog#readme" target="blank">here</a> 
         if you want to explore more about subroutines and how they works in a more lower-level representation
         and hopefully I'm not getting any problems with copyright...
         <br>
