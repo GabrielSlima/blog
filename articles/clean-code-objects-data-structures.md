@@ -6,7 +6,7 @@
     <h3>Procedural vs Object Oriented programming</h3>
     <p>
         Before getting into the differences between these two imperative ways of writing code
-        I would like to explain what subroutines are...
+        I would like to remember you what subroutines are...
     </p>
     <h4>Subroutines</h4>
     <p>
@@ -196,16 +196,17 @@
         There is a slightly differecen between creating objects from a class and creating data structures from a class.
     </p>
     <p>
-        Even though the code may contain classes, they can actually be a representation of a <b>data placeholder</b>. I mean, they can hold 
+        Even though the code may contain classes, they can actually just be a representations of <b>data placeholders</b>. I mean, they can hold 
         only a set of attributes (some of them can be arrays, lists, linked lists, queues and so on.) that represents a "data structure" 
         and doesn't have business logic at all.
     </p>
     <p>
-        I've add complementary information on the following paragraphs about this subject. Although I agree with the author of the book
+        Although I agree with the author of the book
         (Clean Code) that creating data strucutres is different from creating objects based on a class, I really disagree with him about the concept of
-        procedural code and thoughts about the behaviors from data strcutures.
+        procedural code and thoughts on the behaviors of data strcutures.
         <br>
-        So I decided to add some additional observations.
+        I've add complementary information on the following paragraphs about this subject so if you really want to know what the author really thinks about these topics, I
+        recommend you to take a look at this book \m/
     </p>
     <h4>Objects created from a class</h4>
     <p>
@@ -215,25 +216,25 @@
         These include business logic on it's behaviors. Not all behaviors are business logic, of course. But you got it, right?
         They are not just data placeholders.
     </p>
-    <h4>Data Strctures created from a class</h4> 
+    <h4>Data Structures created from a class</h4> 
     <p>
         Data strucutres are also composed by data and behavior members but they can expose it's data members and doesn't
         have any business logic behavior members.
     </p>
-    <h4>Wich is more appropriate to use?</h4>
+    <h4>Which is more appropriate to use?</h4>
     <p>
         Well, it depends. Procedural code are a good choice to build small applications and to learn or deal with isolated topics and logic.
         OOP programming is great for robust and complex applications with a higher level of code reusability.
     </p>
     <h3>The law of demeter</h3>
     <p>
-        The law of demeter is a style rule for designing Systems. Talking about specifically Object Oriented systems, these rules
-        guarantee that the proper encapsulation, cohesion and loose coupling on the objects of our system.
+        The law of demeter is a style rule for designing Systems. Talking specifically about Object Oriented systems, these rules
+        guarantee that the proper encapsulation, cohesion and loose coupling of the objects of our system.
         The rules states that the method/function of an object can only talk to friends, not strangers.
         This means that the behavior of a object can only send messages or call another object's method/function if the object is:
         <ul>
-            <li>A argument of the function that is a object</li>
-            <li>The object in which the function is attached to (self or this)</li>
+            <li>An argument of the function</li>
+            <li>It's the object in which the function is attached to (self or this)</li>
             <li>Instance variable objects of the object in which the function is attached to (self or this)</li>
             <li>An object created within the method/function</li>
             <li>Global variable objects or static members of the template of the object (the Class)</li>
@@ -423,6 +424,25 @@ if __name__ == "__main__":
         Now the Owner don't even know how the "Open" behavior of SmartPhone works internally, it only has to deals with the required arguments to
         open the app...
     </p>
-    <h3>Data Transfer Objects</h3>
+    <h4>Data Structures created from classes</h4>
+    <p>
+        Does the Law of Demeter applies for data strucutres created from a class?
+        <br>
+        The book (clean code) has a little observation about those cases. Data Structures, by not having busines logic, could have public variables.
+        So in our example, if this application was a catalog of apps and <b>App</b> was just a Data Structure, then accessing it throught the <b>SmartPhone</b> 
+        would'nt break the rules of Demeter's law at all.
+    </p>
+    <h3>Final thoughts</h3>
+    <p>
+        Objects are supposed to expose beahaviors and hide their data. In this way,
+        not only the object have it's state encapsulated and have freedom to change it's internal implementation, but it also help us to create a desing with high cohesion and low
+        coupling and prevent us from creating procedural programming with 
+        data structures created based on a class which can be bad if this is not the goal...
+    </p>
+    <p>
+        Also, avoid building "hybrid" classes that can create both, objects and data structures. This can causes confusions.
+        If you have to create data strucutres like DTOs or Active Records to access data in databases, create separate objects to
+        apply business logic and use instances of those types of objects (DTO/Active Records).
+    </p>
     Good Luck XD
 </div>

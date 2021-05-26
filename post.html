@@ -45,52 +45,48 @@
   </style>
 </head>
 
-<body style="background-color: #e9ecef; display: flex; align-items: center; justify-content: center; height: 100%;" >
+  <body style="background-color: #e9ecef; display: flex; align-items: center; justify-content: center; height: 100%;" >
+    <section class="container" style="position: absolute; color: rgba(0,0,0, .7); max-height: 80%;">
+        <div class="row justify-content-center align-self-center" id="post-content-container-row"></div>
+    </section>
 
-  <section class="container" style="position: absolute; color: rgba(0,0,0, .7); max-height: 80%;">
-      <div class="row justify-content-center align-self-center" id="post-content-container-row"></div>
-  </section>
-
-  <script type="text/template" data-template="error">
-    <div class="col-6 jumbotron vertical-center text-center">
-      <div>
-        <h2 class="mt-2"></span>{{TITLE}}</h2>
-        <h5>{{ERROR_MESSAGE}}</h5>
-        <a href="/">See all posts</a>
+    <script type="text/template" data-template="error">
+      <div class="col-6 jumbotron vertical-center text-center">
+        <div>
+          <h2 class="mt-2"></span>{{TITLE}}</h2>
+          <h5>{{ERROR_MESSAGE}}</h5>
+          <a href="/">See all posts</a>
+        </div>
       </div>
-    </div>
-  </script>
-  
-  <script type="text/template" data-template="post-not-found">
-    <div class="col-6 jumbotron vertical-center text-center">
-      <div>
-        <h2 class="mt-2"></span>{{TITLE}}</h2>
-        <h5>{{ERROR_MESSAGE}}</h5>
-        <a href="index.html">See all posts</a>
+    </script>
+    
+    <script type="text/template" data-template="post-not-found">
+      <div class="col-6 jumbotron vertical-center text-center">
+        <div>
+          <h2 class="mt-2"></span>{{TITLE}}</h2>
+          <h5>{{ERROR_MESSAGE}}</h5>
+          <a href="index.html">See all posts</a>
+        </div>
       </div>
-    </div>
-  </script>
+    </script>
 
-  <script type="text/template" data-template="post">
-    <div class="col-12 col-md-10 jumbotron vertical-center text-center">
-      <div>
-        <h2 class="mt-2"></span>{{ARTICLE_TITLE}}</h2>
-        <h6 style="opacity: 0.7;">{{ARTICLE_AUTHOR}}</h6>
-        <h6 style="opacity: 0.7;">{{ARTICLE_DATE}}</h6>
-        <hr>
-        {{ARTICLE_CONTENT}}
+    <script type="text/template" data-template="post">
+      <div class="col-12 col-md-10 jumbotron vertical-center text-center">
+        <div>
+          <h2 class="mt-2"></span>{{ARTICLE_TITLE}}</h2>
+          <h6 style="opacity: 0.7;">{{ARTICLE_AUTHOR}}</h6>
+          <h6 style="opacity: 0.7;">{{ARTICLE_DATE}}</h6>
+          <hr>
+          {{ARTICLE_CONTENT}}
+        </div>
+        <a class="mt-4" style="display:block;" href="index.html">See all posts</a>
       </div>
-      <a class="mt-4" style="display:block;" href="index.html">See all posts</a>
-    </div>
-  </script>
+    </script>
 
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="particles/particles.js"></script>
-  <script src="particles/particles.min.js"></script>
-  <script src="particles/app.js"></script>
-  <script src="js/load_post.js"></script>
-  <script src="libs/highlight.js/highlight.pack.js"></script>
-</body>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/load_post.js"></script>
+    <script src="libs/highlight.js/highlight.pack.js"></script>
+  </body>
 
 </html>
