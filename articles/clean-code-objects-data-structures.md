@@ -30,7 +30,7 @@
         and a return (branch back) to actually return a value (or not) to it's caller once the task
         is done.
     </p>
-    <img class="post-img" src="../images/clean-code-objects-data-structures/subroutines.png" alt="">
+    <img class="post-img" src="images/clean-code-objects-data-structures/subroutines.png" alt="">
     <p>
         They can be declared within a program or in separetaly libs, like the ones that are used to access system
         resources and services on linux operating system. A good example would be the GNU C Library. 
@@ -61,7 +61,7 @@
         can acesses those global data members. Which means that the behavior members, the subroutines, can operate
         directly on the main program's state:
     </p>
-    <img class="post-img" src="../images/clean-code-objects-data-structures/procedural-app" alt="">
+    <img class="post-img" src="images/clean-code-objects-data-structures/procedural-app" alt="">
     <p>
         So as you can see the functions or subroutines can access each other inside the program, access the global variables to change the state of the program and, of course, the program itself can access all of them and dictate how this iteration is gonna happen. 
     </p>
@@ -82,8 +82,8 @@
         This means that objects have it's own data members or variables that represents it's state and it's own set
         of behaviors.
     </p>
-    <img class="post-img" src="../images/clean-code-objects-data-structures/object" alt="">
-    <img class="post-img" src="../images/clean-code-objects-data-structures/oop-app" alt="">
+    <img class="post-img" src="images/clean-code-objects-data-structures/object" alt="">
+    <img class="post-img" src="images/clean-code-objects-data-structures/oop-app" alt="">
     <!-- IMAGE -->
     <p>
         In procedural programming, the author of the code have to organize the functions the best way he can to represent a behavior that is related to a representation of a object (throught a data structure for instance).
@@ -321,7 +321,7 @@ if __name__ == "__main__":
         <br>
         The object of type app is an instance variable of SmartPhone and our desing would be something like this:
     </p>
-    <img class="post-img" src="../images/clean-code-objects-data-structures/LOD-dont" alt="">
+    <img class="post-img" src="images/clean-code-objects-data-structures/LOD-dont" alt="">
     <p>
         Now not only the Owner knows about the SmartPhone's internal structure by having access into one one of it's relationships,
         but also have to deals with all the possible problems that the SmartPhone would be responsible to deal with...
@@ -331,7 +331,7 @@ if __name__ == "__main__":
         "wrapper functions" to return only what we need or having the app as a argument/instance variable or creating a new instance inside
         the function so that the owner cant access the app's behaviors directly: 
     </p>
-    <img class="post-img" src="../images/clean-code-objects-data-structures/LOD-alternative" alt="">
+    <img class="post-img" src="images/clean-code-objects-data-structures/LOD-alternative" alt="">
     <p>
         The solution for the desing is up to you. But it's worth it to ask yourself why would the owner have direct access to the Apps?
         <br>
@@ -342,7 +342,7 @@ if __name__ == "__main__":
         A good idea probably would be the owner giving the owner the behavior of opening a app's smartphone by invoking only the SmartPhoone's interface
         and the SmartPhone only deals how it would open the App:
     </p>
-    <img class="post-img" src="../images/clean-code-objects-data-structures/LOD-do" alt="">
+    <img class="post-img" src="images/clean-code-objects-data-structures/LOD-do" alt="">
 <pre>
 <code>import logging
 
