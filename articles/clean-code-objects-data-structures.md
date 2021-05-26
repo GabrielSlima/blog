@@ -1,7 +1,7 @@
 <div style="text-align: left;">
     <p>
         Welcome to the PewdiePie's favourite blog about Software Engineering and today's
-        topic is <b>Objects and Data Strcutures</b>...
+        topic is <b>Objects and Data Structures</b>...
     </p>
     <h3>Procedural vs Object Oriented programming</h3>
     <p>
