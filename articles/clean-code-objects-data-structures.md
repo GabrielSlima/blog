@@ -1,7 +1,7 @@
 <div style="text-align: left;">
     <p>
         Welcome to the PewdiePie's favourite blog about Software Engineering and today's
-        topic is <b>Objects and Data Strcutures</b>...
+        topic is <b>Objects and Data Structures</b>...
     </p>
     <p>
         At first I thought that this chapter of the book was about Arrays, Lists, Linked Lists, Stacks, Queues...I'm not gonna lie
