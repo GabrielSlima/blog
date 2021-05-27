@@ -3,6 +3,33 @@
         Welcome to the PewdiePie's favourite blog about Software Engineering and today's
         topic is <b>Objects and Data Strcutures</b>...
     </p>
+    <p>
+        At first I thought that this chapter of the book was about Arrays, Lists, Linked Lists, Stacks, Queues...I'm not gonna lie
+        to you.
+        <br>
+        But what took my attention was the "Object" part...What does these two have in common?
+    </p>
+    <p>
+        Well, after reading it I realized the connection between these two.
+        You can be writing procedural code this whole time and don't even know....
+    </p>
+    <p>
+        Of course, procedural code is not evil. That's not what I'm saying.
+        <br>
+        What I'm trying to say is that you can be writing procedural code <b>thinking</b> that is writing <b>OO</b> code.
+        And that is a problem from my perspective.
+    </p>
+    <p>
+        What is necessary to create and implement a Object Oriented Desing with good encapsulation, high cohesion, 
+        and low coupling? Have you thought about this?
+    </p>
+    <p>
+        Today's topic is all about this, what is the difference between objects and data structures created based on a template 
+        and what can we do or think to guarantee that our OOP desing applies encapsulation, have a good cohesion and low coupling.
+    </p>
+    <p>
+        So, without further ado, let's get into it!
+    </p>
     <h3>Procedural vs Object Oriented programming</h3>
     <p>
         Before getting into the differences between these two imperative ways of writing code
@@ -47,7 +74,7 @@
     return first + second</code>
 </pre>
     <h4>Procedural Programming</h4>
-    <p>In procedural programming, programs are composed in mostly by, guess what, 
+    <p>In procedural programming, programs are composed mostly by, guess what, 
         procedures or subroutines.
         <br>
         Some results can be achieved by writing programs that doesn't have custom subroutines
@@ -66,8 +93,8 @@
         So as you can see the functions or subroutines can access each other inside the program, access the global variables to change the state of the program and, of course, the program itself can access all of them and dictate how this iteration is gonna happen. 
     </p>
     <p>
-        Functions can be declared whithin the file of the program or in external files.
-        This helps to organize the structure of the progam.
+        They can be declared whithin the file of the program or in external files. That's a stragety that 
+        helps to keep things organized.
     </p>
     <h4>Top to bottom execution</h4>
     <p>
@@ -144,7 +171,7 @@
         public interfaces to manipulate them.
         <br>
         With data members it's common to have what is called <b>property accessors</b> or <b>getters/setters</b>
-        that allow users of a object to manipulate those data members.
+        that allow users of a object to manipulate them.
     </p>
     <p>
         Even though this can be useful in some cases, they actually should be avoided if there isn't 
@@ -169,7 +196,7 @@
     <p>
         Make sure that you have a good reason to add them into your code. Also make sure that they
         are not breanking the method's or funtiction's contract, I mean, that they actually have a name 
-        that convey the real beahavior.
+        that convey the real beahavior implemented behind it.
         <br>
         Adding a validation for a <b>setter</b> is not actually
         setting the value directly, <b>first there is a validation</b> and then, maybe, the user can set the value.
@@ -206,14 +233,14 @@
         procedural code and thoughts on the behaviors of data strcutures.
         <br>
         I've add complementary information on the following paragraphs about this subject so if you really want to know what the author really thinks about these topics, I
-        recommend you to take a look at this book \m/
+        recommend you to take a look at his book \m/
     </p>
     <h4>Objects created from a class</h4>
     <p>
         Object are composed by data members which can be (and should to prevent sudden changes during the program execution)
         encapsulated and behaviors that operates on that data.
         <br>
-        These include business logic on it's behaviors. Not all behaviors are business logic, of course. But you got it, right?
+        They have business logic on it's behaviors. Not all behaviors are business logic, of course. But you got it, right?
         They are not just data placeholders.
     </p>
     <h4>Data Structures created from a class</h4> 
@@ -221,7 +248,7 @@
         Data strucutres are also composed by data and behavior members but they can expose it's data members and doesn't
         have any business logic behavior members.
     </p>
-    <h4>Which is more appropriate to use?</h4>
+    <h4>Which is more appropriate to use: POP or OOP?</h4>
     <p>
         Well, it depends. Procedural code are a good choice to build small applications and to learn or deal with isolated topics and logic.
         OOP programming is great for robust and complex applications with a higher level of code reusability.
@@ -339,7 +366,7 @@ if __name__ == "__main__":
         makes much sense...
     </p>
     <p>
-        A good idea probably would be the owner giving the owner the behavior of opening a app's smartphone by invoking only the SmartPhoone's interface
+        A good idea probably would be giving the owner the behavior of opening a app's smartphone by invoking only the SmartPhoone's interface
         and the SmartPhone only deals how it would open the App:
     </p>
     <img class="post-img" src="images/clean-code-objects-data-structures/LOD-do" alt="">
@@ -430,7 +457,7 @@ if __name__ == "__main__":
         <br>
         The book (clean code) has a little observation about those cases. Data Structures, by not having busines logic, could have public variables.
         So in our example, if this application was a catalog of apps and <b>App</b> was just a Data Structure, then accessing it throught the <b>SmartPhone</b> 
-        would'nt break the rules of Demeter's law at all.
+        wouldn't break the rules of Demeter's law at all.
     </p>
     <h3>Final thoughts</h3>
     <p>
