@@ -43,6 +43,9 @@
         This mindset of writing what the user can expect first leads us to one approach very well know among developers called 
         "TDD" or "Test Driven Development".
     </p>
+    <p>
+        Try to write the exceptions first and then you'll be forced to write the try part to create those exceptions.
+    </p>
     <h4>Test Driven Development</h4>
     Good Luck XD
 </div>
