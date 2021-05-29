@@ -16,11 +16,33 @@
     <h3>Prefer exceptions over error codes</h3>
     <p>
         I already said <a href="https://gabrielslima.github.io/blog/post.html?id=7" target="blank">here</a> that our functions should be small and do
-        only one thing. If the functions is hadling a error and also have expression within the try statement that is not a function call, it's doing
+        only one thing. If the functions is hadling an error and also have expressions within the try statement that is not a function calls, it's doing
         more than one thing acuatlly... 
     </p>
     <p>
         Error codes forces the caller to deals with the returned code immediatly and leads to nested structures, which is not good...
+        <br>
+        Also, when dealing with error codes instead of try-catch-finally statements, these two corcerns are mixed, making it harder to 
+        know what is error handling and what is logic.
     </p>
+    <p>
+        Even if the amount of error codes on your function is small, keep the logic and the error handling in different blocks and expose these concerns.
+        The reader will identify what is logic and what is error handling way easier. 
+    </p>
+    <h3>Write the try-catch-finally statement first</h3>
+    <p>
+        The goal behid the try-catch-finally statement (other than keeping the logic and error handling separated from each other),
+        is, as you read on the begining of this article, to guarantee that our code does what it's supposed to do and to add 
+        solutions when the execution is interruped by any error and give a solution for those interruptions by stablishing a set of 
+        expressions that will deals with those cases.
+    </p>
+    <p>
+        That being said, by writing the try-catch-finally statement first we are writing exactly what the user of the function can expect using
+        the code.
+        <br>
+        This mindset of writing what the user can expect first leads us to one approach very well know among developers called 
+        "TDD" or "Test Driven Development".
+    </p>
+    <h4>Test Driven Development</h4>
     Good Luck XD
 </div>
