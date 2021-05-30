@@ -182,6 +182,47 @@ def save(client):
         Are exceptions that are "ignored" by the compiler, which means that the author of the code is not forced to handle the exception on the
         caller function or list the exception as a possible exception to be thrown by the function as a not handled exception.
     </p>
+    <h4>The problem with checked exceptions</h4>
+    <p>
+        Checked exceptions breaks encapsulation by adding dependences between functions  by forcing the caller to handle or to add the exceptions
+        of lower level functions into it's signature. If we change lower level functions, we have to change higher level functions.
+    </p>
+    <p>
+        They are good for critical exceptions in libs but in general, they violates the <i>open/closed</i> principle.
+        By
+    </p>
     <h4>The open/closed principle</h4>
+    <p>
+        The <i>open/closed principle</i> is one of the principles of SOLID for designing OOP applications. It states that a module, function or class should be
+        open for extension but closed for modification. This means that an entity (Class, object or module for instance) can have
+        it's behaviors extended without having it's source code modified.
+    </p>
+    <p>
+        This means that we are not supposed to change/modify the source code of a entity everytime requirements change but the entity can have it's
+        behaviors extended by adding new ones to satisfy those requirements.
+    </p>
+    <p>
+        So a Class for instance is called closed for modification when it has behaviors, interfaces being used by other parts of the code but it's called
+        open because it can be extented by another class and have it's behaviors extended without having it's source code modified.
+    </p>
+    <p>
+        The same goes for modules, a module is called closed when it's has a well defined set of behaviors and data structures that can be used by other
+        parts of the applications, but it's called open for adding new properties to it's data structure or adding a new behavior without having it's existing
+        data structures and behaviors modified.
+    </p>
+
+    <p>
+        The same goes for functions, when can extend them by adding layers, but we're not supposed those layers.
+    </p>
+    <h3>Adding contexts for your exceptions</h3>
+    <p>
+        Exceptions are events that intrerrupts the natural flow of a application. So it's important to add contexts for those interruptions
+        to easilly identify the cause of the problem.
+    </p>
+    <p>
+        The stack of the exception is super useful, but sometimes it's not enough. Make sure that you are passing on enough information on your
+        error messages when raising or throwing an exception like the operation that failed and the type of failure so that you can log
+        it on yout catch.
+    </p>
     Good Luck XD
 </div>
