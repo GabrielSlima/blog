@@ -165,5 +165,23 @@ def save(client):
         But you got it, right? Translate the expected behaviors into test cases before acuatlly writing the Software, 
         then continue with the process till you've satisfied all the requirements.
     </p>
+    <h3>Use unchecked exceptions</h3>
+    <h4>Checked exceptions</h4>
+    <p>
+        Checked exceptions are exceptions that are checked during the compilation time. Basically are exceptions that can't be ignored.
+        The author of the code, the programmer, is forced to either handle the function call that throws an exception or list the
+        exception (or exceptions) on the list of possible interruptions that can occur during the execution of a function by specifying
+        them on the function's signature.
+    </p>
+    <p>
+        In Java for instance, the code can be complied if the compiler checks those exceptions and detect that they are handled or listed
+        on the function's declaration.
+    </p>
+    <h4>Unchecked exceptions</h4>
+    <p>
+        Are exceptions that are "ignored" by the compiler, which means that the author of the code is not forced to handle the exception on the
+        caller function or list the exception as a possible exception to be thrown by the function as a not handled exception.
+    </p>
+    <h4>The open/closed principle</h4>
     Good Luck XD
 </div>
