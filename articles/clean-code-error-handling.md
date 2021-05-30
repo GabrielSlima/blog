@@ -8,7 +8,7 @@
         that can occur during the execution of the application.
     </p>
     <p>
-        Error hadling help us to atablish a procedure that deals with interruptions during the execution of a giving piece of code.
+        Error hadling help us to stablish a procedure that deals with interruptions during the execution of a giving piece of code.
         <br>
         But they also can be confusing if not used right. A code with logic and try-catch-finally statements can be super hard to understand.
         So today we are taking a look on some tips from the book Clean Code to write clean and robust code!
@@ -32,13 +32,11 @@
     <h3>Write the try-catch-finally statement first</h3>
     <p>
         The goal behid the try-catch-finally statement (other than keeping the logic and error handling separated from each other),
-        is, as you read on the begining of this article, to guarantee that our code does what it's supposed to do and to add 
-        solutions when the execution is interruped by any error and give a solution for those interruptions by stablishing a set of 
-        expressions that will deals with those cases.
+        is, as you read on the begining of this article, to guarantee that our code does what it's supposed to do and to 
+        atecipate errors that can interrupt the execution of the code and give solutions for those interruptions by stablishing a set of expressions that will deals with them.
     </p>
     <p>
-        That being said, by writing the try-catch-finally statement first we are writing exactly what the user of the function can expect using
-        the code.
+        That being said, by writing the try-catch-finally statement first we are writing exactly what the user of the function can expect if anything goes wrong in the <i>try</i> block.
         <br>
         This mindset of writing what the user can expect first leads us to one approach very well know among developers called 
         "TDD" or "Test Driven Development".
