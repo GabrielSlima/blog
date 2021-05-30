@@ -39,11 +39,21 @@
         That being said, by writing the try-catch-finally statement first we are writing exactly what the user of the function can expect if anything goes wrong in the <i>try</i> block.
         <br>
         This mindset of writing what the user can expect first leads us to one approach very well know among developers called 
-        "TDD" or "Test Driven Development".
+        "TDD" or "Test Driven Development". 
     </p>
     <p>
         Try to write the exceptions first and then you'll be forced to write the try part to create those exceptions.
     </p>
     <h4>Test Driven Development</h4>
+    <p>
+        This can be an entire article or set of articles...in short, TDD is a Software Development process or a set of procedures
+        for writing code. In other words, first you translate the contract into test cases that
+        test the requirements, then you write the code to satisfy the tests.
+    </p>
+    <p>
+        In this approach the development is driven towards the Software's requirements or contract.
+        Before writing any code, the Software's requirements are translated into test cases and the development of the Software
+        is tracked down as we test the Software against those test cases.
+    </p>
     Good Luck XD
 </div>
