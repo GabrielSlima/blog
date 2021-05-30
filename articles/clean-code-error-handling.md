@@ -70,13 +70,100 @@
         of the API tries to insert an existing client? Let's say that the requirements says that we can create a new client if
         he doesn't exists.
     </p>
-    <h4>Phase: Define the test cases that expects the errors:</h4>
+    <h4>Phase 1: Define the test cases that expects the errors:</h4>
     <img class="post-img" src="images/clean-code-error-handling/tdd-exceptions-1.png" alt="">
     <img class="post-img" src="images/clean-code-error-handling/tdd-exceptions-1-2.png" alt="">
-<pre class="brush: python">
-<code>
+    <p>
+        I'm going to add the <b>save</b> function and the <b>ClientsException</b>
+        and run the test for the first time:
+    </p>
+<pre>
+<code><font color="#5555FF"><b>.</b></font>
+├── clients.py
+├── <font color="#5555FF"><b>exceptions</b></font>
+│   └── client_exception.py
+└── <font color="#5555FF"><b>tests</b></font>
+    ├── __init__.py
+    └── test_clients.py
 
+2 directories, 4 files</code>
+</pre>
+    <p><strong>clients.py</strong>'s content:</p>
+<pre>
+<code>def save(client):
+    pass
 </code>
 </pre>
+    <p><strong>client_exception.py</strong>'s content:</p>
+<pre>
+<code>class ClientException(Exception):
+    def __init__(self, message):
+        super().__init__(message)
+</code>
+</pre>
+    <p>
+        The log output after running the test case for the first time wit the bare minimun code:
+    </p>
+<pre class="brush: python">
+<code>tests/test_clients.py F                                                  [100%]
+
+=================================== FAILURES ===================================
+___________ test_should_raise_exception_if_the_client_already_exists ___________
+
+    def test_should_raise_exception_if_the_client_already_exists():
+        client = {
+            "name": "Gabriel",
+            "email": "gabriel@email.com"
+        }
+        try:
+            clients.save(client)
+>           assert False
+E           assert False
+
+tests/test_clients.py:12: AssertionError
+-------------- generated xml file: /tmp/tmp-27388wxjS5IboWIeh.xml --------------
+=========================== short test summary info ============================
+FAILED tests/test_clients.py::test_should_raise_exception_if_the_client_already_exists
+============================== 1 failed in 0.03s ===============================
+</code>
+</pre>
+    <h4>Phase 2: satisfy the test cases:</h4>
+    <p>
+        Now <strong></strong> client.py's content is:
+    </p>
+<pre class="brush: python">
+<code>from exceptions.client_exception import ClientException
+
+
+super_cool_data_base_representation = [
+    {
+        "name": "Gabriel",
+        "email": "gabriel@email.com"
+    }
+]
+
+
+def save(client):
+    if client in super_cool_data_base_representation:
+        raise ClientException("Client already exists!")
+    
+    super_cool_data_base_representation.append(client)
+</code>
+</pre>
+    <p>Now if we run the test again, it should receive the expected result:</p>
+<pre class="brush: python">
+<code>tests/test_clients.py .                                                  [100%]
+
+-------------- generated xml file: /tmp/tmp-27388aLp5xKTAHwjR.xml --------------
+============================== 1 passed in 0.03s ===============================
+</code>
+</pre>
+    <p>
+        Of course this is a super simple example. In a real database integration we would have
+        to mock the response.
+        <br>
+        But you got it, right? Translate the expected behaviors into test cases before acuatlly writing the Software, 
+        then continue with the process till you've satisfied all the requirements.
+    </p>
     Good Luck XD
 </div>
