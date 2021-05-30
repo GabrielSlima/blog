@@ -227,14 +227,6 @@
         only a set of attributes (some of them can be arrays, lists, linked lists, queues and so on.) that represents a "data structure" 
         and doesn't have business logic at all.
     </p>
-    <p>
-        Although I agree with the author of the book
-        (Clean Code) that creating data strucutres is different from creating objects based on a class, I really disagree with him about the concept of
-        procedural code and thoughts on the behaviors of data strcutures.
-        <br>
-        I've add complementary information on the following paragraphs about this subject so if you really want to know what the author really thinks about these topics, I
-        recommend you to take a look at his book \m/
-    </p>
     <h4>Objects created from a class</h4>
     <p>
         Object are composed by data members which can be (and should to prevent sudden changes during the program execution)
@@ -244,6 +236,19 @@
         They are not just data placeholders.
     </p>
     <h4>Data Structures created from a class</h4> 
+    <p>
+        Although I agree with the author of the book (Clean Code) that creating data strucutres is different from creating objects based on a class, 
+        I really disagree with him about the concept of procedural code and thoughts on the behaviors of data structures.
+    </p>
+    <p>
+        On the book he states that data structures only stores data and does not have any meaningful behaviors.
+        Procedural code is composed by data structures and behaviors that operates on those data strucutres.
+    </p>
+    <p>
+        Of course, I recommend you to read and take your onw conclusions. Mine is that procedural code is compose by procedures, of course,
+        but it's not because you have data strucutres on your code that it is procedural. The behaviors can or not operate on data stractures and that's
+        up to the author of the code to decide.
+    </p>
     <p>
         Data strucutres are also composed by data and behavior members but they can expose it's data members and doesn't
         have any business logic behavior members.
