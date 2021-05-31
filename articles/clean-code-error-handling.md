@@ -222,7 +222,29 @@ def save(client):
     <p>
         The stack of the exception is super useful, but sometimes it's not enough. Make sure that you are passing on enough information on your
         error messages when raising or throwing an exception like the operation that failed and the type of failure so that you can log
-        it on yout catch.
+        it on your catch.
+    </p>
+    <h3>Define Exception Classes in Terms of a Caller's Needs: Errors Classification</h3>
+    <p>
+        There are well known ways of classifying errors like by component or by type. This subhead introduces a different way of 
+        think when classifying them, and that would be <i>by the caller's needs</i>.
+    </p>
+    <p>
+        That's it, if the caller needs a wrapper class for exceptions throwed by a third-party API, a new wrapper class should be created.
+        If the caller needs a class that represents an error from a specific component, create one.
+        If the caller needs a class that represents a specific type, create one. 
+    </p>
+    <h4>Wrapping third-party APIs</h4>
+    <p>
+        Wrapping APIs that are provided by other companies is a good practice. This prevents our code from
+        <ul>
+            <li>Having dependences upon specific API's. Maybe, in the future, you want to change the API's version or even change the API being used. Well, it's going to be harder if the APIs are being used in different places on your code.</li>
+            <li>Having depedences upon third-parties companies's desing.</li>
+        </ul>
+    </p>
+    <p>
+        By Wrapping third-party APIs we are not only minimizing the depedence of out application upon them, but also making
+        it easier to mock those calls and to add a custom desing to them.
     </p>
     Good Luck XD
 </div>
