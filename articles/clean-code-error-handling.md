@@ -188,8 +188,11 @@ def save(client):
         of lower level functions into it's signature. If we change lower level functions, we have to change higher level functions.
     </p>
     <p>
-        They are good for critical exceptions in libs but in general, they violates the <i>open/closed</i> principle.
-        By
+        They are good for critical libs but in general, they violates the <i>open/closed</i> principle. Every change in exceptions thrown from lower level functions
+        results in changes on higher level functions. With the open/close principle, we are not supposed to change source code that is not directly related
+        with the requirements we are working with when writing a new or altering a piece of code.
+        <br>
+        In other words, we shouldn't have to modify other parts of the code that satisfy different requirements everytime a requirement is added or changed.
     </p>
     <h4>The open/closed principle</h4>
     <p>
@@ -212,7 +215,7 @@ def save(client):
     </p>
 
     <p>
-        The same goes for functions, when can extend them by adding layers, but we're not supposed those layers.
+        The same goes for functions, we can extend them by adding layers, but we're not supposed to change the functions we are calling on those layers.
     </p>
     <h3>Adding contexts for your exceptions</h3>
     <p>
@@ -236,7 +239,7 @@ def save(client):
     </p>
     <h4>Wrapping third-party APIs</h4>
     <p>
-        Wrapping APIs that are provided by other companies is a good practice. This prevents our code from
+        Wrapping APIs that are provided by other companies is a good practice. This prevents our code from:
         <ul>
             <li>Having dependences upon specific API's. Maybe, in the future, you want to change the API's version or even change the API being used. Well, it's going to be harder if the APIs are being used in different places on your code.</li>
             <li>Having depedences upon third-parties companies's desing.</li>
@@ -244,7 +247,8 @@ def save(client):
     </p>
     <p>
         By Wrapping third-party APIs we are not only minimizing the depedence of out application upon them, but also making
-        it easier to mock those calls and to add a custom desing to them.
+        it easier to mock those calls and to add a custom desing to them. This also includes the possibility of throwing our own exceptions.
     </p>
+    <h3>The Null Object Desing pattern</h3>
     Good Luck XD
 </div>
