@@ -250,5 +250,21 @@ def save(client):
         it easier to mock those calls and to add a custom desing to them. This also includes the possibility of throwing our own exceptions.
     </p>
     <h3>The Null Object Desing pattern</h3>
+    <p>
+        This pattern is a stylish way of preventing the user of a function, that has statements that requires a specific object but also have a exception
+        block that deals with a second type of object in case the first is null on the logic block, talking specially about the try block.
+    </p>
+    <p>
+        The vast majority of the cases our exceptions have almost the same purpouses: to let us now that a interruption occured and the details about it.
+        But sometimes we actually have more than that to be done. That's when the <b>Null Object Pattern</b> can be applied.
+    </p>
+    <p>
+        The Null Object Pattern alow us to return a "special object" when the actual object we need is null. This means that this "Special object" has 
+        default behaviors that usually are "do nothing behaviors" that will be used when the object we need is unavailable or null if you prefer.
+    </p>
+    <p>
+        This pattern will prevent the caller from implementing exceptional treatment for cases where the object we need is null. The caller has only to
+        worry about using the returned object without having to worry about if it is or not a special object (or a null object).
+    </p>
     Good Luck XD
 </div>
