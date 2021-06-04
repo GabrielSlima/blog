@@ -261,8 +261,40 @@ def save(client):
     </p>
     <h4>The Special Cases Pattern</h4>
     <img class="post-img" src="images/clean-code-error-handling/SpecialCasePattern-1.png" alt="">
+<pre class="brush: python">
+<code>class Garage:
+    def __init__(self, car=None, motorcycle=None):
+        self.car = car
+        self.motorcycle = motorcycle
+
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+    
+    def drive(self):
+        print("Driving {}...".format(self.brand))
+
+
+class Motorcycle:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+    
+    def drive(self):
+        print("Driving {}...".format(self.brand))
+
+if __name__ == "__main__":
+    garage = Garage(motorcycle=Motorcycle("BMW", "M 1000 RR"))
+    try:
+        garage.car.drive()
+    except AttributeError:
+        garage.motorcycle.drive()</code>
+</pre>
     <img class="post-img" src="images/clean-code-error-handling/SpecialCasePattern-1.1.png" alt="">
     <h4>The Null Object Desing pattern</h4>
+    <img class="post-img" src="images/clean-code-error-handling/NullObjectPattern-1.png" alt="">
+    <img class="post-img" src="images/clean-code-error-handling/NullObjectPattern-1.1.png" alt="">
     <p>
         This pattern is a stylish way of preventing the user of a function, that has statements that requires a specific object but also have a exception
         block that deals with a second type of object in case the first is null on the logic block, talking specially about the try block.
