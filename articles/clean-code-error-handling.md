@@ -249,14 +249,23 @@ def save(client):
         By Wrapping third-party APIs we are not only minimizing the depedence of out application upon them, but also making
         it easier to mock those calls and to add a custom desing to them. This also includes the possibility of throwing our own exceptions.
     </p>
-    <h3>The Null Object Desing pattern</h3>
+    <h3>Stylish ways of dealing with exceptional cases</h3>
+    <p>
+        The vast majority of the cases our exceptions have almost the same purpouses: to let us now that a interruption occured and the details about it.
+        But sometimes we actually need more than that to be done but the code starts to get mixed up again, I mean, the error handling are supposed to
+        be separated from the logic of our blocks, exposing it's statements so that the caller can identify things easily.
+    </p>
+    <p>
+        Some exceptions leads the block to a catch where there is more logic behind the error handling. This can be either to deals with null objects returned from
+        one of the function's statements or to deals with more than one type of object on the same function.
+    </p>
+    <h4>The Special Cases Pattern</h4>
+    <img class="post-img" src="images/clean-code-error-handling/SpecialCasePattern-1.png" alt="">
+    <img class="post-img" src="images/clean-code-error-handling/SpecialCasePattern-1.1.png" alt="">
+    <h4>The Null Object Desing pattern</h4>
     <p>
         This pattern is a stylish way of preventing the user of a function, that has statements that requires a specific object but also have a exception
         block that deals with a second type of object in case the first is null on the logic block, talking specially about the try block.
-    </p>
-    <p>
-        The vast majority of the cases our exceptions have almost the same purpouses: to let us now that a interruption occured and the details about it.
-        But sometimes we actually have more than that to be done. That's when the <b>Null Object Pattern</b> can be applied.
     </p>
     <p>
         The Null Object Pattern alow us to return a "special object" when the actual object we need is null. This means that this "Special object" has 
