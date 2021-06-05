@@ -304,7 +304,7 @@ if __name__ == "__main__":
     <p>
         If you are familiar with the OOP principles you might be thinking that this is more of a desing issue than a option.
         <br>
-        I  aggree...but even though this can be considere a "design issue" it's very common...
+        I  aggree...but even though this can be considered a "design issue" it's very common...
     </p>
     <p>
         On this pattern we create an abstract class with the data and behavior members we need and both classes extends it. 
