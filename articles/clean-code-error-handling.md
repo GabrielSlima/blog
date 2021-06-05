@@ -230,7 +230,7 @@ def save(client):
     </p>
     <h3>Define Exception Classes in Terms of a Caller's Needs: Errors Classification</h3>
     <p>
-        There are well known ways of categorise errors like by component or by type. This subhead introduces a different way of 
+        There are well known ways of categorising errors like by component or by type. This subhead introduces a different way of 
         think when doing this, and that would be <i>by the caller's needs</i>.
     </p>
     <p>
