@@ -17,7 +17,7 @@
     </p>
     <h3>Prefer exceptions over error codes</h3>
     <p>
-        I already said <a href="/post.html?id=7" target="blank">here</a> that our functions should be small and do
+        I already said <a href="../post.html?id=7" target="blank">here</a> that our functions should be small and do
         only one thing. If the functions is handling errors and also have expressions within the try statement that is not function calls, it's definitely doing
         more than one thing... 
     </p>
