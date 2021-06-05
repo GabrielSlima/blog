@@ -11,7 +11,9 @@
         Error handling help us to stablish a procedure that deals with interruptions during the execution of a giving piece of code.
         <br>
         But they also can be confusing if not used right. A code with logic and try-catch-finally statements can be super hard to understand.
-        So today we are taking a look on some tips from the book Clean Code to write clean and robust code. Let's get started!
+    </p>
+    <p>
+      So today we are taking a look on some tips from the book Clean Code to write clean and robust code. Let's get started!
     </p>
     <h3>Prefer exceptions over error codes</h3>
     <p>
