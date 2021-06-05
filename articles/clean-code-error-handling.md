@@ -360,6 +360,79 @@ if __name__ == "__main__":
         if the required object is null.
     </p>
     <img class="post-img" src="images/clean-code-error-handling/NullObjectPattern-1.png" alt="">
+<pre class="brush: python">
+<code>class Garage:
+    def __init__(self, car=None, motorcycle=None):
+        self.car = car
+        self.motorcycle = motorcycle
+
+class Car:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+    
+    def drive(self):
+        print("Driving {}...".format(self.brand))
+
+
+class Motorcycle:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+    
+    def drive(self):
+        print("Driving {}...".format(self.brand))
+
+if __name__ == "__main__":
+    garage = Garage()
+    if not garage.car and not garage.car:
+        raise Exception("No available vehicles.")
+    try:
+        garage.car.drive()
+    except AttributeError:
+        garage.motorcycle.drive()
+</code>
+</pre>
     <img class="post-img" src="images/clean-code-error-handling/NullObjectPattern-1.1.png" alt="">
+<pre class="brush: python">
+<code>class Garage:
+    def __init__(self, car=None, motorcycle=None):
+        self.car = car
+        self.motorcycle = motorcycle
+    
+    def available_vehicle(self):
+        return self.car or self.motorcycle or NullObject()
+
+
+class Vehicle:
+    def __init__(self, brand=None, model=None):
+        self.brand = brand
+        self.model = model
+    
+    def drive(self):
+        print("Driving {}...".format(self.brand))
+
+
+class Car(Vehicle):
+    pass
+
+
+class Motorcycle(Vehicle):
+    pass
+
+
+class NullObject(Vehicle):
+    def drive(self):
+        print("No available vehicles.")
+
+
+if __name__ == "__main__":
+    garage = Garage()
+    vehicle = garage.available_vehicle()
+    vehicle.drive()
+</code>
+</pre>
+    <h3>Don't return Null</h3>
+    <h3>Don't pass Null</h3>
     Good Luck XD
 </div>
