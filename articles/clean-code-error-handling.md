@@ -55,7 +55,7 @@
         expected.
     </p>
     <p>
-        In this approach the development is driven towards the Software's requirements or contract with the "Test First" approach.
+        In this approach the development is driven towards the Software's requirements or contract by defining test scenarios first.
         Before writing any code, the Software's requirements are translated into test cases and the development of the Software
         is tracked down as we test the Software against those test cases.
         <br>
