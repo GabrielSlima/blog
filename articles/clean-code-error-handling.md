@@ -314,20 +314,52 @@ if __name__ == "__main__":
         Now the caller has only to deals with the base type (the parent), regardless of the object returned.
     </p>
     <img class="post-img" src="images/clean-code-error-handling/SpecialCasePattern-1.1.png" alt="">
-    <h4>The Null Object Desing pattern</h4>
+<pre class="brush: python">
+<code>class Garage:
+    def __init__(self, car=None, motorcycle=None):
+        self.car = car
+        self.motorcycle = motorcycle
+    
+    def available_vehicle(self):
+        return self.car or self.motorcycle
+
+class Vehicle:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+    
+    def drive(self):
+        print("Driving {}...".format(self.brand))
+
+class Car(Vehicle):
+    pass
+
+
+class Motorcycle(Vehicle):
+    pass
+
+if __name__ == "__main__":
+    garage = Garage(motorcycle=Motorcycle("BMW", "M 1000 RR"))
+    vehicle = garage.available_vehicle()
+    vehicle.drive()
+
+</code>
+</pre>
+    <p>
+        Of course on these contexts we are considering a <i>must have at least one</i> logic so that our logic works. If none of the vehicle are available,
+        this won't work as expected, naturally...
+    </p>
+    <p>
+        But this leads us to another interesting pattern that allow us to create this <i>do nothing</i> relationship that could be useful on scenearios where
+        the object we need is null, on this case, where none of the vehicles are available, the <i>Null Object Pattern</i>
+    </p>
+    <h4>The Null Object pattern</h4>
+    <p>
+        This pattern is a stylish way of dealing with null objects. It's natural that the user of a object have error handling for cases where the
+        need object is not present. Following the same idea as the <b>Special Case Pattern</b>, a object with <i>do nothing</i> behaviors is returned
+        if the required object is null.
+    </p>
     <img class="post-img" src="images/clean-code-error-handling/NullObjectPattern-1.png" alt="">
     <img class="post-img" src="images/clean-code-error-handling/NullObjectPattern-1.1.png" alt="">
-    <p>
-        This pattern is a stylish way of preventing the user of a function, that has statements that requires a specific object but also have a exception
-        block that deals with a second type of object in case the first is null on the logic block, talking specially about the try block.
-    </p>
-    <p>
-        The Null Object Pattern alow us to return a "special object" when the actual object we need is null. This means that this "Special object" has 
-        default behaviors that usually are "do nothing behaviors" that will be used when the object we need is unavailable or null if you prefer.
-    </p>
-    <p>
-        This pattern will prevent the caller from implementing exceptional treatment for cases where the object we need is null. The caller has only to
-        worry about using the returned object without having to worry about if it is or not a special object (or a null object).
-    </p>
     Good Luck XD
 </div>
