@@ -397,7 +397,7 @@ if __name__ == "__main__":
     <p>
         The above code has a validation on the caller so that we also have a <i>non existing</i> or <i>null object</i> scenario for all objects.
         <br>
-        Compare this solution written in other words:
+        Compare with the same solution written in other words:
     </p>
     <img class="post-img" src="images/clean-code-error-handling/NullObjectPattern-1.1.png" alt="">
 <pre class="brush: python">
