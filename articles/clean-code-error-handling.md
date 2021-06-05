@@ -251,15 +251,24 @@ def save(client):
     </p>
     <h3>Stylish ways of dealing with exceptional cases</h3>
     <p>
-        The vast majority of the cases our exceptions have almost the same purpouses: to let us now that a interruption occured and the details about it.
+        The vast majority of the cases our exceptions have almost the same purpouses: to let us now that an interruption occured and the details about it.
         But sometimes we actually need more than that to be done but the code starts to get mixed up again, I mean, the error handling are supposed to
-        be separated from the logic of our blocks, exposing it's statements so that the caller can identify things easily.
+        be separated from the logic block, exposing it's statements so that the reader (the programmers) can identify things easily.
     </p>
     <p>
-        Some exceptions leads the block to a catch where there is more logic behind the error handling. This can be either to deals with null objects returned from
+        Some exceptions leads to a catch where there is more logic behind the error handling. This can be either to deals with null objects returned from
         one of the function's statements or to deals with more than one type of object on the same function.
     </p>
-    <h4>The Special Cases Pattern</h4>
+    <p>
+        There are patterns that can help us on those cases. Help us to keep the code clean and, at the same time, robust.
+    </p>
+    <h4>The Special Case Pattern</h4>
+    <p>
+        For those cases where the caller has to deals with more than one type of object, by "type" I mean that the objects were created based on different
+        templates of code (types or classes), putting the preferable object into the <i>try block</i> and the one object into the <i>catch block</i> is one option.
+        <br>
+        This is an example of this scencario:
+    </p>
     <img class="post-img" src="images/clean-code-error-handling/SpecialCasePattern-1.png" alt="">
 <pre class="brush: python">
 <code>class Garage:
@@ -291,6 +300,19 @@ if __name__ == "__main__":
     except AttributeError:
         garage.motorcycle.drive()</code>
 </pre>
+    <p>
+        If you are familiar with the OOP principles you might be thinking that this is more of a desing issue than a option.
+        <br>
+        I  aggree...but even though this can be considere a "design issue" it's very common...
+    </p>
+    <p>
+        On this pattern we create an abstract class with the data and behavior members we need and both classes extends it. 
+        In this way, we can create objects of different types but they are based on the same base template, they are "brothers" . The user of those objects
+        always returns the parent type and is responsible for returning one of it's children.
+    </p>
+    <p>
+        Now the caller has only to deals with the base type (the parent), regardless of the object returned.
+    </p>
     <img class="post-img" src="images/clean-code-error-handling/SpecialCasePattern-1.1.png" alt="">
     <h4>The Null Object Desing pattern</h4>
     <img class="post-img" src="images/clean-code-error-handling/NullObjectPattern-1.png" alt="">
