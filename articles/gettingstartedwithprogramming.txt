@@ -176,6 +176,7 @@
             Example: Lets say you want to build a project of your <a href="https://gabrielslima.github.io/Movie-trailer-WEBSITE/" target="blank">favorite movies and Tv shows</a>. You can look for "gallery website design" on Google and just see what you want on your project.
         </li>
         <li><b>Would I enroll in a College or University?</b> Only if I "failed" trying to learn for free, with a code bootcamp and resetting my goals to improve my portfolio and resume </li>
+        <li><b>When I'll know I'm ready?</b> Honestly, you'll ask yourself this many times. You'll know you are ready when you achieve your goals (that's doesn't even makes sense. Be ready to know that I'm ready to reach a goal I've already reached. That's just great). The point is, start before you think you are ready and actually take some time to understand things the best way you can. Don't read just to memorize things, read to actually understand them. </li>
         <li><b>Do you have another recommendation?</b> Yes, don't be lazy and don't compare yourself to others</li>
 
     </ul>
