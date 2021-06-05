@@ -1,7 +1,7 @@
 <div style="text-align: left;">
     <p>
         Welcome to the PewdiePie's favourite blog about Software Engineering and today
-        we are going to talk about how you can write clean and robust code by using some design patterns and error handling.
+        we are going to talk about how we can write clean and robust code by using error handling properly.
     </p>
     <p> 
         Error Handling is the process of antecipating, detecting and giving a solution for errors
