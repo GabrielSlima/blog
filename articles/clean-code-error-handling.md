@@ -104,7 +104,7 @@
 </code>
 </pre>
     <p>
-        The log output after running the test case for the first time wit the bare minimun code:
+        The log output after running the test case for the first time with the bare minimun code:
     </p>
 <pre class="brush: python">
 <code>tests/test_clients.py F                                                  [100%]
@@ -441,7 +441,7 @@ if __name__ == "__main__":
     <p>The only thing the caller needs to know is what arguments to provide and use the return.</p>
     <h3>Don't return Null</h3>
     <p>
-        Returning null is the same deal as returning error codes, we already talked about returning exceptions vs error codes <a href="post.html?id=7" target="blank">here</a>. They leads to nested statements, we can forget to apply the logic...
+        Returning null is the same deal as returning error codes, we already talked about returning exceptions vs error codes <a href="https://gabrielslima.github.io/blog/post.html?id=7" target="blank">here</a>. They leads to nested statements, we can forget to apply the logic...
         The part of forgetting to apply the logic can be solved with unit testing. But it doesn't exclude the fact that nested structures and
         additional layers (function) has to be created to fully achieve the requirements.
     </p>
