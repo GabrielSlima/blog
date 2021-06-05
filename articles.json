@@ -1,8 +1,16 @@
 
 [
     {
+        "id": "11",
+        "title": "How to write Clean and Robust Code?",
+        "description": "Making your mom proud of your code...",
+        "author": "Gabriel Lima",
+        "date": "2021-06-05",
+        "article_file_name": "./articles/clean-code-error-handling.md"
+    },
+    {
         "id": "10",
-        "title": "Clean Code: Objects and Data Structures",
+        "title": "What's the difference between Objects and Data Strcutures?",
         "description": "Making your mom proud of your code...",
         "author": "Gabriel Lima",
         "date": "2021-05-25",
