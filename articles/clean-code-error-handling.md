@@ -1,9 +1,9 @@
 <div style="text-align: left;">
     <p>
-        Welcome to the PewdiePie's favourite blog about Software Engineering and today's
-        topic is <b>Error Handling</b>...
+        Welcome to the PewdiePie's favourite blog about Software Engineering and today
+        we are going to talk about how you can write clean and robust code by taking a look into error handling.
     </p>
-    <p>
+    <p> 
         Error Handling is the process of antecipating, detecting and giving a solution for errors
         that can occur during the execution of the application.
     </p>
@@ -393,6 +393,11 @@ if __name__ == "__main__":
         garage.motorcycle.drive()
 </code>
 </pre>
+    <p>
+        The above code has a validation on the caller so that we also have a <i>non existing</i> or <i>null object</i> scenario for all objects.
+        <br>
+        Compare this solution written in other words:
+    </p>
     <img class="post-img" src="images/clean-code-error-handling/NullObjectPattern-1.1.png" alt="">
 <pre class="brush: python">
 <code>class Garage:
@@ -432,7 +437,19 @@ if __name__ == "__main__":
     vehicle.drive()
 </code>
 </pre>
+    <p>The only thing the caller needs to know is what arguments to provide and use the return.</p>
     <h3>Don't return Null</h3>
+    <p>
+        Returning null is the same deal as returning error codes, we already talked about returning exceptions vs error codes <a href="/post.html?id=7" target="blank">here</a>. They leads to nested statements, we can forget to apply the logic...
+        The part of forgetting to apply the logic can be solved with unit testing. But it doesn't exclude the fact that nested structures and
+        additional layers (function) has to be created to fully achieve the requirements.
+    </p>
+    <p>
+        Prefer to throw exceptions or return a null object if you have to deals with null returns.
+    </p>
     <h3>Don't pass Null</h3>
+    <p>
+        Don't pass null into functions. Prefer to add validations into the function to prevent <i>null pointer exceptions</i>...
+    </p>
     Good Luck XD
 </div>
