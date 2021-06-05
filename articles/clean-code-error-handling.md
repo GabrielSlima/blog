@@ -48,8 +48,9 @@
         This can be an entire separate article or set of articles...in short, TDD is a Software Development process or a set of procedures
         for writing code where we write the test cases before writing the entire Software. In other words, first you translate the requirements (the contract)
         of a functionality into test cases, then you write the code to satisfy the tests.
-        <br>
-        This is contrary to the "normal" approach where we write
+    </p>
+    <p>
+       This is contrary to the "normal" approach where we write
         the Software to satisfy the requirements and then we write the tests to guarantee that the requirements are being satisfied as
         expected.
     </p>
