@@ -207,7 +207,7 @@ def save(client):
         behaviors extended by adding new ones to satisfy those requirements.
     </p>
     <p>
-        So a Class for instance is called closed for modification when it has behaviors, interfaces being used by other parts of the code but it's called
+        So a class for instance is called closed for modification when it has behaviors, interfaces being used by other parts of the code but it's called
         open because it can be extented by another class and have it's behaviors extended without having it's source code modified.
     </p>
     <p>
@@ -230,8 +230,8 @@ def save(client):
     </p>
     <h3>Define Exception Classes in Terms of a Caller's Needs: Errors Classification</h3>
     <p>
-        There are well known ways of classifying errors like by component or by type. This subhead introduces a different way of 
-        think when classifying them, and that would be <i>by the caller's needs</i>.
+        There are well known ways of categorise errors like by component or by type. This subhead introduces a different way of 
+        think when doing this, and that would be <i>by the caller's needs</i>.
     </p>
     <p>
         That's it, if the caller needs a wrapper class for exceptions throwed by a third-party API, a new wrapper class should be created.
