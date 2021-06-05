@@ -65,7 +65,7 @@
     <p>
         Using the error handling as an example, first we would have to write the tests that expects a error handling for specific contexts.
         Naturally we would be forced to create a function (empty). The first time, is expected that all the test cases where is expected
-        a exception or error handling to break. Now we must to write the necessary code to satisfy each test case written.
+        a exception or error handling to break. Now we must to write down the necessary code to satisfy each test case written.
     </p>
     <p>
         Let's say that you are writing an API to manage some clients into the database. What is expected to happen if the user
