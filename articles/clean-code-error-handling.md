@@ -252,7 +252,7 @@ def save(client):
     </p>
     <h3>Stylish ways of dealing with exceptional cases</h3>
     <p>
-        The vast majority of the cases our exceptions have almost the same purpouses: to let us now that an interruption occured and the details about it.
+        The vast majority of the cases our exceptions have almost the same purpouse: to let us now that an interruption occured and the details about it.
         But sometimes we actually need more than that to be done but the code starts to get mixed up again, I mean, the error handling are supposed to
         be separated from the logic block, exposing it's statements so that the reader (the programmers) can identify things easily.
     </p>
