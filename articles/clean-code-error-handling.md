@@ -76,7 +76,7 @@
     <img class="post-img" src="images/clean-code-error-handling/tdd-exceptions-1.png" alt="">
     <img class="post-img" src="images/clean-code-error-handling/tdd-exceptions-1-2.png" alt="">
     <p>
-        I'm going to add the <b>save</b> function and the <b>ClientsException</b>
+        I'm going to add the <b>save</b> function and the <b>ClientException</b>
         and run the test for the first time:
     </p>
 <pre>
