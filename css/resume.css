@@ -9,6 +9,10 @@
     border: none;
 }
 
+.list-group-item, body{
+    background: #e9ecef;
+}
+
 @media screen and (max-width: 768px) {
     .right-text {text-align: left;}
 }

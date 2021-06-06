@@ -1,26 +1,28 @@
 <div style="text-align: left;">
     <p>
         Welcome to the PewdiePie's favourite blog about Software Engineering and today
-        we are going to talk about how you can write clean and robust code by taking a look into error handling.
+        we are going to talk about how we can write clean and robust code by using error handling properly.
     </p>
     <p> 
         Error Handling is the process of antecipating, detecting and giving a solution for errors
         that can occur during the execution of the application.
     </p>
     <p>
-        Error hadling help us to stablish a procedure that deals with interruptions during the execution of a giving piece of code.
+        Error handling help us to stablish a procedure that deals with interruptions during the execution of a giving piece of code.
         <br>
         But they also can be confusing if not used right. A code with logic and try-catch-finally statements can be super hard to understand.
-        So today we are taking a look on some tips from the book Clean Code to write clean and robust code!
+    </p>
+    <p>
+      So today we are taking a look on some tips from the book Clean Code to write clean and robust code. Let's get started!
     </p>
     <h3>Prefer exceptions over error codes</h3>
     <p>
-        I already said <a href="https://gabrielslima.github.io/blog/post.html?id=7" target="blank">here</a> that our functions should be small and do
-        only one thing. If the functions is hadling an error and also have expressions within the try statement that is not a function calls, it's doing
-        more than one thing acuatlly... 
+        I already said <a href="/post.html?id=7" target="blank">here</a> that our functions should be small and do
+        only one thing. If the functions is handling errors and also have expressions within the try statement that is not function calls, it's definitely doing
+        more than one thing... 
     </p>
     <p>
-        Error codes forces the caller to deals with the returned code immediatly and leads to nested structures, which is not good...
+        Error codes forces the caller to deals with the returned code immediately and leads to nested structures, which is not good...
         <br>
         Also, when dealing with error codes instead of try-catch-finally statements, these two corcerns are mixed, making it harder to 
         know what is error handling and what is logic.
@@ -46,13 +48,14 @@
         This can be an entire separate article or set of articles...in short, TDD is a Software Development process or a set of procedures
         for writing code where we write the test cases before writing the entire Software. In other words, first you translate the requirements (the contract)
         of a functionality into test cases, then you write the code to satisfy the tests.
-        <br>
-        This is contrary to the "normal" approach where we write
+    </p>
+    <p>
+       This is contrary to the "normal" approach where we write
         the Software to satisfy the requirements and then we write the tests to guarantee that the requirements are being satisfied as
         expected.
     </p>
     <p>
-        In this approach the development is driven towards the Software's requirements or contract.
+        In this approach the development is driven towards the Software's requirements or contract by defining test scenarios first.
         Before writing any code, the Software's requirements are translated into test cases and the development of the Software
         is tracked down as we test the Software against those test cases.
         <br>
@@ -62,9 +65,8 @@
     <p>
         Using the error handling as an example, first we would have to write the tests that expects a error handling for specific contexts.
         Naturally we would be forced to create a function (empty). The first time, is expected that all the test cases where is expected
-        a exception or error handling to break. Now we must to write the necessary code to satisfy each test case written.
+        a exception or error handling to break. Now we must to write down the necessary code to satisfy each test case written.
     </p>
-
     <p>
         Let's say that you are writing an API to manage some clients into the database. What is expected to happen if the user
         of the API tries to insert an existing client? Let's say that the requirements says that we can create a new client if
@@ -74,7 +76,7 @@
     <img class="post-img" src="images/clean-code-error-handling/tdd-exceptions-1.png" alt="">
     <img class="post-img" src="images/clean-code-error-handling/tdd-exceptions-1-2.png" alt="">
     <p>
-        I'm going to add the <b>save</b> function and the <b>ClientsException</b>
+        I'm going to add the <b>save</b> function and the <b>ClientException</b>
         and run the test for the first time:
     </p>
 <pre>
@@ -213,7 +215,6 @@ def save(client):
         parts of the applications, but it's called open for adding new properties to it's data structure or adding a new behavior without having it's existing
         data structures and behaviors modified.
     </p>
-
     <p>
         The same goes for functions, we can extend them by adding layers, but we're not supposed to change the functions we are calling on those layers.
     </p>
