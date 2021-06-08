@@ -8,13 +8,74 @@
         Welcome to the PewdiePie's favourite blog about Software Engineering and today
         we are with one more article about Clean Code talking about <b>how to write clean and meaningful unit tests</b>...
     </p>
-    <h3>The three laws of TDD</h3>
+    <h3>The Process</h3>
+    <p>
+        The tdd process can be sumarized on the following steps:
+    </p>
+    <img class="post-img" src="images/clean-code-unit-tests/tdd.png" alt="Tdd cycle">
+    <h4>Test Case</h4>
+    <p>
+        The first stage of our development is the test case, of course. Here we first write what a specific functio is supposed to do.
+        We must write the bare minimun so that our test fail. This means that we can have just the test function with a name and 
+        a body calling the function to be tested.
+    </p>
+    <p>
+        The function to be tested is not supposed to exist. The idea here is to write only the necessary production code and this will be 
+        achieve by first defining the name, then the arguments, then the body and so on till we have a function that fully satisfy our requirements or
+        part of of the requirements.
+    </p>
+    <p>
+        If the function to be created will have statements that can have interruptions (exceptions), start by defining what expected to be returned
+        or done when those interruptions occur on the production code. We've talked about this <a href="https://gabrielslima.github.io/blog/post.html?id=11" target="blank">here</a>.
+    </p>
     <p>
         Tdd is a way of developing Software where the starting point are the unit tests. This means that before writing production
         code first we have to write test cases. You can see more about it <a href="https://gabrielslima.github.io/blog/post.html?id=11">here</a>.
     </p>
+    <h4>Satisfy the Test Case</h4>
     <p>
-        But in general there is 3 laws that help us to follow the tdd technique:
+        Here is where the function to be tested will be created and the bare minimun code will be written to satisfy the test case.
+        Maybe it just has a empty body with a void return.
+        <br>
+        If the function can have exceptions, you will most probably have to write the error handling first so that the test case that expects a specific
+        error to be catched can be satisfied...
+    </p>
+    <h4>Refact</h4>
+    <p>
+        Once the the test is satisfied and passing, it's time to refact the production and the test case so that only the necessary code is present.
+        Remove duplicated code, maybe, break the function in one more layer.
+    </p>
+    <h4>Translating requirements into test cases</h4>
+    <h5>How do I know what to wirte in a unit test if I don't know what the production code is supposed to do?</h5>
+    <p>
+        That's where the requirements comes. To know what to expect, of course need to have a little bit of experience writing code.
+        Maybe you have worked in side projects or something. If not, first focus on knowing how to write code, then worry about testing them
+        and then you worry about how to write the production code along with the test cases.
+    </p>
+    <p>
+        But in general, take the requirements and translate them into test cases. The requirements can be found in a formal document or in stories and sub-tasks if you
+        are working with Scrum or in task if you are working with kanban.
+    </p>
+    <p>
+        Let's say you have a task to develop a authentication to an application based on username and password, something like this:
+    </p>
+<pre style="  background: rgba(0,0,0,.8);
+color: white!important;
+border-radius: 5px;
+letter-spacing: 1px;
+padding: 15px;">
+<strong>Authentication API</strong>
+
+All users on the platform must be authenticated to perform administration
+tasks.
+
+The users can have different scopes and they must be granted access through authorization only.
+
+The users will be authenticated by username and password.
+</pre>
+    <h3>The three laws of TDD</h3>
+    <p>
+        But in general there is 3 laws that help us to follow the tdd process:
     </p>
     <h4><b>1:</b> You may not write production code till you've written a failing test</h4>
     <p>
@@ -34,6 +95,5 @@
         The idea here is to build production and test code together. Tdd help us to write only the necessary code for both,
         test and production code. This makes our desing simpler and cleaner.
     </p>
-    <img src="" alt="Tdd cycle">
     Good Luck XD
 </div>
