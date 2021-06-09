@@ -69,10 +69,57 @@ padding: 15px;">
 All users on the platform must be authenticated to perform administration
 tasks.
 
-The users can have different scopes and they must be granted access through authorization only.
+The users can have different scopes and they must be granted access through authorized people only.
 
 The users will be authenticated by username and password.
 </pre>
+<br>
+    <p>
+        You can start by asking yourself what the code is supposed to do in specific cases, for instace:
+        <br>
+        What kind of payload the backend will receive? The paylod can have null or empty fields?
+        What is supposed to happend when no data is provided from the client?
+        <br>
+        What will happen if the user provide the wrong username? What will happen if the user provide the wrong password?
+        <br>
+        If it's going to have scopes, what the response looks like? Will it include the scopes the user have?
+    </p>
+    <p>
+        <ul>
+            <li>It should return 400 when a empty username is provided</li>
+            <li>It should return 400 when a empty password is provided</li>
+            <li>It should return 400 when a null username is provided</li>
+            <li>It should return 400 when a null password is provided</li>
+            <li>It should return 403 when the wrong username is provided</li>
+            <li>It should return 403 when the wrong password is provided</li>
+            <li>It should include scopes on authenticated users's responses</li>
+        </ul>
+    </p>
+<pre class="brush: python">
+<code>def test_it_should_return_400_when_a_empty_username_is_provided():
+    assert False
+
+def test_it_should_return_400_when_a_empty_password_is_provided():
+    assert False
+
+def test_it_should_return_400_when_a_null_username_is_provided():
+    assert False
+
+def test_it_should_return_400_when_a_null_password_is_provided():
+    assert False
+
+def test_it_should_return_403_when_the_wrong_username_is_provided():
+    assert False
+
+def test_it_should_return_403_when_the_wrong_wrong_password_is_provided():
+    assert False
+
+def test_it_should_include_scopes_on_authenticated_users_responses():
+    assert False</code>
+</pre>
+    <p>
+        Now we've entered the TDD cycle...
+    </p>
     <h3>The three laws of TDD</h3>
     <p>
         But in general there is 3 laws that help us to follow the tdd process:
@@ -95,5 +142,10 @@ The users will be authenticated by username and password.
         The idea here is to build production and test code together. Tdd help us to write only the necessary code for both,
         test and production code. This makes our desing simpler and cleaner.
     </p>
+    <h3>Keeping Tests Clean</h3>
+    <h3>Tests Enable the -ilities</h3>
+    <h3>Domain-Specific Testing Language</h3>
+    <h3>One Assert per Test</h3>
+    <h3>Single Concept per Test</h3>
     Good Luck XD
 </div>
