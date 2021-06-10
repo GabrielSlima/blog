@@ -143,7 +143,37 @@ def test_it_should_include_scopes_on_authenticated_users_responses():
         test and production code. This makes our desing simpler and cleaner.
     </p>
     <h3>Keeping Tests Clean</h3>
-    <h3>Tests Enable the -ilities</h3>
+    <p>
+        Quick and dirty tests is going to harm the project eventually. Writing  unit tests just for the sake of having the necessary percentage
+        of code coverage to make a deploy or thinking that "dirty tests are better than no test at all" is not enough to guarantee that future changes
+        will be made fast and will not harm the production code of the entire application... 
+    </p>
+    <p>
+        They must evolve as the production code changes. If they are dirty and have no meaningful implementation, developers tend
+        to spend more time fixing broken tests for every change made on the source code. With the time, they tend to spend more
+        time working on tests than on the production code. Eventually, this path will lead developers to blame them for the large estimates
+        till they decide to remove or ignore the tests completly... 
+    </p>
+    <p>
+        The tests are just importat as the production code. They guarantee that every change on the production code does not breaks other parts
+        of the application and developers have freedom to make changes without the fear of messing with other parts of the application that is
+        working perfectly. For this reason they must be kept clean, with short and descriptive names for they variables and for the test itself, with
+        an active process of thinking for their desing and implementation.
+    </p>
+    <h4>Tests Enable the -ilities</h4>
+    <p>
+        The key to keeping the desing and the architecture of the code as cleaner as possible is by having a suit with meaningful
+        unit tests.
+        <br>
+        They decreases the fear of making changes and enables the following "-ilities" on our production code: flexibililty/testability, maintainability and reusability
+    </p>
+    <h4>Clean Tests</h4>
+    <p>
+        What makes our tests clean? Readability. And how to keep  the readability? By keeping the clarity, simplicity and density of expressions on them,
+        the same thing that we do on the production code.
+        <br>
+        This means shor and descriptive names, low coupling and high cohesion...
+    </p>
     <h3>Domain-Specific Testing Language</h3>
     <h3>One Assert per Test</h3>
     <h3>Single Concept per Test</h3>
