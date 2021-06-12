@@ -172,10 +172,22 @@ def test_it_should_include_scopes_on_authenticated_users_responses():
         What makes our tests clean? Readability. And how to keep  the readability? By keeping the clarity, simplicity and density of expressions on them,
         the same thing that we do on the production code.
         <br>
-        This means shor and descriptive names, low coupling and high cohesion...
+        This means short and descriptive names, low coupling and high cohesion code...you can find more about these topics here: <a href="https://gabrielslima.github.io/blog/post.html?id=10" target="blank">how to write meaningful oop code</a>, 
+        <a href="https://gabrielslima.github.io/blog/post.html?id=7" target="blank">how to create meaningful functions</a> and <a href="https://gabrielslima.github.io/blog/post.html?id=6" target="blank">how to choose meaningful names for your functions and variables</a>.
     </p>
-    <h3>Domain-Specific Testing Language</h3>
+    <h4>Domain-Specific Testing Language</h4>
+    <p>
+        Another way of creating clean tests is by developling Domain Specific Language (DSL)....
+
+    </p>
+    <p>
+        Domain Specfic Langauge is a readable language that uses keywords for quick test development. By creating a DSL the abstraction within the function is increased making the code readable and simple.
+        <br>
+        We achieve this by creating functions and utilities on our test class that make use of the APIs developed instead of using them direcltly. This makes the unit tests more convinient to write and easeir to read.
+    </p>
+    <h3>A dual standard</h3>
     <h3>One Assert per Test</h3>
+    
     <h3>Single Concept per Test</h3>
     Good Luck XD
 </div>
