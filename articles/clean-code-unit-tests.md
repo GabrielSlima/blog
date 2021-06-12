@@ -2,40 +2,40 @@
     <p>
         It's not the first time that you've heard that unit tests are important to guarantee that our code is doing
         what it is supposed to do. They also improves the maintainability, readability and can add documentation value
-        to our software letting readers to know what to expecte when using specific functions on it.
+        to our software letting readers know what to expect when using specific functions.
     </p>
     <p>
         Welcome to the PewdiePie's favourite blog about Software Engineering and today
         we are with one more article about Clean Code talking about <b>how to write clean and meaningful unit tests</b>...
     </p>
-    <h3>The Process</h3>
+    <h3>The Test Driven Development (TDD) Process</h3>
     <p>
-        The tdd process can be sumarized on the following steps:
+        Tdd is a way of developing Software where the starting point are the unit tests. This means that before writing production
+        code first we have to write test cases. You can see more about it <a href="https://gabrielslima.github.io/blog/post.html?id=11" target="blank">here</a>.
+    </p>
+    <p>
+        This process can be summarized on the following steps:
     </p>
     <img class="post-img" src="images/clean-code-unit-tests/tdd.png" alt="Tdd cycle">
     <h4>Test Case</h4>
     <p>
-        The first stage of our development is the test case, of course. Here we first write what a specific functio is supposed to do.
-        We must write the bare minimun so that our test fail. This means that we can have just the test function with a name and 
+        The first stage of our development is the test case, of course. Here we first write what a specific function is supposed to do.
+        We must write the bare minimun code so that our test fails. This means that we can have just the test function with a name and 
         a body calling the function to be tested.
     </p>
     <p>
         The function to be tested is not supposed to exist. The idea here is to write only the necessary production code and this will be 
-        achieve by first defining the name, then the arguments, then the body and so on till we have a function that fully satisfy our requirements or
-        part of of the requirements.
+        achieved by first defining the name, then the arguments, then the body and so on till we have a function that fully satisfy our requirements or
+        part of of the requirements if they require more than one function to be satisfied.
     </p>
     <p>
-        If the function to be created will have statements that can have interruptions (exceptions), start by defining what expected to be returned
+        If the function to be created will have statements that can have interruptions (exceptions), start by defining what is expected to be returned
         or done when those interruptions occur on the production code. We've talked about this <a href="https://gabrielslima.github.io/blog/post.html?id=11" target="blank">here</a>.
-    </p>
-    <p>
-        Tdd is a way of developing Software where the starting point are the unit tests. This means that before writing production
-        code first we have to write test cases. You can see more about it <a href="https://gabrielslima.github.io/blog/post.html?id=11">here</a>.
     </p>
     <h4>Satisfy the Test Case</h4>
     <p>
         Here is where the function to be tested will be created and the bare minimun code will be written to satisfy the test case.
-        Maybe it just has a empty body with a void return.
+        Maybe it just have a empty body with a void return.
         <br>
         If the function can have exceptions, you will most probably have to write the error handling first so that the test case that expects a specific
         error to be catched can be satisfied...
@@ -43,12 +43,12 @@
     <h4>Refact</h4>
     <p>
         Once the the test is satisfied and passing, it's time to refact the production and the test case so that only the necessary code is present.
-        Remove duplicated code, maybe, break the function in one more layer.
+        Remove duplicated code or break the production function in different layers maybe   .
     </p>
     <h4>Translating requirements into test cases</h4>
     <h5>How do I know what to wirte in a unit test if I don't know what the production code is supposed to do?</h5>
     <p>
-        That's where the requirements comes. To know what to expect, of course need to have a little bit of experience writing code.
+        That's where the requirements comes. To know what to expect, you need to have a little bit of experience writing code, of course.
         Maybe you have worked in side projects or something. If not, first focus on knowing how to write code, then worry about testing them
         and then you worry about how to write the production code along with the test cases.
     </p>
@@ -78,9 +78,9 @@ The users will be authenticated by username and password.
         You can start by asking yourself what the code is supposed to do in specific cases, for instace:
         <br>
         What kind of payload the backend will receive? The paylod can have null or empty fields?
-        What is supposed to happend when no data is provided from the client?
+        What is supposed to happen when no data is provided from the client?
         <br>
-        What will happen if the user provide the wrong username? What will happen if the user provide the wrong password?
+        What will happen if the user provides the wrong username? What will happen if the user provides the wrong password?
         <br>
         If it's going to have scopes, what the response looks like? Will it include the scopes the user have?
     </p>
@@ -211,9 +211,26 @@ def test_it_should_include_scopes_on_authenticated_users_responses():
         starting to have lots of expressions as a "set up" before actually executing the test. A good example would be creating an instance of a class that have 15 attributes. It's better to create a separate
         function that will act as a <i>beforeeach</i> function to create the instances we need for our tests...
     </p>
-    <h3>A dual standard</h3>
     <h3>One Assert per Test</h3>
-    
+    <p>
+        The amount of assert statements you put on your tests are up to you. But the less, the easier to read. When creating a tests don't be afraid
+        to put more than one asserts but have in mind that the amount of asserts can minimized.
+    </p>    
     <h3>Single Concept per Test</h3>
+    <p>
+        Keep the concerns separated in different tests...the amount of asserts on your test may not be the problem. But testing more than one concept per test is.
+    </p>
+    <h3>Final Thoughts</h3>
+    <p>
+        Unit tests are super important to guarantee the readability, maintainability and flexibililty of the production code.
+        <br>
+        A code without unit testing is lead by fear. Fear of making changes, fear of breaking things and this is bad. The developer should be able to
+        guarantee that the production code is working perfectly usining unit testing.
+    </p>
+    <p>
+        Don't accept to write tests just for the sake of having a coverage percentage. The project will be compromised if this bad mindset is adopted by the team.
+        The problem of delivery time can be because the developers are taking more time to develop, of course, but also, make sure that the stablished deadline is appropriate
+        to delivery everything. The real problem is communication and expectations, not the tests...
+    </p>
     Good Luck XD
 </div>
