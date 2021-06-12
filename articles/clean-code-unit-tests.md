@@ -185,6 +185,32 @@ def test_it_should_include_scopes_on_authenticated_users_responses():
         <br>
         We achieve this by creating functions and utilities on our test class that make use of the APIs developed instead of using them direcltly. This makes the unit tests more convinient to write and easeir to read.
     </p>
+    <p>
+        So instead of creating techinical expressions, like the following:
+    </p>
+<pre class="brush: python">
+<code>def test_should_return_null_if_client_does_not_exists():
+    client = clients.fetch_by("gabriel@non.registered.email.domain.com")
+    assert client is None
+</code>
+</pre>
+    <p>
+        We focus on creating expressions that are more "friendly" to make the tests easier to read. Something like the following:
+    </p>
+<pre class="brush: python">
+<code>def test_should_return_null_object_if_client_does_not_exists():
+    client = clients.fetch_by("gabriel@non.registered.email.domain.com")
+    assert not client.exists()
+</code>
+</pre>
+    <p>
+        You may have noticed that on the second example the client is a Null Object. We've talked about this pattern <a href="https://gabrielslima.github.io/blog/post.html?id=11" target="blank">here</a>.
+    </p>
+    <p>
+        The DSL (doamin specific language) will be developed as the production code changes and we notice that the tests are starting to have duplicated code or that they are
+        starting to have lots of expressions as a "set up" before actually executing the test. A good example would be creating an instance of a class that have 15 attributes. It's better to create a separate
+        function that will act as a <i>beforeeach</i> function to create the instances we need for our tests...
+    </p>
     <h3>A dual standard</h3>
     <h3>One Assert per Test</h3>
     
