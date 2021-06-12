@@ -220,6 +220,28 @@ def test_it_should_include_scopes_on_authenticated_users_responses():
     <p>
         Keep the concerns separated in different tests...the amount of asserts on your test may not be the problem. But testing more than one concept per test is.
     </p>
+    <h3>The F.I.R.S.T rules of Clean Unit Tests</h3>
+    <h4>Fast</h4>
+    <p>
+        The unit tests must run quickly. You will probably want to skipt tests that runs slowly. That's not the goal.
+    </p>
+    <h4>Independent</h4>
+    <p>
+        The unit tests must be independent from each other. You should be able to run them in the order you want, whenever you want.
+    </p>
+    <h4>Repeatable</h4>
+    <p>
+        The unit tests must run in different environments perfectly, this means the localhost, development, homologation and production or any 
+        other environments your project may have.
+    </p>
+    <h4>Self-validating</h4>
+    <p>
+        The output of the unit tests should be boolean. No stack traces to figure out why they broke.
+    </p>
+    <h4>Timely</h4>
+    <p>
+        The unit tests must be written <strong>before</strong> the production code. The production code must be designed to be tested.
+    </p>
     <h3>Final Thoughts</h3>
     <p>
         Unit tests are super important to guarantee the readability, maintainability and flexibililty of the production code.
