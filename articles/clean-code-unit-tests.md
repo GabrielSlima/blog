@@ -16,7 +16,7 @@
     <p>
         This process can be summarized on the following steps:
     </p>
-    <img class="post-img" src="images/clean-code-unit-tests/tdd.png" alt="Tdd cycle">
+    <img class="post-img" src="images/clean-code-unit-tests/tdd.svg" alt="Tdd cycle">
     <h4>Test Case</h4>
     <p>
         The first stage of our development is the test case, of course. Here we first write what a specific function is supposed to do.

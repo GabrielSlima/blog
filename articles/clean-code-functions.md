@@ -169,7 +169,7 @@ I'm trying to say is that when you have a super detailed context it's necessary 
 subcontexts that compose a bigger one.
 <br>
 A good example would be when we turn on the lights:
-<img class="post-img" src="images/clean-code-functions/lights.png" alt="">
+<img class="post-img" src="images/clean-code-functions/lights.svg" alt="">
 We don't really need to know what happens behind the switch. We just need the lights on (hopefully this makes sense).
 <br>
 <br>
@@ -180,7 +180,7 @@ So if we have a function that brings only the odd numbers in one range of number
 Abstraction is the process of keeping only the details related to the given context. So to garantee that the function 
 is doing only one thing all the steps inside of it should be related to the function's context.
 Take the last block of code for instance. We have 3 levels of abstractions:
-<img class="post-img" src="images/clean-code-functions/premium_members.png" alt="">
+<img class="post-img" src="images/clean-code-functions/premium_members.svg" alt="">
 
 Following this idea of <b>one level of abstraction per function</b> we will follow <b>stepdown rule</b>. This means that 
 we will read/wirite the functions stage by stage worring only with the relevant information for each context.

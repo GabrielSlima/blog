@@ -270,7 +270,7 @@ def save(client):
         <br>
         This is an example of this scencario:
     </p>
-    <img class="post-img" src="images/clean-code-error-handling/SpecialCasePattern-1.png" alt="">
+    <img class="post-img" src="images/clean-code-error-handling/SpecialCasePattern-1.svg" alt="">
 <pre class="brush: python">
 <code>class Garage:
     def __init__(self, car=None, motorcycle=None):
@@ -314,7 +314,7 @@ if __name__ == "__main__":
     <p>
         Now the caller has only to deals with the base type (the parent), regardless of the object returned.
     </p>
-    <img class="post-img" src="images/clean-code-error-handling/SpecialCasePattern-1.1.png" alt="">
+    <img class="post-img" src="images/clean-code-error-handling/SpecialCasePattern-1.1.svg" alt="">
 <pre class="brush: python">
 <code>class Garage:
     def __init__(self, car=None, motorcycle=None):
@@ -360,7 +360,7 @@ if __name__ == "__main__":
         need object is not present. Following the same idea as the <b>Special Case Pattern</b>, a object with <i>do nothing</i> behaviors is returned
         if the required object is null.
     </p>
-    <img class="post-img" src="images/clean-code-error-handling/NullObjectPattern-1.png" alt="">
+    <img class="post-img" src="images/clean-code-error-handling/NullObjectPattern-1.svg" alt="">
 <pre class="brush: python">
 <code>class Garage:
     def __init__(self, car=None, motorcycle=None):
@@ -399,7 +399,7 @@ if __name__ == "__main__":
         <br>
         Compare with the same solution written in other words:
     </p>
-    <img class="post-img" src="images/clean-code-error-handling/NullObjectPattern-1.1.png" alt="">
+    <img class="post-img" src="images/clean-code-error-handling/NullObjectPattern-1.1.svg" alt="">
 <pre class="brush: python">
 <code>class Garage:
     def __init__(self, car=None, motorcycle=None):

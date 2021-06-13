@@ -70,7 +70,7 @@
         "description": "Promoting API Best practices and monitoring projects",
         "author": "Gabriel Lima",
         "date": "2020-12-06",
-        "article_file_name": "./articles/apigateway.txt"
+        "article_file_name": "./articles/apigateway.md"
     },
 	{
         "id": "3",

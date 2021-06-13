@@ -57,7 +57,7 @@
         and a return (branch back) to actually return a value (or not) to it's caller once the task
         is done.
     </p>
-    <img class="post-img" src="images/clean-code-objects-data-structures/subroutines.png" alt="">
+    <img class="post-img" src="images/clean-code-objects-data-structures/subroutines.svg" alt="">
     <p>
         They can be declared within a program or in separetaly libs, like the ones that are used to access system
         resources and services on linux operating system. A good example would be the GNU C Library. 
@@ -109,9 +109,8 @@
         This means that objects have it's own data members or variables that represents it's state and it's own set
         of behaviors.
     </p>
-    <img class="post-img" src="images/clean-code-objects-data-structures/object" alt="">
+    <img class="post-img" src="images/clean-code-objects-data-structures/object.svg" alt="">
     <img class="post-img" src="images/clean-code-objects-data-structures/oop-app" alt="">
-    <!-- IMAGE -->
     <p>
         In procedural programming, the author of the code have to organize the functions the best way he can to represent a behavior that is related to a representation of a object (throught a data structure for instance).
         Something like the following:
