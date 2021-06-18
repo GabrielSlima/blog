@@ -36,5 +36,24 @@
         This is one of the SOLID principles for designing OOP applications. It states that our classes, modules and functions should be responsible for only one piece
         of the entire feature. In other words, those entities should have only one reason to change: only if the requirements requires them to change directly.
     </p>
+    <p>
+        It's commom to think that the job is done once the code works. But that's not true. The job is done once the code works and it's clean. These are two different things.
+        <br>
+        Instead of going to the next problem after solving the current one, go back and make the code cleaner by breaking it into small units with specific
+        responsibilities and, of course, using previous tips about names, functions, error handling and so on...
+    </p>
+    <p>
+        For large code bases, on of the main concerns is having lot's of classes and because of that the system becomes more complex than before making it harder to understand...Well, that's not completly true.
+        <br>
+        Yes, with lots of small classes the system can be hard to read but at the same time it's well organized. So it's easier to find what you are looking for
+        if you have specific places to search instead of a few places to search and lots of lines of code only in one place.
+    </p>
+    <p>
+        Developers should be able to focus on only one affected complexity or concept at a time and be able to ignore useless details. Learning about the system
+        as needed.
+        <br>
+        We want a system composed by small classes with specific responsibilities and that those features that requires more than one class to work together can work
+        without having to worry about the structure of the others...
+    </p>
     Good Luck XD
 </div>
