@@ -63,10 +63,22 @@
     <p>
         We can make the relationship between variables and methods stronger by using the variables in methods. The more variables are used by the methods of a class, the more cohesive the class is.
         The more variables of a class a behavior/method uses, the more cohesive the behavior is to it's class and therefore, the more cohesive the class is.
+        <br>
+        A class is maxissively cohesive if each data member is used by each behavior member (the methods).
     </p>
     <p>
         We want classes with high cohesion. This means that the data and behavior members of a class are codependent (the state of a class depends on a behavior or group of behaviors to be manipulated) and they're connected,
         working together as a logical whole.
+    </p>
+    <p>
+        High cohesion makes the code simpler because we have classes with fewer behaviors and therefore reducing the complexity (increases the readability) and it also helps
+        to create low coupling objects (increases the maintainability).
+    </p>
+    <h4>Dealing with ploriferation of instance variables</h4>
+    <p>
+        Limiting the amount of lines inside a funtion and the amount of parameters it receives can lead to a ploriferation of instance variables. In these cases is worth it to
+        analyse if another class needs to be created to group these set of functions.
+        
     </p>
     Good Luck XD
 </div>
