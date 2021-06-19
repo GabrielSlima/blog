@@ -55,5 +55,18 @@
         We want a system composed by small classes with specific responsibilities and that those features that requires more than one class to work together can work
         without having to worry about the structure of the others...
     </p>
+    <h3>Cohesion</h3>
+    <p>
+        Cohesion is a measurement of the strength of relationship between the the membmers of a class (data and behaviors/methods). The higher the cohesion, I mean,
+        the stronger the reletionship between the data and behavior members of a class, the better.
+    </p>
+    <p>
+        We can make the relationship between variables and methods stronger by using the variables in methods. The more variables are used by the methods of a class, the more cohesive the class is.
+        The more variables of a class a behavior/method uses, the more cohesive the behavior is to it's class and therefore, the more cohesive the class is.
+    </p>
+    <p>
+        We want classes with high cohesion. This means that the data and behavior members of a class are codependent (the state of a class depends on a behavior or group of behaviors to be manipulated) and they're connected,
+        working together as a logical whole.
+    </p>
     Good Luck XD
 </div>
