@@ -43,13 +43,13 @@
         responsibilities and, of course, using previous tips about names, functions, error handling and so on...
     </p>
     <p>
-        For large code bases, on of the main concerns is having lot's of classes and because of that the system becomes more complex than before making it harder to understand...Well, that's not completly true.
+        For large code bases, one of the main concerns is having lot's of classes and because of that the system becomes more complex than before, making it harder to understand...Well, that's not completly true.
         <br>
         Yes, with lots of small classes the system can be hard to read but at the same time it's well organized. So it's easier to find what you are looking for
-        if you have specific places to search instead of a few places to search and lots of lines of code only in one place.
+        if you have specific places to look into instead of a few places to look into and lots of lines of code in only one place.
     </p>
     <p>
-        Developers should be able to focus on only one affected complexity or concept at a time and be able to ignore useless details. Learning about the system
+        Developers should be able to focus on only one affected complexity or concept at a time and be able to ignore details that are not relevant for the given context. Learning about the system
         as needed.
         <br>
         We want a system composed by small classes with specific responsibilities and that those features that requires more than one class to work together can work
