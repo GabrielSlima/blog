@@ -57,8 +57,10 @@
     </p>
     <h3>Cohesion</h3>
     <p>
-        Cohesion is a measurement of the strength of relationship between the the membmers of a class (data and behaviors/methods). The higher the cohesion, I mean,
-        the stronger the reletionship between the data and behavior members of a class, the better.
+        Cohesion is a measurement of the strength of relationship between the the elements of a module. The elements (variables and methods) should work together to achieve a specific goal and the module should have
+        a single responsibility. For the elements to work together to achieve a specific goal, they must belong logically together. Otherwise the modules clearly doesn't have a specific responsibility.
+        When it comes to classes, the class should have only one responsibility, only one goal, and the members (data and behaviors/methods) should work together to achieve this goal. The attriibutes/data members should represent only the state
+        of the object. The behaviors should work with those data members to achieve the goal. The higher the cohesion, I mean, the stronger the reletionship between the elements of a module, the better.
     </p>
     <p>
         We can make the relationship between variables and methods stronger by using the variables in methods. The more variables are used by the methods of a class, the more cohesive the class is.
@@ -71,7 +73,7 @@
         working together as a logical whole.
     </p>
     <p>
-        High cohesion makes the code simpler because we have classes with fewer behaviors and therefore reducing the complexity (increases the readability) and it also helps
+        High cohesion makes the code simpler because we have "specialist" classes with fewer behaviors and therefore reducing the complexity (increases the readability) and it also helps
         to create low coupling objects (increases the maintainability).
     </p>
     <h4>Dealing with ploriferation of instance variables</h4>
