@@ -76,6 +76,9 @@
         High cohesion makes the code simpler because we have "specialist" classes with fewer behaviors and therefore reducing the complexity (increases the readability) and it also helps
         to create low coupling objects (increases the maintainability).
     </p>
+    <img class="post-img" src="images/clean-code-clean-classes/low-cohesion.svg" alt="">
+    <img class="post-img" src="images/clean-code-clean-classes/high-cohesion.svg" alt="">
+
     <h4>Dealing with ploriferation of instance variables</h4>
     <p>
         Limiting the amount of lines inside a funtion and the amount of parameters it receives can lead to a ploriferation of instance variables. In these cases is worth it to
