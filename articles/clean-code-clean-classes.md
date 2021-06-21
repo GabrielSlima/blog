@@ -57,9 +57,11 @@
     </p>
     <h3>Cohesion</h3>
     <p>
-        Cohesion is a measurement of the strength of relationship between the the elements of a module. The elements (variables and methods) should work together to achieve a specific goal and the module should have
-        a single responsibility. For the elements to work together to achieve a specific goal, they must belong logically together. Otherwise the modules clearly doesn't have a specific responsibility.
-        When it comes to classes, the class should have only one responsibility, only one goal, and the members (data and behaviors/methods) should work together to achieve this goal. The attriibutes/data members should represent only the state
+        Cohesion is a measure of the strength of relationship between the the elements of a module. The elements (variables and methods) should work together to achieve a specific goal and the module should have
+        a single responsibility. For the elements to work together to achieve a specific goal, they must belong logically together. Otherwise the module clearly doesn't have a specific responsibility.
+    </p>
+    <p>
+        When it comes to classes, the class should have only one responsibility, only one goal, and the members (data and behaviors/methods) should work together to achieve this goal. The attributes/data members should represent the state
         of the object. The behaviors should work with those data members to achieve the goal. The higher the cohesion, I mean, the stronger the reletionship between the elements of a module, the better.
     </p>
     <p>
@@ -73,17 +75,42 @@
         working together as a logical whole.
     </p>
     <p>
-        High cohesion makes the code simpler because we have "specialist" classes with fewer behaviors and therefore reducing the complexity (increases the readability) and it also helps
-        to create low coupling objects (increases the maintainability).
+        High cohesion makes the code simpler because we have more specific classes with fewer behaviors rather than generic classes. This help us to reduce the complexity (increases the readability) and also to create low coupling objects (increases the maintainability).
     </p>
-    <img class="post-img" src="images/clean-code-clean-classes/low-cohesion.svg" alt="">
-    <img class="post-img" src="images/clean-code-clean-classes/high-cohesion.svg" alt="">
-
-    <h4>Dealing with ploriferation of instance variables</h4>
     <p>
-        Limiting the amount of lines inside a funtion and the amount of parameters it receives can lead to a ploriferation of instance variables. In these cases is worth it to
-        analyse if another class needs to be created to group these set of functions.
-        
+        Here are an example of a low/high cohesion objects:
+    </p>
+    <h4>Low Cohesion</h4>
+    <img class="post-img" src="images/clean-code-clean-classes/low-cohesion.svg" alt="">
+    <h4>High Cohesion</h4>
+    <img class="post-img" src="images/clean-code-clean-classes/high-cohesion.svg" alt="">
+    <p>
+        The function <strong>measureTemperature()</strong> on the first image is within the <strong>Person</strong> class. It makes sense to have a behavior like that you know, our body have a temperature.
+        <br>
+        But it makes even more sense to create a separate class for this function called <strong>Thermometer</strong> that will measure any object. We don't need to create a new object everytime we need to check
+        the temperature of another object, so we can create a <strong>public static function</strong> (public behavior that is member of a class and is not attached to any instance) and have the object we want to check the temperature
+        an argument for this function.
+    </p>
+    <p>
+        So a quick summary. Cohesion is a measure of the strengh of relationship between the elements of a module. It says the degree in wich these elements belongs together. The more cohesive a module is, the more specialist it is and, therefore, the more reusable, readable
+        and maintainable it is.
+        <br>
+        This means that not only the elements need to connect with each other (by making calling/using each other) but also that logically they belong together by sharing a set of common tasks/body or because they are connected by the responsibility
+        of the module.
+    </p>
+    <h4>Dealing with lots of variables on the module/class</h4>
+    <p>
+        If the module/class has lots of variables try to identify those that logically doesn't fit the responsibility of the module or class and create a new one to aggroup them.
+    </p>
+    <p>
+        When refacting code it's common to extract smaller functions from other functions. These "smaller functions" can be required so that the main function can execute it's task but they are not directly related to the responsibility of the module itself.
+        Its worh it to analyse and consider the possibility of a new class or module.
+    </p>
+    <p>
+        Another example of this kind of scenario is also when we want to extract smaller functions from another function but the smaller function needs some arguments that are part of the body of the "main function" or they are received as arguments by the "main function".
+        <br>
+        In these cases one workaround would be declare those variables as instance variables if you application is OOP or as global variables if your application is POP (Procedural Oriented Programming).
+        But pay attention to the cohesion. If the functions and the variables to be extract from this larger function doesn't seems to fit logically to the module or class, consider the possibility of creating a new one.
     </p>
     Good Luck XD
 </div>
