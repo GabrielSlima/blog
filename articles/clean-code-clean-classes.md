@@ -37,6 +37,16 @@
         of the entire feature. In other words, those entities should have only one reason to change: only if the requirements requires them to change directly.
     </p>
     <p>
+        The SRP is about separation of concerns. The responsibility part is about specific parts of a class that seems to change independently from other parts of it.
+        If you see that a method for instance seems to be changend independently of other behaviors of the same class, this is a sign that the class have more than one responsibility.
+    </p>
+    <p>
+        The motivation for this principle or a few motivations for this principle to be created are <strong>isolation of the objects</strong> and <strong>reducing the risks of changes</strong> on classes
+        to reduce and prevent side effects on future changes.
+    </p>
+    <img src="" alt="Image with an example of a Class with more than one responsibility">
+    <img src="" alt="Image with an example of a Class with only one responsibility">
+    <p>
         It's commom to think that the job is done once the code works. But that's not true. The job is done once the code works and it's clean. These are two different things.
         <br>
         Instead of going to the next problem after solving the current one, go back and make the code cleaner by breaking it into small units with specific
@@ -112,5 +122,6 @@
         In these cases one workaround would be declare those variables as instance variables if you application is OOP or as global variables if your application is POP (Procedural Oriented Programming).
         But pay attention to the cohesion. If the functions and the variables to be extract from this larger function doesn't seems to fit logically to the module or class, consider the possibility of creating a new one.
     </p>
+    <h3>How to create classes that supports the Open/Closed Principle</h3>
     Good Luck XD
 </div>
