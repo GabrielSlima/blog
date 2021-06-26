@@ -5,7 +5,7 @@
         and that Classes are the templates for creating those objects.
     </p>
     <p>
-        So far, if you've read the last articles, you know how to create <b>clean and meaningful functions</b>. But how can we create Clean Classes?
+        So far, if you've read the last articles, you know how to create <b>clean and meaningful functions</b>. But how can we create clean and meaningful classes?
     </p>
     <p>
         Welcome to the PewdiePie's favourite blog about Software Engineering and today
@@ -16,7 +16,7 @@
         Files should be strucutred as a newspaper article. The name and title should convey what the article is about. The first paragraph
         should introduce the topics to be  explored on the following paragraphs and the body should explore those topics, adding details
         as we go down...
-        This "way" of writting the code is called <a href="https://gabrielslima.github.io/blog/post.html?id=7" target="blank">The Stepdown Rule</a>.
+        This "way" of writting code is called <a href="https://gabrielslima.github.io/blog/post.html?id=7" target="blank">The Stepdown Rule</a>.
     </p>
     <img class="post-img" src="images/clean-code-clean-classes/class-structure.svg" alt="">
     <p>
@@ -38,14 +38,26 @@
     </p>
     <p>
         The SRP is about separation of concerns. The responsibility part is about specific parts of a class that seems to change independently from other parts of it.
-        If you see that a method for instance seems to be changend independently of other behaviors of the same class, this is a sign that the class have more than one responsibility.
+        If you see that a method for instance seems to be changed independently of other behaviors of the same class, this is a sign that the class have more than one responsibility.
+        With "changed independently" I mean that although the method/function/behavior seems to belong logically to the class, they are more of an additional behavior than a necessary behavior to
+        accomplish the specific goal implied by the classes's name.
+    </p>
+    <img class="post-img" src="images/clean-code-clean-classes/SRP-BROKEN.svg" alt="Broken SRP">
+    <p>
+        The image above illustrates a class that is supposed to handle the user's input related to the current logged player on the game. If you pay attention, the behavior <strong>last_matches</strong>
+        is a behavior that has a relationship with the Player Class but providing information about the player's last matches ins't responsibility of this cotroller...
     </p>
     <p>
-        The motivation for this principle or a few motivations for this principle to be created are <strong>isolation of the objects</strong> and <strong>reducing the risks of changes</strong> on classes
-        to reduce and prevent side effects on future changes.
+        To support the SRP principle we would have to create one more class to deal with this kind of request:
     </p>
-    <img src="" alt="Image with an example of a Class with more than one responsibility">
-    <img src="" alt="Image with an example of a Class with only one responsibility">
+    <img class="post-img" src="images/clean-code-clean-classes/SRP.svg" alt="SRP">
+    <p>
+        Now it's more like it.
+    </p>
+    <p>
+        The motivation for this principle or a few motivations for this principle to be created are <strong>to isolate the objects</strong> and <strong>to reduce the risks of changes</strong> on classes.
+    </p>
+
     <p>
         It's commom to think that the job is done once the code works. But that's not true. The job is done once the code works and it's clean. These are two different things.
         <br>
