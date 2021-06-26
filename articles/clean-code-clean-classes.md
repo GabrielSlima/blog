@@ -37,9 +37,9 @@
         of the entire feature. In other words, those entities should have only one reason to change: only if the requirements requires them to change directly.
     </p>
     <p>
-        The SRP is about separation of concerns. The responsibility part is about specific parts of a class that seems to change independently from other parts of it.
+        The SRP is about separation of concerns. The responsibility part is about specific parts of a class that changes independently from other parts of it.
         If you see that a method for instance seems to be changed independently of other behaviors of the same class, this is a sign that the class have more than one responsibility.
-        With "changed independently" I mean that although the method/function/behavior seems to belong logically to the class, they are more of an additional behavior than a necessary behavior to
+        With "change independently" I mean that although the method/function/behavior seems to belong logically to the class, they are more of an additional behavior than a necessary behavior to
         accomplish the specific goal implied by the classes's name.
     </p>
     <img class="post-img" src="images/clean-code-clean-classes/SRP-BROKEN.svg" alt="Broken SRP">
