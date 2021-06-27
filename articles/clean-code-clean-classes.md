@@ -150,10 +150,17 @@
         In these cases one workaround would be declare those variables as instance variables if your application is OOP or as global variables if your application is POP (Procedural Oriented Programming).
         But pay attention to the cohesion. If the functions and the variables to be extract from this larger function doesn't seems to fit logically to the module or class, consider the possibility of creating a new one.
     </p>
-    <h3>How to create classes that supports the Open/Closed Principle</h3>
+    <h3>Isolating from Change</h3>
+    <p>
+        One of the most important concepts in OOP is coupling. Coupling is, as the cohesion is, a measure of how much knowledge the objects of our system has of each other.
+        If two objects for instance know more than public interfaces about each other, let's say, they change each other's state directly. Their degree of coupling is high.
+    </p>
+    <h4>The Open/Closed Principle</h4>
     <p>
         The Open/Close principle is also one of the SOLId principles. It states that our classes should be <strong>open for extension but closed for modification</strong>.  In other words,
-        for every new behavior we should extend an existing class and open an existing class for modification only when we have to fix a bug/error in one of the existing errors.
+        for every new behavior we should extend an existing class and open an existing class for modification only when we have to fix a bug/error in one of the existing errors. This principle relies strongly with
+        inheritance and polymorphisim.
     </p>
+
     Good Luck XD
 </div>
