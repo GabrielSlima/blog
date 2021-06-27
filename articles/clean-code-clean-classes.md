@@ -42,6 +42,9 @@
         With "change independently" I mean that although the method/function/behavior seems to belong logically to the class, they are more of an additional behavior than a necessary behavior to
         accomplish the specific goal implied by the classes's name.
     </p>
+    <p>
+        Here are a few examples of classes for an online Game: 
+    </p>
     <img class="post-img" src="images/clean-code-clean-classes/SRP-BROKEN.svg" alt="Broken SRP">
     <p>
         The image above illustrates a class that is supposed to handle the user's input related to the current logged player on the game. If you pay attention, the behavior <strong>last_matches</strong>
@@ -51,13 +54,26 @@
         To support the SRP principle we would have to create one more class to deal with this kind of request:
     </p>
     <img class="post-img" src="images/clean-code-clean-classes/SRP.svg" alt="SRP">
+    <h4>Why I didn't use the class AbstractMatch to implie a save() function?</h4>
     <p>
-        Now it's more like it.
+        The AbstractMatch is a representation of a match between two teams. Every match have a score and a way of connecting and disconnecting from it. Saving the current match so that the player can watch it later is not
+        it's concern. It's concern is to manage the "Match environment", I mean, keep the amount of players updated, provide ways of connecting and disconnecting and so on.
+    </p>
+    <p>
+        Of course, in online games the backend's architecture is way more complex and elaborated than this. Probably a lot of things would change. Online matches requires network connection.
+        They can be localhost, LAN, or on the internet and so on. That's a super basic example.
     </p>
     <p>
         The motivation for this principle or a few motivations for this principle to be created are <strong>to isolate the objects</strong> and <strong>to reduce the risks of changes</strong> on classes.
     </p>
-
+    <p>
+        Classes are composed by data and behavior members. The same way it can be simple to change/remove some of them from a class and put them into another one, it can be super hard.
+        <br>
+        One requirement changes and the entire class has to be tested all over again. On the above example, the output of the behavior <strong>last_matches</strong> can change. The visualization can change. The amount
+        of fields can change. Maybe the report changes to provide a video. What if a image report is required? The entire class Player will have to be tested every single time 
+        a change is made.
+    </p>
+    <h4>Making the code work is enough...</h4>
     <p>
         It's commom to think that the job is done once the code works. But that's not true. The job is done once the code works and it's clean. These are two different things.
         <br>
