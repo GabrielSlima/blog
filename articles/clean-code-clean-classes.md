@@ -67,7 +67,7 @@
         The motivation for this principle or a few motivations for this principle to be created are <strong>to isolate the objects</strong> and <strong>to reduce the risks of changes</strong> on classes.
     </p>
     <p>
-        Classes are composed by data and behavior members. The same way it can be simple to change/remove some of them from a class and put them into another one, it can be super hard.
+        Classes are composed by data and behavior members. The same way it can be simple to change/remove some of them from a class and put them into another one, it can be super hard if the responsabilities are tightly coupled on the same class.
         <br>
         One requirement changes and the entire class has to be tested all over again. On the above example, the output of the behavior <strong>last_matches</strong> can change. The visualization can change. The amount
         of fields can change. Maybe the report changes to provide a video. What if a image report is required? The entire class Player will have to be tested every single time 
@@ -103,7 +103,7 @@
         of the object. The behaviors should work with those data members to achieve the goal. The higher the cohesion, I mean, the stronger the reletionship between the elements of a module, the better.
     </p>
     <p>
-        We can make the relationship between variables and methods stronger by using the variables in methods. The more variables are used by the methods of a class, the more cohesive the class is.
+        We can make the relationship between variables and methods stronger by actually using the variables in methods. The more variables are used by the methods of a class, the more cohesive the class is.
         The more variables of a class a behavior/method uses, the more cohesive the behavior is to it's class and therefore, the more cohesive the class is.
         <br>
         A class is maxissively cohesive if each data member is used by each behavior member (the methods).
@@ -120,15 +120,15 @@
     </p>
     <h4>Low Cohesion</h4>
     <img class="post-img" src="images/clean-code-clean-classes/low-cohesion.svg" alt="">
-    <h4>High Cohesion</h4>
-    <img class="post-img" src="images/clean-code-clean-classes/high-cohesion.svg" alt="">
     <p>
-        The function <strong>measureTemperature()</strong> on the first image is within the <strong>Person</strong> class. It makes sense to have a behavior like that you know, our body have a temperature.
+        The function <strong>measureTemperature()</strong> on the first image is within the <strong>Person</strong> class. It makes sense to have a behavior like that because you know, our bodies have a temperature.
         <br>
         But it makes even more sense to create a separate class for this function called <strong>Thermometer</strong> that will measure any object. We don't need to create a new object everytime we need to check
         the temperature of another object, so we can create a <strong>public static function</strong> (public behavior that is member of a class and is not attached to any instance) and have the object we want to check the temperature
         an argument for this function.
     </p>
+    <h4>High Cohesion</h4>
+    <img class="post-img" src="images/clean-code-clean-classes/high-cohesion.svg" alt="">
     <p>
         So a quick summary. Cohesion is a measure of the strengh of relationship between the elements of a module. It says the degree in wich these elements belongs together. The more cohesive a module is, the more specialist it is and, therefore, the more reusable, readable
         and maintainable it is.
@@ -147,9 +147,13 @@
     <p>
         Another example of this kind of scenario is also when we want to extract smaller functions from another function but the smaller function needs some arguments that are part of the body of the "main function" or they are received as arguments by the "main function".
         <br>
-        In these cases one workaround would be declare those variables as instance variables if you application is OOP or as global variables if your application is POP (Procedural Oriented Programming).
+        In these cases one workaround would be declare those variables as instance variables if your application is OOP or as global variables if your application is POP (Procedural Oriented Programming).
         But pay attention to the cohesion. If the functions and the variables to be extract from this larger function doesn't seems to fit logically to the module or class, consider the possibility of creating a new one.
     </p>
     <h3>How to create classes that supports the Open/Closed Principle</h3>
+    <p>
+        The Open/Close principle is also one of the SOLId principles. It states that our classes should be <strong>open for extension but closed for modification</strong>.  In other words,
+        for every new behavior we should extend an existing class and open an existing class for modification only when we have to fix a bug/error in one of the existing errors.
+    </p>
     Good Luck XD
 </div>
