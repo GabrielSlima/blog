@@ -155,13 +155,22 @@
         One of the most important concepts in OOP is coupling. Coupling is, as the cohesion is, a measure of the relationship between the modules of our application.
         In this case, how strong the relationship between the classes of our system is, I mean, how depentent they are on each other.
         <br>
-        The elements, the classes, can be tightly coupled, meaning that they are highly dependent on each other. Or they can be loosely coupled, meaning that they are not dependent on each other.  
+        The classes, can be tightly coupled, meaning that they are highly dependent on each other. Or they can be loosely coupled, meaning that they are not dependent on each other.  
     </p>
     <p>
-        In a tightly coupled desing classes access another classes's concret directly. This creates a depencen between the client class and the provider class. The provider can't just change the implementation
-        of a behavior or signature without breaking it's clients.
+        In a tightly coupled desing classes access concrete classes directly. This creates a dependence between the client class and the provider class. The provider can't just change the implementation
+        of a behavior or it's signature without breaking it's clients.
     </p>
-    <img src="" alt="">
+    <img class="post-img" src="images/clean-code-clean-classes/SRP.svg" alt="SRP">
+    <p>
+        On the above example the AbstractMatch class implies a <strong>save()</strong> method that will save the current match's state. It calls the the concrete <strong>MatchReport</strong>. This creates a
+        dependence of the AbstractMatch on the MatchReport. And this brings us to the Depence Inversion Principle or DIP.
+    </p>
+    <h4>The Depcendece Inversion Principle</h4>
+    <p>
+        This principle states that the classes of our application should depends on abstraction, not on concrete details. So to satisfy this principle our desing would have to be something more like the following:
+    </p>
+    <img class="post-img" src="images/clean-code-clean-classes/DIP.svg" alt="">
     <h4>The Open/Closed Principle</h4>
     <p>
         The Open/Close principle is also one of the SOLID principles. It states that our classes should be <strong>open for extension but closed for modification</strong>.  In other words,
