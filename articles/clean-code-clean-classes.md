@@ -152,13 +152,20 @@
     </p>
     <h3>Isolating from Change</h3>
     <p>
-        One of the most important concepts in OOP is coupling. Coupling is, as the cohesion is, a measure of how much knowledge the objects of our system has of each other.
-        If two objects for instance know more than public interfaces about each other, let's say, they change each other's state directly. Their degree of coupling is high.
+        One of the most important concepts in OOP is coupling. Coupling is, as the cohesion is, a measure of the relationship between the modules of our application.
+        In this case, how strong the relationship between the classes of our system is, I mean, how depentent they are on each other.
+        <br>
+        The elements, the classes, can be tightly coupled, meaning that they are highly dependent on each other. Or they can be loosely coupled, meaning that they are not dependent on each other.  
     </p>
+    <p>
+        In a tightly coupled desing classes access another classes's concret directly. This creates a depencen between the client class and the provider class. The provider can't just change the implementation
+        of a behavior or signature without breaking it's clients.
+    </p>
+    <img src="" alt="">
     <h4>The Open/Closed Principle</h4>
     <p>
-        The Open/Close principle is also one of the SOLId principles. It states that our classes should be <strong>open for extension but closed for modification</strong>.  In other words,
-        for every new behavior we should extend an existing class and open an existing class for modification only when we have to fix a bug/error in one of the existing errors. This principle relies strongly with
+        The Open/Close principle is also one of the SOLID principles. It states that our classes should be <strong>open for extension but closed for modification</strong>.  In other words,
+        for every new behavior we should extend an existing class. We can actually modify an existing only when we have to fix a bug/error. This principle relies strongly in
         inheritance and polymorphisim.
     </p>
 
