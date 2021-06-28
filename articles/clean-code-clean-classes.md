@@ -48,7 +48,7 @@
     <img class="post-img" src="images/clean-code-clean-classes/SRP-BROKEN.svg" alt="Broken SRP">
     <p>
         The image above illustrates a class that is supposed to handle the user's input related to the current logged player on the game. If you pay attention, the behavior <strong>last_matches</strong>
-        is a behavior that has a relationship with the Player Class but providing information about the player's last matches ins't responsibility of this cotroller...
+        is a behavior that has a relationship with the Player Class but providing information about the player's last matches ins't responsibility of this class...
     </p>
     <p>
         To support the SRP principle we would have to create one more class to deal with this kind of request:
@@ -150,9 +150,9 @@
         In these cases one workaround would be declare those variables as instance variables if your application is OOP or as global variables if your application is POP (Procedural Oriented Programming).
         But pay attention to the cohesion. If the functions and the variables to be extract from this larger function doesn't seems to fit logically to the module or class, consider the possibility of creating a new one.
     </p>
-    <h3>Isolating from Change</h3>
+    <h3>Isolating from Change: coupling</h3>
     <p>
-        One of the most important concepts in OOP is coupling. Coupling also is a measure, but instead of a saying the degree in which the elements of a module or class belong together, it says the strenght of the relationship between the modules 
+        One of the most important concepts in OOP is coupling. Coupling also is a measure, but instead of a saying the degree in which the elements of a module or class belongs together, it says the strenght of the relationship between the modules 
         of our application. In this case, how strong the relationship between the classes of our system is, I mean, how depentent they are on each other.
         <br>
         The classes, can be tightly coupled, meaning that they are highly dependent on each other. Or they can be loosely coupled, meaning that they are not dependent on each other.  
@@ -168,18 +168,20 @@
     </p>
     <h4>The Depcendece Inversion Principle</h4>
     <p>
-        This principle states that the classes of our application should depends on abstraction, not on concrete details. So to satisfy this principle our desing would have to be something more like the following:
+        This principle states that <strong>the classes of our application should depends on abstraction, not on concrete details</strong>. So to satisfy this principle our desing would have to be something more like the following:
     </p>
     <img class="post-img" src="images/clean-code-clean-classes/DIP.svg" alt="">
     <h4>The Open/Closed Principle</h4>
     <p>
         The Open/Close principle is also one of the SOLID principles. It states that our classes should be <strong>open for extension but closed for modification</strong>.  In other words,
-        for every new behavior we should extend an existing class. We can actually modify an existing only when we have to fix a bug/error. This principle relies strongly in
+        for every new behavior we should extend an existing class. We can actually modify an existing one only when we have to fix a bug/error. This principle relies strongly in
         inheritance and polymorphism.
     </p>
     <p>
         So let's say that on our last example the requirements says that a video report option is required, the first thing one would thought without having the OCP in head can be maybe this:
     </p>
-    
+    <img class="post-img" src="images/clean-code-clean-classes/BROKEN-OCP.svg" alt="">
+    <img class="post-img" src="images/clean-code-clean-classes/OCP.svg" alt="">
+    <h4>What if the business requires a <i>delete report</i> feature?</h4>
     Good Luck XD
 </div>
