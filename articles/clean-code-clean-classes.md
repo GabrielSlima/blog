@@ -152,8 +152,8 @@
     </p>
     <h3>Isolating from Change</h3>
     <p>
-        One of the most important concepts in OOP is coupling. Coupling is, as the cohesion is, a measure of the relationship between the modules of our application.
-        In this case, how strong the relationship between the classes of our system is, I mean, how depentent they are on each other.
+        One of the most important concepts in OOP is coupling. Coupling also is a measure, but instead of a saying the degree in which the elements of a module or class belong together, it says the strenght of the relationship between the modules 
+        of our application. In this case, how strong the relationship between the classes of our system is, I mean, how depentent they are on each other.
         <br>
         The classes, can be tightly coupled, meaning that they are highly dependent on each other. Or they can be loosely coupled, meaning that they are not dependent on each other.  
     </p>
@@ -175,8 +175,11 @@
     <p>
         The Open/Close principle is also one of the SOLID principles. It states that our classes should be <strong>open for extension but closed for modification</strong>.  In other words,
         for every new behavior we should extend an existing class. We can actually modify an existing only when we have to fix a bug/error. This principle relies strongly in
-        inheritance and polymorphisim.
+        inheritance and polymorphism.
     </p>
-
+    <p>
+        So let's say that on our last example the requirements says that a video report option is required, the first thing one would thought without having the OCP in head can be maybe this:
+    </p>
+    
     Good Luck XD
 </div>
