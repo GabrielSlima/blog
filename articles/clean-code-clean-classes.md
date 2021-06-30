@@ -174,8 +174,7 @@
     <h4>The Open/Closed Principle</h4>
     <p>
         The Open/Close principle is also one of the SOLID principles. It states that our classes should be <strong>open for extension but closed for modification</strong>.  In other words,
-        for every new behavior we should extend an existing class. We can actually modify an existing one only when we have to fix a bug/error. This principle relies strongly in
-        inheritance and polymorphism.
+        for every new behavior we should extend an existing class. We can actually modify an existing one, I mean, acatually change the variables or the behaviors, only when we have to fix a bug/error on it
     </p>
     <p>
         So let's say that on our last example the requirements says that a video report option is required, the first thing one would thought without having the OCP in head can be maybe this:
@@ -183,5 +182,11 @@
     <img class="post-img" src="images/clean-code-clean-classes/BROKEN-OCP.svg" alt="">
     <img class="post-img" src="images/clean-code-clean-classes/OCP.svg" alt="">
     <h4>What if the business requires a <i>delete report</i> feature?</h4>
+    <p>
+        The OCP was created based on compiled languages. It was intented to guide developers when adding new features to the system. Changing modules or libs
+        can lead to errors or bugs. If they were already compiled and approved for final usage the developer would have to retest it, recompile it and validate it all over again.
+        <br>
+        The purpouse was to reduce the changes in closed modules or libs. In this way, every new feature was a jar or dll package.
+    </p>
     Good Luck XD
 </div>
