@@ -183,10 +183,25 @@
     <img class="post-img" src="images/clean-code-clean-classes/OCP.svg" alt="">
     <h4>What if the business requires a <i>delete report</i> feature?</h4>
     <p>
-        The OCP was created based on compiled languages. It was intented to guide developers when adding new features to the system. Changing modules or libs
-        can lead to errors or bugs. If they were already compiled and approved for final usage the developer would have to retest it, recompile it and validate it all over again.
-        <br>
-        The purpouse was to reduce the changes in closed modules or libs. In this way, every new feature was a jar or dll package.
+        There are many opinions over the internet about this kind of scenario. Specially because in some places the OCP is described as a "rule" that states that we can't change our classes at all...
+        But that's not entirely true.
+    </p>
+    <p>
+        Adding a new method to a class is to add a new interface to it. This means that we are actually extending it. The violation is when we have to change interfaces that already in use by other classes. They've been tested and validated.
+        I mean, changing elements inside existing interfaces or changing existing data members that are used by those interfaces, the same ones that have been "closed" because they've been tested and validated and are 
+        well defined and are being used by other modules/classes is a "violation".
+    </p>
+    <p>
+        Even so, this principle was created in times where the projects were managed using the waterfall model. Today, the vast majority of the projects are agile, the requirements can change at any time.
+
+    </p>
+    <p>
+        I think the smartest thing to say is: desing your objects to be extendable with well defined interfaces. But don't be so attached to this principle. For what I've seen over the internet, and
+        I bet you've realized too, is that this principle became more of a guideline than a principle per say.
+    </p>
+    <p>
+        If you find yourself violating it many times, maybe it's a good idea
+        to revaluate the overall desing of the system and cosider refactoring instead of creating lots of classes that holds one method only.
     </p>
     Good Luck XD
 </div>
