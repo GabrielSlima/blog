@@ -1,11 +1,10 @@
 <div style="text-align: left;">
     <p>
         If you read the article about the difference between <a href="https://gabrielslima.github.io/blog/post.html?id=10" target="blank">Objects and Data Structures</a>
-        or if you already have experience writting OOP code you know that Objects are like "mini programs" that composes an application
-        and that Classes are the templates for creating those objects.
+        or if you already have experience writting OOP code you know that Objects are like "mini programs" that composes an application. And that Classes are the templates for creating those objects.
     </p>
     <p>
-        So far, if you've read the last articles, you know how to create <b>clean and meaningful functions</b>. But how can we create clean and meaningful classes?
+        So far, if you've read the last articles, you know how to create <b>clean and meaningful functions</b>. But how can we create <strong>clean and meaningful classes</strong>?
     </p>
     <p>
         Welcome to the PewdiePie's favourite blog about Software Engineering and today
@@ -26,7 +25,7 @@
     <h3>Small Classes</h3>
     <p>
         To say how small functions should be we count the number of lines and how many thing it's doing (should be only one thing).
-        To measure how small classes should be we have to count <i>how many responsabilities</i> it has.
+        To measure how small a class is we have to count <i>how many responsabilities</i> it has.
     </p>
     <p>
         They should have just one responsibility only and their names should describe the responsibility...
@@ -47,20 +46,20 @@
     </p>
     <img class="post-img" src="images/clean-code-clean-classes/SRP-BROKEN.svg" alt="Broken SRP">
     <p>
-        The image above illustrates a class that is supposed to handle the user's input related to the current logged player on the game. If you pay attention, the behavior <strong>last_matches</strong>
-        is a behavior that has a relationship with the Player Class but providing information about the player's last matches ins't responsibility of this class...
+        The image above illustrates a class that is supposed to handle the user's input related to the current logged player on the game. If you pay attention, the behaviors <strong>last_matches</strong>
+        and <strong>save_match()</strong> are behaviors that has a relationship with the Class Player, but providing information about the player's last matches or saving matches ins't responsibility of this class...
     </p>
     <p>
         To support the SRP principle we would have to create one more class to deal with this kind of request:
     </p>
     <img class="post-img" src="images/clean-code-clean-classes/SRP.svg" alt="SRP">
-    <h4>Why I didn't use the class AbstractMatch to implie a save() function?</h4>
+    <h4>Why I didn't use the class AbstractMatch to imply a save() function?</h4>
     <p>
         The AbstractMatch is a representation of a match between two teams. Every match have a score and a way of connecting and disconnecting from it. Saving the current match so that the player can watch it later is not
         it's concern. It's concern is to manage the "Match environment", I mean, keep the amount of players updated, provide ways of connecting and disconnecting and so on.
     </p>
     <p>
-        Of course, in online games the backend's architecture is way more complex and elaborated than this. Probably a lot of things would change. Online matches requires network connection.
+        Of course, in online games the backend's architecture is way more complex and elaborated than this. Probably a lot of things would be different related to this desing. Online matches requires network connection.
         They can be localhost, LAN, or on the internet and so on. That's a super basic example.
     </p>
     <p>
@@ -116,7 +115,7 @@
         High cohesion makes the code simpler because we have more specific classes with fewer behaviors rather than generic classes. This help us to reduce the complexity (increases the readability) and also to create low coupling objects (increases the maintainability).
     </p>
     <p>
-        Here are an example of a low/high cohesion objects:
+        Here are an example of a low/high cohesion object:
     </p>
     <h4>Low Cohesion</h4>
     <img class="post-img" src="images/clean-code-clean-classes/low-cohesion.svg" alt="">
@@ -133,7 +132,7 @@
         So a quick summary. Cohesion is a measure of the strengh of relationship between the elements of a module. It says the degree in wich these elements belongs together. The more cohesive a module is, the more specialist it is and, therefore, the more reusable, readable
         and maintainable it is.
         <br>
-        This means that not only the elements need to connect with each other (by making calling/using each other) but also that logically they belong together by sharing a set of common tasks/body or because they are connected by the responsibility
+        This means that not only the elements need to connect with each other (by calling/using each other) but also that logically they belong together by sharing a set of common tasks/body or because they are connected by the responsibility
         of the module.
     </p>
     <h4>Dealing with lots of variables on the module/class</h4>
@@ -142,13 +141,13 @@
     </p>
     <p>
         When refacting code it's common to extract smaller functions from other functions. These "smaller functions" can be required so that the main function can execute it's task but they are not directly related to the responsibility of the module itself.
-        Its worh it to analyse and consider the possibility of a new class or module.
+        Its worth it to analyse and consider the possibility of a new class or module instead of creating a new method into the module/class.
     </p>
     <p>
         Another example of this kind of scenario is also when we want to extract smaller functions from another function but the smaller function needs some arguments that are part of the body of the "main function" or they are received as arguments by the "main function".
         <br>
         In these cases one workaround would be declare those variables as instance variables if your application is OOP or as global variables if your application is POP (Procedural Oriented Programming).
-        But pay attention to the cohesion. If the functions and the variables to be extract from this larger function doesn't seems to fit logically to the module or class, consider the possibility of creating a new one.
+        But pay attention to the cohesion. If the functions and the variables to be extracted from this larger function doesn't seems to fit logically to the module or class, consider the possibility of creating a new one.
     </p>
     <h3>Isolating from Change: coupling</h3>
     <p>
@@ -166,7 +165,7 @@
         On the above example the AbstractMatch class implies a <strong>save()</strong> method that will save the current match's state. It calls the the concrete <strong>MatchReport</strong>. This creates a
         dependence of the AbstractMatch on the MatchReport. And this brings us to the Depence Inversion Principle or DIP.
     </p>
-    <h4>The Depcendece Inversion Principle</h4>
+    <h4>The Dependence Inversion Principle</h4>
     <p>
         This principle states that <strong>the classes of our application should depends on abstraction, not on concrete details</strong>. So to satisfy this principle our desing would have to be something more like the following:
     </p>
@@ -174,7 +173,8 @@
     <h4>The Open/Closed Principle</h4>
     <p>
         The Open/Close principle is also one of the SOLID principles. It states that our classes should be <strong>open for extension but closed for modification</strong>.  In other words,
-        for every new behavior we should extend an existing class. We can actually modify an existing one, I mean, acatually change the variables or the behaviors, only when we have to fix a bug/error on it
+        we can only write new code, I mean, we can extend an existing class or module by adding a new behavior o variable but we can't change existing ones. We can actually modify an existing one, I mean, acatually change the variables or the behaviors, 
+        only when we have to fix a bug/error on it
     </p>
     <p>
         So let's say that on our last example the requirements says that a video report option is required, the first thing one would thought without having the OCP in head can be maybe this:
