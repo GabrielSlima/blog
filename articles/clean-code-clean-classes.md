@@ -32,11 +32,11 @@
     </p>
     <h3>The Single Responsibility Principle</h3>
     <p>
-        This is one of the SOLID principles for designing OOP applications. It states that our classes, modules and functions should be responsible for only one piece
+        This is one of the SOLID principles for designing OOP applications. It states that our classes and modules should be responsible for only one piece
         of the entire feature. In other words, those entities should have only one reason to change: only if the requirements requires them to change directly.
     </p>
     <p>
-        The SRP is about separation of concerns. The responsibility part is about specific parts of a class that changes independently from other parts of it.
+        The SRP is about separation of concerns. The responsibility part is about specific parts of a class that changes independently from other parts of it because it's about a different concern.
         If you see that a method for instance seems to be changed independently of other behaviors of the same class, this is a sign that the class have more than one responsibility.
         With "change independently" I mean that although the method/function/behavior seems to belong logically to the class, they are more of an additional behavior than a necessary behavior to
         accomplish the specific goal implied by the classes's name.
@@ -53,14 +53,14 @@
         To support the SRP principle we would have to create one more class to deal with this kind of request:
     </p>
     <img class="post-img" src="images/clean-code-clean-classes/SRP.svg" alt="SRP">
-    <h4>Why I didn't use the class AbstractMatch to imply a save() function?</h4>
+    <h4>Why I didn't use the class AbstractMatch to imply a <i>save()</i> or other functions related to the Report?</h4>
     <p>
         The AbstractMatch is a representation of a match between two teams. Every match have a score and a way of connecting and disconnecting from it. Saving the current match so that the player can watch it later is not
-        it's concern. It's concern is to manage the "Match environment", I mean, keep the amount of players updated, provide ways of connecting and disconnecting and so on.
+        it's concern. It's concern is to manage the "Match Environment", I mean, keep the amount of players updated, provide ways of connecting and disconnecting and so on.
     </p>
     <p>
-        Of course, in online games the backend's architecture is way more complex and elaborated than this. Probably a lot of things would be different related to this desing. Online matches requires network connection.
-        They can be localhost, LAN, or on the internet and so on. That's a super basic example.
+        Of course, in online games the backend's architecture is way more complex and elaborated than this. Probably a lot of things would be different related to this desing. Online matches requires network connection, 
+        a server. Ways of securing it and so on. That's a super basic example.
     </p>
     <p>
         The motivation for this principle or a few motivations for this principle to be created are <strong>to isolate the objects</strong> and <strong>to reduce the risks of changes</strong> on classes.
@@ -220,5 +220,18 @@
         to revaluate the overall desing of the system and cosider refactoring instead of creating lots of classes that holds one method only.
     </p>
     <h3>Final Thoughts</h3>
+    <p>
+        Good OOP desings are clean and clear. The classes have high cohesion and are loosely coupled from each other. They also have specific responsibilities, well defined interfaces and depends on abstract classes instead of concrete ones.
+    </p>
+    <p>
+        The classes of our application should be small and specific. To guarantee that they are small and specific, they should have only one responsibility. Meaning that they should worry about only one thing. If the class is an HttpConnector, it shouldn't calculate
+        anything for instance or apply any other type of "additional behavior" that can be changed independent of the state of the class or other behavior it has.
+    </p>
+    <p>
+        To reduce the risks of changes on existing classes, apply the Dependence Inversion principle. This is going to help you to create classes that depends on abstract interfaces and to create loose coupled classes.
+    </p>
+    <p>
+        Don't forget to create well defined interfaces and data members. The Open/Closed Principle will help you on creating desings that are more stable and reliable.
+    </p>
     Good Luck XD
 </div>
