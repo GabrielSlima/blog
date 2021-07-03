@@ -172,26 +172,42 @@
     <img class="post-img" src="images/clean-code-clean-classes/DIP.svg" alt="">
     <h4>The Open/Closed Principle</h4>
     <p>
-        The Open/Close principle is also one of the SOLID principles. It states that our classes should be <strong>open for extension but closed for modification</strong>.  In other words,
-        we can only write new code, I mean, we can extend an existing class or module by adding a new behavior o variable but we can't change existing ones. We can actually modify an existing one, I mean, acatually change the variables or the behaviors, 
-        only when we have to fix a bug/error on it
+        The Open/Closed principle is also one of the SOLID principles. It states that our classes and modules should be <strong>open for extension but closed for modification</strong>.  In other words,
+        we can only write new code, I mean, we can extend an existing class or module but we can't change existing ones. We can actually modify an existing one, I mean, acatually change the variables or the behaviors
+        of a module or class, only when we have to fix a bug/error on it.
     </p>
     <p>
-        So let's say that on our last example the requirements says that a video report option is required, the first thing one would thought without having the OCP in head can be maybe this:
+        A module is said open if we can open it and change existing data strcutures and elements of the existing interfaces. It's said closed if it has well defined interfaces and data strucutres and are being used by other modules of the application.
+        <br>
+        When it comes to classes, a class is said closed if it was already being compiled and stored in a lib and are being used by other client classes. It is said open because other classes can used it as a parent class.
+    </p>
+    <p>
+        So let's say that on our last example the requirements says that a video report option is required. The first thing one would thought without having the OCP in head can be maybe this:
     </p>
     <img class="post-img" src="images/clean-code-clean-classes/BROKEN-OCP.svg" alt="">
+    <p>
+        But assuming that these classes you see above have already being tested, validated and are in use in production. They "can't be changed" because we would be violating the OCP. So to actually support this principle we
+        would have to apply inheritance to the report's desing and extend the existing classes. Something like this: 
+    </p>
     <img class="post-img" src="images/clean-code-clean-classes/OCP.svg" alt="">
     <h4>What if the business requires a <i>delete report</i> feature?</h4>
     <p>
-        There are many opinions over the internet about this kind of scenario. Specially because in some places the OCP is described as a "rule" that states that we can't change our classes at all...
-        But that's not entirely true.
+        There are many opinions over the internet about this kind of scenario. Specially because in some places the OCP is described as rule that states that we can't change our classes at all
+        without giving some important considerations about it to the reader. For instance the time it was created. It's first appearance was on the book Object Oriented Software Construction in 1988.
+        <br>
+        Another important consideration, this principle is about compiled languages. What about the interpreted ones?
     </p>
     <p>
-        Adding a new method to a class is to add a new interface to it. This means that we are actually extending it. The violation is when we have to change interfaces that already in use by other classes. They've been tested and validated.
+        The OCP is also about changes. Changes in any code is a risk. Something can break and stop working. To know if something is broken or not we have to test and validate it all over again.
+        To avoid this kind of scenario, the OCP is one of the principles that says directly that well defined modules or classes "can't be touched".
+        Unless the requirements requires so. Let's say because it has a bug or error.
+    </p>
+    <p>
+        Adding a new method to a class or module is to add a new interface to it. This means that we are actually extending it. The violation is when we have to change interfaces that already in use by other classes. They've been tested and validated.
         I mean, changing elements inside existing interfaces or changing existing data members that are used by those interfaces, the same ones that have been "closed" because they've been tested and validated and are 
         well defined and are being used by other modules/classes is a "violation".
     </p>
-    <p>
+    <p> 
         Even so, this principle was created in times where the projects were managed using the waterfall model. Today, the vast majority of the projects are agile, the requirements can change at any time.
 
     </p>
@@ -203,5 +219,6 @@
         If you find yourself violating it many times, maybe it's a good idea
         to revaluate the overall desing of the system and cosider refactoring instead of creating lots of classes that holds one method only.
     </p>
+    <h3>Final Thoughts</h3>
     Good Luck XD
 </div>
