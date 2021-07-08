@@ -110,7 +110,7 @@
         of behaviors.
     </p>
     <img class="post-img" src="images/clean-code-objects-data-structures/object.svg" alt="">
-    <img class="post-img" src="images/clean-code-objects-data-structures/oop-app" alt="">
+    <img class="post-img" src="images/clean-code-objects-data-structures/oop-app.svg" alt="">
     <p>
         In procedural programming, the author of the code have to organize the functions the best way he can to represent a behavior that is related to a representation of a object (throught a data structure for instance).
         Something like the following:

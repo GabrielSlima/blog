@@ -70,15 +70,7 @@
         "description": "Would it be easier if I wasn't in College?",
         "author": "Gabriel Lima",
         "date": "2021-02-21",
-        "article_file_name": "./articles/gettingstartedwithprogramming.txt"
-    },
-    {
-        "id": "4",
-        "title": "What's an API Gateway?",
-        "description": "Promoting API Best practices and monitoring projects",
-        "author": "Gabriel Lima",
-        "date": "2020-12-06",
-        "article_file_name": "./articles/apigateway.md"
+        "article_file_name": "./articles/gettingstartedwithprogramming.md"
     },
 	{
         "id": "3",
@@ -86,7 +78,7 @@
         "description": "A different way of thinking when you feel insecure in life",
         "author": "Gabriel Lima",
         "date": "2020-11-08",
-        "article_file_name": "./articles/selfdoubt.txt"
+        "article_file_name": "./articles/selfdoubt.md"
     },
     {
         "id": "2",
@@ -94,14 +86,6 @@
         "description": "Just do it.",
         "author": "Gabriel Lima",
         "date": "2020-06-15",
-        "article_file_name": "./articles/whatilearned.txt"
-    },
-    {
-        "id": "1",
-        "title": "What it looks like to be a Software Engineer in Brazil",
-        "description": "Software Engineer in Brazil, how companies see development professionals... ",
-        "author": "Gabriel Lima",
-        "date": "2020-03-08",
-        "article_file_name": "./articles/softwareengineer.txt"
+        "article_file_name": "./articles/whatilearned.md"
     }
 ]
