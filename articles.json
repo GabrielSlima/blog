@@ -1,6 +1,14 @@
 
 [
     {
+        "id": "14",
+        "title": "How to create clean systems?",
+        "description": "Making your mom proud of your code...",
+        "author": "Gabriel Lima",
+        "date": "2021-07-09",
+        "article_file_name": "./articles/clean-code-clean-systems.md"
+    },
+    {
         "id": "13",
         "title": "How to write Clean Classes?",
         "description": "Making your mom proud of your code...",
@@ -62,7 +70,7 @@
         "description": "Making your mom proud of your code...",
         "author": "Gabriel Lima",
         "date": "2021-04-02",
-        "article_file_name": "./articles/clean-code-meaningful-names.txt"
+        "article_file_name": "./articles/clean-code-meaningful-names.md"
     },
     {
         "id": "5",
