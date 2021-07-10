@@ -13,7 +13,7 @@
     </p>
     <h3>Separation of Concerns</h3>
     <p>
-        One of the main concerns in Software Development is complexity management. Systems and applications can get very complex deppending on the problem domain.
+        One of the main concerns in Software Development is complexity management. Systems and applications can get very complex depending on the problem domain.
         There are different ways of dealing with complexity in Software Development. One of them is creating small and manageable units of code and giving it clear and well
         defined names and responsibilities. Another way of dealing with complexity is <strong>providing desings modularized by concerns</strong>.
     </p>
@@ -40,7 +40,7 @@
     </p>
     <h3>SoC: Separation of Concerns vs SRP: Single Responsibility Principle</h3>
     <p>
-        For a moment I thought these two were the same...maybe you did to. The fact is that the SRP is a principle that is about how many things our classes and modules are responsible and the SoC is about what things a module is responsible.
+        For a moment I thought these two were the same...maybe you did to. The fact is that the SRP is a principle that is about <strong>how many things our classes and modules are responsible</strong> and the SoC is about <strong>what things a set of elements of a module is responsible for</strong>.
         A module can be anything inside the application. It can be a Microservice, a layer from a Architectural point of view, a package, source files, classes...
         The SRP can be be used as a guideline for those things too <strong>but</strong> it is intended to be used as a guideline for designing classes and modules (source files in some promming languages, for instance, python).
     </p>
