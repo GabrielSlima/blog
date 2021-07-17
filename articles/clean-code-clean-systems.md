@@ -45,13 +45,13 @@
         The SRP can be be used as a guideline for those things too <strong>but</strong> it is intended to be used as a guideline for designing classes and modules (source files in some promming languages, for instance, python).
     </p>
     <p>
-        Imagine that we are creating a <strong>video-to-gif converter platform</strong>...Every anonymous user can convert 10 videos to gifs with a duration of 10s at the max each.
+        Imagine that we are creating a <strong>video-to-gif converter platform</strong>...Every anonymous user can convert 10 videos to gifs with a duration of 10s at the most each.
         To create longer gifs or covert more than 10 videos the user can have some options. If he sings up to the platform (without paying nothing) automatically he
         earns the possibilty to convert 100 videos to gifs with a duration of 10s at the most and 10 of them can have a duration of 20s at the most and the possibility of
         saving till 500MB on the cloud. No ADs.
     </p>
     <p>
-        This "Quota Filter" would have to be applied before converting the videos. For the first version of the MVP the desing could be somthing like the following:
+        This "Quota Filter" would have to be applied before converting the videos. For the first version of the MVP the desing could be something like the following:
     </p>
     <img class="post-img" src="images/clean-code-clean-systems/SRPvsSoC-SRP-BROKEN.svg" alt="Single Responsibility and Separation of Concerns Broken">
     <p>
@@ -65,7 +65,7 @@
         Quota will be made in a separated place.
     </p>
     <p>
-        But this desing  still doesn't supports the SoC. The <strong>QuotaService</strong> is more of infrastrucutre concern than a domain concern. This is a service that will be responsible for
+        But this desing  still doesn't supports the SoC. The <strong>QuotaService</strong> is more of a infrastrucutre concern than a domain concern. This is a service that will be responsible for
         dealing with the requests made by the user.
     </p>
     <img class="post-img" src="images/clean-code-clean-systems/SRPvsSoC-SRP-AND-SoC-NOT-BROKEN.svg" alt="Single Responsibility and Separation of Concerns not Broken">
@@ -77,8 +77,13 @@
         be a file, a folder or a package. It depends on the application or system's architecture and programming language you are using.
         <br>
         What I'm trying to say is that SoC is a principle that is used since the first moment you start a new project. It's almost inevitable not to create 
-        at least one single module inside the application. But this doesn't means that we're separiting things the best way we can...
+        at least one single module inside the application. But this doesn't means that we're separiting things the best way we can. The goal here is to make you aware
+        of the overall organization of the system or application.
     </p>
     <h3>Separate Constructing a System or Application from Using It</h3>
+    <p>
+        One good example of the first separation of concerns you already have been working with but maybe never realized it is construction of the application and the runtime logic.
+        Construction means constructing the objects of the application or system and runtime logic is what happens after the construction, I mean, after the set up.
+    </p>
     Good Luck XD
 </div>
