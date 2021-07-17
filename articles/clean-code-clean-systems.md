@@ -14,7 +14,7 @@
     <h3>Separation of Concerns</h3>
     <p>
         One of the main concerns in Software Development is complexity management. Systems and applications can get very complex depending on the problem domain.
-        There are different ways of dealing with complexity in Software Development. One of them is creating small and manageable units of code and giving it clear and well
+        There are different ways of dealing with complexity in Software Development. One of them is creating small and manageable units of code and giving for each one of them clear and well
         defined names and responsibilities. Another way of dealing with complexity is <strong>providing desings modularized by concerns</strong>.
     </p>
     <p>
