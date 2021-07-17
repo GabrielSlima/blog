@@ -85,6 +85,11 @@
         One good example of the first separation of concerns you already have been working with but maybe never realized it is construction of the application and the runtime logic.
         Construction means constructing the objects of the application or system and runtime logic is what happens after the construction, I mean, after the set up.
     </p>
+    <h4>Use the "main" to construct all the objects at once</h4>
+    <p>
+        To separate the construction from the runtime logic use the main to instantiate all objects the system/application needs to run. Basically the main will be at
+        the top and "know every one" but the applicatio, the objects will not know that the main exists. They will act as if everything is up and running and ready to go.
+    </p>
     <p>
         A good example of these two concerns being mixed is the <strong>Lazy Initialization Tatic</strong>...
     </p>
@@ -102,8 +107,31 @@
         function responsible to basically build the data source is called?
     </p>
     <p>
-        As you can imagine, the grid will be created and will be empty. One way of solving this is removing the async call and build the page "step by step" or
+        As you can imagine, the grid will be created and will be empty. One way of solving this is removing the async call and build the page "step by step" but this is not applicable for
+        the vast majority of the cases. You may want some other part of the component or page to load independently of this part. Or
         apply the tatic of Lazy Initialization to the grid so that it stay in a splash presentation while the request is being processed and returned by the server.
     </p>
+    <p>
+        Usually a public acessor is created to return the private instance variable (that can be a object) or a public interface that requires it can initialize it. If the instance variable is null, then the function can be responsinle for 
+        creating a new instance and populating it. Something like the following: 
+    </p>
+<pre class="brush: python">
+<code>class GifConverter:
+    @staticmethod
+    def from(video):
+        return video
+        
+class GifConverterService:
+    def __init__(self, ip_address):
+        self.ip_address = ip_address
+        self.quota_service = QuotaService()
+        self.converter = None
+    
+    def from(self, video):
+        if not self.convert:
+            self.converter = GifConverter()
+        return self.converter.rom(video)
+</code>
+</pre>
     Good Luck XD
 </div>
