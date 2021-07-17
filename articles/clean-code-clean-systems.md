@@ -85,5 +85,25 @@
         One good example of the first separation of concerns you already have been working with but maybe never realized it is construction of the application and the runtime logic.
         Construction means constructing the objects of the application or system and runtime logic is what happens after the construction, I mean, after the set up.
     </p>
+    <p>
+        A good example of these two concerns being mixed is the <strong>Lazy Initialization Tatic</strong>...
+    </p>
+    <h4>The Lazy Initialization Tatic</h4>
+    <p>
+        This tatic is used to speed up the process of creation of set up of the application or Initialization of elements of a module. Expensive processes are executed for the first
+        time it's needed and stored so that the following requests of the client is faster after the process is initialzed.
+    </p>
+    <p>
+        For instance, imagine we have to build a website using Angular for instance. The main page is a grid of movies like the following:
+    </p>
+    <img class="post-img" src="images/clean-code-clean-systems/lazy-initialization-example.png" alt="Mock of a Movies catalog website">
+    <p>
+        What happens if right after building the component a async function is called to fetch the movies from an API and right after this call, the
+        function responsible to basically build the data source is called?
+    </p>
+    <p>
+        As you can imagine, the grid will be created and will be empty. One way of solving this is removing the async call and build the page "step by step" or
+        apply the tatic of Lazy Initialization to the grid so that it stay in a splash presentation while the request is being processed and returned by the server.
+    </p>
     Good Luck XD
 </div>
