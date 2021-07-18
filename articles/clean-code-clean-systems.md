@@ -82,13 +82,44 @@
     </p>
     <h3>Separate Constructing a System or Application from Using It</h3>
     <p>
-        One good example of the first separation of concerns you already have been working with but maybe never realized it is construction of the application and the runtime logic.
+        One good example of the first separation of concerns you already have been working with but maybe never realized it is the construction of the application and the runtime logic.
         Construction means constructing the objects of the application or system and runtime logic is what happens after the construction, I mean, after the set up.
+    </p>
+    <p>
+        It's not hard to do stuff like the following:
+    </p>
+<pre class="brush: python">
+<code>def convert_from(self, video):
+    if not self.converter:
+        self.converter = GifConverter() #Lazy Initialization
+    
+    self.converter.save(video)
+    return self.converter.convert_from(video)
+</code>
+</pre>
+    <p>
+        As you can see, the code above applies the <strong>Lazy Initialization tatic</strong>. We are going to explore a little more of it on the following paragraphs.
+        But the point is, what is wrong with this type of initialization? I'm going to tell you...there is nothing wrong.
+    </p>
+    <p>
+        The point is basically the separation of concerns to improve the readability and maintainability of the code. 
+        If there is a lazy initialization per object inside the application, it's going to get harder to find out why this
+        object wans't set since the begnning if it's required so. But it's a great tatic to improve the start up performance.
     </p>
     <h4>Use the "main" to construct all the objects at once</h4>
     <p>
-        To separate the construction from the runtime logic use the main to instantiate all objects the system/application needs to run. Basically the main will be at
-        the top and "know every one" but the application won't. The objects of the application will not know that the main exists. They will act as if everything is up and running and ready to go.
+        In general, preferer to construct everything from the begining. Objects that are composed my other objects
+        will construct them beforehand and are going to be read to be used. To separate the construction from the 
+        runtime logic use the main to instantiate all objects the system/application needs to run.
+    </p>
+    <p>
+        Basically the main will be at the top and "know every one" but the application won't.
+        The objects of the application will not know that the main exists. They will act as if everything is up
+        and running and ready to go.
+    </p>
+    <p>
+        The following code represents a application that converts a video to Gif. It's basically a MVC application.
+        All the configurations and set up happens inside the "main" and provides the application what is needed to run.
     </p>
 <pre class="brush: python">
 <code>from moviepy.editor import VideoFileClip
@@ -143,12 +174,42 @@ def convert():
 
 
 if __name__ == "__main__":
-    app.run()
-
+    app.debug = False
+    app.run(port=5001)
 </code>
 </pre>
     <p>
-        A good example of these two concerns being mixed is the <strong>Lazy Initialization Tatic</strong>...
+        Of course in this example the objects will be created based on the requests received. Every request will trigger a different
+        invocation on the corresponding function responsible for handling it. But at this point, this is the runtime logic. The set up
+        happened on the main.
+    </p>
+    <p>
+        But if you are not satisfyed with the above example, here goes one more...the following code is an example of the same VideoToGifConvter.
+        But now it's a scheduled version that runs every 5 minutes and converts all the videos in a input folder and creates a gif as an output.
+        Imagine every <strong>input folder</strong> has sub folders in which the names are the users IP Addresses...instead of doing this:
+    </p>
+<pre>
+<code>
+if __name__ == "__main__":
+    consumer = VideosConsumerService()
+    videos_aggregated_by_ip_address = consumer.consume_videos()
+    for video in videos_aggregated_by_ip_address:
+        quota_service = QuotaService()
+        try:
+            quota_service.check_quota_for(video.origin)
+        except ConversionsAmountExceeded:
+            logging.info("{} exceeded the max amount of free conversions".format(video.origin))
+            continue
+        gif_converter = GifConverterService(video.origin)
+        gif_converter.convert_from(video.content)
+</code>
+</pre>
+    <p>
+        Look how messy the code gets by mixing the <strong>construction</strong> with the <strong>runtime logic</strong> (among other things).
+    </p>
+    <h4>But what if the construction has expensive processes? </h4>
+    <p>
+        This bring us to the tatic that you've already seen on past paragraphs called <strong>the Lazy Initialization Tatic</strong>
     </p>
     <h4>The Lazy Initialization Tatic</h4>
     <p>
