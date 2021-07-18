@@ -82,8 +82,10 @@
     </p>
     <h3>Separate Constructing a System or Application from Using It</h3>
     <p>
-        One good example of the first separation of concerns you already have been working with but maybe never realized it is the construction of the application and the runtime logic.
-        Construction means constructing the objects of the application or system and runtime logic is what happens after the construction, I mean, after the set up.
+        One good example of the first separation of concerns you already have been working with but maybe never
+        realized it is the construction of the application and the runtime logic. And by "construction" I 
+        mean constructing the objects of the application or system and executing anything related to the set up.
+        Runtime logic is what happens after the construction, I mean, after the set up.
     </p>
     <p>
         It's not hard to do stuff like the following:
@@ -99,7 +101,8 @@
 </pre>
     <p>
         As you can see, the code above applies the <strong>Lazy Initialization tatic</strong>. We are going to explore a little more of it on the following paragraphs.
-        But the point is, what is wrong with this type of initialization? I'm going to tell you...there is nothing wrong.
+        But the point is, what is wrong with this type of initialization? I'm going to tell you...there is nothing wrong
+        with it.
     </p>
     <p>
         The point is basically the separation of concerns to improve the readability and maintainability of the code. 
@@ -108,12 +111,13 @@
     </p>
     <h4>Use the "main" to construct all the objects at once</h4>
     <p>
-        In general, preferer to construct everything from the begining. Objects that are composed my other objects
+        In general, preferer to construct everything from the begining. Objects that are composed by other objects
         will construct them beforehand and are going to be read to be used. To separate the construction from the 
-        runtime logic use the main to instantiate all objects the system/application needs to run.
+        runtime logic use the main to instantiate all objects and perform more general configurations the system/application
+        needs to run.
     </p>
     <p>
-        Basically the main will be at the top and "know every one" but the application won't.
+        Basically the main will be at the top and "know everyone" but the application won't.
         The objects of the application will not know that the main exists. They will act as if everything is up
         and running and ready to go.
     </p>
@@ -179,21 +183,23 @@ if __name__ == "__main__":
 </code>
 </pre>
     <p>
-        Of course in this example the objects will be created based on the requests received. Every request will trigger a different
-        invocation on the corresponding function responsible for handling it. But at this point, this is the runtime logic. The set up
+        Of course in this example the objects will be created based on the requests received.
+        Every request will trigger a different invocation on the corresponding function responsible
+        for handling it. But at this point, this already is the runtime logic. The set up already
         happened on the main.
     </p>
     <p>
-        But if you are not satisfyed with the above example, here goes one more...the following code is an example of the same VideoToGifConvter.
+        But if you are not satisfyed with the above example, here goes one more...the following code is an example of the same video-to-gif-converter.
         But now it's a scheduled version that runs every 5 minutes and converts all the videos in a input folder and creates a gif as an output.
-        Imagine every <strong>input folder</strong> has sub folders in which the names are the users IP Addresses...instead of doing this:
+        Imagine every <strong>input folder</strong> has sub folders in which the names are the users IP Addresses...take a look:
     </p>
-<pre>
+<pre class="brush: python">
 <code>
 if __name__ == "__main__":
     consumer = VideosConsumerService()
-    videos_aggregated_by_ip_address = consumer.consume_videos()
-    for video in videos_aggregated_by_ip_address:
+    videos_grouped_by_ip_address = consumer.consume_videos()
+    
+    for video in videos_grouped_by_ip_address:
         quota_service = QuotaService()
         try:
             quota_service.check_quota_for(video.origin)
@@ -207,30 +213,56 @@ if __name__ == "__main__":
     <p>
         Look how messy the code gets by mixing the <strong>construction</strong> with the <strong>runtime logic</strong> (among other things).
     </p>
+    <p>
+        This is an example of these two concerns separated:
+    </p>
+<pre class="brush: python">
+<code>
+if __name__ == "__main__":
+    consumer = VideosConsumerService()
+    quota_service = QuotaService()
+    
+    videos_grouped_by_ip_address = consumer.consume_videos()
+    _videos = quota_service.videos_that_can_be_processed_from(
+        videos_grouped_by_ip_address
+    )
+
+    for video in _videos:
+        gif_converter = GifConverterService(video.origin)
+        gif_converter.convert_from(video.content)
+</code>
+</pre>
+    <p>
+        Now we're not only taking advantage of the Singleton Pattern but also we know clearly when the construction happens
+        and when the runtime logic starts.
+    </p>
     <h4>But what if the construction has expensive processes? </h4>
     <p>
         This bring us to the tatic that you've already seen on past paragraphs called <strong>the Lazy Initialization Tatic</strong>
     </p>
     <h4>The Lazy Initialization Tatic</h4>
     <p>
-        This tatic is used to speed up the process of creation of set up of the application or Initialization of elements of a module. Expensive processes are executed for the first
-        time it's needed and stored so that the following requests of the client is faster after the process is initialzed.
+        This tatic is used to speed up the process of creation and set up of the application or Initialization of elements of a module. Expensive processes are executed for the first
+        time it's needed and stored so that the following requests from clients are faster. In that way the "expensive process" is 
+        executed only when it's needed rather than on the application's start up.
     </p>
     <p>
-        For instance, imagine we have to build a website using Angular for instance. The main page is a grid of movies like the following:
+        For instance, imagine we have to build a website using Angular. The main page is a grid of movies like the following:
     </p>
     <img class="post-img" src="images/clean-code-clean-systems/lazy-initialization-example.png" alt="Mock of a Movies catalog website">
     <p>
-        What happens if right after building the component a async function is called to fetch the movies from an API and right after this call, the
-        function responsible to basically build the data source is called?
+        What happens if while building the component a async function is called to fetch the movies from an API and right after this call, the
+        function responsible to basically build the data source that will be used to store the grid's data is called?
     </p>
     <p>
-        As you can imagine, the grid will be created and will be empty. One way of solving this is removing the async call and build the page "step by step" but this is not applicable for
-        the vast majority of the cases. You may want some other part of the component or page to load independently of this part. Or
-        apply the tatic of Lazy Initialization to the grid so that it stay in a splash presentation while the request is being processed and returned by the server.
+        As you can imagine, the grid will be created and will be empty. One way of "solving" this is by removing the 
+        async call and building the page "step by step", but this is not applicable for the vast majority of the cases.
+        You may want some other part of the component or page to load independently of this part. Another option would be
+        by applying the tatic of Lazy Initialization to the grid so that it stays in a splash presentation while the request is 
+        being processed and returned by the server.
     </p>
     <p>
-        Usually a public acessor is created to return the private instance variable (that can be a object) or a public interface that requires it can initialize it. If the instance variable is null, then the function can be responsinle for 
+        Usually a public acessor is created to return the private instance variable (that can be an object) or a public interface that requires it can initialize it. If the instance variable is null, then the function can be responsinle for 
         creating a new instance and populating it. Something like the following: 
     </p>
 <pre class="brush: python">
@@ -246,7 +278,7 @@ class GifConverterService:
         self.converter = None
     
     def from(self, video):
-        if not self.convert:
+        if not self.converter:
             self.converter = GifConverter()
         return self.converter.rom(video)
 </code>
