@@ -283,5 +283,78 @@ class GifConverterService:
         return self.converter.rom(video)
 </code>
 </pre>
+    <h4>Promoting Decoupled Desings</h4>
+    <p>
+        On this process of saparation of concerns between the construction from the runtime logic on our applications and systems there is
+        one more thing to worry about which is the <i>coupling</i> between the objects.
+    </p>
+    <p>
+        I've talked about coupling <a href="https://gabrielslima.github.io/blog/post.html?id=13" target="blank">here</a> and one
+        strategy to provide a declouped desing is by using Dependecy Inversion, one of the SOLID principles. Basically the users of an
+        object or class depends upon abstract versions of it instead of a concrete one. But one little thing was bugging me for a while.
+        How my classes that are composed by other objects are supossed to depend upon abstract versions of another class if I have
+        to basically say what concrete class to use when instantiating it?
+    </p>
+    <p>
+        One principle to help you with this kind of scenario is the Inversion of Control IoC priciple.
+    </p>
+    <h4>The Inversion of Control principle</h4>
+    <p>
+        Usually our programs are composed by custom code and we use external libs to perform generic or specific tasks.
+        For example, I could be building an API that returns a large amount of data in Python. Let's say this data are videos
+        uploaded into our platform. 
+    </p>
+    <p>
+        But for some reason I've decided to load all videos and sort them by uplaod date. I can use Pandas to store those videos
+        in a DataFrame and order them the way I want. The connection with the database is controlled by custom code. The
+        Instances are made by custom code. Basically everything that is needed keep this application running is custom code.
+        That's is an example of a flow contorlled by custom code.
+    </p>
+    <p>
+        Now what if we invert this scenario and the only custom part we have is a controller and some models that represents
+        the videos's Payload and all the work is controlled by an framework?
+    </p>
+    <p>
+        This principle is very simple. The control of the flow of some part of our program (or all of it) is handed to
+        a service, component, assembler module or framework and our custom code is called to perform generic
+        or specific tasks.
+    </p>
+    <p>
+        Now there is so many different aspects of inversion of control that I can't even imagine that exists, but the most common are
+        plugin lookup implementation, I mean, how plugins are implemented into applications without the application having knowledge 
+        of a plugin's internal structure. Another common aspect of control being inverted is how to wire objects 
+        without them having knowledge about each other's internal structure.
+    </p>
+    <p>
+        SpringFrameework for instance we describe what plugins we are going to use on our application and it's responsible for wiring them
+        into our application. All we have to do is to use them.
+    </p>
+    <p>
+        Another example are the controllers on our MVC applications:
+    </p>
+<pre class="brush: python">
+<code>@app.route("/gifs", methods=["POST"])
+def convert():
+    _converter = GifConverterService(request.remote_addr)
+    _converter.convert_from(request.data)
+    return send_file(
+        _converter.convert_from(request.data),
+        attachment_filename="video_to_gif.gif"
+    )
+</code>
+</pre>
+    <p>
+        How the <i>@app.route</i> decorator is implemented? We don't have to know. We just use them.
+    </p>
+    <p>
+        Creeation, configuration and management of elements, objects, environments and so on is a different thing from using them. Thse are different responsibilities.
+        <br>
+        When it comes to classes and objects, the <i>wiring</i> is a process deletaged to an assembler module or object. 
+        So instead of creating instances of objects within the class's constructor creating a direct dependece upon a concrete class, the dependecy is
+        received as an argument and is populated and injected by the assembler. This is a desing pattern called <strong>Dependecy Injection</strong>.
+    </p>
+    <img src="" alt="GifConverService image being dependet up the GifConvert image by directing instatiating it">
+    <img src="" alt="GifConverService image being dependet up the GifConvert image but the depence is injected by an assembler object">
+    <h4>Dependecy Injection</h4>
     Good Luck XD
 </div>
