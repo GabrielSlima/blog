@@ -296,7 +296,8 @@ class GifConverterService:
         to basically say what concrete class to use when instantiating it?
     </p>
     <p>
-        One principle to help you with this kind of scenario is the Inversion of Control IoC priciple.
+        I've been using factories to deal with the creation of the objects and keeping my classes free from creating them.
+        I didn't know but this approach actually follows one principle called <i>Inversion of Control IoC priciple</i>.
     </p>
     <h4>The Inversion of Control principle</h4>
     <p>
@@ -305,14 +306,15 @@ class GifConverterService:
         uploaded into our platform. 
     </p>
     <p>
-        But for some reason I've decided to load all videos and sort them by uplaod date. I can use Pandas to store those videos
+        But for some reason I've decided to load all videos from our database and sort them by uplaod date in runtime, instead of
+        asking the database to order them for me. I can use Pandas to store those videos
         in a DataFrame and order them the way I want. The connection with the database is controlled by custom code. The
         Instances are made by custom code. Basically everything that is needed keep this application running is custom code.
-        That's is an example of a flow contorlled by custom code.
+        That's is an example of a <strong>flow contorlled by custom code</strong>.
     </p>
     <p>
         Now what if we invert this scenario and the only custom part we have is a controller and some models that represents
-        the videos's Payload and all the work is controlled by an framework?
+        the videos's Payload and all the work is controlled by a framework?
     </p>
     <p>
         This principle is very simple. The control of the flow of some part of our program (or all of it) is handed to
@@ -347,14 +349,15 @@ def convert():
         How the <i>@app.route</i> decorator is implemented? We don't have to know. We just use them.
     </p>
     <p>
-        Creeation, configuration and management of elements, objects, environments and so on is a different thing from using them. Thse are different responsibilities.
-        <br>
+        Creation, configuration and management of elements, objects, environments and so on is a different thing from using them. These are different responsibilities.
+    </p>
+    <h4>Dependecy Injection and Factory Desing Patterns</h4>
+    <p>
         When it comes to classes and objects, the <i>wiring</i> is a process deletaged to an assembler module or object. 
         So instead of creating instances of objects within the class's constructor creating a direct dependece upon a concrete class, the dependecy is
-        received as an argument and is populated and injected by the assembler. This is a desing pattern called <strong>Dependecy Injection</strong>.
+        created by another module, class or object (Factory Pattern) or is populated and injected by the assembler through the class's constructor. This is a desing pattern called <strong>Dependecy Injection</strong>.
     </p>
     <img src="" alt="GifConverService image being dependet up the GifConvert image by directing instatiating it">
     <img src="" alt="GifConverService image being dependet up the GifConvert image but the depence is injected by an assembler object">
-    <h4>Dependecy Injection</h4>
     Good Luck XD
 </div>
