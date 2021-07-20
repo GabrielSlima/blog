@@ -167,7 +167,7 @@ class GifConverter:
             _video_file.close()
 
 
-@app.route("/gifs", methods=["POST"])
+@app.route("/video_to_gif", methods=["POST"])
 def convert():
     _converter = GifConverterService(request.remote_addr)
     _converter.convert_from(request.data)
@@ -297,12 +297,12 @@ class GifConverterService:
     </p>
     <p>
         I've been using factories to deal with the creation of the objects and keeping my classes free from creating them.
-        I didn't know but this approach actually follows one principle called <i>Inversion of Control IoC priciple</i>.
+        I didn't know but this approach actually follows one principle called <i>Inversion of Control priciple</i>.
     </p>
     <h4>The Inversion of Control principle</h4>
     <p>
         Usually our programs are composed by custom code and we use external libs to perform generic or specific tasks.
-        For example, I could be building an API that returns a large amount of data in Python. Let's say this data are videos
+        For example, I could be building an API that returns a large amount of data in Python. Let's say this data are the videos
         uploaded into our platform. 
     </p>
     <p>
@@ -328,14 +328,14 @@ class GifConverterService:
         without them having knowledge about each other's internal structure.
     </p>
     <p>
-        SpringFrameework for instance we describe what plugins we are going to use on our application and it's responsible for wiring them
-        into our application. All we have to do is to use them.
+        With SpringFramework for instance we describe what plugins we are going to use on our application and it's responsible for wiring them
+        into it. All we have to do is to use them.
     </p>
     <p>
-        Another example are the controllers on our MVC applications:
+        Another example are the controllers on our last MVC application made in Python with the Flask Framework:
     </p>
 <pre class="brush: python">
-<code>@app.route("/gifs", methods=["POST"])
+<code>@app.route("/video_to_gif", methods=["POST"])
 def convert():
     _converter = GifConverterService(request.remote_addr)
     _converter.convert_from(request.data)
@@ -353,11 +353,12 @@ def convert():
     </p>
     <h4>Dependecy Injection and Factory Desing Patterns</h4>
     <p>
-        When it comes to classes and objects, the <i>wiring</i> is a process deletaged to an assembler module or object. 
+        When it comes to classes and objects, the <i>instantiation</i> and the <i>wiring</i> are processes deletaged to assemblers or factories modules/objects/methods. 
         So instead of creating instances of objects within the class's constructor creating a direct dependece upon a concrete class, the dependecy is
         created by another module, class or object (Factory Pattern) or is populated and injected by the assembler through the class's constructor. This is a desing pattern called <strong>Dependecy Injection</strong>.
     </p>
-    <img src="" alt="GifConverService image being dependet up the GifConvert image by directing instatiating it">
-    <img src="" alt="GifConverService image being dependet up the GifConvert image but the depence is injected by an assembler object">
+    <img class="post-img" src="images/clean-code-clean-systems/" alt="GifConverService being dependet upon the GifConvert image by directing instatiating it">
+    <img class="post-img" src="images/clean-code-clean-systems/Factory-Pattern.svg" alt="GifConverService not being dependent upon the GifConvert image by calling a factory">
+    <img class="post-img" src="images/clean-code-clean-systems/" alt="GifConverService not being dependet upon the GifConvert and Factory neither. Dependecy is being injected by an assembler object/module">
     Good Luck XD
 </div>
