@@ -355,10 +355,37 @@ def convert():
     <p>
         When it comes to classes and objects, the <i>instantiation</i> and the <i>wiring</i> are processes deletaged to assemblers or factories modules/objects/methods. 
         So instead of creating instances of objects within the class's constructor creating a direct dependece upon a concrete class, the dependecy is
-        created by another module, class or object (Factory Pattern) or is populated and injected by the assembler through the class's constructor. This is a desing pattern called <strong>Dependecy Injection</strong>.
+        created by another module, class or object (Factory Pattern) or it is populated and injected by the assembler through the class's constructor. This is a desing pattern called <strong>Dependecy Injection</strong>.
     </p>
-    <img class="post-img" src="images/clean-code-clean-systems/" alt="GifConverService being dependet upon the GifConvert image by directing instatiating it">
+    <img class="post-img" src="images/clean-code-clean-systems/SRPvsSoC-SRP-AND-SoC-NOT-BROKEN.svg" alt="GifConverService being dependet upon the GifConvert image by directing instatiating it">
+    <p>
+        Look the dependecy of the class GifConverterService upon the GifConverter. Even if there was an AbstractGifConverter the users of the GifConverter would have
+        to create the instace themselves. In other words, the <strong>GifConverterService</strong> has to have direct access to the class <strong>GifConverter</strong>
+        creating a coupling between them.
+    </p>
+    <!-- Append Code snippet example -->
     <img class="post-img" src="images/clean-code-clean-systems/Factory-Pattern.svg" alt="GifConverService not being dependent upon the GifConvert image by calling a factory">
-    <img class="post-img" src="images/clean-code-clean-systems/" alt="GifConverService not being dependet upon the GifConvert and Factory neither. Dependecy is being injected by an assembler object/module">
-    Good Luck XD
+    <p>
+        Applying the <strong>Factory Pattern</strong> the control of this flow of instantiation is handed to a class or method resoonsible for creating this type of objects. Now all the
+        clients of the <strong>GifConverter</strong> expects a <strong>AbstractConverter</strong> and asks the Factory the type of object they need.
+    </p>
+    <p>
+        This scenario sounds familiar to you? Clients of classes depending upon Abstract versions of it instead of concrete ones? Yes...this is one of the SOLID principles called
+        <strong>Dependency Inversion</strong>. You can read more about some of them <a href="https://gabrielslima.github.io/blog/post.html?id=13" target="blank">here</a>.
+    </p>
+    <p>
+        Great, now we have a less decoupled desing between the <strong>GifConverterService</strong> and <strong>GifConverter</strong>...but client classes
+        still have to worry about controlling the flow of initialization of it's dependecies to start working. This initialization can be while instatiating any object
+        from <strong>GifConverterService</strong> class or through public interfaces when needed, applying the lazy initialization pattern.
+    </p>
+    <p>
+        Another observation is that now the <strong>GifConverterService</strong> depends upon the Factory to have the an instance of the dependency...Let's take a look on how
+        this desing will look like injecting the dependecies into the GifConverterService, inverting this flow of initialization of dependencies.
+    </p>
+    <!-- Append Code snippet example -->
+    <img class="post-img" src="images/clean-code-clean-systems/SRPvsSoC-Dependency-Injection.svg" alt="GifConverService not being dependet upon the GifConvert and Factory neither. Dependecy is being injected by an assembler object/module">
+    <p>
+        Now the <strong>GifConverService</strong> classs will have it's dependencies initialized by an assembler, in this case, can be the controller itself...
+    </p>
+    <!-- Append Code snippet example -->
 </div>
