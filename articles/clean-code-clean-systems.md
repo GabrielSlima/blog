@@ -366,7 +366,7 @@ def convert():
     <!-- Append Code snippet example -->
     <img class="post-img" src="images/clean-code-clean-systems/Factory-Pattern.svg" alt="GifConverService not being dependent upon the GifConvert image by calling a factory">
     <p>
-        Applying the <strong>Factory Pattern</strong> the control of this flow of instantiation is handed to a class or method resoonsible for creating this type of objects. Now all the
+        Applying the <strong>Factory Pattern</strong> the control of this flow of instantiation is handed to a class or method responsible for creating this type of objects. Now all the
         clients of the <strong>GifConverter</strong> expects a <strong>AbstractConverter</strong> and asks the Factory the type of object they need.
     </p>
     <p>
@@ -379,7 +379,7 @@ def convert():
         from <strong>GifConverterService</strong> class or through public interfaces when needed, applying the lazy initialization pattern.
     </p>
     <p>
-        Another observation is that now the <strong>GifConverterService</strong> depends upon the Factory to have the an instance of the dependency...Let's take a look on how
+        Another observation is that now the <strong>GifConverterService</strong> depends upon the Factory to have an instance of the dependency...Let's take a look on how
         this desing will look like injecting the dependecies into the GifConverterService, inverting this flow of initialization of dependencies.
     </p>
     <!-- Append Code snippet example -->
