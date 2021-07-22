@@ -136,6 +136,16 @@ from flask import send_file
 app = Flask(__name__)
 
 
+@app.route("/video_to_gif", methods=["POST"])
+def convert():
+    _converter = GifConverterService(request.remote_addr)
+
+    return send_file(
+        _converter.convert_from(request.data),
+        attachment_filename="video_to_gif.gif"
+    )
+
+
 class GifConverterService:
     def __init__(self, ip_address):
         self.ip_address = ip_address
@@ -165,16 +175,6 @@ class GifConverter:
         with open(self.video, 'wb') as _video_file:
             _video_file.write(video)
             _video_file.close()
-
-
-@app.route("/video_to_gif", methods=["POST"])
-def convert():
-    _converter = GifConverterService(request.remote_addr)
-    _converter.convert_from(request.data)
-    return send_file(
-        _converter.convert_from(request.data),
-        attachment_filename="video_to_gif.gif"
-    )
 
 
 if __name__ == "__main__":
@@ -338,7 +338,7 @@ class GifConverterService:
 <code>@app.route("/video_to_gif", methods=["POST"])
 def convert():
     _converter = GifConverterService(request.remote_addr)
-    _converter.convert_from(request.data)
+
     return send_file(
         _converter.convert_from(request.data),
         attachment_filename="video_to_gif.gif"
@@ -363,12 +363,39 @@ def convert():
         to create the instace themselves. In other words, the <strong>GifConverterService</strong> has to have direct access to the class <strong>GifConverter</strong>
         creating a coupling between them.
     </p>
-    <!-- Append Code snippet example -->
+    <p>
+        The <strong>GifConverterService</strong>'s contructor would look like the following:
+    </p>
+<pre class="brush: python">
+<code>class GifConverterService:
+    def __init__(self, ip_address):
+        self.ip_address = ip_address
+        self.quota_service = QuotaService()
+        self.converter = GifConverter()
+    
+    def convert_from(self, video):
+        self.converter.save(video)
+        return self.converter.convert_from(video)
+</code>
+</pre>
     <img class="post-img" src="images/clean-code-clean-systems/Factory-Pattern.svg" alt="GifConverService not being dependent upon the GifConvert image by calling a factory">
     <p>
         Applying the <strong>Factory Pattern</strong> the control of this flow of instantiation is handed to a class or method responsible for creating this type of objects. Now all the
         clients of the <strong>GifConverter</strong> expects a <strong>AbstractConverter</strong> and asks the Factory the type of object they need.
     </p>
+<pre class="brush: python">
+<code>class GifConverterService:
+    def __init__(self, ip_address):
+        _CONVERTER_NAME = "gif_converter"
+        self.ip_address = ip_address
+        self.quota_service = QuotaService()
+        self.converter = ConverterFactory.create_converter_by(_CONVERTER_NAME)
+    
+    def convert_from(self, video):
+        self.converter.save(video)
+        return self.converter.convert_from(video)
+</code>
+</pre>
     <p>
         This scenario sounds familiar to you? Clients of classes depending upon Abstract versions of it instead of concrete ones? Yes...this is one of the SOLID principles called
         <strong>Dependency Inversion</strong>. You can read more about some of them <a href="https://gabrielslima.github.io/blog/post.html?id=13" target="blank">here</a>.
@@ -382,10 +409,70 @@ def convert():
         Another observation is that now the <strong>GifConverterService</strong> depends upon the Factory to have an instance of the dependency...Let's take a look on how
         this desing will look like injecting the dependecies into the GifConverterService, inverting this flow of initialization of dependencies.
     </p>
-    <!-- Append Code snippet example -->
     <img class="post-img" src="images/clean-code-clean-systems/SRPvsSoC-Dependency-Injection.svg" alt="GifConverService not being dependet upon the GifConvert and Factory neither. Dependecy is being injected by an assembler object/module">
     <p>
         Now the <strong>GifConverService</strong> classs will have it's dependencies initialized by an assembler, in this case, can be the controller itself...
     </p>
-    <!-- Append Code snippet example -->
+<pre class="brush: python">
+<code>from moviepy.editor import VideoFileClip
+from datetime import datetime
+from flask import Flask
+from flask import request
+from flask import send_file
+
+
+app = Flask(__name__)
+
+
+@app.route("/video_to_gif", methods=["POST"])
+def convert(): # ASSEMBLER OR INJECTOR
+    _CONVERTER_NAME = "gif_converter"
+    
+    _converter = ConverterFactory.create_converter_by(_CONVERTER_NAME)
+    _quota_service = QuotaService()
+    _converter_service = GifConverterService(
+        request.remote_addr,
+        _converter,
+        _quota_service
+    )
+
+    return send_file(
+        _converter_service.convert_from(request.data),
+        attachment_filename="video_to_gif.gif"
+    )
+
+
+class GifConverterService:
+    def __init__(self, ip_address, converter, quota_service): #INJECTED DEPENDENCIES
+        self.ip_address = ip_address
+        self.quota_service = quota_service
+        self.converter = converter
+    
+    def convert_from(self, video):
+        self.converter.save(video)
+        return self.converter.convert_from(video)
+
+
+class GifConverter:
+    def __init__(self):
+        self.timestamp = datetime.now().strftime("%Y%m%d-%H%m%s")
+        self.video = '/tmp/video-{}.mp4'.format(self.timestamp)
+    
+    def convert_from(self, video):        
+        __video = VideoFileClip(self.video).subclip(10, 20)
+        absolute_path = '/tmp/video-{}.gif'.format(self.timestamp)
+        __video.write_gif(absolute_path)
+        return absolute_path
+    
+    def save(self, video):
+        with open(self.video, 'wb') as _video_file:
+            _video_file.write(video)
+            _video_file.close()
+
+
+if __name__ == "__main__":
+    app.debug = False
+    app.run(port=5001)
+</code>
+</pre>
 </div>
