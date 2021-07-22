@@ -475,4 +475,21 @@ if __name__ == "__main__":
     app.run(port=5001)
 </code>
 </pre>
+    <h3>Types of Dependency Injection</h3>
+    <h4>Constructor Injection</h4>
+    <p>
+        The dependencies are provided on the instatiation of the object through an assembler module/object or injector module/object.
+    </p>
+    <h4>Setter Injection</h4>
+    <p>
+        The dependencies are provided through a public accessor exposed by the client class called <strong>setter</strong>. An assembler module/object or injector module/object
+        is still needed to provide the dependecies.
+    </p>
+    <h4>Interface Injection</h4>
+    <p>
+        The client class implements a interface that implies a <i>setter</i> interface for the dependecies. The dependencies are provided through a public accessor exposed by
+        the client class. An assembler module/object or injector module/object is still needed to provide the dependecies.
+    </p>
+    <h3>Cross-Cutting Concerns</h3>
+
 </div>
