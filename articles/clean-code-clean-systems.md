@@ -487,9 +487,13 @@ if __name__ == "__main__":
     </p>
     <h4>Interface Injection</h4>
     <p>
-        The client class implements a interface that implies a <i>setter</i> interface for the dependecies. The dependencies are provided through a public accessor exposed by
-        the client class. An assembler module/object or injector module/object is still needed to provide the dependecies.
+        The client class implements an interface that implies a <i>setter</i> public interface for the dependecies. The dependencies are provided through
+        the public accessor exposed by the client class. An assembler module/object or injector module/object is still needed to provide the dependecies.
     </p>
     <h3>Cross-Cutting Concerns</h3>
-
+    <p>
+        Are concerns, parts of the system, that are used by other parts of it. For instance logging can be used by one or more modules of our application.
+        The same goes for persistence, data validation and so on. Basically, they are aspects of a program ("secondary features") that are shared accross the
+        modules of the application or system and the same strategy of usage is applied to everyone.
+    </p>
 </div>
