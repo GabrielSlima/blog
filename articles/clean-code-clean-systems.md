@@ -492,9 +492,12 @@ if __name__ == "__main__":
     </p>
     <h3>Cross-Cutting Concerns</h3>
     <p>
-        Are concerns, parts of the system, that are used by other parts of it. For instance logging can be used by one or more modules of our application.
-        The same goes for persistence, data validation and so on. Basically, they are aspects of a program ("secondary features") that are shared accross the
-        modules of the application or system and the same strategy of usage is applied to everyone.
+        Are concerns, parts of the system, that are shared and used by other parts of it instead of creating one implementation for each module.
+        For instance logging can be used by one or more modules of our application. The same goes for persistence, data validation, monitoring,
+        exception handling, security and so on. Basically, they are aspects of a program ("secondary features") that are shared accross the
+        modules of the application or system and the same strategy of usage is applied to everyone. The following image represents an application with
+        common cross-cutting concerns.
     </p>
+    <img class="post-img" src="images/clean-code-clean-systems/SRPvsSoC-Cross-Cutting-Concerns.svg" alt="Cross Cutting concerns image">
     <h4>Aspect Oriented Programming</h4>
 </div>
