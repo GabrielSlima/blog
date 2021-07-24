@@ -492,12 +492,92 @@ if __name__ == "__main__":
     </p>
     <h3>Cross-Cutting Concerns</h3>
     <p>
-        Are concerns, parts of the system, that are shared and used by other parts of it instead of creating one implementation for each module.
-        For instance logging can be used by one or more modules of our application. The same goes for persistence, data validation, monitoring,
-        exception handling, security and so on. Basically, they are aspects of a program ("secondary features") that are shared accross the
-        modules of the application or system and the same strategy of usage is applied to everyone. The following image represents an application with
-        common cross-cutting concerns.
+        The motive for decomponsing a system or application into modules separated by concerns is to promote a loosely coupled desing, increase the maintainability and reusability
+        of each module and, at the same time, keep them free. This means that each module by applying encapsulation and providing well defined interfaces
+        have freedom to change the way their public interfaces work without affecting clients.
+    </p>
+    <p>
+        But some concerns are not actually part of the main logic of a determined concern and can be used by any other module inside the system or application. These are also known as
+        <strong>Cross Cutting Concerns</strong> because the cut accros other concerns of the system or application.
+    </p>
+    <p>
+        Cross Cutting concerns are parts of the system that are shared and used by other parts of it, instead of creating one implementation for each module.
+        For instance logging can be used by one or more modules of our application. The same goes for persistence, data validation, monitoring, caching,
+        error handling, security, transaction logic, business rules and so on.
+    </p>
+    <p>
+        Basically, they are not related to the business logic or business requirements. They are aspects of a program
+        ("secondary features") that are shared accross the modules of the application or system and the same strategy of usage is applied to everyone.
+        But this doesn't mean that they are not important. The following image represents an application with
+        common cross-cutting concerns that are not solved:
     </p>
     <img class="post-img" src="images/clean-code-clean-systems/SRPvsSoC-Cross-Cutting-Concerns.svg" alt="Cross Cutting concerns image">
+    <p>
+        The above diagram represents the following code:
+    </p>
+<pre class="brush: python">
+<code>from moviepy.editor import VideoFileClip
+from datetime import datetime
+from flask import Flask
+from flask import request
+from flask import send_file
+
+
+app = Flask(__name__)
+
+
+@app.route("/video_to_gif", methods=["POST"])
+def convert(): # ASSEMBLER OR INJECTOR
+    _CONVERTER_NAME = "gif_converter"
+    
+    _converter = ConverterFactory.create_converter_by(_CONVERTER_NAME)
+    _quota_service = QuotaService()
+    _converter_service = GifConverterService(
+        request.remote_addr,
+        _converter,
+        _quota_service
+    )
+
+    return send_file(
+        _converter_service.convert_from(request.data),
+        attachment_filename="video_to_gif.gif"
+    )
+
+
+class GifConverterService:
+    def __init__(self, ip_address, converter, quota_service): #INJECTED DEPENDENCIES
+        self.ip_address = ip_address
+        self.quota_service = quota_service
+        self.converter = converter
+    
+    def convert_from(self, video):
+        self.converter.save(video)
+        return self.converter.convert_from(video)
+
+
+class GifConverter:
+    def __init__(self):
+        self.timestamp = datetime.now().strftime("%Y%m%d-%H%m%s")
+        self.video = '/tmp/video-{}.mp4'.format(self.timestamp)
+    
+    def convert_from(self, video):        
+        __video = VideoFileClip(self.video).subclip(10, 20)
+        absolute_path = '/tmp/video-{}.gif'.format(self.timestamp)
+        __video.write_gif(absolute_path)
+        return absolute_path
+    
+    def save(self, video):
+        with open(self.video, 'wb') as _video_file:
+            _video_file.write(video)
+            _video_file.close()
+
+
+if __name__ == "__main__":
+    app.debug = False
+    app.run(port=5001)
+</code>
+</pre>
+    <!-- EXAMPLE OF DUPLICATED CACHING -->
     <h4>Aspect Oriented Programming</h4>
+
 </div>
