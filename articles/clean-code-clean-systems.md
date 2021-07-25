@@ -306,7 +306,7 @@ class GifConverterService:
         uploaded into our platform. 
     </p>
     <p>
-        But for some reason I've decided to load all videos from our database and sort them by uplaod date in runtime, instead of
+        But for some reason I've decided to load all videos from our database and sort them by upload date in runtime, instead of
         asking the database to order them for me. I can use Pandas to store those videos
         in a DataFrame and order them the way I want. The connection with the database is controlled by custom code. The
         Instances are made by custom code. Basically everything that is needed keep this application running is custom code.
@@ -494,14 +494,15 @@ if __name__ == "__main__":
     <p>
         The motive for decomponsing a system or application into modules separated by concerns is to promote a loosely coupled desing, increase the maintainability and reusability
         of each module and, at the same time, keep them free. This means that each module by applying encapsulation and providing well defined interfaces
-        have freedom to change the way their public interfaces work without affecting clients.
+        have freedom to change the way their public interfaces work internally without affecting clients.
     </p>
     <p>
         But some concerns are not actually part of the main logic of a determined concern and can be used by any other module inside the system or application. These are also known as
-        <strong>Cross Cutting Concerns</strong> because the cut accros other concerns of the system or application.
+        <strong>Cross Cutting Concerns</strong> because the cut across other concerns of the system or application.
     </p>
     <p>
-        Cross Cutting concerns are parts of the system that are shared and used by other parts of it, instead of creating one implementation for each module.
+        Cross Cutting concerns are parts of the system that are used by other parts of it. Instead of creating one implementation for each module, the existing
+        modules share the same solution for a requirement.
         For instance logging can be used by one or more modules of our application. The same goes for persistence, data validation, monitoring, caching,
         error handling, security, transaction logic, business rules and so on.
     </p>
@@ -516,65 +517,57 @@ if __name__ == "__main__":
         The above diagram represents the following code:
     </p>
 <pre class="brush: python">
-<code>from moviepy.editor import VideoFileClip
-from datetime import datetime
+<code>from src.logger.logger_service import LoggerService
+from src.factories.converter_factory import ConverterFactory
+from src.services.quota_service import QuotaService
+from src.services.gif_converter_service import GifConverterService
 from flask import Flask
 from flask import request
 from flask import send_file
 
-
 app = Flask(__name__)
+_logger = LoggerService()
 
 
 @app.route("/video_to_gif", methods=["POST"])
-def convert(): # ASSEMBLER OR INJECTOR
+def convert():
+    _logger.log(
+        "Request received from => {} - payload size: {}".format(
+            request.remote_addr,
+            "{} bytes".format(len(request.data))
+        ),
+        "info"
+    )
+
     _CONVERTER_NAME = "gif_converter"
-    
+
     _converter = ConverterFactory.create_converter_by(_CONVERTER_NAME)
     _quota_service = QuotaService()
+
     _converter_service = GifConverterService(
         request.remote_addr,
         _converter,
         _quota_service
     )
 
-    return send_file(
-        _converter_service.convert_from(request.data),
-        attachment_filename="video_to_gif.gif"
-    )
-
-
-class GifConverterService:
-    def __init__(self, ip_address, converter, quota_service): #INJECTED DEPENDENCIES
-        self.ip_address = ip_address
-        self.quota_service = quota_service
-        self.converter = converter
-    
-    def convert_from(self, video):
-        self.converter.save(video)
-        return self.converter.convert_from(video)
-
-
-class GifConverter:
-    def __init__(self):
-        self.timestamp = datetime.now().strftime("%Y%m%d-%H%m%s")
-        self.video = '/tmp/video-{}.mp4'.format(self.timestamp)
-    
-    def convert_from(self, video):        
-        __video = VideoFileClip(self.video).subclip(10, 20)
-        absolute_path = '/tmp/video-{}.gif'.format(self.timestamp)
-        __video.write_gif(absolute_path)
-        return absolute_path
-    
-    def save(self, video):
-        with open(self.video, 'wb') as _video_file:
-            _video_file.write(video)
-            _video_file.close()
+    _logger.log("Converting {}".format("{} bytes".format(len(request.data))), "info")
+    gif = _converter_service.convert_from(request.data)
+    _logger.log("{} converted to Gif".format("{} bytes".format(len(request.data))), "info")
+    return send_file(gif, attachment_filename="video_to_gif.gif")
 
 
 if __name__ == "__main__":
     app.debug = False
     app.run(port=5001)
+</code>
+</pre>
+<pre>
+<code>* Running on http://127.0.0.1:5001/ (Press CTRL+C to quit)
+Request received from => 127.0.0.1 - payload size: 731649 bytes
+Converting 731649 bytes
+MoviePy - Building file /tmp/video-20210725-11071627225066.gif with imageio.
+731649 bytes converted to Gif
+127.0.0.1 - - [25/Jul/2021 11:58:03] "POST /video_to_gif HTTP/1.1" 200 -
 </code>
 </pre>
     <!-- EXAMPLE OF DUPLICATED CACHING -->
