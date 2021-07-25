@@ -561,6 +561,11 @@ if __name__ == "__main__":
     app.run(port=5001)
 </code>
 </pre>
+
+<pre class="code-snippet type-bash" style="margin-top: 0;">curl -X POST -H &quot;Content-Type: text/xml&quot; --data-binary &quot;@./video.mp4&quot; \
+&gt; http://localhost:5001/video_to_gif --output ./conversions/conversion-3.gif
+</pre>
+
 <pre>
 <code>* Running on http://127.0.0.1:5001/ (Press CTRL+C to quit)
 Request received from => 127.0.0.1 - payload size: 731649 bytes
