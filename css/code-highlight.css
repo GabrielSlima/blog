@@ -80,3 +80,11 @@
 .bash-keyword {color: var(--bash-keyword);}
 
 .code-snippet-line {display: block;}
+
+.plain-text {
+    background: rgba(0,0,0,.8);
+    color: white!important;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    padding: 15px;
+}

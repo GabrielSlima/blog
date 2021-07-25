@@ -575,7 +575,83 @@ MoviePy - Building file /tmp/video-20210725-11071627225066.gif with imageio.
 127.0.0.1 - - [25/Jul/2021 11:58:03] "POST /video_to_gif HTTP/1.1" 200 -
 </code>
 </pre>
-    <!-- EXAMPLE OF DUPLICATED CACHING -->
+    <p>
+        This type of scnearion is very common. I confess that I myself have been writing code like this for a while...But what are the problems or potential
+        problems here?
+    </p>
+    <h4>Duplicated Code</h4>
+    <p>
+        Look how many times the statement <i>_logger.info</i> is called...this statement can be spread all over the application affecting many other concerns
+        inside the application or sytstem, literally duplicated in other parts. 
+    </p>
+    <p>
+        I have a experience to share with about this kind of scenario. I worked in a modularized Java project with
+        around 8-9 modules. The modules where supposed to be Microservice but this is a topic for another article.
+    </p>
+    <p>
+        The point is that one of the modules was a <i>log</i> module. As you can guess, it was the module that group elements responsible
+        for the logs of the entire system.
+    </p>
+    <p>
+        This <i>log module</i> was supposed to provide interfaces for logStreams. Basically the logs where put into a Kafka Topic and store into Elasticsearch indexes
+        based on their type (trace, business rules and so on) by the Logstash.
+    </p>
+    <p>
+        Due to some performance problems (this can be another article too) the team decided to prioritize a new requirement for logStreaming. Choose which "Microservice"
+        to produce log streams and what type of log streams to produce. 
+    </p>
+    <p>
+        The requirements were "simple":
+    </p>
+<pre class="plain-text">Possibility of choosing what "Microservice" to produce log streams
+Possibility of choosing log streams output for all "Microservices"
+Possibility of choosing what type of log streams to produce: Trace, business rules
+Possibility of choosing basic verbosity levels for each of configuration
+All the configuration should be made directly into a specific document on the database
+</pre>
+    <p>
+        The first thing that came into my mind when we defined the above requirements was to map all the places those interfaces from the <i>logs module</i>
+        were being used. To summarize, they were being used everywhere...
+    </p>
+    <p>
+        To satisfy the requirements the module would have to know <i>who is calling</i> and <i>what type of log stream</i> is
+        being produced. Now the big question is: What solution will satisfy all the requirements and will not take forever
+        to be applied by having to change <strong>every log call</strong> into the application?
+    </p>
+    <p>
+        The problem was solved in a not very elegant way, I can assure you that.
+    </p>
+    <p>
+        The <i>code duplication</i> was so hard that the possibilities of adding new code or changing
+        anything without having to change the entire applicationwere small.
+        Almost all solutions (without a pattern) I thought resulted in changing all places. 
+    </p>
+    <p>
+        The one that was chosen involved to customize the type of log and verbosity for each module (that was supposed to be microservices)
+        into the database and because the <i>logs module</i> was more of a lib inside the system, consider the package path of the caller
+        to identify the "Microservice". 
+    </p>
+    <p>
+        I obviously don't recommend this approach. This is neither scalable nor a clean approach...
+    </p>
+    <h4>Mixing Concerns</h4>
+    <p>
+        I don't know if you realized but logging, caching, security, business rules are "secondary" concerns
+        compared to the business requirements.
+        <br>
+        Mixing business requirements with "secondary" requirements is not recommend. the business requirements
+        tend to be prioritized because of a series of reasons, one of the them is because
+        they are kind of required to deliver a piece of the software. They can be considere more important than
+        a log for instance.
+    </p>
+    <p>
+        Please, I'm not saying that logs or performance logs or any kind of monitoring is not important. I'm
+        giving you an example of a scenario where these concerns are not the priority... 
+    </p>
+    <p>
+        And also, take a look at the last code used as an example. Look how hard is to separate what is business logic
+        and what is not...
+    </p>
     <h4>Aspect Oriented Programming</h4>
 
 </div>
