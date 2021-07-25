@@ -585,19 +585,21 @@ MoviePy - Building file /tmp/video-20210725-11071627225066.gif with imageio.
         inside the application or sytstem, literally duplicated in other parts. 
     </p>
     <p>
-        I have a experience to share with about this kind of scenario. I worked in a modularized Java project with
-        around 8-9 modules. The modules where supposed to be Microservice but this is a topic for another article.
+        I have an experience to share with you about this kind of scenario. I worked in a modularized Java project with
+        around 8-9 modules. The modules were supposed to be Microservice but this is a topic for another article.
     </p>
     <p>
-        The point is that one of the modules was a <i>log</i> module. As you can guess, it was the module that group elements responsible
-        for the logs of the entire system.
+        The point is that one of the modules was a <i>log module</i>. As you can guess, it was the module that was 
+        supposed to group elements responsible for the logs of the entire application.
     </p>
     <p>
-        This <i>log module</i> was supposed to provide interfaces for logStreams. Basically the logs where put into a Kafka Topic and store into Elasticsearch indexes
+        This <i>log module</i> was supposed to provide interfaces for log streams.
+        Basically the logs where put into a Kafka Topic and then stored into Elasticsearch indexes
         based on their type (trace, business rules and so on) by the Logstash.
     </p>
     <p>
-        Due to some performance problems (this can be another article too) the team decided to prioritize a new requirement for logStreaming. Choose which "Microservice"
+        Due to some performance problems (this can be another article too) the team decided to prioritize a
+        new requirement for log streaming. Disable/Enable log streams and the possibility of choosing which "Microservice"
         to produce log streams and what type of log streams to produce. 
     </p>
     <p>
@@ -610,7 +612,8 @@ Possibility of choosing basic verbosity levels for each of configuration
 All the configuration should be made directly into a specific document on the database
 </pre>
     <p>
-        The first thing that came into my mind when we defined the above requirements was to map all the places those interfaces from the <i>logs module</i>
+        The first thing that came into my mind when we defined the above requirements was to map all
+        the places in which those interfaces from the <i>logs module</i>
         were being used. To summarize, they were being used everywhere...
     </p>
     <p>
@@ -623,7 +626,7 @@ All the configuration should be made directly into a specific document on the da
     </p>
     <p>
         The <i>code duplication</i> was so hard that the possibilities of adding new code or changing
-        anything without having to change the entire applicationwere small.
+        anything without having to change the entire application were small.
         Almost all solutions (without a pattern) I thought resulted in changing all places. 
     </p>
     <p>
@@ -652,6 +655,28 @@ All the configuration should be made directly into a specific document on the da
         And also, take a look at the last code used as an example. Look how hard is to separate what is business logic
         and what is not...
     </p>
-    <h4>Aspect Oriented Programming</h4>
-
+    <h3>Aspect Oriented Programming</h3
+    <p>
+        So now you know what kind of problems you may have by not solving cross-cutting concerns, which are
+        <strong>code duplication</strong> and <i>business logic mixed with non-business logic</i>.
+    </p>
+    <p>
+        But you may be asking yourself: Ok, but what is the solution? One of them is using <strong>Aspect Oriented Programming</strong>.
+        I woun't too much into this today but I want you to have an ideia of what it ts...
+    </p>
+    <p>
+        Aspect Oriented Programming is a program paradigm that allows <strong>separation of cross-cutting concerns</strong>.
+        New behaviors are added to existing code without actuallly chaning it and mixing up business logic with non-business logic.
+        These <i>additional behaviors</i> are also called <strong>advices</strong>
+    </p>
+    <p>
+        We can specific when a certain advice is executed by using <i>pointcuts</i>. Pointcut is a set of join cuts that specifyes
+        when a certain advice will be executed. It's like a query. So in other words, we can decided when an additional behavior (advice)
+        will be applied to a specfic part of the code by specifying them into what is called pointcuts.
+        In this way the cross-cutting concerns are keept in one place and are used by expressions.
+    </p>
+    <p>
+        In Python AOP can be achieved by using Decoratos. A desing pattern that allow us to add additional behavior to objects without chaning
+        the code.
+    </p>
 </div>
