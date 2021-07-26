@@ -676,7 +676,142 @@ All the configuration should be made directly into a specific document on the da
         In this way the cross-cutting concerns are keept in one place and are used by expressions.
     </p>
     <p>
-        In Python AOP can be achieved by using Decoratos. A desing pattern that allow us to add additional behavior to objects without chaning
+        In Python AOP can be achieved by using Decorators. A desing pattern that allow us to add additional behavior to functions without changing
         the code.
     </p>
+<pre class="brush: python">
+<code>from src.factories.converter_factory import ConverterFactory
+from src.services.quota_service import QuotaService
+from src.services.gif_converter_service import GifConverterService
+from src.aspects.loggers.incoming_request import log_stream_incoming_request
+from flask import Flask
+from flask import request
+from flask import send_file
+
+
+app = Flask(__name__)
+
+
+@app.route("/video_to_gif", methods=["POST"])
+@log_stream_incoming_request #POINTCUT
+def convert():
+    _CONVERTER_NAME = "gif_converter"
+    _converter = ConverterFactory.create_converter_by(_CONVERTER_NAME)
+    _quota_service = QuotaService()
+
+    _converter_service = GifConverterService(
+        request.remote_addr,
+        _converter,
+        _quota_service
+    )
+
+    gif = _converter_service.convert_from(request.data)
+    return send_file(gif, attachment_filename="video_to_gif.gif")
+
+
+if __name__ == "__main__":
+    app.debug = False
+    app.run(port=5001)
+</code>
+</pre>
+<pre class="brush: python">
+<code>from src.aspects.loggers.logger_service import LoggerService
+from functools import wraps
+from flask import request
+
+
+def log_stream_incoming_request(request_handler):
+    _logger = LoggerService("request")
+
+    @wraps(request_handler)
+    def _request_handler(*args, **kwargs): #ADVICE
+        _logger.log(
+            "Request received from => {} - payload size: {}".format(
+                request.remote_addr,
+                "{} bytes".format(len(request.data))
+            ),
+            "info"
+        )
+        return request_handler(*args, **kwargs)
+    return _request_handler
+</code>
+</pre>
+<pre class="brush: python">
+<code>from src.aspects.loggers.converter import log_stream_conversion_process
+
+
+class GifConverterService:
+    def __init__(self, ip_address, converter, quota_service):
+        self.ip_address = ip_address
+        self.quota_service = quota_service
+        self.converter = converter
+
+    @log_stream_conversion_process #POINTCUT
+    def convert_from(self, video):
+        self.converter.save(video)
+        return self.converter.convert_from(video)
+</code>
+</pre>
+<pre class="brush: python">
+<code>from src.aspects.loggers.logger_service import LoggerService
+from functools import wraps
+from flask import request
+
+
+def log_stream_incoming_request(request_handler):
+    _logger = LoggerService("request")
+
+    @wraps(request_handler)
+    def _request_handler(*args, **kwargs):
+        _logger.log(
+            "Request received from => {} - payload size: {}".format(
+                request.remote_addr,
+                "{} bytes".format(len(request.data))
+            ),
+            "info"
+        )
+        return request_handler(*args, **kwargs)
+    return _request_handler
+</code>
+</pre>
+<pre>
+<code> * Running on http://127.0.0.1:5001/ (Press CTRL+C to quit)
+Request received from => 127.0.0.1 - payload size: 731649 bytes
+Converting 731649 bytes...
+MoviePy - Building file /tmp/video-20210726-10071627305017.gif with imageio.
+731649 bytes converted to Gif!
+</code>
+</pre>
+<pre class="code-snippet type-bash" style="margin-top: 0;">tree
+<font color="#5555FF"><b>.</b></font>
+├── requirements
+├── <font color="#5555FF"><b>src</b></font>
+│   ├── <font color="#5555FF"><b>aspects</b></font>
+│   │   └── <font color="#5555FF"><b>loggers</b></font>
+│   │       ├── converter.py
+│   │       ├── incoming_request.py
+│   │       ├── logger_service.py
+│   │       └── <font color="#5555FF"><b>__pycache__</b></font>
+│   │           └── logger_service.cpython-36.pyc
+│   ├── <font color="#5555FF"><b>converters</b></font>
+│   │   ├── gif_converter.py
+│   │   └── <font color="#5555FF"><b>__pycache__</b></font>
+│   │       └── gif_converter.cpython-36.pyc
+│   ├── <font color="#5555FF"><b>factories</b></font>
+│   │   ├── converter_factory.py
+│   │   └── <font color="#5555FF"><b>__pycache__</b></font>
+│   │       └── converter_factory.cpython-36.pyc
+│   └── <font color="#5555FF"><b>services</b></font>
+│       ├── gif_converter_service.py
+│       ├── <font color="#5555FF"><b>__pycache__</b></font>
+│       │   ├── gif_converter_service.cpython-36.pyc
+│       │   └── quota_service.cpython-36.pyc
+│       └── quota_service.py
+├── <font color="#5555FF"><b>tests</b></font>
+│   ├── __init__.py
+│   └── test_without_aop.py
+└── with-aop.py
+
+11 directories, 16 files
+</pre>
 </div>
