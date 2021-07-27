@@ -694,7 +694,7 @@ app = Flask(__name__)
 
 @app.route("/video_to_gif", methods=["POST"])
 @log_stream_incoming_request #POINTCUT
-def convert():
+def convert(): #JOIN POINT (IN THIS CASE, THIS METHODS IS THE OPPURTUNITY FOR ADDING AN ADDITIONAL BEHAVIOR)
     _CONVERTER_NAME = "gif_converter"
     _converter = ConverterFactory.create_converter_by(_CONVERTER_NAME)
     _quota_service = QuotaService()
@@ -720,11 +720,11 @@ from functools import wraps
 from flask import request
 
 
-def log_stream_incoming_request(request_handler):
+def log_stream_incoming_request(request_handler): #ADVICE
     _logger = LoggerService("request")
 
     @wraps(request_handler)
-    def _request_handler(*args, **kwargs): #ADVICE
+    def _request_handler(*args, **kwargs):
         _logger.log(
             "Request received from => {} - payload size: {}".format(
                 request.remote_addr,
@@ -747,7 +747,7 @@ class GifConverterService:
         self.converter = converter
 
     @log_stream_conversion_process #POINTCUT
-    def convert_from(self, video):
+    def convert_from(self, video): #JOIN POINT (IN THIS CASE, THIS METHODS IS THE OPPURTUNITY FOR ADDING AN ADDITIONAL BEHAVIOR)
         self.converter.save(video)
         return self.converter.convert_from(video)
 </code>
@@ -758,7 +758,7 @@ from functools import wraps
 from flask import request
 
 
-def log_stream_incoming_request(request_handler):
+def log_stream_incoming_request(request_handler): #ADVICE
     _logger = LoggerService("request")
 
     @wraps(request_handler)
@@ -782,7 +782,7 @@ MoviePy - Building file /tmp/video-20210726-10071627305017.gif with imageio.
 731649 bytes converted to Gif!
 </code>
 </pre>
-<pre class="code-snippet type-bash" style="margin-top: 0;">tree
+<pre class="code-snippet type-bash" style="margin-top: 0;">tree -I __pycache__
 <font color="#5555FF"><b>.</b></font>
 ├── requirements
 ├── <font color="#5555FF"><b>src</b></font>
@@ -790,28 +790,18 @@ MoviePy - Building file /tmp/video-20210726-10071627305017.gif with imageio.
 │   │   └── <font color="#5555FF"><b>loggers</b></font>
 │   │       ├── converter.py
 │   │       ├── incoming_request.py
-│   │       ├── logger_service.py
-│   │       └── <font color="#5555FF"><b>__pycache__</b></font>
-│   │           └── logger_service.cpython-36.pyc
+│   │       └── logger_service.py
 │   ├── <font color="#5555FF"><b>converters</b></font>
-│   │   ├── gif_converter.py
-│   │   └── <font color="#5555FF"><b>__pycache__</b></font>
-│   │       └── gif_converter.cpython-36.pyc
+│   │   └── gif_converter.py
 │   ├── <font color="#5555FF"><b>factories</b></font>
-│   │   ├── converter_factory.py
-│   │   └── <font color="#5555FF"><b>__pycache__</b></font>
-│   │       └── converter_factory.cpython-36.pyc
+│   │   └── converter_factory.py
 │   └── <font color="#5555FF"><b>services</b></font>
 │       ├── gif_converter_service.py
-│       ├── <font color="#5555FF"><b>__pycache__</b></font>
-│       │   ├── gif_converter_service.cpython-36.pyc
-│       │   └── quota_service.cpython-36.pyc
 │       └── quota_service.py
 ├── <font color="#5555FF"><b>tests</b></font>
 │   ├── __init__.py
 │   └── test_without_aop.py
 └── with-aop.py
 
-11 directories, 16 files
-</pre>
+7 directories, 11 files</pre>
 </div>
