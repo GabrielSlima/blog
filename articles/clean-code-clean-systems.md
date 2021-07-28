@@ -493,8 +493,8 @@ if __name__ == "__main__":
     <h3>Cross-Cutting Concerns</h3>
     <p>
         The motive for decomponsing a system or application into modules separated by concerns is to promote a loosely coupled desing, increase the maintainability and reusability
-        of each module and, at the same time, keep them free. This means that each module by applying encapsulation and providing well defined interfaces
-        have freedom to change the way their public interfaces work internally without affecting clients.
+        of each module and, at the same time, keep them free. This means that each module by applying encapsulation and abstraction providing well defined interfaces
+        has freedom to change the way their public interfaces work internally without affecting clients.
     </p>
     <p>
         But some concerns are not actually part of the main logic of a determined concern and can be used by any other module inside the system or application. These are also known as
@@ -509,12 +509,14 @@ if __name__ == "__main__":
     <p>
         Basically, they are not related to the business logic or business requirements. They are aspects of a program
         ("secondary features") that are shared accross the modules of the application or system and the same strategy of usage is applied to everyone.
-        But this doesn't mean that they are not important. The following image represents an application with
-        common cross-cutting concerns that are not solved:
+        But this doesn't mean that they are not important.
+    </p>
+    <p>
+        The following image represents an application with very common cross-cutting concerns that are not solved:
     </p>
     <img class="post-img" src="images/clean-code-clean-systems/SRPvsSoC-Cross-Cutting-Concerns.svg" alt="Cross Cutting concerns image">
     <p>
-        The above diagram represents the following code:
+        Translating the diagram above into code and of course not applying a super crazy level of verbosity, we would come up with the following code:
     </p>
 <pre class="brush: python">
 <code>from src.logger.logger_service import LoggerService
@@ -561,7 +563,9 @@ if __name__ == "__main__":
     app.run(port=5001)
 </code>
 </pre>
-
+    <p>
+        Running and executing the following request to convert a MP4 video on my own computer would result on the following log output:
+    </p>
 <pre class="code-snippet type-bash" style="margin-top: 0;">curl -X POST -H &quot;Content-Type: text/xml&quot; --data-binary &quot;@./video.mp4&quot; \
 &gt; http://localhost:5001/video_to_gif --output ./conversions/conversion-3.gif
 </pre>
@@ -575,11 +579,31 @@ MoviePy - Building file /tmp/video-20210725-11071627225066.gif with imageio.
 127.0.0.1 - - [25/Jul/2021 11:58:03] "POST /video_to_gif HTTP/1.1" 200 -
 </code>
 </pre>
+    <h4>Project Tree</h4>
+<pre class="code-snippet type-bash" style="margin-top: 0;">tree -I __pycache__
+<font color="#5555FF"><b>.</b></font>
+├── requirements
+├── <font color="#5555FF"><b>src</b></font>
+│   ├── <font color="#5555FF"><b>converters</b></font>
+│   │   └── gif_converter.py
+│   ├── <font color="#5555FF"><b>factories</b></font>
+│   │   └── converter_factory.py
+│   ├── <font color="#5555FF"><b>logger</b></font>
+│   │   └── logger_service.py
+│   └── <font color="#5555FF"><b>services</b></font>
+│       ├── gif_converter_service.py
+│       └── quota_service.py
+├── <font color="#5555FF"><b>tests</b></font>
+│   ├── __init__.py
+│   └── test_without_aop.py
+└── without-aop.py
+
+6 directories, 9 files</pre>
     <p>
-        This type of scnearion is very common. I confess that I myself have been writing code like this for a while...But what are the problems or potential
+        This type of scenario is very common. I confess that I myself have been writing code like this for a while...But what are the problems or potential
         problems here?
     </p>
-    <h4>Duplicated Code</h4>
+    <h4>Code Duplication</h4>
     <p>
         Look how many times the statement <i>_logger.info</i> is called...this statement can be spread all over the application affecting many other concerns
         inside the application or sytstem, literally duplicated in other parts. 
@@ -598,7 +622,7 @@ MoviePy - Building file /tmp/video-20210725-11071627225066.gif with imageio.
         based on their type (trace, business rules and so on) by the Logstash.
     </p>
     <p>
-        Due to some performance problems (this can be another article too) the team decided to prioritize a
+        Due to some performance issues (this can be another article too) the team decided to prioritize a
         new requirement for log streaming. Disable/Enable log streams and the possibility of choosing which "Microservice"
         to produce log streams and what type of log streams to produce. 
     </p>
@@ -617,7 +641,7 @@ All the configuration should be made directly into a specific document on the da
         were being used. To summarize, they were being used everywhere...
     </p>
     <p>
-        To satisfy the requirements the module would have to know <i>who is calling</i> and <i>what type of log stream</i> is
+        To satisfy these requirements the module would have to know <i>who is calling</i> and <i>what type of log stream</i> is
         being produced. Now the big question is: What solution will satisfy all the requirements and will not take forever
         to be applied by having to change <strong>every log call</strong> into the application?
     </p>
@@ -637,14 +661,14 @@ All the configuration should be made directly into a specific document on the da
     <p>
         I obviously don't recommend this approach. This is neither scalable nor a clean approach...
     </p>
-    <h4>Mixing Concerns</h4>
+    <h4>Mixing Up Concerns</h4>
     <p>
         I don't know if you realized but logging, caching, security, business rules are "secondary" concerns
         compared to the business requirements.
         <br>
-        Mixing business requirements with "secondary" requirements is not recommend. the business requirements
-        tend to be prioritized because of a series of reasons, one of the them is because
-        they are kind of required to deliver a piece of the software. They can be considere more important than
+        Mixing up business requirements with "secondary" requirements is not a good practice. The business requirements
+        tend to be prioritized because of a series of reasons, one of them is because
+        they are kind of required to deliver a piece of the software. They can be considered (and they are in the most part) more important than
         a log for instance.
     </p>
     <p>
@@ -655,30 +679,52 @@ All the configuration should be made directly into a specific document on the da
         And also, take a look at the last code used as an example. Look how hard is to separate what is business logic
         and what is not...
     </p>
-    <h3>Aspect Oriented Programming</h3
+    <h3>Aspect Oriented Programming</h3>
     <p>
-        So now you know what kind of problems you may have by not solving cross-cutting concerns, which are
-        <strong>code duplication</strong> and <i>business logic mixed with non-business logic</i>.
+        So now you know what kind of problems you may have by not solving cross-cutting concerns, which are:
+        <strong>code duplication</strong> and <strong>business logic mixed up with non-business logic</strong>.
     </p>
     <p>
         But you may be asking yourself: Ok, but what is the solution? One of them is using <strong>Aspect Oriented Programming</strong>.
-        I woun't too much into this today but I want you to have an ideia of what it ts...
+        I won't get too much into this today but I want you to have an ideia of what it ts...
     </p>
     <p>
         Aspect Oriented Programming is a program paradigm that allows <strong>separation of cross-cutting concerns</strong>.
+        This means that those concerns that a shared by other modules of the application/system are modularized and used properly.
         New behaviors are added to existing code without actuallly chaning it and mixing up business logic with non-business logic.
-        These <i>additional behaviors</i> are also called <strong>advices</strong>
+    </p>
+    <h4>Aspect</h4>
+    <p>
+        An Aspect represents a cross-cutting concern. An Aspect can have one or more adivices.
+    </p>
+    <h4>Advice</h4>
+    <p>
+        Is a behavior that will be applied in runtime at some point of the program specified by a pointcut.
+    </p>
+    <h4>Pointcut</h4>
+    <p>
+        Is an expression that specifies when and where a behavior (Advice) will be applied and executed. A pointcut can be
+        a set of join points, meaning that an advice will be applied in one or more points of the program.
+    </p>
+    <h4>Join Point</h4>
+    <p>
+        Is a point on the program where an advice can be joined and executed. This can be a method being called, an error being thrown or when chaning the value
+        of a variable.
     </p>
     <p>
-        We can specific when a certain advice is executed by using <i>pointcuts</i>. Pointcut is a set of join cuts that specifyes
-        when a certain advice will be executed. It's like a query. So in other words, we can decided when an additional behavior (advice)
-        will be applied to a specfic part of the code by specifying them into what is called pointcuts.
+        Every join point is a <strong>possibility</strong> for an advice to be applied, this doesn't mean that in every join point will have an
+        pointcut specifying where to apply an advice...
+    </p>
+    <p>
+        We can specific when a certain advice is executed by using <i>pointcuts</i>. In other words, we can decided when an additional behavior (advice)
+        will be applied to a specfic part of the code by using pointcuts.
         In this way the cross-cutting concerns are keept in one place and are used by expressions.
     </p>
     <p>
-        In Python AOP can be achieved by using Decorators. A desing pattern that allow us to add additional behavior to functions without changing
-        the code.
+        In Python AOP can be achieved by using Decorators, a desing pattern that allow us to add additional behavior to functions without changing
+        their code. Let's refact the last example and apply the AOP into the code:
     </p>
+    <h4>gif_converter_controller.py</h4>
 <pre class="brush: python">
 <code>from src.factories.converter_factory import ConverterFactory
 from src.services.quota_service import QuotaService
@@ -714,6 +760,7 @@ if __name__ == "__main__":
     app.run(port=5001)
 </code>
 </pre>
+    <h4>src.aspects.loggers.incoming_request.py</h4>
 <pre class="brush: python">
 <code>from src.aspects.loggers.logger_service import LoggerService
 from functools import wraps
@@ -736,6 +783,7 @@ def log_stream_incoming_request(request_handler): #ADVICE
     return _request_handler
 </code>
 </pre>
+    <h4>src.converters.gif_converter.py</h4>
 <pre class="brush: python">
 <code>from src.aspects.loggers.converter import log_stream_conversion_process
 
@@ -752,26 +800,29 @@ class GifConverterService:
         return self.converter.convert_from(video)
 </code>
 </pre>
+    <h4>src.aspects.loggers.converter.py</h4>
 <pre class="brush: python">
 <code>from src.aspects.loggers.logger_service import LoggerService
-from functools import wraps
 from flask import request
 
 
-def log_stream_incoming_request(request_handler): #ADVICE
-    _logger = LoggerService("request")
+def log_stream_conversion_process(converter):
+    _logger = LoggerService("converter")
 
-    @wraps(request_handler)
-    def _request_handler(*args, **kwargs):
+    def _converter(*args, **kwargs):
         _logger.log(
-            "Request received from => {} - payload size: {}".format(
-                request.remote_addr,
-                "{} bytes".format(len(request.data))
-            ),
+            "Converting {}...".format("{} bytes".format(len(request.data))),
             "info"
         )
-        return request_handler(*args, **kwargs)
-    return _request_handler
+        video = converter(*args, **kwargs)
+
+        _logger.log(
+            "{} converted to Gif!".format("{} bytes".format(len(request.data))),
+            "info"
+        )
+        return video
+
+    return _converter
 </code>
 </pre>
 <pre>
@@ -782,6 +833,13 @@ MoviePy - Building file /tmp/video-20210726-10071627305017.gif with imageio.
 731649 bytes converted to Gif!
 </code>
 </pre>
+    <p>
+        The same log output can be achieved and the business logic code will be kept separated from cross-cutting concerns. To apply them,
+        using a pointcut is enough and the logic to apply the desired cross-cutting concern is kept only in one place....
+    </p>
+    <p>
+        These examples of AOP can be found <a href="https://github.com/GabrielSlima/Python-Examples/tree/master/aspect-oriented-programming" target="blank">here</a>. The tree of this application with AOP is the following:
+    </p>
 <pre class="code-snippet type-bash" style="margin-top: 0;">tree -I __pycache__
 <font color="#5555FF"><b>.</b></font>
 ├── requirements
