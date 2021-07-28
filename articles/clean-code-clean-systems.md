@@ -871,6 +871,5 @@ MoviePy - Building file /tmp/video-20210726-10071627305017.gif with imageio.
     <p>
         Prefer separating domain logic from aspect-like concerns and apply an aspect when it's need using AOP meachanisms...
     </p>
-
     Good Luck!
 </div>
