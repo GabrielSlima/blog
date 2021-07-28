@@ -862,4 +862,15 @@ MoviePy - Building file /tmp/video-20210726-10071627305017.gif with imageio.
 └── with-aop.py
 
 7 directories, 11 files</pre>
+    <h3>Final Words</h3>
+    <p>
+        A system/application that doesn't apply SoC effectivelly struggles (or will eventually) with the agility for satisfying requirements.
+        The purpouse of creating a desing with decoupled modules separated by concerns is to provide decentralized management and
+        make the process of decision making faster.
+    </p>
+    <p>
+        Prefer separating domain logic from aspect-like concerns and apply an aspect when it's need using AOP meachanisms...
+    </p>
+
+    Good Luck!
 </div>
