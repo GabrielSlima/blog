@@ -865,7 +865,7 @@ MoviePy - Building file /tmp/video-20210726-10071627305017.gif with imageio.
     <h3>Final Words</h3>
     <p>
         A system/application that doesn't apply SoC effectivelly struggles (or will eventually) with the agility for satisfying requirements.
-        The purpouse of creating a desing with decoupled modules separated by concerns is to provide decentralized management and
+        The purpose of creating a desing with decoupled modules separated by concerns is to provide decentralized management and
         make the process of decision making faster.
     </p>
     <p>
