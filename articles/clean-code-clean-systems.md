@@ -2,10 +2,13 @@
     <p>
         So far you have seen how to create clean and meaningful code using tips, principles and some desing patterns for creating <a href="https://gabrielslima.github.io/blog/post.html?id=6" target="blank">clean and meaningful names</a>
         for your functions, variables and classes. How to create <a href="https://gabrielslima.github.io/blog/post.html?id=11" target="blank">clean and robust code</a>. How to create <a href="https://gabrielslima.github.io/blog/post.html?id=13" target="blank"> clean classes</a> using principles like
-        SOLID to create OOP desings with High-Cohesion and loosely-coupled objects.
+        SOLID to promote OOP desings with High-Cohesion and Loosely-Coupled objects.
+        <br>
+        These are super important articles and I strongly recommend you reading them...we've talked about the organization of the functions,
+        variables, classes and source-files. 
     </p>
     <p>
-        These are super important articles and I strongly recommend you reading them...we've talked about the organization of our functions , variables, classes and source-files. Welcome to the PewdiePie's favourite blog about Software Engineering and 
+        Welcome to the PewdiePie's favourite blog about Software Engineering and 
         Today's topic is about the organization of our applications and systems, I mean, <strong>how to create clean and meaningful systems or applications</strong>.
     </p>
     <p>
@@ -32,7 +35,8 @@
     </p>
     <h4>Architectural Desing Patterns</h4>
     <p>
-        Concerns can be separated into Layers. For instance the MVC Pattern. It sepatares the system/application into 3 layers considering that services, repositories, DAO and so on are patterns used to compose 2 of the 3 layers it has.
+        Concerns can be separated into Layers. For instance the MVC Pattern. It sepatares the system/application into 3 layers considering that services,
+        repositories, DAO and so on are patterns used to compose 2 of those 3 layers.
     </p>
     <h4>Static Web Page</h4>
     <p>
@@ -40,12 +44,14 @@
     </p>
     <h3>SoC: Separation of Concerns vs SRP: Single Responsibility Principle</h3>
     <p>
-        For a moment I thought these two were the same...maybe you did to. The fact is that the SRP is a principle that is about <strong>how many things our classes and modules are responsible</strong> and the SoC is about <strong>what things a set of elements of a module is responsible for</strong>.
+        For a moment I thought these two were the same...maybe you did to. The fact is that the SRP is a principle that is about
+        <strong>how many things our classes and modules are responsible for</strong> and the SoC is about <strong>what things a set of elements of a module is responsible for</strong>.
         A module can be anything inside the application. It can be a Microservice, a layer from a Architectural point of view, a package, source files, classes...
         The SRP can be be used as a guideline for those things too <strong>but</strong> it is intended to be used as a guideline for designing classes and modules (source files in some promming languages, for instance, python).
     </p>
     <p>
-        Imagine that we are creating a <strong>video-to-gif converter platform</strong>...Every anonymous user can convert 10 videos to gifs with a duration of 10s at the most each.
+        Now to illustrate this concept or design pattern, imagine that we are creating a <strong>video-to-gif converter platform</strong>...
+        Every anonymous user can convert 10 videos to gifs with a duration of 10s at the most each.
         To create longer gifs or covert more than 10 videos the user can have some options. If he sings up to the platform (without paying nothing) automatically he
         earns the possibilty to convert 100 videos to gifs with a duration of 10s at the most and 10 of them can have a duration of 20s at the most and the possibility of
         saving till 500MB on the cloud. No ADs.
@@ -74,17 +80,17 @@
     </p>
     <p>
         On the first example, I mean, the first image, there was a separation of concerns already. Each block represents a module. This means that each one of those blocks can
-        be a file, a folder or a package. It depends on the application or system's architecture and programming language you are using.
+        be a file, a folder or a package. It depends on the system/application's architecture and programming language you are using.
         <br>
         What I'm trying to say is that SoC is a principle that is used since the first moment you start a new project. It's almost inevitable not to create 
         at least one single module inside the application. But this doesn't means that we're separiting things the best way we can. The goal here is to make you aware
-        of the overall organization of the system or application.
+        of the overall organization of the system/application.
     </p>
-    <h3>Separate Constructing a System or Application from Using It</h3>
+    <h3>Separate Constructing a system/application from Using It</h3>
     <p>
         One good example of the first separation of concerns you already have been working with but maybe never
         realized it is the construction of the application and the runtime logic. And by "construction" I 
-        mean constructing the objects of the application or system and executing anything related to the set up.
+        mean constructing the objects of the system/application and executing anything related to the set up.
         Runtime logic is what happens after the construction, I mean, after the set up.
     </p>
     <p>
@@ -113,7 +119,7 @@
     <p>
         In general, preferer to construct everything from the begining. Objects that are composed by other objects
         will construct them beforehand and are going to be read to be used. To separate the construction from the 
-        runtime logic use the main to instantiate all objects and perform more general configurations the system/application
+        runtime logic use the main to instantiate all objects and execute more general configurations the system/application
         needs to run.
     </p>
     <p>
@@ -122,7 +128,7 @@
         and running and ready to go.
     </p>
     <p>
-        The following code represents a application that converts a video to Gif. It's basically a MVC application.
+        The following code represents an application that converts a video to Gif. It's basically a MVC application.
         All the configurations and set up happens inside the "main" and provides the application what is needed to run.
     </p>
 <pre class="brush: python">
@@ -193,6 +199,16 @@ if __name__ == "__main__":
         But now it's a scheduled version that runs every 5 minutes and converts all the videos in a input folder and creates a gif as an output.
         Imagine every <strong>input folder</strong> has sub folders in which the names are the users IP Addresses...take a look:
     </p>
+<pre class="code-snippet type-bash">tree
+<font color="#5555FF"><b>.</b></font>
+├── <font color="#5555FF"><b>192.168.0.102</b></font>
+│   └── <font color="#FF55FF"><b>super_cool_video.mp4</b></font>
+├── <font color="#5555FF"><b>192.168.0.103</b></font>
+│   └── <font color="#FF55FF"><b>another_super_interesting_video.mp4</b></font>
+└── <font color="#5555FF"><b>192.168.0.104</b></font>
+    └── <font color="#FF55FF"><b>just_a_video.mp4</b></font>
+
+3 directories, 3 files</pre>
 <pre class="brush: python">
 <code>
 if __name__ == "__main__":
@@ -492,13 +508,13 @@ if __name__ == "__main__":
     </p>
     <h3>Cross-Cutting Concerns</h3>
     <p>
-        The motive for decomponsing a system or application into modules separated by concerns is to promote a loosely coupled desing, increase the maintainability and reusability
+        The motive for decomponsing a system/application into modules separated by concerns is to promote a loosely coupled desing, increase the maintainability and reusability
         of each module and, at the same time, keep them free. This means that each module by applying encapsulation and abstraction providing well defined interfaces
         has freedom to change the way their public interfaces work internally without affecting clients.
     </p>
     <p>
-        But some concerns are not actually part of the main logic of a determined concern and can be used by any other module inside the system or application. These are also known as
-        <strong>Cross Cutting Concerns</strong> because the cut across other concerns of the system or application.
+        But some concerns are not actually part of the main logic of a determined concern and can be used by any other module inside the system/application. These are also known as
+        <strong>Cross Cutting Concerns</strong> because the cut across other concerns of the system/application.
     </p>
     <p>
         Cross Cutting concerns are parts of the system that are used by other parts of it. Instead of creating one implementation for each module, the existing
@@ -508,7 +524,7 @@ if __name__ == "__main__":
     </p>
     <p>
         Basically, they are not related to the business logic or business requirements. They are aspects of a program
-        ("secondary features") that are shared accross the modules of the application or system and the same strategy of usage is applied to everyone.
+        ("secondary features") that are shared accross the modules of the system/application and the same strategy of usage is applied to everyone.
         But this doesn't mean that they are not important.
     </p>
     <p>
