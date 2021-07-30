@@ -362,7 +362,7 @@ class GifConverterService:
         But for some reason I've decided to load all videos from our database and sort them by upload date in runtime, instead of
         asking the database to order them for me. I can use Pandas to store those videos
         in a DataFrame and order them the way I want. The connection with the database is controlled by custom code. The
-        Instances are made by custom code. Basically everything that is needed keep this application running is custom code.
+        Instances are made by custom code. Basically everything that is needed keep this application up and running is custom code.
         That's is an example of a <strong>flow contorlled by custom code</strong>.
     </p>
     <p>
@@ -375,7 +375,7 @@ class GifConverterService:
         or specific tasks.
     </p>
     <p>
-        Now there is so many different aspects of inversion of control that I can't even imagine that exists, but the most common are
+        Now there is so many different aspects of inversion of control that I can't even imagine that exists, but the most common is
         plugin lookup implementation, I mean, how plugins are implemented into applications without the application having knowledge 
         of a plugin's internal structure. Another common aspect of control being inverted is how to wire objects 
         without them having knowledge about each other's internal structure.
@@ -434,7 +434,7 @@ def convert():
     <img class="post-img" src="images/clean-code-clean-systems/Factory-Pattern.svg" alt="GifConverService not being dependent upon the GifConvert image by calling a factory">
     <p>
         Applying the <strong>Factory Pattern</strong> the control of this flow of instantiation is handed to a class or method responsible for creating this type of objects. Now all the
-        clients of the <strong>GifConverter</strong> expects a <strong>AbstractConverter</strong> and asks the Factory the type of object they need.
+        clients of the <strong>GifConverter</strong> expects a <strong>AbstractConverter</strong> and asks the Factory for the type of object they need.
     </p>
 <pre class="brush: python">
 <code>class GifConverterService:
@@ -454,8 +454,9 @@ def convert():
         <strong>Dependency Inversion</strong>. You can read more about some of them <a href="https://gabrielslima.github.io/blog/post.html?id=13" target="blank">here</a>.
     </p>
     <p>
-        Great, now we have a less decoupled desing between the <strong>GifConverterService</strong> and <strong>GifConverter</strong>...but client classes
-        still have to worry about controlling the flow of initialization of it's dependecies to start working. This initialization can be while instatiating any object
+        Great, now we have a more decoupled relationship between the <strong>GifConverterService</strong> and <strong>GifConverter</strong>
+        by using the <strong>Factory Pattern</strong>...but client classes still have to worry about controlling the flow of initialization
+        of it's dependecies to start working. This initialization can be while instatiating any object
         from <strong>GifConverterService</strong> class or through public interfaces when needed, applying the lazy initialization pattern.
     </p>
     <p>
@@ -478,7 +479,7 @@ app = Flask(__name__)
 
 
 @app.route("/video_to_gif", methods=["POST"])
-def convert(): # ASSEMBLER OR INJECTOR
+def convert(): #ASSEMBLER/INJECTOR
     _CONVERTER_NAME = "gif_converter"
     
     _converter = ConverterFactory.create_converter_by(_CONVERTER_NAME)
@@ -712,7 +713,9 @@ All the configuration should be made directly into a specific document on the da
         to identify the "Microservice". 
     </p>
     <p>
-        I obviously don't recommend this approach. This is neither scalable nor a clean approach...
+        I actually don't recommend this approach. This is scalable approach in a certain degree because the identification of the microservices
+        was dynamic, all that is needed is to describe the custom configuration into the database, otherwise the default configuration would be applied.
+        But this is not a very clean approach...
     </p>
     <h4>Mixing Up Concerns</h4>
     <p>
