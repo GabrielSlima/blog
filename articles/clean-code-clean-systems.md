@@ -9,7 +9,7 @@
     </p>
     <p>
         Welcome to the PewdiePie's favourite blog about Software Engineering and 
-        Today's topic is about the organization of our applications and systems, I mean, <strong>how to create clean and meaningful systems or applications</strong>.
+        Today's topic is about the organization of our applications/systems, I mean, <strong>how to create clean and meaningful systems or applications</strong>.
     </p>
     <p>
         Let's get into it!
@@ -258,9 +258,9 @@ if __name__ == "__main__":
     </p>
     <h4>The Lazy Initialization Tatic</h4>
     <p>
-        This tatic is used to speed up the process of creation and set up of the application or Initialization of elements of a module. Expensive processes are executed for the first
-        time it's needed and stored so that the following requests from clients are faster. In that way the "expensive process" is 
-        executed only when it's needed rather than on the application's start up.
+        This tatic is used to speed up the process of creation and set up of the application or Initialization of elements of a module.
+        Expensive processes are executed only on the first time it's needed or only when it's needed and they can be stored so that the following
+        requests from clients are faster. In this way the application's start up and requests from clients is much faster.
     </p>
     <p>
         For instance, imagine we have to build a website using Angular. The main page is a grid of movies like the following:
@@ -275,11 +275,14 @@ if __name__ == "__main__":
         async call and building the page "step by step", but this is not applicable for the vast majority of the cases.
         You may want some other part of the component or page to load independently of this part. Another option would be
         by applying the tatic of Lazy Initialization to the grid so that it stays in a splash presentation while the request is 
-        being processed and returned by the server.
+        being processed and returned by the server and initialized when function responsible for building the grid sinalizes
+        that his job is done.
     </p>
     <p>
-        Usually a public acessor is created to return the private instance variable (that can be an object) or a public interface that requires it can initialize it. If the instance variable is null, then the function can be responsinle for 
-        creating a new instance and populating it. Something like the following: 
+        This is an example of a front-end application, but the principle is the same. On the back-end, usually a public acessor is created to
+        return the private instance variable (that can be an object) or any other public interface that requires it, can initialize it.
+        If the instance variable is null, then the function can be responsinle for 
+        creating a new instance and populating the corresponding instance variable. Something like the following: 
     </p>
 <pre class="brush: python">
 <code>class GifConverter:
@@ -301,7 +304,7 @@ class GifConverterService:
 </pre>
     <h4>Promoting Decoupled Desings</h4>
     <p>
-        On this process of saparation of concerns between the construction from the runtime logic on our applications and systems there is
+        On this process of saparation of concerns between the construction from the runtime logic on our applications/systems there is
         one more thing to worry about which is the <i>coupling</i> between the objects.
     </p>
     <p>
@@ -312,8 +315,42 @@ class GifConverterService:
         to basically say what concrete class to use when instantiating it?
     </p>
     <p>
+        The following code represents this scenario:
+    </p>
+<pre class="brush: python">
+<code>class GifConverterService:
+    def __init__(self, ip_address):
+        self.ip_address = ip_address
+        self.quota_service: AbstractQuotaService = QuotaService() #INSTANTIATING A CONCRETE CLASS
+        self.converter: AbstractConverter = None
+    
+    def from(self, video):
+        if not self.converter:
+            self.converter = GifConverter() #INSTANTIATING A CONCRETE CLASS
+        return self.converter.rom(video)
+</code>
+</pre>
+    <p>
         I've been using factories to deal with the creation of the objects and keeping my classes free from creating them.
-        I didn't know but this approach actually follows one principle called <i>Inversion of Control priciple</i>.
+        The following code represents a even more decoupled desing and another level of separation of concerns: 
+    </p>
+<pre class="brush: python">
+<code>class GifConverterService:
+    def __init__(self, ip_address):
+        self.ip_address = ip_address
+        self.quota_service: AbstractQuotaService = QuotaServiceFactory.create_by("VideoToGifQuotaService") #ASKING A FACTORY FOR AN INSTANCE
+        self.converter: AbstractConverter = None
+    
+    def from(self, video):
+        if not self.converter:
+            self.converter = ConverterFactory.create_by("VideoToGifConverter") #ASKING A FACTORY FOR AN INSTANCE
+        return self.converter.rom(video)
+</code>
+</pre>
+    <p>
+        I didn't know but this approach actually follows one principle called <i>Inversion of Control priciple</i>. Instead of creating
+        the instances itself, the class that is composed by other objects delegates this job to specialist modules, inverting the control flow
+        and worring about only asking the right thing... 
     </p>
     <h4>The Inversion of Control principle</h4>
     <p>
