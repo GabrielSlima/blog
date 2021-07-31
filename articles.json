@@ -1,6 +1,14 @@
 
 [
     {
+        "id": "15",
+        "title": "Emergence?",
+        "description": "Making your mom proud of your code...",
+        "author": "Gabriel Lima",
+        "date": "2021-07-31",
+        "article_file_name": "./articles/clean-code-clean-emergence.md"
+    },
+    {
         "id": "14",
         "title": "How to create Clean Systems and Applications?",
         "description": "Making your mom proud of your code...",
