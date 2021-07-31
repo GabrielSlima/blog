@@ -406,9 +406,9 @@ def convert():
     </p>
     <h4>Dependecy Injection and Factory Desing Patterns</h4>
     <p>
-        When it comes to classes and objects, the <i>instantiation</i> and the <i>wiring</i> are processes deletaged to assemblers or factories modules/objects/methods. 
+        When it comes to classes and objects, the <i>instantiation</i> and the <i>wiring</i> are processes deletaged to assemblers/injectors or factories modules/objects/methods. 
         So instead of creating instances of objects within the class's constructor creating a direct dependece upon a concrete class, the dependecy is
-        created by another module, class or object (Factory Pattern) or it is populated and injected by the assembler through the class's constructor. This is a desing pattern called <strong>Dependecy Injection</strong>.
+        created by another module, class or object (Factory Pattern) or it is populated and injected by the assembler/injector through the class's constructor. This is a desing pattern called <strong>Dependecy Injection</strong>.
     </p>
     <img class="post-img" src="images/clean-code-clean-systems/SRPvsSoC-SRP-AND-SoC-NOT-BROKEN.svg" alt="GifConverService being dependet upon the GifConvert image by directing instatiating it">
     <p>
@@ -442,7 +442,7 @@ def convert():
         _CONVERTER_NAME = "gif_converter"
         self.ip_address = ip_address
         self.quota_service = QuotaService()
-        self.converter = ConverterFactory.create_converter_by(_CONVERTER_NAME)
+        self.converter: AbstractConverter = ConverterFactory.create_converter_by(_CONVERTER_NAME)
     
     def convert_from(self, video):
         self.converter.save(video)
@@ -465,7 +465,7 @@ def convert():
     </p>
     <img class="post-img" src="images/clean-code-clean-systems/SRPvsSoC-Dependency-Injection.svg" alt="GifConverService not being dependet upon the GifConvert and Factory neither. Dependecy is being injected by an assembler object/module">
     <p>
-        Now the <strong>GifConverService</strong> classs will have it's dependencies initialized by an assembler, in this case, can be the controller itself...
+        Now the <strong>GifConverService</strong> classs will have it's dependencies initialized by an assembler/injector, in this case, can be the controller itself...
     </p>
 <pre class="brush: python">
 <code>from moviepy.editor import VideoFileClip
@@ -500,8 +500,8 @@ class GifConverterService:
     def __init__(self, ip_address, converter, quota_service): #INJECTED DEPENDENCIES
         self.ip_address = ip_address
         self.quota_service = quota_service
-        self.converter = converter
-    
+        self.converter: AbstractConverter = converter
+
     def convert_from(self, video):
         self.converter.save(video)
         return self.converter.convert_from(video)
@@ -551,7 +551,8 @@ if __name__ == "__main__":
         has freedom to change the way their public interfaces work internally without affecting clients.
     </p>
     <p>
-        But some concerns are not actually part of the main logic of a determined concern and can be used by any other module inside the system/application. These are also known as
+        But some concerns are not actually part of the main logic of a determined concern and other than that, 
+        they can be used by any other module inside the system/application. These are also known as
         <strong>Cross Cutting Concerns</strong> because the cut across other concerns of the system/application.
     </p>
     <p>
@@ -660,10 +661,10 @@ MoviePy - Building file /tmp/video-20210725-11071627225066.gif with imageio.
     <h4>Code Duplication</h4>
     <p>
         Look how many times the statement <i>_logger.info</i> is called...this statement can be spread all over the application affecting many other concerns
-        inside the application or sytstem, literally duplicated in other parts. 
+        inside the application or sytstem, literally duplicated in other parts... 
     </p>
     <p>
-        I have an experience to share with you about this kind of scenario. I worked in a modularized Java project with
+        I have an experience to share with you about this kind of scenario. I worked on this modularized Java project with
         around 8-9 modules. The modules were supposed to be Microservice but this is a topic for another article.
     </p>
     <p>
@@ -714,7 +715,7 @@ All the configuration should be made directly into a specific document on the da
     </p>
     <p>
         I actually don't recommend this approach. This is scalable approach in a certain degree because the identification of the microservices
-        was dynamic, all that is needed is to describe the custom configuration into the database, otherwise the default configuration would be applied.
+        was dynamic, all that was required was to describe the custom configuration into the database, otherwise the default configuration would be applied.
         But this is not a very clean approach...
     </p>
     <h4>Mixing Up Concerns</h4>
@@ -748,6 +749,11 @@ All the configuration should be made directly into a specific document on the da
         Aspect Oriented Programming is a program paradigm that allows <strong>separation of cross-cutting concerns</strong>.
         This means that those concerns that a shared by other modules of the application/system are modularized and used properly.
         New behaviors are added to existing code without actuallly chaning it and mixing up business logic with non-business logic.
+        In other words, logging, performance, caching, and any other concern that cut accross other ones can be applied without polluting
+        existing code...
+    </p>
+    <p>
+        Let's take a look into some concepts of this paradigm.
     </p>
     <h4>Aspect</h4>
     <p>
@@ -772,7 +778,7 @@ All the configuration should be made directly into a specific document on the da
         pointcut specifying where to apply an advice...
     </p>
     <p>
-        We can specific when a certain advice is executed by using <i>pointcuts</i>. In other words, we can decided when an additional behavior (advice)
+        We specify when a certain advice is executed by using <i>pointcuts</i>. In other words, we can decided when an additional behavior (advice)
         will be applied to a specfic part of the code by using pointcuts.
         In this way the cross-cutting concerns are keept in one place and are used by expressions.
     </p>
