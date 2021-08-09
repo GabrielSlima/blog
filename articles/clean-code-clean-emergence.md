@@ -42,4 +42,14 @@
     <p>
         Well, now that you kind of know how Clean Code affects agility, let's explore some rules for a simple desing!
     </p>
+    <h1>Tests: makes the system verifiable</h1>
+    <p>
+        Having tests guarantee that the system work as intended and that our classes are small and have a single purpose. Therefore, having
+        tests kind of force us to use more principles that help us to make the system easier to test. A loosely-coupled and high-cohesive system
+        is easer to test than a tight-coupled and low-cohesive one.
+    </p>
+    <p>
+        So the more tests we write, the more principles like DIP, Dependecy Injection, Law of Demeter, interfaces and abstractions we have to use
+        to make things easier.
+    </p>
 </div>
