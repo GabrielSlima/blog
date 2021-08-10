@@ -42,7 +42,7 @@
     <p>
         Well, now that you kind of know how Clean Code affects agility, let's explore some rules for a simple desing!
     </p>
-    <h1>Tests: makes the system verifiable</h1>
+    <h3>Tests: makes the system verifiable</h3>
     <p>
         Having tests guarantee that the system work as intended and that our classes are small and have a single purpose. Therefore, having
         tests kind of force us to use more principles that help us to make the system easier to test. A loosely-coupled and high-cohesive system
@@ -52,4 +52,35 @@
         So the more tests we write, the more principles like DIP, Dependecy Injection, Law of Demeter, interfaces and abstractions we have to use
         to make things easier.
     </p>
+    <h3>Refactoring: Keeping the code clean</h3>
+    <p>
+        We keep our code and classes clean by incrementally refacting them. By having a verifiable system, 
+        the fear of chaging existing code dies and we can restruct it for the better. We can improve the cohesion, reduce the coupling,
+        choose better names, shrink modules and so on.
+    </p>
+    <h3>No code duplication</h3>
+    <p>
+        Code duplication can appear in different ways like lines of code that are exactly alike or duplicated implementation. 
+        Duplicated code adds additional work, risks and complexity. Well desinged systems doesn't have code duplication.
+    </p>
+    <p>
+        Principles like SRP, abstraction and interfaces can help usd when refactoring the code and reducing code duplication and increase
+        code reusability in different contexts.
+    </p>
+    <h3>Be expressive</h3>
+    <p>
+        The complex the code is, the more time other developers or even you will take to understand it. The more complex the code is, the hihger
+        the risk of changes is and the higher the cost for maintanance is.
+    </p>
+    <p>
+        The code should be clear and express the intent of the author. So choose good names for your functions, classes/modules and variables
+        and don't forget to make them small. Don't forget to create well written unit tests, their primary goal is documentation value and use desing patterns.
+        They are all about communication and expressiveness.
+    </p>
+    <h3>Final Words</h3>
+    <p>
+        Be realistic. Avoid stablishing pointless intolerance rules like "for every new class, a new interface must be created" or any other type of intolerance
+        that can lead to a ploriferation of classes and functions. Be pragmatic about them...
+    </p>
+    Good Luck!
 </div>
