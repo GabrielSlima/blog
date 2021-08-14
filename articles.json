@@ -1,11 +1,19 @@
 
 [
     {
+        "id": "16",
+        "title": "Concurrency?",
+        "description": "Making your mom proud of your code...",
+        "author": "Gabriel Lima",
+        "date": "2021-08-14",
+        "article_file_name": "./articles/clean-code-clean-concurrency.md"
+    }
+    {
         "id": "15",
         "title": "What are the rules for simple system desings?",
         "description": "Making your mom proud of your code...",
         "author": "Gabriel Lima",
-        "date": "2021-09-10",
+        "date": "2021-08-10",
         "article_file_name": "./articles/clean-code-clean-emergence.md"
     },
     {
