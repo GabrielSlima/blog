@@ -34,6 +34,20 @@
         Welcome to the PewdiePie's favourite blog about Software Engineering and Today's topic is 
         how to create clean cocurrent code. Let's dive into it! 
     </p>
+    <h3>CPUs and Cores</h3>
+    <p>
+        The Central Processing Unit, also known as CPU or processor, is responsible for processing the instructions that
+        composes a program. They are literally an electronical circuit composed by electronic components that
+        are responsible for executing your clean and incredible code you've written with tips and tricks that where
+        taught by ancient creatures specialists in programming from the last articles you read...
+    </p>
+    <p>
+        In other words, every line of code you write is executed by the CPU. When you have more than one Processing Unit
+        you have a multi-core processor, if concurrency and parallelism are used, the execution of the program can be faster.
+        There are more complex than this but let's keep in this way for now...
+    </p>
+    <h3>What a Process is?</h3>
+    <h3>What a Thread is?</h3>
     <h3>What Concurrent Programming is?</h3>
     <p>
         The concept in plain text is relatively simple: a program is concurrent when it does many things at the same time,
@@ -44,8 +58,8 @@
     </p>
     <h3>What is parallelism?</h3>
     <p>
-        While concurrency is about <i>dealing with many things at once</i>, parallelism is about actually doing many things
-        at once. In other words, the tasks are executed simultaneously.
+        While concurrency is about <strong>dealing with many things at once</strong>, parallelism is about actually <strong>doing many things
+        at once</strong>. In other words, the tasks are executed simultaneously.
     </p>
     <p>
         Although the concepts seems very simple, concurrent programs are very complex in practice. On this article we're going
@@ -58,10 +72,10 @@
     </p>
     <p>
         But, of course, there are a many things to consider when we are talking about concurrent programming, including
-        processors, cores, memory management, cache and so on.  Let's focus on how this works first.
+        processors, how many cores does the processors have, memory management, cache and so on. 
+        Let's focus on how this works first.
     </p>
+
     <h4>Does it breaks SRP?</h4>
-    <h3>What a Process is?</h3>
-    <h3>What a Thread is?</h3>
     <h3>How to unit test concurrent code?</h3>
 </div>
