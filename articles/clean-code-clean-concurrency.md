@@ -43,7 +43,10 @@
     </p>
     <p>
         In other words, every line of code you write is executed by the CPU. When you have more than one Processing Unit
-        you have a multi-core processor, if concurrency and parallelism are used, the execution of the program can be faster.
+        you have a multi-core processor, so in theory, you have more places where the instructions that composes your program
+        can be executed. If concurrency and parallelism are used, the execution of the program can theorically be faster.
+    </p>
+    <p>
         There are more complex than this but let's keep in this way for now...
     </p>
     <h3>What a Process is?</h3>
