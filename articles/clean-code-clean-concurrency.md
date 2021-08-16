@@ -34,8 +34,32 @@
         Welcome to the PewdiePie's favourite blog about Software Engineering and Today's topic is 
         how to create clean cocurrent code. Let's dive into it! 
     </p>
-    <h3>What Concurrent programming is?</h3>
+    <h3>What Concurrent Programming is?</h3>
+    <p>
+        The concept in plain text is relatively simple: a program is concurrent when it does many things at the same time,
+        in overlapping periods of time.
+        In other words, instead of making progress in one single task at a time, like on sequential programs, the program
+        makes progress on all the tasks at once. The program doesn't waits for each task to be complete, it starts the execution
+        of the next task before the execution of the current task ends. This gives the illusion of parallelism.
+    </p>
+    <h3>What is parallelism?</h3>
+    <p>
+        While concurrency is about <i>dealing with many things at once</i>, parallelism is about actually doing many things
+        at once. In other words, the tasks are executed simultaneously.
+    </p>
+    <p>
+        Although the concepts seems very simple, concurrent programs are very complex in practice. On this article we're going
+        to focus on how to prevent you from making horrible things with concurrent code, like I did.
+    </p>
     <h4>What does it solves?</h4>
+    <p>
+        I think that the term "concurrent" is very expressive about what kind of problem concurrent systems and applications
+        solves...to make things faster.
+    </p>
+    <p>
+        But, of course, there are a many things to consider when we are talking about concurrent programming, including
+        processors, cores, memory management, cache and so on.  Let's focus on how this works first.
+    </p>
     <h4>Does it breaks SRP?</h4>
     <h3>What a Process is?</h3>
     <h3>What a Thread is?</h3>
