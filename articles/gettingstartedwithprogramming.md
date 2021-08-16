@@ -139,7 +139,25 @@
         <li><a href="https://www.freecodecamp.org/learn" target="blank">Freecodecamp</a> - Would choose based on my skills list. Strongly recomend following this one first </li>
         <li><a href="https://www.youtube.com/" target="blank">Youtube</a> - You can start looking for "SKILL course", example: "mongodb course"</li>
     </ul>
-
+    <h3>I feel that I'm not making progress...</h3>
+    <p>
+        These last couple of days I felt that I wasn't making progress in quite some aspects of my life to be honest with you.
+        This remind me of when I was just starting with programming, it's the same feeling.
+    </p>
+    <p>
+        Wake up everyday, go through tutorials, do some super small projects to fix the concepts but with the feeling that something was missing,
+        insecurity of not being able to do the job or worse, not fiding one.
+    </p>
+    <p>
+        For some time felt I wasn't making progress, but in reality, <strong>I just didn't know how to measure my progress</strong>.
+        One way of checking progress and the one I think is the most efficient is by making side projects. Projects will not just
+        help you with your confidence by forcing you to think and search a lot on books and on the internet, but it will also
+        help you to actually see the progress.
+    </p>
+    <p>
+        By building side projects you will learn how to get all the knowledge you have acquired in a YouTube video for instance and apply
+        in different contexts. You will learn how to manage the project, manage your time and believe me, this makes a huge difference...
+    </p>
     <h3 id="questions">Questions that you may have right now and maybe I can answer some of them</h3>
     <p>
         <b>Does age matters?</b> Short answer: No. Long answer: No
