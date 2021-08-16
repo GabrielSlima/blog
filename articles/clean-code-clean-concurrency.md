@@ -34,4 +34,10 @@
         Welcome to the PewdiePie's favourite blog about Software Engineering and Today's topic is 
         how to create clean cocurrent code. Let's dive into it! 
     </p>
+    <h3>What Concurrent programming is?</h3>
+    <h4>What does it solves?</h4>
+    <h4>Does it breaks SRP?</h4>
+    <h3>What a Process is?</h3>
+    <h3>What a Thread is?</h3>
+    <h3>How to unit test concurrent code?</h3>
 </div>
