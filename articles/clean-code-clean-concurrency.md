@@ -59,6 +59,8 @@
         makes progress on all the tasks at once. The program doesn't waits for each task to be complete, it starts the execution
         of the next task before the execution of the current task ends. This gives the illusion of parallelism.
     </p>
+    <img class="post-img" src="images/clean-concurrent-code/concurrency-sequential.svg" alt="Sequential vs Concurrent processing">
+    <img class="post-img" src="images/clean-concurrent-code/concurrency-concurrent.svg" alt="Sequential vs Concurrent processing">
     <h3>What is parallelism?</h3>
     <p>
         While concurrency is about <strong>dealing with many things at once</strong>, parallelism is about actually <strong>doing many things
