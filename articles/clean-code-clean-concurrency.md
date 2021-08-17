@@ -50,6 +50,13 @@
         There are more complex than this but let's keep in this way for now...
     </p>
     <h3>What a Process is?</h3>
+    <p>
+        Before continuing with this topic, I would like to rember you with a few words what a Operating System is.
+        An operating system is basically a system, a program, that is responsible for managin the computer's resources
+        and encapsulating it. In other words, the operating system is the program that is going to controll how the interaction
+        with and between the resources of a computer will happen and, other than that, it provides abstract interfaces
+        so that other programs can interact with the resources...
+    </p>
     <h3>What a Thread is?</h3>
     <h3>What Concurrent Programming is?</h3>
     <p>
