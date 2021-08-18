@@ -50,13 +50,36 @@
         There are more complex than this but let's keep in this way for now...
     </p>
     <h3>What a Process is?</h3>
+    <h4>Operating System</h4>
     <p>
         Before continuing with this topic, I would like to rember you with a few words what a Operating System is.
-        An operating system is basically a system, a program, that is responsible for managin the computer's resources
+        An operating system is basically a system, a program, that is responsible for managing the computer's resources
         and encapsulating it. In other words, the operating system is the program that is going to controll how the interaction
         with and between the resources of a computer will happen and, other than that, it provides abstract interfaces
         so that other programs can interact with the resources...
     </p>
+    <img src="images/clean-concurrent-code/concurrency-operating-system.svg" class="post-img" alt="">
+    <h4>Programs and Processes</h4>
+    <p>
+        In short, the operating system provides tools to create other programs. Tools such as Pycharm, Viusual Studio Code, Notepad++ and so on.
+        Not only this, but also provides simpler ways of interacting with the resources using what we call system calls. With them we can read/write
+        files from the disk, fork new processes and so on. in a more convinient way.
+    </p>
+    <p>
+        The files (or source files) we use to keep the instructions we want the CPU to execute are called <strong>programs</strong>. When the program is
+        executed, the source files are loaded from the storage into the memory and it becomes a process. So in other words,
+        a process is a program in execution plus the data structures needed to manage it.
+    </p>
+    <p>
+        A process can create other processes (child processes) and the strucutre of the processes end up like a tree (<strong>process tree</strong>).
+        They can communicate with each other using pipes or queues. This communication is not restricted to parent-child relationship.
+        Unrelated processes can communicate with each other through these tools too. 
+    </p>
+    <p>
+        To summarize, the operating system isolates processes since they are store independently into the memory. The memory layout of a process
+        is:
+    </p>
+    <img class="post-img" src="images/clean-concurrent-code/concurrency-memory-layout.svg" alt="Memory layout of a process">
     <h3>What a Thread is?</h3>
     <h3>What Concurrent Programming is?</h3>
     <p>
