@@ -80,7 +80,20 @@
         is:
     </p>
     <img class="post-img" src="images/clean-concurrent-code/concurrency-memory-layout.svg" alt="Memory layout of a process">
+    <p>
+        Every process owns: a regeion of virtual memory, security attributes (owner and permissins), state and descriptors
+        (data structure that holds information about the resources allocated for the process). Part of this information
+        about active processes are hold by the operating system in a data structure called process controll block.
+    </p>
     <h3>What a Thread is?</h3>
+    <p>
+        To understand what a Thread is we have to understand a litte bit more about how a process is executed by the processor...
+    </p>
+    <p>
+        Once the program is a process, I mean, once the program is loaded from the storage to the memory a portion of the memory
+        is allocated for it. There we can find vital information about the active process including the program counter or
+        instruction pointer. It's basically a register that points to the current instruction being processed in memory. 
+    </p>
     <h3>What Concurrent Programming is?</h3>
     <p>
         The concept in plain text is relatively simple: a program is concurrent when it does many things at the same time,
