@@ -38,23 +38,28 @@
     <p>
         The Central Processing Unit, also known as CPU or processor, is responsible for processing the instructions that
         composes a program. They are literally an electronical circuit composed by electronic components that
-        are responsible for executing your clean and incredible code you've written with tips and tricks that where
+        are responsible for executing your clean and incredible code you've written with tips and tricks that were
         taught by ancient creatures specialists in programming from the last articles you read...
     </p>
     <p>
-        In other words, every line of code you write is executed by the CPU. When you have more than one Processing Unit
-        you have a multi-core processor, so in theory, you have more places where the instructions that composes your program
-        can be executed. If concurrency and parallelism are used, the execution of the program can theorically be faster.
+        In other words, every line of code you've written is processed by the CPU during the exectuion of your program.
+        When you have <strong>more than one processing unit</strong> you have a <strong>multi-core processor</strong>,
+        so in theory, you have more than one place in which instructions can be executed.
+        If concurrency and parallelism are used, the execution of the program can theorically be faster.
     </p>
     <p>
-        There are more complex than this but let's keep in this way for now...
+        There is so much more about CPUs, Multiprocessing programs and computer architecture in general. But today's
+        goals is to focus only on the main concepts. In general, when your program becomes a procress, all the instructions
+        you've written is processed by the CPU or CPUs if the host has more than one core. Let's explore a bit
+        more about <strong>what a process is.</strong>
     </p>
-    <h3>What a Process is?</h3>
+    <h3>What is a Process?</h3>
     <h4>Operating System</h4>
     <p>
-        Before continuing with this topic, I would like to rember you with a few words what a Operating System is.
+        Before continuing with this topic, I would like to remind you with a few words about
+        <strong>what an Operating System is</strong>.
         An operating system is basically a system, a program, that is responsible for managing the computer's resources
-        and encapsulating it. In other words, the operating system is the program that is going to controll how the interaction
+        and encapsulating it. In other words, the operating system is the program that is going to control how the interaction
         with and between the resources of a computer will happen and, other than that, it provides abstract interfaces
         so that other programs can interact with the resources...
     </p>
@@ -62,30 +67,33 @@
     <h4>Programs and Processes</h4>
     <p>
         In short, the operating system provides tools to create other programs. Tools such as Pycharm, Viusual Studio Code, Notepad++ and so on.
-        Not only this, but also provides simpler ways of interacting with the resources using what we call system calls. With them we can read/write
-        files from the disk, fork new processes and so on. in a more convinient way.
+        Not only this, but also provides simpler ways of interacting with the resources using system calls (services request to the kernel)
+        for instance through interfaces. Through system calls the program can read/write
+        files from the disk, fork new processes and so on.
     </p>
     <p>
         The files (or source files) we use to keep the instructions we want the CPU to execute are called <strong>programs</strong>. When the program is
-        executed, the source files are loaded from the storage into the memory and it becomes a process. So in other words,
+        executed, the source files are loaded from the storage into the memory with some vital information hold by
+        the OS and it becomes a process. So in other words,
         a process is a program in execution plus the data structures needed to manage it.
     </p>
     <p>
         A process can create other processes (child processes) and the strucutre of the processes end up like a tree (<strong>process tree</strong>).
-        They can communicate with each other using pipes or queues. This communication is not restricted to parent-child relationship.
-        Unrelated processes can communicate with each other through these tools too. 
+        They can communicate with each other using pipes or queues. This communication is not restricted to parent-child relationship only.
+        Unrelated processes can communicate with each other through these tools too.
     </p>
     <p>
-        To summarize, the operating system isolates processes since they are allocated independently into the memory. The memory layout of a process
-        is:
+        So to summarize, the operating system isolates processes since they are allocated independently into the memory.
+        The memory layout of a process is:
     </p>
     <img class="post-img" src="images/clean-concurrent-code/concurrency-memory-layout.svg" alt="Memory layout of a process">
     <p>
         Once the process is created, I mean, the program is loaded from the storage into a region of the virtual memory,
-        the OS stores information about the process into a data structure caleld Process Control Block (PCB), alos known as
-        processor descriptor. This data structure cointains information about the process identification, state and control.
+        the OS stores information about the process into a data structure caleld <strong>Process Control Block (PCB)</strong>,
+        also known as <strong>processor descriptor</strong> into a <strong>process table</strong>.
+        This data structure cointains vital information about the process like identification, state and control.
         This helps the OS to manage active processes. Inside this structure we can find the process's security attributes
-        (owner and permissions) state (new, ready, running, waiting or dead), information about the resources allocated
+        (owner and permissions) state (new, ready, running, waiting or dead and etc.), information about the resources allocated
         for the process and one specific data called <strong>program counter</strong>.
     </p>
     <p>
@@ -103,7 +111,7 @@
         folder <a href="https://www.kernel.org/doc/html/latest/filesystems/proc.html" target="blank">proc</a>.
         This folder like an interface to the kernel's PCBs (Process Control Blocks).
     </p>
-    <p>Let's take a look into the process's output:</p>
+    <p>Let's take a quick look into the process's output:</p>
 <pre>
 <code class="code-snippet type-bash" style="margin: 0;">python3 example.py 
 Waiting 10s...
@@ -140,6 +148,10 @@ autogroup  cmdline	    cwd      fdinfo   loginuid	 mountinfo   ns		oom_score_adj
 auxv	   comm		    environ  gid_map  map_files  mounts      numa_maps	pagemap        root	    setgroups  stat	     task     wchan
 cgroup	   coredump_filter  exe      io       maps	 mountstats  oom_adj	patch_state    sched	    smaps      statm	     timers
 </code></pre>
+    <p>
+        Under this folder informations like the process's state, security attributes, memory allocation, allowed memory usage, some info about the stack
+        and so on can be found.
+    </p>
     <h3>What a Thread is?</h3>
     <p> 
         A thread is a sequence of instructions that can be executed independently from other code. Since threads are
@@ -148,15 +160,21 @@ cgroup	   coredump_filter  exe      io       maps	 mountstats  oom_adj	patch_sta
     </p>
     <p>
         Threads have their own stack, program counter, registers and data. These information cannot be replicated.
-        This guarantee that they can be processed individually. Threads can be an entire article where 
+        This guarantee that they can be processed individually.
+    </p>
+    <p>
+        Threads can be an entire article where 
         topics like thread safety and design patterns can be more explored. Let's focused only on the conpcet for now.
+    </p>
+    <p>
+        ## Example of a thread in python.
     </p>
     <h3>What Concurrent Programming is?</h3>
     <p>
         The concept in plain text is relatively simple: a program is concurrent when it does many things at the same time,
         in overlapping periods of time.
         In other words, instead of making progress in one single task at a time, like on sequential programs, the program
-        makes progress on all the tasks at once. The program doesn't waits for each task to be complete, it starts the execution
+        makes progress on all the tasks at once. The program doesn't waits for each task to be completed, it starts the execution
         of the next task before the execution of the current task ends. This gives the illusion of parallelism.
     </p>
     <img class="post-img" src="images/clean-concurrent-code/concurrency-sequential.svg" alt="Sequential vs Concurrent processing">
@@ -167,7 +185,7 @@ cgroup	   coredump_filter  exe      io       maps	 mountstats  oom_adj	patch_sta
         at once</strong>. In other words, the tasks are executed simultaneously.
     </p>
     <p>
-        Although the concepts seems very simple, concurrent programs are very complex in practice. On this article we're going
+        Although the concepts seems very simple, in practice concurrent programs are very complex. On this article we're going
         to focus on how to prevent you from making horrible things with concurrent code, like I did.
     </p>
     <h4>What does it solves?</h4>
@@ -177,8 +195,7 @@ cgroup	   coredump_filter  exe      io       maps	 mountstats  oom_adj	patch_sta
     </p>
     <p>
         But, of course, there are a many things to consider when we are talking about concurrent programming, including
-        processors, how many cores does the processors have, memory management, cache and so on. 
-        Let's focus on how this works first.
+        processors, how many cores does the processors have, memory management, cache and so on.
     </p>
 
     <h4>Does it breaks SRP?</h4>
