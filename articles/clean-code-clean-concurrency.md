@@ -142,7 +142,14 @@ cgroup	   coredump_filter  exe      io       maps	 mountstats  oom_adj	patch_sta
 </code></pre>
     <h3>What a Thread is?</h3>
     <p> 
-        A thread is a sequence of instructions that can be executed independently from other code.
+        A thread is a sequence of instructions that can be executed independently from other code. Since threads are
+        within the process address space, they can share some data. But there are some boundries that guarantee that
+        threads can be scheduled and executed independently.
+    </p>
+    <p>
+        Threads have their own stack, program counter, registers and data. These information cannot be replicated.
+        This guarantee that they can be processed individually. Threads can be an entire article where 
+        topics like thread safety and design patterns can be more explored. Let's focused only on the conpcet for now.
     </p>
     <h3>What Concurrent Programming is?</h3>
     <p>
