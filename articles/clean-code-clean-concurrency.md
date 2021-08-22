@@ -188,16 +188,21 @@ cgroup	   coredump_filter  exe      io       maps	 mountstats  oom_adj	patch_sta
         Although the concepts seems very simple, in practice concurrent programs are very complex. On this article we're going
         to focus on how to prevent you from making horrible things with concurrent code, like I did.
     </p>
-    <h4>What does it solves?</h4>
+    <h4>What does concurrency and parallelism solves?</h4>
     <p>
         I think that the term "concurrent" is very expressive about what kind of problem concurrent systems and applications
-        solves...to make things faster.
+        solves...to make things faster or simpler.
+    </p>
+    <p>
+        For instance, if you have an application that depends on data provided by other systems on your network through HTTP requests.
+        If you have one request per execution the reponse time is X. But if you have let's say 10 requests and then you have to create
+        a report based on all the fetched data. The respose time can increase tremendously in a sequential code.
+        Maybe the requests could be made by threads symultaneously.
     </p>
     <p>
         But, of course, there are a many things to consider when we are talking about concurrent programming, including
         processors, how many cores does the processors have, memory management, cache and so on.
     </p>
-
     <h4>Does it breaks SRP?</h4>
     <h3>How to unit test concurrent code?</h3>
 </div>
