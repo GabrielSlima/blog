@@ -32,9 +32,13 @@
     </p>
     <p>
         Welcome to the PewdiePie's favourite blog about Software Engineering and Today's topic is 
-        how to create clean cocurrent code. Let's dive into it! 
+        part one of <strong>how to create clean cocurrent code</strong>. Let's dive into it! 
     </p>
     <h3 id="cpus-cores">CPUs and Cores</h3>
+    <p>
+        To understand what a concurrent code is, first we have to go through some important topics that are crucial to understand
+        the context of this form of computation. Starting by the CPU.
+    </p>
     <p>
         The Central Processing Unit, also known as CPU or processor, is responsible for processing the instructions that
         composes a program. They are literally an electronical circuit composed by electronic components that
@@ -43,15 +47,17 @@
     </p>
     <p>
         In other words, every line of code you've written is processed by the CPU during the exectuion of your program.
-        When you have <strong>more than one processing unit</strong> you have a <strong>multi-core processor</strong>,
-        so in theory, you have more than one place in which instructions can be executed.
+        When you have <strong>more than one processing unit</strong> on the same circuit you have a <strong>multi-core processor</strong>.
+        So in theory, you have more than one place in which instructions can be executed.
         If concurrency and parallelism are used, the execution of the program can theorically be faster.
     </p>
     <p>
         There is so much more about CPUs, Multiprocessing programs and computer architecture in general. But today's
-        goals is to focus only on the main concepts. In general, when your program becomes a procress, all the instructions
-        you've written is processed by the CPU or CPUs if the host has more than one core. Let's explore a bit
-        more about <strong>what a process is.</strong>
+        goals is to focus only on the main concepts. In general, when your program becomes a process, all the instructions
+        you've written is processed by the CPU or CPUs if the host has more core or processors.
+    </p>
+    <p>
+        Well, now let's explore a bit more about <strong>what a process is.</strong>
     </p>
     <h3>What is a Process?</h3>
     <h4>Operating System</h4>
@@ -66,7 +72,8 @@
     <img src="images/clean-concurrent-code/concurrency-operating-system.svg" class="post-img" alt="">
     <h4>Programs and Processes</h4>
     <p>
-        In short, the operating system provides tools to create other programs. Tools such as Pycharm, Viusual Studio Code, Notepad++ and so on.
+        In short, the operating system is an "intermediate layer" between the high level tools and the resources. It also
+        provides tools to create other programs. Tools such as Pycharm, Viusual Studio Code, Notepad++ and so on.
         Not only this, but also provides simpler ways of interacting with the resources using system calls (services request to the kernel)
         for instance through interfaces. Through system calls the program can read/write
         files from the disk, fork new processes and so on.
@@ -78,10 +85,22 @@
         a process is a program in execution plus the data structures needed to manage it.
     </p>
     <p>
+        This is a example of a program:
+    </p>
+<pre class="brush: python">
+<code>
+def welcome(name):
+  print("Welcome {}".format(name))
+
+welcome("Gabriel")
+</code>
+</pre>
+    <p>
         A process can create other processes (child processes) and the strucutre of the processes end up like a tree (<strong>process tree</strong>).
         They can communicate with each other using pipes or queues. This communication is not restricted to parent-child relationship only.
         Unrelated processes can communicate with each other through these tools too.
     </p>
+    <img class="post-img" src="images/clean-concurrent-code/concurrency-process.svg" alt="">
     <p>
         So to summarize, the operating system isolates processes since they are allocated independently into the memory.
         The memory layout of a process is:
@@ -153,18 +172,21 @@ cgroup	   coredump_filter  exe      io       maps	 mountstats  oom_adj	patch_sta
         and so on can be found.
     </p>
     <h3>What a Thread is?</h3>
+    <p>
+        Ok, a process is a program in execution plus the data strucutres needed to manage it. Now what is a thread and where it is kept?
+    </p>
     <p> 
         A thread is a sequence of instructions that can be executed independently from other code. Since threads are
         within the process address space, they can share some data. But there are some boundries that guarantee that
         threads can be scheduled and executed independently.
     </p>
     <p>
-        Threads have their own stack, program counter, registers and data. These information cannot be replicated.
-        This guarantee that they can be processed individually.
+        Threads have their own stack, program counter, registers and data. These information cannot be replicated and are kept in a
+        <strong>Thread Control Block (TCB)</strong>. This guarantee that they can be processed individually.
     </p>
     <p>
         Threads can be an entire article where topics like <strong>thread safety</strong> and <strong>design patterns</strong> can be explored
-        in more details. Let's focu only on the concept for now.
+        in more details. Let's focus only on the main concepts for now.
     </p>
     <h3>Multithreading</h3>
     <p>
@@ -220,6 +242,4 @@ cgroup	   coredump_filter  exe      io       maps	 mountstats  oom_adj	patch_sta
         Concurrency and parallelism with shared resources can lead to problems like deadlock and resource starvation or have
         indeterminated ouputs due to the large number  of execution paths. Two threads can change the same fields for instance.
     </p>
-    <h4>Does it breaks SRP?</h4>
-    <h3>How to unit test concurrent code?</h3>
 </div>
