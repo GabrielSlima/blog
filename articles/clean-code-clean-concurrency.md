@@ -194,15 +194,10 @@ cgroup	   coredump_filter  exe      io       maps	 mountstats  oom_adj	patch_sta
         execution can be concurrent or parallel. The CPU can be single-core (single core doesn't allows parallelism,
         only the illusion of it through concurrency) or multi-core.
     </p>
-    <p>
-        The following image compares a single thread process vs a multi-threaded one:
-    </p>
-    <img class="post-img" src="images/clean-concurrent-code/single-vs-multithreads" alt="single thread process vs multi-thread process">
     <h3>Multiprocessor System</h3>
     <p>
         In simple words, is a computer system that has more than one CPU...
     </p>
-    <img class="post-img" src="images/clean-concurrent-code/multiprocessor" alt="Multiprocessor system has more than one CPU">
     <h3>What Concurrent Programming is?</h3>
     <p>
         The concept in plain text is relatively simple: a program is concurrent when it does many things at the same time,
