@@ -213,6 +213,7 @@ cgroup	   coredump_filter  exe      io       maps	 mountstats  oom_adj	patch_sta
     </p>
     <img class="post-img" src="images/clean-concurrent-code/concurrency-sequential.svg" alt="Sequential vs Concurrent processing">
     <img class="post-img" src="images/clean-concurrent-code/concurrency-concurrent.svg" alt="Sequential vs Concurrent processing">
+    <img class="post-img" src="images/clean-concurrent-code/concurrency-parallel.svg" alt="Sequential vs Concurrent processing">
     <h3>What is parallelism?</h3>
     <p>
         While concurrency is about <strong>dealing with many things at once</strong>, parallelism is about actually <strong>doing many things
@@ -236,10 +237,5 @@ cgroup	   coredump_filter  exe      io       maps	 mountstats  oom_adj	patch_sta
     <p>
         But, of course, there are a many things to consider when we are talking about concurrent programming, including
         processors, how many cores does the processors have, memory management, cache and so on.
-    </p>
-    <h3>Challenges and issues with concurrent and parallel code</h3> 
-    <p>
-        Concurrency and parallelism with shared resources can lead to problems like deadlock and resource starvation or have
-        indeterminated ouputs due to the large number  of execution paths. Two threads can change the same fields for instance.
     </p>
 </div>
