@@ -34,7 +34,7 @@
         Welcome to the PewdiePie's favourite blog about Software Engineering and Today's topic is 
         how to create clean cocurrent code. Let's dive into it! 
     </p>
-    <h3>CPUs and Cores</h3>
+    <h3 id="cpus-cores">CPUs and Cores</h3>
     <p>
         The Central Processing Unit, also known as CPU or processor, is responsible for processing the instructions that
         composes a program. They are literally an electronical circuit composed by electronic components that
@@ -163,12 +163,24 @@ cgroup	   coredump_filter  exe      io       maps	 mountstats  oom_adj	patch_sta
         This guarantee that they can be processed individually.
     </p>
     <p>
-        Threads can be an entire article where 
-        topics like thread safety and design patterns can be more explored. Let's focused only on the conpcet for now.
+        Threads can be an entire article where topics like <strong>thread safety</strong> and <strong>design patterns</strong> can be explored
+        in more details. Let's focu only on the concept for now.
+    </p>
+    <h3>Multithreading</h3>
+    <p>
+        Is a <a href="#cpus-cores">CPU (central processing uinit)</a> feature. It allows the execution of two or more threads independently. The
+        execution can be concurrent or parallel. The CPU can be single-core (single core doesn't allows parallelism,
+        only the illusion of it through concurrency) or multi-core.
     </p>
     <p>
-        ## Example of a thread in python.
+        The following image compares a single thread process vs a multi-threaded one:
     </p>
+    <img class="post-img" src="images/clean-concurrent-code/single-vs-multithreads" alt="single thread process vs multi-thread process">
+    <h3>Multiprocessor System</h3>
+    <p>
+        In simple words, is a computer system that has more than one CPU...
+    </p>
+    <img class="post-img" src="images/clean-concurrent-code/multiprocessor" alt="Multiprocessor system has more than one CPU">
     <h3>What Concurrent Programming is?</h3>
     <p>
         The concept in plain text is relatively simple: a program is concurrent when it does many things at the same time,
@@ -202,6 +214,11 @@ cgroup	   coredump_filter  exe      io       maps	 mountstats  oom_adj	patch_sta
     <p>
         But, of course, there are a many things to consider when we are talking about concurrent programming, including
         processors, how many cores does the processors have, memory management, cache and so on.
+    </p>
+    <h3>Challenges and issues with concurrent and parallel code</h3> 
+    <p>
+        Concurrency and parallelism with shared resources can lead to problems like deadlock and resource starvation or have
+        indeterminated ouputs due to the large number  of execution paths. Two threads can change the same fields for instance.
     </p>
     <h4>Does it breaks SRP?</h4>
     <h3>How to unit test concurrent code?</h3>
