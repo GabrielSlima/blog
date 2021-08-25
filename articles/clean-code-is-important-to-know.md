@@ -10,7 +10,18 @@
         <strong>what principles you should know to write clean code</strong>...let's dive into it.
     </p>
     <h2>Super important principles and conpcets</h2>
+    <h3>What Classes are and what Object Oriented Programming is?</h3>
+    <h4>Classes</h4>
+    <p>
+        The definition of a class can be achieved in a few words, a class is a template for creating objects and
+        data structures. Classes can be composed by data (variables/attributes) and behaviors (methods/functions).
+        The functions can have (or not) a body.
+    </p>
     <h3>Data Strucutres != Objects</h3>
+    <p>
+        A Data Structure is a way of storing data into your computer. A Data Strucutre doesn't have
+        behaviors related to business logic.
+    </p>
     <h3>Coupling</h3>
     <h3>Cohesion</h3>
     <h3>SOLID</h3>
