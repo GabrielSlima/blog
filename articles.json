@@ -1,6 +1,14 @@
 
 [
     {
+        "id": "17",
+        "title": "What should you know to write clean code?",
+        "description": "Making your mom proud of your code...",
+        "author": "Gabriel Lima",
+        "date": "2021-08-25",
+        "article_file_name": "./articles/clean-is-important-to-know.md"
+    },
+    {
         "id": "16",
         "title": "What is Concurrent and Parallel programming?",
         "description": "Making your mom proud of your code...",
