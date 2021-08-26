@@ -20,7 +20,27 @@
         Let's explore what are some principles we have to help us to create a cleaner code.
     </p>
     <h3>Functions</h3>
+    <p>
+        Starting by one of the first things you learn when starting with programming, the functions.
+        when first strating with code we don't write much functions. Usually the instructions are
+        pretty simple and the programs are small. Maybe 5 - 10 lines long.
+    </p>
+    <p>
+        As the program's complexity grows at some point you start to notice that a lot of the instructions are
+        duplicated. That's when functions starts to appear. Functions are one of the first (if not the first)
+        concept we have contact and is the first concept that introduces the conpcet of <strong>modularity</strong>.
+    </p>
+    <p>
+        A module is a logical section. A module can be a function, class, source file or system/application.
+        By using functions another super important principle is introduced, <strong>reusability</strong>.
+        Functions provides a simple way of reusing existing code to perform a task whenever it's needed.
+    </p>
+    <h4>The size</h4>
+    <h4>Layers of Abstraction</h4>
+    <h4>The names</h4>
+    <h4>Amount of Arguments</h4>
     <h4>The stepdown rule</h4>
+    <h4>Error handling</h4>
     <h3>Object Oriented Programming (OOP)</h3>
     <p>
         In procedural programming, our system/application is composed by procedures/functions/methods and data strucutres.
