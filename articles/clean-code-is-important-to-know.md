@@ -36,9 +36,57 @@
         Functions provides a simple way of reusing existing code to perform a task whenever it's needed.
     </p>
     <h4>The size</h4>
+    <p>
+        Functions should be as small as possible. To be more acertive, they should do a specific work, I mean,
+        do only one single thing.
+    </p>
+    <p>
+        For instance, error handling is different from the function's main logic. An HTTP request is different
+        from seralization. Validation is different from business logic and so on. In this way, the process for
+        testing them, understanding them, changing or adding stuff, refactoring is way simpler. In other
+        words, the readability and mantainability is increased.
+    </p>
     <h4>Layers of Abstraction</h4>
+    <p>
+        By creating small and specialized functions you will notice that your code will have way much more functions
+        than you expected. Instead of having a function that calculates values and the same function creates a
+        report output called <strong>get_montly_report</strong>, this process will be broken in at least two
+        steps, <strong>calculate_monthly_expenses</strong> and <strong>create_report_from(Expenses expenses)</strong>.
+    </p>
+    <p>
+        This process of creating small function will lead to a <strong>layered organization</strong>.
+        The first function you see is the highest layer, meaning that you will have more abstractions and less
+        details. As
+        you go down the details are added but the complexity is manageable because you have a small amount
+        of information in each layer.
+    </p>
     <h4>The names</h4>
+    <p>
+        Choosing well defined and descriptive names will help you as you reading the layers.
+        The names should reveal the intent of the function.
+    </p>
+    <p>
+        Don't forget to choose good names for your local and global variables. They should be simple an easy
+        to read and this should result in easier layers to read and understand.
+    </p>
+    <p>
+        To choose good names for your functions consider asking yourself the following questions about the
+        function/variable: 
+        <strong>Why it exists?</strong>, <strong>What it does?</strong> and <strong>How it is used?</strong>.
+        You (the author) should completly reveal you intentions through the names for the readers.
+    </p>
     <h4>Amount of Arguments</h4>
+    <p>
+        This one is very fast, the less arguments, the better. The more arguments, the harder the
+        function will be to test, the more time readers will take to understand what the function does
+        and everytime someone needs to use it, the function's signature will have to be checked.
+    </p>
+    <p>
+        The goal here is to have 1 or 2 arguments. 3 at the most. And the name will be or end up with a verb
+        that goes with the arguments. For instance <strong>users_repository.fetch_by(String name)</strong>,
+        <strong>queue.write(String message)</strong>, <strong>authorizator.check_permissions_for(User user, AccessGroups request_groups)</strong>
+        or <strong>counter.increment(Int total, Int value_to_be_incremented, Int interval)</strong>.
+    </p>
     <h4>The stepdown rule</h4>
     <h4>Error handling</h4>
     <h3>Object Oriented Programming (OOP)</h3>
@@ -89,6 +137,7 @@
     <h3>The Law of Demeter</h3>
     <h3>SOLID</h3>
     <h4>Single Responsibility Principle</h4>
+    <h4>What a concern is</h4>
     <h4>Open/Closed Principle</h4>
     <h4>Liskov Substitution</h4>
     <h4>Interface Segregation</h4>
