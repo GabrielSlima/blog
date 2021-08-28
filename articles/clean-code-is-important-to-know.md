@@ -269,9 +269,49 @@ def delete_by(_id: str):
         have their components implemented. This means that sub-classes must be created to actually have a template that can be instantiated.
     </p>
     <h3>Software Engineering -illities</h3>
-    <h3>Coupling</h3>
+    <p>
+        Programmers have been creating new ways of writing code, new paradigms. Creating principles and desing patterns for different approachs.
+        But all of them supports healthier Software Engineering life cycles.
+    </p>
+    <p>
+        Software Engineering have quite a few amount of quality attributes, among them we have, mantainability, readability, usability, security,
+        reliability, observability and so on. Each of these attributes can be supported by writing clean code.
+    </p>
     <h3>Cohesion</h3>
+    <p>
+        Cohesion is a measurement of strength between the members of a module. In other words, the degree in which the elements of a module belog
+        together. The more cohesive a module is, the better. For instance, a source file that is called <strong>date_util</strong> is supposed
+        to have date utilities. Like tools to add days, months, years. Maybe formating tools and so on. This icreases <strong>readability</strong>
+        and therefore <strong>mantainability</strong> becauses things related to date utilities have a specific place to be. It's easier
+        to find and change/add stuff.
+    </p>
+    <h3>Coupling</h3>
+    <p>
+        Coupling on the other hand is the degree in which modules are dependent upon each other. The less dependent they are on each other,
+        the better. For instance a unit testing source file depends upon another source file, wich is the one being tested.
+        The down side of depedence between modules is that one module can't change it's own implementation. This will breaks it's users.
+    </p>
+    <p>
+        Things gets worse if one module is using interfaces, functions returned from another module that actually is a third module. For instance,
+        module A calls a function from module B but in reality the return is a function call from module C.
+        Not only this creates a dependece that will make things harder to understand and maintain.
+        But it also exposes the internal strucutre of the module B. In other words, this breaks the encapsulation.
+    </p>
     <h3>The Law of Demeter</h3>
+    <p>
+        This "Law" is a set of rules to help us to reduce the coupling between the modules of our application and prevent things like the
+        last example from happening. In short, this law states that a the functions of an object can only be called if:
+    </p>
+    <ul>
+        <li>The object is instance variable of the object that holds the current function that is a client</li>
+        <li>The object is argument of the function</li>
+        <li>The object was created within the function's body</li>
+        <li>The object is member of the class or is global variable</li>
+    </ul>
+    <p>
+        Just want to remind you that these are not actually a law, they are recommendations. They don't apply for Data Strucutres that were created
+        from a class for isntance.
+    </p>
     <h3>SOLID</h3>
     <h4>Single Responsibility Principle</h4>
     <h4>What a concern is</h4>
