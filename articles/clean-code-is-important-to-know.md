@@ -46,6 +46,43 @@
         testing them, understanding them, changing or adding stuff, refactoring is way simpler. In other
         words, the readability and mantainability is increased.
     </p>
+    <h4>Levels of indentation</h4>
+    <p>
+        This principle is to prevent nested structures inside your functions. In short, your functions should have
+        <strong>2 levels of indentation</strong> at the most. The function's body is the first level, control flow
+        statements (if/else or switch/case) and error handling blocks have their own bodies. That's the second level.
+        The statements withing their bodie's should be a function call. 
+    </p>
+    <p>
+        So instead of doing this:
+    </p>
+<pre class="brush: python">
+<code>def delete_by(_id: str):
+    if _id: #First Level of Indentation
+        try: #Second Level of Indentation
+            self.user_repository.delete_by(id) #Third Level of Indentation
+        except UserNotFoundException as _exception:
+          logging.info(str(_exception))
+</code>
+</pre>
+    <p>
+        Do this:
+    </p>
+<pre class="brush: python">
+<code>@not_blank_arguments
+def delete_by(_id: str):
+    self.user_repository.delete_by(id)
+</code>
+</pre>
+<pre class="brush: python">
+<code>class UserRepository:
+    def delete_by(_id: str):
+        try: #First Level of Indentation
+            self.db.delete_by(idd) #Second Level of Indentation
+        except UserNotFoundException as _exception:
+            logging.info(str(_exception))
+</code>
+</pre>
     <h4>Layers of Abstraction</h4>
     <p>
         By creating small and specialized functions you will notice that your code will have way much more functions
@@ -84,11 +121,39 @@
     <p>
         The goal here is to have 1 or 2 arguments. 3 at the most. And the name will be or end up with a verb
         that goes with the arguments. For instance <strong>users_repository.fetch_by(String name)</strong>,
-        <strong>queue.write(String message)</strong>, <strong>authorizator.check_permissions_for(User user, AccessGroups request_groups)</strong>
-        or <strong>counter.increment(Int total, Int value_to_be_incremented, Int interval)</strong>.
+        <strong>queue.write(String message)</strong>, <strong>authorizator.check_permissions_for(User user, AccessGroups requested_groups)</strong>
+        or <strong>counter.increment(Int total, Int value_to_be_incremented, Int interval)</strong>. List or keyword arguments counts as one.
     </p>
     <h4>The stepdown rule</h4>
+    <p>
+        At this point, if you visualize or have been writing code kind of following these previous tips, you have
+        small and and specific functions with well defined names. Now for the vertical organization of them.
+    </p>
+    <p>
+        Your files should be read following the stepdown rule. Higher level layers should be at the top. As we go down,
+        we can see lower level layers. The source files should be read as a newspaper article, the title tell us
+        what the article is about. The first paragraphs introduces the subject and main concepts. Details are increased
+        as we go down. The title can be the source file's name or classe's name. The first functions introduces the 
+        main algorithms and as we go donw on the layers details appears in a small and manageable amount.
+    </p>
+    <p>
+        This will make your source files so much easier to read and understand.
+    </p>
     <h4>Error handling</h4>
+    <p>
+        To "end" this subject about, you just gotta understand that error handling is one thing and the body of your function, is
+        another. Keep these two separated. Try/Catch blocks are a mess alone.
+    </p>
+    <p>
+        Another important thing about error handling. If your function calls another function that can result in exceptional cases,
+        keep the error handling apart from the function's logic. Now if your function has some kind of requirement to
+        perform it's task and, for some reason, you decide to abort the execution, <strong>don't return error codes</strong>. Prefer
+        to <strong>raise exceptions</strong>. In this way the caller don't have to be attached to any error code and don't have to deal with
+        the return imediatly. This will prevent the caller from having nested structures.
+    </p>
+    <p>
+        To know more about functions and naming you can access <a href="https://gabrielslima.github.io/blog/post.html?id=6" target="blank">this article</a>.
+    </p>
     <h3>Object Oriented Programming (OOP)</h3>
     <p>
         In procedural programming, our system/application is composed by procedures/functions/methods and data strucutres.
