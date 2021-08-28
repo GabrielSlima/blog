@@ -441,5 +441,12 @@ def delete_by(_id: str):
     <h3>Factory</h3>
     <h3>Null Object</h3>
     <h3>Decorators</h3>
+
+    <h3>Final Thoughts</h3>
+    <p>
+        I know, that's a lot of stuff. Bu don't worry, you'll get the eventually.
+        The book <strong>Clean Code</strong> introduces all of these principles and design patterns. I strongly recommend you reading
+        this book. I'm not saying it's perfect, but it will complement them.
+    </p>
     Good Luck XD
 </div>
