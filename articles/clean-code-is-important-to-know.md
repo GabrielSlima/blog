@@ -28,7 +28,7 @@
     <p>
         As the program's complexity grows at some point you start to notice that a lot of the instructions are
         duplicated. That's when functions starts to appear. Functions are one of the first (if not the first)
-        concept we have contact and is the first concept that introduces the conpcet of <strong>modularity</strong>.
+        concept we have contact and is the first concept that introduces the concept of <strong>modularity</strong>.
     </p>
     <p>
         A module is a logical section. A module can be a function, class, source file or system/application.
@@ -190,12 +190,84 @@ def delete_by(_id: str):
     </p>
     <h3>Object Oriented Programming Concepts</h3>
     <h4>Instance vs Classes variables</h4>
-    <h4>Object attached behaviors vs non-attached behaviors</h4>
+    <p>
+        For every new Instance a copy of the variables described on the template (the class) is created. Those variables
+        are called <strong>instance variables</strong>. That's what enables objects to have different states and
+        data structures to have different values from other of the same type.
+    </p>
+    <p>
+        For those variables that are not attached to any instance, they are part of the class, the code template. They can be
+        accessed by any instance. These variables are know as <strong>class variables</strong>. They can represent a
+        general state for every instance. They also can be constants like date/datetime masks, values and so on.
+    </p>
+    <h4>Instance attached functions vs non-attached functions</h4>
+    <p>
+        I'm going to call them functions, but have in mind that when we are talking about objects, we refer to them as <strong>behaviors</strong>.
+    </p>
+    <p>
+        Now, when a new instance is created functions are not copied to the instance. Functions stay within the class space. What happens
+        is that <strong>attached functions</strong> not only receives the caller's pointer, but with that,
+        they receive the object's reference. That is what isolates objects from each other. This means that functions that are attached to instances
+        can only manipulate their own state.
+    </p>
+    <p>
+        For <strong>non-attached functions</strong>, they receive the caller's reference, the caller's pointer, of course. But they don't receive
+        the instances's reference. They are attached the code template, the class. This means that <strong>non-attached functions
+        can only manipulate the classe's state</strong>. And remember, because the class's state is visible to every instance, every change
+        made by any through these functions affects all the objects of the same type, I mean, all the objects that were created by the same
+        code template/class.
+    </p>
     <h4>Encapsulation</h4>
-    <h4>Polymorphism</h4>
-    <h4>Abstraction</h4>
+    <p>
+        Another super important concept in OOP is encapsulation. This is about <strong>restricting direct access object's components</strong>.
+        Basically, every object has a state. This is defined by their instance variables. Objects also have behaviors. Behaviors may or may not
+        change the object's state. Encapsulation is the process of restricting direct access to some of those components.
+    </p>
+    <p>
+        This prevents the object's state from changes from outside of the object itself. This means that the object's variables and
+        some interfaces, behaviors are only visible for the object itself and the object only can change it's own state.
+    </p>
     <h4>Inheritance</h4>
+    <p>
+        This mechanism enables inheritance. This means that we can create templates, classes, that are composed by inherited elements.
+        In other words, we can create templates that describes how instance os it's type should be. Data and function members. And we
+        can also create sub-classes, sub-templates that will not only have it's own description of what data and function members instances
+        should have but also carries on <strong>base data and function members</strong>.
+    </p>
+    <h4>Polymorphism</h4>
+    <p>
+        This mechanism allows different implementations of the same function when we are using inheritance. In other words, sub-classes can
+        override behaviors inherited from it's parents and have different implementations for the same bahavior. 
+    </p>
     <h4>Composition</h4>
+    <p>
+        Is another way of creating objects that are composed by other objects. In other words, we can create an object that also
+        takes advantage or depends upon another object's state to fully perform it's own behaviors.
+    </p>
+    <h4>Abstraction</h4>
+    <p>
+        Abstraction is the process of hidding information. The description may be similar to encapsulation. But these two are different things
+        when it comes to oop. 
+    </p>
+    <p>
+        In OOP abstraction is the process of hidding the implementation from the imposed desing of an instance. In other words, we describe
+        <strong>What components an instance of type T must have</strong> separated from <strong>How those components are used</strong>...
+    </p>
+    <p>
+        This can be achieved through <strong>interfaces classes</strong> or <strong>abstract classes</strong>. In interfaces classes we describe
+        what functions an of type T must have and that's it. They are <strong>abstract functions</strong>, this means that they have no body.
+        There's only the function's signature. In other words, an <strong>interface class</strong> is a code template that imposes 
+        <strong>what functions an instancde of it's type must have</strong> but the functions don't have a body.
+    </p>
+    <p>
+        When it comes to <strong>abstract classes</strong>, they are also used to impose some kind of desing. But with abstract classes not
+        only <strong>what functions an instance of type T</strong> must have are imposed but also <strong>core variables and function implementations</strong>.
+        In other words, we can describe what functions, core variable and core functions with implementation an isntance of type T must have.
+    </p>
+    <p>
+        This mechanism uses inheritance strongly because iterfaces and abstract classes can't be instantiated. They must have
+        have their components implemented. This means that sub-classes must be created to actually have a template that can be instantiated.
+    </p>
     <h3>Software Engineering -illities</h3>
     <h3>Coupling</h3>
     <h3>Cohesion</h3>
