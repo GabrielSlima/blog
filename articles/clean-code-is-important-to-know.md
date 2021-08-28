@@ -313,20 +313,125 @@ def delete_by(_id: str):
         from a class for isntance.
     </p>
     <h3>SOLID</h3>
+    <p>
+        These 5 principles are pretty famous for creating OOP desings. They promotes mantainability, reliability, stability,
+        readability and so on because they focus on reducing the coupling, creating small and manageable classes and the habit
+        of changing the right classses once the requirements changes.
+    </p>
     <h4>Single Responsibility Principle</h4>
-    <h4>What a concern is</h4>
+    <p>
+        This principle states that our classes should have one responsibility only. Uncle bob describes it saying that our modules should
+        have one reason to change.
+    </p>
+    <p>
+        To make it clear, if you have a class that represents a report generator object, but this object also
+        fetches the data it needs to process and also performs the formatting of the report, it has more than one reason to change.
+        What if the data source changes or the report's format changes? Changes are a risk and the entire class would have to be tested
+        to guarantee that everything is working fine.
+    </p>
+    <p>
+        To solve this problem this class should be split into 3 different classes, one class that will be responsible for
+        fetching the data, another one that will be responsible for processing the data and another one to actually
+        generate the final report.
+    </p>
     <h4>Open/Closed Principle</h4>
+    <p>
+        This principle states that our classes should be open for extension and closed for modification. In other words,
+        once our classes are developed, tested and are being used in production, they should not be opened again for any changes.
+        So we're not supposed to add/remove or change any data or behavior member of a class that was already developed and validated.
+    </p>
+    <p>
+        Don't be so attached to this principle. It was created over a decade ago. Back then changes where a big cost and the risks
+        of recompiling something that was already being used in production was a big risk. Requirements weren't supposed to change
+        with frequency. Today with the agile requirements changes all the time. Not changing a class is almost impossible.
+    </p>
+    <p>
+        Just be aware that changes are a risk. If you find yourself opening classes that weren't supposed to be changed many times
+        consider redesigning it.
+    </p>
     <h4>Liskov Substitution</h4>
     <h4>Interface Segregation</h4>
     <h4>Dependecy Inversion</h4>
+    <p>
+        This principle states that the clients of a class should be dependent upon abstract versions of it, not concrete ones. So
+        instead of calling the sub-class, clients consumes the abstract version, the parent. In this way the implementation
+        is hidden and the sub-class is free to have any changes to it's implementations without the risk of breaking it's clients. 
+    </p>
     <h3>Separation of Concerns</h3>
-    <h3>Inversion of Control</h3>
+    <p>
+        Separation of Concerns is a principle for separating our system/application into different logical sections. Each logical section
+        addresses a concern. Each logical section takes care of it's own business. Concerns can be split into functions,
+        classes/objects, source files, modules, microservices. Maybe they can be interpreted as features and so on.
+        This principle can be applied at level any level of the system/application. From architectural desing to the source file level.
+    </p>
     <h3>Aspect Oriented Programming</h3>
-    <h4>Aspects</h4>
+    <p>
+        When it comes to separation of concerns, we are talking about separating our system/application into different parts.
+        Each part takes care of your own business. For instance, a <strong>repositories</strong> package or folder (in python) is
+        home for modules and classes responsible for managing managing a variety of objects into the database.
+    </p>
+    <p>
+        A package called <strong>domains</strong> is home for modules and classes responsible for business logic and so on.
+        The domain shouldn't interfere on how the repositories manipulates or consumes the database and vise versa.
+    </p>
+    <p>
+        Another good example is Microservices application. Let's an ecommerce. The payments microservice has no business
+        with the cart in terms of how the cart stores the products and vise versa.
+    </p>
+    <p>
+        But there are some concerns are business of everyone. They can be used by any other concern. For instance, a logger
+        object can be used by any other concern to keep track of the execution. The same goes for performance logging,
+        security and so on. In short, this breaks modularization. If a concern tha cuts accross other concerns changes,
+        those concerns are affected. This makes it harder to change them and mantain them because they are literally duplicated.
+    </p>
+    <p>
+        Not only that, but by not being primary features, they mix up with the main feature's logic and makes it harder to
+        understand the primary feature's solution.
+    </p>
+    <p>
+        To solve cross-cutting concerns the Aspect Oriented paradigm can be used. This paradigm promotes
+        the modulariation of those secondary concerns by spliting them into aspects and removing them from the middle of
+        primary feature's code and using them as additional behaviors.
+    </p>
+    <h4>Aspect</h4>
+    <p>
+        Represents a cross-cutting concern. A logger is an aspect, a performance logger is an aspect. An user-authorizer is an aspect.
+    </p>
     <h4>Advice</h4>
+    <p>
+        Is the behavior that will be applied in execution time to the primary feature's code. For instance, you can have a function
+        that performs an HTTP request. To monitor what is being requested the the server's response and adivice called
+        <strong>watch_http_request</strong> advice (behavior) from and aspect called <strong>http_monitoring</strong> can be applied.
+    </p>
     <h4>Pointcut</h4>
+    <p>
+        Is an expression that will specifies in what joint point to apply an especific adivice.
+        In other words, where to apply an advice and what adivice to apply. In Python for instance decorators
+        can be used to wrap up the function and add the needed additional behavior, in Java the same can be achieved with
+        annotations. 
+    </p>
     <h4>Join point</h4>
+    <p>
+        This one is very simple, every point on our code that an additional behavior can be called and executed is a join point.
+        Function calls, variable attribution, error handling are examples of join points.
+    </p>
     <h3>Serialization</h3>
+    <h3>Inversion of Control</h3>
+    <p>
+        This one is about inverting the normal flow of control of parts or all of your application. In other words, using
+        in this principle the control of some part of your code is handed to specific components responsible for doing the job.
+    </p>
+    <p>
+        This can be from the function level to the application level. For instance, instead of loading env variables inside your
+        functions, you hand this job to a specific module. How this env variable is going to be loaded is not the job of your function,
+        you just gotta use the value. In this case, the control of the flow of loading an env variable is handed to a specific module.
+    </p>
+    <p>
+        Another good example of this principle being applied are fremeworks. With frameworks all the control of the flow of the application
+        is the freamework's responsibility and your custom code is called whenever it's needed. In a not inverted control flow
+        application, you would have to take care of everything. How plungins are attached together, the environment, the dependencies
+        and so on.
+    </p>
     <h2>Desing Patterns</h2>
     <h3>Singleton</h3>
     <h3>Dependecy Injection</h3>
