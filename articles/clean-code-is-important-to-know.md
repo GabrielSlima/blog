@@ -2,7 +2,7 @@
     <p>
         The overall objective of today's article is to summarize important topics you need to know to start
         writing clean code. It's important to understand that a clean code is not attached to a specific language
-        or thecnology. Clean code is all about communication through the tools you already knows, but using
+        or technology. Clean code is all about communication through the tools you already knows, but using
         principles and desing patterns to better reveal your intentions.
     </p>
     <p>
