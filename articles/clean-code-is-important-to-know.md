@@ -7,9 +7,9 @@
     </p>
     <p>
         Welcome to the PewdiePie's favourite blog about Software Engineering and today's topic is
-        <strong>what principles you should know to write clean code</strong>...let's dive into it.
+        <strong>principles and desing patterns you should know to write clean code</strong>...let's dive into it.
     </p>
-    <h2>Super important principles and concepts</h2>
+    <h3>Super important principles and concepts</h3>
     <p>
         To create clean code, first you start with common sense. You don't need to know any principle
         to know that by mixing up logic that doesn't seems to belong together makes the code more confuse or
@@ -349,8 +349,6 @@ def delete_by(_id: str):
         Just be aware that changes are a risk. If you find yourself opening classes that weren't supposed to be changed many times
         consider redesigning it.
     </p>
-    <h4>Liskov Substitution</h4>
-    <h4>Interface Segregation</h4>
     <h4>Dependecy Inversion</h4>
     <p>
         This principle states that the clients of a class should be dependent upon abstract versions of it, not concrete ones. So
@@ -416,6 +414,11 @@ def delete_by(_id: str):
         Function calls, variable attribution, error handling are examples of join points.
     </p>
     <h3>Serialization</h3>
+    <p>
+        Is the process of translating a data strucutre or object into a format that the environment understands. For instance,
+        translating a JSON data structure into a Map in Java. Or translating a JSON data structure into a dictionary in Python.
+        Translating a dictionary into a Queue message format and so on.
+    </p>
     <h3>Inversion of Control</h3>
     <p>
         This one is about inverting the normal flow of control of parts or all of your application. In other words, using
@@ -433,20 +436,68 @@ def delete_by(_id: str):
         and so on.
     </p>
     <h2>Desing Patterns</h2>
+    <p>
+        In short, there are countless solutions for even the same problem. When it comes to different problems there are endless
+        solution paths. But even with a huge amount of possibilities some problems are very similiar. An application that exposes
+        endpoints to extend a server application still is a server-side application and most probably will have business logic.
+    </p>
+    <p>
+        For those very commom issues and solutions we have Desing Patterns. This not only prevent developers from reinventing the wheel
+        but also promotes a good communication within the Software Engineering communitt. For instance the Singleton Pattern doesn't change
+        according to the geographical location. It statys the same.
+    </p>
     <h3>Singleton</h3>
+    <p>
+        An object is called singleton when only one single instance of it is lives on the entire application. For instance, an authenticator
+        object can be singleton. A message sender can be singleton and so on. To be applied we need a code template (a class) that will
+        be responsible for returning always the same instance when it's required.
+    </p>
     <h3>Dependecy Injection</h3>
+    <p>
+        Dependency Injection is Inversion of Control applied to dependence management. In other words, on this design pattern the process of
+        creating objects that composes another one and the process of injecting those objects and other dependeces
+        is handed to modules responsibls for this kind of job. Those modules are also known as assemblers and injectors.
+    </p>
     <h3>Lazy Initialization</h3>
+    <p>
+        Some processes can be expensive. For instance, the instantiation process of an object that composes another one can take quite a while
+        to be completed. In this kind of scenario those expensive processes can be executed only the first time they are needed and the following
+        requests are going to be faster. This desing pattern is called the Lazy Initialization Tatic
+    </p>
     <h3>Repositories</h3>
-    <h3>Data Access Object</h3>
-    <h3>Factory</h3>
+    <p>
+        This desing pattern is very simple and maybe you already uses it. To manipulate a collection of a specific object withing the database
+        repositories are used. For instance, a collection of users can be manipulated within the database using the interface UserRespository.
+        With this interface we can add a new user, retrieve using custom queries and so on.
+    </p>
+    <h3>Factory Method</h3>
+    <p>
+        What happens when you need an instance from a class C? The usual approach is to call the class's constructor directly.
+        Using this pattern the responsibility of creating objects is handend to a speicific element responsible for creating the objects
+        whenever they are needed. this element is also known as <strong>factory method</strong>.
+    </p>
+    <p>
+        This desing pattern also is an application of Inversion of Control. The control of the flow of creation of objects is handend to
+        a specific module. This reduces the coupling between the elements of the application upon concrete versions of classes.
+    </p>
     <h3>Null Object</h3>
+    <p>
+        This desing pattern allows the application of a <strong>do-nothing</strong> realtionship in a elegant way. Instead of returning literally
+        <i>null</i> to the caller when a specific object can not be created for any reason, let's say because the type is not mapped into the factory
+        an NullObject is returned with the same behaviors a <i>non-null-object</i> would have. But they don't have any effect. They do nothing.
+    </p>
+    <p>
+        This desing pattern is used with inheritance and polymorphism. The NullObject class have the same type as the the <i>non-null-object</i> classes.
+    </p>
     <h3>Decorators</h3>
-
+    <p>
+        This one allows adding additional behaviors without changing existing code. In other words, new statements are added to existing code
+        by wrapping it up using only an expression.
+    </p>
     <h3>Final Thoughts</h3>
     <p>
-        I know, that's a lot of stuff. Bu don't worry, you'll get the eventually.
-        The book <strong>Clean Code</strong> introduces all of these principles and design patterns. I strongly recommend you reading
-        this book. I'm not saying it's perfect, but it will complement them.
+        Writing clean code is not a easy thing. It's a constant process and requires a little bit of effort on the beggining. But things
+        gets easier once you've created the habit of writing clean code.
     </p>
     Good Luck XD
 </div>
