@@ -1,13 +1,13 @@
 <div style="text-align: left;">
     <p>
         The overall objective of today's article is to summarize important topics you need to know to start
-        creating clean code. It's important to understand that a clean code is not attached to a specific language
-        or thecnology. Clean code is all about communication through the tools you alredy have, but using
-        principles and desing patterns to reveal your intentions
+        writing clean code. It's important to understand that a clean code is not attached to a specific language
+        or thecnology. Clean code is all about communication through the tools you already knows, but using
+        principles and desing patterns to better reveal your intentions.
     </p>
     <p>
         Welcome to the PewdiePie's favourite blog about Software Engineering and today's topic is
-        <strong>principles and desing patterns you should know to write clean code</strong>...let's dive into it.
+        <strong>principles and desing patterns you should know to write a cleaner code</strong>...let's dive into it.
     </p>
     <h3>Super important principles and concepts</h3>
     <p>
