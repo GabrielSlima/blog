@@ -16,14 +16,19 @@
         that long source files with long classes and functions are harder to understand. 
     </p>
     <p>
-        Maybe you are using some of the following principles and don't even know that it's a thing.
-        Let's explore what are some principles we have to help us to create a cleaner code.
+        But in fact some of the things we do as "common sense" is actually a concept or a design pattern.
+        May by using common sense we're not fully applying the concept or desing pattern, but that's not the point.
+        The point is, we start wrting clean code as we start thinking that things are getting messy.
+    </p>
+    <p>
+        That being said, let's explore what are some principles and desing patterns we have to
+        help us to create a cleaner code.
     </p>
     <h3>Functions</h3>
     <p>
-        Starting by one of the first things you learn when starting with programming, the functions.
-        when first strating with code we don't write much functions. Usually the instructions are
-        pretty simple and the programs are small. Maybe 5 - 10 lines long.
+        Starting by one of the first things you learn when starting with programming, functions.
+        When first strating with code we don't write many functions. Usually the instructions are
+        pretty simple and programs are small. Maybe 5 - 10 lines long.
     </p>
     <p>
         As the program's complexity grows at some point you start to notice that a lot of the instructions are
@@ -35,23 +40,31 @@
         By using functions another super important principle is introduced, <strong>reusability</strong>.
         Functions provides a simple way of reusing existing code to perform a task whenever it's needed.
     </p>
+    <p>
+        Now to the best practices, starting with functions.
+    </p>
     <h4>The size</h4>
     <p>
-        Functions should be as small as possible. To be more acertive, they should do a specific work, I mean,
+        Functions should be as small as possible. To be more clear, they should do a specific task, I mean,
         do only one single thing.
     </p>
     <p>
-        For instance, error handling is different from the function's main logic. An HTTP request is different
-        from seralization. Validation is different from business logic and so on. In this way, the process for
-        testing them, understanding them, changing or adding stuff, refactoring is way simpler. In other
-        words, the readability and mantainability is increased.
+        For instance, error handling is a different thing from the function's main logic. An HTTP request is different
+        from seralization. Validation is different from business logic and so on.
+    </p>
+    <p>
+        To make functions small we must break them into small individual pieces. One function performs the validation,
+        another one the error handling and so on. In this way, the process for
+        testing them, understanding them, changing or adding stuff, refactoring or any thing related to
+        each function and the task they performs is way simpler. In other
+        words, the <strong>readability and mantainability are increased</strong>.
     </p>
     <h4>Levels of indentation</h4>
     <p>
         This principle is to prevent nested structures inside your functions. In short, your functions should have
         <strong>2 levels of indentation</strong> at the most. The function's body is the first level, control flow
         statements (if/else or switch/case) and error handling blocks have their own bodies. That's the second level.
-        The statements withing their bodie's should be a function call. 
+        The statements within their bodie's should be a function call, if possible. 
     </p>
     <p>
         So instead of doing this:
@@ -91,16 +104,17 @@ def delete_by(_id: str):
         steps, <strong>calculate_monthly_expenses</strong> and <strong>create_report_from(Expenses expenses)</strong>.
     </p>
     <p>
-        This process of creating small function will lead to a <strong>layered organization</strong>.
+        This process of creating small function will lead you to a <strong>layered organization</strong>.
         The first function you see is the highest layer, meaning that you will have more abstractions and less
-        details. As
+        details and the caller must be above the callee. As
         you go down the details are added but the complexity is manageable because you have a small amount
         of information in each layer.
     </p>
     <h4>The names</h4>
     <p>
-        Choosing well defined and descriptive names will help you as you reading the layers.
-        The names should reveal the intent of the function.
+        Choosing well defined and descriptive names will help you as you read (or any other reader reads) the layers.
+        The names should reveal the intent of the function. This includes the
+        function calls within other functions.
     </p>
     <p>
         Don't forget to choose good names for your local and global variables. They should be simple an easy
@@ -110,11 +124,11 @@ def delete_by(_id: str):
         To choose good names for your functions consider asking yourself the following questions about the
         function/variable: 
         <strong>Why it exists?</strong>, <strong>What it does?</strong> and <strong>How it is used?</strong>.
-        You (the author) should completly reveal you intentions through the names for the readers.
+        You (the author) should completly reveal your intentions through the names for the readers.
     </p>
     <h4>Amount of Arguments</h4>
     <p>
-        This one is very fast, the less arguments, the better. The more arguments, the harder the
+        This one is can be described in a few workds, the less arguments, the better. The more arguments, the harder the
         function will be to test, the more time readers will take to understand what the function does
         and everytime someone needs to use it, the function's signature will have to be checked.
     </p>
@@ -133,22 +147,37 @@ def delete_by(_id: str):
         Your files should be read following the stepdown rule. Higher level layers should be at the top. As we go down,
         we can see lower level layers. The source files should be read as a newspaper article, the title tell us
         what the article is about. The first paragraphs introduces the subject and main concepts. Details are increased
-        as we go down. The title can be the source file's name or classe's name. The first functions introduces the 
+        as we go down.
+    </p>
+    <p>
+        The title can be the source file's name or classe's name. The first functions introduces the 
         main algorithms and as we go donw on the layers details appears in a small and manageable amount.
+        And don't forget, try to keep the caller always goes above the callee. But of course, tometimes
+        you must order the functions by importance. Just try to keep them closer to each other.
     </p>
     <p>
         This will make your source files so much easier to read and understand.
     </p>
+    <h3>No side-effects</h3>
+    <p>
+        If your function says it performs task Y, it should only perform task Y. No side-effect ot intermediate paths.
+        If the task can't be performed for some reason, return a <strong>do-nothing</strong> object or raise an exception.
+        Don't make programmers be fooled.
+    </p>
     <h4>Error handling</h4>
     <p>
         To "end" this subject about, you just gotta understand that error handling is one thing and the body of your function, is
-        another. Keep these two separated. Try/Catch blocks are a mess alone.
+        another. Keep these two separated. Try/Catch blocks are a mess alone, mixing up with the function's logic
+        can make things worse.
     </p>
     <p>
         Another important thing about error handling. If your function calls another function that can result in exceptional cases,
         keep the error handling apart from the function's logic. Now if your function has some kind of requirement to
         perform it's task and, for some reason, you decide to abort the execution, <strong>don't return error codes</strong>. Prefer
-        to <strong>raise exceptions</strong>. In this way the caller don't have to be attached to any error code and don't have to deal with
+        to <strong>raise exceptions</strong>.
+    </p>
+    <p>
+        In this way the caller don't have to be attached to any error code and don't have to deal with
         the return imediatly. This will prevent the caller from having nested structures.
     </p>
     <p>
@@ -157,29 +186,29 @@ def delete_by(_id: str):
     <h3>Object Oriented Programming (OOP)</h3>
     <p>
         In procedural programming, our system/application is composed by procedures/functions/methods and data strucutres.
-        To help us to organize things, let's say, if a source file is getting too long, modules can be
+        To help us to better organize things, let's say, if a source file is getting too long, modules can be
         used to split the code into one or more other source files.
     </p>
     <p>
         In Object Oriented Programming our system/application is composed by Objects. We also have procedures
-        and data structures, but the objects group them and act as if they were independent from each other.
+        and data structures, but classes and objects groups them and act as if they were independent from each other.
     </p>
     <h4>Classes</h4>
     <p>
         The definition of a class can be achieved in a few words, a class is a template for creating objects or
         data structures. Classes can be composed by data (variables/attributes) and behaviors (methods/functions).
-        The functions can have (or not) a body.
+        The functions can (or not) have a body.
     </p>
     <h4>What objects are?</h4>
     <p>
         Objects are like mini programs that runs within the system/application. They are
         composed by data and behaviors members. The data members represents the object's state. The
-        behavior members are used to change the object's state or retrive information about them.
+        behavior members are used to change the object's state or retrieve information about them.
     </p>
     <p>
         Objects can interact with each other by using each other's public interfaces.
         For instance, you can have a <strong>report_generator</strong> object and a <strong>report_printer</strong>
-        one. The can call each other's public behaviors.
+        one. They can call each other's public behaviors.
     </p>
     <h4>Data Strucutres created based on classes?</h4>
     <p>
@@ -466,7 +495,7 @@ def delete_by(_id: str):
     </p>
     <h3>Repositories</h3>
     <p>
-        This desing pattern is very simple and maybe you already uses it. To manipulate a collection of a specific object withing the database
+        This desing pattern is very simple and maybe you already uses it. To manipulate a collection of a specific object within the database
         repositories are used. For instance, a collection of users can be manipulated within the database using the interface UserRespository.
         With this interface we can add a new user, retrieve using custom queries and so on.
     </p>
