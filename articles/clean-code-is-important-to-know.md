@@ -16,9 +16,9 @@
         that long source files with long classes and functions are harder to understand. 
     </p>
     <p>
-        But in fact some of the things we do as "common sense" is actually a concept or a design pattern.
-        May by using common sense we're not fully applying the concept or desing pattern, but that's not the point.
-        The point is, we start wrting clean code as we start thinking that things are getting messy.
+        But in fact some of the things we do as "common sense" can actually be a concept or a design pattern.
+        Maybe by using common sense we're not fully applying the concept or desing pattern, but that's not the point.
+        The point is, we start wrting clean code after we notice that things are getting messy.
     </p>
     <p>
         That being said, let's explore what are some principles and desing patterns we have to
