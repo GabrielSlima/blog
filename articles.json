@@ -1,6 +1,14 @@
 
 [
     {
+        "id": "18",
+        "title": "What is the difference between inheritance and composition?",
+        "description": "You don't know Object Oriented programming...",
+        "author": "Gabriel Lima",
+        "date": "2021-09-05",
+        "article_file_name": "./articles/oop-composition-inheritance.md"
+    },
+    {
         "id": "17",
         "title": "Principles and Design Patterns that will help you on writing a cleaner code",
         "description": "Making your mom proud of your code...",
