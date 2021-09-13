@@ -1,6 +1,14 @@
 
 [
     {
+        "id": "19",
+        "title": "What is a OOP system and how the Objects relate with each other in a system with MVC archictecture?",
+        "description": "You don't know Object Oriented programming...",
+        "author": "Gabriel Lima",
+        "date": "2021-09-13",
+        "article_file_name": "./articles/desing-patterns-mvc.md"
+    },
+    {
         "id": "18",
         "title": "What is the difference between inheritance and composition?",
         "description": "You don't know Object Oriented programming...",
