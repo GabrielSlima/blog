@@ -1,5 +1,12 @@
-
 [
+    {
+        "id": "19",
+        "title": "Is documentation a utopia?",
+        "description": "It's worth it spend lots of time writing documentation?",
+        "author": "Gabriel Lima",
+        "date": "2021-09-05",
+        "article_file_name": "./articles/documentation-utopia.md"
+    },
     {
         "id": "18",
         "title": "What is the difference between inheritance and composition?",
