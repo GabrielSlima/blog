@@ -56,7 +56,7 @@
     </p>
     <p>
         I was responsible for delivering a feature that had more
-        requirements changes than tests (hahaha just kidding). But there was many changes.
+        requirements changes than tests (hahaha just kidding). But there were many changes.
         As requirements changed, the costs were increasing and the time decreasing.
         I started to notice that what I had to deliver on the begning was going to take,
         let's say 4 to 5 days to desing, implement and test from scratch.
@@ -94,7 +94,8 @@
         A documentation about what the feature was supposed to do, what it was supposed
         to produce and where all the used data was coming from seemed the solution
         for my problem. At the end I ended up refacting the code and going through
-        the <strong>unit tests</strong>
+        the <strong>unit tests</strong>. I didn't know the benefits of using them
+        very well.
     </p>
     <p>
         Documentation is really important when using APIs that are from another part of the
@@ -103,13 +104,14 @@
         really reads the documentation?
     </p>
     <p>
-        Afther going through the struggle for keeping the documentation uptodate and trying
-        to keep the users happy by codind what they actually need and working on some
-        large code bases I'm really starting to think that documentation is something that
+        After going through the struggle for keeping the documentation with the lastest
+        requirements and solutions, trying to keep the users happy by coding what
+        they actually need and working on some
+        large code bases I realized that documentation is something that
         is worth it only when my code will be reused by someone else that doesn't need to
         understand everything about the code, just how to use it. This includes other teams
-        within the comopany or someone on the internet if the product is intended to
-        be "public"
+        within the company or someone on the internet if the product is intended to
+        be "public".
         <br>
         Other than that, a well written and tested code base will be enough.
     </p>
@@ -148,17 +150,18 @@
         After getting frustrated because requirements changes faster than my ability
         of doing many things at once and because some members of my team doesn't seem
         to understand that they are building a bridge with wood to make way for trucks,
-        I've decided to let go of trying to reason with people and accepting that
+        I've decided to let go of trying to reason with them and accepting that
         the efforts for having a documentation is not worth it, I
         started to take care on whats on my control.
     </p>
     <p>
         I don't want you to have a bad impression here, but trying to reach something
-        your arms can't doesn't seems worth it. Understanding the business logic and
+        your arms can't doesn't seems worth it from my point of view.
+        Understanding the business logic and
         creating mind maps for my own understanding doesn't seems a bad choice. As for
         the quality of the product, I've made TDD a habit. Independenlty of what
         some peple may think, by having a testable application as much as I can will
-        benefit me in the future.
+        benefit myself in the future.
     </p>
     <h4>Final Thoughts</h4>
     <p>
@@ -169,7 +172,7 @@
     </p>
     <p>
         The best option here is to keep the best documentation one can have well written
-        and testable, the code itself. If your team doesn't care about writting tests or
+        and testable, the code itself. If your team doesn't care about writing tests or
         doesn't seems to want to understand about the benefits of having a verifiable system,
         do what you can do for yourself. At the end of the day, you should be thiking about
         making your own job easier...
