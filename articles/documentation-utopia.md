@@ -1,14 +1,13 @@
 <div style="text-align: left;">
     <p>
         I don't have many years of experience in Software Engineering, during these last months
-        i started to ask myself if documentation is really a thing and if it's worth it
+        I started to ask myself if documentation is really a thing and if it's worth it
         to spend time bulding them.
     </p>
     <p>
         Welcome to the Pewdiepie's favourite blog that maybe is only about Software Engineering
         and today I would like to share with you my thoughts about documentation and what I'm
-        considering to do about it to save myself from the pain of having to understand
-        complex desings... 
+        considering to do about for now... 
     </p>
     <h3>Is documentation really important?</h3>
     <p>
@@ -25,11 +24,13 @@
     <p>
         Now, working on a product where the overall objective is to reduce the amount
         of manual work of the users it seems that documentation is irrelevant at a certain
-        degree. Writing what the system was supposed to do seems a waste of time because
-        what it was supposed to do may be different next week...
+        degree. Writing what the system is supposed to do seems a waste of time because
+        what it is supposed to do today may be different next week...
     </p>
     <p>
-        Documentation not only help me to better understand the solution, but also help me
+        Speaking for mysef, despite the sentiment of wasting my time because next week
+        requirements can change, partially or entirelly, documentation not only help
+        me to better understand the solution, but also help me
         to organize my own thoughts, what I have to test, create and so on. Coding "without
         a plan" takes more time than coding with a basic plan. For instance, without having
         the visualization of the objects of the system/application.
@@ -42,18 +43,28 @@
         The phases of this process can be summarized into 3 steps: 
         requirements, desing and implementation.
     </p>
+    <p>
+        UML is a way of documenting the application but in practice, still doesn't seems
+        flexible enough for my problem, despite the idea of having a good idea of
+        the application's architecture at the end.
+    </p>
     <h4>Struggling to keep it updated</h4>
     <p>
         It's great to have a starting point when designing the application. A plan of what
-        I have to create within it seems a good idea. Or at least was...
+        I have to create within it seems a good idea. Or at least was...I've been through
+        a situation recently and I would like to share with you.
     </p>
     <p>
-        As the requirements changed, the costs were increasing and the time decreasing.
+        I was responsible for delivering a feature that had more
+        requirements changes than tests (hahaha just kidding). But there was many changes.
+        As requirements changed, the costs were increasing and the time decreasing.
         I started to notice that what I had to deliver on the begning was going to take,
         let's say 4 to 5 days to desing, implement and test from scratch.
-        <br>
-        After going through this process
-        and going back to the user, the requirements changed and now I had to go through
+    </p>
+    <p>
+        After going through the implementation phase it's natural to check if it's
+        what the user needs. And it's completly normal to have changes on the requirements.
+        But with the requirements changes there are consequences... I had to go through
         all the process of designing, implementing and testing all over again and didn't had
         the same time as before. In that way something was going to be outdated and letting
         the tests behind wasn't and still isn't a option for me.
@@ -62,7 +73,10 @@
         So in other words, having to change the documentation as the requirements changes
         becomes an inpratical thing. The reallity is that if requirements changes during the
         implementation or deployment phase, you certainly won't have the same time you had
-        before to revaluate your desing and documentation all over again...
+        before to revaluate your desing and documentation all over again...with
+        the desing problem, depending on what changes were made on the requirements,
+        can be partially solved by having a verifiable and a desing with loosely coupled
+        and high cohesive elements.
     </p>
     <h4>Does anyone actually reads it?</h4>
     <p>
@@ -99,7 +113,7 @@
         <br>
         Other than that, a well written and tested code base will be enough.
     </p>
-    <h4>Struggling to keep the application testable</h4>
+    <h4>Struggling to keep the application testable on the team</h4>
     <p>
         Don't get me wrong, I'm not a Software Engineering Wizard. I just want to share
         with you my frustration. By no means I'm telling you if it's right or
@@ -122,9 +136,42 @@
         what is working can't stop working. It also improves the documentation part.
         The code base is the only thing that will be uptodate for obvious reasons. Not having
         tests leads to an application lead by fear. Fear of breaking what is already working
-        because readers doesn't know everything the application should do util he makes a
+        because readers doesn't know everything the application should do until he makes a
         change and everything starts to break apart...
     </p>
-    <p></p>
+    <p>
+        I strongly recomend reading the chapter about unit tests from the book Clean Code.
+        It's not the most detailed information about tests, but it's a good start.
+    </p>
     <h4>Mind maps and creating the minimun documentation for my own benefit</h4>
+    <p>
+        After getting frustrated because requirements changes faster than my ability
+        of doing many things at once and because some members of my team doesn't seem
+        to understand that they are building a bridge with wood to make way for trucks,
+        I've decided to let go of trying to reason with people and accepting that
+        the efforts for having a documentation is not worth it, I
+        started to take care on whats on my control.
+    </p>
+    <p>
+        I don't want you to have a bad impression here, but trying to reach something
+        your arms can't doesn't seems worth it. Understanding the business logic and
+        creating mind maps for my own understanding doesn't seems a bad choice. As for
+        the quality of the product, I've made TDD a habit. Independenlty of what
+        some peple may think, by having a testable application as much as I can will
+        benefit me in the future.
+    </p>
+    <h4>Final Thoughts</h4>
+    <p>
+        I'm not trying to convince or trying to tell you what you should or shouldn't do.
+        But have in mind that keeping a documentation is hard and you will struggle if you
+        have other colleagues that doesn't care about or doesn't have the time to keep them
+        uptodate.
+    </p>
+    <p>
+        The best option here is to keep the best documentation one can have well written
+        and testable, the code itself. If your team doesn't care about writting tests or
+        doesn't seems to want to understand about the benefits of having a verifiable system,
+        do what you can do for yourself. At the end of the day, you should be thiking about
+        making your own job easier...
+    </p>
 </div>
