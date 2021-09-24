@@ -60,4 +60,40 @@
     <p>
         The trade offs for using the pattern.
     </p>
+    <h3>Types of Design Patterns</h3>
+    <h3>The MVC Design Pattern</h3>
+    <p>
+        This parttern is probably the first desing pattern ervery web developer heards of
+        when getting started with programming. This pattern was used in
+        desktop applications and now it's broadly used in Web development too.
+        One problem it solves is the tightly coupling between the data management, user interface
+        and how the interactions between the user and the user interface affects the data management
+        or not.
+    </p>
+    <p>
+        On this pattern these three concerns are decomposed into three different objects.
+        This decomposition enables a more flexible application by promoting a loosely coupled
+        relationships between the objects.
+    </p>
+    <h4>Model</h4>
+    <p>
+        The first object described on the name of this pattern is the Model. This object
+        is also called <strong>application object</strong>. It is resposible for dealing with
+        the data management. So business rules are here and if the data is persisted in files
+        or databases, this object will be the user of other objects responsible for
+        retrieving them and manage them.
+    </p>
+    <h4>View</h4>
+    <p>
+        The second object described on the name of this pattern is the View. This object
+        is responsible for reflecting the model's state into the screen. The model
+        can have it's data represented in many different ways. Meaning that one Model
+        can have many views.
+    </p>
+    <h4>Controller</h4>
+    <p>
+        The last object describe in the name of this pattern is the Controller. This object
+        defines the way that the user's  interactions on the view (the interface) are passed
+        on to the model. 
+    </p>
 </div>
