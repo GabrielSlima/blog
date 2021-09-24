@@ -96,4 +96,5 @@
         defines the way that the user's  interactions on the view (the interface) are passed
         on to the model. 
     </p>
+    <h3>MVC and REST APIs</h3>
 </div>
