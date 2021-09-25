@@ -90,7 +90,6 @@
         can have many views.
     </p>
     <h4>The Model/View relationship</h4>
-    <img class="post-img" src="images/design-patterns-mvc/design-patterns-model-view.svg" alt="View Reflecting the Model's state">
     <p>
         Before continuing to the last object that composes this pattern, I would  like to
         talk about the Model/View relationship. The view, the user interface,
@@ -101,6 +100,27 @@
         The View subscribe to the model to reflect it's state. Whenever the model's state
         changes it notifies the view. The view once notified, updates itself with the
         new state.
+    </p>
+    <img class="post-img" src="images/design-patterns-mvc/design-patterns-model-view.svg" alt="View Reflecting the Model's state">
+    <p>
+        The model refers to the data and the view refers to how that data is
+        presented on the UI. When it comes to the business rules, data storing and so on
+        tehy can happen within the model object or maybe these
+        concerns can be broken into different objects or modules.
+    </p>
+    <p>
+        The model's
+        state (the data or variables) can be represented by the view. Or
+        many views if necessary. Whenever the model changes, all the views subscribed to
+        the model will change too and update itself without the model having to know their
+        existance.
+    </p>
+    <p>
+        This kind of feature is very similar to the <strong>observer pattern</strong>.
+        One object changes and affects others objects that are dependent on it's state,
+        without the changed object having to know details about them. On this case,
+        the views are dependent upon the model's values/state. Whenever it changes, the
+        views changes too.
     </p>
     <img class="post-img" src="images/design-patterns-mvc/design-patterns-model-many-views.svg" alt="View Reflecting the Model's state">
     <p>
@@ -113,6 +133,8 @@
         defines the way that the user's  interactions on the view (the interface) are passed
         on to the model. 
     </p>
+    <h3>Services</h3>
+    <h3>Data Access</h3>
     <h3>MVC and REST APIs</h3>
     <h3>MVC can be used on the Front-End?</h3>
 </div>
