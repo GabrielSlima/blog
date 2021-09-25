@@ -67,8 +67,7 @@
         when getting started with programming. This pattern was used in
         desktop applications and now it's broadly used in Web development too.
         One problem it solves is the tightly coupling between the data management, user interface
-        and how the interactions between the user and the user interface affects the data management
-        or not.
+        and how the interactions between the user and the interface affects the data management.
     </p>
     <p>
         On this pattern these three concerns are decomposed into three different objects.
@@ -86,9 +85,26 @@
     <h4>View</h4>
     <p>
         The second object described on the name of this pattern is the View. This object
-        is responsible for reflecting the model's state into the screen. The model
+        is responsible for reflecting the model's state. The model
         can have it's data represented in many different ways. Meaning that one Model
         can have many views.
+    </p>
+    <h4>The Model/View relationship</h4>
+    <img src="" alt="View Reflecting the Model's state">
+    <p>
+        Before continuing to the last object that composes this pattern, I would  like to
+        talk about the Model/View relationship. The view, the user interface,
+        is supposed to reflect the model's state. These two objects have a subscribe/notify
+        protocol between them.
+    </p>
+    <p>
+        The View subscribe to the model to reflect it's state. Whenever the model's state
+        changes it notifies the view. The view once notified, updates itself with the
+        new state.
+    </p>
+    <p>
+        One way the model can be stimulated to chage it's own state are by requests from 
+        the user. That brings us to the last object, the controller.
     </p>
     <h4>Controller</h4>
     <p>
@@ -97,4 +113,5 @@
         on to the model. 
     </p>
     <h3>MVC and REST APIs</h3>
+    <h3>MVC can be used on the Front-End?</h3>
 </div>
