@@ -90,7 +90,7 @@
         can have many views.
     </p>
     <h4>The Model/View relationship</h4>
-    <img src="" alt="View Reflecting the Model's state">
+    <img class="post-img" src="images/design-patterns-mvc/design-patterns-model-view.svg" alt="View Reflecting the Model's state">
     <p>
         Before continuing to the last object that composes this pattern, I would  like to
         talk about the Model/View relationship. The view, the user interface,
@@ -102,6 +102,7 @@
         changes it notifies the view. The view once notified, updates itself with the
         new state.
     </p>
+    <img class="post-img" src="images/design-patterns-mvc/design-patterns-model-many-views.svg" alt="View Reflecting the Model's state">
     <p>
         One way the model can be stimulated to chage it's own state are by requests from 
         the user. That brings us to the last object, the controller.
