@@ -124,8 +124,13 @@
     </p>
     <img class="post-img" src="images/design-patterns-mvc/design-patterns-model-many-views.svg" alt="View Reflecting the Model's state">
     <p>
-        One way the model can be stimulated to chage it's own state are by requests from 
-        the user. That brings us to the last object, the controller.
+        The above diagram can be exemplified by the following image:
+    </p>
+    <img class="post-img" src="images/design-patterns-mvc/design-patterns-model-many-views-example.svg" alt="View Reflecting the Model's state">
+    <p>
+        Now to <strong>how the model's state changes</strong>.
+        One way the model can be stimulated to chage it's own state is by requests from 
+        the user. This brings us to the last object, the controller.
     </p>
     <h4>Controller</h4>
     <p>
