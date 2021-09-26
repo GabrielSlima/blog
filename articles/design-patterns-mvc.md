@@ -24,7 +24,7 @@
         and produces an output.
     </p>
     <p>
-        Now that being said, as we desing systems some problems start to reapear and
+        Now that being said, as we design systems some problems start to reapear and
         the natural approach is to reuse an existing solution to solve it. This brings
         us to today's topic: <strong>design patterns</strong>...
     </p>
@@ -39,7 +39,7 @@
     <p>
         Every pattern is composed by 4 elements: name, problem, solution and it's consequences.
     </p>
-    <img class="post-img" src="images/design-patterns-mvc/design-patterns-composition.svg" alt="DESING PATTERN COMPOSITION MIND MAP">
+    <img class="post-img" src="images/design-patterns-mvc/design-patterns-composition.svg" alt="design PATTERN COMPOSITION MIND MAP">
     <h4>The name</h4>
     <p>
         The name describes the problem the pattern it is supposed to solve, the solution and the consequences for using it.
@@ -63,7 +63,7 @@
     </p>
     <h3>The MVC Design Pattern</h3>
     <p>
-        This parttern is probably the first desing pattern every web developer
+        This parttern is probably the first design pattern every web developer
         have contact with
         when getting started with programming. This pattern was used in
         desktop applications and now it's broadly used in Web development too.
@@ -140,7 +140,7 @@
         on to the model. This inclues requests like commands or inputs.
     </p>
     <p>
-        That being said, the overall desing of a an application with a simple MVC
+        That being said, the overall design of a an application with a simple MVC
         implementation looks like the following image:
     </p>
     <img class="post-img" src="images/design-patterns-mvc/design-patterns-model-view-controller.svg" alt="View Reflecting the Model's state">
@@ -153,13 +153,13 @@
     <img class="post-img" src="images/design-patterns-mvc/design-patterns-model-view-controller-2.svg" alt="View Reflecting the Model's state">
     <h3>Final Thoughts</h3>
     <p>
-        MVC is one the most used patterns on Web Development. As I said, every desing pattern is a template,
+        MVC is one the most used patterns on Web Development. As I said, every design pattern is a template,
         the MVC is not different. An application may or may not inlude a controller for instance or
         may not have a view. There are some variants of this pattern like the <strong>model view adapter</strong>
         and many others.
     </p>
     <p>
-        This desing pattern is an architectural pattern. Model, view and controller can be interpreted as
+        This design pattern is an architectural pattern. Model, view and controller can be interpreted as
         layers. This means that business rules may or may not be placed within the model object. The model
         object may be user of other objects (domain objects) that are responsible for the business rules.
         The model layer can be split into more lower level layers, going from the business layer to a data

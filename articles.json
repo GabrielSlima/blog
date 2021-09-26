@@ -1,7 +1,7 @@
 [
     {
         "id": "20",
-        "title": "What is the MVC desing pattern?",
+        "title": "What is the MVC design pattern?",
         "description": "You don't know Object Oriented programming...",
         "author": "Gabriel Lima",
         "date": "2021-09-25",
@@ -41,7 +41,7 @@
     },
     {
         "id": "15",
-        "title": "What are the rules for simple system desings?",
+        "title": "What are the rules for simple system designs?",
         "description": "Making your mom proud of your code...",
         "author": "Gabriel Lima",
         "date": "2021-08-10",
