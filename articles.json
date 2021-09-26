@@ -2,10 +2,10 @@
 [
     {
         "id": "19",
-        "title": "What is a OOP system and how the Objects relate with each other in a system with MVC archictecture?",
+        "title": "What is the MVC desing pattern?",
         "description": "You don't know Object Oriented programming...",
         "author": "Gabriel Lima",
-        "date": "2021-09-13",
+        "date": "2021-09-25",
         "article_file_name": "./articles/design-patterns-mvc.md"
     },
     {
