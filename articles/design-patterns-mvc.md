@@ -130,14 +130,26 @@
     <p>
         Now to <strong>how the model's state changes</strong>.
         One way the model can be stimulated to chage it's own state is by requests from 
-        the user. This brings us to the last object, the controller.
+        the user itself. This brings us to the last object, the controller.
     </p>
     <h4>Controller</h4>
     <p>
-        The last object describe in the name of this pattern is the Controller. This object
+        The last object described on the name of this pattern is the Controller. This object
         defines the way that the user's  interactions on the view (the interface) are passed
-        on to the model. 
+        on to the model. This inclues requests like commands or inputs.
     </p>
+    <p>
+        That being said, now the overall desing of a an application witn as imple MVC
+        implementation looks like the following image:
+    </p>
+    <img class="post-img" src="images/design-patterns-mvc/design-patterns-model-view-controller.svg" alt="View Reflecting the Model's state">
+    <p>
+        It's also very common see this relationship between Model, View  and Controlller like on the
+        image below. The controller is like the conduit. It's responsible for dealing with the user's
+        inputs or commands and notifying the model and also responsible for notifying the view
+        with the model's new state.
+    </p>
+    <img class="post-img" src="images/design-patterns-mvc/design-patterns-model-view-controller-2.svg" alt="View Reflecting the Model's state">
     <h3>Services</h3>
     <h3>Data Access</h3>
     <h3>MVC and REST APIs</h3>
