@@ -1,5 +1,13 @@
 [
     {
+        "id": "20",
+        "title": "What is the MVC desing pattern?",
+        "description": "You don't know Object Oriented programming...",
+        "author": "Gabriel Lima",
+        "date": "2021-09-25",
+        "article_file_name": "./articles/design-patterns-mvc.md"
+    },
+    {
         "id": "19",
         "title": "Is documentation a utopia?",
         "description": "It's worth it spend lots of time writing documentation?",
