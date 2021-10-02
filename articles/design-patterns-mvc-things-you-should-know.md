@@ -22,19 +22,19 @@
         defined and addressed. Resources are transferred between client/server via
         language agnostic and standardized interactions.
     </p>
+    <img class="post-img" src="images/design-patterns-mvc-is-important-to-know/REST.svg" alt="Image of an architecture using REST style">
     <p>
         MVC is an architectural pattern for the application. It's about the organization
         of an specific application or system. REST is about the communication between client/server
         and this may include one or more systems/applications that not necessarely uses MVC
         as an architectural pattern.
     </p>
+    <img class="post-img" src="images/design-patterns-mvc-is-important-to-know/mvc.svg" alt="Image of a system/appliction with MVC architecture">
     <p>
         So in other words, if your RESTful Web APIs were built using MVC or not doesn't makes difference
         since the Web APIs adhere to REST constraints. The REST is an architectural style for guiding
         architectures in which the elements are clinet/server applications/systems.
     </p>
-    <img class="post-img" src="" alt="Image of a system/appliction with MVC architecture">
-    <img class="post-img" src="" alt="Image of an architecture using REST style">
     <h3>Can the View be in JSON or XML?</h3>
     <p>
         Every desing pattern is a template. The solution is an arrangement of elements (classes and/or objects),
@@ -42,6 +42,55 @@
         the view is a representation of the Model. The model may or may not be a Data Structure. I've
         talked about the difference between Objects and Data Strucutres based on the book <strong>Clean Code</strong>
         from Robert C. Martin <a href="https://gabrielslima.github.io/blog/post.html?id=10" target="blank">here</a>.
+    </p>
+    <p>
+        Therefore, the model can be representaed by UI, spreadsheet or any other way of visualization/format, including JSON
+        or XML.
+    </p>
+    <h3>Where does the business rules goes in a MVC design?</h3>
+    <p>
+        There isn't a specification of where business rules must be. The Model is the object responsible for
+        the data management, so it's natural that anything related to business rules that manipulates the model's data
+        goes there.
+    </p>
+    <img class="post-img" src="images/design-patterns-mvc-is-important-to-know/mvc-business-data-access.svg">
+    <p>
+        The business logic may or may not be on a separated object. The Data Access usually is another object.
+        I recommend to keep the data access in a separated object because accessing the persisted
+        data and manipulating it are two different things. I've talked about <strong>separation
+        of concerns</strong>
+        <a href="https://gabrielslima.github.io/blog/post.html?id=14" target="blank">here</a>
+        if you want to know more about it.
+    </p>
+    <h3>Services</h3>
+    <p>
+        If you read the
+        <a href="https://gabrielslima.github.io/blog/post.html?id=20" target="blank">
+        last article about MVC</a> you know that an application that uses MVC separates
+        concerns like the UI, business logic and user input/commands logic into 3 different
+        objects, Model: resposible for the data management, the view: resposible for
+        reflecting the model's state in a UI or any other form and the controller: responsible
+        for dealing with the user's inputs/commands and notifying the model about it.
+    </p>
+    <p>
+        You also know that the model and the view has a subscribe/notify protocol between them.
+        The view subscibes to the model's state and reflects it in an UI or any other way
+        that represents the state and the model notifies it's views whenver it's state changes.
+    </p>
+    <p>
+        Model uses the <strong>observer pattern</strong> to keep it's views updated. The observer
+        pattern's description is: whenever an object changes, any other number of objects that
+        are dependent upon it's state are affected too, without the changed object having to
+        know details about them. In MVC, the views are the observers, the dependents of the model.
+    </p>
+    <p>
+        It's not news that the model may be an object or be a data strucutre. There is an
+        entire article about the
+        <a href="https://gabrielslima.github.io/blog/post.html?id=10" target="blank">between these two</a>.
+    </p>
+    <p>
+        But what if the view needs to reflect more than one model? I mean, what if the
+        view requires to reflect more than onde state?
     </p>
     Good Luck XD
 </div>
