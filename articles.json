@@ -1,11 +1,11 @@
 [
     {
         "id": "22",
-        "title": "What is a Object Oriented Design?",
+        "title": "What is the Software Development life-cycle?",
         "description": "You don't know Object Oriented programming...",
         "author": "Gabriel Lima",
         "date": "2021-10-05",
-        "article_file_name": "./articles/oop-object-oriented-desing.md"
+        "article_file_name": "./articles/software-development-life-cycle.md"
     },
     {
         "id": "21",
