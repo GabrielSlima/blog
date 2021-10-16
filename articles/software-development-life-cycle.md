@@ -21,14 +21,14 @@
     <p>
         The software development process is broken into a few
         phases, in a macro visualization they would be:
-        Analysis, desing, implementation, testing and deploy.
+        Analysis, design, implementation, testing and deploy.
         If you are not familiar with this cycle, here goes an example.
         Imagine you are creating a portfolio website for a body piercing/tattoo
         shop. Before actually coding anything you need to know what
         the website must or not have as a content, the sections and so on.
         <br>
         Following the watterfall model, after gathering the requirements,
-        you're supposed to fall into the desing phase. You make diagrams
+        you're supposed to fall into the design phase. You make diagrams
         that represents the solutions so that the software (the website),
         satisfies the requirements. For instance, maybe one requirement
         is a section so that their clients can send emails. Maybe a prototype
@@ -49,7 +49,7 @@
         cycle may or may not have more details. This was an example of
         a simple portfolio website.
     </p>
-    <img src="" alt="Software Life Cycle image">
+    <img src="images/software-development-life-cycle/software-life-cycle.svg" alt="Software Life Cycle image">
     <p>
         That being said, using the <strong>watterfall</strong> approach
         (an approach for the software development process),
@@ -76,14 +76,14 @@
     <p>
         In short, the output of this phase can be ER Models and flow-charts,
         use cases diagrams, requirements list or even UML diagrams,
-        when it comes to OOAD (Object-oriented analysis and desing) and so on.
+        when it comes to OOAD (Object-oriented analysis and design) and so on.
     </p>
-    <h4>Desing</h4>
+    <h4>Design</h4>
     <p>
         With the analysis output, the overall architecture of the software
-        is created. The desing creates a solution based on the 
+        is created. The design creates a solution based on the 
         requirements that later will be translated into a softare.
-        The results can be a low-level architecture, meaning that the desinger
+        The results can be a low-level architecture, meaning that the designer
         created a solution that is on a component level or algorithm level.
         <br>
         Or it can also be a high-level architecture. A macro representation
@@ -91,7 +91,7 @@
     </p>
     <h4>Coding or Implementation</h4>
     <p>
-        The implementation phase is very simple. The desing is translated into
+        The implementation phase is very simple. The design is translated into
         actual code.
     </p>
     <h4>Testing</h4>
@@ -125,7 +125,7 @@
         The life-cycle or development process of an object-oriented software
         is basically the same as the one you seen on previous
         lines.
-        First we gather the requirements, then the desing is created,
+        First we gather the requirements, then the design is created,
         implemented, tested and deployed.
     </p>
     <h4>Object-oriented analysis</h4>
@@ -154,7 +154,7 @@
         deservers an entire article or series of articles.
         <br>
         In short, the Object-oriented analysis falls into
-        the analisys phase and the outputs are diagrams.
+        the analysis phase and the outputs are diagrams.
         In this approach the requirements are organized in objects
         and, if you read <a href="#" target="blank">this article</a>
         you know that objects are composed by data and behaviors to
@@ -162,12 +162,12 @@
         these two aspects are dealt with together instead of separately,
         like in other software analysis approaches.
     </p>
-    <h4>Object-oriented desing (OOD)</h4>
+    <h4>Object-oriented design (OOD)</h4>
     <p>
-        An object-riented desing is the process of defining objects and
+        An object-riented design is the process of defining objects and
         their interactions with the purpose of solving a software problem.
         The problems are identified and documented on the analysis phase.
-        The input for the desing phase can be use cases for functional
+        The input for the design phase can be use cases for functional
         requirements, I mean, for describing behaviors and interaction
         between the user and system/application or between the system with
         other systems. The output can also include prototypes, requirements
@@ -188,10 +188,10 @@
         your own data.
     </p>
     <p>
-        Object-oriented desing is the process of identifying the
+        Object-oriented design is the process of identifying the
         objects (their data, interfaces and implemetations)
         and how they interact with each other to solve one or more problems. 
-        It is an approach to Software Desing. The process of desiging software
+        It is an approach to Software design. The process of desiging software
         solutions.
         The solution can be low-level (component or algorithm)
         or high-level (architecture).
@@ -199,10 +199,10 @@
     <h4>Implementation or coding</h4>
     <p>
         Once the hihg level (software's architecture)
-        and low level (algorithms and components) desings are
-        accomplished on the desing phase, the solution is translated
+        and low level (algorithms and components) designs are
+        accomplished on the design phase, the solution is translated
         to code. In other words, the object-oriented program
-        desinged is created.
+        designed is created.
     </p>
     <h4>Testing and Deploy</h4>
     <p>
