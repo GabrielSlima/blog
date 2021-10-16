@@ -72,7 +72,7 @@
         the solutions based on the requirements for the software.
         Then we move on to the coding phase, then we test and deployment.
     </p>
-    <img src="images/software-development-life-cycle/software-life-cycle.svg" alt="Software Life Cycle image">
+    <img class="post-img" src="images/software-development-life-cycle/software-life-cycle.svg" alt="Software Life Cycle image">
     <h4>Analysis</h4>
     <p>
         The overall objective of any analysis activity on this life-cycle
