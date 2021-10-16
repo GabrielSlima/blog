@@ -1,36 +1,45 @@
 <div style="text-align: left;">
-    <h3>The Software Development life-cycle</h3>
     <p>
-        Every Software has a life-cycle. The life-cycle can represent
-        the entire software as a whole. It also can represent an
+        Every Software has a life-cycle. The life-cycle can be about
+        the entire software as a whole. But it also can about an
         alteration to an existing feature or even a new one.
         <br>
         There are quite a few ways of applying this life-cycle.
         In some models some of the the phases can be achieved in 
-        paralel. In others, the phases are achieved one after the other.
+        parallel. In others, the phases are achieved one after the other.
         <br>
         Today will take a look on this life-cycle using one of the most
         know models where the phases are completed one after the other
         to keep things simple.
     </p>
     <p>
-        The software development life-cycle is a process for developing
-        a software. As I said before, there are some steps
+        Welcome to the PewdiePie's favourite blog about Software Engineering and today's
+        topic is <strong>What is the Software Development Life-Cycle</strong>.
+        Let's get into it!
+    </p>
+    <h3>The Software Development Life-Cycle</h3>
+    <p>
+        The software development life-cycle is a process for developing softwares.
+        As I said before, there are some steps
         one almost always follows to actually create or alter a software.
     </p>
     <p>
         The software development process is broken into a few
-        phases, in a macro visualization they would be:
-        Analysis, design, implementation, testing and deploy.
+        phases. From a macro visualization they would be:
+        Analysis, design, implementation, testing and deployment.
         If you are not familiar with this cycle, here goes an example.
+    </p>
+    <p>
         Imagine you are creating a portfolio website for a body piercing/tattoo
         shop. Before actually coding anything you need to know what
         the website must or not have as a content, the sections and so on.
         <br>
-        Following the watterfall model, after gathering the requirements,
-        you're supposed to fall into the design phase. You make diagrams
-        that represents the solutions so that the software (the website),
-        satisfies the requirements. For instance, maybe one requirement
+        Following the watterfall model, after gathering the requirements
+        (done on the analysis phase),
+        you're supposed to fall into the design phase.
+        <br>
+        Diagrams that represents the solutions so that the software (the website),
+        satisfies the requirements are created. For instance, maybe one requirement
         is a section so that their clients can send emails. Maybe a prototype
         is created for the frontend.
         <br>
@@ -49,7 +58,6 @@
         cycle may or may not have more details. This was an example of
         a simple portfolio website.
     </p>
-    <img src="images/software-development-life-cycle/software-life-cycle.svg" alt="Software Life Cycle image">
     <p>
         That being said, using the <strong>watterfall</strong> approach
         (an approach for the software development process),
@@ -62,8 +70,9 @@
         and have a well and abstract description of the requirements,
         then and only then we create the designs that represents
         the solutions based on the requirements for the software.
-        Then we move on to the coding phase, then we test and deploy.
+        Then we move on to the coding phase, then we test and deployment.
     </p>
+    <img src="images/software-development-life-cycle/software-life-cycle.svg" alt="Software Life Cycle image">
     <h4>Analysis</h4>
     <p>
         The overall objective of any analysis activity on this life-cycle
@@ -75,24 +84,24 @@
     </p>
     <p>
         In short, the output of this phase can be ER Models and flow-charts,
-        use cases diagrams, requirements list or even UML diagrams,
+        use cases diagrams, requirements lists or even UML diagrams,
         when it comes to OOAD (Object-oriented analysis and design) and so on.
     </p>
     <h4>Design</h4>
     <p>
         With the analysis output, the overall architecture of the software
         is created. The design creates a solution based on the 
-        requirements that later will be translated into a softare.
+        requirements that later will be translated into a software.
         The results can be a low-level architecture, meaning that the designer
         created a solution that is on a component level or algorithm level.
-        <br>
         Or it can also be a high-level architecture. A macro representation
         of what the software has.
     </p>
     <h4>Coding or Implementation</h4>
     <p>
         The implementation phase is very simple. The design is translated into
-        actual code.
+        actual code. The software can be organized into subsystems,
+        components or microservices.
     </p>
     <h4>Testing</h4>
     <p>
@@ -104,7 +113,7 @@
     <h4>Deploy</h4>
     <p>
         Once the software is tested, finally but not least important,
-        the deploy phase must be acchived so that the user can
+        the deploy phase must be achived so that the user can
         actually use it.
     </p>
     <p>
@@ -123,16 +132,15 @@
     </p>
     <p>
         The life-cycle or development process of an object-oriented software
-        is basically the same as the one you seen on previous
-        lines.
-        First we gather the requirements, then the design is created,
+        is basically the same as the one you've seen on previously.
+        First we gather the requirements throught the analysis, then the design is created,
         implemented, tested and deployed.
     </p>
     <h4>Object-oriented analysis</h4>
     <p>
         To understand object-oriented design, first we have to
-        understand what information we need for using this process.
-        The input for this process is achieved in the OOA (Object-oriented
+        understand what information it needs as input.
+        The input for this process (object-oriented desing) is achieved in the OOA (Object-oriented
         analysis). As I said before, this is an approach
         for identifying and documenting problems.
         In other words, the object-oriented design will
@@ -156,7 +164,7 @@
         In short, the Object-oriented analysis falls into
         the analysis phase and the outputs are diagrams.
         In this approach the requirements are organized in objects
-        and, if you read <a href="#" target="blank">this article</a>
+        and, if you read <a href="https://gabrielslima.github.io/blog/post.html?id=10" target="blank">this article</a>
         you know that objects are composed by data and behaviors to
         represent entities into the application/system. So naturally
         these two aspects are dealt with together instead of separately,
@@ -201,25 +209,28 @@
         Once the hihg level (software's architecture)
         and low level (algorithms and components) designs are
         accomplished on the design phase, the solution is translated
-        to code. In other words, the object-oriented program
-        designed is created.
+        to code. In other words, the software that were
+        planed on the desing phase is brought to life and 
+        the result is an object-oriented program.
     </p>
     <h4>Testing and Deploy</h4>
     <p>
         This phase is preety much the same as other models.
         Once the solutions are implemented they need to be
         tested and once checked that the requirements
-        were satisfied and that the implementation has no
-        flaws (at least at first), the software is deployed
+        were satisfied and that the implementation is working
+        fine, the software is deployed
         so that it can be used.
     </p>
     <h3>Final Thoughts</h3>
     <p>
         The software development life-cycle, I mean,
         the process every software or piece of software
-        gos throught till it's deployed is actually
+        goes through till it's deployed is actually
         very simple.
-        We have a phase for each concern.
+        We have a phase for each concern and eanch concern
+        is threated accordingly with the tools and methods
+        for identifying, documenting and creating solutons.
     </p>
     <p>
         Of course that each phase may or may not have more details
@@ -228,7 +239,7 @@
     </p>
     <p>
         On the next articles we'll explore a bit more of each phase of
-        this life-cycle and eventually compare some models.
+        this life-cycle and eventually compare it with some other models.
         The watterfall for instance isn't used as much as the
         incremental model. That's because the incremental mode
         was proved to be more efficient.
