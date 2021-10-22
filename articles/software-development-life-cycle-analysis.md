@@ -87,5 +87,66 @@
         The main goal here is to have a concise, undiplicated, complete,
         clear requirements and if they actually makes sense.
     </p>
+    <h3>Requirement types</h3>
+    <p>
+        In short, there are two types of requirements a system may have.
+        Functional and non-function.
+    </p>
+    <h4>Functional requirements</h4>
+    <p>
+        Functional requirements or behavior requirements are specific
+        services a system must provide. I other words,
+        are specific behaviors the system should have.
+        <br>
+        They are specified by the user and are usually documented
+        using use cases. If you don't know what a use case is,
+        it's basically a diagram that represents how a specific behavior
+        should happend in the system. It also shows how users interact
+        with this behavior or how other systems or parts of the system
+        interact with it.
+    </p>
+    <p>
+        A quick example of these types of requirements is a login page.
+        Once logged, the user can only see the pages he/her has permissions.
+    </p>
+    <p>
+        Another example would be a cart from an ecommerce web site.
+        The client must be able to have a cart without having being registered
+        to the platform. Along with this requirement, others can appear like
+        the user must be able to see all products of the created cart, along
+        with the total amount he has to pay.
+    </p>
+    <h4>Non-functional requirements</h4>
+    <p>
+        Non-functional requirements or non-behavior requirements,
+        are quality requirements the system <strong>may have</strong>.
+        In other words, these requirements are directly related to the
+        quality of the system as a whole and doesn't have a direct connection
+        with the behaviors required for it.
+    </p>
+    <p>
+        These requirements that guarantee the quality of the system
+        can address issues like: security, performance, reliability,
+        flexibility, mantainability, portability, scalability and reusability.
+        <br>
+        They are also specified by technical people, like architects, tech lead
+        or software developers.
+    </p>
+    <p>
+        Examples of this kind of requirements would be:
+        The website should be able to have 1000 users simultaneously without
+        crashing or without slowing down more than 3s for each page.
+        <br>
+        Each request must not take more than 15s. If we are talking about perfomance.
+        <br>
+        Another example would be: User's should not be able to manage
+        it's own scopes. Or if they can, they must go through an approval process
+        before having the scope into it's profile. If we are talking about
+        security.
+    </p>
+    <p>
+        The result of the requirements analysis are documents. They include the
+        the problem or problems and solutions for those problems.
+    </p>
     Good Luck XD
 </div>
