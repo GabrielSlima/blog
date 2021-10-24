@@ -150,13 +150,198 @@
         security.
     </p>
     <h3>Qualities of a Requirement</h3>
+    <p>
+        In short, there are some quality attributes that
+        every requirement should have to be considered a good
+        requirement.
+    </p>
     <img class="post-img" src="images/software-development-life-cycle-requirements-analysis/requirement-qualities.svg" alt="Qualities of a software requirement">
     <h4>Atomic</h4>
-    <h4>Testable</h4>
-    <h4>Consistent and Unambiguous</h4>
-    <h4>Traceable</h4>
+    <p>
+        The requirement defines a single aspect. It may be an aspect from
+        a business process or from the system.
+        Every requirement should have just enough details to describe it,
+        but be granular and have a low-level of information.
+        This means that the requirement is not supposed to
+        be broken into more requirements.
+    </p>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Bad Requirement</th>
+                <th scope="col">Good Requirement</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>The user must be able to register yourself
+                    using his Google or Facebook account. The user can
+                also be able to create a new account using Email and passoword only</td>
+                <td>
+                    <ul>
+                        <li>The user must be able to register himself using 
+                            email and password only</li>
+                        <li>The user must be able to register himself using
+                            an existing Google Account</li>
+                        <li>The user must be able to register himself using
+                            an existing Facebook Account</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <h4>Complete</h4>
+    <p>
+        The requirement must be complet. This means that isn't missing
+        any necessary/relevant information on it's description.
+    </p>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Bad Requirement</th>
+                <th scope="col">Good Requirement</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>The user must be able to register himself using email,
+                    password and any relevant information</td>
+                <td>The user must be able to register himself using email, 
+                    password and birth date</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>Consistent and Unambiguous</h4>
+    <p>
+        The requirement must not contradict other requirements and
+        it must be clear, with one interpretation of it's meaning.
+    </p>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Bad Requirement</th>
+                <th scope="col">Good Requirement</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <ul>
+                        <li>Each registered user must have a set of scopes to it's profile</li>
+                        <li>Users that are admins can give other users admin access</li>
+                        <li>An admin can change it's own set of scopes</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Each registered user must have a set of scopes to it's profile</li>
+                        <li>Users that are admins can give other users admin access</li>
+                        <li>There will be 2 kinds of scopes: admin and non-admin</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>Testable/Verifiable</h4>
+    <p>
+        The requirement must be verifiable. This means that it can be shown
+        that it has been met by the final solution via tests.
+        This also means that it's description is specific and containts no
+        generic informaation.
+    </p>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Bad Requirement</th>
+                <th scope="col">Good Requirement</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>After given or removed access, it shouldn't take much time
+                    so that the user can feel the effects at any page
+                </td>
+                <td>
+                    <ul>
+                        <li>After given admin access, the user should be able
+                            to feel the effetcs within 5 seconds at the users management
+                            page</li>
+                        <li>After removed the admin access, the user should not
+                            be able to access the users management page
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <h4>Uniquely Identified</h4>
+    <p>
+        The requirement must have an unique identification. This will make
+        it easier for references within the documentation and to not
+        be confused with other requirements.
+    </p>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Bad Requirement</th>
+                <th scope="col">Good Requirement</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <span>
+                        1 - After given admin access, the user should be able
+                        to feel the effetcs within 5 seconds at the users management
+                        page
+                    </span>
+                    <br>
+                    <span>
+                        1 - After removed the admin access, the user should not
+                            be able to access the users management page
+                    </span>
+                </td>
+                <td>
+                    <ol>
+                        <li>After given admin access, the user should be able
+                            to feel the effetcs within 5 seconds at the users management
+                            page</li>
+                        <li>After removed the admin access, the user should not
+                            be able to access the users management page
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>Traceable</h4>
+    <p>
+        A requirement can be dependent uppon other requirements.
+        This means that those depedencies must be mapped. Therefore, those
+        depedencies must be properly mapped, traceable.
+    </p>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Bad Requirement</th>
+                <th scope="col">Good Requirement</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Every change to the set of scopes of another
+                    user should be kept by the system for later
+                    analisys
+                </td>
+                <td>
+                    Every change to the set of scopes of another
+                    user should be kept by the system for later
+                    analisys. Scope alteration description can be found at
+                    <strong>Scopes alteration - 2.1, 2.2 and 2.3</strong>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <h3>Final Thoughts</h3>
     <p>
         The analysis stage can be hard. It may require lots of interviews and
