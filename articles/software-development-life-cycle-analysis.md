@@ -52,7 +52,7 @@
         Now that you've had a quick introduction about groups of people and
         organizations that supports a company, let's get back to
         requirements analysis. At this stage the main goal is to actually
-        know the problems and document them so that a soltion can be created
+        know the problems and document them so that a solution can be created
         in order to solve them. Every activity at this stage is intented to identify and document
         problems and business processes to create models that are
         independent of implementation rules. Independent of
@@ -68,29 +68,29 @@
         what is required from the software. At this step
         wet get to know more about business processes. It
         also may include interviews with stakeholders to know
-        how they relate with each other so that the business process is
-        accomplished.
+        how they relate with each other in business processes.
     </p>
     <h4>Requirements Documentation or Requirements Recording</h4>
     <p>
         The requirements must be documented. I mean, the business
         processes and details about the relationship between the
-        stakeholders must be documented/recorded.
-        <br>
-        This information may be documented in many forms including
+        stakeholders must be documented/recorded and any other
+        specification from the users must be recorded/documented.
+    </p>
+    <p>
+        The information may be documented in many forms including
         requirements list, natural language documentation, use cases,
-        user stories, data models and any other ways of models of
-        process documentation.
-        <br>
+        user stories, data models and any other ways of
+        process documentation. 
         Another very common way of documenting the requirements is
         through prototypes.
     </p>
     <h4>Requirements Analysis</h4>
     <p>
-        All the documented requirements is analysed. Baiscally what
-        the software must have and how it must function is avaliated.
-        The main goal here is to have a concise, undiplicated, complete,
-        clear requirements and if they actually makes sense.
+        Here, all the documented requirements is analysed. Basically what
+        the software must have and how it must function is evaluated.
+        The main goal here is to have a concise, unduplicated, complete,
+        clear and requirements actually makes sense.
     </p>
     <h3>Requirement types</h3>
     <p>
@@ -101,12 +101,12 @@
     <p>
         Functional requirements or behavior requirements are specific
         services a system must provide. I other words,
-        are specific behaviors the system should have.
+        are specific behaviors the system must have.
         <br>
         They are specified by the user and are usually documented
         using use cases. If you don't know what a use case is,
         it's basically a diagram that represents how a specific behavior
-        should happend in the system. It also shows how users interact
+        should happen within the system. It also shows how users interact
         with this behavior or how other systems or parts of the system
         interact with it.
     </p>
@@ -134,24 +134,42 @@
         can address issues like: security, performance, reliability,
         flexibility, mantainability, portability, scalability and reusability.
         <br>
-        They are also specified by technical people, like architects, tech lead
+        They are also specified by technical people, like architects, tech leads
         or software developers.
     </p>
     <p>
         Examples of this kind of requirements would be:
         The website should be able to have 1000 users simultaneously without
         crashing or without slowing down more than 3s for each page.
-        <br>
-        Each request must not take more than 15s. If we are talking about perfomance.
+        Each request must not take more than 15s or any other requirement
+        related to perfomance.
         <br>
         Another example would be: User's should not be able to manage
         it's own scopes. Or if they can, they must go through an approval process
-        before having the scope into it's profile. If we are talking about
+        before having the scope into their profile. If we are talking about
         security.
     </p>
+    <h3>Qualities of a Requirement</h3>
+    <img class="post-img" src="images/software-development-life-cycle-requirements-analysis/requirement-qualities.svg" alt="Qualities of a software requirement">
+    <h4>Atomic</h4>
+    <h4>Testable</h4>
+    <h4>Consistent and Unambiguous</h4>
+    <h4>Traceable</h4>
+    <h4>Complete</h4>
+    <h4>Uniquely Identified</h4>
+    <h3>Final Thoughts</h3>
     <p>
-        The result of the requirements analysis are documents. They include the
-        the problem or problems and solutions for those problems.
+        The analysis stage can be hard. It may require lots of interviews and
+        effort to have a concise and clear requirements. The result
+        is are long documents that may contain diagrams like
+        use cases, UML and flowcharts. These documents
+        will be the input for the design stage.
+    </p>
+    <p>
+        As I said, the main goal is to create a model of the system that
+        is indepedent of implementation constraints. The solution 
+        considering environment and language constraints is accomplished
+        at the design phase.
     </p>
     Good Luck XD
 </div>
