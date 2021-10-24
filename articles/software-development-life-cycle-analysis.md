@@ -11,7 +11,7 @@
         phases. Sometimes, those phases can be accomplished in parallel.
     </p>
     <p>
-        The first phase every softeare or piece of software goes
+        The first phase every software or piece of software goes
         through is the analysis. In short, the analysis phase
         is where the problems are identified and documented so that
         later a solution can be created based on it. Today I'll
@@ -24,7 +24,9 @@
     </p>
     <h3>Stakeholders</h3>
     <p>
-        Every organization is supported in some way by people or even
+        Before continuing with the activities that composes
+        the requirements analysis I would like to
+        describe what a stakeholder is. Every organization is supported in some way by people or even
         other oganizations. Without them, the organization wouldn't
         exist. These groups are also called <i>Stakeholders</i>.
         An Stakeholder is a member of those groups. It can be an entire
@@ -39,6 +41,7 @@
         are aconcerned about respect, compensation, appreciation,
         time off, recognition and so on. Investors are concerned about income.
     </p>
+    <img class="post-img" src="images/software-development-life-cycle-requirements-analysis/stakeholders.svg" alt="Relationship between stakeholders and companies">
     <p>
         An organizaiton can have quite a few stakeholders. These are
         just some examples that you might have heard of. Every organization is
@@ -46,9 +49,11 @@
     </p>
     <h3>The analysis stage</h3>
     <p>
-        At this stage main goal is to actually know the problems
-        so we know what must be created to solve them.
-        Every activity at this stage is intented to identify and document
+        Now that you've had a quick introduction about groups of people and
+        organizations that supports a company, let's get back to
+        requirements analysis. At this stage the main goal is to actually
+        know the problems and document them so that a soltion can be created
+        in order to solve them. Every activity at this stage is intented to identify and document
         problems and business processes to create models that are
         independent of implementation rules. Independent of
         infrastrucutre and language constraints and so on.
