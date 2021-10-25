@@ -161,7 +161,7 @@
         The requirement defines a single aspect. It may be an aspect from
         a business process or from the system.
         Every requirement should have just enough details to describe it,
-        but be granular and have a low-level of information.
+        be "granular" and have a low-level of information.
         This means that the requirement is not supposed to
         be broken into more requirements.
     </p>
@@ -174,7 +174,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>The user must be able to register yourself
+                <td>The user must be able to register himself
                     using his Google or Facebook account. The user can
                 also be able to create a new account using Email and passoword only</td>
                 <td>
@@ -192,7 +192,7 @@
     </table>
     <h4>Complete</h4>
     <p>
-        The requirement must be complet. This means that isn't missing
+        The requirement must be complete. This means that isn't missing
         any necessary/relevant information on it's description.
     </p>
     <table class="table table-dark">
@@ -264,10 +264,9 @@
                 <td>
                     <ul>
                         <li>After given admin access, the user should be able
-                            to feel the effetcs within 5 seconds at the users management
-                            page</li>
+                            to access the users management page after 5 seconds</li>
                         <li>After removed the admin access, the user should not
-                            be able to access the users management page
+                            be able to access the users management page after 5 seconds
                         </li>
                     </ul>
                 </td>
@@ -292,22 +291,20 @@
                 <td>
                     <span>
                         1 - After given admin access, the user should be able
-                        to feel the effetcs within 5 seconds at the users management
-                        page
+                        to access the users management page after 5 seconds
                     </span>
                     <br>
                     <span>
                         1 - After removed the admin access, the user should not
-                            be able to access the users management page
+                        be able to access the users management page after 5 seconds
                     </span>
                 </td>
                 <td>
                     <ol>
                         <li>After given admin access, the user should be able
-                            to feel the effetcs within 5 seconds at the users management
-                            page</li>
+                            to access the users management page after 5 seconds</li>
                         <li>After removed the admin access, the user should not
-                            be able to access the users management page
+                            be able to access the users management page after 5 seconds
                         </li>
                     </ol>
                 </td>
@@ -331,12 +328,12 @@
             <tr>
                 <td>Every change to the set of scopes of another
                     user should be kept by the system for later
-                    analisys
+                    analysis
                 </td>
                 <td>
                     Every change to the set of scopes of another
                     user should be kept by the system for later
-                    analisys. Scope alteration description can be found at
+                    analysis. Scope alteration description can be found at
                     <strong>Scopes alteration - 2.1, 2.2 and 2.3</strong>
                 </td>
             </tr>
