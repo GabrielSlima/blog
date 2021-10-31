@@ -15,6 +15,7 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/resume.css">
+    <link rel="stylesheet" href="css/shared.css">
     <link rel="stylesheet" href="css/code-highlight.css">
 
     <style>
@@ -53,7 +54,21 @@
     <section class="container" style="color: rgba(0,0,0, .7);">
         <div class="row justify-content-center align-self-center" id="post-content-container-row"></div>
     </section>
-
+    <footer class="p-4">
+      <div class="disclaimer">
+        <p id="disclaimer" class="disclaimer-message"><strong>Disclaimer: </strong>This website is intended to share my
+          experiences as a Software Engineer or any other experiences
+          I would like to share on the internet. The information contained
+          here has nothing to do with the companies I've worked with.
+          This means that while sharing my experiences I try to share
+          a bit of context but I don't expose anyone or any company directly.
+          This also means that any position or any opinion I have or may
+          have about anything, including physical or digital products
+          or any other thing like Software Engineering models and etc.
+          have nothing to do with any company I've worked with.
+        </p>
+      </div>
+    </footer>
     <script type="text/template" data-template="error">
       <div class="col-6 jumbotron vertical-center text-center">
         <div>
@@ -75,7 +90,7 @@
     </script>
 
     <script type="text/template" data-template="post">
-      <div class="col-12 col-md-10 jumbotron vertical-center text-center">
+      <div class="content-container col-12 mb-0 col-md-10 jumbotron vertical-center text-center">
         <div>
           <h3 class="mt-2"></span>{{ARTICLE_TITLE}}</h3>
           <h6 style="opacity: 0.7;">{{ARTICLE_AUTHOR}}</h6>
