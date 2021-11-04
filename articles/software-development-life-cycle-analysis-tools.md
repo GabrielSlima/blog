@@ -43,6 +43,7 @@
         creating diagrams that represents a system. In other
         words, it represents what the system has.
     </p>
+    <img class="post-img" src="images/software-development-life-cycle-analysis-techniques/uml.svg" alt="Flowchart - New User resgistering flow">
     <h3>Use Cases</h3>
     <p>
         UML digrams represents what the system has. It represents the
