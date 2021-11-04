@@ -53,7 +53,7 @@
         it represents situations where a piece of the software will be used,
         behaviors/processes within the system and how they are executed.
     </p>
-    <img class="post-img" src="images/software-development-life-cycle-analysis-techniques/Requirements-Analysis.svg" alt="Use Case - User registering into the platform">
+    <img class="post-img" src="images/software-development-life-cycle-analysis-techniques/Use-Case.svg" alt="Use Case - User registering into the platform">
     <h3>User Story</h3>
     <p>
         User Story is a natural language description of a feature
@@ -70,7 +70,18 @@
         or non-technical people.
         It's a representation of a process or workflow step-by-step.
     </p>
-    <img class="post-img" src="images/software-development-life-cycle-analysis-techniques/Requirements-Analysis-Flowchart.svg" alt="Flowchart - New User resgistering flow">
+    <img class="post-img" src="images/software-development-life-cycle-analysis-techniques/Flowchart.svg" alt="Flowchart - New User resgistering flow">
     <h3>Final Thoughts</h3>
+    <p>
+        These techniques are just some of many others that can be used
+        during the Requirements Analysis Stage. The overaall objective is
+        to document business processes and specific requirements for the
+        system. The end result is a long document containing everything
+        that the designer would need (in theory) for creating the solutions.
+    </p>
+    <p>
+        When it comes to the user sotories, usually they're used with
+        some agile method, maybe kanban or scrum for isntance.
+    </p>
     Good Luck XD
 </div>
