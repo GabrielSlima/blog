@@ -89,13 +89,13 @@
     </p>
     <h4>Design</h4>
     <p>
-        With the analysis output, the overall architecture of the software
-        is created. The design creates a solution based on the 
+        With the analysis's output, the overall architecture of the software
+        is created. The designer creates a solution based on the 
         requirements that later will be translated into a software.
-        The results can be a low-level architecture, meaning that the designer
-        created a solution that is on a component level or algorithm level.
-        Or it can also be a high-level architecture. A macro representation
-        of what the software has.
+        The results can be low-level architectures, meaning that the designer
+        created solutions that is at component level or algorithm level.
+        Or it can also be high-level architectures. A macro representation
+        of what the software has and how it operates.
     </p>
     <h4>Coding or Implementation</h4>
     <p>

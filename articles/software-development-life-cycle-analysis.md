@@ -342,10 +342,10 @@
     <h3>Final Thoughts</h3>
     <p>
         The analysis stage can be hard. It may require lots of interviews and
-        effort to have a concise and clear requirements. The result
-        is are long documents that may contain diagrams like
+        effort to have concise and clear requirements. The result are long documents that may contain diagrams like
         use cases, UML and flowcharts. These documents
-        will be the input for the design stage.
+        will be the input for the design stage, they are
+        also called <i>initial desing</i> of the system.
     </p>
     <p>
         As I said, the main goal is to create a model of the system that

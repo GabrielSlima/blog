@@ -1,5 +1,13 @@
 [
     {
+        "id": "25",
+        "title": "Software Development Life-Cycle: Exploring the Design Stage",
+        "description": "You don't know Object Oriented programming...",
+        "author": "Gabriel Lima",
+        "date": "2021-11-08",
+        "article_file_name": "./articles/software-development-life-cycle-design.md"
+    },
+    {
         "id": "24",
         "title": "Software Development Life-Cycle: Requirements Analysis Techniques",
         "description": "You don't know Object Oriented programming...",
