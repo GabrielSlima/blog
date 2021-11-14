@@ -31,7 +31,7 @@
         If you read the last two articles in which I talk more about the <a href="#" target="blank">Analysis Stage</a>
         and <a href="#" target="blank">Techniques for the Analysis Stage</a> or already
         is familiar with the analysis stage, you know that this stage, the analysis stage
-        can also be called <strong>requirements analysis and initial desing</strong>. That's because
+        can also be called <strong>requirements analysis and initial design</strong>. That's because
         it's intented to create a inital model of the software/system. This means that what the software
         must have, must do and how it must look like is documented by the business/system analyst.
     </p>
@@ -44,7 +44,7 @@
     <h3>The System Specification</h3>
     <p>
         The <i>system/software specification</i> is composed by some types of documents
-        that are actually some type of desing: interface design, basic architecture design,
+        that are actually some type of design: interface design, basic architecture design,
         database design and programs design. The system specification will be
         used at the implmentation phase by the developers, it's a plan of what
         needs to be done.
@@ -75,6 +75,25 @@
         need to be written will have a specific description
         of what it will do.
     </p>
+    <h3>Design Levels</h3>
+    <h4>Network Diagram</h4>
+    <p>
+        Is a model of how the system is deployed accross networks and systems.
+    </p>
+    <h4>Architetural Design</h4>
+    <p>
+        It's also called conceptual design. It's a broad representation 
+        of the system's structure.
+    </p>
+    <h4>Detail Design</h4>
+    <p>
+        As the name says, it's a detailed design. This kind of design is
+        usually applied to individual programs. In other words,
+        each identifiend program has it's specifications described
+        by the datailed design.
+    </p>
+    <h3>Input and Output</h3>
+    <h3>Activities</h3>
     <h3>Final Thoughts</h3>
     <p>
         Solutions can be made only when we understand the problem.
