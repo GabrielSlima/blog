@@ -36,26 +36,48 @@
         must have, must do and how it must look like is documented by the business/system analyst.
     </p>
     <p>
-        The output of the analysis stage are documents describing the software and it will be
-        the input for the design stage, guiding the designer on creating the representation of the
-        system.
+        The output of the analysis stage are documents describing the software
+        without implementation constraints. These documents are
+        input for the design stage, guiding the designer on creating an specification of the
+        system to be created.
     </p>
-    <h3>Architecture</h3>
-    <h3>Infrastructure Specificiation</h3>
-    <h3>Program specification</h3>
+    <h3>The System Specification</h3>
+    <p>
+        The <i>system/software specification</i> is composed by some types of documents
+        that are actually some type of desing: interface design, basic architecture design,
+        database design and programs design. The system specification will be
+        used at the implmentation phase by the developers, it's a plan of what
+        needs to be done.
+    </p>
+    <h4>Basic Architecture Design</h4>
+    <p>
+        The basic architecture design will describe what the system has,
+        what hardware, software and infraestructure will be used.
+        Most of the time, existing hardware, software and infraestructure
+        are altered instead of new ones being created.
+    </p>
+    <h4>Interface Design</h4>
+    <p>
+        The interface is the <i>user interface</i>, if applicable,
+        representations of how the system/software will look like
+        is created. This means that if the software has a website,
+        the screens are actually prototyped.
+    </p>
+    <h4>Database Design or File Design</h4>
+    <p>
+        Definition of what data will be manipulated and where it will be
+        stored.
+    </p>
+    <h4>Programs Design</h4>
+    <p>
+        Every program identified at the basic architecture stage
+        must be defined. This means that every program that
+        need to be written will have a specific description
+        of what it will do.
+    </p>
     <h3>Final Thoughts</h3>
     <p>
-        The analysis stage can be hard. It may require lots of interviews and
-        effort to have concise and clear requirements. The result are long documents that may contain diagrams like
-        use cases, UML and flowcharts. These documents
-        will be the input for the design stage, they are
-        also called <i>initial desing</i> of the system.
-    </p>
-    <p>
-        As I said, the main goal is to create a model of the system that
-        is indepedent of implementation constraints. The solution 
-        considering environment and language constraints is accomplished
-        at the design phase.
+        Solutions can be made only when we understand the problem.
     </p>
     Good Luck XD
 </div>
