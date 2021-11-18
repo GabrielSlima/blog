@@ -93,6 +93,41 @@
         by the datailed design.
     </p>
     <h3>Input and Output</h3>
+    <p>
+        The input of the design is the output that coms from the analysis stage.
+        Uses-cases, UML Diagrams, flowcharts, natural language requirements, requirements list,
+        data motels, business process diagrams like sequence diagram sand so on. In other words,
+        the input is the model of the system created at the analysis stage.
+    </p>
+    <p>
+        From those documents, a new one that represents the solution is created.
+        The design is a intermediate process, like a bridge. It receives the
+        desired system and creates solutions for it. Naturally, the output
+        of the design are diagrams and documents that describes how the system must
+        be implemented. It's a blueprint of what must be done.
+    </p>
+    <img class="post-img" src="images/software-development-life-cycle-design/inputs-outputs.svg" alt="INPUT AND OUTPUT">
+    <h3>Jumping the Design Stage</h3>
+    <p>
+        The design stage can be done in a formal way, meaning that
+        before creating and code, a design must be accomplished and approved
+        by someone, sometimes the design is not even made byh the developer.
+        It also can be achieved using an informal way, the developer
+        creates the design and after having the solutin implemented,
+        the design is thrown away. This usually happens in agile models.
+        Because of that, in many comapanies the design stage is not executed
+        or it's not executed properly.
+    </p>
+    <p>
+        Besides the argument that "no one will ever read the design,
+        besides the designer himself",
+        it's really important to create the design before wirting any code.
+        It will be faster and prevent many patches to correct what is missing.
+        Having the habit of creating the design first will make things faster
+        to be implemented because you don't have to thing everything from scratch
+        while implementing. Everything or almost everything that needs to be done
+        were already planned.
+    </p>
     <h3>Activities</h3>
     <h3>Final Thoughts</h3>
     <p>
