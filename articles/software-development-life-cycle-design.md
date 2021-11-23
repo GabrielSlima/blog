@@ -136,6 +136,9 @@
         <br>
         Sometimes it doesn't look like that, but not going through the analysis stage
         and not understanding or documenting anything makes a huge difference.
+        Of course it's a natural thing having to understand at least the bare minimum
+        to code anything, the point here is about skiping parts of the process
+        to "have more time" to code.
     </p>
     <p>
         The design stage is intended to create the solution to be implemented by the programmer.
