@@ -128,10 +128,22 @@
         while implementing. Everything or almost everything that needs to be done
         were already planned.
     </p>
-    <h3>Activities</h3>
     <h3>Final Thoughts</h3>
     <p>
-        Solutions can be made only when we understand the problem.
+        Solutions can be made only when we understand the problem, that's why it makes
+        sense to first analyse the requirements, understand business processes,
+        other systems and the environment before doing anything.
+        <br>
+        Sometimes it doesn't look like that, but not going through the analysis stage
+        and not understanding or documenting anything makes a huge difference.
+    </p>
+    <p>
+        The design stage is intended to create the solution to be implemented by the programmer.
+        What the system must do and must have is already documented at this point.
+        The designer will describe <i>how</i> things will be done. This plan
+        will be important to prevent implementation flaws and prevent time lost during the
+        implementation stage, making the programmer to thing about everything
+        from scratch.
     </p>
     Good Luck XD
 </div>
