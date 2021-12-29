@@ -1,5 +1,13 @@
 [
     {
+        "id": "26",
+        "title": "How I use Spaced Repetition System for learning concepts",
+        "description": "Improving your learning routine",
+        "author": "Gabriel Lima",
+        "date": "2021-12-27",
+        "article_file_name": "./articles/spaced-repetition-system.md"
+    },
+    {
         "id": "25",
         "title": "Software Development Life-Cycle: Exploring the Design Stage",
         "description": "You don't know Object Oriented programming...",
