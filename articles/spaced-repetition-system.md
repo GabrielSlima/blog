@@ -78,11 +78,32 @@
     <img class="post-img" src="images/srs/forgetting-curve.svg" alt="">
     <h3>Learning Programming, concepts and tools around it</h3>
     <p>
-        The reason I've explained a bit about the learning curve
-        and the forgetting curve is because there are different ways
-        of learning things. The way you learned to walk is different the
-        way you learned to talk, but even with different aprroaches,
-        these two theories apply well.
+        So, as i told you before, i've been on this journey of acquiring
+        knowledge for a decent amount of time. During this time i had to
+        understand a few things that weren't directly related to the things
+        was learning at the time. My sleep for instance, i discovered
+        the amount of hours i can sleep per night in average in diffrent moments
+        and contexts. If i go through a very energy consuming day at my job,
+        beign for stress or because the problem demanded more effort to solve than usual,
+        i'm pretty sure that i'll sleep a bit more than usual. Or if i'm very
+        excited about something, i'll probably fall at sleep very late in the
+        night.
+    </p>
+    <p>
+        I also realized that to achieve the results I wantend, I would
+        have to create my own process, instead of copying someone else's
+        process. I tried, and it didn't worked for some simple reasons:
+        everyone has a different context. With context i mean, routine,
+        different financial problems, culture and so on.
+        So trying to literally copy someone else's process and following
+        it lead me to a frustration, for the simpole fact that the process was made to
+        satisfy someone else's context, not mine.
+    </p>
+    <p>
+        With that being said, i also had to learn that there are different ways
+        of learning different things. The way you learned to walk is different the
+        way you learned to talk, but even with different aprroaches, the
+        learning curve theory and the forgetting curve hythesis apply well. 
     </p>
     <p>
         For programming it's not
@@ -90,9 +111,21 @@
         syntax, the way a for loop is built in JavaScript for instance,
         you don't have to. So it's important to have proficiency in
         <b>how to learn things</b> and it's also important
-        to <b>memorize more conceptual</b> things.
+        to <b>memorize more conceptual</b> things. So I had to create
+        some processes and habits to increase my profiency in
+        <b>learning new things</b> and I also had to find a way of
+        not forgetting what i've learned. That's when I thought "what if i tried
+        Spaced Repetion for programming?".
     </p>
     <h3>Spaced Repetition System</h3>
+    <p>
+        The forgetting curve hypothesis is a visualization of information
+        lost over time, if there is <b>no attempt to retain it</b>. The
+        spaced repetition is a technique, it's this "attempt" to retain information.
+        The way it works is very simple, one just have to revisit some topic
+        he/she is trying to memorize, and everytime the topic is revisited, less
+        information is lost over time, till the information is fully memorized.
+    </p>
     <img class="post-img" src="images/srs/spaced-repetition-technique.svg" alt="">
     Good Luck XD
 </div>
