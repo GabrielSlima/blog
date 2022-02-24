@@ -1,5 +1,13 @@
 [
     {
+        "id": "27",
+        "title": "Should you use inheritance or composition? What about association?",
+        "description": "You don't know OOP!",
+        "author": "Gabriel Lima",
+        "date": "2021-12-27",
+        "article_file_name": "./articles/inheritance-vs-composition-vs-association.md"
+    },
+    {
         "id": "26",
         "title": "How do I learn and memorize code syntax and concepts?",
         "description": "Improving your learning process using Spaced Repetition and the Feynman Technique",
