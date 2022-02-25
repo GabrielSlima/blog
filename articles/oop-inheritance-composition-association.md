@@ -83,7 +83,69 @@
         same template of code (class). So the first example you saw before,
         is an association, a relationship between the MediaPlayer and the Video.
     </p>
-    <h4>has-a</h4>
-    <h4>part-of</h4>
+    <img src="#" alt="Association diagram with aggregation and compostion">
+    <h4>Compostion: has-a/owns-a relationship</h4>
+    <p>
+        So as the name above says, composition is a relationship between
+        two objects, where one object owns another object. Meaning that
+        the owned object doesn't perform any relevant task by itself,
+        and requires to be owned by another object, a specific one,
+        to fully accomplish a task.
+    </p>
+    <p>
+        Example, a computer is an object that is composed by other objects
+        like a Memory, Hard Drive or SSD, CPU. If we are taling about
+        a laptop, each laptop model has a specific screen, keyboard, mousepad...
+        These objects doesn't "live" by themselves. They don't provide
+        the services a complete computer provides. They got to be part of a computer.
+        <br>
+        Also, a computer is not composed by any type of CPU, screen, Hard Drive
+        or SSD. Those objects got to be compatible with the computer's motherboard
+        and space limitations. Got it? 
+    </p>
+    <img src="#" alt="COMPOSITION: COMPUTER EXAMPLE">
+    <p>
+        Another one, a classic example. A car is an object. An entity that
+        encapsulates data and procedures. Provides abstraction by exposing
+        specific services/interfaces for it's clients, people.
+        <br>
+        A car is composed by wheels, a motor, it has seats, seat belts,
+        airbag, doors, trunk a glove box. All of those objects doesn't provide
+        services that can be provided by themselves, without being 
+        part of a car. They are also specific for each car model.
+        You can't take a Civic's motor and put it into a Honda and vise versa.
+    </p>
+    <img src="#" alt="COMPOSITION: CAR EXAMPLE">
+    <p>
+        Sure, there are some car models that share the same type of
+        objects in some cases, like the motor. The motor of some model
+        is used by more than one car model. But even so, you don't have
+        universal motor that fits all the cars.
+    </p>
+    <h4>Aggregation: part-of relationship</h4>
+    <p>
+        After understanding the composition, this one is very simple.
+        Objects that are formed by another objects that actually
+        can provide services without requiring being <i>owned</i>
+        by another specific type of objects, are called
+        <b>aggregate objects</b>. They are formed by a collection
+        of other objects that doesn't depends on them. In other
+        words, an aggregate object groups other objects.
+    </p>
+    <p>
+        Now for the examples, getting the computer again,
+        if we're talking about desktops, the periferals
+        are objects that part of this aggregation like the screen,
+        the keyboard, mouse, headphones, printer and so on.
+        Of course we have minimum level of compatibility,
+        maybe the computer is so old that it doesn't have
+        USB port haha.
+    </p>
+    <p>
+        But you don't have a specific 
+        USB port for each model of computer or each brand. You have
+        one "universal" USB port for every one.
+    </p>
+    <img src="#" alt="AGGREGATION: CAR EXAMPLE">
     Good Luck XD
 </div>
