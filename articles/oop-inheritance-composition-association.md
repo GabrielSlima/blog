@@ -87,29 +87,25 @@
     <h4>Compostion: has-a/owns-a relationship</h4>
     <p>
         So as the name above says, composition is a relationship between
-        two objects, where one object owns another object. Meaning that
-        the owned object doesn't perform any relevant task by itself,
-        and requires to be owned by another object, a specific one,
-        to fully accomplish a task.
+        two objects, where one object owns another one. The owned object
+        provides specific services for a specific type of object,
+        and requires to be owned to fully accomplish a task.
     </p>
     <p>
         Example, a computer is an object that is composed by other objects
-        like a Memory, Hard Drive or SSD, CPU. If we are taling about
+        like a Memory, Hard Drive or SSD, CPU. If we are talking about
         a laptop, each laptop model has a specific screen, keyboard, mousepad...
-        These objects doesn't "live" by themselves. They don't provide
-        the services a complete computer provides. They got to be part of a computer.
-        <br>
         Also, a computer is not composed by any type of CPU, screen, Hard Drive
         or SSD. Those objects got to be compatible with the computer's motherboard
-        and space limitations. Got it? 
+        and space limitations. 
     </p>
     <img src="#" alt="COMPOSITION: COMPUTER EXAMPLE">
     <p>
         Another one, a classic example. A car is an object. An entity that
         encapsulates data and procedures. Provides abstraction by exposing
-        specific services/interfaces for it's clients, people.
+        specific services/interfaces for it's clients, people/drivers.
         <br>
-        A car is composed by wheels, a motor, it has seats, seat belts,
+        A car is composed by a motor, it has seats, seat belts,
         airbag, doors, trunk a glove box. All of those objects doesn't provide
         services that can be provided by themselves, without being 
         part of a car. They are also specific for each car model.
@@ -117,17 +113,17 @@
     </p>
     <img src="#" alt="COMPOSITION: CAR EXAMPLE">
     <p>
-        Sure, there are some car models that share the same type of
-        objects in some cases, like the motor. The motor of some model
-        is used by more than one car model. But even so, you don't have
-        universal motor that fits all the cars.
+        There's also another aspect of composition which is the fact 
+        that those owned objects, die once the owner dies. Simply
+        by the fact that they provide specific services for specific
+        types of objects.
     </p>
     <h4>Aggregation: part-of relationship</h4>
     <p>
         After understanding the composition, this one is very simple.
         Objects that are formed by another objects that actually
         can provide services without requiring being <i>owned</i>
-        by another specific type of objects, are called
+        by another specific type of object, are called
         <b>aggregate objects</b>. They are formed by a collection
         of other objects that doesn't depends on them. In other
         words, an aggregate object groups other objects.
@@ -137,7 +133,7 @@
         if we're talking about desktops, the periferals
         are objects that part of this aggregation like the screen,
         the keyboard, mouse, headphones, printer and so on.
-        Of course we have minimum level of compatibility,
+        Of course we may have minimum level of compatibility,
         maybe the computer is so old that it doesn't have
         USB port haha.
     </p>
@@ -147,5 +143,23 @@
         one "universal" USB port for every one.
     </p>
     <img src="#" alt="AGGREGATION: CAR EXAMPLE">
+    <p>
+        Different from composition, the grouped objects
+        don't necessarily have to die once their "owner"
+        dies. They can live by themselves simply for the fact
+        that they can provide services for other types of objects.
+        They tend to be more generic, therefore, more reusable.
+    </p>
+    <h3>Why use association?</h3>
+    <h4>Readability</h4>
+    <p>
+        By combining more abstract objects to create another,
+        we attack complexity. Each object provides abstraction,
+        this makes simple to combine them and makes it easier 
+        to understand the object as a whole without having to
+        understand lots of information at once.
+    </p>
+    <h3>Complextity</h3>
+    <h3>Mantainability</h3>
     Good Luck XD
 </div>
