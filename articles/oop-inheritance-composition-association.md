@@ -71,10 +71,47 @@
         after they bein created, but before they even exist, on their template.
     </p>
     <h3>Advantages of Inheritance</h3>
-    <h4>Code reusability and core design description</h4>
+    <p>
+        Inheritance is a mechanism of oop and it has it's advantages.
+    </p>
+    <h4>Code reusability, code duplication and core design description</h4>
+    <p>
+        This mechanism can be used for one important thing, which is
+        <i>reusability</i>. There is nothing new to add to this, it's
+        very simple actually. We can prevent code duplication by creating
+        more generic templates and reuse their structures on what we call
+        <i>sub-classes</i> or <i>children</i>. Therefore, reducing code
+        duplication because we don't have to write the same lines of code
+        all over again for different templates.
+    </p>
+    <p>
+        Another important thing inheritance provides is <i>impose core design</i>.
+        Some templates (classes) share the same core structure, and usually
+        that core structure is fundamental for the them. They <i>have to</i>
+        implement a set elements (methods/procedures/functions and/or state/variables).
+    </p>
     <h3>Disadvantages of Inheritance</h3>
-    <h4>Breaks encapsulation</h4>
-    <h4>Harder to mantain</h4>
+    <h4>Breaks Encapsulation</h4>
+    <p>
+        I would say that this is not a rule because it really depends
+        on the language being used, and the <i>access modifiers</i>
+        of some elements. To be more specific, some elements like behaviors/functions/methods/procedures
+        may be visible by sub-classes because of their access modifiers.
+        If any new method is added to the parent, and it has an acess modifier
+        that allows them to be seen by it's children, they must implement
+        the new method. Therefore, in this case, the encapsulation of 
+        the parent is broken.
+    </p>
+    <h4>Harder to maintain</h4>
+    <p>
+        Templates that doesn't have freedom by have it's encapsulation broken
+        are harder to maintain. A developer can't simply change a parent class
+        adding or removing elements that are part of core implementation
+        of it's children. Changing the parent will require testing all the
+        children all over again to guarantee that they are working properly.
+        And of course, this also depends on how complex this relationship and
+        the parent class is.
+    </p>
     <h3>Association, Composition and Aggregation</h3>
     <p>
         Long story short, composition and aggregation are types of association.
@@ -174,9 +211,11 @@
     </p>
     <p>
         Objects hide their implementation by providing only the
-        necessary interfaces. They also encapsulates their
+        necessary interfaces. They also hide their
         state to prevent clients from knowing their internal
         structure, which would result in a dependece on each other.
+        With simple words, objects encapsulates their implementation
+        and provides abstraction.
         <br>
         Objects that relate with each other by association,
         being by composition or aggregation, are less dependent
