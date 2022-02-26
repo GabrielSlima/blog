@@ -84,12 +84,12 @@
         is an association, a relationship between the MediaPlayer and the Video.
     </p>
     <img src="#" alt="Association diagram with aggregation and compostion">
-    <h4>Compostion: has-a/owns-a relationship</h4>
+    <h4>Compostion: has-a relationship</h4>
     <p>
         So as the name above says, composition is a relationship between
-        two objects, where one object owns another one. The owned object
-        provides specific services for a specific type of object,
-        and requires to be owned to fully accomplish a task.
+        two (or more) objects, where one object owns another one.
+        The owned object provides specific services for a specific type
+        of object, and requires to be owned to accomplish a task.
     </p>
     <p>
         Example, a computer is an object that is composed by other objects
@@ -116,11 +116,11 @@
         There's also another aspect of composition which is the fact 
         that those owned objects, die once the owner dies. Simply
         by the fact that they provide specific services for specific
-        types of objects.
+        types of objects, so doesn't make sense to keep them alive.
     </p>
     <h4>Aggregation: part-of relationship</h4>
     <p>
-        After understanding the composition, this one is very simple.
+        After understanding the composition, this one should be simpler.
         Objects that are formed by another objects that actually
         can provide services without requiring being <i>owned</i>
         by another specific type of object, are called
@@ -148,7 +148,7 @@
         don't necessarily have to die once their "owner"
         dies. They can live by themselves simply for the fact
         that they can provide services for other types of objects.
-        They tend to be more generic, therefore, more reusable.
+        They tend to be more generic, therefore, reusable.
     </p>
     <h3>Why use association?</h3>
     <h4>Readability</h4>
@@ -159,7 +159,51 @@
         to understand the object as a whole without having to
         understand lots of information at once.
     </p>
-    <h3>Complextity</h3>
-    <h3>Mantainability</h3>
+    <h4>Complextity</h4>
+    <p>
+        This is not today's news. Complextity is a thing in Software
+        Engineering, and it can really impact the software
+        development process by making things harder to understand.
+        <br>
+        Association, if used with the right mindset, that would
+        be <i>readability</i> and that <i>solutions should help on
+            solving problems, not creating new ones
+        </i> is a great tool. Again, it's easier to understand
+        a large amount of information by breaking it into small
+        pieces.
+    </p>
+    <p>
+        Objects hide their implementation by providing only the
+        necessary interfaces. They also encapsulates their
+        state to prevent clients from knowing their internal
+        structure, which would result in a dependece on each other.
+        <br>
+        Objects that relate with each other by association,
+        being by composition or aggregation, are less dependent
+        on each other. And of course, objects that are composed
+        by other ones, are dependent on each other at a certain
+        degree, but each object that is part of this composition
+        have freedom to change it's implementation.
+        Don't forget that principles like <i>Open/Closed</i>
+        can help you on defining interfaces that don't requires
+        changes when you have to change it's implementation.
+        This will help you to create more stable objects.
+        If you're curious about this principle, I've written
+        <a href="https://gabrielslima.github.io/blog/post.html?id=13" target="_blank">this article</a>
+        about <b>clean classes</b>.
+    </p>
+    <h4>Maintainability</h4>
+    <p>
+        I think it's kind of obvious at this point that
+        more readable and less complex objects are easier to
+        understand. If your objects are readable and less complex,
+        they for sure are more maintainable. Because one object is
+        built from other small unities, you don't have to change
+        objects that has nothing to do with the requirements.
+        This also makes it simple for testing. You onlt test
+        what in fact you've changed. I have another article
+        about <a href="https://gabrielslima.github.io/blog/post.html?id=12" target="_blank">testing</a> too, if you wanna
+        take a look.
+    </p>
     Good Luck XD
 </div>
