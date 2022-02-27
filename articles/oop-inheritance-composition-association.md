@@ -22,7 +22,7 @@
         is very simple, the execution is a relationship of relating objects. Each object
         represents a entity on our program. This entity posesses behaviors and a state.
     </p>
-    <img src="#" alt="OBJECT ENTITY">
+    <img class="post-img" src="images/inheritance-association/object-entity.svg" alt="OBJECT ENTITY">
     <p>
         These entities are created from templates of code called <b>classes</b>.
         In other words, a class describes what behaviors (methods/functions/procedures)
@@ -31,10 +31,19 @@
         a completely isolated program. A program generally requires some kind of data
         to fully accomplish it's job. Object entities are not different. For instance,
         maybe you have a Video Object. A video contains duration time, format, maybe a name
-        and a specific var for marking the current frame of this video.
+        and a specific var for marking the current point of this video beign shown.
         Those variables are part of the object's state.
     </p>
-    <img src="#" alt="VIDEO OBJECT">
+    <img class="post-img" src="images/inheritance-association/Media-Player.svg" alt="VIDEO OBJECT">
+    <pre class="brush: python">
+<code>def main():
+    video = Video(absolute_path="/home/elliot/videos/dystopia_2016_live.mp4")
+    media_player = MediaPlayer()
+    
+    video.load()
+    media_player.play(video)
+</code>
+</pre>
     <p>
         Objects communicate with each other by sending messages/by
         calling each other's behaviors, directly or by having a mediator.
@@ -98,7 +107,7 @@
         of some elements. To be more specific, some elements like behaviors/functions/methods/procedures
         may be visible by sub-classes because of their access modifiers.
         If any new method is added to the parent, and it has an acess modifier
-        that allows them to be seen by it's children, they must implement
+        that allows them to be seen by" it's children, they must implement
         the new method. Therefore, in this case, the encapsulation of 
         the parent is broken.
     </p>
