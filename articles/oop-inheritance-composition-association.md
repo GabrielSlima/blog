@@ -152,7 +152,7 @@
         part of a car. They are also specific for each car model.
         You can't take a Civic's motor and put it into a Honda and vise versa.
     </p>
-    <img class="post-img" src="images/inheritance-association/association.svg" alt="COMPOSITION: COMPUTER EXAMPLE">
+    <img class="post-img" src="images/inheritance-association/association-composition.svg" alt="COMPOSITION: COMPUTER EXAMPLE">
     <p>
         There's also another aspect of composition which is the fact 
         that those owned objects, die once the owner dies. Simply
@@ -183,7 +183,7 @@
         USB port for each model of computer or each brand. You have
         one "universal" USB port for every one.
     </p>
-    <img class="post-img" src="images/inheritance-association/has-a.svg" alt="COMPOSITION: COMPUTER EXAMPLE">
+    <img class="post-img" src="images/inheritance-association/association-aggregation.svg" alt="COMPOSITION: COMPUTER EXAMPLE">
     <p>
         Different from composition, the grouped objects
         don't necessarily have to die once their "owner"
