@@ -35,7 +35,7 @@
         Those variables are part of the object's state.
     </p>
     <img class="post-img" src="images/inheritance-association/Media-Player.svg" alt="VIDEO OBJECT">
-    <pre class="brush: python">
+<pre class="brush: python">
 <code>def main():
     video = Video(absolute_path="/home/elliot/videos/dystopia_2016_live.mp4")
     media_player = MediaPlayer()
@@ -126,7 +126,7 @@
         same template of code (class). So the first example you saw before,
         is an association, a relationship between the MediaPlayer and the Video.
     </p>
-    <h4>Compostion: has-a relationship</h4>
+    <h4>Composition: has-a relationship</h4>
     <p>
         So as the name above says, composition is a relationship between
         two (or more) objects, where one object owns another one.
@@ -153,6 +153,34 @@
         You can't take a Civic's motor and put it into a Honda and vise versa.
     </p>
     <img class="post-img" src="images/inheritance-association/association-composition.svg" alt="COMPOSITION: COMPUTER EXAMPLE">
+<pre class="brush: python">
+<code>class SpecificAPIHTTPConnector:
+    def __init__(htpp_connector: HttpConnector, validator: SpecificAPIHTTPConnectorValidator, authority: str):
+        self.http_connector = htpp_connector
+        self.url = f"https://{authority}/specific_api"
+        self.validator = validator
+    
+    def save(payload: dict):
+        request = {
+            "url": self.url
+            "body": payload,
+            "headers": {"specific-header": "specific value"}
+        }
+        validator.validate_return_from(self.http_connector.post(request))
+</code>
+</pre>
+    <p>
+        With the example above I tried to create a very simple
+        case of composition. In this case, the SpecificAPIHTTPConnectorValidator
+        is an object to be owned by SpecificAPIHTTPConnector.
+        I usually encapsulate HTTP requests per API. This makes
+        it easier to give maintance, it increases readability,
+        and reduce code duplication.
+        <br>
+        Anyways, the SpecificAPIHTTPConnectorValidator can't be used
+        by other types of objects in this case. Well, at least
+        it's not supposed to.
+    </p>
     <p>
         There's also another aspect of composition which is the fact 
         that those owned objects, die once the owner dies. Simply
@@ -184,12 +212,38 @@
         one "universal" USB port for every one.
     </p>
     <img class="post-img" src="images/inheritance-association/association-aggregation.svg" alt="COMPOSITION: COMPUTER EXAMPLE">
+<pre class="brush: python">
+<code>class SpecificAPIHTTPConnector:
+    def __init__(htpp_connector: HttpConnector, authority: str):
+        self.http_connector = htpp_connector
+        self.url = f"https://{authority}/specific_api"
+    
+    def save(payload: dict) -> None:
+        request = {
+            "url": self.url
+            "body": payload,
+            "headers": {"specific-header": "specific value"}
+        }
+        self._validate_return_from(self.http_connector.post(request))
+    
+    def _validate_return_from(response: HTTPResponse) -> None:
+        _ERROR_MESSAGE = f"{self.url}. Response Body => {response.body}, Response Status => {response.status}"
+        if response.status != 200:
+            raise SpecificAPIHTTPConnectorException(message=_ERROR_MESSAGE)
+</code>
+</pre>
     <p>
         Different from composition, the grouped objects
         don't necessarily have to die once their "owner"
         dies. They can live by themselves simply for the fact
         that they can provide services for other types of objects.
         They tend to be more generic, therefore, reusable.
+    </p>
+    <p>
+        On the example above the HttpConnector is not attatched
+        to a specific type of object. It can be used by any other
+        object that performs HTTP Requests. There is no dependece
+        between SpecificAPIHTTPConnector and HttpConnector.
     </p>
     <h3>Why use association?</h3>
     <h4>Readability</h4>
@@ -247,6 +301,22 @@
         what in fact you've changed. I have another article
         about <a href="https://gabrielslima.github.io/blog/post.html?id=12" target="_blank">testing</a> too, if you wanna
         take a look.
+    </p>
+    <h3>Conclusion</h3>
+    <p>
+        A while ago I really thought that inheritance was the best
+        approach for code reusability. Turns out that it's not
+        always the best choice. If you have a class with lots
+        of children, it's harder to make changes on it (depending)
+        on the change, if requirements change. It's easier to
+        deal with separeted objects with low dependece on each other.
+        <br>
+        So as a general recommendation, if you have generic
+        classes that probably won't change much in the future,
+        like a generic HTTP component that you've created or
+        a component that offers generic interfaces for databases,
+        I recommend using inheritance. But other that, I'd recommend using
+        association.
     </p>
     Good Luck XD
 </div>
