@@ -1,10 +1,10 @@
 [
     {
         "id": "27",
-        "title": "Should you use inheritance or composition? What about association?",
+        "title": "Should you use inheritance, composition or aggregation? What about association?",
         "description": "You don't know OOP!",
         "author": "Gabriel Lima",
-        "date": "2021-12-27",
+        "date": "2022-02-28",
         "article_file_name": "./articles/oop-inheritance-composition-association.md"
     },
     {

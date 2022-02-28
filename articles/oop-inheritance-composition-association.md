@@ -1,9 +1,9 @@
 <div style="text-align: left;">
     <p>
         Ok  it's been a while, I know. Maybe I'll write an article about this
-        too. But continuing this process of discovery and documentation,
+        too. But continuing this process of discovery in Software Engineering,
         today's topic is something that maybe not every developer pays attention
-        when writing the code. Maybe because we have so many thing to worry
+        when writing code. Maybe because we have so many things to worry
         about or just because it doesn't have enough emphasis as other subjects.
     </p>
     <p>
@@ -14,7 +14,7 @@
     <p>
         Welcome to the PewdiePie's favourite blog about Software Engineering and today's topic
         is about what kind of relationship your objects should have or being more direct
-        <b>Should you use inheritance, composition or aggregation? And what is association</b>
+        <b>Should you use inheritance, composition or aggregation? And what is association?</b>
     </p>
     <h3>Before we continue, a quick review of OOP</h3>
     <p>
@@ -110,7 +110,7 @@
     </p>
     <h4>Harder to maintain</h4>
     <p>
-        Templates that doesn't have freedom by have it's encapsulation broken
+        Templates that doesn't have freedom by having it's encapsulation broken
         are harder to maintain. A developer can't simply change a parent class
         adding or removing elements that are part of core implementation
         of it's children. Changing the parent will require testing all the
@@ -314,9 +314,9 @@
         So as a general recommendation, if you have generic
         classes that probably won't change much in the future,
         like a generic HTTP component that you've created or
-        a component that offers generic interfaces for databases,
+        a component that offers generic interfaces for databases for instance,
         I recommend using inheritance. But other that, I'd recommend using
-        association.
+        one of the two types of association.
     </p>
     Good Luck XD
 </div>
