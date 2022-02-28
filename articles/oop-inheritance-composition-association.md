@@ -74,15 +74,12 @@
         meaning that one object of type B is type A. For instance, a cat is a mammal,
         dogs and zebras are mammals too. Cat (type B) is a mammal (type A)
     </p>
-    <img src="#" alt="INHERITANCE EXAMPLE">
+    <img class="post-img" src="images/inheritance-association/is-a.svg" alt="INHERITANCE EXAMPLE">
     <p>
         As you can see, this type of relationship it's not exactly between the objects
-        after they bein created, but before they even exist, on their template.
+        after they bein created, but before they even exist, on their template/class.
     </p>
     <h3>Advantages of Inheritance</h3>
-    <p>
-        Inheritance is a mechanism of oop and it has it's advantages.
-    </p>
     <h4>Code reusability, code duplication and core design description</h4>
     <p>
         This mechanism can be used for one important thing, which is
@@ -129,7 +126,6 @@
         same template of code (class). So the first example you saw before,
         is an association, a relationship between the MediaPlayer and the Video.
     </p>
-    <img src="#" alt="Association diagram with aggregation and compostion">
     <h4>Compostion: has-a relationship</h4>
     <p>
         So as the name above says, composition is a relationship between
@@ -145,7 +141,6 @@
         or SSD. Those objects got to be compatible with the computer's motherboard
         and space limitations. 
     </p>
-    <img src="#" alt="COMPOSITION: COMPUTER EXAMPLE">
     <p>
         Another one, a classic example. A car is an object. An entity that
         encapsulates data and procedures. Provides abstraction by exposing
@@ -157,7 +152,7 @@
         part of a car. They are also specific for each car model.
         You can't take a Civic's motor and put it into a Honda and vise versa.
     </p>
-    <img src="#" alt="COMPOSITION: CAR EXAMPLE">
+    <img class="post-img" src="images/inheritance-association/association.svg" alt="COMPOSITION: COMPUTER EXAMPLE">
     <p>
         There's also another aspect of composition which is the fact 
         that those owned objects, die once the owner dies. Simply
@@ -188,7 +183,7 @@
         USB port for each model of computer or each brand. You have
         one "universal" USB port for every one.
     </p>
-    <img src="#" alt="AGGREGATION: CAR EXAMPLE">
+    <img class="post-img" src="images/inheritance-association/has-a.svg" alt="COMPOSITION: COMPUTER EXAMPLE">
     <p>
         Different from composition, the grouped objects
         don't necessarily have to die once their "owner"
