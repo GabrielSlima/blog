@@ -33,5 +33,15 @@
         Encapsulation refers to the oacking of data with the methods
         that operate on that data.
     </blockquote>
+    <p>
+        Objects are entities composed by data (variables) and behavivors
+        (functions/methods). The behaviors are supposed to
+        work with that data to perform it's job. Meaning that they should
+        have a <i>high-cohesion</i>.
+    </p>
+    <h3>Does inheritance breals encapsulation?</h3>
+    <p>
+        
+    </p>
     Good Luck XD
 </div>
