@@ -39,3 +39,14 @@ pre {
 }
 
 .content-container{padding-bottom: 50px!important;}
+
+.blockquote {
+  background-color: #e9ecef;
+  border-left: 6px solid #212529;
+}
+
+.blockquote-body {
+  margin-bottom: 0;
+  opacity: 0.9;
+  font-size: 1rem;
+}
