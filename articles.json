@@ -1,5 +1,13 @@
 [
     {
+        "id": "28",
+        "title": "Does inheritance breaks encapsulation?",
+        "description": "You don't know OOP!",
+        "author": "Gabriel Lima",
+        "date": "2022-03-01",
+        "article_file_name": "./articles/oop-inheritance-breaks-encapsulation.md"
+    },
+    {
         "id": "27",
         "title": "Should you use inheritance, composition or aggregation? What about association?",
         "description": "You don't know OOP!",
