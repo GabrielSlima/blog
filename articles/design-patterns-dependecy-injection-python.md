@@ -87,5 +87,20 @@ class UserController:
         I mean, Authorizer's clients doesn't need to know about the
         dependeces it needs to function properly.
     </p>
+    <h3>Making your unit testing life harder</h3>
+    <p>
+        I gotta tell you, allowing the constructor of your object
+        to deal with it's own dependeces will make your life simpler
+        at the beginning when it comes to unit testing. But at some
+        point, naturally as the system grows, requirements changes,
+        refactoring and so on, you will realize that your unit tests
+        are coupled with the dependeces of the object you're testing.
+        <br>
+        This can make your life hardar than it actually should be. Now
+        you gotta deal with another object that probably be useless if
+        your intentions are not making interated testing.
+    </p>
+    <h3>Depdency Injection</h3>
+
     Good Luck XD
 </div>
