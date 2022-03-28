@@ -78,6 +78,7 @@ class UserController:
         was/is your reality?
     </p>
     <img class="post-img" src="images/design-patterns-dependecy-injection-python/dependecy-injection-python-MultipleControllers.svg" alt="Controllers - Authorizer relationship">
+    <h3>Hard dependece management</h3>
     <p>
         I'll tell what is gonna happen if the authorizer change it's
         constructor one day. You'll have to change all the objects
@@ -96,11 +97,63 @@ class UserController:
         refactoring and so on, you will realize that your unit tests
         are coupled with the dependeces of the object you're testing.
         <br>
-        This can make your life hardar than it actually should be. Now
+        This can make your life harder than it actually should be. Now
         you gotta deal with another object that probably be useless if
-        your intentions are not making interated testing.
+        your intentions is not making interated testing.
     </p>
-    <h3>Depdency Injection</h3>
+    <h3>Ther first level of Inverion of Control</h3>
+    <p>
+        Don't get me wrong, programming is an art. This means that
+        it's a creative process and very subjective. Also meaning that
+        different people think in a different way, that's why design pattern
+        exists, so that people follow a common solution for a common problem.
+        <br>
+        But that's not the point, the point is, you may have a different
+        context compared with what I have right now, that's why I'm showing
+        you what I've done in some cases and that doesn't mean it will work
+        on your case.
+    </p>
+    <p>
+        That being said, talking specifically about unit testing,
+        by using dependecy injection a higher level of flexibility
+        appears.
+    </p>
+<pre class="brush: python">
+<code>from src.controller.user_controller import UserController
+from src.vos.user import UserVO
+from src.vos.http.status import HttpStatus
+from src.constants.user.profile import UserProfile
 
+
+def test_should_return_not_authorized_on_user_not_identified(mocker):
+    __authorizer = __patch_authorizer_with(mocker)
+    __authorizer.verify_if_request_is_authorized_for.side_effect = raise_exception
+
+    controller = UserController(
+        authorizer=__authorizer,
+        requester=UserVO(name="Gabriel", identification=133312)
+    )
+
+    response = controller.save(
+        UserVO(name="New User Name", profile=UserProfile.TRADER)
+    )
+    assert response.status == HttpStatus.FORBIDDEN
+
+
+def raise_exception(*args):
+    raise Exception("USER IS NOT ALLOWED TO PERFORM THIS ACTION...")
+
+
+def __patch_authorizer_with(mocker):
+    return mocker.patch('src.security.authorizer.Authorizer')
+</code>
+</pre>
+    <p>
+        The unit test has the minimum knowledge about the Authorizer, that's a beginning.
+        The authorizer's implementation for the interface <b>verify_if_request_is_authorized_for</b>
+        isn't relevant here. Of course, the unit test knows the bare minimum about it's behavior,
+        but pay attention to the way it was built. The unit test doesn't knows anything about
+        the authorizer's dependeces to mock it.
+    </p>
     Good Luck XD
 </div>
