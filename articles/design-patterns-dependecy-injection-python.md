@@ -125,7 +125,7 @@ from src.vos.http.status import HttpStatus
 from src.constants.user.profile import UserProfile
 
 
-def test_should_return_forbidden_on_user_not_identified(mocker):
+def test_should_return_forbidden_on_save_with_non_authorized_user(mocker):
     __authorizer = __patch_authorizer_with(mocker)
     __authorizer.verify_if_request_is_authorized_for.side_effect = raise_exception
 
