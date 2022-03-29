@@ -114,6 +114,61 @@ class UserController:
         on your case.
     </p>
     <p>
+        To invert the control of depdence management we must remove
+        from the parent the class the responsibility of
+        defining the values of whatever variable that is part
+        of object's state. There are some ways of injecting the
+        dependeces of an object: Constructor, public interface
+        and XXX
+    </p>
+    <h4>Injecting dependeces by constructor</h4>
+    <p>
+        This is one of the most used ways of dependece injection.
+        We remove the responsibility of initializing the dependeces
+        from the object's constructor and we just assume that
+        the "builder" or "assembler" knows what he's doing
+    </p>
+<pre class="brush: python">
+<code>class UserController:
+    def __init__(self):
+        self.authorizer = Authorizer(repository=UserRepository())
+        self.requester = http_util.identify_user_responsible_for(request)
+</code>
+</pre>
+    <p>
+        The above example is a case in which the constructor
+        is responsible for defining the values of the object's
+        state. The dependeces are managed in the natural flow of control
+        of this object creation.This breaks the SRP, OCP and DIP principles
+        (from SOLID). This also creates a dependence between 
+        <b>UserController</b>, <b>http_util</b> and <b>Authorizer</b>.
+        They're tighly coupled. It'll be difficult to mantain this
+        relationship. But you already knows that.
+    </p>
+<pre class="brush: python">
+<code>class UserController:
+    def __init__(self, authorizer, requester):
+        self.__authorizer = authorizer
+        self.__requester = requester
+</code>
+</pre>
+    <p>
+        The code above is the same code, but the flow of control
+        of dependence management is inverted. The object's constructor
+        doesn't have to worry about this anymore. In this case,
+        another element will be responsible for defining those
+        values and passing them at the moment of creation of the
+        object.
+    </p>
+    <h3>Injecting through interfaces</h3>
+    <p>
+        Another way of providing dependeces to objects is through
+        public interfaces. This can be very useful if the object
+        gotta deal with expensive dependeces. Dependeces that
+        takes a lot of time to be defined/built (Lazy Load Tatic)
+    </p>
+    <h4>Making the Unit Testing process easier</h4>
+    <p>
         That being said, talking specifically about unit testing,
         by using dependecy injection a higher level of flexibility
         appears.
