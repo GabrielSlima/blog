@@ -370,8 +370,9 @@ def build_with(requester: UserVO) -> UserController:
     return UserController(
         authorizer=authorizer_factory.build(), requester=requester
     )
-
 </code>
 </pre>
+    <img class="post-img" src="images/design-patterns-dependecy-injection-python/dependecy-injection-python-factory.svg" alt="UserController - Authorizer relationship">
+
     Good Luck XD
 </div>
