@@ -330,6 +330,20 @@ def __patch_authorizer_with(mocker):
         is to assemble, and the more I hable to assemble it, the
         hard it's to mantain.
     </p>
+    <h3>Adding factories to the design</h3>
+    <img class="post-img" src="images/design-patterns-dependecy-injection-python/dependecy-injection-python-factory.svg" alt="UserController - Authorizer relationship">
+    <p>
+        The diagram above represents the new way the objects of this
+        application will request a new instance of a dependece.
+        They will be intermediated by the factory.
+        To fully understand it, you gotta consider that what I'm trying
+        to express with the arrows are not only the data flowing through
+        the objects, but that element A mentions code of element B.
+        <br>
+        In this case, the <b>Unit Tests UserController</b> mentions
+        <b>UserControllerFactory's</b> code that then mentions
+        <b>UserController's</b> code and the <b>AuthorizerFactory's</b> code. 
+    </p>
 <pre class="brush: python">
 <code>from src.vos.user import UserVO
 from src.vos.http.status import HttpStatus
@@ -372,7 +386,27 @@ def build_with(requester: UserVO) -> UserController:
     )
 </code>
 </pre>
-    <img class="post-img" src="images/design-patterns-dependecy-injection-python/dependecy-injection-python-factory.svg" alt="UserController - Authorizer relationship">
-
+    <p>
+        I want you to pay attention to both cases, the controllers that
+        don't have a factory for them, meaning that if they are big, complex
+        and have many other dependencies and don't have a factory for assembling
+        them, you'll end up with lot's of lines of code for the unit tests
+        for instance, everytime you need a instance of them.
+        <br>
+        All the controllers are looking into the Authorizer's factory.
+        So the coupling between them was reduced meaningfully.
+        If we apply DIP (Dependecy Inversion Principle) or AOP (Aspect Oriented Programming)
+        the coupling will be reduced even more.
+    </p>
+    <p>
+        I also want you to pay attention to the UserControllerFactory. Now everyone
+        that needs a instance of this object, don't have to worry
+        about assembling it. The coupling between the Controller and it's clients
+        was reduced too.
+    </p>
+    <h3>Conclusion</h3>
+    <p>
+        
+    </p>
     Good Luck XD
 </div>
