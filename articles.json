@@ -4,7 +4,7 @@
         "title": "How to implement dependency injection in Python (no frameworks or external libs)?",
         "description": "You don't know OOP!",
         "author": "Gabriel Lima",
-        "date": "2022-03-01",
+        "date": "2022-03-31",
         "article_file_name": "./articles/design-patterns-dependecy-injection-python.md"
     },
     {
