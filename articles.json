@@ -1,5 +1,13 @@
 [
     {
+        "id": "30",
+        "title": "Clean Archicteture: Separation of concerns roadmap",
+        "description": "",
+        "author": "Gabriel Lima",
+        "date": "2022-03-31",
+        "article_file_name": "./articles/clean-architecture-soc-roadmap.md"
+    },
+    {
         "id": "29",
         "title": "How to implement dependency injection in Python (no frameworks or external libs)?",
         "description": "You don't know OOP!",
