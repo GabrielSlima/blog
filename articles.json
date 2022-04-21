@@ -1,8 +1,8 @@
 [
     {
         "id": "30",
-        "title": "Clean Archicteture: Separation of concerns roadmap",
-        "description": "",
+        "title": "My roadmap for separating the system into different concerns",
+        "description": "Based on Robert C. Martin's book: Clean Architecture",
         "author": "Gabriel Lima",
         "date": "2022-03-31",
         "article_file_name": "./articles/clean-architecture-soc-roadmap.md"
