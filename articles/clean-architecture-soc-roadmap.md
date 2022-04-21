@@ -49,6 +49,33 @@
         seems more of a subjective matter than a fact.
     </p>
     <h3>Separation of Concerns</h3>
+    <p>
+        Separation of Concerns is a principle for separating the
+        system into different logical sections and each logical section
+        addresses a different concern. This principle emphasizes
+        code reuse, decoupled logical sections with well defined
+        interfaces.
+    </p>
+    <p>
+        Concerns can be split into functions, objects, modules, packages/folders
+        or even at a program level. Concerns can communicate with each
+        other through function calls or trough interprocess communication
+        that can go from sharing data on the same memory addres space
+        to communication through files, sockets, internet and so on.
+        An example of concern would be the business rules, also known as
+        models, domains, entities and so on. Or maybe utils or commons,
+        logging, security, database. 
+    </p>
+    <p>
+        Sure there are some concerns that are used by many other concerns
+        in the system. The <i>logging</i> concern for instance, can be
+        used by any other concern within the system. These are called
+        <b>Cross-Cutting Concerns</b>.
+    </p>
+    <p>
+        If you really wanna know more about SoC, I recommend you read
+        <a href="https://gabrielslima.github.io/blog/post.html?id=13" target="blank">this article</a>
+    </p>
     <h3>The 4 main concerns your architecture should support</h3>
     <h3>Explanaition about the levels</h3>
     <p>
