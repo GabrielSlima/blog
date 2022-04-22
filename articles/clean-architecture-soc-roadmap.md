@@ -166,6 +166,7 @@
         It's important to have in mind that the architecture
         must make it easier to add, change or remove use cases
     </p>
+    -------------------------------------------------------------- -------------------------------------------------------------- 
     <h3>Explanaition about the levels</h3>
     <p>
         So from my perspective, the levels described in the diagram
@@ -175,7 +176,21 @@
         we gotta achieve the separation sequentially, as needed.
     </p>
     <h4>The first level</h4>
+    <p>
+        So we first start by identifying the concerns, but at
+        the <i>source code level</i>. This means that the concerns will
+        communicate with each other through function calls.
+        Another name for this way of separating concerns is "monolith",
+        the separation of concerns exists (doesn't mean they are tightly or loosely coupled)
+        but they're running in the same program, same process address space.
+    </p>
+    <h5>Identify the horizontal layers</h5>
+    <h5>Identify the vertical layers</h5>
+    <h5></h5>
     <h4>The second level</h4>
+    <p>
+        Once the horizontal
+    </p>
     <h4>The third level</h4>
     <h3>In which levels to apply SOLID principles?</h3>
     <h3>In which levels to apply Package Principles?</h3>
