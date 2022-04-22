@@ -64,7 +64,11 @@
         to communication through files, sockets, internet and so on.
         An example of concern would be the business rules, also known as
         models, domains, entities and so on. Or maybe utils or commons,
-        logging, security, database. 
+        logging, security, database. These are concerns that communicate
+        with each other through functions calls. But you can also have
+        some concerns like <i>Ordering</i>, <i>CreditCardPayment</i>,
+        <i>DebitCardPayment</i> that can communicate through the
+        network, maybe trough HTTP Requests or through events.
     </p>
     <p>
         Sure there are some concerns that are used by many other concerns
@@ -77,6 +81,91 @@
         <a href="https://gabrielslima.github.io/blog/post.html?id=13" target="blank">this article</a>
     </p>
     <h3>The 4 main concerns your architecture should support</h3>
+    <p>
+        There are 4 main concerns an architecture should support
+        to be considered a good one: development, deployment,
+        operations and use cases.
+        To be more clear, the architecture is a blueprint of the system,
+        it's composed by components (each component addresses a concern)
+        and their relationship. An achitecture supports those 4 concerns
+        by having a relatively good separation of concerns with
+        decoupled and cohesive components.
+    </p>
+    <h4>Development</h4>
+    <p>
+        To support this concern a few issues must be provided or solved
+        by the architecture:
+        <ul>
+            <li>Developers can work in parallel, maybe building different
+                elements for the same concern or even in different
+                concerns that are at the same memory space
+                (concerns that are part of the same application/program for instance)
+            </li>
+            <li>Developers can work in different concerns or sub-concerns,
+                without depending on each other's version. In summary,
+                no circular dependecies between the concerns.
+                Working with concerns that communicate directly or not, the
+                concerns they're working on must not depend on each other's version
+            </li>
+            <li>
+                Developers can add, edit or remove uses cases from the architecture
+                without having to worry about learning everything at once.
+            </li>
+        </ul>
+    </p>
+    <p>
+        In short, the architecture must provide decoupled and high-cohesive
+        concerns. By concerns, I mean components.
+    </p>
+    <h4>Deployment</h4>
+    <p>
+        By supporting <b>development</b> automatically some aspects of
+        deployment are supported too. By having decoupled and high-cohesive
+        concerns, it makes it easier to release new versions of different
+        concerns. Therefore, delivering small pieces of software
+        is made possible. So a few issues in this concern an architecture must
+        provide are or solve:
+        <ul>
+            <li>Avoid circular/cyclic dependeces between the concerns</li>
+            <li>Group concerns (if needed) that change at the same rate. Keep separated those
+                that don't.
+            </li>
+            <li>
+                Keep more unstable concerns pointing in the direction
+                of more stable concerns. In other words, more unstanble
+                concerns should be client of more stable ones. This
+                Will reduce the chances of having to change concerns
+                that has nothing to do with current requirements, therefore
+                growing the stability of the system.
+            </li>
+            <li>
+                Avoid duplication and encapsulate cross-cutting concerns
+            </li>
+        </ul>
+    </p>
+    <p>
+        The issues are also about have an architecture composed by
+        decopupled and high-cohesive components.
+        Those aspects will certainly cause a positive impact in the
+        architecture making releases a lower cost process.
+    </p>
+    <h4>Operation</h4>
+    <p>
+        The architecture must support non-functional requirements.
+        For instance security, performance, auditing issues  must be
+        considered while creating the architecture and the components
+        must be arranged in a way in which those concerns are addressed.
+    </p>
+    <h4>Use Cases</h4>
+    <p>
+        The last concern the architecture must support are the use
+        case. An use case description may involve some type of UI
+        technology, persistence, business rules, specific non-function
+        requirements and so on.
+        <br>
+        It's important to have in mind that the architecture
+        must make it easier to add, change or remove use cases
+    </p>
     <h3>Explanaition about the levels</h3>
     <p>
         So from my perspective, the levels described in the diagram
