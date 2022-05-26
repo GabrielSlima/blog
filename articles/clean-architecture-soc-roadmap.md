@@ -33,7 +33,7 @@
         with a bare minimun description of the system.
     </p>
     <p>
-        An software architecture is a visual representation of system, composed by
+        A software architecture is a visual representation of system, composed by
         elements also known as <b>components</b> and how those elements
         relate with each other.
         <br>
@@ -159,12 +159,19 @@
     <h4>Use Cases</h4>
     <p>
         The last concern the architecture must support are the use
-        case. An use case description may involve some type of UI
-        technology, persistence, business rules, specific non-function
-        requirements and so on.
+        case. An use case is a case in which the system will be used.
+        To execute an use case within the application, a set of elements
+        functions, objects and data structures are required.
+    </p>
+    <p>
+        An use case may also involve some type of UI
+        technology, persistence, business rules, and so on.
+        These aspects of an use case changes for different
+        reasons and they will also represent 
+        the horizontal layers of the application.
         <br>
         It's important to have in mind that the architecture
-        must make it easier to add, change or remove use cases
+        must make it easier to add, change or remove use cases.
     </p>
     -------------------------------------------------------------- -------------------------------------------------------------- 
     <h3>Explanaition about the levels</h3>
@@ -186,7 +193,7 @@
     </p>
     <h5>Identify the horizontal layers</h5>
     <h5>Identify the vertical layers</h5>
-    <img src="images/clean-architecture-soc-roadmap/decoupling-horizonta-vertical-layers.svg" alt="Horizontal layers are visualized from top-to-bottom. 
+    <img src="images/clean-architecture-soc-roadmap/decoupling-horizonta-vertical-layers-level-1.svg" alt="Horizontal layers are visualized from top-to-bottom. 
     They are composed by UI/Boundary, controller, entity/domain logic/business logic layer. 
     Which is composed by the layers Use Case specific business rule and enterprise 
     wide business rules/core business rules. The last layer is the database. 
@@ -194,7 +201,8 @@
     has a set of objects in each layer to execute it. The logging layer cut accross cotroller, 
     business rules and database layers">
 
-<pre class="code-snippet type-bash">├── billing_payment.py
+<pre class="code-snippet type-bash">tree
+├── billing_payment.py
 ├── billing_visualization.py
 ├── logging.py
 ├── order_cancellation.py
@@ -205,7 +213,8 @@
 0 directories, 7 files
 </pre>
 
-<pre class="code-snippet type-bash">├── <font color="#295FCC"><b>billing_payment</b></font>
+<pre class="code-snippet type-bash">tree
+├── <font color="#295FCC"><b>billing_payment</b></font>
 │   ├── <font color="#295FCC"><b>business_rules</b></font>
 │   │   └── billing_payment_business_rules.py
 │   ├── <font color="#295FCC"><b>controllers</b></font>
@@ -258,6 +267,73 @@
 27 directories, 22 files
 </pre>
     <h4>The second level</h4>
+    <img src="images/clean-architecture-soc-roadmap/decoupling-horizonta-vertical-layers-level-2.svg" alt="Horizontal layers are visualized from top-to-bottom. 
+    They are composed by UI/Boundary, controller, entity/domain logic/business logic layer. 
+    Which is composed by the layers Use Case specific business rule and enterprise 
+    wide business rules/core business rules. The last layer is the database. 
+    The vertical layers are the use cases, they are read left-to-right and each use case 
+    has a set of objects in each layer to execute it. The logging layer cut accross cotroller, 
+    business rules and database layers">
+<pre class="code-snippet type-bash">tree
+├── <font color="#295FCC"><b>back-end</b></font>
+│   ├── <font color="#295FCC"><b>billing_payment</b></font>
+│   │   ├── <font color="#295FCC"><b>business_rules</b></font>
+│   │   │   └── billing_payment_business_rules.py
+│   │   ├── <font color="#295FCC"><b>controllers</b></font>
+│   │   │   └── billing_payment_controller.py
+│   │   └── <font color="#295FCC"><b>database</b></font>
+│   │       └── billing_payment_database.py
+│   ├── <font color="#295FCC"><b>billing_visualization</b></font>
+│   │   ├── <font color="#295FCC"><b>business_rules</b></font>
+│   │   │   └── billing_visualization_business_rules.py
+│   │   ├── <font color="#295FCC"><b>controllers</b></font>
+│   │   │   └── billing_visualization_controller.py
+│   │   └── <font color="#295FCC"><b>database</b></font>
+│   │       └── billing_visualization_database.py
+│   ├── <font color="#295FCC"><b>enterprise_wide_business_rules</b></font>
+│   │   └── some_enterprise_core_business_rule.py
+│   ├── <font color="#295FCC"><b>order_cancellation</b></font>
+│   │   ├── <font color="#295FCC"><b>business_rules</b></font>
+│   │   │   └── order_cancellation_business_rules.py
+│   │   ├── <font color="#295FCC"><b>controllers</b></font>
+│   │   │   └── order_cancellation_controller.py
+│   │   └── <font color="#295FCC"><b>database</b></font>
+│   │       └── order_cancellation_database.py
+│   ├── <font color="#295FCC"><b>order_placement</b></font>
+│   │   ├── <font color="#295FCC"><b>business_rules</b></font>
+│   │   │   └── order_placement_business_rules.py
+│   │   ├── <font color="#295FCC"><b>controllers</b></font>
+│   │   │   └── order_placement_controller.py
+│   │   └── <font color="#295FCC"><b>database</b></font>
+│   │       └── order_placement_database.py
+│   └── <font color="#295FCC"><b>order_visualization</b></font>
+│       ├── <font color="#295FCC"><b>business_rules</b></font>
+│       │   └── order_visualization_business_rules.py
+│       ├── <font color="#295FCC"><b>controllers</b></font>
+│       │   └── order_visualization_controller.py
+│       └── <font color="#295FCC"><b>database</b></font>
+│           └── order_visualization_database.py
+├── <font color="#295FCC"><b>front-end</b></font>
+│   ├── <font color="#295FCC"><b>billing_payment</b></font>
+│   │   └── <font color="#295FCC"><b>ui</b></font>
+│   │       └── billing_payment_ui.py
+│   ├── <font color="#295FCC"><b>billing_visualization</b></font>
+│   │   └── <font color="#295FCC"><b>ui</b></font>
+│   │       └── billing_visualization_ui.py
+│   ├── <font color="#295FCC"><b>order_cancellation</b></font>
+│   │   └── <font color="#295FCC"><b>ui</b></font>
+│   │       └── order_cancellation_ui.py
+│   ├── <font color="#295FCC"><b>order_placement</b></font>
+│   │   └── <font color="#295FCC"><b>ui</b></font>
+│   │       └── order_placement_ui.py
+│   └── <font color="#295FCC"><b>order_visualization</b></font>
+│       └── <font color="#295FCC"><b>ui</b></font>
+│           └── order_visualization_ui.py
+└── <font color="#295FCC"><b>logging</b></font>
+    └── logger.py
+
+34 directories, 22 files
+</pre>
     <h4>The third level</h4>
     <h3>In which levels to apply SOLID principles?</h3>
     <h3>In which levels to apply Package Principles?</h3>
