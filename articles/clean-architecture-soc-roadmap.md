@@ -193,9 +193,19 @@
     The vertical layers are the use cases, they are read left-to-right and each use case 
     has a set of objects in each layer to execute it. The logging layer cut accross cotroller, 
     business rules and database layers">
-<pre class="code-snippet type-bash">tree
-<font color="#295FCC"><b>.</b></font>
-├── <font color="#295FCC"><b>billing_payment</b></font>
+
+<pre class="code-snippet type-bash">├── billing_payment.py
+├── billing_visualization.py
+├── logging.py
+├── order_cancellation.py
+├── order_placement.py
+├── order_visualization.py
+└── some_enterprise_core_business_rule.py
+
+0 directories, 7 files
+</pre>
+
+<pre class="code-snippet type-bash">├── <font color="#295FCC"><b>billing_payment</b></font>
 │   ├── <font color="#295FCC"><b>business_rules</b></font>
 │   │   └── billing_payment_business_rules.py
 │   ├── <font color="#295FCC"><b>controllers</b></font>
@@ -215,6 +225,8 @@
 │       └── billing_visualization_ui.py
 ├── <font color="#295FCC"><b>enterprise_wide_business_rules</b></font>
 │   └── some_enterprise_core_business_rule.py
+├── <font color="#295FCC"><b>logging</b></font>
+│   └── logger.py
 ├── <font color="#295FCC"><b>order_cancellation</b></font>
 │   ├── <font color="#295FCC"><b>business_rules</b></font>
 │   │   └── order_cancellation_business_rules.py
@@ -243,7 +255,8 @@
     └── <font color="#295FCC"><b>ui</b></font>
         └── order_visualization_ui.py
 
-26 directories, 21 files</pre>
+27 directories, 22 files
+</pre>
     <h4>The second level</h4>
     <h4>The third level</h4>
     <h3>In which levels to apply SOLID principles?</h3>
