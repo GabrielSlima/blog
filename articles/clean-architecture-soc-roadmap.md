@@ -335,6 +335,83 @@
 34 directories, 22 files
 </pre>
     <h4>The third level</h4>
+    <img src="images/clean-architecture-soc-roadmap/decoupling-horizonta-vertical-layers-level-3.svg" alt="Horizontal layers are visualized from top-to-bottom. 
+    They are composed by UI/Boundary, controller, entity/domain logic/business logic layer. 
+    Which is composed by the layers Use Case specific business rule and enterprise 
+    wide business rules/core business rules. The last layer is the database. 
+    The vertical layers are the use cases, they are read left-to-right and each use case 
+    has a set of objects in each layer to execute it. The logging layer cut accross cotroller, 
+    business rules and database layers">
+<pre class="code-snippet type-bash">tree
+├── <font color="#295FCC"><b>front-end</b></font>
+│   ├── <font color="#295FCC"><b>billing_payment</b></font>
+│   │   ├── <font color="#295FCC"><b>services</b></font>
+│   │   │   └── billing_payment_service.py
+│   │   └── <font color="#295FCC"><b>ui</b></font>
+│   │       └── billing_payment_ui.py
+│   ├── <font color="#295FCC"><b>billing_visualization</b></font>
+│   │   ├── <font color="#295FCC"><b>services</b></font>
+│   │   │   └── billing_visualization_service.py
+│   │   └── <font color="#295FCC"><b>ui</b></font>
+│   │       └── billing_visualization_ui.py
+│   ├── <font color="#295FCC"><b>order_cancellation</b></font>
+│   │   ├── <font color="#295FCC"><b>services</b></font>
+│   │   │   └── order_cancelation_service.py
+│   │   └── <font color="#295FCC"><b>ui</b></font>
+│   │       └── order_cancellation_ui.py
+│   ├── <font color="#295FCC"><b>order_placement</b></font>
+│   │   ├── <font color="#295FCC"><b>services</b></font>
+│   │   │   └── order_placement_service.py
+│   │   └── <font color="#295FCC"><b>ui</b></font>
+│   │       └── order_placement_ui.py
+│   └── <font color="#295FCC"><b>order_visualization</b></font>
+│       ├── <font color="#295FCC"><b>services</b></font>
+│       │   └── order_visualization_service.py
+│       └── <font color="#295FCC"><b>ui</b></font>
+│           └── order_visualization_ui.py
+└── <font color="#295FCC"><b>services</b></font>
+    ├── <font color="#295FCC"><b>billing_payment</b></font>
+    │   ├── <font color="#295FCC"><b>business_rules</b></font>
+    │   │   └── billing_payment_business_rules.py
+    │   ├── <font color="#295FCC"><b>controllers</b></font>
+    │   │   └── billing_payment_controller.py
+    │   └── <font color="#295FCC"><b>database</b></font>
+    │       └── billing_payment_database.py
+    ├── <font color="#295FCC"><b>billing_visualization</b></font>
+    │   ├── <font color="#295FCC"><b>business_rules</b></font>
+    │   │   └── billing_visualization_business_rules.py
+    │   ├── <font color="#295FCC"><b>controllers</b></font>
+    │   │   └── billing_visualization_controller.py
+    │   └── <font color="#295FCC"><b>database</b></font>
+    │       └── billing_visualization_database.py
+    ├── <font color="#295FCC"><b>enterprise_wide_business_rules</b></font>
+    │   └── some_enterprise_core_business_rule.py
+    ├── <font color="#295FCC"><b>logging</b></font>
+    │   └── logger.py
+    ├── <font color="#295FCC"><b>order_cancellation</b></font>
+    │   ├── <font color="#295FCC"><b>business_rules</b></font>
+    │   │   └── order_cancellation_business_rules.py
+    │   ├── <font color="#295FCC"><b>controllers</b></font>
+    │   │   └── order_cancellation_controller.py
+    │   └── <font color="#295FCC"><b>database</b></font>
+    │       └── order_cancellation_database.py
+    ├── <font color="#295FCC"><b>order_placement</b></font>
+    │   ├── <font color="#295FCC"><b>business_rules</b></font>
+    │   │   └── order_placement_business_rules.py
+    │   ├── <font color="#295FCC"><b>controllers</b></font>
+    │   │   └── order_placement_controller.py
+    │   └── <font color="#295FCC"><b>database</b></font>
+    │       └── order_placement_database.py
+    └── <font color="#295FCC"><b>order_visualization</b></font>
+        ├── <font color="#295FCC"><b>business_rules</b></font>
+        │   └── order_visualization_business_rules.py
+        ├── <font color="#295FCC"><b>controllers</b></font>
+        │   └── order_visualization_controller.py
+        └── <font color="#295FCC"><b>database</b></font>
+            └── order_visualization_database.py
+
+39 directories, 27 files
+</pre>
     <h3>In which levels to apply SOLID principles?</h3>
     <h3>In which levels to apply Package Principles?</h3>
     Good Luck XD
