@@ -277,14 +277,6 @@
         (if not all of them) to execute it. I like to see them as the <b>horizontal layers</b>
         of the system and the use cases are the vertical ones. The use cases are the columns of this "table"
     </p>
-    <p>
-        The levels described in the diagram
-        are only to represent the 3 main ways of separating the system into
-        concerns or 3 ways of breaking the system into components.
-        I've separated them into levels because, according to the author,
-        we gotta achieve the separation sequentially, as needed. So at least now
-        makes sense in my head to have three levels.
-    </p>
     <h4>The first level</h4>
     <p>
         So we first start by identifying the concerns, but at
@@ -295,6 +287,16 @@
         but they're running in the same program, same address space.
     </p>
     <h5>Identify the horizontal layers</h5>
+    <p>
+        To identify the horizontal layers you can use the Common Closure principle
+        to identify elements of each use case that changes for different reasons
+        and then identify those have a certain similarity and group them.
+        As I said before, there are 4 basic types of elements, so naturally they
+        can be your 4 initial layers. Almost every use case has a interface, almost
+        every interface requires accessing stored data, so naturally it will require
+        a controller element to orchestrate some aspects of the flow. Maybe the
+        use case has some business rule.
+    </p>
     <h5>Identify the vertical layers</h5>
     <img src="images/clean-architecture-soc-roadmap/decoupling-horizonta-vertical-layers-level-1.svg" alt="Horizontal layers are visualized from top-to-bottom. 
     They are composed by UI/Boundary, controller, entity/domain logic/business logic layer. 
