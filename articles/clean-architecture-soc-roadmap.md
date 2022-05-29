@@ -298,6 +298,11 @@
         use case has some business rule.
     </p>
     <h5>Identify the vertical layers</h5>
+    <p>
+        To identify the veritcal layers, you just go to to look to your use cases.
+        Each use case will be a different collumn or veritcal layer. Each use case will have
+        a set of elements that cut accross the horizontal layers of the system.
+    </p>
     <img src="images/clean-architecture-soc-roadmap/decoupling-horizonta-vertical-layers-level-1.svg" alt="Horizontal layers are visualized from top-to-bottom. 
     They are composed by UI/Boundary, controller, entity/domain logic/business logic layer. 
     Which is composed by the layers Use Case specific business rule and enterprise 
@@ -305,7 +310,10 @@
     The vertical layers are the use cases, they are read left-to-right and each use case 
     has a set of objects in each layer to execute it. The logging layer cut accross cotroller, 
     business rules and database layers">
-
+    <p>
+        As an example we can make one source file for use case and within each of them, we can have
+        the horizontal layers of each use case. We would have something like the following:
+    </p>
 <pre class="code-snippet type-bash">tree
 ├── billing_payment.py
 ├── billing_visualization.py
@@ -317,7 +325,13 @@
 
 0 directories, 7 files
 </pre>
-
+    <p>
+        To reduce the coupling, complexity and grow the file's cohesion, we can move the
+        horizontal layers of each source file (which represents the use cases) to different
+        source files. So now each concern of one specific use case is split into different source
+        files that communicate with each other. Each use case would be a folder/package/component,
+        like the following:
+    </p>
 <pre class="code-snippet type-bash">tree
 ├── <font color="#295FCC"><b>billing_payment</b></font>
 │   ├── <font color="#295FCC"><b>business_rules</b></font>
@@ -371,7 +385,17 @@
 
 27 directories, 22 files
 </pre>
+    <p>
+        As you can see this way of separating the concerns (use cases) keeps them on the same
+        application. This means they are deployed together.
+    </p>
     <h4>The second level</h4>
+    <p>
+        The second level is an evolution of the first step. We select the layers that can
+        be deployed independently from this first version, and put them into a diffrent
+        program. The most common layer that is deployed independently is the UI, that's why I chose
+        it for thise example. But it can be any other layer:
+    </p>
     <img src="images/clean-architecture-soc-roadmap/decoupling-horizonta-vertical-layers-level-2.svg" alt="Horizontal layers are visualized from top-to-bottom. 
     They are composed by UI/Boundary, controller, entity/domain logic/business logic layer. 
     Which is composed by the layers Use Case specific business rule and enterprise 
@@ -439,6 +463,13 @@
 
 34 directories, 22 files
 </pre>
+    <p>
+        As you can see, I've created 2 macro concerns called <b>front-end</b> and <b>back-end</b>
+        making it clear what aspect of the solution each of them deals with.
+        The application will continue to be a monolith, but these two concerns can be
+        deployed independently and if the package and SOLID principle are implemented
+        you have high cohesive and loosely coupled elements. 
+    </p>
     <h4>The third level</h4>
     <img src="images/clean-architecture-soc-roadmap/decoupling-horizonta-vertical-layers-level-3.svg" alt="Horizontal layers are visualized from top-to-bottom. 
     They are composed by UI/Boundary, controller, entity/domain logic/business logic layer. 
