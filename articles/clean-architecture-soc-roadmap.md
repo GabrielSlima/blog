@@ -596,8 +596,8 @@
     <h3>Conclusion</h3>
     <p>
         I'll probably write another article about this subject that I find fascinating.
-        In simple words, every software we start as a monolith and decouple the horizontal layers as
-        required. We can also go backwards, go from more "further" levels of decoupling to the bottom,
+        In simple words, every software should start as a monolith and decouple the horizontal layers as
+        required. We should also be able to go backwards, go from more "further" levels of decoupling to the bottom,
         towards level 1.
     </p>
     <p>
