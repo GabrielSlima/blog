@@ -1,5 +1,13 @@
 [
     {
+        "id": "31",
+        "title": "How to raise your vibration and prevent burnout",
+        "description": "Not your average content",
+        "author": "Gabriel Lima",
+        "date": "2022-05-30",
+        "article_file_name": "./articles/self-iprovement-workin-out-raising-vibration.md"
+    },
+    {
         "id": "30",
         "title": "My roadmap for separating the system's achitecture into concerns",
         "description": "Package Principles, Solid Princples and Systems Design - Based on Robert C. Martin's book: Clean Architecture",
