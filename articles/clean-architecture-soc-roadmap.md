@@ -1,7 +1,7 @@
 <div style="text-align: left;">
     <img class="post-img" src="images/clean-architecture-soc-roadmap/roadmap.svg" alt="">
     <p>
-        Hey, welcome back to the PewdiePie's favourite blog
+        Hey, welcome back to the PewdiePie's favorite blog
         about Software Engineering and today I would like
         to share with you my rodamp for separating the system's
         architecture into different concerns. Let's
@@ -468,9 +468,15 @@
         making it clear what aspect of the solution each of them deals with.
         The application will continue to be a monolith, but these two concerns can be
         deployed independently and if the package and SOLID principle are implemented
-        you have high cohesive and loosely coupled elements. 
+        you have high cohesive and loosely coupled concerns composed by "sub-concerns". 
     </p>
     <h4>The third level</h4>
+    <p>
+        At this level those concerns that can run in different address spaces,
+        meaning they can be running in different servers can be decopupled one more
+        level and be "totally" free, communicating with abstract interfaces, coupled
+        only by datastrcutures:
+    </p>
     <img src="images/clean-architecture-soc-roadmap/decoupling-horizonta-vertical-layers-level-3.svg" alt="Horizontal layers are visualized from top-to-bottom. 
     They are composed by UI/Boundary, controller, entity/domain logic/business logic layer. 
     Which is composed by the layers Use Case specific business rule and enterprise 
@@ -548,7 +554,56 @@
 
 39 directories, 27 files
 </pre>
+    <p>
+        So now we still have those 2 macro concerns, but the backed
+        end ware turned to services and each use case in the front-end
+        has a services layer to access the back-end that is in another service.
+    </p>
     <h3>In which levels to apply SOLID principles?</h3>
+    <p>
+        Ok now where should you apply SOLID principles? Being honest, this can
+        be a bit confusing at first, but yeah, a the deployment unit decoupling
+        you use some principles of SOLID like the Dependecy Inversion Principle.
+        But you're supposed to use them to reduce coupling and grow the cohesion
+        of elements a the source code level. The lements can be functions, data strucutres,
+        or objects.
+    </p>
     <h3>In which levels to apply Package Principles?</h3>
+    <p>
+        Package principles help to identify which source files to keep together,
+        and how to manage the relationship between them. The source file can
+        contain functions, data structures or objects. The principles can be applied
+        at the high level of the source code level, when you are
+        identifying the horizontal layers of the system. It can also be applied at the deployment
+        unit level. If you don't know, the package priciples are:
+        <ul>
+            <li>Coupling: Will guide you on how to create proper relationships between the elements of the software
+                <ul>
+                    <li>Stable Dependecy Principle: More unstable elements should be dependent upon more stable ones</li>
+                    <li>Stable Abstract Principle: More stable objects should provide abstract versions of itself for clients</li>
+                    <li>Acyclic Dependecies Principle: elements should not be dependent upon each other's version</li>
+                </ul>
+            </li>
+            <li>Cohesion: Will guide you on what elements to group
+                <ul>
+                    <li>Common Clousure Principle: Keep together the elements that changes for the same reason</li>
+                    <li>Common Reuse Principle: Keep together only the elementst that are used/reused together</li>
+                    <li>Reuse/Release Principle: Keep together only the elements that are reused and released together. They are used towards the package's purpose</li>
+                </ul>
+            </li>
+        </ul>
+    </p>
+    <h3>Conclusion</h3>
+    <p>
+        I'll probably write another article about this subject that I find fascinating.
+        In simple words, every software we start as a monolith and decouple the horizontal layers as
+        required. We can also go backwards, go from more "further" levels of decoupling to the bottom,
+        towards level 1.
+    </p>
+    <p>
+        To help idenfity the layers of the system, use the use cases. In my case, I prefer to go from
+        the use cases, use cases description, domain models to design. After creating class diagrams
+        using SOLID principles, I start to identify the components of the system, using package principles.
+    </p>
     Good Luck XD
 </div>

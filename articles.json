@@ -2,9 +2,9 @@
     {
         "id": "30",
         "title": "My roadmap for separating the system into different concerns",
-        "description": "Based on Robert C. Martin's book: Clean Architecture",
+        "description": "Based on Robert C. Martin's book: Clean Architecture, Package Principles, Solid Princples and Systems Design",
         "author": "Gabriel Lima",
-        "date": "2022-03-31",
+        "date": "2022-05-29",
         "article_file_name": "./articles/clean-architecture-soc-roadmap.md"
     },
     {
