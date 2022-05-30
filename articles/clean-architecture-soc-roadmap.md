@@ -303,7 +303,7 @@
         Each use case will be a different collumn or veritcal layer. Each use case will have
         a set of elements that cut accross the horizontal layers of the system.
     </p>
-    <img src="images/clean-architecture-soc-roadmap/decoupling-horizonta-vertical-layers-level-1.svg" alt="Horizontal layers are visualized from top-to-bottom. 
+    <img class="post-img" src="images/clean-architecture-soc-roadmap/decoupling-horizonta-vertical-layers-level-1.svg" alt="Horizontal layers are visualized from top-to-bottom. 
     They are composed by UI/Boundary, controller, entity/domain logic/business logic layer. 
     Which is composed by the layers Use Case specific business rule and enterprise 
     wide business rules/core business rules. The last layer is the database. 
@@ -396,7 +396,7 @@
         program. The most common layer that is deployed independently is the UI, that's why I chose
         it for thise example. But it can be any other layer:
     </p>
-    <img src="images/clean-architecture-soc-roadmap/decoupling-horizonta-vertical-layers-level-2.svg" alt="Horizontal layers are visualized from top-to-bottom. 
+    <img class="post-img" src="images/clean-architecture-soc-roadmap/decoupling-horizonta-vertical-layers-level-2.svg" alt="Horizontal layers are visualized from top-to-bottom. 
     They are composed by UI/Boundary, controller, entity/domain logic/business logic layer. 
     Which is composed by the layers Use Case specific business rule and enterprise 
     wide business rules/core business rules. The last layer is the database. 
@@ -477,7 +477,7 @@
         level and be "totally" free, communicating with abstract interfaces, coupled
         only by datastrcutures:
     </p>
-    <img src="images/clean-architecture-soc-roadmap/decoupling-horizonta-vertical-layers-level-3.svg" alt="Horizontal layers are visualized from top-to-bottom. 
+    <img class="post-img" src="images/clean-architecture-soc-roadmap/decoupling-horizonta-vertical-layers-level-3.svg" alt="Horizontal layers are visualized from top-to-bottom. 
     They are composed by UI/Boundary, controller, entity/domain logic/business logic layer. 
     Which is composed by the layers Use Case specific business rule and enterprise 
     wide business rules/core business rules. The last layer is the database. 
