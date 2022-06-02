@@ -157,23 +157,71 @@
         That's what works for me. Some people breaks the exercise in half, workou a little bit
         during the morning, then a bit during the night. You can try this.
     </p>
-    <h3>Music</h3>
+    <h3>Music: Negative and melancholic songs</h3>
     <p>
         Watch out for music. I know, it seems weird right? Some people don't even
         think that the reason they're in a low vibration it's because of the music they're
         listening to during the days. And it's like drugs man, seriously. Sometimes I get
         myself doing basic things listening to music. Like taking a shower, maybe making some tea.
         Don't get me wrong, I love music, but if you're doing everything listening to music
-        you gotta make sure it's not music with negativeness. Negative lyrics. Low vibe music
+        you gotta make sure it's not music with negativeness. Negative lyrics. Low vibe music.
     </p>
-    <h4>Low vibration music</h4>
-    <h4>Music that brings negative affirmations</h4>
+    <p>
+        Music can support feelings and emotions and make you practice negative affirmations.
+        For instance, if you're angry you'll probably listen to music that supports this
+        sentiment. If you're sad you're gonna listen to music that support this sentiment.
+        <br>
+        The contrary can happen to. Maybe you wanna suppress your emotions by denying them.
+        If you're sad or angry you're gonna listen to happy/hype music. Don't do that.
+        Learn to deal with your emotions and feelings, you can do that by writing down your thoughts
+        and learning more about yourself on this journey, practicing mindgfulness and meditation.
+    </p>
     <h3>Cut of negative people</h3>
-    <h4>Obligation</h4>
+    <p>
+        Beign direct, cut off negative people from your life. People that
+        are energy vampires, people that are negative all the time, people that
+        are not happy about anything. Maybe people that are complaining all the time,
+        never grateful for anything.
+    </p>
+    <p>
+        Maybe you know someone that whenever you are around them you can't do anything.
+        Maybe because they are with this negative energy making you feel sad or
+        to procrastinate or maybe because they are CONSTANTLY
+        making negative affirmations towards you. For instance have you ever come accross
+        someone that repeats negative affirmations right after you saying that gotta go
+        do something that is important to you? Like, "Hey I gotta go, I have to workout today",
+        and immediately the other person goes "Don't go, it's great to have you around, you don't need
+        to workout today. We can have some great time together blah blah". Or maybe they're are just
+        "You really gotta go? I've just oredered another cake and I'm gonna make some tea so we can have lunch together".
+        You know? Trying to make you feel guilty for leaving. Making you believe you're the bad guy
+        for leaving them there.
+    </p>
+    <p>
+        I'm not saying you should be a jerk with people. Maybe that's how they are and
+        it's tradition on their family to spend a lot of time with people they like.
+        But really recommend you to make sure they are not getting on your way. If you really
+        wanna hang out with them, make sure to set boundaries. You don't have to spend the
+        entire day or skip things on your schedule to make someone else happy. 
+    </p>
+    <p>
+        You don't have to 100% remove people from your life
+        and never see them again. But you should spend less time with them if they're affecting
+        you negatively, in all aspects. Specially if they're saying negative affirmations towards
+        you. You should set boundaries, wich could be another article (maybe it will be), and
+        make it clear what you'll tolarate, what you won't. Unfortunately there are people that
+        don't understand and they simply can't be part of my life. That's it.
+    </p>
     <h4>Maybe they don't understand your journey, your process</h4>
     <p>
         Only talk about your goals, systems and everything that is important to you
-        for people who actually comprehends the process.
+        for people who actually comprehend the process. Talking about your process, your
+        new routine. Maybe you're trying something different, you got a course or
+        started working out or anything else you're trying to change on your life.
+        Avoid sharing any of this with people that you now won't understand and will
+        criticize you or maaybe laugh at you or anything like that. Worst than that, if
+        find yourself worrying about these things constantly with the same person, it's
+        a sign this person is toxic and maybe keeping a relationship with him/her
+        is clearly not healthy for you.
     </p>
     <h3>Clean your space</h3>
     <h3>Have systems</h3>
