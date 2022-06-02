@@ -31,7 +31,7 @@
         you wanna do, that's impossible and that it's hard becasue you've failed or
         because someone failed and made you belief on their perspective.
         You gotta fight this. You gotta fight the negative beliefs, not
-        by literally fighting or arguing with the other person, but by beign self
+        by literally fighting or arguing with the other person, but by being self
         aware and self councious and having a bulletproof mind.
         We're after what is impossible. If it was easy anyone would do. 
     </p>
@@ -49,7 +49,7 @@
         The idea here is not to make you worse, is to be realistic. We can't let
         failures define and dictate our lives. To the contrary, we must accept that
         we've failed and we suck at whatever we're doing and trying different things.
-        Just Google it, someone on the internet must beign through what you're beign
+        Just Google it, someone on the internet must being through what you're being
         through right now and may give you a different perspective.
     </p>
     <h4>Mapping your limiting beliefs (Journaling)</h4>
@@ -66,9 +66,9 @@
     </p>
     <h4>Take immeadiate action or don't worry about it</h4>
     <p>
-        Have you ever experienced sleep deprivation because you where worried about
-        something? Maybe you were supposed to do something but you couldn't for
-        any reason or maybe you were thinking about situations you've had said
+        Have you ever experienced sleep deprivation because you was worried about
+        something? Maybe you was supposed to do something but you couldn't for
+        any reason or maybe you was thinking about situations you've had said
         something and felt guilty about it.
     </p>
     <p>
@@ -76,7 +76,7 @@
         under your control, let it go. It takes practice but you'll get there eventually.
         Don't let anything get on your way and prevent you from doing the things you've planned
         to do. I'm not saying for you to become a jerk, all I'm saying is to you to
-        recognize things are under your control and you can't solve them, and stop worry
+        recognize things are under your control and solve them, and stop worry
         about things that you can't control.
     </p>
     <p>
@@ -178,7 +178,7 @@
     </p>
     <h3>Cut of negative people</h3>
     <p>
-        Beign direct, cut off negative people from your life. People that
+        being direct, cut off negative people from your life. People that
         are energy vampires, people that are negative all the time, people that
         are not happy about anything. Maybe people that are complaining all the time,
         never grateful for anything.
@@ -223,11 +223,90 @@
         a sign this person is toxic and maybe keeping a relationship with him/her
         is clearly not healthy for you.
     </p>
-    <h3>Clean your space</h3>
+    <h3>Clean up your space</h3>
+    <p>
+        I think I don't have much to say here. The space you are in, reflects your mind.
+        If you're constantly overthinking, always worrying about something, always
+        starting things and never finishing them, probably your place is very disorganized.
+        Schedule some time to actually clean your space, organize your clothes etc.
+        Maybe in your case, you need to clean your virtual space. So your desktop,
+        your smartphone etc.
+    </p>
+    <h4>Don't use this as an excuse for procrastinating</h4>
+    <p>
+        If you have a system of working out every night at 8pm, worry about cleaning or things
+        another time. This is non-negotiable. Let's say you have dishes from dinner to wash,
+        they can wait.
+    </p>
     <h3>Have systems</h3>
+    <p>
+        Stablish a system. Even if you don't achieve the goals you've stablished
+        at the time you wish or don't achieve at all, you're making constant progress.
+        For instance, isntead of focusing on being C2 level at english, I have a system for
+        full immersion that I apply EVERY SINGLE DAY, no matter what. Even if i'm sick.
+    </p>
+    <p>
+        You gotta stablish a system and go through as much as possible. If you're sick, make sure
+        you're doing the bare minimum, but don't skip it. A couple of months ago I decided
+        to take this trip to visit a few friends and this part of the family. It was saturday,
+        I spent the night on a bus and got there by saturday 6 am. After that, they pick me up and
+        around 8 am we were at their place. I was so excited for being there and with the change
+        of not being in my comfort zone, I completely forgot about the 100 push ups routine.
+        As soon as I remembered, boom, started doing the push ups. Right there. I felt so much better
+        for not skiping something important for me
+        If you have a system, it's non-negotiable. Don't skip it.
+    </p>
+    <h4>Do one thing at a time. Pick something and stick to it</h4>
+    <p>
+        Do less things, commit to what you've picked. You don't need to worry
+        about doing the samething for the rest of your life, but
+        you gotta pick one thing at a time, and do it for enough time.
+    </p>
+    <p>
+        This goes from goals to your what you do at a daily basis. Pick only one to 3
+        goals and stick to them. Build systems to achieve them. When following the system,
+        don't allow any interference. Of you are working out, turn of your phone and
+        just workout. I like to listen to something while working out, if you like too,
+        make sure that you're not checking it everytime, create a playlist or something and
+        put there everything you wanna listen while working out, to prevent yourself from
+        using this as an excuse to be checking it everytime.
+    </p>
+    <p>
+        What I like to do is to put my smartphone in <i>do not disturbe mode</i>, put my buds
+        and start my podcasts playlist. While i'm working out, no interferences. It may take 15 minutes,
+        it may take 2 hours. For that time, I avoid at the max being checking my phone. Doesn't mean
+        you gotta do the same, just my way of reducing concurrency between my system and other things.
+    </p>
     <h3>It's ok to make mistakes</h3>
+    <p>
+        One thing I had to relearn and I'm still learning about is <i>it's ok to make mistakes</i>.
+        Of course you gotta be responsible about this. For every mistake, there are consequences.
+        You gotta be aware of this. But in general, it's fine, just go overcome the fear, allow
+        yourself to make mistakes and don't give it too much focus. Just learn with it and
+        change your approach. You'll be fine.
+    </p>
     <h3>Positive affirmations</h3>
+    <p>
+        Don't ever go through your days making negative affirmations. The intention
+        here is to make yourself aware, not make yourself belief in lies.
+        So if you think that just by going around talking to yourself you're rich
+        is actually gonna make you rich, you're delusional my friend. Only doing
+        that won't make you rich. You gotta put in the work, it's a start, but there's
+        a lot of work to make it actually happen.
+        In general, just positive affrimations about yourself.
+    </p>
+    <h4>Don't allow people say negative affirmations towards you</h4>
+    <p>
+        If someone is constantly saying negative affirmations towards you, set a boundary.
+        This can lead you to a limiting belief, take away your energy and time.
+        Things like "You can't do this because...", "you're weird", "you're a freak",
+        "you will always loose", "you suck at everything", "you're the black sheep" 
+        can't take place in your mind.
+    </p>
     <h3>Mind wandering</h3>
+    <p>
+        
+    </p>
     <h4>Mindfulness</h4>
     <h3>Finish what you've started</h3>
     Good Luck XD
