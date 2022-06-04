@@ -4,8 +4,8 @@
         you probably is looking for answers on why you're feeling stressed out,
         maybe you're not learning things the way you wanted to.
         Maybe you're not thinking straight, you have this fogginess.
-        Or you are just curious. Whatever motive you have to be here, I would like
-        to share with you things that worked for me and maybe can work for you too.
+        Or you are just curious. Whatever motive brought you here, I would like
+        to share with you a few things that worked for me and maybe can work for you too.
     </p>
     <p>
         Welcome to PiewediePie's favorite blog about software engineering and today's not
@@ -22,25 +22,28 @@
     <p>
         Have you ever thought that you're not cut out for something? Maybe
         because you've failed so many times or beucase someone else failed
-        and they've put their limiting beliefs on you, sounds about right?
+        and they've put their limiting beliefs on you. Sounds about right?
     </p>
     <p>
         I'll talk (more like write) about this type of people
-        in a few moments. But you should fight those limiting beliefs,
-        that you can't, that you don't have what's required to do the things
+        in a few moments. But you should fight those limiting beliefs.
+        Beliefs that you can't, that you don't have what's required to do the things
         you wanna do, that's impossible and that it's hard becasue you've failed or
-        because someone failed and made you belief on their perspective.
+        because someone else has failed and made you believe that's impossible for you
+        to do whatever you wanna do, because if they can't, you can't too.
+    </p>
+    <p>
         You gotta fight this. You gotta fight the negative beliefs, not
         by literally fighting or arguing with the other person, but by being self
         aware and self councious and having a bulletproof mind.
-        We're after what is impossible. If it was easy anyone would do. 
+        We're after what is impossible. If it was easy anyone would do it. 
     </p>
     <h4>Embrace your suckness</h4>
     <p>
         Think of some area or any goal you've set for yourself that you're struggling.
         For instance, I'm struggling to wake up ealier than usual, and reorganize my
         sleeping routine, therefore reorganizing a few things in my schedule. I can wake
-        up ealier for 2 to 3 straight, but at some point, I can't sleep earlier,
+        up ealier for 2 to 3 days straight, but at some point, I can't sleep earlier,
         end up going to sleep 1am - 2am and the other day I wake up 2 hours later
         than I was supposed to. That sucks. I suck at this and I've been struggling for
         a few weeks now, since I decided to change a few things on my routine. 
@@ -48,7 +51,7 @@
     <p>
         The idea here is not to make you worse, is to be realistic. We can't let
         failures define and dictate our lives. To the contrary, we must accept that
-        we've failed and we suck at whatever we're doing and trying different things.
+        we've failed and that we suck at whatever we're doing and try different things.
         Just Google it, someone on the internet must being through what you're being
         through right now and may give you a different perspective.
     </p>
@@ -63,14 +66,16 @@
     </p>
     <p>
         I have this book, whenever I feel anxious, stressed, worried, I write my thoughts and
-        feelings down with the purpose of identifying why am I feeling those things.
+        feelings down with the purpose of identifying why am I feeling those things. A few
+        years ago I didn't have the money to buy a notebook, so I bought a few A4 papers and
+        started wiriting down. Keep it simple and easy.
     </p>
     <h4>Take immeadiate action or don't worry about it</h4>
     <p>
-        Have you ever experienced sleep deprivation because you was worried about
-        something? Maybe you was supposed to do something but you couldn't for
-        any reason or maybe you was thinking about situations you've had said
-        something and felt guilty about it.
+        Have you ever experienced sleep deprivation because you were worried about
+        something? Maybe you were supposed to do something but you couldn't for
+        some reason or maybe you keep thinking about situations you've had said
+        something and feel guilty about it.
     </p>
     <p>
         If something is bothering you, you should solve it. If you can't means it's not fully
@@ -84,7 +89,7 @@
         A few weeks ago I found myself complaining about the weather because it wasn't
         the way I wish it was etc. I can't control the weather so it doesn't
         makes sense to be mad at it. It's energy lost. Accept what you can't change and
-        please <b>bea reasonable about it</b>, do not use your limiting beliefs
+        please <b>be reasonable about it</b>, do not use your limiting beliefs
         to support the idea that you can't control something that you actually can.
     </p>
     <h3>Get your body moving</h3>
@@ -95,27 +100,28 @@
     <p>
         If you tend to be or in fact is a sendentary you should get your body moving.
         If you find ok to be sitting the entire day, watching movies, working or actually just doing
-        nothing at all, that's on you. I find it super stressful and confortable at the same
+        nothing at all, that's on you. I find it super stressful and comfortable at the same
         time to go through my entire day, spending my life sitting or laying down.
     </p>
     <p>
-        Right after waking up don't even thing about it, 10 push ups. Next week do 20 the
-        week after next week try 30 and so on, until you can do 100 push ups.
+        Start small. Don't commit to big changes you know you will fail.
+        What i suggest you doing is right after waking up don't even thing about it, 10 push ups.
+        Next week do 20, the week after next week try 30 and so on, until you can do 100 push ups.
         You don't have to do 100 push straight, you can do 10, rest 30 to 60 seconds another 10
         and repeat until you finish. Don't focus on the time, focus on what you have to do.
-        If you have todo 10, 10 it is. Don't matter if you are gonna take 1 minute or 30 minutes. Just
+        If you have todo 10, 10 it is. Doesn't matter if you are gonna take 1 minute or 30 minutes. Just
         go through it. Do this everyday and it will help you a lot.
     </p>
     <p>
-        Another thing, you're not gonna get muscular like a Mr. Olympia's bodybuilder,
-        sure you're gonna get a bit muscular, even if you're fat or skinny, but
+        Another thing, you're not gonna get muscular like a Mr. Olympia's bodybuilder.
+        Sure you're gonna get a bit muscular, even if you're fat or skinny, but
         you won't get espetacular results just doing that. The overal objective here
         is to increase blood circulation by moving your body. It will also help you with
         discipline, consistency and persistence. 
     </p>
     <h4>Take it to the next level</h4>
     <p>
-        First step if you're like I was a few months ago sendentary, best procrastinator
+        First step if you're like I was a few months ago, a sendentary, best procrastinator
         ever, full of excuses, having a hard time with discipline. Struggling to learn,
         when I say struggling, I mean STRUGGLING. Reading the same thing or going back the
         video I was watching so many times until my head started to get heavy and sometimes
@@ -146,7 +152,7 @@
         more and more time, you'll have to split it. Do 100 push ups right after waking up,
         literally right after waking up, before doing anything, 100 push. Then, do your thing,
         wash your face, teeth, eat something and look for some timebox
-        during the day to do the remaining 100 for instance
+        during the day to do the remaining 100 for instance.
     </p>
     <p>
         Don't make excuses. I'm willing to do push ups on the airport if I have to. Sometimes my
@@ -158,22 +164,23 @@
         I realized that at some point during my day, specially when it comes
         to things in which requires a good use of my brain, I can't think straight,
         that's when I take advantage of exercises, so usually during the night, after 7pm.
-        That's what works for me. Some people breaks the exercise in half, workou a little bit
+        That's what works for me. Some people breaks the exercise in half, workout a little bit
         during the morning, then a bit during the night. You can try this.
     </p>
     <h3>Music: Negative and melancholic songs</h3>
     <p>
         Watch out for music. I know, it seems weird right? Some people don't even
         think that the reason they're in a low vibration it's because of the music they're
-        listening to during the days. And it's like drugs man, seriously. Sometimes I get
+        listening to throughout the day. And it's like drugs man, seriously. Sometimes I get
         myself doing basic things listening to music. Like taking a shower, maybe making some tea.
         Don't get me wrong, I love music, but if you're doing everything listening to music
         you gotta make sure it's not music with negativeness. Negative lyrics. Low vibe music.
     </p>
     <p>
         Music can support feelings and emotions and make you practice negative affirmations.
-        For instance, if you're angry you'll probably listen to music that supports this
-        sentiment. If you're sad you're gonna listen to music that support this sentiment.
+        For instance, if you're angry you'll probably listen to music that supports that
+        your angerness. If you're sad you're gonna listen to music that supports your sadness.
+        By "support" I mean, reaffirm your current emotions.
         <br>
         The contrary can happen to. Maybe you wanna suppress your emotions by denying them.
         If you're sad or angry you're gonna listen to happy/hype music. Don't do that.
@@ -182,7 +189,7 @@
     </p>
     <h3>Cut of negative people</h3>
     <p>
-        being direct, cut off negative people from your life. People that
+        Being direct, cut off negative people from your life. People that
         are energy vampires, people that are negative all the time, people that
         are not happy about anything. Maybe people that are complaining all the time,
         never grateful for anything.
@@ -191,14 +198,17 @@
         Maybe you know someone that whenever you are around them you can't do anything.
         Maybe because they are with this negative energy making you feel sad or
         to procrastinate or maybe because they are CONSTANTLY
-        making negative affirmations towards you. For instance have you ever come accross
+        making negative affirmations towards you.
+    </p>
+    <p>
+        For instance have you ever come accross
         someone that repeats negative affirmations right after you saying that gotta go
         do something that is important to you? Like, "Hey I gotta go, I have to workout today",
         and immediately the other person goes "Don't go, it's great to have you around, you don't need
         to workout today. We can have some great time together blah blah". Or maybe they're are just
-        "You really gotta go? I've just oredered another cake and I'm gonna make some tea so we can have lunch together".
+        "You really gotta go? I've just ordered another cake and I'm gonna make some tea so we can have lunch together".
         You know? Trying to make you feel guilty for leaving. Making you believe you're the bad guy
-        for leaving them there.
+        for leaving them there, after speding hours together.
     </p>
     <p>
         I'm not saying you should be a jerk with people. Maybe that's how they are and
@@ -211,9 +221,9 @@
         You don't have to 100% remove people from your life
         and never see them again. But you should spend less time with them if they're affecting
         you negatively, in all aspects. Specially if they're saying negative affirmations towards
-        you. You should set boundaries, wich could be another article (maybe it will be), and
+        you. You should set boundaries, this could be another article (maybe it will be), and
         make it clear what you'll tolarate, what you won't. Unfortunately there are people that
-        don't understand and they simply can't be part of my life. That's it.
+        don't understand and they simply can't be part of your life. That's it.
     </p>
     <h4>Maybe they don't understand your journey, your process</h4>
     <p>
@@ -222,7 +232,7 @@
         new routine. Maybe you're trying something different, you got a course or
         started working out or anything else you're trying to change on your life.
         Avoid sharing any of this with people that you now won't understand and will
-        criticize you or maaybe laugh at you or anything like that. Worst than that, if
+        criticize you or maybe laugh at you or anything like that. Worst than that, if you
         find yourself worrying about these things constantly with the same person, it's
         a sign this person is toxic and maybe keeping a relationship with him/her
         is clearly not healthy for you.
@@ -232,47 +242,48 @@
         I think I don't have much to say here. The space you are in, reflects your mind.
         If you're constantly overthinking, always worrying about something, always
         starting things and never finishing them, probably your place is very disorganized.
-        Schedule some time to actually clean your space, organize your clothes etc.
-        Maybe in your case, you need to clean your virtual space. So your desktop,
-        your smartphone etc.
+        Schedule some time to actually clean up your space, organize your clothes etc.
+        Maybe in your case, you need to clean up your virtual space. So your desktop,
+        your smartphone etc. Just make sure to schedule a time every week to clean up and
+        organize your things.
     </p>
     <h4>Don't use this as an excuse for procrastinating</h4>
     <p>
-        If you have a system of working out every night at 8pm, worry about cleaning or things
-        another time. This is non-negotiable. Let's say you have dishes from dinner to wash,
+        If you have a system of working out every night at 8pm, worry about cleaning or organizing
+        your things another time. This is non-negotiable. Let's say you have dishes from dinner to wash,
         they can wait.
     </p>
     <h3>Have systems</h3>
     <p>
         Stablish a system. Even if you don't achieve the goals you've stablished
         at the time you wish or don't achieve at all, you're making constant progress.
-        For instance, isntead of focusing on being C2 level at english, I have a system for
+        For instance, instead of focusing on being C2 level at english, I have a system for
         full immersion that I apply EVERY SINGLE DAY, no matter what. Even if i'm sick.
     </p>
     <p>
-        You gotta stablish a system and go through as much as possible. If you're sick, make sure
+        You gotta stablish a system and go through it as much as possible. If you're sick, make sure
         you're doing the bare minimum, but don't skip it. A couple of months ago I decided
         to take this trip to visit a few friends and this part of the family. It was saturday,
         I spent the night on a bus and got there by saturday 6 am. After that, they pick me up and
         around 8 am we were at their place. I was so excited for being there and with the change
         of not being in my comfort zone, I completely forgot about the 100 push ups routine.
         As soon as I remembered, boom, started doing the push ups. Right there. I felt so much better
-        for not skiping something important for me
+        for not skiping something important for me.
         If you have a system, it's non-negotiable. Don't skip it.
     </p>
     <h4>Do one thing at a time. Pick something and stick to it</h4>
     <p>
         Do less things, commit to what you've picked. You don't need to worry
-        about doing the samething for the rest of your life, but
+        about doing the same thing for the rest of your life, but
         you gotta pick one thing at a time, and do it for enough time.
     </p>
     <p>
-        This goes from goals to your what you do at a daily basis. Pick only one to 3
+        This goes from goals to what you actually do at a daily basis. Pick only 1 to 3
         goals and stick to them. Build systems to achieve them. When following the system,
         don't allow any interference. Of you are working out, turn of your phone and
         just workout. I like to listen to something while working out, if you like too,
         make sure that you're not checking it everytime, create a playlist or something and
-        put there everything you wanna listen while working out, to prevent yourself from
+        put there everything you wanna listen to while working out. This will prevent you from
         using this as an excuse to be checking it everytime.
     </p>
     <p>
@@ -281,11 +292,16 @@
         it may take 2 hours. For that time, I avoid at the max being checking my phone. Doesn't mean
         you gotta do the same, just my way of reducing concurrency between my system and other things.
     </p>
+    <p>
+        If you're just starting with the
+        excercise routine. Go through it with no phone at all, untill you've internalized the
+        importance of having a moment just for you, with no distractions. 
+    </p>
     <h3>It's ok to make mistakes</h3>
     <p>
-        One thing I had to relearn and I'm still learning about is <i>it's ok to make mistakes</i>.
+        One thing I had to relearn and I'm still learning about is that <i>it's ok to make mistakes</i>.
         Of course you gotta be responsible about this. For every mistake, there are consequences.
-        You gotta be aware of this. But in general, it's fine, just go overcome the fear, allow
+        You gotta be aware of this. But in general, it's fine, just overcome the fear, allow
         yourself to make mistakes and don't give it too much focus. Just learn with it and
         change your approach. You'll be fine.
     </p>
@@ -297,7 +313,7 @@
         is actually gonna make you rich, you're delusional my friend. Only doing
         that won't make you rich. You gotta put in the work, it's a start, but there's
         a lot of work to make it actually happen.
-        In general, just positive affrimations about yourself.
+        But in general, just positive affrimations about yourself and you gotta be pragmatic.
     </p>
     <h4>Don't allow people say negative affirmations towards you</h4>
     <p>
@@ -316,7 +332,7 @@
         post right now, you're losing time and therefore losing your life.
     </p>
     <p>
-        There's a lot of things i've been struggling today, one of them is mind wandering.
+        There's a lot of things I'm struggling with today, one of them is mind wandering.
         Sometimes while i'm eating and specially when i'm in the shower. Random thoughts
         take place and it's kind of like i'm disconnected from this plane. When I get back,
         i've lost 10, 20 minutes. If we stop to think about this and do the math to know the
@@ -342,8 +358,8 @@
         <br>
         If I identify some negative
         thoughts, let's say I imagine myself going through a hard time, maybe i start imagining i'm lost,
-        maybe feeling the fear of doing what i'm visualizing at that time. I stop immediately and
-        bring myself back to the present. Don't let neagative thought invade your manifestation.
+        maybe feeling the fear of doing what i'm trying to manifest. I stop immediately and
+        bring myself back to the present. Don't let neagative thoughts invade your manifestation.
     </p>
     <p>
         When it comes to podcasts related to advices or something related, as soon as I start
@@ -354,10 +370,14 @@
     <h3>Finish what you've started</h3>
     <p>
         If you start something, finish it. Don't ever let things in half. Because it will
-        keep you stressed and result in mind wandering, bring insecurities probably this will
+        keep you stressed and result in mind wandering. This can bring you insecurities
+        and this will probably
         affect your self confidence, therefore, drain your energy away.
         So if you've picked only one thing to do,
-        stick to it and everything you've started, you finish, you're gonna have great positive results
+        stick to it and everything you've started, make sure you finish them. You're gonna have great positive results.
+    </p>
+    <p>
+        Thank you for reading this far and I hope I gave you some good ideas! 
     </p>
     Good Luck XD
 </div>
