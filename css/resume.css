@@ -50,3 +50,7 @@ pre {
   opacity: 0.9;
   font-size: 1rem;
 }
+
+.external-photo-figcaption {
+    opacity: 0.8;
+}

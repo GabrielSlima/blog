@@ -53,6 +53,7 @@
         through right now and may give you a different perspective.
     </p>
     <h4>Mapping your limiting beliefs (Journaling)</h4>
+    <img class="post-img" src="images/self-improvement-raising-your-vibration/journal.jpg" alt="Journal photo with a lotus flower. Used to map negative thoughts and help to understand myself">
     <p>
         You have to map all of your limiting beliefs as well as your negative thoughts
         to understand the root cause. Doesn't have to be everyday, doesn't have to be
@@ -86,8 +87,11 @@
         please <b>bea reasonable about it</b>, do not use your limiting beliefs
         to support the idea that you can't control something that you actually can.
     </p>
-    <img class="post-img" src="#" alt="Journal photo with a lotus flower. Used to map negative thoughts and help to understand myself">
     <h3>Get your body moving</h3>
+    <figure>
+        <img class="post-img" src="images/self-improvement-raising-your-vibration/push-up-pexels.jpg" alt="Man doing push ups">
+        <figcaption class="external-photo-figcaption">Photo by <a href="https://www.pexels.com/@carlos-montelara-3450804/" target="blank">@Carlos Montelara</a> - Pexels</figcaption>
+    </figure>
     <p>
         If you tend to be or in fact is a sendentary you should get your body moving.
         If you find ok to be sitting the entire day, watching movies, working or actually just doing
@@ -304,10 +308,56 @@
         can't take place in your mind.
     </p>
     <h3>Mind wandering</h3>
+    <img class="post-img" src="images/self-improvement-raising-your-vibration/thinking.jpg" alt="">
     <p>
-        
+        Mind wandering is something that cant take away your life. Unless you're intentionally
+        just letting your thoughts take place over the primary activity you're doing
+        right now, for instance, intentionally practice daydreaming while you're reading this
+        post right now, you're losing time and therefore losing your life.
+    </p>
+    <p>
+        There's a lot of things i've been struggling today, one of them is mind wandering.
+        Sometimes while i'm eating and specially when i'm in the shower. Random thoughts
+        take place and it's kind of like i'm disconnected from this plane. When I get back,
+        i've lost 10, 20 minutes. If we stop to think about this and do the math to know the
+        amount of time we've lost just going back and forth of this state in a sigle day,
+        i'm sure it would scare the hell of all of us.
     </p>
     <h4>Mindfulness</h4>
+    <p>
+        To help myself with that i've started practicing  mindfulness. As soon as I realize
+        i'm mind wandering again, I bring myself back to what i'm doing on the present moment.
+    </p>
+    <p>
+        For instance, when i'm doing the dishes, usually I do this listening to some podcasts,
+        usually to get some advice on something i'm struggling with or maybe to
+        learn about something i'm doing or even to keep me in this state of visualization
+        of what i'm trying to manifest in my life. This goes from material things to
+        happiness, kindness and so on.
+    </p>
+    <p>
+        If I'm listening to something related to manifestation and
+        visualization of my goals, I let my thougths be guided by the positive flow
+        of imagination (which is a form of visualization) on purpose.
+        <br>
+        If I identify some negative
+        thoughts, let's say I imagine myself going through a hard time, maybe i start imagining i'm lost,
+        maybe feeling the fear of doing what i'm visualizing at that time. I stop immediately and
+        bring myself back to the present. Don't let neagative thought invade your manifestation.
+    </p>
+    <p>
+        When it comes to podcasts related to advices or something related, as soon as I start
+        mind wandering, I bring myself back to the present. I think of what am I doing right now.
+        I'm doing the dishes, this water is cold as hell, it's 10° outside and I can feel the coldness
+        through my hands, arms, legs, feet and so on. And I keep in that state. 
+    </p>
     <h3>Finish what you've started</h3>
+    <p>
+        If you start something, finish it. Don't ever let things in half. Because it will
+        keep you stressed and result in mind wandering, bring insecurities probably this will
+        affect your self confidence, therefore, drain your energy away.
+        So if you've picked only one thing to do,
+        stick to it and everything you've started, you finish, you're gonna have great positive results
+    </p>
     Good Luck XD
 </div>
