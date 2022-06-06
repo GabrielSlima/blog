@@ -9,7 +9,7 @@
     },
     {
         "id": "30",
-        "title": "My roadmap for separating the system's achitecture into concerns",
+        "title": "My roadmap for separating the system's achitecture by concerns",
         "description": "Package Principles, Solid Princples and Systems Design - Based on Robert C. Martin's book: Clean Architecture",
         "author": "Gabriel Lima",
         "date": "2022-05-29",
