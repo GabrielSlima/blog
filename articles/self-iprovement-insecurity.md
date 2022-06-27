@@ -11,6 +11,23 @@
         today is not your average content my friend, today we'll talk a little
         about <i>starting things even if you feel ready</i>. Let's dive into it.
     </p>
+    <h2>Self image, insecurities and toxicity</h2>
+    <p>
+        Before talking about things you can do to be more pragmatic torwards anything
+        you wannan do, lets talk a little bit about some factors that
+        can affect everything from learning new things you never
+        heard of, maybe you're switching careers, maybe you're just
+        experimenting new things, until doing things related to what
+        you are proficient or new experiences you wanna acquire. Maybe you got promoted,
+        maybe your day to day job requires you learning new skills for instance. Or you
+        just wanna take a small trip and you've never experienced traveling in
+        an airplane.
+        <br>
+        Whatever it's you're going through or may go through some day,
+        all of them can be affected by insecurities, toxic people or environment. So
+        at least from my perspective, going through these aspects
+        is very important.
+    </p>
     <h3>Do your thing, do not seek someone else's approval</h3>
     <p>
         One thing I did a lot in the past, and sometimes I get myself doing,
@@ -142,6 +159,83 @@
         The criticism and toxicity will be blocked naturally.
         There is this book called <i>Psychocybernetics, from Maxwell Maltz</i>, and it's
         all about self image. Strongly recommend it.
+    </p>
+    <h4>Working your insecurities with an practical approach</h4>
+    <h3>For things you see an opportunity: practice with projects</h3>
+    <p>
+        Whenever you see an opportunity to implement something, do it. You'll struggle,
+        you'll face problems that seems unsovable but believe me, they are, even
+        you have to recreate something from scratch, switch components or
+        just change the way you're doing things. Every problem has a solution.
+        Even you have to create another version of something.
+    </p>
+    <p>
+        By implementing things, and actually  going through the problems, Googling
+        your questions, reading documentation, reading the source code of components,
+        libs, APIs and actually exploring and discovering whatever it's your doing,
+        you'll acquire so much experience. You'll probably forget almost everything
+        next morning, but the important things, process, the ability to learn
+        new things is overall improved because of this. So make sure to always implement,
+        at leas partially, what you're trying to accomplish. Doesn't have
+        to be perfect, what you're seeking here is the practical experience.
+    </p>
+    <h3>Dealing with difficult things you probably can't implement easily</h3>
+    <p>
+        I was working on a project a while ago where I had to support this application,
+        without fully understanding it first. I had to understand it whithout
+        implementing things beforehand and this made everything harder because people were
+        bringing me issues I didn't had a way of reproducing it easily, first because
+        i've never seen it, second because we don't have a "test environment". And it
+        wasn't possible to create a local environment on my laptop,
+        because the application was too complex to be installed on a local environment.
+    </p>
+    <p>
+        What I did was to go through the application's configuration
+        on "test" instances and I was interpreting the configuration alongside
+        the vendor's official documentation to understand what was happening. Don't
+        get me wrong, I wasn't supposed to be using this "test environment", because
+        it was someone else's test environment, but after going trough
+        the documentation and switching one thing here and there, I felt confident enough
+        to solve problems or redirect them for the responsibles.
+    </p>
+    <p>
+        Now although this is not 100% solving problems without implementing things,
+        I didn't have to reinstall the application on any environment, and I was
+        addressing the issues better everytime I used this approach to solve brand new
+        problems.
+    </p>
+    <h3>Don't be afraid to make mistakes. But don't be negligent either</h3>
+    <p>
+        I remember my firs job interviews, I was overthinking about
+        making mistakes, about saying something the person iterviewing me
+        might not like. I was like that for years actually. Even after getting
+        the job I was too worried about what other people might think of me
+        if I made some mistake, what would happen and etc.
+    </p>
+    <p>
+        Broh, relax. You have to be right all the time. Actually the person
+        that is struggling with something, will probably end up
+        mastering what he/she's struggling with. Because he/she is
+        struggling so much, requires more attention, more research, more time dedicated.
+        I'm not telling you to fail on purpose, because you're actually being
+        careless and not really considering the real consequences and end up in a mess.
+    </p>
+    <p>
+        But what i'm telling you is, do it. Try and implement things,
+        make sure you're confortable with your decisions and that you're aware of
+        the consequences if something goes wrong. Not necessarilly gotta think
+        everything through beforehand, but you're also being cautions to
+        acquire experience in a safe place for yourself.
+    </p>
+    <h4>Don't be afraid to break things</h4>
+    <p>
+        Don't be afraid to break the things. Before deploying anything, you have to test it
+        in some way. Even if you can't, let's say you have a production problem and
+        you only have this environment to work with, no option to try things
+        on your local environment, you'll probably have to implement things
+        during the night, so you don't impact anything else.
+        And even so, you probably have the option to break the implementation in
+        small pieces and understand them in a isolated way.
     </p>
     Good Luck XD
 </div>
