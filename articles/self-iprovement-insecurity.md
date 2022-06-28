@@ -9,26 +9,35 @@
     <p>
         Welcome to the PewdiePie's favorite blog about Software Engineering, and
         today is not your average content my friend, today we'll talk a little
-        about <i>starting things even if you feel ready</i>. Let's dive into it.
+        about <i>starting things even if you don't feel ready</i>. Let's dive into it.
     </p>
     <h2>Self image, insecurities and toxicity</h2>
     <p>
-        Before talking about things you can do to be more pragmatic torwards anything
-        you wannan do, lets talk a little bit about some factors that
-        can affect everything from learning new things you never
+        Most of the time all this fear, all this uncertainty about
+        doing things, can come from the way you think people think
+        about you. Can come from the way you see yourself. Can come
+        from the people you have around you.
+    </p>
+    <p>
+        This affect everything from learning new things you never
         heard of, maybe you're switching careers, maybe you're just
-        experimenting new things, until doing things related to what
-        you are proficient or new experiences you wanna acquire. Maybe you got promoted,
-        maybe your day to day job requires you learning new skills for instance. Or you
+        experimenting new things. And can go to things related to what
+        you are proficient or new experiences you wanna acquire.
+        Maybe you got promoted, maybe your day to day job requires
+        you learning new skills for instance. Or you
         just wanna take a small trip and you've never experienced traveling in
         an airplane.
         <br>
         Whatever it's you're going through or may go through some day,
         all of them can be affected by insecurities, toxic people or environment. So
-        at least from my perspective, going through these aspects
+        at least from my perspective, going through these topics
         is very important.
     </p>
     <h3>Do your thing, do not seek someone else's approval</h3>
+    <figure>
+        <img class="post-img" src="images/self-improvement-insecurity/thumbs-up.jpg" alt="Thumbs up icon, printed on a square made of wood, within a large bowl full of coffee grains.">
+        <figcaption class="external-photo-figcaption">Photo by <a href="https://www.pexels.com/@suju/" target="blank">@Susanne Jutzeler, suju-foto</a> - Pexels</figcaption>
+    </figure>
     <p>
         One thing I did a lot in the past, and sometimes I get myself doing,
         is seek someone else's approval torwards something I'm doing.
@@ -54,6 +63,10 @@
         are the only one who can actually say that.
     </p>
     <h3>No negative affirmations</h3>
+    <figure>
+        <img class="post-img" src="images/self-improvement-insecurity/journaling.jpg" alt="Table with a cup of tea, a notes book and a hand writing on it.">
+        <figcaption class="external-photo-figcaption">Photo by <a href="https://www.pexels.com/@monstera/" target="blank">@Alina Vilchenko</a> - Pexels</figcaption>
+    </figure>
     <p>
         Thoughts can't be 100% controlled 100% of the time, you just have them.
         But you sure can control their source. You can threat those sources and heal.
@@ -90,6 +103,10 @@
         lost on my thoughts, that I've lost touch with reallity, I bring myself back.
     </p>
     <h3>Don't judge, don't make fun of people, don't talk behind people's back and don't put limiting beliefs on others</h3>
+    <figure>
+        <img class="post-img" src="images/self-improvement-insecurity/judge.jpg" alt='Phrase "If you judge people, you have not time to love them" written using white blocks with a black background.'>
+        <figcaption class="external-photo-figcaption">Photo by <a href="https://www.pexels.com/@alesiakozik/" target="blank">@Alesia Kozik</a> - Pexels</figcaption>
+    </figure>
     <p>
         To summarize this topic, don't be toxic. You ever had this weird feeling
         you carry on when talking to people, you kind of feel guilty for being nice and kind
@@ -160,7 +177,11 @@
         There is this book called <i>Psychocybernetics, from Maxwell Maltz</i>, and it's
         all about self image. Strongly recommend it.
     </p>
-    <h4>Working your insecurities with an practical approach</h4>
+    <h2>When you feel insecure about anything, do it anyways</h2>
+    <figure>
+        <img class="post-img" src="images/self-improvement-insecurity/do-it.jpg" alt='Phrase "Im doing this for me" written using blocks made of wood with a white background.'>
+        <figcaption class="external-photo-figcaption">Photo by <a href="https://www.pexels.com/@anntarazevich/" target="blank">@Anna Tarazevich</a> - Pexels</figcaption>
+    </figure>
     <h3>For things you see an opportunity: practice with projects</h3>
     <p>
         Whenever you see an opportunity to implement something, do it. You'll struggle,
