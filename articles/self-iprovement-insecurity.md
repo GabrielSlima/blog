@@ -206,36 +206,118 @@
     </p>
     <h3>Don't be afraid to make mistakes. But don't be negligent either</h3>
     <p>
-        I remember my firs job interviews, I was overthinking about
+        I remember my first job interviews, I was overthinking about
         making mistakes, about saying something the person iterviewing me
-        might not like. I was like that for years actually. Even after getting
-        the job I was too worried about what other people might think of me
-        if I made some mistake, what would happen and etc.
+        would not like. I was like that for years actually. Even after getting
+        the job I was too worried about what other people would think of me
+        if I made any mistake, what would happen and etc.
     </p>
     <p>
-        Broh, relax. You have to be right all the time. Actually the person
-        that is struggling with something, will probably end up
-        mastering what he/she's struggling with. Because he/she is
-        struggling so much, requires more attention, more research, more time dedicated.
+        Broh, relax. You <i>don't have</i> to be right all the time. Actually the person
+        that is struggling and having a hard time with things, will probably end up
+        mastering those things. Because he/she is
+        struggling so much, requires more attention, more research and more time dedicated
+        to deal and process everything.
         I'm not telling you to fail on purpose, because you're actually being
         careless and not really considering the real consequences and end up in a mess.
-    </p>
-    <p>
+        <br>
         But what i'm telling you is, do it. Try and implement things,
         make sure you're confortable with your decisions and that you're aware of
         the consequences if something goes wrong. Not necessarilly gotta think
         everything through beforehand, but you're also being cautions to
-        acquire experience in a safe place for yourself.
+        acquire experience in a context where you don't feel too much scared to do anything,
+        because you don't know the consequences and therefore can't think of anything
+        to turn around the situations.
     </p>
     <h4>Don't be afraid to break things</h4>
+    <p>
+        Maybe this is one of the most crucial fear I've overcome the past few years,
+        and during this process, I had some people reaffirming it,
+        involuntary just because I've decided to take the boat's control
+        and go around with it.
+        <br>
+        I remember being at this project which was pretty interesting by the way,
+        and this project specifically only had me as developer. And I had to 
+        support existing features and create new things. I was too afraid to
+        touch anything and break the entire system. But the job had to be done and
+        I was always being cautions and negotiating dates with the client. Fortunatelly
+        they were very empathetic torwards me, so lucky me.
+    </p>
+    <p>
+        But the point is, every change, every new thing I had to add or
+        everything I had to delete or disable, I did make sure I was
+        negotiating enough time to actually understand things, and change stuff.
+        At my first job at this project I asked them for a simpler task
+        because I wanted to have enough time to get used with the system, before
+        making bigger changes. After a few weeks, I was feeling more confortable to
+        make changes, but one chage was bigger than the other so it was kind of scary. 
+        the insecurity was always tehere.
+    </p>
+    <p>
+        Everything changed after I talked to this other developer. He was
+        working on another project, dealing with a different context. And I started
+        to build a relationship with him, by asking him if I could learn some things from him.
+        One day I asked him, "bruh, I'm kind of scared of changing stuff around. I
+        don't wanna break anything". And he was like "My brother, you think I'm not
+        kind of scared too? Of course I'm. I can change something and break the whole system.
+        This is how it goes. Fear is a good thing, because you don't make dumb decisions.
+        But it can't consume you. Of course you gotta be prudent, test everything before deploying
+        anything, but someone gotta go through this and do it. Why not me? Why not you? Go ahead.
+        If you make some mistake and end up breaking stuff, fix it, or call someone who will
+        help you. That's it".
+    </p>
     <p>
         Don't be afraid to break the things. Before deploying anything, you have to test it
         in some way. Even if you can't, let's say you have a production problem and
         you only have this environment to work with, no option to try things
         on your local environment, you'll probably have to implement things
-        during the night, so you don't impact anything else.
-        And even so, you probably have the option to break the implementation in
-        small pieces and understand them in a isolated way.
+        during the night, so you don't impact anything else. If you break something,
+        fix it.
+    </p>
+    <h3>Try to detach yourself from time</h3>
+    <p>
+        Time was one the things that were my enemy when I was just starting
+        this fight against insecurity. Having a specific time to do things
+        may help some people, but for me made everything worse. Knowing
+        I had an specific amount of time to do something would remove
+        my focus from what I was supposed to do and thing of the
+        consequences of not doing it on the specified time.
+    </p>
+    <p>
+        This made me feel more anxious and pontecialized all the insecurities
+        I had. And even worse, I was constatly visualizing failure at the end,
+        and sometimes those failures became true.
+        <br>
+        It's important that you detach yourself from the time you have to do things.
+        I'm not telling you to spend weeks and weeks on purpose. I'm telling
+        you to things one step after the other, doing only one thing at a time.
+        And if you exceed the time specified before hand, deal with the consequences.
+    </p>
+    <h4>Ask for help</h4>
+    <p>
+        If what you're doing evolves money and contracts with the client, do
+        what you can and if you see that you're spending too much time on something.
+        Maybe you're stuck or it's just too many things to deal with,
+        ask for help. Maybe it's your coworkers, maybe it's a friend, a colleague
+        or it's Google. Just go ahead and ask for help. For the most part,
+        people are very nice on helping others. Yeah sure, sometimes you come accross
+        someone who is not willing to help you, and that's ok. Try someone else or
+        on another platform if you're looking for help on the internet.
+    </p>
+    <p>
+        Also consider reading books, official documentation and tutorials on the internet.
+        Those things may help you a lot.
+    </p>
+    <h3>Final Words</h3>
+    <p>
+        There are quite a few things I've tried in the past to deal with
+        insecurities. And there's a few things I still practice today,
+        because I still deal with insecurities in many aspects of my life.
+        <br>
+        But hopefully I could help you with some ideas or maybe
+        just by sharing that you're not alone. There's a lot of
+        people going through the same issues we are right now. We just
+        gotta find them and share experiences.
     </p>
     Good Luck XD
 </div>
