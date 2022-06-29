@@ -200,37 +200,56 @@
         <img class="post-img" src="images/self-improvement-insecurity/do-it.jpg" alt='Phrase "Im doing this for me" written using blocks made of wood with a white background.'>
         <figcaption class="external-photo-figcaption">Photo by <a href="https://www.pexels.com/@anntarazevich/" target="blank">@Anna Tarazevich</a> - Pexels</figcaption>
     </figure>
-    <h3>For things you see an opportunity: practice with projects</h3>
     <p>
-        Whenever you see an opportunity to implement something, do it. You'll struggle,
-        you'll face problems that seems unsovable but believe me, they are, even
-        you have to recreate something from scratch, switch components or
+        Remember that at the beginning of this article I said something
+        about a conversation I was having with this person, and that I
+        was dealing with my insecurities at that exact moment?
+        <br>
+        Well there's a specific reason for this, but the point is,
+        to actually gain confidence at something, you must to
+        allow yourself to make mistakes, and don't judge yourself for doing so.
+        <br>
+        And it's important that you fight the resistance of 
+        doing something, and actually do it, <b>specially when you don't feel
+        like doing it</b>. There's this book called <i>The war of art, from Steven Pressfield</i>,
+        and it's all about resistance. You should read it.
+    </p>
+    <h3>For things you see an opportunity: practice</h3>
+    <p>
+        Whenever you see an opportunity to implement/apply something, do it. You'll struggle,
+        you'll face problems that seems impossible to solve but believe me, they are. Even
+        if you have to recreate something from scratch, switch components or
         just change the way you're doing things. Every problem has a solution.
-        Even you have to create another version of something.
+        Even if you have to create another version of something.
     </p>
     <p>
-        By implementing things, and actually  going through the problems, Googling
-        your questions, reading documentation, reading the source code of components,
+        By implementing/applying/trying things, and actually  going through the problems,
+        Googling your questions or if you're dealing with technical stuff,
+        reading the documentation, reading the source code of components,
         libs, APIs and actually exploring and discovering whatever it's your doing,
         you'll acquire so much experience. You'll probably forget almost everything
-        next morning, but the important things, process, the ability to learn
-        new things is overall improved because of this. So make sure to always implement,
-        at leas partially, what you're trying to accomplish. Doesn't have
-        to be perfect, what you're seeking here is the practical experience.
+        next morning, but I guarantee you that the most important things, like
+        the process and the ability to learn new things is overall
+        improved because of this.
+    </p>
+    <p>
+        So make sure to always be looking forward to implement and try things out,
+        at least partially. Doesn't have
+        to be perfect. What you're seeking here is the practical experience.
     </p>
     <h3>Dealing with difficult things you probably can't implement easily</h3>
     <p>
         I was working on a project a while ago where I had to support this application,
         without fully understanding it first. I had to understand it whithout
         implementing things beforehand and this made everything harder because people were
-        bringing me issues I didn't had a way of reproducing it easily, first because
+        bringing me issues I didn't had a way of reproduce easily. First because
         i've never seen it, second because we don't have a "test environment". And it
         wasn't possible to create a local environment on my laptop,
         because the application was too complex to be installed on a local environment.
     </p>
     <p>
         What I did was to go through the application's configuration
-        on "test" instances and I was interpreting the configuration alongside
+        on "test instances" and I was interpreting the configuration alongside
         the vendor's official documentation to understand what was happening. Don't
         get me wrong, I wasn't supposed to be using this "test environment", because
         it was someone else's test environment, but after going trough
@@ -252,23 +271,31 @@
         if I made any mistake, what would happen and etc.
     </p>
     <p>
-        Broh, relax. You <i>don't have</i> to be right all the time. Actually the person
+        Broh, relax. <i>You don't have to be right all the time</i>. Actually the person
         that is struggling and having a hard time with things, will probably end up
         mastering those things. Because he/she is
-        struggling so much, requires more attention, more research and more time dedicated
+        struggling so much, it requires more attention, more research and more time dedicated
         to deal and process everything.
+    </p>
+    <p>
         I'm not telling you to fail on purpose, because you're actually being
-        careless and not really considering the real consequences and end up in a mess.
+        careless and not really considering the real consequences and might end up in a mess
+        because of it.
         <br>
         But what i'm telling you is, do it. Try and implement things,
-        make sure you're confortable with your decisions and that you're aware of
-        the consequences if something goes wrong. Not necessarilly gotta think
-        everything through beforehand, but you're also being cautions to
-        acquire experience in a context where you don't feel too much scared to do anything,
-        because you don't know the consequences and therefore can't think of anything
-        to turn around the situations.
+        make sure you're comfortable with your decisions and that you're aware of
+        the consequences if something goes wrong. You don't necessarilly have to think
+        everything through beforehand, but you're being cautions.
+        In that way you can acquire experiences in a context where you don't feel
+        too scared to do anything. Specially because you don't know the
+        consequences and therefore can't think of anything to
+        turn around the situations if things don't go as planned later.
     </p>
     <h4>Don't be afraid to break things</h4>
+    <figure>
+        <img class="post-img" src="images/self-improvement-insecurity/error.jpg" alt='Smartphone on a table, with an "error" message on the screen'>
+        <figcaption class="external-photo-figcaption">Photo by <a href="https://www.pexels.com/@polina-zimmerman/" target="blank">@Polina Zimmerman</a> - Pexels</figcaption>
+    </figure>
     <p>
         Maybe this is one of the most crucial fear I've overcome the past few years,
         and during this process, I had some people reaffirming it,
