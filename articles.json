@@ -1,5 +1,13 @@
 [
     {
+        "id": "33",
+        "title": "How over complicating things made my life harder",
+        "description": "Stop over complicating things",
+        "author": "Gabriel Lima",
+        "date": "2022-08-08",
+        "article_file_name": "./articles/self-over-complicating-things.md"
+    },
+    {
         "id": "32",
         "title": "You will <i>never</i> feel ready, so why wait?",
         "description": "This is not your average content",
