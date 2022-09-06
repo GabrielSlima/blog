@@ -1,5 +1,13 @@
 [
     {
+        "id": "34",
+        "title": "Do you know the difference between Inheritance and Subtyping?",
+        "description": "You don't know OOP",
+        "author": "Gabriel Lima",
+        "date": "2022-09-06",
+        "article_file_name": "./articles/oop-inheritance-vs-subtyping.md"
+    },
+    {
         "id": "33",
         "title": "Stop over complicating things",
         "description": "Simple things that are supposed to be simple, must remain simple",
