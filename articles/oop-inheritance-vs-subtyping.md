@@ -6,7 +6,7 @@
    <h3>Inheritance</h3>
    <p>
     Inheritance is an OOP mechanism for code reuse. You write a piece of
-    code once then you re-use it in another object template (class) called
+    code once then you reuse it in another object template (class) called
     sub-class. A sub-class is a specification of the super-class.
     The parent promises something to it's clients through it's interfaces
     (public methods), the child inherits those interfaces and may or may not
@@ -59,10 +59,60 @@
       breaking the encapsulation.
    </p>
    <h4>Breaks DIP</h4>
+   <p>
+      Dependecy Inversion Principle (DIP) is one of the solid principles.
+      These principles guide us on how to group methods/functions and data into
+      objects and how to properly create relationships between them.
+      With DIP specifically, the recommendation is that the objects of
+      the application should point to abstract versions of them, not
+      concrete ones. One object should be dependent on abstract versions of another.
+   </p>
+   <p>
+      In this way the objects are loosely coupled on each other. Changes in one
+      object doesn't afect the other, since it's interfaces doesn't change,
+      no change should be made to the object's clients.
+   </p>
+   <p>
+      With that in mind, code reuse using DIP implies an association relationship 
+      (aggreagtion or composition). Meaning that
+      if you wanna reuse another object's code from object A, object
+      A will use the object's B interfaces, through it's instance. Being the contrary
+      to inheritance where you are reusing code through the object's template, the class.
+      You're limited on the amount of changes you can make to the parent class since
+      depending on what change you make, can directly affect it's children.
+   </p>
    <h4>Promotes coupling between the objects</h4>
+   <p>
+      So as I said before, because we're reusing the object's template,
+      the amount of changes you can make to the parent class is limited.
+      Let's say you wanna change a behavior for some reason, but you wanna keep
+      the original behavior on sub-classes. Well... one alternative is replicate the
+      original block of code to the sub-classes. A better approach would be
+      to create another sub-class or non-sub-class with the specified behavior.
+   </p>
    <h4>Promotes complexity</h4>
+   <p>
+      Well this one is a classic. I've worked in this project were
+      we had a class called <b>JsonObject</b>. This class had a <b>to_json_string()</b>
+      interface. No problems with that, is a decent solution and everything, nothing
+      wrong on doing this... Not until you have a hierarchy of 20 sub-classes.
+   </p>
+   <p>
+      Didn't take long to developer's including myself to create hierarchies with
+      3 levels, like, Class A is sub-class of JsonObject. Class B is sub-class of A
+      that is sub-class of JsonObject... This approach makes it harder to find things,
+      to know what implementation belongs to which class. Maybe the developer is using a
+      constant that was declared 3 levels above. Maybe you need to know what a behavior does,
+      but it's implementation is mixed up with behaviors from other levels. It can become a
+      nightmare.
+   </p>
+   <h3>Liskov's Substitution Principle</h3>
    <h3>Subtyping</h3>
    <p>
     Subtyping is about reuse of meaning, reuse of purpose. Not implementation.
+   </p>
+   <h3>Final Thoughts</h3>
+   <p>
+      I'm not trying to discourage you on using inheritance (well, maybe I'm hahaha).
    </p>
 </div>
