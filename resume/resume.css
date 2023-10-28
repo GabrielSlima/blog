@@ -1,0 +1,18 @@
+body{
+    background-color: #e9ecef;
+}
+.right-text {text-align: right;}
+
+.header-info {padding: 10px;}
+
+.section-marker {color: red;}
+
+.list-group-item {
+    padding: .75rem 0;
+    border: none;
+    background-color: #e9ecef;
+}
+
+@media screen and (max-width: 768px) {
+    .right-text {text-align: left;}
+}
