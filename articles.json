@@ -1,5 +1,13 @@
 [
     {
+        "id": "34",
+        "title": "Overcoming Burnout",
+        "description": "Lessons Learned from Two Years of Struggle",
+        "author": "Gabriel Lima",
+        "date": "2024-06-07",
+        "article_file_name": "./articles/maybe-burnout-period.md"
+    },
+    {
         "id": "33",
         "title": "Stop over complicating things",
         "description": "Simple things that are supposed to be simple, must remain simple",
