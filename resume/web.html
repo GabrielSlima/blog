@@ -17,23 +17,42 @@
 </head>
 
 <body>
-  <!-- Page Content -->
   <section>
     <div class="container">
       <div class="row">
+        <div class="col-12 header-info p-3 ">
+          <a href="index.html">Return to online portfolio</a>
+        </div>
         <div class="col-12 header-info">
           <h1 class="mt-5">Gabriel Lima</h1>
         </div>
-        <div class="col-12 col-md-6">
-          <h5>Software Engineer | <a href="https://gabrielslima.com" target="_blank">Blog</a> | <a href="http://www.linkedin.com/in/gabrielslima" target="_blank">Linkedin</a> | <a href="https://github.com/GabrielSlima" target="_blank">Github Profile</a></h5>
+        <div class="col-12 col-md-6 header-info">
+          <h4>Software Engineer</h4>
         </div>
-      
+        <div class="col-12 col-md-6 right-text header-info">
+          <a href="https://gabrielslima.com">https://gabrielslima.com</a>
 
+        </div>
+        <div class="col-12 col-md-6 header-info">
+          <a href="https://github.com/GabrielSlima">https://github.com/GabrielSlima</a>
+        </div>
+        <div class="col-12 col-md-6 right-text header-info">
+          <a href="http://www.linkedin.com/in/gabrielslima">http://www.linkedin.com/in/gabrielslima</a>
+
+        </div>
+        <div class="col-12 header-info">
+          <p>
+            Software Engineer with 6+ years of experience in telecom, energy, and finance; builds scalable, event-driven systems.
+            <br>
+            Microservices | .NET (C#), Python, JavaScript | AWS(Lambda, Api Gateway, S3, DynamoDB, ECS, ELB)  | REST APIs | Event-Driven Design | Domain Driven Design
+          </p>
+        </div>
       </div>
       <hr>
     </div>
-
   </section>
+
+
   <section>
     <div class="container">
       <div class="row">
@@ -41,151 +60,92 @@
           <h2 class="mt-3"><span class="section-marker">#</span>Professional Experience</h2>
         </div>
         <div class="col-12 ">
-          <h5 class="mt-4"><b>Senior Software Engineer (Tech Lead) - AWS Cloud Native – <a href="https://www.itau.com/" target="_blank">Itaú Unibanco</a> </b> - Remote, Brazil - jun/2022 - present</h5>
+          <h5 class="mt-3"><b>Senior Software Engineer - Treasury Settlement - AWS Cloud Native – <a href="https://www.itau.com/" target="_blank">Itaú Unibanco</a> </b> - Remote, Brazil - jan 2025 - present</h5>
           <p>
-            Led technical efforts within the Electricity Trading team, managing a team of Software and Data Engineers to improve trading workflows.
-Designed a vendor integration architecture based on Hexagonal principles to decouple external systems and improve maintainability.
+            Worked with the Treasury Settlement team to modernize the settlement system used to settle treasury operations.
             <br>
+            - Designed and implemented a REST API enabling a unified access point for derivatives TED settlement data across internal systems. Handled ~R$16MM in daily financial volume
             <br>
-            <b>Front-office:</b> 
+            - Led the domain modeling initiative for the Federal Bonds Settlement capability in a legacy SQL Server-based system (approx. 40 TPS, ~R$688MM/day settled), laying the foundation for solution architecture using Itaú's internal Camada Zero framework
             <br>
-            - Delivered real-time Counterparties Credit Risk Simulation API (<15s response), enabling traders to make faster decisions.
+            - Proposed a future-state product vision for a self-service settlement platform, allowing internal clients to define, reuse, and share settlement profiles. Objective: Increase reusability and decouple hardcoded settlement workflows to promote domain-driven modernization.
             <br>
-            - Streamlined proposal workflows to improve trader collaboration and communication.
-            <br>
-            - Implemented a pricing repository to eliminate email exchanges, enhancing data accessibility.
-
-            <br>
-            <br>
-            <b>System Design:</b> Modernized data integration solutions to handle data from 10+ sources using AWS Lambda, S3, Athena, and API Gateway.
-            <br>
-            <br>
-            (AWS Infrastructure, Python, Javascript, REST, Event Driven, OOP, AOP, Microservices, Angular, Swagger, OAS 3.0, Api Management, Clean Code, Clean
-            Architecture, Design Patterns, NoSQL)
+            <b>Technologies:</b> .NET (C#), ASP.NET Core, AWS Elastic Load Balancer, REST APIs, Microservices, Clean Architecture
           </p>
         </div>
 
         <div class="col-12 ">
-          <h5 class="mt-5"><b>Senior Software Engineer - AWS Cloud Native – <a href="https://www.itau.com/" target="_blank">Itaú Unibanco</a> </b> - Remote, Brazil - aug/2021 - jun/2022</h5>
+          <h5 class="mt-3"><b>Tech Lead - AWS Cloud Native – <a href="https://www.itau.com/" target="_blank">Itaú Unibanco</a> </b> - Remote, Brazil - jun 2022 - dec 2024</h5>
           <p>
-            Developed tools to optimize back-office processes in the energy trading domain. Achievements:
+            Led technical efforts within the Energy Trading  team, managing a team of Software and Data Engineers to improve trading workflows. 
             <br>
+            - Led the development of the Credit Risk Assessment solution, delivering a high-throughput REST API for online credit risk calculations, capable of handling 200 RPS  in a serverless AWS architecture (Lambda, API Gateway, S3)
             <br>
-            <b>Back-office automation:</b> Long term visualization of energy operations prices by providing up to date information about CDI (Interbank Rate) and USD 30+ years predictions.
+            - Led the architectural evolution of the financial asset integration solution by introducing an event-driven architecture and extensible calculation use cases, exposed REST APIs for reprocessing, querying, and downloading financial assets, making the service reusable across Credit Risk and Market Risk domains
             <br>
+            - Led trader proposal workflow development, gathering requirements, defining features, and testing deliverables
             <br>
-            <b>Back-office automation:</b> Accounting process in seconds, trading operations calculated in lest than 30s.
+            - Designed data integration to collect from 10 sources, assemble client data and register it into the ETRM SaaS
             <br>
+            - Led the design and support of 10+ data pipelines for the Research team’s market analysis solutions, enabling data ingestion, processing, and delivery for internal dashboards and visualization tools
             <br>
-            (AWS Infrastructure, Python, Javascript, REST, Event Driven, OOP, AOP, Microservices, Angular, Swagger, OAS 3.0, Api Management, Clean Code, Clean Architecture, Design Patterns, NoSQL)          </p>
-        </div>
-
-        <div class="col-12 ">
-          <h5 class="mt-5"><b>Software Engineer - AWS Cloud Native – <a href="https://br.nttdata.com/" target="_blank">NTT DATA Latam</a></b> - Remote, Brazil - dez/2020 - aug/2021</h5>
-          <p>
-            Developed scalable solutions for the Energy Trading team, focusing on automation and efficiency. Achievements:
+            - Designed a CCEE Pricing Decks data engineering pipeline using a data mesh-inspired architecture, with event-driven processing and REST APIs for manual fallback and execution control, improving system resilience and traceability
             <br>
-            <br>
-            <b>Back-office automation:</b> Long term visualization of energy operations prices by providing up to date information about inflation (IGPM/IPCA).
-            <br>
-            <br>
-            <b>Back-office automation:</b> Back-office automation: 500+ counter-parties were registered in other systems that are part of the ecosystem using the registering
-            automation.
-  
-            <br>
-            <br>
-            (AWS Infrastructure, Groovy, Python, Shell Script, REST, Jenkins, Swagger, Api Management, Clean Code, Clean Architecture, Design Patterns, NoSQL)  
+            <b>Technologies:</b> AWS (Lambda, SQS, SNS, DynamoDB, S3), Python, Javascript, Event Driven, OOP, Microservices, Angular, Swagger, OAS 3.0, REST, Clean Architecture
           </p>
         </div>
 
         <div class="col-12 ">
-          <h5 class="mt-5"><b>Cloud Engineer – <a href="https://br.nttdata.com/" target="_blank">NTT DATA Latam</a></b> - Remote, Brazil - may/2020 - dez/2020</h5>
+          <h5 class="mt-3"><b>Senior Software Engineer - AWS Cloud Native – <a href="https://www.itau.com/" target="_blank">Itaú Unibanco</a> </b> - Remote, Brazil - aug 2021 - jun 2022</h5>
           <p>
-            Maintained on-premises API gateways and resolved 20+ API issues daily as part of the API Governance team. Achievements:
-            <br>
-            <br>
-            20+ API Gateway issues solved daily while working with the API Governance team, responsible for
-            keeping Gateway and STS solutions, CI/CD pipelines and REST APIs best practices evangelist.
-            <br>
-            <br>
-            (Axway, Groovy, Python, Shell Script, REST, GitLab, GitLab CI, Jenkins, RAML, Swagger, Api Management) 
+            Designed data integration solutions for the Energy Trading product.
+          <br>
+            - Designed and implemented a financial asset integration service for the Credit Risk pipeline, enabling the daily processing of ~160 financial assets. Introduced a reusable architecture to support isolated asset processing and internal calculation logic.
+          <br>
+          - Delivered updated certificate of deposit index and USD exchange rate forecasts (CDI and USD) to support long-term energy pricing models.
+          <br>
+          <b>Technologies:</b> AWS (Lambda, SQS, SNS, DynamoDB, S3), Python, Javascript, Event Driven, OOP, AOP, Microservices, Angular, Swagger, OAS 3.0, REST, Clean Architecture
           </p>
         </div>
 
         <div class="col-12 ">
-          <h5 class="mt-5"><b>DevOps Engineer – <a href="https://www.ericsson.com/en" target="_blank">Ericsson</a></b> - São Paulo, Brazil - jul/2019 – may/2020</h5>
+          <h5 class="mt-3"><b>Software Engineer - AWS Cloud Native – <a href="https://br.nttdata.com/" target="_blank">NTT DATA Latam</a></b> - Remote, Brazil - dez 2020 - aug 2021</h5>
           <p>
-            Responsible for building and keeping QA environments, CI/CD pipelines and linux servers management. Achievements:
+            Developed scalable solutions for the Energy Trading team, focusing on automation and efficiency.
             <br>
+            - Delivered updated inflation forecasts (IGPM/IPCA) to support long-term energy pricing models.
             <br>
-            <b>Claro Flex CI/CD pipeline</b>: Created the first Jenkins pipeline that included REST APIs automated testing among 10+ projects
+            - Back-office automation: 500+ counter-parties were registered in other systems that are part of the ecosystem using the registering automation.
             <br>
-            <br>
-            <b>Bitbucket CI/CD to Jenkins pipelines migration</b>: 5+ pipelines migrated to Jenkins pipelines
-            <br>
-            <br>
-            (Java, Spring, Python, ELK Stack, Docker, SonarQube, Redis, REST, Jenkins, Ansible, Shell Script, Linux Servers, Prometheus, Grafana)
-
+            <b>Technologies:</b> AWS (Lambda, SQS, SNS, DynamoDB, S3), Groovy, Python, Shell Script, REST, Jenkins, Swagger, Api Management, Microservices, Clean Architecture
           </p>
         </div>
 
         <div class="col-12 ">
-          <h5 class="mt-5"><b>Software Engineer – <a href="https://www.ericsson.com/en" target="_blank">Ericsson</a></b> - São Paulo, Brazil - nov/2018 – jul/2019</h5>
+          <h5 class="mt-3"><b>Cloud Engineer – <a href="https://br.nttdata.com/" target="_blank">NTT DATA Latam</a></b> - Remote, Brazil - may 2020 - dez 2020</h5>
           <p>
-            Worked with high availability architecture and implemented scalable back-end designs and UI development. Achievements:
+            Resolved 20+ API Gateway issues daily and maintained Gateway and STS solutions as part of the API Governance team.
             <br>
-            <br>
-            <b>Push Notification</b>: Modern push notification system capable of sending more than 1 million notifications within 1h.
-            <b>Claro Flex</b>: Payment REST API (communication between legacy system and modern systems) for mobile internet plan payment using the user’s number balance. 
-            <br>
-            <br>
-            (HTML5, CSS, JavaScript, Bootstrap, NoSQL, Java, Spring, Python, MongoDB, ELK Stack, Docker, SonarQube, Tdd, Maven, Junit, Redis, Rest, Jenkins, NoSQL)
+            <b>Technologies:</b> Groovy, Python, Shell Script, REST, GitLab, GitLab CI, Jenkins, RAML, Swagger, Api Management, AWS API Gateway, Oauth2.0
           </p>
         </div>
-    
+
+        <div class="col-12 ">
+          <h5 class="mt-3"><b>Software Engineer – <a href="https://www.ericsson.com/en" target="_blank">Ericsson</a></b> - São Paulo, Brazil - nov 2018 – may 2020</h5>
+          <p>
+            Worked with high availability architecture and implemented scalable back-end designs and UI development, building and keeping QA environments, CI/CD pipelines and linux servers management.
+            <br>
+            - Claro Flex: Remaining balance Payment REST API (BFF) for mobile internet plan payment using the user’s number balance. Created the first Jenkins pipeline that included REST APIs automated testing
+            <br>
+            - Push Notification: Modern push notification system that sends 400 notifications/second (400 RPS)
+            <br>
+            <b>Technologies:</b> Java, Spring, Python, ELK Stack, Docker, Redis, REST, Jenkins, Ansible, Shell Script, Linux Servers, Prometheus, Grafana
+          </p>
+        </div>
       </div>
       <hr>
 
   </section>
-
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="mt-2"><span class="section-marker">#</span>Education</h2>
-        </div>
-
-        <div class="col-12 ">
-          <h5 class="mt-2"><b> <a href="https://www.udacity.com/" target="_blank">Udacity</a></b>, 2019</h5>
-          <p>Full Stack Developer Specialization <a href="https://drive.google.com/file/d/11awO-011-Z2TxBbJQlCLi2ekXmcQQtCy/view" target="_blank">Certificate</a></p>
-        </div>
-
-        <div class="col-12 ">
-          <h5 class="mt-2"><b><a href="https://basilides.com.br/" target="_blank">Etec Professor Basilides de Godoy</a></b>, 2016, São Paulo, Brazil</h5>
-          <p>Techinical level Software Development <a href="https://drive.google.com/file/d/13PWbtLXx5DJwYEl5E6cMxSBxJphpQjmZ/view" target="_blank">Certificate</a></p>
-        </div>
-        <hr>
-      </div>
-      <hr>
-
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="mt-2"><span class="section-marker">#</span>Awards & Achievements</h2>
-        </div>
-
-        <div class="col-12 ">
-          <h5 class="mt-2"><b> <a href="https://drive.google.com/file/d/1SePp-YUFXQrEBWx--ojIEMehe5aO-iiG/view"
-                target="blank"> Certificate of Recognition</a></b> - Etec Professor Basilides de Godoy</h5>
-          <p>Formal Recognition for the progress made and final project</p>
-        </div>
-        <hr>
-      </div>
-  </section>
-  <br>
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
